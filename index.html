@@ -1770,6 +1770,1072 @@ const CASES = [
       "Chiropractors and physiotherapists as first-contact practitioners play a critical role in early identification of ankle instability before it becomes chronic — early recognition substantially improves long-term functional outcomes."
     ]
   }
+},
+  {
+  id: "007",
+  title: "A 47-year-old woman presents with 2 months of right buttock pain and a limp that started after a gym session and has progressively worsened despite medication and physiotherapy",
+  category: "Sacral/SIJ",
+  secondaryCategory: null,
+  difficulty: "Intermediate",
+  estimatedTime: "15–20 mins",
+  source: {
+    short: "Chu ECP, Wong AYL\nJ Med Cases. 2022;13(1):31–35\nPMID: 35211233\nPMC: PMC8827249\nOpen access ✓",
+    full: "Chu ECP, Wong AYL. Change in Pelvic Incidence Associated With Sacroiliac Joint Dysfunction: A Case Report. J Med Cases. 2022;13(1):31–35. doi: 10.14740/jmc3816. PMID: 35211233. PMC8827249. Open access."
+  },
+  patient: {
+    ageSex: "47-year-old female",
+    chiefComplaint: "Right buttock pain with radiation to the right posterior thigh and an antalgic limp",
+    duration: "2 months of progressive worsening; preceding right gluteal strain 6 months prior",
+    priorProviders: "GP (prescribed acetaminophen and ibuprofen); physiotherapist (treatment for right buttock pain)",
+    priorDiagnoses: "Lumbar MRI performed during orthopaedic workup — no abnormalities identified; no SIJ diagnosis made prior to chiropractic presentation"
+  },
+  history: {
+    content: `<p>A 47-year-old female investment banker presented with a 2-month history of right buttock pain and a painful limp. Six months prior to her first chiropractic visit, she had experienced a right gluteal strain during stair climbing exercise, which resolved spontaneously within 2 days. During the subsequent period of pandemic-related restrictions, she began working from home with prolonged sitting and started experiencing recurrent soreness in the right buttock and lower back, relieved by walking and gentle stretching. Over the following 2 months, her right buttock and lower back symptoms progressively worsened.</p>
+<p>Sitting aggravated her pain and prevented her from using a laptop to work. Her lumbar MRI, performed during an orthopaedic workup, identified no abnormalities. She was prescribed acetaminophen and ibuprofen and underwent physiotherapy for right buttock pain. Four weeks after the orthopaedic workup, she presented to a chiropractor due to worsening buttock pain that now radiated down the right posterior thigh, and a limp on the right side while walking. She was using a cane for ambulation. Her self-reported peak pain intensity was 8–9/10 on an 11-point numeric pain rating scale. She had a history of marathon running. No other significant past medical history was documented.</p>`,
+    clinicalNote: "The combination of a prior sport-related gluteal strain, a sedentary forced-work-from-home period, a normal lumbar MRI, and persistent and worsening unilateral buttock pain with radiation to the posterior thigh should redirect clinical attention away from lumbar disc pathology and toward the SIJ and its surrounding ligamentous structures. Three positive SIJ provocation tests and radiographic sclerosis confirm the diagnosis — but the normal lumbar MRI is a key anchor finding."
+  },
+  examination: {
+    autoROM: `<p>Passive lumbar flexion and extension ranges of motion were limited. Specific degree measurements were not documented in the published source. Cervical ROM assessment was not the focus of this presentation but spinal palpation identified motion restrictions at C5/6, C7/T1, T3/T4, L1/L2, and L4/L5.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Movement</th><th>Muscle</th><th>Nerve Root</th><th>Finding</th></tr></thead><tbody>
+      <tr><td colspan="4" style="text-align:center; font-style:italic;">Sensory and motor functions were documented as identical and intact bilaterally. No neurological deficits were identified on examination.</td></tr>
+    </tbody></table></div>`,
+    checklist: [
+      {
+        group: "SIJ Provocation Tests",
+        items: [
+          {
+            id: "distraction_test",
+            label: "Distraction Test (ASIS vertical pressure — right SIJ)",
+            result: `Positive — pain provoked at the right SIJ <span class="tt pos">Positive</span>`,
+            documented: true
+          },
+          {
+            id: "compression_test",
+            label: "Compression Test (iliac crest pressure — right SIJ)",
+            result: `Positive — pain provoked at the right SIJ <span class="tt pos">Positive</span>`,
+            documented: true
+          },
+          {
+            id: "thigh_thrust",
+            label: "Thigh Thrust Test (AP shear through flexed hip — right SIJ)",
+            result: `Positive — pain provoked at the right SIJ <span class="tt pos">Positive</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Postural and Palpation Assessment",
+        items: [
+          {
+            id: "posture_obs",
+            label: "Standing postural assessment",
+            result: `Anterior pelvic tilt, right pelvic drop, anterior rotation of the left pelvis; antalgic gait affecting the right side; patient using a cane <span class="tt notable">Antalgic — SIJ complex malalignment</span>`,
+            documented: true
+          },
+          {
+            id: "palp_sij",
+            label: "Palpation over right SIJ",
+            result: `Tenderness on palpation over the right SIJ; pain induced by axial extension, standing, or leaning on the right leg <span class="tt pos">Tender</span>`,
+            documented: true
+          },
+          {
+            id: "palp_tone",
+            label: "Muscle hypertonicity assessment",
+            result: `Hypertonicity palpated at bilateral upper trapezius, left quadratus lumborum, and right gluteus medius/minimus and hamstrings <span class="tt notable">Hypertonic right gluteal group and hamstrings</span>`,
+            documented: true
+          }
+        ]
+      }
+    ],
+    contextText: "The SIJ provocation cluster (distraction, compression, thigh thrust) was selected because of the unilateral buttock and posterior thigh pain pattern combined with a normal lumbar MRI. Positivity in three out of six standard SIJ provocation tests is the accepted diagnostic criterion for SIJ dysfunction. Postural observation and gait assessment confirmed biomechanical involvement of the pelvic complex. Neurological integrity was confirmed through sensory and motor testing — the absence of deficits supports a non-radicular, SIJ-mediated pain source."
+  },
+  investigations: {
+    options: [
+      {
+        id: "xray_standing",
+        label: "Standing spinal radiographs (spinopelvic parameters)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Radiographs revealed posterior sacral tilting (counter-nutation), forward left innominate, and twisted lumbar spine. Inflammatory sclerosis on the iliac side of the right SIJ was evident. Pre-treatment spinopelvic parameters: L1–L5 lordosis (Cobb) −29°, pelvic incidence 43°, sacral slope 27°, sacral inclination 33°, pelvic tilt 16°, anterior pelvic plane angle −13°. Post-treatment follow-up at 6 months showed significant changes across all parameters including pelvic incidence change from 43° to 49°, sacral slope 27° to 40°, and L1–L5 lordosis improvement from −29° to −41°.</p>`
+      },
+      {
+        id: "mri_lumbar",
+        label: "MRI — Lumbar Spine",
+        consequence: null,
+        ordered: true,
+        result: `<p>Performed during prior orthopaedic workup. No abnormalities identified. Normal lumbar MRI in the context of significant clinical findings directed attention to the SIJ as the pain source.</p>`
+      },
+      {
+        id: "sij_injection",
+        label: "Image-guided SIJ anaesthetic injection (diagnostic block)",
+        consequence: "Image-guided intra-articular anaesthetic injection is a diagnostic gold standard for confirming the SIJ as a pain source. In this case, the diagnosis was established clinically through three positive provocation tests and radiographic findings without requiring injection. A diagnostic block is an appropriate consideration when the clinical picture is ambiguous or when three provocation tests are not clearly positive.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Sacroiliac joint dysfunction (right)",
+        correct: true,
+        blurb: "Confirmed diagnosis. Three positive SIJ provocation tests (distraction, compression, thigh thrust), unilateral right buttock pain with posterior thigh radiation, antalgic gait, SIJ tenderness on palpation, and radiographic inflammatory sclerosis of the right SIJ iliac surface are all consistent with right SIJ dysfunction. Normal lumbar MRI excludes a lumbar disc or root cause."
+      },
+      {
+        label: "Lumbar disc herniation with L5 or S1 radiculopathy",
+        correct: false,
+        blurb: "Buttock pain with posterior thigh radiation is a classic presentation of L5 or S1 radiculopathy. However, lumbar MRI was normal with no disc herniation, compression, or foraminal stenosis. Motor and sensory function were intact bilaterally, and the three positive SIJ provocation tests provide an alternative structural explanation for the pain distribution."
+      },
+      {
+        label: "Piriformis syndrome / deep gluteal syndrome",
+        correct: false,
+        blurb: "Sciatic nerve entrapment at the piriformis or within the deep gluteal space produces posterior buttock pain that may radiate into the thigh in a similar distribution. Hypertonicity of the right gluteus group was palpated. However, the positive SIJ provocation cluster and radiographic sclerosis of the SIJ surface favour SIJ pathology as the primary diagnosis."
+      },
+      {
+        label: "Greater trochanteric pain syndrome (gluteal tendinopathy)",
+        correct: false,
+        blurb: "GTPS produces lateral hip and posterior buttock pain aggravated by lying on the affected side, stairs, and single-leg loading. Tenderness over the greater trochanter would be expected. The pain provocation pattern in this case (SIJ-provocation-positive, posterior thigh radiation, SIJ radiographic changes) is more consistent with SIJ pathology than lateral hip tendinopathy."
+      },
+      {
+        label: "Inflammatory sacroiliitis (e.g. ankylosing spondylitis, psoriatic arthritis)",
+        correct: false,
+        blurb: "Inflammatory sclerosis was visible on the iliac side of the right SIJ on radiograph — a finding that can be seen in both mechanical SIJ dysfunction and inflammatory arthropathies. Axial spondyloarthropathy typically presents with bilateral sacroiliitis, morning stiffness exceeding 30 minutes, and improvement with exercise. The unilateral presentation, the mechanical aggravating factors, and the absence of systemic features make inflammatory arthropathy less likely here, though it cannot be excluded without serological testing."
+      },
+      {
+        label: "Hip osteoarthritis with referred pain",
+        correct: false,
+        blurb: "Hip OA can refer pain to the groin, lateral hip, and buttock. The patient had a 47-year-old age profile and marathon history, which are mild risk factors. However, hip OA pain is typically groin-predominant with limitation of hip ROM on internal rotation, and would not produce positive SIJ provocation tests."
+      },
+      {
+        label: "Lumbar facet joint syndrome (L4/5 or L5/S1)",
+        correct: false,
+        blurb: "Lumbar facet arthropathy can refer pain into the buttock and posterior thigh. Motion restriction at L4/L5 was documented on palpation. However, the three positive SIJ-specific provocation tests, the unilateral SIJ radiographic sclerosis, and the negative lumbar MRI collectively point to the SIJ rather than the facet joints as the primary pain generator."
+      },
+      {
+        label: "Hamstring origin tendinopathy (proximal)",
+        correct: false,
+        blurb: "Proximal hamstring tendinopathy presents with deep buttock pain aggravated by sitting and running, with tenderness at the ischial tuberosity. The marathon history is a relevant risk factor. However, this diagnosis does not explain the positive SIJ provocation cluster, gait deviation, or radiographic changes at the sacroiliac joint."
+      }
+    ],
+    explanation: `<p>Sacroiliac joint dysfunction is a clinically important but frequently under-recognised source of buttock and lower extremity pain. The SIJ has a dual role as a load-transfer joint and a shock absorber, and is susceptible to dysfunction following repetitive microtrauma, altered loading patterns (such as from prolonged sedentary posture), or prior sport-related injury to the surrounding ligamentous and muscular structures.</p>
+<p>In this case, the diagnostic pathway was shaped by a normal lumbar MRI — a critical negative finding that shifted clinical attention from the lumbar spine to the SIJ. Three positive provocation tests (distraction, compression, thigh thrust) using the accepted cluster criterion confirm SIJ dysfunction as the pain source. Inflammatory sclerosis on the iliac side of the right SIJ on plain radiograph provided additional structural evidence.</p>
+<p>A particularly interesting additional finding in this case was the significant change in pelvic incidence (PI) between pre-treatment and 6-month follow-up radiographs (43° to 49°). PI has traditionally been considered a fixed anatomical parameter throughout adult life. The authors propose that PI change in this context serves as a surrogate marker of SIJ instability — with normalisation of the PI and all other spinopelvic parameters accompanying full clinical recovery. This finding has important implications for radiographic monitoring of SIJ conditions.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "smt_manipulation",
+        label: "Spinal manipulative therapy to restricted segments (thoracolumbar) 3×/week",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Spinal manipulation targeting the restricted segments identified on motion palpation (C5/6, C7/T1, T3/T4, L1/L2, L4/L5) was used as part of the multimodal programme. Thoracolumbar adjustment combined with rehabilitation exercises is documented as the primary treatment in this case and produced resolution of symptoms at 6 months.`
+      },
+      {
+        id: "rehab_exercises",
+        label: "Rehabilitation exercises: hamstring stretch, gluteal squeeze, squat",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> These exercises were added after the initial month of treatment to correct spinal alignment and strengthen muscle function around the SIJ complex. The gluteal squeeze and squat target the muscles responsible for SIJ force closure. Hamstring stretching addresses the documented hypertonicity of the right hamstring group.`
+      },
+      {
+        id: "us_soft_tissue",
+        label: "Therapeutic ultrasound and soft tissue massage to hypertonic muscles",
+        selected: true,
+        explanation: `<strong>Appropriate as adjunct therapy.</strong> Therapeutic ultrasound and soft tissue massage were applied to the hypertonic muscles (bilateral upper trapezius, left quadratus lumborum, right gluteus medius/minimus, and hamstrings) as part of the documented treatment plan. These modalities supported symptom reduction and muscle relaxation alongside spinal manipulation.`
+      },
+      {
+        id: "continue_nsaids",
+        label: "Continue NSAID and analgesic medication as primary management",
+        selected: false,
+        explanation: `<strong>Insufficient as sole management.</strong> Acetaminophen and ibuprofen had been prescribed at the prior orthopaedic workup and had not resolved the patient's symptoms over the preceding weeks. Pain medication alone does not address the underlying biomechanical dysfunction of the SIJ complex. Active rehabilitation and manual therapy are required to restore SIJ function and load transfer.`
+      },
+      {
+        id: "lumbar_physiotherapy",
+        label: "Continue lumbar-directed physiotherapy based on symptom location",
+        selected: false,
+        explanation: `<strong>Not appropriate given normal lumbar MRI.</strong> Prior physiotherapy directed at the buttock and lower back had not resolved symptoms. The normal lumbar MRI indicates that the lumbar spine is not the primary pain source. Treatment must be directed at the SIJ and its surrounding structures. Continued lumbar-directed therapy without addressing the SIJ dysfunction will perpetuate the clinical problem.`
+      }
+    ],
+    outcomeText: `The patient underwent chiropractic intervention three times per week in the first month. After 1 month, pain reduced from 8–9/10 to 2/10 and she ceased pain medication and returned to work. Treatment frequency was reduced to twice weekly with the addition of rehabilitation exercises. After 6 months, complete resolution of symptoms and full hip and back mobility were documented. No adverse events occurred. Follow-up radiographs showed significant changes in all spinopelvic parameters, including a pelvic incidence change from 43° to 49°, sacral slope improvement from 27° to 40°, and L1–L5 lordosis improvement from −29° to −41°. The authors note these changes suggest normalisation of sacropelvic mechanics following treatment of the SIJ dysfunction.`
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Sacroiliac Joint Dysfunction (Right)</strong><br>With inflammatory sclerosis on radiograph and associated spinopelvic malalignment",
+    outcomes: [
+      { label: "Published Source", text: "Chu ECP, Wong AYL. J Med Cases. 2022;13(1):31–35" },
+      { label: "PMID / PMC", text: "PMID: 35211233 — PMC8827249 (open access)" },
+      { label: "Final Diagnosis", text: "Right SIJ dysfunction confirmed by 3-provocation-test cluster and radiographic inflammatory sclerosis" },
+      { label: "Intervention", text: "Thoracolumbar SMT, therapeutic ultrasound, soft tissue massage, rehabilitation exercises (hamstring stretch, gluteal squeeze, squat) — complete symptom resolution at 6 months; all spinopelvic parameters normalised on follow-up radiograph" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "A normal lumbar MRI in a patient with buttock and posterior thigh pain is a critical finding — it should redirect clinical focus to the SIJ rather than simply reassuring the clinician that nothing is wrong. The SIJ is a common source of this pain pattern and cannot be seen on lumbar MRI." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "SIJ pain and L5/S1 radiculopathy share a posterior thigh distribution. The distinction lies in the neurological examination (intact in SIJ dysfunction) and the SIJ provocation cluster (positive in SIJ dysfunction). Without performing specific SIJ tests, the diagnosis is routinely missed." },
+      { type: "pearl", tag: "Clinical Pearl", text: "Three positive SIJ provocation tests (distraction, compression, thigh thrust) from the standard cluster of six are the accepted clinical criterion for diagnosing SIJ dysfunction with reasonable specificity. No single test alone is sufficient — always use the cluster." },
+      { type: "key", tag: "Scope of Practice", text: "This case demonstrates that SIJ dysfunction is well within the scope of chiropractic practice and responds to combined spinal manipulation, soft tissue therapy, and rehabilitation exercise. A structured 6-month programme achieved complete symptom resolution and measurable radiographic improvement in spinopelvic alignment." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Plain radiographs can reveal inflammatory sclerosis at the SIJ — an important positive finding that supports the diagnosis in the context of a normal lumbar MRI. The unexpected finding of pelvic incidence change on follow-up radiograph (traditionally considered a fixed parameter) may serve as a novel radiographic marker of SIJ instability." }
+    ]
+  },
+  cpd: {
+    topics: "Sacroiliac joint dysfunction, SIJ provocation cluster, pelvic incidence, spinopelvic parameters, buttock pain differential, lumbar MRI, spinal manipulation, rehabilitation",
+    keyPoints: [
+      "A normal lumbar MRI in a patient with unilateral buttock and posterior thigh pain should direct clinical attention to the SIJ — it is not a negative finding that ends the diagnostic process.",
+      "Three positive SIJ provocation tests from the standard cluster (distraction, compression, thigh thrust, Gaenslen, sacral thrust, FABER) are the accepted clinical diagnostic criterion for SIJ dysfunction.",
+      "SIJ pain can refer into the posterior thigh and mimic L5/S1 radiculopathy — intact neurological examination and positive SIJ provocation tests are the key distinguishing features.",
+      "Pelvic incidence, traditionally considered a fixed anatomical parameter in adults, showed significant change between pre- and post-treatment radiographs in this case, suggesting it may serve as a marker of SIJ instability.",
+      "A combined programme of spinal manipulation, soft tissue therapy, and rehabilitation exercise targeting SIJ force-closure muscles achieved complete resolution at 6 months."
+    ]
+  }
+},
+{
+  id: "008",
+  title: "A 25-year-old female badminton player presents with 5 days of pain and swelling on the outer side of her right elbow and wrist trembling that began after lifting heavy items",
+  category: "Elbow",
+  secondaryCategory: "Sports/Acute",
+  difficulty: "Beginner",
+  estimatedTime: "10–15 mins",
+  source: {
+    short: "Nagore A, Samal S, Kolhe PD\nCureus. 2024;16(6):e61813\nPMID: 38975459\nPMC: PMC11227430\nOpen access ✓",
+    full: "Nagore A, Samal S, Kolhe PD. Effectiveness of the Cyriax Technique With Conventional Therapy in the Management of Lateral Epicondylitis: A Case Report. Cureus. 2024;16(6):e61813. doi: 10.7759/cureus.61813. PMID: 38975459. PMC11227430. Open access."
+  },
+  patient: {
+    ageSex: "25-year-old female",
+    chiefComplaint: "Pain and swelling on the lateral side of the right elbow with wrist trembling during flexion and extension",
+    duration: "5 days at physiotherapy presentation",
+    priorProviders: "None documented prior to physiotherapy outpatient department presentation",
+    priorDiagnoses: "Lateral epicondylitis — confirmed clinically by Mill's test and Cozen's test"
+  },
+  history: {
+    content: `<p>A 25-year-old female badminton player presented to a physiotherapy outpatient department with a 5-day history of pain and swelling on the lateral side of her right elbow. She reported wrist and forearm trembling during flexion and extension activities, which had been present for the past 2 days. On the day prior to presentation, she had experienced tremors for 5–10 minutes in her wrist while attempting to lift heavy items. The pain initially developed gradually on the outer side of the elbow and extended towards the hypothenar eminence of her palm.</p>
+<p>She described her pain as worse when working, at night, and during periods of relaxation, and reported improvement with rest. No prior treatment had been sought. She had no documented past medical history. Written consent was obtained prior to commencement of treatment.</p>`,
+    clinicalNote: "A 25-year-old recreational athlete presenting with lateral elbow pain is a classic lateral epicondylitis presentation. The onset in the context of racquet sport activity and lifting, the clinical distribution (lateral epicondyle with radiation toward the palm), and the positive Mill's and Cozen's tests are diagnostic. At this age, consider whether there is an underlying training load or technique issue driving the overuse."
+  },
+  examination: {
+    autoROM: `<p>Pre-treatment: Right elbow flexion 0–120°, extension 0°, pronation 0–70°, supination 0–60°. Right wrist flexion 0–65°, extension 0–63°, radial deviation 0–15°, ulnar deviation 0–22°. Post-treatment: Right elbow flexion 0–130°, extension 0°, pronation 0–80°, supination 0–70°. Right wrist flexion 0–75°, extension 0–72°, radial deviation 0–25°, ulnar deviation 0–35°.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Movement</th><th>Muscle</th><th>Nerve Root</th><th>Finding</th></tr></thead><tbody>
+      <tr><td>Elbow flexion</td><td>Biceps brachii / Brachialis</td><td>C5–C6</td><td><span class="tt pos">3+/5 pre-treatment; 4+/5 post-treatment</span></td></tr>
+      <tr><td>Elbow extension</td><td>Triceps brachii</td><td>C7</td><td><span class="tt pos">3+/5 pre-treatment; 4+/5 post-treatment</span></td></tr>
+      <tr><td>Forearm pronation</td><td>Pronator teres / Pronator quadratus</td><td>C6–C7</td><td><span class="tt pos">3+/5 pre-treatment; 4+/5 post-treatment</span></td></tr>
+      <tr><td>Forearm supination</td><td>Supinator / Biceps brachii</td><td>C5–C6</td><td><span class="tt pos">3+/5 pre-treatment; 4+/5 post-treatment</span></td></tr>
+      <tr><td>Wrist extension</td><td>ECRB / ECRL / ECU</td><td>C6–C7</td><td><span class="tt pos">3+/5 pre-treatment; 4+/5 post-treatment</span></td></tr>
+      <tr><td>Wrist flexion</td><td>FCR / FCU</td><td>C6–C8</td><td><span class="tt pos">3+/5 pre-treatment; 4+/5 post-treatment</span></td></tr>
+    </tbody></table></div>`,
+    checklist: [
+      {
+        group: "Special Tests",
+        items: [
+          {
+            id: "mills_test",
+            label: "Mill's Test (passive wrist flexion with elbow extended, forearm pronated)",
+            result: `Positive — reproduced lateral epicondyle pain <span class="tt pos">Positive</span>`,
+            documented: true
+          },
+          {
+            id: "cozens_test",
+            label: "Cozen's Test (resisted wrist extension with elbow extended)",
+            result: `Positive — reproduced lateral epicondyle pain <span class="tt pos">Positive</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Palpation",
+        items: [
+          {
+            id: "palp_epicondyle",
+            label: "Palpation — right lateral epicondyle",
+            result: `Grade 3 tenderness (patient winces and withdraws); swelling noted at the extensor origin and upper third of the forearm; palpable trigger point at the extensor origin <span class="tt pos">Grade 3 tenderness</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Outcome Measures",
+        items: [
+          {
+            id: "vas",
+            label: "Visual Analogue Scale (VAS)",
+            result: `Pre-treatment: 7/10. Post-treatment: 3/10 <span class="tt notable">Clinically significant reduction</span>`,
+            documented: true
+          },
+          {
+            id: "prtee",
+            label: "Patient-Rated Tennis Elbow Evaluation (PRTEE)",
+            result: `Pre-treatment: 55/100. Post-treatment: 30/100 <span class="tt notable">Functional improvement</span>`,
+            documented: true
+          }
+        ]
+      }
+    ],
+    contextText: "Mill's and Cozen's tests are the two primary clinical tests for lateral epicondylitis and were both positive. Mill's test applies a passive stretch to the common extensor tendon, while Cozen's test applies resisted wrist extension load. Palpation confirmed the pain source at the lateral epicondyle with an associated myofascial trigger point at the extensor origin. Manual muscle testing was used to quantify the strength deficit across the affected upper limb, confirming generalised weakness on the right side compared to the left."
+  },
+  investigations: {
+    options: [
+      {
+        id: "clinical_dx",
+        label: "Clinical diagnosis (Mill's test, Cozen's test, palpation) — no imaging required",
+        consequence: null,
+        ordered: true,
+        result: `<p>Lateral epicondylitis confirmed clinically. Mill's and Cozen's tests were both positive. Grade 3 tenderness at the right lateral epicondyle with a palpable trigger point at the extensor origin. No imaging was performed or deemed necessary in this case.</p>`
+      },
+      {
+        id: "ultrasound_elbow",
+        label: "Diagnostic Ultrasound — Right Elbow",
+        consequence: "Ultrasound is a useful imaging modality for lateral epicondylitis and can demonstrate thickening, heterogeneity, calcifications, or partial tears of the common extensor tendon origin. It would be indicated if the clinical diagnosis were uncertain, if symptoms failed to respond to conservative management, or if a partial tendon tear were suspected. In this case, the clinical diagnosis was clear and treatment commenced without imaging.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "mri_elbow",
+        label: "MRI — Right Elbow",
+        consequence: "MRI provides the most detailed characterisation of soft tissue pathology at the lateral epicondyle, including partial or complete common extensor tendon tears, bone marrow oedema, and associated pathology. It is not required for a straightforward clinical presentation with positive provocation tests and is reserved for atypical cases, persistent non-responders, or surgical planning.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Lateral epicondylitis (common extensor tendinopathy)",
+        correct: true,
+        blurb: "Confirmed clinically. Both Mill's and Cozen's tests were positive, grade 3 tenderness was present at the right lateral epicondyle, and swelling was noted at the extensor origin. The mechanism (repetitive forearm loading in a racquet sport athlete combined with heavy lifting) and the 5-day onset are consistent with an acute-on-chronic overuse presentation of the common extensor origin, particularly the extensor carpi radialis brevis (ECRB)."
+      },
+      {
+        label: "Radial tunnel syndrome",
+        correct: false,
+        blurb: "Radial tunnel syndrome involves compression of the posterior interosseous nerve (deep radial nerve) as it passes through the radial tunnel, producing forearm aching and weakness. Unlike lateral epicondylitis, tenderness is typically located 3–4 cm distal to the lateral epicondyle over the radial tunnel rather than directly at the epicondyle. The clinical tests, pain location, and onset mechanism in this case favour lateral epicondylitis."
+      },
+      {
+        label: "Posterolateral elbow instability (lateral ulnar collateral ligament insufficiency)",
+        correct: false,
+        blurb: "LUCL insufficiency causes posterolateral rotatory instability and may produce lateral elbow pain in young athletes. The pivot shift test of the elbow would be positive. In this case, there are no features of instability documented, and the clinical findings of tendon-provocation-positive tests and extensor origin tenderness point to a tendinopathy rather than ligamentous pathology."
+      },
+      {
+        label: "Cervical radiculopathy (C6 or C7) with referred lateral elbow pain",
+        correct: false,
+        blurb: "C6 and C7 radiculopathy can produce lateral forearm and elbow pain. However, this typically involves neck pain, dermatomal sensory changes, and myotomal weakness in a nerve root distribution. The pain in this case is focal to the lateral epicondyle with a clear local tendinopathic mechanism, and there are no cervical spine symptoms documented."
+      },
+      {
+        label: "Partial or full common extensor tendon tear",
+        correct: false,
+        blurb: "Structural tears of the common extensor origin are possible, particularly in the context of acute heavy loading. A full tear would typically produce more profound weakness and a palpable defect. In this case, the presentation is consistent with tendinopathy rather than structural disruption, and clinical management commenced without imaging to characterise the tendon structurally."
+      },
+      {
+        label: "Olecranon bursitis",
+        correct: false,
+        blurb: "Olecranon bursitis produces posterior elbow swelling and tenderness over the olecranon bursa. It does not produce lateral epicondyle tenderness or positive resisted wrist extension tests, and would be readily distinguishable by the location of swelling (posterior, not lateral)."
+      },
+      {
+        label: "Medial epicondylitis (golfer's elbow)",
+        correct: false,
+        blurb: "Medial epicondylitis involves the common flexor tendon origin at the medial epicondyle, producing medial elbow pain aggravated by resisted wrist flexion and forearm pronation. The pain in this case is lateral, and positive Mill's and Cozen's tests confirm lateral extensor tendon involvement rather than medial flexor tendon pathology."
+      },
+      {
+        label: "Elbow joint synovitis or arthritis",
+        correct: false,
+        blurb: "Inflammatory or reactive synovitis may cause elbow swelling and diffuse pain, aggravated by full range of motion. In this case, the swelling is localised to the extensor origin rather than the elbow joint capsule, and the pattern of provocation (resisted wrist extension, passive wrist flexion) is tendon-specific rather than joint-specific."
+      }
+    ],
+    explanation: `<p>Lateral epicondylitis — more accurately termed common extensor tendinopathy — is one of the most common upper limb musculoskeletal presentations in clinical practice. It involves degenerative and micro-tearing changes at the origin of the common extensor tendon, particularly the extensor carpi radialis brevis (ECRB), at the lateral epicondyle of the humerus. Despite its traditional name, it is histopathologically characterised by angiofibroblastic dysplasia rather than acute inflammation.</p>
+<p>The condition is common in racquet sport athletes due to repetitive eccentric forearm loading during strokes, and is also seen in workers performing repetitive gripping and lifting tasks. The clinical diagnosis is straightforward when both Mill's test and Cozen's test are positive in the context of a compatible history.</p>
+<p>In this case, a 4-week multimodal physiotherapy programme combining the Cyriax technique (deep transverse friction massage followed by Mill's manipulation) with therapeutic ultrasound, isometric wrist stretching, stretching exercises, and ice therapy produced a clinically meaningful reduction in both pain (VAS 7/10 to 3/10) and function (PRTEE 55/100 to 30/100). Muscle strength improved from 3+/5 to 4+/5 across all affected movements, and ROM improved across elbow and wrist planes.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "cyriax_technique",
+        label: "Cyriax technique: deep transverse friction massage followed immediately by Mill's manipulation (3×/week, 4 weeks)",
+        selected: true,
+        explanation: `<strong>Appropriate — documented as the primary specific intervention.</strong> The Cyriax technique is performed as deep transverse friction applied to the tendon origin for approximately 10 minutes, immediately followed by Mill's manipulation (passive wrist flexion with elbow extended). The two components must be applied in sequence to constitute a Cyriax intervention. This was the specific intervention used in this case, delivered over 12 sessions (3 times per week for 4 weeks).`
+      },
+      {
+        id: "ultrasound_therapy",
+        label: "Therapeutic ultrasound (3 MHz, 1 W/m², 8 min, 3×/week)",
+        selected: true,
+        explanation: `<strong>Appropriate as part of multimodal programme.</strong> Therapeutic ultrasound was applied using slow circular motion at 3 MHz and 1 W/m² for 8 minutes per session. It was used to promote tissue healing, increase collagen synthesis, raise cellular activity in the damaged tendon, and improve flexibility and elasticity of the extensor muscle and tendon fibres. This was a documented component of the treatment plan.`
+      },
+      {
+        id: "stretching_isometrics",
+        label: "Isometric wrist stretching (3–5 sec hold, 10 reps daily) and general stretching exercises",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Isometric wrist joint stretches were used to activate the extensor muscles without altering tendon length, reducing strain on the damaged tendon while improving blood flow and promoting recovery. General stretching exercises (10–30 sec hold, 10 reps daily) were added to increase blood flow, reduce inflammation, and encourage tendon healing.`
+      },
+      {
+        id: "immediate_sport_return",
+        label: "Immediate return to full badminton training and competitive play",
+        selected: false,
+        explanation: `<strong>Not appropriate at the acute stage.</strong> Returning to full repetitive eccentric loading of the common extensor tendon during active inflammation and tendinopathy would risk symptom exacerbation and progression to a more chronic condition. Load management and gradual reintroduction of sport-specific activity after an adequate period of tendon healing are the appropriate approach.`
+      },
+      {
+        id: "corticosteroid_injection",
+        label: "Immediate corticosteroid injection into the lateral epicondyle",
+        selected: false,
+        explanation: `<strong>Not the first-line approach for an acute 5-day presentation.</strong> Corticosteroid injections may provide short-term pain relief in lateral epicondylitis but have been shown to have inferior long-term outcomes compared to physiotherapy in most trials, and carry risk of tendon weakening with repeated injections. Physiotherapy is the recommended first-line approach, with injection considered for persistent cases failing conservative management.`
+      }
+    ],
+    outcomeText: `Following a 4-week programme of 12 physiotherapy sessions (3 days per week), comprising the Cyriax technique, therapeutic ultrasound, isometric and stretching exercises, and ice therapy, the patient demonstrated clinically meaningful improvements. VAS reduced from 7/10 to 3/10. PRTEE scale improved from 55/100 to 30/100. Right elbow and wrist ROM improved across all planes (e.g., elbow flexion 0–120° to 0–130°; wrist extension 0–63° to 0–72°; ulnar deviation 0–22° to 0–35°). Manual muscle testing improved from 3+/5 to 4+/5 across all tested upper limb movements.`
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Lateral Epicondylitis (Common Extensor Tendinopathy)</strong><br>Acute overuse injury in a young racquet sport athlete",
+    outcomes: [
+      { label: "Published Source", text: "Nagore A, Samal S, Kolhe PD. Cureus. 2024;16(6):e61813" },
+      { label: "PMID / PMC", text: "PMID: 38975459 — PMC11227430 (open access)" },
+      { label: "Final Diagnosis", text: "Lateral epicondylitis — confirmed by positive Mill's and Cozen's tests, grade 3 tenderness at the right lateral epicondyle" },
+      { label: "Intervention", text: "Cyriax technique (deep transverse friction + Mill's manipulation) + therapeutic ultrasound + isometric stretching + ice therapy × 12 sessions; VAS 7→3, PRTEE 55→30, ROM and strength improved across all planes" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Lateral epicondylitis is diagnosed clinically with positive Mill's and Cozen's tests — imaging is not required for a straightforward presentation. The ECRB is the most commonly involved structure, and the condition is accurately characterised as a tendinopathy rather than true acute inflammation." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Radial tunnel syndrome and lateral epicondylitis share a lateral elbow pain distribution and can coexist. The key distinction is that radial tunnel tenderness is located 3–4 cm distal to the lateral epicondyle at the radial tunnel, not at the epicondyle itself. When both Mill's and Cozen's tests are positive and tenderness is at the epicondyle, lateral epicondylitis is the primary diagnosis." },
+      { type: "pearl", tag: "Clinical Pearl", text: "The Cyriax technique — deep transverse friction massage followed immediately by Mill's manipulation — is a specific, evidence-referenced physiotherapy intervention for lateral epicondylitis. The two components must be applied in the specified sequence to constitute the correct technique. It is designed to break down adhesive scar tissue and restore tendon mobility." },
+      { type: "key", tag: "Scope of Practice", text: "Lateral epicondylitis is squarely within the scope of chiropractic and physiotherapy practice. Clinical diagnosis with Mill's and Cozen's tests, combined with a structured multimodal programme including manual therapy, therapeutic exercise, and load management, is the recommended approach. Imaging and specialist referral are reserved for non-responders or atypical presentations." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Imaging is not required to diagnose lateral epicondylitis in a typical presentation. Ultrasound can characterise the tendon structurally (thickening, heterogeneity, calcification, tears) and is useful when clinical diagnosis is uncertain, when a structural tear is suspected, or when the patient fails to respond to 6–12 weeks of conservative management." }
+    ]
+  },
+  cpd: {
+    topics: "Lateral epicondylitis, common extensor tendinopathy, ECRB, Mill's test, Cozen's test, Cyriax technique, deep transverse friction, lateral elbow pain differential",
+    keyPoints: [
+      "Lateral epicondylitis is diagnosed clinically using Mill's and Cozen's tests in conjunction with lateral epicondyle tenderness — imaging is not required for a straightforward presentation.",
+      "The ECRB tendon is the primary structure involved in approximately 90% of cases of lateral epicondylitis, and the histopathology is a degenerative tendinopathy rather than acute inflammation.",
+      "Radial tunnel syndrome can mimic lateral epicondylitis — the key distinguishing feature is the location of tenderness (epicondyle vs. 3–4 cm distal at the radial tunnel).",
+      "The Cyriax technique (deep transverse friction massage followed immediately by Mill's manipulation) is a specific physiotherapy intervention combining two components that must be applied in sequence.",
+      "Load management and graduated return to sport-specific activity are essential components of lateral epicondylitis rehabilitation — immediate return to full training perpetuates the overuse cycle."
+    ]
+  }
+},
+{
+  id: "009",
+  title: "A 52-year-old woman presents with 3 years of constant neck pain and left-sided facial pain, weakness, and altered sensation that began after a dental hygiene incident and has not resolved despite medication and acupuncture",
+  category: "Mixed",
+  secondaryCategory: "Neuro",
+  difficulty: "Advanced",
+  estimatedTime: "20–28 mins",
+  source: {
+    short: "Chu EC, Trager RJ, Chen AT\nAm J Case Rep. 2022;23:e937511\nPMID: 36117309\nPMC: PMC9501759\nOpen access ✓",
+    full: "Chu EC, Trager RJ, Chen AT. Concurrent Bell's Palsy and Facial Pain Improving with Multimodal Chiropractic Therapy: A Case Report and Literature Review. Am J Case Rep. 2022;23:e937511. doi: 10.12659/AJCR.937511. PMID: 36117309. PMC9501759. Open access."
+  },
+  patient: {
+    ageSex: "52-year-old female",
+    chiefComplaint: "Constant left-sided facial pain, facial weakness, and paresthesia with concurrent neck pain",
+    duration: "3 years",
+    priorProviders: "Primary care physician; dentist; Chinese medicine practitioner",
+    priorDiagnoses: "Bell's palsy — diagnosed by all three prior providers; gingivitis diagnosed by dentist"
+  },
+  history: {
+    content: `<p>A 52-year-old Asian woman presented to a chiropractor with a 3-year history of constant bilateral, non-radicular neck pain, and left-sided facial pain, paresis, and paresthesia rated 4/10 on the numeric rating scale. Symptoms began after she cleaned her left maxillary molars with a toothpick, which resulted in an episode of gum bleeding. Over the following few days, her pain and paresthesia spread to the left eyebrow, maxillary, and temporomandibular regions, accompanied by onset of left-sided facial palsy and tinnitus. Temporomandibular region pain was worsened by talking. She described an increased sensitivity and localised tenderness to touch on the left side of her face. She had difficulty drinking from a cup due to inability to form a seal with her lips, difficulty with facial expressions including smiling, a slight left eyelid droop at rest worsened with facial expressions (synkinesis), difficulty raising the left eyelid and eyebrow, and inability to fully close the left eye.</p>
+<p>She had no dysphonia, dysphagia, or dysarthria. She denied any brief paroxysmal attacks of facial pain. She endorsed occasional cold sores around her lips. She denied loss of balance, extremity weakness, vision problems, photophobia, cognitive difficulties, loss of taste or smell, upper extremity symptoms, or head or neck trauma. No history of hypertension, diabetes, or seizures. Non-smoker, no alcohol. No family history of neurological disorders or cancer.</p>
+<p>She had previously been treated with oral acyclovir and prednisone by her primary care doctor, Chinese herbal medicine by a Chinese medicine practitioner, and multiple acupuncture sessions. She had not been recommended botulinum toxin injection. Her symptoms had improved by approximately 60% during the first year of her condition before reaching a plateau and remaining unchanged for the 2 years prior to chiropractic presentation. Over-the-counter analgesics and NSAIDs provided no relief. Her WHOQOL-100 score was 72% at presentation.</p>`,
+    clinicalNote: "The combination of ipsilateral facial palsy and facial pain with neck pain is an atypical cranial nerve presentation that warrants careful diagnostic evaluation before commencing any spinal treatment. A cervical spine MRI is appropriate at first presentation given the 3-year duration, neurological signs, and failure of all prior care. The critical safety question is whether central pathology (tumour, multiple sclerosis, vascular lesion) has been excluded."
+  },
+  examination: {
+    autoROM: `<p>Active cervical ROM was documented as full and pain-free in all directions at presentation.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Movement</th><th>Muscle</th><th>Nerve Root</th><th>Finding</th></tr></thead><tbody>
+      <tr><td>Upper extremity strength</td><td>All upper limb groups</td><td>C5–T1</td><td><span class="tt normal">Normal bilaterally</span></td></tr>
+      <tr><td>Muscle stretch reflexes</td><td>Upper and lower extremity</td><td>Multiple</td><td><span class="tt normal">Normal, no pathological reflexes (Babinski negative)</span></td></tr>
+    </tbody></table></div>`,
+    checklist: [
+      {
+        group: "Cranial Nerve Examination",
+        items: [
+          {
+            id: "cn7_facial",
+            label: "Cranial Nerve VII (Facial nerve) — motor assessment",
+            result: `Left-sided facial paresis: inability to pucker/purse lips, puff cheeks, fully close left eye, fully elevate left eyebrow, or fully smile on the left side; left eyelid drooping at rest worsened with facial expressions (synkinesis); House-Brackmann Grade IV <span class="tt pos">Grade IV Facial Palsy (left)</span>`,
+            documented: true
+          },
+          {
+            id: "cn_remainder",
+            label: "Cranial nerve examination — all other cranial nerves",
+            result: `Unremarkable, including corneal reflex <span class="tt normal">Normal</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Cerebellar and Balance Testing",
+        items: [
+          {
+            id: "romberg",
+            label: "Romberg's Test",
+            result: `No balance abnormality <span class="tt normal">Normal</span>`,
+            documented: true
+          },
+          {
+            id: "coordination",
+            label: "Coordination testing (dysdiadochokinesia, intention tremor, past pointing)",
+            result: `No dysdiadochokinesia, intention tremor, or past pointing <span class="tt normal">Normal</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Palpation",
+        items: [
+          {
+            id: "palp_face",
+            label: "Facial palpation — left medial eyebrow and maxilla",
+            result: `Tenderness with palpation of the left medial eyebrow and maxilla <span class="tt pos">Tender</span>`,
+            documented: true
+          },
+          {
+            id: "palp_cervical",
+            label: "Cervical paraspinal palpation",
+            result: `Bilateral erector spinae hypertonicity throughout the cervical spine; motion restriction with tenderness at C2–C4 and T2–T5 levels <span class="tt notable">Hypertonic; segmental restriction C2–C4 and T2–T5</span>`,
+            documented: true
+          }
+        ]
+      }
+    ],
+    contextText: "The cranial nerve examination was the critical first assessment step given the facial palsy presentation. House-Brackmann grading quantifies the severity of facial nerve palsy. The full cranial nerve examination was otherwise unremarkable, with an intact corneal reflex. Romberg's and coordination testing excluded vestibulo-cerebellar involvement. Upper extremity strength and reflexes were normal, excluding a central lesion producing motor tract involvement. The absence of physical signs of functional weakness (e.g., intact contraction of lower facial muscles at rest) supports an organic rather than functional facial palsy."
+  },
+  investigations: {
+    options: [
+      {
+        id: "mri_cervical",
+        label: "Urgent cervical spine MRI",
+        consequence: null,
+        ordered: true,
+        result: `<p>Low-lying cerebellar tonsils (not meeting the 5 mm threshold for Arnold-Chiari grade 1; no syringomyelia; no cerebellar signs on examination — considered an asymptomatic incidental finding). Loss of cervical lordosis. Degenerative spondylosis. Disc desiccation and mild disc bulges at C2/3, C3/4, C4/5, C5/6, and C6/7. Posterior annular fissures at C3/4 and C6/7. No myelopathy. No other serious pathology. No contraindications to spinal manipulation or manual therapies to the cervical spine identified.</p>`
+      },
+      {
+        id: "brain_mri",
+        label: "Brain MRI",
+        consequence: "Brain MRI would be the appropriate investigation to definitively exclude central nervous system pathology including tumour, multiple sclerosis plaques, vascular lesion, or brainstem pathology. In this case, it was not performed at initial presentation but the clinical features were not suggestive of CNS pathology: the patient had no widespread neurological deficits, no upper motor neurone signs, preserved ability to raise the eyebrow (reducing the likelihood of a central facial palsy), normal coordination and balance, and a rapid positive response to treatment in retrospect supporting a peripheral rather than central aetiology.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "viral_titres",
+        label: "Herpesvirus serological testing (HSV-1, VZV) / viral titres",
+        consequence: "Herpesvirus reactivation (HSV-1, VZV) is the most commonly proposed aetiology for Bell's palsy. Viral titres or PCR could provide aetiological confirmation and guide further antiviral treatment decisions. In this case, viral testing was not documented as having been performed at the time of chiropractic presentation, though the prior medical management had already included acyclovir, and the patient's history of cold sores was consistent with HSV-1 as a likely trigger.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Bell's palsy with concurrent trigeminal neuropathy (cranial polyneuritis)",
+        correct: true,
+        blurb: "Confirmed diagnosis across all prior providers and consistent with findings at chiropractic presentation. The patient had classic peripheral facial nerve palsy (Grade IV House-Brackmann) with ipsilateral facial pain and paresthesia in a maxillary-region distribution suggestive of V2 trigeminal nerve involvement. The onset after possible minor gum trauma causing herpesvirus reactivation, and a history of cold sores, supports a viral aetiology. Cervical spine MRI excluded central pathology."
+      },
+      {
+        label: "Central facial palsy (UMN lesion — stroke, tumour, MS plaque)",
+        correct: false,
+        blurb: "Central facial palsy spares the upper face (frontalis, orbicularis oculi) because of bilateral cortical representation of the forehead musculature. In this case, the patient could not raise her left eyebrow or fully close her left eye — signs of lower motor neurone (peripheral) involvement of CN VII. Preserved ability to raise the eyebrow significantly reduces the likelihood of central pathology. Normal coordination, reflexes, and Romberg's test further argue against a central lesion."
+      },
+      {
+        label: "Ramsay Hunt syndrome (VZV reactivation in the geniculate ganglion)",
+        correct: false,
+        blurb: "Ramsay Hunt syndrome presents with facial palsy, ear pain, and herpetic vesicles in the external ear canal or on the palate. The patient denied hearing problems beyond tinnitus, and there was no mention of vesicular eruption in the ear canal. The absence of these specific features makes Ramsay Hunt less likely than simple Bell's palsy with dental-trigger herpesvirus reactivation."
+      },
+      {
+        label: "Trigeminal neuralgia (primary)",
+        correct: false,
+        blurb: "Trigeminal neuralgia presents with brief, paroxysmal, shock-like pain in the trigeminal distribution triggered by light touch. The patient explicitly denied having any brief paroxysmal attacks of facial pain — her pain was constant and varied with activity rather than paroxysmal. This distinguishes trigeminal neuropathy (constant sensory and pain involvement) from classic trigeminal neuralgia."
+      },
+      {
+        label: "Parotid gland tumour (compressing CN VII)",
+        correct: false,
+        blurb: "Malignant parotid tumours are an important but rare cause of facial nerve palsy. They typically present with a palpable parotid mass, gradual onset of palsy, and may be associated with pain. The 3-year history with no mention of a parotid mass, the viral onset trigger, and the presence of facial pain suggesting concurrent trigeminal involvement make a parotid tumour unlikely, though cervical or parotid imaging would be appropriate if there were any uncertainty."
+      },
+      {
+        label: "Multiple sclerosis (demyelinating cranial neuropathy)",
+        correct: false,
+        blurb: "MS can cause facial nerve palsy and sensory symptoms through brainstem demyelinating plaques. Typically, other features of MS would be expected — optic neuritis, limb sensory disturbance, bladder dysfunction, Lhermitte's sign. The patient denied extremity symptoms, and the neurological examination was entirely normal beyond the cranial nerve findings. Brain MRI would definitively exclude this."
+      },
+      {
+        label: "Temporomandibular joint disorder (TMD)",
+        correct: false,
+        blurb: "TMD can produce facial pain in the temporomandibular region with worsening on jaw movement, and may coexist with neck pain. The patient had temporomandibular region pain worsened by talking. However, TMD does not account for the facial palsy, the left eyebrow paresthesia, or the V2 distribution sensory changes. These features confirm a cranial neuropathy rather than isolated TMJ pathology."
+      },
+      {
+        label: "Cervicogenic headache causing referred facial pain",
+        correct: false,
+        blurb: "The trigeminocervical nucleus converges sensory input from the upper cervical spine and the trigeminal distribution. Upper cervical dysfunction can theoretically contribute to referred facial pain. The chiropractor identified motion restriction at C2–C4, which is within the cervicogenic referral zone. However, cervicogenic referral alone does not produce facial palsy, and the primary diagnosis is Bell's palsy with concurrent trigeminal neuropathy — the cervical spine was a contributing rather than primary pathology."
+      }
+    ],
+    explanation: `<p>Bell's palsy is a peripheral facial nerve (CN VII) palsy of presumed viral aetiology — most commonly herpesvirus reactivation — presenting as sudden-onset unilateral facial weakness or paralysis. In a subset of patients, co-involvement of the trigeminal nerve (CN V) produces concurrent facial pain and sensory deficits, termed cranial polyneuritis. This co-occurrence is more common than traditionally recognised, with studies showing 25–28% of Bell's palsy patients demonstrating trigeminal evoked potential abnormalities or sensory deficits.</p>
+<p>The key diagnostic priority in any facial palsy presentation is distinguishing lower motor neurone (peripheral) from upper motor neurone (central) facial palsy. The preserved ability to raise the eyebrow is a critical clinical sign of central origin. In this patient, the inability to raise the left eyebrow confirms peripheral CN VII involvement. Normal cerebellar signs, reflexes, and upper extremity motor function excluded a brainstem or cortical lesion.</p>
+<p>The chiropractor ordered urgent cervical MRI at the first visit — a clinically justified decision given the 3-year duration and neurological signs. MRI excluded myelopathy and central pathology, confirming no contraindications to spinal manipulation. The patient improved dramatically with multimodal chiropractic care (SMT at C2, T2–T5; cervical traction; IASTM; neck exercises), with WHOQOL improving from 72% to 98% and near-complete resolution of both facial palsy and pain at 1-month follow-up. The proposed mechanism involves mechanoreceptive input from upper cervical spine manipulation modulating nociceptive signalling along the spinal trigeminal tract through the trigeminocervical nucleus.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "urgent_mri",
+        label: "Urgent cervical spine MRI at first visit to exclude central pathology before commencing treatment",
+        selected: true,
+        explanation: `<strong>Appropriate and necessary.</strong> The 3-year history of cranial nerve palsy with neurological signs and failure of all prior conservative care warranted urgent imaging before commencing spinal manipulation. The cervical MRI confirmed no myelopathy or serious central pathology, providing the clinical clearance to proceed. Ordering MRI on the first visit is documented as the correct decision in this case.`
+      },
+      {
+        id: "smt_cervical_thoracic",
+        label: "High-velocity low-amplitude SMT at C2, T2–T3, and T4–T5 (levels of restriction and tenderness)",
+        selected: true,
+        explanation: `<strong>Appropriate after imaging clearance.</strong> SMT was directed at the segments identified on motion palpation as hypomobile and tender: C2, and upper and mid-thoracic segments T2–T5. Cervical manipulation was avoided at the levels of disc desiccation and fissuring (C3/4, C6/7). The patient reported significant facial and neck pain reduction after the first week of care. The proposed mechanism involves suppression of nociceptive signalling along the spinal trigeminal tract via mechanoreceptive input from upper cervical SMT.`
+      },
+      {
+        id: "cervical_traction",
+        label: "Intermittent mechanical cervical traction (20-minute sessions)",
+        selected: true,
+        explanation: `<strong>Appropriate as adjunct.</strong> Mechanical cervical traction was applied to provide axial distraction, alleviate neck pain, relax hypertonic cervical musculature, and address degenerative disc symptoms identified on MRI. Traction was performed as a separate intervention from SMT, targeting the disc-related spondylosis.`
+      },
+      {
+        id: "hvla_without_mri",
+        label: "Immediate HVLA cervical manipulation at first visit without imaging",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> Proceeding directly to high-velocity thrust manipulation of the cervical spine in a patient with a 3-year cranial nerve deficit, unexplained neurological signs, and failure of all prior care without first excluding central pathology (tumour, MS, vascular lesion) would be clinically negligent. MRI must be performed before any thrust manipulation is considered in this type of presentation.`
+      },
+      {
+        id: "no_treatment_refer",
+        label: "Decline treatment and refer directly to neurology without trialling chiropractic care",
+        selected: false,
+        explanation: `<strong>Not required in this case — though referral is always an option.</strong> The patient had already been seen by a primary care physician and two other practitioners without resolution. The cervical MRI excluded serious pathology. With appropriate informed consent and imaging clearance, a trial of conservative chiropractic care was clinically justified and produced dramatic improvement. Referral to neurology remains appropriate if treatment fails or new neurological signs emerge.`
+      }
+    ],
+    outcomeText: `Following a multimodal chiropractic programme — HVLA SMT at C2, T2–T3, and T4–T5; intermittent mechanical cervical traction; instrument-assisted soft tissue manipulation; and active cervical retraction exercises plus upper trapezius stretching — the patient reported facial and neck pain reduction to 2/10 after the first week of care (3 sessions). Treatment frequency reduced to once weekly for 3 additional weeks. At 1-month follow-up, WHOQOL-100 improved from 72% to 98%. Face pain, neck pain, tinnitus, and all facial motor deficits were resolved, with residual mild left eyelid synkinesis as the only remaining symptom. No adverse outcomes were documented.`
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Bell's Palsy with Concurrent Trigeminal Neuropathy</strong><br>Cranial polyneuritis of presumed viral aetiology, plateau phase — improved with multimodal chiropractic care",
+    outcomes: [
+      { label: "Published Source", text: "Chu EC, Trager RJ, Chen AT. Am J Case Rep. 2022;23:e937511" },
+      { label: "PMID / PMC", text: "PMID: 36117309 — PMC9501759 (open access)" },
+      { label: "Final Diagnosis", text: "Bell's palsy (CN VII, Grade IV House-Brackmann) with concurrent trigeminal neuropathy (V2 distribution) — presumed viral aetiology (HSV-1 reactivation post-dental trauma)" },
+      { label: "Intervention", text: "Urgent cervical MRI → HVLA SMT at C2 and T2–T5 + cervical traction + IASTM + exercises; WHOQOL 72%→98%; near-complete resolution of facial palsy and all pain at 1 month" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Bell's palsy can co-occur with trigeminal neuropathy — 25–28% of Bell's palsy patients show trigeminal pathway involvement. When a facial palsy patient also has facial pain and neck pain, the upper cervical spine may be contributing through the trigeminocervical nucleus, and manual therapy directed at these levels may produce improvement beyond what medical management achieves." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Central versus peripheral facial palsy is the critical first distinction. Inability to raise the eyebrow (frontalis weakness) confirms lower motor neurone (peripheral) CN VII involvement. If the forehead is spared and the patient CAN raise the eyebrow, a central UMN lesion must be excluded urgently with brain imaging." },
+      { type: "pearl", tag: "Clinical Pearl", text: "Persistent or plateaued Bell's palsy with concurrent facial pain and neck pain is a presentation that has responded positively to multimodal chiropractic care including upper cervical SMT in 13 published case reports. The proposed mechanism involves modulation of the spinal trigeminal tract via mechanoreceptive input from upper cervical segmental manipulation." },
+      { type: "key", tag: "Scope of Practice", text: "Cranial nerve presentations attending a chiropractic clinic require careful diagnostic evaluation before any manual intervention. Urgent imaging to exclude central pathology is the correct first step. Chiropractic management is appropriate after this clearance, and this case demonstrates both the diagnostic responsibility and the therapeutic potential of the chiropractor as a portal-of-entry provider for complex neurological presentations." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Cervical spine MRI excludes myelopathy and central pathology at the spinal level but does not evaluate the brain or posterior fossa. In a patient with unexplained cranial nerve deficits of long duration, brain MRI is the investigation that definitively excludes a space-occupying lesion or MS plaque. This was not performed in this case but should be considered in any facial palsy presentation where the aetiology is unclear." }
+    ]
+  },
+  cpd: {
+    topics: "Bell's palsy, trigeminal neuropathy, cranial polyneuritis, CN VII, House-Brackmann scale, peripheral vs central facial palsy, trigeminocervical nucleus, multimodal chiropractic, upper cervical SMT",
+    keyPoints: [
+      "Bell's palsy can coexist with trigeminal neuropathy in up to 25–28% of cases, producing facial pain and sensory changes in addition to the motor palsy — this combination is termed cranial polyneuritis.",
+      "The critical diagnostic distinction is lower vs upper motor neurone facial palsy: inability to raise the eyebrow confirms peripheral CN VII involvement; spared forehead musculature (UMN pattern) requires urgent brain imaging.",
+      "Imaging — at minimum cervical spine MRI, ideally brain MRI — should be performed before commencing any spinal manipulation in a patient presenting with unexplained cranial nerve deficits of long duration.",
+      "Multimodal chiropractic care including upper cervical spine SMT has been reported to improve Bell's palsy with concurrent face and neck pain in 13 published cases, possibly via modulation of the spinal trigeminal tract through the trigeminocervical nucleus.",
+      "A history of cold sores (HSV-1) combined with a dental trigger event (gum trauma) is consistent with herpetic aetiology of Bell's palsy — dental manipulation is a documented trigger for herpesvirus reactivation."
+    ]
+  }
+},
+{
+  id: "010",
+  title: "A 40-year-old woman presents with 3 years of headaches and neck pain that have worsened with prolonged mobile phone and computer use, along with a noticeable hump at the base of her neck",
+  category: "Thoracic",
+  secondaryCategory: "Headache",
+  difficulty: "Intermediate",
+  estimatedTime: "15–20 mins",
+  source: {
+    short: "Chau C, Chu EC, Huang KH, et al.\nJ Med Life. 2023;16(6):957–962\nPMID: 37675179\nPMC: PMC10478669\nOpen access ✓",
+    full: "Chau C, Chu EC, Huang KH, Tam D, Cheung G. Remission of Dowager's hump by manipulative correction of spinal alignment: a case report. J Med Life. 2023;16(6):957–962. doi: 10.25122/jml-2023-0026. PMID: 37675179. PMC10478669. Open access."
+  },
+  patient: {
+    ageSex: "40-year-old female",
+    chiefComplaint: "Persistent headaches and neck pain with a noticeable hump at the base of the neck, worsening with screen use",
+    duration: "3 years",
+    priorProviders: "GP (prescribed celecoxib and etoricoxib; 2 months prior to chiropractic presentation); no physiotherapy documented",
+    priorDiagnoses: "Cervicalgia related to osteoarthritis — diagnosed by GP based on cervical and thoracic X-ray findings"
+  },
+  history: {
+    content: `<p>A 40-year-old female office clerk presented to a chiropractor with a 3-year history of headaches and neck pain. She reported bilateral upper trapezius pain, more severe on the right side, which extended into the right scapula and upper chest area. She described the pain as a persistent ache, rated 7/10 on the Numeric Pain Rating Scale. The patient also had an exaggerated anterior kyphotic curvature of the thoracic spine that had developed gradually.</p>
+<p>Her symptoms began with upper limb weakness and headaches originating at the base of the skull and radiating up the right side behind her ear. In the second year she had intermittent visual disturbance, hand numbness, heartburn, shortness of breath, heart palpitations, and muscle cramps. She found that reading or using a mobile device for more than 30 minutes increased her muscle stiffness and neck movement difficulty. She had a medical history of hypertension but denied trauma, fever, mental health history, or bowel or bladder change. She had taken over-the-counter pain medications without relief. She was prescribed NSAIDs (celecoxib and etoricoxib) and home stretching exercises by her GP 2 months prior, with no benefit. Her WHOQOL was 72% at presentation.</p>`,
+    clinicalNote: "A 40-year-old with upper limb weakness, visual disturbance, hand numbness, shortness of breath, and heart palpitations presenting alongside a chronic structural deformity requires careful neurological examination to exclude myelopathy and red flag pathology before establishing a musculoskeletal diagnosis. The thoracic kyphosis Cobb angle of 45° is above the pathological threshold and should be documented on standing radiograph."
+  },
+  examination: {
+    autoROM: `<p>Cervical ROM restricted at 15° extension (normal >50°) and restricted at 50° of bilateral rotation (normal >80°). Full ROM returned to normal bilaterally at 9-month follow-up. The patient was unable to maintain her entire spine in contact with the wall while standing.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Movement</th><th>Muscle</th><th>Nerve Root</th><th>Finding</th></tr></thead><tbody>
+      <tr><td colspan="4" style="text-align:center; font-style:italic;">Neurological examination was unremarkable. Cranial nerve, sensory, motor, reflex, balance, coordination, and gait assessments were all documented as normal. No myelopathic signs identified.</td></tr>
+    </tbody></table></div>`,
+    checklist: [
+      {
+        group: "Postural Assessment",
+        items: [
+          {
+            id: "posture_obs",
+            label: "Standing postural observation",
+            result: `Forward head posture and thoracic hyperkyphosis with the upper back pronouncedly shifted forward; elevated left shoulder; Dowager's hump visible at the cervicothoracic junction; unable to stand with full spine contact against wall <span class="tt notable">Forward head posture + cervicothoracic junction hump</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Palpation",
+        items: [
+          {
+            id: "palp_trigger",
+            label: "Myofascial trigger point palpation",
+            result: `Trigger points and tight muscles palpated at deep upper cervical extensors, shoulder protractors and elevators, upper abdominals, anterior intercostals, and latissimus dorsi; greater prominence on the right side <span class="tt notable">Multiple active myofascial trigger points</span>`,
+            documented: true
+          },
+          {
+            id: "motion_palp",
+            label: "Spinal motion palpation",
+            result: `Intersegmental dysfunction identified at C2–3, C5–6, T1–2, T2–3, and T6–7 levels <span class="tt notable">Segmental restriction at cervicothoracic junction and mid-thoracic levels</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Radiographic Assessment",
+        items: [
+          {
+            id: "xray_kyphosis",
+            label: "Standing full-spine radiograph — kyphosis and scoliosis Cobb angles",
+            result: `Kyphosis Cobb angle 45° (normal 20–40°); scoliosis Cobb angle 9°; loss of cervical lordosis; disc space narrowing at C4–5, C5–6, C6–7 with marginal osteophytes; dextro-convexity of the thoracic spine. Post-treatment (9 months): kyphosis reduced to 30°, scoliosis reduced to 1°. <span class="tt pos">Kyphosis 45° — above pathological threshold</span>`,
+            documented: true
+          }
+        ]
+      }
+    ],
+    contextText: "Standing full-spine radiography using EOS® technology was used to quantify the kyphosis angle (Cobb method: T1 upper endplate to T12 lower endplate) and the scoliosis Cobb angle. A kyphosis Cobb angle above 40° constitutes hyperkyphosis by definition. Postural photography documented the Dowager's hump at the cervicothoracic junction. The neurological examination was performed to exclude myelopathy given the reported upper limb weakness and hand numbness — the normal examination is a critical finding that supports a musculoskeletal rather than spinal cord aetiology."
+  },
+  investigations: {
+    options: [
+      {
+        id: "xray_standing_spine",
+        label: "Standing full-spine radiographs (EOS® technology — cervical and thoracic Cobb angles)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Loss of cervical lordosis. Disc space narrowing at C4–5, C5–6, C6–7 with marginal osteophytes. Thoracic kyphosis Cobb angle 45° (pathological threshold >40°). Scoliosis Cobb angle 9°. Dextro-convexity of the thoracic spine. Uneven shoulders. Follow-up at 9 months: kyphosis reduced from 45° to 30°; scoliosis from 9° to 1°; improved shoulder balance and spinal alignment.</p>`
+      },
+      {
+        id: "mri_cervical",
+        label: "MRI — Cervical Spine",
+        consequence: "Given the reported upper limb weakness, hand numbness, and long symptom duration, cervical spine MRI would be the most appropriate investigation to exclude disc herniation with myelopathy or radiculopathy. The published source describes cervical and thoracic radiographs as the investigations performed. In clinical practice, the reported symptoms of upper limb weakness and hand numbness in this case would warrant cervical MRI to exclude cord compression before attributing these symptoms to postural hyperkyphosis alone.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "cardiac_workup",
+        label: "Cardiac and respiratory investigations (for palpitations, shortness of breath)",
+        consequence: "The patient reported shortness of breath and heart palpitations in the second year of her symptoms. These symptoms may have a postural origin (thoracic hyperkyphosis increasing thoracic stiffness and restricting chest wall expansion) or may represent an independent cardiovascular or respiratory condition. In clinical practice, a patient presenting with palpitations and shortness of breath should be screened for primary cardiac and respiratory pathology before attributing these symptoms to a spinal structural disorder.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Thoracic hyperkyphosis (Dowager's hump) with cervicogenic headache",
+        correct: true,
+        blurb: "Confirmed working diagnosis at chiropractic presentation. Thoracic kyphosis Cobb angle of 45° exceeds the pathological threshold of 40°. Loss of cervical lordosis, cervicothoracic junction prominence, restricted cervical extension and rotation, and myofascial trigger points at the cervicothoracic junction are all consistent with postural hyperkyphosis causing mechanical cervicogenic headache. A normal neurological examination excludes myelopathy."
+      },
+      {
+        label: "Cervical spondylosis with cervicogenic headache",
+        correct: false,
+        blurb: "Disc space narrowing at C4–5, C5–6, and C6–7 with marginal osteophytes was documented on radiograph, and the GP had diagnosed cervicalgia related to osteoarthritis. Cervical spondylosis can contribute to cervicogenic headache through facet arthropathy and disc degeneration. However, the thoracic hyperkyphosis and forward head posture are the primary postural drivers of the cervical degeneration and headache in this case, and must be addressed structurally."
+      },
+      {
+        label: "Cervical radiculopathy",
+        correct: false,
+        blurb: "The patient had upper limb weakness and hand numbness, which are features of cervical radiculopathy. However, the neurological examination was entirely normal — no dermatomal sensory loss, myotomal weakness, or reflex changes were documented. The symptoms may represent referred symptoms from myofascial trigger points rather than true radiculopathy, and a normal neurological examination argues against significant nerve root compression."
+      },
+      {
+        label: "Degenerative cervical myelopathy",
+        correct: false,
+        blurb: "Upper limb weakness, hand numbness, and a structurally compromised cervical spine raise the possibility of myelopathy. However, the neurological examination — including motor strength, reflexes, coordination, and gait — was documented as entirely normal, with no UMN signs (Hoffman's, Babinski, hyperreflexia). The absence of myelopathic signs on examination and the postural attribution of symptoms support a non-myelopathic diagnosis."
+      },
+      {
+        label: "Thoracic outlet syndrome",
+        correct: false,
+        blurb: "TOS involves compression of the brachial plexus or subclavian vessels at the thoracic outlet, producing arm and hand symptoms. The forward head posture and elevated shoulder documented in this case are risk factors. However, TOS typically presents with positional upper extremity symptoms rather than primarily cervicogenic headache and thoracic structural deformity, and was listed as part of the chiropractor's differential but was not the working diagnosis."
+      },
+      {
+        label: "Scheuermann's disease (juvenile thoracic kyphosis)",
+        correct: false,
+        blurb: "Scheuermann's disease is a structural kyphosis of developmental origin, typically presenting in adolescence with thoracic hyperkyphosis and characteristic vertebral wedging on radiograph (>5° wedging at ≥3 consecutive vertebrae). The age of presentation (40 years), absence of documented vertebral wedging, and postural aetiology (prolonged screen use, forward head posture) are more consistent with postural hyperkyphosis than Scheuermann's disease."
+      },
+      {
+        label: "Cervical rib with thoracic outlet compression",
+        correct: false,
+        blurb: "Cervical rib was included in the chiropractor's differential diagnosis given upper limb symptoms. A cervical rib is an additional rib arising from C7 that can compress the brachial plexus and subclavian vessels. It would be visible on cervical or chest radiograph. Plain radiography in this case demonstrated no cervical rib, making this diagnosis unlikely."
+      },
+      {
+        label: "Osteoporotic vertebral compression fracture (kyphosis secondary to fracture)",
+        correct: false,
+        blurb: "Vertebral compression fractures due to osteoporosis are a common cause of progressive thoracic kyphosis in older women, but this patient is 40 years old. Acute fracture would be expected to cause a sudden increase in kyphosis with pain rather than a gradual postural evolution over years. No fractures were documented on radiograph."
+      }
+    ],
+    explanation: `<p>Postural thoracic hyperkyphosis — clinically termed Dowager's hump when concentrated at the cervicothoracic junction — produces a cascade of biomechanical changes throughout the cervical and thoracic spine. Excessive thoracic kyphosis drives forward head posture, loss of cervical lordosis, shoulder protraction, scapular anteversion, and shortening of the anterior chest wall musculature. These compensatory changes increase axial loading on the cervical facets and discs, generate myofascial trigger points in the suboccipital and upper cervical musculature, and produce the characteristic cervicogenic headache pattern in which pain originates at the base of the skull and radiates anteriorly.</p>
+<p>In this case, a kyphosis Cobb angle of 45° (normal 20–40°) confirmed pathological hyperkyphosis. The cervicothoracic junction hump (Dowager's hump) was visible clinically and confirmed radiographically. The GP's diagnosis of cervicalgia related to osteoarthritis addressed the degenerative changes but did not target the primary structural driver. NSAID prescription and home stretching exercises were insufficient to reverse the postural deformity or resolve the headaches.</p>
+<p>Nine months of chiropractic care — combining spinal manipulative therapy using the diversified technique, cervical extension-compression traction (CBP technique), Guasha/IASTM, and core and ergonomic education — produced complete resolution of headache and neck pain, normalisation of cervical ROM, and measurable radiographic improvement: kyphosis from 45° to 30°, scoliosis from 9° to 1°, and improved cervical lordosis and shoulder balance. WHOQOL improved from 72% to 100%.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "smt_diversified",
+        label: "Spinal manipulative therapy (diversified technique) at dysfunctional segments",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> SMT using the diversified technique was applied to segments identified with intersegmental dysfunction (C2–3, C5–6, T1–2, T2–3, T6–7). Twelve sessions were provided in the first month, reducing to 8 sessions per month for the following 2 months, then twice monthly for ongoing spinal alignment correction. SMT is documented as restoring shoulder imbalance and spinal alignment.`
+      },
+      {
+        id: "cbp_traction",
+        label: "Cervical extension-compression traction (CBP technique) and mechanical cervical distraction",
+        selected: true,
+        explanation: `<strong>Appropriate for structural lordosis correction.</strong> Cervical extension-compression traction (iTracSpine, CBP technique) and mechanical cervical distraction (SpineMT) were applied to correct the loss of cervical lordosis. CBP technique is widely used in correcting thoracic hyperkyphosis through combined cervical curve restoration and thoracic extension loading. This was a key component of the documented treatment plan.`
+      },
+      {
+        id: "guasha_iastm",
+        label: "Guasha / instrument-assisted soft tissue mobilisation to hypertonic muscles",
+        selected: true,
+        explanation: `<strong>Appropriate for myofascial trigger point management.</strong> A glide action massage tool (Strig) was used to relieve myofascial trigger points in the hypertonic muscles around the shoulder and to balance shoulder height. Scraping therapy is documented to increase local blood flow with potential benefits on myofascial trigger points, neck pain, and cervicogenic headache.`
+      },
+      {
+        id: "nsaids_only",
+        label: "Continue NSAID prescription as primary management",
+        selected: false,
+        explanation: `<strong>Insufficient as primary management for a structural spinal deformity.</strong> Celecoxib and etoricoxib had been prescribed by the GP without benefit. NSAIDs address pain symptoms but do not reverse the postural hyperkyphosis, restore cervical lordosis, or address the myofascial trigger point network driving the headaches. Active structural correction through manipulation and traction is required to address the underlying biomechanical cause.`
+      },
+      {
+        id: "ergonomics_exercises",
+        label: "Ergonomic workstation education and core muscle exercises",
+        selected: true,
+        explanation: `<strong>Appropriate and essential for long-term prevention.</strong> Ergonomic recommendations for office workstation setup and core muscle exercises were advised to improve forward head posture and hyperkyphosis and to compensate for the postural changes. The patient's symptom trigger — prolonged screen and mobile use in sustained neck flexion — is a modifiable risk factor that must be addressed to prevent recurrence.`
+      }
+    ],
+    outcomeText: `Following a 9-month chiropractic programme (12 sessions in month 1, 8 per month for months 2–3, then twice monthly for ongoing correction), headache completely resolved by the end of month 3. Cervical ROM normalised bilaterally. WHOQOL improved from 72% to 100%. On EOS® full-spine radiography, kyphosis Cobb angle reduced from 45° to 30° (normal range), scoliosis Cobb angle reduced from 9° to 1°, and cervical lordosis and thoracic dextro-convexity improved. The visible Dowager's hump diminished clinically. No adverse events were documented.`
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Thoracic Hyperkyphosis (Dowager's Hump) with Cervicogenic Headache</strong><br>Postural spinal deformity at the cervicothoracic junction driving chronic headache and neck pain",
+    outcomes: [
+      { label: "Published Source", text: "Chau C, Chu EC, Huang KH, Tam D, Cheung G. J Med Life. 2023;16(6):957–962" },
+      { label: "PMID / PMC", text: "PMID: 37675179 — PMC10478669 (open access)" },
+      { label: "Final Diagnosis", text: "Thoracic hyperkyphosis (kyphosis Cobb angle 45°) with cervicogenic headache and loss of cervical lordosis" },
+      { label: "Intervention", text: "SMT (diversified technique) + cervical extension-compression traction (CBP) + Guasha/IASTM + ergonomic education × 9 months; kyphosis 45°→30°, scoliosis 9°→1°, WHOQOL 72%→100%, headache fully resolved at 3 months" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Thoracic hyperkyphosis drives a biomechanical cascade — forward head posture, loss of cervical lordosis, anterior muscle shortening, posterior muscle lengthening, and cervicothoracic myofascial trigger points — that produces cervicogenic headache. Treating only the headache or only the cervical spondylosis without addressing the primary structural driver (thoracic kyphosis) will produce incomplete and temporary results." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Upper limb weakness and hand numbness in a patient with thoracic hyperkyphosis and cervical degeneration can represent myelopathy, radiculopathy, referred myofascial symptoms, or thoracic outlet compression. A normal neurological examination is required before attributing these symptoms to postural origin — do not dismiss them as incidental." },
+      { type: "pearl", tag: "Clinical Pearl", text: "Kyphosis Cobb angle is measured on a lateral thoracic radiograph by drawing lines along the upper endplate of T1 and the lower endplate of T12. A Cobb angle above 40° constitutes pathological hyperkyphosis. EOS® full-spine radiography allows quantification of all spinopelvic parameters in a single standing exposure with low radiation dose — it is the gold standard for postural structural assessment." },
+      { type: "key", tag: "Scope of Practice", text: "Postural hyperkyphosis and cervicogenic headache are squarely within chiropractic scope. The combination of SMT for segmental restriction, cervical extension-compression traction for lordosis restoration, soft tissue therapy for myofascial trigger points, and ergonomic and exercise advice constitutes a comprehensive structural rehabilitation programme that this case demonstrates can achieve radiographically confirmed spinal realignment." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Plain radiograph is the appropriate first-line investigation for suspected thoracic hyperkyphosis — it quantifies the deformity and documents baseline values for monitoring. MRI is indicated if there are neurological symptoms suggesting myelopathy or radiculopathy. A Cobb angle above 40° on plain radiograph is sufficient to confirm pathological hyperkyphosis and guide structural treatment planning." }
+    ]
+  },
+  cpd: {
+    topics: "Thoracic hyperkyphosis, Dowager's hump, cervicogenic headache, cervicothoracic junction, Cobb angle, forward head posture, CBP traction, SMT, myofascial trigger points, ergonomics",
+    keyPoints: [
+      "Thoracic kyphosis Cobb angle above 40° constitutes pathological hyperkyphosis; it is measured on a lateral thoracic radiograph from the upper endplate of T1 to the lower endplate of T12.",
+      "Postural hyperkyphosis produces a biomechanical cascade including forward head posture, loss of cervical lordosis, anterior muscle shortening, and cervicothoracic myofascial trigger points — the primary driver of cervicogenic headache in this pattern.",
+      "Upper limb weakness and hand numbness in the context of cervical degeneration and thoracic hyperkyphosis require a full neurological examination to exclude myelopathy before attributing symptoms to postural origin.",
+      "CBP (chiropractic biophysics) extension-compression traction is designed to restore cervical lordosis and reduce thoracic kyphosis through structural spinal remodelling — distinct from symptom-relief traction alone.",
+      "Prolonged neck flexion from screen and mobile device use is a modifiable risk factor for postural hyperkyphosis and cervicogenic headache; ergonomic education and postural correction are essential components of any management plan."
+    ]
+  }
+},
+{
+  id: "011",
+  title: "A 66-year-old woman presents with 6 months of progressively worsening neck pain, headaches, and involuntary neck movements despite medication and physiotherapy — she mentions she had a neck operation as a teenager",
+  category: "Post-surgical",
+  secondaryCategory: "Cervical",
+  difficulty: "Advanced",
+  estimatedTime: "20–25 mins",
+  source: {
+    short: "Chu EC, Trager RJ, Tao C\nCureus. 2023;15(2):e34630\nPMID: 36891015\nPMC: PMC9988189\nOpen access ✓",
+    full: "Chu EC, Trager RJ, Tao C. Improvement of Chronic Neck Pain After Posterior Atlantoaxial Surgical Fusion via Multimodal Chiropractic Care: A Case Report. Cureus. 2023;15(2):e34630. doi: 10.7759/cureus.34630. PMID: 36891015. PMC9988189. Open access."
+  },
+  patient: {
+    ageSex: "66-year-old female",
+    chiefComplaint: "Progressive worsening neck pain, right occipital and periorbital headaches, and involuntary neck muscle jerking movements",
+    duration: "6 months of progressive worsening; chronic background neck issues since adolescence",
+    priorProviders: "Emergency department (6 months prior — cervical radiographs, blood tests; prescribed analgesics); GP (acetaminophen, tramadol); physiotherapist (upper extremity strengthening, neck stretches); neurologist (2015 — prescribed acetaminophen for degenerative changes)",
+    priorDiagnoses: "Cervical degenerative changes (neurologist, 2015; ED, 6 months prior); C1/2 rotatory instability (adolescence — led to posterior C1/2 surgical fusion at age 16); adjacent segment degeneration (chiropractor's working diagnosis)"
+  },
+  history: {
+    content: `<p>A 66-year-old retired secretary presented to a chiropractor with a 6-month history of progressive worsening of neck pain (mean 7/10), spasm, head tilt, and right occipital and periorbital headaches. Symptoms were more severe in the morning and partially relieved by lateral neck stretching. She denied bowel or bladder symptoms and had no family history of neurological or spinal disorders or cancer. She was a non-smoker and social drinker. Her WHOQOL score was 76%. She had been relatively active with regular walking until recently.</p>
+<p>At age 14 in 1970, she had developed sudden severe neck pain, torticollis, and headaches — worsened by sneezing and neck movement, relieved by holding her head with her hand — and was diagnosed with C1/2 rotatory instability with no identified precipitating trauma or infection. She was treated with 24-hour halo traction for 6 months, then a Minerva cast for a further 6 months without resolution. At age 16 she underwent posterior surgical fusion of C1/2 using cerclage wire and iliac crest bone graft. Post-operatively she experienced severe bilateral lower extremity weakness requiring a wheelchair for 3 months and wore a cervical orthosis. She made a near-full recovery by 6 months, with only a residual sensation of lower torso disconnection when sleeping. She remained symptom-free until age 60 when she tripped and fell, subsequently developing cervicalgia, occipital headaches, and involuntary jerking neck movements every few hours. A neurologist diagnosed degenerative changes and prescribed acetaminophen.</p>
+<p>Six months prior to chiropractic presentation she attended the emergency department with worsening neck pain and headaches. Cervical radiographs showed degenerative changes. Blood tests including CBC, renal, electrolyte, calcium, magnesium, CRP, liver, and thyroid panels were all unremarkable. She was prescribed tramadol and referred to physiotherapy (upper extremity strengthening and neck stretches) without improvement.</p>`,
+    clinicalNote: "This is a high-complexity post-surgical presentation. Prior C1/2 fusion with cerclage wire creates unique risks: possible ferromagnetic implants (precluding MRI without implant verification), adjacent segment disease at multiple levels, and biomechanically altered cervical kinematics with severely restricted rotation. Any decision to perform spinal manipulation must follow rigorous imaging, neurological assessment, and case-by-case clinical reasoning."
+  },
+  examination: {
+    autoROM: `<p>Active cervical ROM: flexion limited to 30°, extension limited to 30°, lateral flexion limited to 20°, rotation limited to 10° bilaterally. Post-treatment (3 weeks): flexion improved to 60°, extension 30°, lateral flexion 20°, rotation 30° bilaterally. Post-surgical C1/2 fusion accounts for approximately 50% of normal cervical rotation — residual limitation is expected.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Movement</th><th>Muscle</th><th>Nerve Root</th><th>Finding</th></tr></thead><tbody>
+      <tr><td>Shoulder abduction</td><td>Deltoid</td><td>C5</td><td><span class="tt pos">4/5 right (MRC scale)</span></td></tr>
+      <tr><td>All other upper extremity movements</td><td>Multiple</td><td>C5–T1</td><td><span class="tt normal">Normal bilaterally</span></td></tr>
+      <tr><td>Muscle stretch reflexes</td><td>Upper and lower extremity</td><td>Multiple</td><td><span class="tt normal">2+ bilaterally, no pathological reflexes (Babinski negative)</span></td></tr>
+    </tbody></table></div>`,
+    checklist: [
+      {
+        group: "Postural and Gait Assessment",
+        items: [
+          {
+            id: "posture_obs",
+            label: "Postural observation",
+            result: `Neck slightly rotated left and laterally flexed right at rest; well-healed surgical scar from occipital region to mid-cervical spine and left iliac crest <span class="tt notable">Resting head tilt and rotation — likely C1/2 fusion effect</span>`,
+            documented: true
+          },
+          {
+            id: "gait",
+            label: "Gait assessment",
+            result: `Normal gait, no ataxia, no bradykinesia <span class="tt normal">Normal</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Neurological Screening",
+        items: [
+          {
+            id: "cranial_nerves",
+            label: "Cranial nerve examination",
+            result: `Normal <span class="tt normal">Normal</span>`,
+            documented: true
+          },
+          {
+            id: "coordination",
+            label: "Coordination (tremor, bradykinesia, dysdiadochokinesia)",
+            result: `No tremor, no bradykinesia, normal coordination <span class="tt normal">Normal</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Spinal Palpation",
+        items: [
+          {
+            id: "motion_palp",
+            label: "Spinal motion palpation",
+            result: `Segmental restriction identified at C5/6 and T5/6; suboccipital muscle hypertonicity bilaterally <span class="tt notable">Restriction C5/6 and T5/6</span>`,
+            documented: true
+          }
+        ]
+      }
+    ],
+    contextText: "The neurological examination was prioritised given the history of prior spinal cord compromise (post-operative lower extremity weakness), degenerative findings across multiple cervical levels, and mild cord indentation documented on subsequent CT. The 4/5 right deltoid weakness was noted but was the only motor deficit. The absence of UMN signs, pathological reflexes, ataxia, or bowel/bladder symptoms argues against clinically significant myelopathy at presentation. CT was ordered before any manual treatment was attempted."
+  },
+  investigations: {
+    options: [
+      {
+        id: "ct_cervical",
+        label: "CT cervical spine (ordered in preference to MRI due to uncertainty about ferromagnetic implants)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Successful posterior bony fusion at C1/2 with cerclage wire and interposed autograft. Pseudoarticulation between C2 and C3 spinous processes. Slight focal kyphosis C1–C4. Disc herniations at C3/4 and C4/5. Disc-osteophyte complex at C5/6 causing mild canal stenosis (AP diameter 8 mm). Mild cord indentation without obvious cord compression. Mild degenerative changes at the left atlanto-occipital joint (C0/C1). Mild degenerative changes at C2/3. No spondylolisthesis. No absolute contraindication to manual therapy identified.</p>`
+      },
+      {
+        id: "mri_cervical",
+        label: "MRI — Cervical Spine",
+        consequence: "MRI provides superior characterisation of spinal cord, nerve roots, and soft tissue structures and would have been the preferred investigation. The chiropractor opted for CT as a precaution because it was unclear whether ferromagnetic cerclage wire had been used (ferromagnetic materials are an MRI contraindication). The CT confirmed non-ferromagnetic cerclage wire was likely used and cord compression was absent. MRI could have been safely considered after this assessment and would have provided additional soft tissue detail.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "flexion_extension_xray",
+        label: "Flexion-extension cervical radiographs (instability assessment)",
+        consequence: "Flexion-extension radiographs are used to assess dynamic segmental instability, particularly relevant in a patient with prior C1/2 fusion and a history of atlantoaxial instability. The chiropractor deemed instability unlikely given the stiff, limited cervical ROM, absence of catching or clunking with movement, and no spondylolisthesis on CT. These would be indicated if any doubt about stability existed prior to performing manipulation.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Adjacent segment disease (ASD) at C0/1, C2/3, C3/4, C4/5, and C5/6 following C1/2 fusion",
+        correct: true,
+        blurb: "The working diagnosis supported by CT findings. ASD describes accelerated degenerative changes in spinal segments adjacent to a surgical fusion due to increased biomechanical stress and altered motion demands. C1/2 fusion eliminates approximately 50% of cervical rotation, transferring compensatory load to the remaining subaxial segments. CT confirmed degenerative changes at C0/1, C2/3, C3/4, C4/5, and a disc-osteophyte complex at C5/6 with mild canal stenosis — all consistent with post-fusion ASD."
+      },
+      {
+        label: "Degenerative cervical myelopathy",
+        correct: false,
+        blurb: "Mild cord indentation was noted at C5/6 on CT without cord compression. The patient had 4/5 right deltoid weakness — a mild neurological finding. However, she had no UMN signs, normal reflexes, normal gait and coordination, and no bowel or bladder dysfunction. These findings are inconsistent with clinically significant myelopathy. The mild cord indentation warrants monitoring but did not meet criteria for myelopathy-grade compression requiring surgical referral."
+      },
+      {
+        label: "Cervical dystonia (spasmodic torticollis)",
+        correct: false,
+        blurb: "The patient had involuntary jerking neck movements occurring every few hours, a head tilt at rest, and neck rotation to the left at rest — features consistent with cervical dystonia. This was explicitly included in the chiropractor's differential. However, the dramatic improvement with manual therapy directed at degenerative cervical levels (rather than botulinum toxin injection, the primary treatment for dystonia) suggests that the abnormal movements were likely myofascial and pain-related rather than true dystonic contractions."
+      },
+      {
+        label: "Cervical radiculopathy (C5 — given right deltoid weakness)",
+        correct: false,
+        blurb: "4/5 right deltoid weakness could represent C5 radiculopathy from the disc herniation at C3/4 or osteophyte complex at C5/6. However, the weakness was mild, no sensory deficit was documented, and the CT showed mild rather than severe foraminal or canal compromise. The patient's primary symptoms of headache and neck pain responded to treatment, and the deltoid weakness was not the primary presenting complaint."
+      },
+      {
+        label: "C1/2 fusion failure or pseudarthrosis",
+        correct: false,
+        blurb: "Failure of the original C1/2 fusion (pseudarthrosis) would be an important and serious finding in a patient with a prior atlantoaxial instability who later develops neck pain and head tilt. CT confirmed successful posterior bony fusion at C1/2 with no evidence of pseudarthrosis or recurrent atlantoaxial instability — ruling this out as the cause of the current presentation."
+      },
+      {
+        label: "Cervicogenic headache from C0/1 or C2/3 articular degeneration",
+        correct: false,
+        blurb: "Degenerative changes at the atlanto-occipital joint (C0/1) and C2/3 pseudoarticulation of the spinous processes were documented on CT. These are well within the cervicogenic headache referral zones (the upper three cervical segments). This may be a contributing factor to the patient's occipital and periorbital headaches. However, the primary diagnosis was ASD, with the cervicogenic headache being a symptom of the broader degenerative picture rather than an independent diagnosis."
+      },
+      {
+        label: "Inflammatory or autoimmune arthropathy (RA, AS)",
+        correct: false,
+        blurb: "Inflammatory arthropathies can cause atlantoaxial instability and cervical spine involvement. The original C1/2 rotatory instability in adolescence without an identified cause could theoretically have had an inflammatory aetiology. However, comprehensive blood tests performed 6 months prior (including CRP) were unremarkable, making active inflammatory disease unlikely as the primary driver of current symptoms."
+      },
+      {
+        label: "Medication overuse headache",
+        correct: false,
+        blurb: "The patient had been prescribed tramadol and acetaminophen for neck pain and headaches. Medication overuse headache (MOH) can occur with frequent use of analgesics, including opioids. However, the structural findings on CT (ASD across multiple levels, disc-osteophyte complex at C5/6) provide an adequate structural explanation for the headaches, and the response to manual therapy rather than analgesic withdrawal supports a structural rather than MOH aetiology."
+      }
+    ],
+    explanation: `<p>This case illustrates a clinically rare but practically important scenario: a patient with a prior cervical spine surgical fusion presenting to a chiropractor with progressive neck pain and headache. The clinical reasoning challenge is threefold: establishing the cause of symptoms, determining whether the C1/2 fusion is intact, and deciding whether spinal manipulation can be safely performed.</p>
+<p>CT confirmed successful C1/2 fusion and identified the cause of current symptoms as ASD — degenerative changes at C0/1, C2/3, C3/4, C4/5, and a disc-osteophyte complex at C5/6 causing mild canal stenosis. This pattern is consistent with the biomechanical literature: C1/2 fusion eliminates approximately 50% of cervical rotation, creating compensatory stress on adjacent segments that accelerates degenerative change.</p>
+<p>With no neurological contraindications to manual therapy (no myelopathy, no cord compression, no significant neurological deficit), the chiropractor applied a cautious, graduated approach: instrument-assisted soft tissue manipulation and therapeutic ultrasound first, then spinal mobilisation at C5/6, then HVLA SMT at C5/6 after confirming tolerance. Thoracic SMT at T5/6 and mechanical cervical traction were added in the second week. Three weeks of multimodal treatment reduced mean pain from 7/10 to 1–3/10, resolved headaches, improved cervical ROM (rotation 10°→30°, flexion 30°→60°), resolved the residual lower torso disconnection sensation, and raised WHOQOL from 76% to 90% (92% at 3-month follow-up).</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "ct_first",
+        label: "CT cervical spine prior to any manual treatment (ferromagnetic implant uncertainty + prior surgery)",
+        selected: true,
+        explanation: `<strong>Appropriate and necessary.</strong> The combination of prior cervical surgical fusion with cerclage wire (uncertain ferromagnetic status precluding immediate MRI), progressive worsening despite prior care, mild deltoid weakness, and a history of post-operative spinal cord compromise made pre-treatment CT mandatory. CT confirmed successful fusion, excluded pseudarthrosis, and characterised the degree of canal compromise — providing the information necessary to safely plan treatment.`
+      },
+      {
+        id: "graduated_manual",
+        label: "Graduated manual therapy: IASTM and ultrasound → spinal mobilisation → HVLA SMT at C5/6 (after tolerability confirmed)",
+        selected: true,
+        explanation: `<strong>Appropriate — case-by-case cautious approach documented.</strong> The chiropractor applied a graduated escalation from soft tissue techniques to mobilisation, then HVLA SMT only after the patient tolerated mobilisation well. SMT was targeted at C5/6 — a subaxial level distant from the surgical fusion site, with no cord compression documented at that level. This approach is consistent with the published recommendation that manual therapies after cervical fusion should be used cautiously on a case-by-case basis.`
+      },
+      {
+        id: "thoracic_smt",
+        label: "Thoracic SMT at T5/6 and mechanical cervical traction",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Thoracic SMT was performed at the T5/6 restriction identified on palpation. Thoracic manipulation has documented efficacy for cervical spine pain. Mechanical cervical traction (10% bodyweight, 20 minutes) was added in the second week to decompress the C5/6 disc-osteophyte complex. Both were well-tolerated and contributed to the documented pain reduction.`
+      },
+      {
+        id: "hvla_c12_region",
+        label: "HVLA manipulation directed at the C1/2 fusion site or upper cervical spine",
+        selected: false,
+        explanation: `<strong>Contraindicated.</strong> High-velocity thrust manipulation directly at or immediately adjacent to a surgically fused segment is contraindicated. The cerclage wire and bone graft are structural implants that cannot tolerate the forces of HVLA SMT. The fused segment also has significantly reduced ROM, making accurate localised manipulation impossible. SMT was appropriately directed at the subaxial cervical and thoracic spine in this case, avoiding the fusion level entirely.`
+      },
+      {
+        id: "immediate_neurosurgical",
+        label: "Immediate neurosurgical referral for surgical decompression of C5/6 disc-osteophyte complex",
+        selected: false,
+        explanation: `<strong>Not indicated at this stage.</strong> CT demonstrated mild canal stenosis at C5/6 (8 mm AP diameter) with mild cord indentation but no cord compression, and the neurological deficit was mild (4/5 right deltoid). Surgical decompression is indicated for progressive neurological deficit, severe myelopathy, or intractable pain failing conservative care. Conservative chiropractic management was appropriate as a first-line trial and was successful in this case.`
+      }
+    ],
+    outcomeText: `Following 3 weeks of multimodal chiropractic care (IASTM, therapeutic ultrasound, HVLA SMT at C5/6, thoracic SMT at T5/6, mechanical cervical traction added in week 2), mean pain severity reduced from 7/10 to 1–3/10 (mild). Headaches completely resolved. The lower torso disconnection sensation resolved after the first week. WHOQOL improved from 76% to 90% after 3 weeks, and to 92% at 3-month follow-up. Cervical ROM improved significantly (flexion 30°→60°, rotation 10°→30°). The involuntary neck jerking movements resolved, with the patient's husband noting only a mild residual motion. Benefits were maintained over 3-month follow-up as treatment frequency was gradually reduced.`
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Adjacent Segment Disease — Post C1/2 Posterior Surgical Fusion</strong><br>Multilevel cervical degeneration at C0/1, C2/3, C3/4, C4/5, and C5/6 following adolescent atlantoaxial fusion",
+    outcomes: [
+      { label: "Published Source", text: "Chu EC, Trager RJ, Tao C. Cureus. 2023;15(2):e34630" },
+      { label: "PMID / PMC", text: "PMID: 36891015 — PMC9988189 (open access)" },
+      { label: "Final Diagnosis", text: "Adjacent segment disease following C1/2 posterior surgical fusion; disc-osteophyte complex C5/6 with mild canal stenosis and cord indentation; mild right deltoid weakness (4/5)" },
+      { label: "Intervention", text: "CT pre-treatment → IASTM + ultrasound → graduated to HVLA SMT at C5/6 and T5/6 + cervical traction; pain 7/10→1–3/10; headache resolved; WHOQOL 76%→92% at 3 months" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Prior cervical spine surgery is not an absolute contraindication to chiropractic manual therapy, but it requires thorough pre-treatment imaging, careful neurological assessment, and a graduated approach starting with soft tissue techniques before escalating to mobilisation and HVLA SMT — and only at segments distant from the surgical level." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Adjacent segment disease is a well-recognised complication of spinal surgical fusion that can produce symptoms years or decades after an otherwise successful operation. In a post-surgical patient with progressive neck pain and headache, ASD should be the primary consideration — not failure or complication of the original surgery, unless fusion failure is confirmed on imaging." },
+      { type: "pearl", tag: "Clinical Pearl", text: "C1/2 accounts for approximately 50% of normal cervical axial rotation. Fusion at this level permanently eliminates this motion and distributes compensatory rotational demands across the remaining subaxial segments — accelerating degenerative change at C2/3 through C5/6. Understanding this biomechanical consequence allows the clinician to anticipate the pattern of ASD and target treatment accordingly." },
+      { type: "key", tag: "Scope of Practice", text: "This case demonstrates that post-surgical cervical spine patients can present to chiropractors and respond positively to appropriately modified manual therapy. The clinician's obligation is pre-treatment CT or MRI, careful neurological examination, exclusion of fusion failure and instability, a graduated treatment approach, and willingness to refer if neurological status worsens. HVLA manipulation at or adjacent to the fusion level is contraindicated." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "When ferromagnetic spinal implants are possible, MRI cannot be safely performed without implant verification. CT is the appropriate alternative — it confirms fusion success, identifies adjacent segment degeneration, and characterises canal and foraminal stenosis. In this case CT provided all the clinically necessary information and guided a safe manual therapy plan." }
+    ]
+  },
+  cpd: {
+    topics: "Adjacent segment disease, post-surgical cervical spine, C1/2 fusion, atlantoaxial instability, SMT after cervical surgery, cervical kinematics, CT versus MRI, manual therapy contraindications",
+    keyPoints: [
+      "C1/2 posterior surgical fusion eliminates approximately 50% of normal cervical axial rotation, redistributing biomechanical load to subaxial segments and accelerating adjacent segment degeneration over time.",
+      "Prior cervical spine surgery is not an absolute contraindication to manual therapy — it requires pre-treatment CT or MRI, careful neurological examination, exclusion of fusion failure and instability, and a graduated treatment escalation.",
+      "HVLA manipulation at or immediately adjacent to a surgically fused cervical segment is contraindicated; SMT should be targeted at subaxial levels distant from the fusion site after confirming adequate canal dimensions and no cord compression.",
+      "When ferromagnetic spinal implants cannot be excluded, CT is the appropriate alternative to MRI for characterising adjacent segment degeneration and canal stenosis before commencing manual therapy.",
+      "A graduated manual therapy approach — beginning with soft tissue techniques and mobilisation, then escalating to HVLA SMT only after confirmed tolerability — is the appropriate clinical strategy for post-surgical cervical spine patients."
+    ]
+  }
 }
 // ─────────────────────────────────────────────
 // PASTE ADDITIONAL CASES ABOVE THIS LINE
