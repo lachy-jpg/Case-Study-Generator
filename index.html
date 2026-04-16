@@ -1,0 +1,2130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-store">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Reasoning Simulator</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1c1a; --paper: #f5f2eb; --paper2: #ede9df; --paper3: #e5e0d4;
+    --rule: #c8c2b4; --rule-light: #e0dbd0;
+    --accent: #1e4d2b; --accent-light: #d4ead9;
+    --warn: #7a1f1f; --warn-light: #f5dede;
+    --gold: #7a5c1e; --gold-light: #f5edd4;
+    --muted: #7a7568;
+    --mono: 'IBM Plex Mono', monospace;
+    --serif: 'Spectral', Georgia, serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--serif); min-height: 100vh; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+  /* GLOBAL HEADER */
+  .g-header {
+    border-bottom: 2px solid var(--ink); padding: 12px 32px;
+    display: flex; align-items: center; gap: 16px;
+    background: var(--paper); position: sticky; top: 0; z-index: 200;
+  }
+  .home-btn {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    background: none; border: 1px solid var(--rule); padding: 5px 12px;
+    cursor: pointer; color: var(--muted); transition: all 0.15s;
+  }
+  .home-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .g-title { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .g-divider { width: 1px; height: 14px; background: var(--rule); }
+  .g-meta { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.08em; }
+  .g-pill {
+    margin-left: auto; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; border: 1px solid var(--rule); padding: 3px 10px; color: var(--muted); transition: all 0.3s;
+  }
+  .g-pill.active { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+
+  /* VIEWS */
+  .view { display: none; }
+  .view.active { display: block; animation: fadeIn 0.3s ease; }
+
+  /* ═══════════════════════════════════════
+     LIBRARY
+  ═══════════════════════════════════════ */
+  .lib-wrap { max-width: 1060px; margin: 0 auto; padding: 40px 24px; }
+  .lib-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+  .lib-title h1 { font-size: 30px; font-weight: 300; font-style: italic; line-height: 1.25; }
+  .lib-title h1 strong { font-weight: 600; font-style: normal; }
+  .lib-title p { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.6; max-width: 500px; }
+
+  .random-btn {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 14px 28px; background: var(--accent); color: #fff; border: none; cursor: pointer;
+    transition: opacity 0.15s; white-space: nowrap; flex-shrink: 0;
+  }
+  .random-btn:hover { opacity: 0.85; }
+
+  .filters {
+    display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+    padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-bottom: 28px;
+  }
+  .f-label { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); margin-right: 2px; }
+  .f-divider { width: 1px; height: 18px; background: var(--rule); margin: 0 6px; }
+  .f-btn {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em;
+    padding: 4px 10px; border: 1px solid var(--rule); background: var(--paper);
+    cursor: pointer; color: var(--muted); transition: all 0.15s;
+  }
+  .f-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .f-btn.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .stats-row { display: flex; gap: 24px; margin-bottom: 24px; align-items: center; }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+  .stat-n { font-family: var(--mono); font-size: 20px; font-weight: 500; }
+  .stat-l { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .stat-div { width: 1px; height: 32px; background: var(--rule); }
+
+  .case-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .c-card {
+    background: var(--paper); padding: 20px; cursor: pointer;
+    transition: background 0.15s; display: flex; flex-direction: column; gap: 10px;
+  }
+  .c-card:hover { background: var(--accent-light); }
+  .c-card.done { background: var(--paper2); }
+  .c-card.done:hover { background: var(--accent-light); }
+  .c-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+  .c-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+  .ctag {
+    font-family: var(--mono); font-size: 9px; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 2px 7px; border: 1px solid var(--rule); color: var(--muted);
+  }
+  .ctag.cat { border-color: var(--ink); color: var(--ink); }
+  .ctag.beg { border-color: var(--accent); color: var(--accent); }
+  .ctag.int { border-color: var(--gold); color: var(--gold); }
+  .ctag.adv { border-color: var(--warn); color: var(--warn); }
+  .ctag.comp { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .c-num { font-family: var(--mono); font-size: 10px; color: var(--rule); flex-shrink: 0; }
+  .c-title { font-size: 14px; line-height: 1.55; font-style: italic; }
+  .c-dx { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+  .c-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 10px; border-top: 1px solid var(--rule-light); margin-top: auto;
+  }
+  .c-time { font-family: var(--mono); font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .c-arrow { font-family: var(--mono); font-size: 11px; color: var(--rule); transition: color 0.15s, transform 0.15s; }
+  .c-card:hover .c-arrow { color: var(--accent); transform: translateX(3px); }
+  .no-results { grid-column: 1/-1; padding: 48px; text-align: center; font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; }
+
+  /* ═══════════════════════════════════════
+     CASE
+  ═══════════════════════════════════════ */
+  .case-shell { display: grid; grid-template-columns: 1fr 272px; gap: 40px; max-width: 1060px; margin: 0 auto; padding: 32px 24px; }
+
+  /* Sidebar */
+  .sidebar { display: flex; flex-direction: column; gap: 14px; position: sticky; top: 58px; align-self: start; }
+  .sp { border: 1px solid var(--rule); background: var(--paper); }
+  .sp-hd { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); padding: 8px 14px; border-bottom: 1px solid var(--rule); background: var(--paper2); }
+  .sp-bd { padding: 12px 14px; }
+  .pt-f { margin-bottom: 9px; }
+  .pt-f:last-child { margin-bottom: 0; }
+  .pt-fl { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 3px; }
+  .pt-fv { font-size: 13px; line-height: 1.5; }
+
+  .prog-track { display: flex; flex-direction: column; }
+  .prog-step {
+    display: flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 10px;
+    color: var(--muted); padding: 7px 0; border-bottom: 1px solid var(--rule-light);
+    cursor: pointer; transition: color 0.15s; user-select: none;
+  }
+  .prog-step:last-child { border-bottom: none; }
+  .prog-step:hover:not(.locked) { color: var(--ink); }
+  .prog-step.done { color: var(--accent); }
+  .prog-step.current { color: var(--ink); font-weight: 500; }
+  .prog-step.locked { cursor: default; }
+  .pdot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--rule); flex-shrink: 0; }
+  .prog-step.done .pdot { background: var(--accent); border-color: var(--accent); }
+  .prog-step.current .pdot { background: var(--ink); border-color: var(--ink); }
+
+  .log-list { list-style: none; max-height: 180px; overflow-y: auto; }
+  .log-li { font-family: var(--mono); font-size: 10px; color: var(--muted); padding: 3px 0; border-bottom: 1px solid var(--rule-light); line-height: 1.4; }
+  .log-li:last-child { border-bottom: none; }
+
+  /* Stages */
+  .case-main { min-width: 0; }
+  .stage { display: none; flex-direction: column; gap: 20px; animation: fadeUp 0.3s ease; }
+  .stage.active { display: flex; }
+
+  .s-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
+  .s-label span { color: var(--accent); }
+  .s-intro { font-size: 15px; line-height: 1.8; }
+  .s-intro em { font-size: 13px; color: var(--muted); }
+
+  .case-hd { border-bottom: 1px solid var(--rule); padding-bottom: 18px; }
+  .case-num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .case-hd h2 { font-size: 24px; font-weight: 300; font-style: italic; line-height: 1.3; }
+  .case-hd h2 strong { font-weight: 600; font-style: normal; }
+
+  .pg { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .ps { background: var(--paper); padding: 12px 14px; }
+  .psl { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 4px; }
+  .psv { font-size: 14px; font-weight: 600; line-height: 1.3; }
+
+  /* Reveal */
+  .rb { background: var(--paper2); border-left: 3px solid var(--accent); padding: 18px 20px; display: none; animation: fadeIn 0.35s ease; }
+  .rb.show { display: block; }
+  .rb.warn { border-left-color: var(--warn); background: var(--warn-light); }
+  .rb.gold { border-left-color: var(--gold); background: var(--gold-light); }
+  .rb.info { border-left-color: var(--ink); background: var(--paper3); }
+  .rl { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 10px; }
+  .rb.warn .rl { color: var(--warn); }
+  .rb.gold .rl { color: var(--gold); }
+  .rt { font-size: 14px; line-height: 1.85; }
+  .rt p { margin-bottom: 12px; }
+  .rt p:last-child { margin-bottom: 0; }
+  .rt strong { font-weight: 600; }
+  .rt em { font-style: italic; color: var(--muted); }
+
+  /* Tables */
+  table.ft { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+  table.ft th { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--rule); }
+  table.ft td { padding: 8px 10px; border-bottom: 1px solid var(--rule-light); vertical-align: top; line-height: 1.5; }
+  table.ft tr:last-child td { border-bottom: none; }
+  .tt { display: inline-block; font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; padding: 1px 5px; margin-left: 4px; }
+  .tt.pos { background: var(--warn-light); color: var(--warn); }
+  .tt.neg { background: var(--rule-light); color: var(--muted); }
+  .tt.notable { background: var(--gold-light); color: var(--gold); }
+  .tt.normal { background: var(--accent-light); color: var(--accent); }
+
+  /* Checklist */
+  .cklist { display: flex; flex-direction: column; gap: 4px; }
+  .ck-gl { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); padding: 10px 0 6px; border-bottom: 1px solid var(--rule-light); margin-bottom: 2px; }
+  .ck-gl:first-child { padding-top: 0; }
+  .ck-item {
+    display: flex; align-items: center; gap: 12px; padding: 10px 14px;
+    border: 1px solid var(--rule); cursor: pointer; transition: all 0.15s;
+    background: var(--paper); font-size: 14px; line-height: 1.4; user-select: none;
+  }
+  .ck-item:hover { border-color: var(--accent); background: var(--accent-light); }
+  .ck-item.checked { border-color: var(--accent); background: var(--accent-light); }
+  .ck-box {
+    width: 16px; height: 16px; border: 1px solid var(--rule); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 11px; color: transparent; transition: all 0.15s;
+  }
+  .ck-item.checked .ck-box { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* Differential */
+  .diff-list { display: flex; flex-direction: column; gap: 6px; }
+  .diff-item {
+    display: flex; align-items: center; gap: 14px; padding: 12px 16px;
+    border: 1px solid var(--rule); cursor: pointer; transition: all 0.15s;
+    background: var(--paper); font-size: 14px; line-height: 1.4; user-select: none;
+  }
+  .diff-item:hover { border-color: var(--accent); background: var(--accent-light); }
+  .diff-item.ranked { border-color: var(--accent); background: var(--accent-light); }
+  .diff-badge {
+    width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--rule);
+    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--muted); transition: all 0.15s;
+  }
+  .diff-item.ranked .diff-badge { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .rank-counter { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+
+  /* Nav */
+  .nav-row { display: flex; gap: 10px; padding-top: 10px; border-top: 1px solid var(--rule-light); flex-wrap: wrap; }
+  .btn-p { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 11px 24px; background: var(--accent); color: #fff; border: none; cursor: pointer; transition: opacity 0.15s; }
+  .btn-p:hover { opacity: 0.85; }
+  .btn-p:disabled { opacity: 0.3; cursor: not-allowed; }
+  .btn-s { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 11px 24px; background: transparent; color: var(--muted); border: 1px solid var(--rule); cursor: pointer; transition: all 0.15s; }
+  .btn-s:hover { border-color: var(--ink); color: var(--ink); }
+  .btn-b { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 11px 24px; background: transparent; color: var(--muted); border: 1px solid var(--rule-light); cursor: pointer; transition: all 0.15s; }
+  .btn-b:hover { border-color: var(--rule); }
+
+  /* Reveal screen */
+  .rv-hd { padding-bottom: 20px; border-bottom: 2px solid var(--ink); }
+  .rv-verdict { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .rv-hd h3 { font-size: 22px; font-weight: 300; line-height: 1.35; }
+  .rv-hd h3 strong { font-weight: 600; }
+
+  .og { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .oc { background: var(--paper); padding: 14px 16px; }
+  .ocl { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 6px; }
+  .oct { font-size: 13px; line-height: 1.6; }
+
+  .refl-section { display: flex; flex-direction: column; gap: 10px; }
+  .refl-section h4 { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+  .refl-item { padding: 12px 16px; border-left: 2px solid var(--rule); font-size: 14px; line-height: 1.7; }
+  .refl-item.key { border-left-color: var(--accent); }
+  .refl-item.pitfall { border-left-color: var(--warn); }
+  .refl-item.pearl { border-left-color: var(--gold); }
+  .refl-tag { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 5px; color: var(--muted); }
+  .refl-item.key .refl-tag { color: var(--accent); }
+  .refl-item.pitfall .refl-tag { color: var(--warn); }
+  .refl-item.pearl .refl-tag { color: var(--gold); }
+
+  .src-block { font-family: var(--mono); font-size: 11px; line-height: 1.7; color: var(--muted); border: 1px solid var(--rule); padding: 14px 16px; background: var(--paper2); }
+  .src-block strong { color: var(--ink); }
+
+  /* CPD */
+  .cpd-toggle-btn { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 22px; background: transparent; color: var(--gold); border: 1px solid var(--gold); cursor: pointer; transition: all 0.15s; }
+  .cpd-toggle-btn:hover { background: var(--gold-light); }
+  .cpd-box { display: none; border: 2px solid var(--ink); padding: 24px; margin-top: 8px; background: var(--paper); animation: fadeUp 0.3s ease; }
+  .cpd-box.show { display: block; }
+  .cpd-title { font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; border-bottom: 1px solid var(--rule); padding-bottom: 12px; margin-bottom: 16px; }
+  .cpd-row { display: flex; gap: 12px; margin-bottom: 12px; }
+  .cpd-lbl { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); min-width: 140px; padding-top: 2px; flex-shrink: 0; }
+  .cpd-val { font-size: 13px; line-height: 1.6; }
+  .cpd-pts { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+  .cpd-pts li { font-size: 13px; line-height: 1.6; padding-left: 16px; position: relative; }
+  .cpd-pts li::before { content: '→'; position: absolute; left: 0; color: var(--rule); }
+  .cpd-ta { width: 100%; height: 72px; border: 1px solid var(--rule); background: var(--paper2); padding: 10px 12px; font-family: var(--serif); font-size: 13px; resize: vertical; color: var(--ink); margin-top: 6px; }
+  .cpd-ta:focus { outline: none; border-color: var(--accent); }
+  .cpd-date { font-family: var(--mono); font-size: 10px; color: var(--muted); text-align: right; margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--rule); }
+
+  @media print {
+    .g-header, .sidebar, .nav-row, .cklist, .diff-list, .cpd-toggle-btn, .lib-wrap, .case-shell > .sidebar { display: none !important; }
+    .cpd-box { display: block !important; border: none; }
+    body { background: white; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 859px) {
+    .case-shell { display: flex; flex-direction: column; padding: 20px 16px; }
+    .sidebar-desktop { display: none !important; }
+    .sb-toggle { display: flex; }
+    .case-main { order: 1; }
+  }
+  @media (min-width: 860px) {
+    .case-shell { display: grid; grid-template-columns: 1fr 272px; gap: 36px; }
+    .sb-toggle { display: none !important; }
+    .sidebar-desktop { display: flex !important; }
+    .sidebar-mobile { display: none !important; }
+  }
+  .sb-toggle {
+    display: flex; align-items: center; justify-content: space-between;
+    border: 1px solid var(--rule); padding: 10px 14px; cursor: pointer;
+    font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--muted); background: var(--paper2); margin-bottom: 16px;
+    transition: all 0.15s; user-select: none;
+  }
+  .sb-toggle:hover { border-color: var(--ink); color: var(--ink); }
+  .sb-toggle-icon { font-size: 12px; transition: transform 0.2s; }
+  .sb-toggle.open .sb-toggle-icon { transform: rotate(180deg); }
+  .sidebar-mobile { display: none; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+  .sidebar-mobile.open { display: flex; animation: fadeUp 0.25s ease; }
+  .case-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  @media (max-width: 560px) {
+    .case-grid { grid-template-columns: 1fr; }
+    .lib-top { flex-direction: column; }
+    .random-btn { align-self: flex-start; }
+    .pg { grid-template-columns: 1fr 1fr; }
+    .nav-row { gap: 6px; }
+    .btn-p, .btn-s, .btn-b { padding: 10px 14px; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- GLOBAL HEADER -->
+<header class="g-header">
+  <button class="home-btn" onclick="goHome()">&#8592; Home</button>
+  <div class="g-divider"></div>
+  <span class="g-title">Clinical Reasoning Simulator</span>
+  <div class="g-divider"></div>
+  <span class="g-meta" id="g-meta">Case Library</span>
+  <div class="g-pill" id="g-pill">Library</div>
+</header>
+
+<!-- ═══════════════════════════════════════
+     VIEW: LIBRARY
+═══════════════════════════════════════ -->
+<div class="view active" id="view-library">
+  <div class="lib-wrap">
+    <div class="lib-top">
+      <div class="lib-title">
+        <h1><strong>Clinical Reasoning</strong><br>Simulator</h1>
+        <p>Real published case reports. Work through each case before the reveal. For solo CPD or group discussion.</p>
+      </div>
+      <button class="random-btn" onclick="launchRandom()">&#8594; Random Case</button>
+    </div>
+
+    <div class="filters" style="flex-direction:column; gap:10px;">
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+        <span class="f-label" style="min-width:72px;">Difficulty</span>
+        <button class="f-btn on" data-filter="diff" data-val="all" onclick="setFilter('diff','all',this)">All</button>
+        <button class="f-btn" data-filter="diff" data-val="Beginner" onclick="setFilter('diff','Beginner',this)">Beginner</button>
+        <button class="f-btn" data-filter="diff" data-val="Intermediate" onclick="setFilter('diff','Intermediate',this)">Intermediate</button>
+        <button class="f-btn" data-filter="diff" data-val="Advanced" onclick="setFilter('diff','Advanced',this)">Advanced</button>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+        <span class="f-label" style="min-width:72px;">Category</span>
+        <button class="f-btn on" data-filter="cat" data-val="all" onclick="setFilter('cat','all',this)">All</button>
+        <button class="f-btn" data-filter="cat" data-val="Cervical" onclick="setFilter('cat','Cervical',this)">Cervical</button>
+        <button class="f-btn" data-filter="cat" data-val="Thoracic" onclick="setFilter('cat','Thoracic',this)">Thoracic</button>
+        <button class="f-btn" data-filter="cat" data-val="Lumbar" onclick="setFilter('cat','Lumbar',this)">Lumbar</button>
+        <button class="f-btn" data-filter="cat" data-val="Sacral/SIJ" onclick="setFilter('cat','Sacral/SIJ',this)">Sacral/SIJ</button>
+        <button class="f-btn" data-filter="cat" data-val="Shoulder" onclick="setFilter('cat','Shoulder',this)">Shoulder</button>
+        <button class="f-btn" data-filter="cat" data-val="Elbow" onclick="setFilter('cat','Elbow',this)">Elbow</button>
+        <button class="f-btn" data-filter="cat" data-val="Wrist/Hand" onclick="setFilter('cat','Wrist/Hand',this)">Wrist/Hand</button>
+        <button class="f-btn" data-filter="cat" data-val="Hip" onclick="setFilter('cat','Hip',this)">Hip</button>
+        <button class="f-btn" data-filter="cat" data-val="Knee" onclick="setFilter('cat','Knee',this)">Knee</button>
+        <button class="f-btn" data-filter="cat" data-val="Ankle/Foot" onclick="setFilter('cat','Ankle/Foot',this)">Ankle/Foot</button>
+        <button class="f-btn" data-filter="cat" data-val="Neuro" onclick="setFilter('cat','Neuro',this)">Neuro</button>
+        <button class="f-btn" data-filter="cat" data-val="Red Flag" onclick="setFilter('cat','Red Flag',this)">Red Flag</button>
+        <button class="f-btn" data-filter="cat" data-val="Paediatric" onclick="setFilter('cat','Paediatric',this)">Paediatric</button>
+        <button class="f-btn" data-filter="cat" data-val="Sports/Acute" onclick="setFilter('cat','Sports/Acute',this)">Sports/Acute</button>
+        <button class="f-btn" data-filter="cat" data-val="Post-surgical" onclick="setFilter('cat','Post-surgical',this)">Post-surgical</button>
+        <button class="f-btn" data-filter="cat" data-val="Headache" onclick="setFilter('cat','Headache',this)">Headache</button>
+        <button class="f-btn" data-filter="cat" data-val="Mixed" onclick="setFilter('cat','Mixed',this)">Mixed</button>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat"><span class="stat-n" id="stat-total">0</span><span class="stat-l">Total Cases</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-n" id="stat-done">0</span><span class="stat-l">Completed</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-n" id="stat-remain">0</span><span class="stat-l">Remaining</span></div>
+    </div>
+
+    <div class="case-grid" id="case-grid"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     VIEW: CASE
+═══════════════════════════════════════ -->
+<div class="view" id="view-case">
+  <div class="case-shell">
+
+    <!-- MAIN -->
+    <main class="case-main" id="case-main">
+
+
+      <!-- Mobile sidebar toggle -->
+      <div class="sb-toggle" id="sb-toggle" onclick="toggleMobileSidebar()">
+        <span>Patient Info &amp; Progress</span>
+        <span class="sb-toggle-icon">&#9660;</span>
+      </div>
+      <!-- Mobile sidebar -->
+      <div class="sidebar-mobile" id="sidebar-mobile">
+        <div class="sp"><div class="sp-hd">Patient Summary</div><div class="sp-bd" id="sb-patient-mob"></div></div>
+        <div class="sp"><div class="sp-hd">Case Progress</div><div class="sp-bd"><div class="prog-track" id="prog-track-mob"></div></div></div>
+        <div class="sp"><div class="sp-hd">Decision Log</div><div class="sp-bd"><ul class="log-list" id="decision-log-mob"><li class="log-li" style="color:var(--rule);">No decisions yet</li></ul></div></div>
+        <div class="sp"><div class="sp-hd">Source</div><div class="sp-bd" id="sb-source-mob" style="font-family:var(--mono); font-size:10px; line-height:1.7; color:var(--muted);"></div></div>
+      </div>
+
+      <!-- STAGE 0: INTRO -->
+      <div class="stage active" id="stage-intro">
+        <div class="case-hd">
+          <p class="case-num" id="intro-num"></p>
+          <h2 id="intro-title"></h2>
+        </div>
+        <div class="pg">
+          <div class="ps"><div class="psl">Age / Sex</div><div class="psv" id="intro-age"></div></div>
+          <div class="ps"><div class="psl">Chief Complaint</div><div class="psv" id="intro-cc"></div></div>
+          <div class="ps"><div class="psl">Duration</div><div class="psv" id="intro-dur"></div></div>
+        </div>
+        <div class="rb info show">
+          <div class="rl">Instructions</div>
+          <div class="rt">
+            <p>Work through each stage before hitting reveal. Make your decisions — what history questions matter, what tests you'd run, what investigations you'd order, what you think the diagnosis is — before seeing the answers.</p>
+            <p>All clinical data is sourced directly from a published peer-reviewed case report. Nothing is fabricated. Source cited at the end.</p>
+            <p><em>Works solo or as a group — pause at each stage and discuss before revealing.</em></p>
+          </div>
+        </div>
+        <div class="nav-row">
+          <button class="btn-p" onclick="goStage('history')">Begin Case &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STAGE 1: HISTORY -->
+      <div class="stage" id="stage-history">
+        <p class="s-label">Stage <span>1 / 5</span> &mdash; History</p>
+        <div class="s-intro">
+          You sit down with the patient and take a full history.<br>
+          <em>Consider what you'd ask before revealing.</em>
+        </div>
+        <div class="rb" id="hist-reveal">
+          <div class="rl">History &mdash; sourced from published case report</div>
+          <div class="rt" id="hist-content"></div>
+          <div class="rb warn show" id="hist-note" style="margin-top:14px; padding:10px 14px;">
+            <div class="rl">Clinical Note</div>
+            <div class="rt" id="hist-note-text"></div>
+          </div>
+        </div>
+        <div class="nav-row">
+          <button class="btn-b" onclick="goStage('intro')">&larr; Back</button>
+          <button class="btn-p" id="hist-next" disabled onclick="goStage('examination')">Proceed to Examination &rarr;</button>
+          <button class="btn-s" onclick="revealStage('hist-reveal','hist-next','history')">Reveal History</button>
+        </div>
+      </div>
+
+      <!-- STAGE 2: EXAMINATION -->
+      <div class="stage" id="stage-examination">
+        <p class="s-label">Stage <span>2 / 5</span> &mdash; Examination</p>
+        <div class="s-intro">
+          Select the tests you would perform. ROM and myotome testing are always performed and will appear automatically on reveal.<br>
+          <em>Tick your selections before revealing.</em>
+        </div>
+        <div class="cklist" id="exam-checklist"></div>
+        <div class="rb" id="exam-reveal">
+          <div class="rl">Examination Findings &mdash; sourced from published case report</div>
+          <div class="rt" id="exam-auto-content"></div>
+          <div id="exam-selected-content"></div>
+          <div class="rb gold show" id="exam-context" style="margin-top:14px; padding:10px 14px;">
+            <div class="rl">Why These Tests Were Performed</div>
+            <div class="rt" id="exam-context-text"></div>
+          </div>
+        </div>
+        <div class="nav-row">
+          <button class="btn-b" onclick="goStage('history')">&larr; Back</button>
+          <button class="btn-p" id="exam-next" disabled onclick="goStage('investigations')">Proceed to Investigations &rarr;</button>
+          <button class="btn-s" onclick="revealStage('exam-reveal','exam-next','examination')">Reveal Examination</button>
+        </div>
+      </div>
+
+      <!-- STAGE 3: INVESTIGATIONS -->
+      <div class="stage" id="stage-investigations">
+        <p class="s-label">Stage <span>3 / 5</span> &mdash; Investigations</p>
+        <div class="s-intro">
+          Select the investigations you would order.<br>
+          <em>Consider what is clinically indicated and within scope before revealing.</em>
+        </div>
+        <div class="cklist" id="inv-checklist"></div>
+        <div class="rb" id="inv-reveal">
+          <div class="rl">Investigations &mdash; sourced from published case report</div>
+          <div id="inv-content"></div>
+        </div>
+        <div class="nav-row">
+          <button class="btn-b" onclick="goStage('examination')">&larr; Back</button>
+          <button class="btn-p" id="inv-next" disabled onclick="goStage('differential')">Proceed to Differential &rarr;</button>
+          <button class="btn-s" onclick="revealStage('inv-reveal','inv-next','investigations')">Reveal Investigations</button>
+        </div>
+      </div>
+
+      <!-- STAGE 4: DIFFERENTIAL -->
+      <div class="stage" id="stage-differential">
+        <p class="s-label">Stage <span>4 / 5</span> &mdash; Differential Diagnosis</p>
+        <div class="s-intro">
+          Click conditions in order of likelihood — most likely first. Click again to deselect and re-rank.<br>
+          <em>Rank all 8 before revealing.</em>
+        </div>
+        <p class="rank-counter" id="rank-counter">0 of 8 ranked</p>
+        <div class="diff-list" id="diff-list"></div>
+        <div class="rb" id="diff-reveal">
+          <div class="rl">Differential Diagnosis &mdash; sourced from published case report</div>
+          <div id="diff-content"></div>
+        </div>
+        <div class="nav-row">
+          <button class="btn-b" onclick="goStage('investigations')">&larr; Back</button>
+          <button class="btn-p" id="diff-next" disabled onclick="goStage('management')">Proceed to Management &rarr;</button>
+          <button class="btn-s" onclick="revealStage('diff-reveal','diff-next','differential')">Reveal Differential</button>
+        </div>
+      </div>
+
+      <!-- STAGE 5: MANAGEMENT -->
+      <div class="stage" id="stage-management">
+        <p class="s-label">Stage <span>5 / 5</span> &mdash; Management</p>
+        <div class="s-intro">
+          Select everything you would include in your management plan.<br>
+          <em>All options will be explained on reveal regardless of what you select.</em>
+        </div>
+        <div class="cklist" id="mgmt-checklist"></div>
+        <div class="rb" id="mgmt-reveal">
+          <div class="rl">Management &mdash; sourced from published case report</div>
+          <div id="mgmt-content"></div>
+        </div>
+        <div class="nav-row">
+          <button class="btn-b" onclick="goStage('differential')">&larr; Back</button>
+          <button class="btn-p" id="mgmt-next" disabled onclick="goStage('reveal')">View Full Reveal &rarr;</button>
+          <button class="btn-s" onclick="revealStage('mgmt-reveal','mgmt-next','management')">Reveal Management</button>
+        </div>
+      </div>
+
+      <!-- STAGE 6: FULL REVEAL -->
+      <div class="stage" id="stage-reveal">
+        <div class="rv-hd">
+          <p class="rv-verdict">Case Closed &mdash; Confirmed Diagnosis</p>
+          <h3 id="reveal-dx-title"></h3>
+        </div>
+        <div class="og" id="reveal-outcome-grid"></div>
+        <div class="refl-section">
+          <h4>Clinical Reasoning Reflections</h4>
+          <div id="reveal-reflections"></div>
+        </div>
+        <div class="src-block" id="reveal-source"></div>
+        <div style="padding-top:8px; border-top:1px solid var(--rule);">
+          <button class="cpd-toggle-btn" id="cpd-toggle" onclick="toggleCPD()">&#8595; Generate CPD Summary</button>
+        </div>
+        <div class="cpd-box" id="cpd-box">
+          <div class="cpd-title">CPD Activity Summary &mdash; Clinical Reasoning Simulator</div>
+          <div class="cpd-row"><div class="cpd-lbl">Activity type</div><div class="cpd-val">Interactive Case-Based Learning &mdash; Clinical Reasoning</div></div>
+          <div class="cpd-row"><div class="cpd-lbl">Case</div><div class="cpd-val" id="cpd-case"></div></div>
+          <div class="cpd-row"><div class="cpd-lbl">Source</div><div class="cpd-val" id="cpd-source"></div></div>
+          <div class="cpd-row"><div class="cpd-lbl">Topics covered</div><div class="cpd-val" id="cpd-topics"></div></div>
+          <div class="cpd-row"><div class="cpd-lbl">Key learning points</div><div class="cpd-val"><ul class="cpd-pts" id="cpd-points"></ul></div></div>
+          <div class="cpd-row" style="flex-direction:column; gap:4px;">
+            <div class="cpd-lbl">Time spent</div>
+            <input type="text" placeholder="e.g. 20 minutes" style="border:1px solid var(--rule); background:var(--paper2); padding:8px 12px; font-family:var(--serif); font-size:13px; width:200px; color:var(--ink);">
+          </div>
+          <div class="cpd-row" style="flex-direction:column; gap:4px;">
+            <div class="cpd-lbl">How it applies to your practice</div>
+            <textarea class="cpd-ta" placeholder="Reflect on how this case relates to your clinical practice..."></textarea>
+          </div>
+          <div class="cpd-row" style="flex-direction:column; gap:4px;">
+            <div class="cpd-lbl">What you would do differently</div>
+            <textarea class="cpd-ta" placeholder="What would you change about your approach after working through this case?"></textarea>
+          </div>
+          <div class="cpd-row" style="flex-direction:column; gap:4px;">
+            <div class="cpd-lbl">Follow-up learning identified</div>
+            <textarea class="cpd-ta" placeholder="Any gaps identified or topics to explore further?"></textarea>
+          </div>
+          <div class="cpd-date" id="cpd-date"></div>
+          <div style="margin-top:16px; display:flex; gap:10px;">
+            <button class="btn-p" onclick="window.print()">Save to PDF</button>
+            <button class="btn-s" onclick="goHome()">Back to Library</button>
+          </div>
+        </div>
+        <div class="nav-row" style="margin-top:8px;">
+          <button class="btn-b" onclick="goStage('management')">&larr; Back</button>
+          <button class="btn-s" onclick="restartCase()">Restart Case</button>
+          <button class="btn-s" onclick="goHome()">Back to Library</button>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar sidebar-desktop">
+      <div class="sp">
+        <div class="sp-hd">Patient Summary</div>
+        <div class="sp-bd" id="sb-patient"></div>
+      </div>
+      <div class="sp">
+        <div class="sp-hd">Case Progress</div>
+        <div class="sp-bd">
+          <div class="prog-track">
+            <div class="prog-step current" id="ps-intro" onclick="goStage('intro')"><span class="pdot"></span>Introduction</div>
+            <div class="prog-step locked" id="ps-history" onclick="goStageIfUnlocked('history')"><span class="pdot"></span>History</div>
+            <div class="prog-step locked" id="ps-examination" onclick="goStageIfUnlocked('examination')"><span class="pdot"></span>Examination</div>
+            <div class="prog-step locked" id="ps-investigations" onclick="goStageIfUnlocked('investigations')"><span class="pdot"></span>Investigations</div>
+            <div class="prog-step locked" id="ps-differential" onclick="goStageIfUnlocked('differential')"><span class="pdot"></span>Differential Dx</div>
+            <div class="prog-step locked" id="ps-management" onclick="goStageIfUnlocked('management')"><span class="pdot"></span>Management</div>
+            <div class="prog-step locked" id="ps-reveal" onclick="goStageIfUnlocked('reveal')"><span class="pdot"></span>Full Reveal</div>
+          </div>
+        </div>
+      </div>
+      <div class="sp">
+        <div class="sp-hd">Decision Log</div>
+        <div class="sp-bd">
+          <ul class="log-list" id="decision-log">
+            <li class="log-li" style="color:var(--rule);">No decisions yet</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sp">
+        <div class="sp-hd">Source</div>
+        <div class="sp-bd" id="sb-source" style="font-family:var(--mono); font-size:10px; line-height:1.7; color:var(--muted);"></div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+//  ██████╗  █████╗ ████████╗ █████╗      █████╗ ██████╗ ██████╗
+//  ██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗    ██╔══██╗██╔══██╗██╔══██╗
+//  ██║  ██║███████║   ██║   ███████║    ███████║██║  ██║██║  ██║
+//  ██║  ██║██╔══██║   ██║   ██╔══██║    ██╔══██║██║  ██║██║  ██║
+//  ██████╔╝██║  ██║   ██║   ██║  ██║    ██║  ██║██████╔╝██████╔╝
+//  ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝    ╚═╝  ╚═╝╚═════╝ ╚═════╝
+//
+//  PASTE NEW CASES BELOW THIS LINE
+//  Each case is one object in the CASES array.
+//  Copy the data block from the Project and add it here.
+//  Separate multiple cases with a comma.
+//  DO NOT edit anything above or below the marked section.
+// ═══════════════════════════════════════════════════════════════════
+
+const CASES = [
+
+// ─────────────────────────────────────────────
+// CASE 001 — Degenerative Cervical Myelopathy
+// Source: Trager RJ et al. Cureus. 2022;14(10):e30508. PMID: 36415361
+// ─────────────────────────────────────────────
+{
+  id: "001",
+  title: "A 62-year-old woman presents to your chiropractic clinic with a 3-month exacerbation of neck pain",
+  category: "Cervical",
+  secondaryCategory: "Neuro",
+  difficulty: "Advanced",
+  estimatedTime: "20–25 mins",
+  source: {
+    short: "Trager RJ et al.\nCureus. 2022;14(10):e30508\nPMID: 36415361\nPMC: 9675290\nOpen access ✓",
+    full: "Trager RJ, Smith GA, Labak CM, Battaglia PJ, Dusek JA. Identification of Degenerative Cervical Myelopathy in the Chiropractic Office: Case Report and a Review of the Literature. Cureus. 2022 Oct 20;14(10):e30508. doi: 10.7759/cureus.30508. PMID: 36415361. PMC9675290. Open access."
+  },
+  patient: {
+    ageSex: "62-year-old female",
+    chiefComplaint: "Neck pain & hand/finger numbness",
+    duration: "3-month exacerbation (10+ yr chronic)",
+    priorProviders: "GP, Physiotherapy, Rheumatology, Pain Management",
+    priorDiagnoses: "Cervical radiculopathy, possible carpal tunnel syndrome"
+  },
+  history: {
+    content: `<p>The patient is a 62-year-old woman presenting with a <strong>3-month exacerbation of neck pain</strong> superimposed on a background of <strong>cervical pain present for over 10 years</strong>. She describes the pain as aching and persistent, radiating bilaterally into both arms. Associated symptoms include <strong>numbness and tingling in her hands and fingers bilaterally</strong>, and notably, <strong>dysesthetic sensations across her torso</strong> — she describes a tight, band-like feeling around her chest that she finds difficult to characterise.</p>
+    <p>The onset was insidious with no specific mechanism of injury. Symptoms have been <strong>progressively worsening</strong> over time despite multiple treatment attempts. Nothing consistently aggravates or relieves the symptoms. She rates her pain at <strong>8/10 on the VAS</strong>.</p>
+    <p><strong>Past Medical History:</strong> Long-standing cervical pain. No significant systemic illness reported.</p>
+    <p><strong>Medications:</strong> Analgesic medications as prescribed through pain management. No anticoagulants or immunosuppressants noted.</p>
+    <p><strong>Social / Occupation:</strong> Not specifically documented in the published case report.</p>
+    <p><strong>Family History:</strong> Not documented in the published case report.</p>
+    <p><strong>Prior Treatment:</strong> She has seen primary care, physiotherapy, rheumatology, and pain management over several years. Treatments have included medications, formal physiotherapy, injection therapy, and prior chiropractic care. <strong>None provided lasting improvement.</strong> A prior cervical MRI exists, reported as showing moderate cervical canal stenosis — however, no neurosurgical consultation was ever requested by any prior provider.</p>`,
+    clinicalNote: "Bilateral upper extremity numbness combined with torso dysesthesia — a band-like sensory disturbance below the neck — and progressive symptoms despite comprehensive failed conservative care across multiple providers warrants urgent and thorough neurological assessment. The prior MRI reporting canal stenosis without neurosurgical escalation is a significant gap in this patient's prior management."
+  },
+  examination: {
+    autoROM: `<p><strong>Cervical ROM:</strong> Not specifically documented in the published case report.</p>`,
+    autoMyotomes: `<table class="ft"><thead><tr><th>Movement</th><th>Muscle</th><th>Nerve Root</th><th>Finding</th></tr></thead><tbody>
+      <tr><td>Shoulder abduction</td><td>Deltoid</td><td>C5</td><td>Deficits present bilaterally <span class="tt pos">Abnormal</span></td></tr>
+      <tr><td>Elbow flexion</td><td>Biceps brachii</td><td>C5/C6</td><td>Deficits present bilaterally <span class="tt pos">Abnormal</span></td></tr>
+      <tr><td>Wrist extension</td><td>Extensor carpi radialis</td><td>C6</td><td>Deficits present bilaterally <span class="tt pos">Abnormal</span></td></tr>
+      <tr><td>Elbow extension</td><td>Triceps brachii</td><td>C7</td><td>Deficits present bilaterally <span class="tt pos">Abnormal</span></td></tr>
+      <tr><td>Finger flexion</td><td>Flexor digitorum</td><td>C8</td><td>Deficits present bilaterally <span class="tt pos">Abnormal</span></td></tr>
+      <tr><td>Finger abduction</td><td>Dorsal interossei</td><td>T1</td><td>Deficits present bilaterally <span class="tt pos">Abnormal</span></td></tr>
+    </tbody></table>`,
+    checklist: [
+      { group: "Neurological", items: [
+        { id: "hoffman", label: "Hoffman's reflex (bilateral)", result: `Hoffman's Reflex<span class="tt pos">Bilateral Positive</span>`, documented: true },
+        { id: "dtr", label: "Deep tendon reflexes (biceps, triceps, brachioradialis, patellar, achilles)", result: `Quadriceps (patellar) reflexes <strong>4+</strong> — hyperreflexia <span class="tt pos">UMN Sign</span>`, documented: true },
+        { id: "sensation", label: "Upper extremity sensation (light touch, pin prick)", result: `Reduced bilaterally in upper extremities — <strong>non-dermatomal pattern</strong> <span class="tt pos">Abnormal</span>`, documented: true },
+        { id: "clonus", label: "Ankle clonus", result: `Not documented in published case report`, documented: false },
+        { id: "babinski", label: "Plantar response (Babinski)", result: `Not documented in published case report`, documented: false },
+      ]},
+      { group: "Orthopaedic / Special Tests", items: [
+        { id: "spurling", label: "Spurling's test", result: `Not documented in published case report`, documented: false },
+        { id: "distraction", label: "Cervical distraction test", result: `Not documented in published case report`, documented: false },
+        { id: "ultt", label: "Upper limb tension test (ULTT)", result: `Not documented in published case report`, documented: false },
+        { id: "grip", label: "Grip strength assessment", result: `Not documented in published case report`, documented: false },
+      ]},
+      { group: "Observation & Postural", items: [
+        { id: "gait", label: "Gait assessment", result: `Not documented in published case report`, documented: false },
+        { id: "posture", label: "Postural observation (cervical, thoracic)", result: `Not documented in published case report`, documented: false },
+      ]},
+      { group: "Outcome Measures", items: [
+        { id: "ndi", label: "Neck Disability Index (NDI)", result: `NDI: <strong>56%</strong> — severe disability <span class="tt pos">Severe</span>`, documented: true },
+        { id: "mjoa", label: "Patient-derived modified Japanese Orthopaedic Association score (P-mJOA)", result: `P-mJOA: <strong>11/18</strong> — severe myelopathy range <span class="tt pos">Severe</span>`, documented: true },
+      ]}
+    ],
+    contextText: "The chiropractor prioritised a full neurological examination given the bilateral upper extremity symptoms, torso dysesthesia, and history of progressive failure with conservative care. Hoffman's reflex and deep tendon reflexes were critical — bilateral positive Hoffman's and hyperreflexia (4+) constitute upper motor neuron signs that localise the lesion to the spinal cord rather than a nerve root. Non-dermatomal sensory loss further distinguishes this from radiculopathy. The NDI and P-mJOA scores quantified disability and myelopathy severity, which directly informed the management decision."
+  },
+  investigations: {
+    options: [
+      { id: "xray", label: "Cervical spine X-ray", consequence: "X-ray can demonstrate spondylotic changes and alignment but has poor sensitivity for soft tissue and cord pathology. It would not provide information about cord compression and is insufficient as a standalone investigation for this presentation.", ordered: false },
+      { id: "mri-review", label: "Review existing cervical MRI", consequence: null, ordered: true, result: `<p>The existing cervical MRI was reviewed. Findings:</p><table class="ft"><thead><tr><th>Level</th><th>Finding</th></tr></thead><tbody><tr><td>C4&ndash;5</td><td>Central canal stenosis</td></tr><tr><td>C5&ndash;6</td><td>Central canal stenosis</td></tr><tr><td>C6&ndash;7</td><td>Central canal stenosis</td></tr><tr><td>Overall</td><td><strong>Moderate-to-severe multilevel cervical canal stenosis with cord compression</strong></td></tr></tbody></table><p style="margin-top:12px;">These findings, correlated with the clinical examination findings of bilateral UMN signs, bilateral sensorimotor deficits, and torso dysesthesia, were consistent with <strong>degenerative cervical myelopathy (DCM)</strong>.</p>` },
+      { id: "ncs", label: "Nerve conduction studies / EMG", consequence: "NCS/EMG assesses peripheral nerve and motor unit function. It cannot evaluate spinal cord compression. In carpal tunnel syndrome, NCS would be abnormal — but this presentation cannot be explained by CTS alone given the bilateral UMN signs and torso dysesthesia. NCS would not change management here.", ordered: false },
+      { id: "gp-referral", label: "Refer back to GP for specialist referral (neurosurgery)", consequence: null, ordered: true, result: `<p>Referral to neurosurgery was the appropriate escalation. Given confirmed cord compression on MRI, bilateral UMN signs on examination, severe disability (NDI 56%), and failure of all prior conservative care, this patient required neurosurgical evaluation.</p>` },
+      { id: "bloods", label: "Request blood work via GP (ESR, CRP, FBC)", consequence: "Blood work was not indicated or ordered in this case. The presentation was consistent with a structural compressive myelopathy rather than an inflammatory, infective, or haematological aetiology. In the absence of red flags for malignancy, infection, or systemic inflammatory disease, bloods would not change management.", ordered: false }
+    ]
+  },
+  differential: {
+    conditions: [
+      { label: "Degenerative Cervical Myelopathy (DCM)", correct: true, blurb: "Correct diagnosis. Bilateral UMN signs (Hoffman's, hyperreflexia), non-dermatomal sensory loss, torso dysesthesia, and multilevel canal stenosis on MRI are all consistent with spinal cord compression. Progressive course and failed conservative care support surgical referral." },
+      { label: "Cervical Radiculopathy (multilevel)", correct: false, blurb: "Plausible given neck pain and upper extremity symptoms, but cannot explain bilateral Hoffman's sign, hyperreflexia, or torso dysesthesia. Radiculopathy produces diminished reflexes and dermatomal sensory loss — the opposite of what was found here." },
+      { label: "Bilateral Carpal Tunnel Syndrome", correct: false, blurb: "Prior working diagnosis. CTS can produce bilateral hand numbness but affects the median nerve distribution and would not produce hyperreflexia, positive Hoffman's, or torso dysesthesia. Normal NCS in a prior workup further reduced this likelihood." },
+      { label: "Cervical Spondylotic Myeloradiculopathy", correct: false, blurb: "Closely related — a combination of cord and nerve root involvement. The predominantly UMN picture here points more to cord compression than combined pathology, though mixed features are possible in DCM." },
+      { label: "Multiple Sclerosis", correct: false, blurb: "MS can produce bilateral sensorimotor deficits and UMN signs and should be on the differential in progressive bilateral neurological presentations. However, the MRI findings of spondylotic stenosis with cord compression provide a structural explanation that makes MS less likely here." },
+      { label: "Amyotrophic Lateral Sclerosis (ALS)", correct: false, blurb: "ALS produces a combination of UMN and LMN signs and can mimic myelopathy. Less likely given the MRI correlation with structural cord compression and the absence of fasciculations or pronounced LMN features documented in this case." },
+      { label: "Thoracic Outlet Syndrome", correct: false, blurb: "Can produce bilateral upper extremity symptoms but would not explain UMN signs, hyperreflexia, or torso dysesthesia. Not consistent with the MRI findings of cervical cord compression." },
+      { label: "Fibromyalgia with central sensitisation", correct: false, blurb: "Could produce widespread sensory symptoms and bilateral pain, but would not produce objective UMN signs such as bilateral positive Hoffman's and hyperreflexia. These are neurological findings that cannot be attributed to central sensitisation alone." }
+    ],
+    explanation: `<p>The correct diagnosis is <strong>Degenerative Cervical Myelopathy (DCM)</strong>, confirmed by the treating chiropractor and subsequently verified by the neurosurgeon who performed the surgery.</p>
+    <p>The clinical reasoning pivot was recognising that the constellation of findings — <strong>bilateral Hoffman's sign, quadriceps hyperreflexia (4+), bilateral non-dermatomal sensorimotor deficits, and torso dysesthesia</strong> — constituted an upper motor neuron pattern that could not be explained by radiculopathy or carpal tunnel syndrome alone. These findings, correlated with the existing MRI demonstrating multilevel C4–7 cord compression, were diagnostic.</p>
+    <p>Multiple prior providers had attributed the presentation to radiculopathy and CTS. The key differentiating point: radiculopathy produces <em>diminished</em> reflexes at the affected level; myelopathy produces <em>hyperreflexia below</em> the lesion. The torso dysesthesia was the additional feature that should have flagged cord-level pathology much earlier in this patient's care.</p>`
+  },
+  management: {
+    options: [
+      { id: "hvla", label: "Apply HVLA cervical spine manipulation", selected: false, explanation: `<strong>Not appropriate.</strong> High-velocity cervical manipulation is contraindicated with confirmed spinal cord compression. DCM represents an absolute precaution for HVLA to the cervical spine. Manipulation in the presence of cord compression carries risk of neurological deterioration. This was correctly not performed by the treating chiropractor.` },
+      { id: "referral", label: "Urgent referral to neurosurgery via GP", selected: true, explanation: `<strong>Correct and priority action.</strong> This is what the treating chiropractor did. Given confirmed multilevel cord compression, bilateral UMN signs, severe disability (NDI 56%, P-mJOA 11/18), and failure of all prior conservative care, neurosurgical evaluation was the appropriate management. The chiropractor communicated the clinical findings and urgency to the patient, who was referred to a neurosurgeon.` },
+      { id: "soft-tissue", label: "Soft tissue therapy to cervical and periscapular musculature only", selected: false, explanation: `<strong>Not appropriate as primary management.</strong> While soft tissue work below the level of cord compression is not contraindicated, it does not address the underlying pathology. Given the severity of presentation (NDI 56%, P-mJOA 11/18, failed all prior conservative care), soft tissue therapy as a primary management strategy would represent an inappropriate delay in surgical referral.` },
+      { id: "education", label: "Patient education — explain diagnosis, findings, and rationale for referral", selected: true, explanation: `<strong>Appropriate and important.</strong> The chiropractor informed the patient of the suspected diagnosis, the clinical and imaging findings, and the rationale for neurosurgical referral. The patient expressed understanding and acknowledged she felt something more serious was occurring. Clear communication supports informed consent and appropriate follow-through with the referral pathway.` },
+      { id: "conservative", label: "Continue conservative management — reassess in 6 weeks", selected: false, explanation: `<strong>Not appropriate.</strong> This patient had already failed multiple years of conservative care across several providers. With confirmed cord compression and severe functional disability, a further 6-week conservative trial would represent an inappropriate delay. Progressive myelopathy without surgical decompression carries risk of irreversible neurological deterioration.` }
+    ],
+    outcomeText: `The chiropractor referred the patient to a neurosurgeon. The neurosurgeon confirmed DCM and performed <strong>C4–5, C5–6, C6–7 anterior cervical discectomy and fusion (ACDF)</strong>.<br><br><strong>Outcomes:</strong><br>At 6 weeks post-op: VAS 3/10 (from 8/10), NDI 16% (from 56%), P-mJOA 15/18 (from 11/18).<br>At 2 months post-op: Neck pain mild, hand numbness reduced to faint tingling.`
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Degenerative Cervical Myelopathy (DCM)</strong><br>C4&ndash;7 multilevel central canal stenosis with cord compression",
+    outcomes: [
+      { label: "Published Source", text: "Trager RJ, Smith GA, Labak CM, Battaglia PJ, Dusek JA. <em>Cureus.</em> 2022;14(10):e30508" },
+      { label: "PMID / PMC", text: "PMID: 36415361 &mdash; PMC9675290 (open access)" },
+      { label: "Final Diagnosis", text: "Degenerative Cervical Myelopathy, confirmed by neurosurgery" },
+      { label: "Intervention", text: "C4&ndash;7 ACDF — significant improvement in pain, disability, and myelopathy scores within 2 months" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "DCM is frequently misdiagnosed as radiculopathy or carpal tunnel syndrome. The triad of bilateral UE numbness, hyperreflexia, and bilateral positive Hoffman's sign should always prompt myelopathy screening, regardless of prior diagnoses." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Radiculopathy produces diminished reflexes and dermatomal sensory loss. Myelopathy produces hyperreflexia, non-dermatomal changes, and UMN signs. These are opposite findings — not overlapping. Multiple providers in this case failed to make this distinction." },
+      { type: "pearl", tag: "Clinical Pearl", text: "Torso dysesthesia — a band-like sensory disturbance around the chest or abdomen — localises the lesion to the spinal cord. If a patient describes this symptom, suspect cord-level pathology until proven otherwise." },
+      { type: "key", tag: "Scope of Practice", text: "The chiropractor's role in this case was detection and timely referral, not treatment. Knowing when not to treat is as important as knowing how to treat. HVLA cervical manipulation is contraindicated with confirmed cord compression." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "The MRI showing moderate-to-severe canal stenosis already existed. The failure was not imaging availability — it was clinical pattern recognition. Imaging must always be interpreted in the context of a thorough neurological examination." }
+    ]
+  },
+  cpd: {
+    topics: "Neurological examination, UMN vs LMN differentiation, DCM diagnosis and clinical features, red flag screening, cervical spine imaging interpretation, referral pathways, scope of practice",
+    keyPoints: [
+      "Bilateral Hoffman's sign and hyperreflexia indicate UMN pathology — not radiculopathy",
+      "Torso dysesthesia (band-like) localises the lesion to the spinal cord, not a nerve root",
+      "Radiculopathy: diminished reflexes; Myelopathy: hyperreflexia below the lesion",
+      "MRI is the criterion standard for DCM — X-ray alone is insufficient",
+      "HVLA cervical manipulation is contraindicated with confirmed myelopathy — refer urgently"
+    ]
+  }
+},
+{
+  id: "002",
+  title: "A 74-year-old woman presents with 2 years of worsening low back pain and left foot numbness that has failed to improve with medication, exercise, and acupuncture",
+  category: "Lumbar",
+  secondaryCategory: "Neuro",
+  difficulty: "Intermediate",
+  estimatedTime: "18–25 mins",
+  source: {
+    short: "Chu EC, Yau KH, Bellin DL\nCurr Health Sci J. 2023;49(1):129–133\nPMID: 37780195\nPMC: PMC10541075\nOpen access ✓",
+    full: "Chu EC, Yau KH, Bellin DL. An L2/3 Disc Herniation-Related L5 Radiculopathy. Curr Health Sci J. 2023;49(1):129–133. doi: 10.12865/CHSJ.49.01.129. PMID: 37780195. PMC10541075. Open access."
+  },
+  patient: {
+    ageSex: "74-year-old female",
+    chiefComplaint: "Low back pain with left foot numbness and radiating burning pain down the left leg",
+    duration: "2 years of progressive symptoms; acute severe worsening 10 days prior to chiropractic presentation",
+    priorProviders: "Orthopaedic surgeon; GP (NSAIDs prescribed); exercise rehabilitation provider; acupuncturist",
+    priorDiagnoses: "Lumbar disc herniation (L2/3) confirmed on MRI; orthopaedic surgeon recommended surgery"
+  },
+  history: {
+    content: `<p>A 74-year-old woman presented with a 2-year history of progressive low back pain and left leg symptoms. She first noticed a mild, gradual numbness sensation in her left foot in early 2020. MRI performed during orthopaedic workup revealed a large L2/3 disc herniation. She was treated with diclofenac, 6 months of exercise rehabilitation, and acupuncture with minimal improvement. Symptoms were aggravated by prolonged sitting, walking, and exercise.</p>
+<p>Her past medical history included early-stage colon cancer in 1991 (treated with polypectomy), severe knee osteoarthritis diagnosed in 2015, and a 10-year history of cardiovascular disease and type 2 diabetes. In January 2022 she contracted COVID-19. Ten days after recovery, her low back pain suddenly worsened and she developed new burning pain radiating down to the left foot — a symptom she had not previously experienced. She required crutches for walking and was unable to stand or walk for more than 5 minutes or use public transport. She sought a chiropractic consultation for a second opinion when her orthopaedic surgeon recommended surgery. She scored 52% on the WHOQOL quality of life measure at presentation.</p>`,
+    clinicalNote: "The discrepancy between the documented herniation level (L2/3) and the patient's clear L5 dermatomal and myotomal distribution warrants careful explanation before settling on a diagnosis or treatment level. The acute worsening post-COVID and the complex medical background — including prior malignancy — should prompt thorough screening."
+  },
+  examination: {
+    autoROM: `<p>Lumbar range of motion: passive lumbar flexion provoked low back soreness. Full ROM values were not documented in the published source. By the end of the treatment course, lumbar ROM was documented to have returned to normal limits.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Movement</th><th>Muscle</th><th>Nerve Root</th><th>Finding</th></tr></thead><tbody>
+      <tr><td>Great toe extension</td><td>Extensor hallucis longus</td><td>L5</td><td><span class="tt pos">Weakness 4/5 left</span></td></tr>
+      <tr><td>Ankle dorsiflexion</td><td>Tibialis anterior</td><td>L4–L5</td><td><span class="tt pos">Weakness 4/5 left</span></td></tr>
+      <tr><td>Ankle inversion</td><td>Tibialis posterior</td><td>L5</td><td><span class="tt pos">Weakness 4/5 left</span></td></tr>
+    </tbody></table></div>`,
+    checklist: [
+      {
+        group: "Orthopaedic Tests",
+        items: [
+          {
+            id: "slr_left",
+            label: "Straight Leg Raise — Left",
+            result: `Positive at 25° <span class="tt pos">Positive</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Sensory Examination",
+        items: [
+          {
+            id: "pinprick_l5",
+            label: "Pin-prick sensation — L5 dermatome",
+            result: `Reduced pin-prick sensation in the left L5 dermatome <span class="tt pos">Reduced</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Palpation",
+        items: [
+          {
+            id: "palp_interseg",
+            label: "Intersegmental spinal palpation",
+            result: `Intersegmental restriction palpated at T4–T7 and L2–L3 <span class="tt notable">Restricted</span>`,
+            documented: true
+          },
+          {
+            id: "palp_tone",
+            label: "Paraspinal and gluteal muscle tone",
+            result: `Hypertonicity in right quadratus lumborum, bilateral gluteal muscles, and paraspinal muscles <span class="tt notable">Hypertonic</span>`,
+            documented: true
+          }
+        ]
+      }
+    ],
+    contextText: "Neurological examination was prioritised given the radicular distribution of symptoms. Myotome and dermatome testing were used to identify which nerve root territory was functionally compromised. SLR was used to assess nerve root mechanosensitivity. Spinal palpation was used to identify segmental restriction and guide treatment level. The key clinical puzzle here is whether the documented herniation level is consistent with the neurological findings."
+  },
+  investigations: {
+    options: [
+      {
+        id: "mri_lumbar",
+        label: "MRI — Lumbar Spine",
+        consequence: null,
+        ordered: true,
+        result: `<p>Severe circumferential L2/3 disc bulging with right-sided eccentricity. Protruded component measuring 7 mm × 15.5 mm × 18.4 mm. Posterior annular tear present. Moderate central canal stenosis with AP diameter of spinal canal measuring 0.78 cm. No significant pathology identified at lower lumbar levels.</p>`
+      },
+      {
+        id: "xray_lumbar",
+        label: "Plain X-ray — Lumbar Spine",
+        consequence: "Plain radiographs would provide information about bony alignment and degenerative change but would not adequately characterise disc pathology, nerve root compression, or canal stenosis. MRI is the gold standard for disc herniation assessment and neural involvement.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "emg_nerve",
+        label: "Electromyography / Nerve Conduction Studies",
+        consequence: "EMG and NCS can objectively confirm radiculopathy, identify the affected nerve root, and assess chronicity and prognosis. In this case, the authors did not order these studies as the radiological findings were clear and would not have changed the treatment plan for a large disc herniation.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "L5 radiculopathy secondary to L2/3 disc herniation (non-adjacent)",
+        correct: true,
+        blurb: "The published diagnosis. Severe circumferential L2/3 disc herniation caused compression of the descending L5 nerve root within the thecal sac before it exited at its own level. Myotome weakness (EHL, tibialis anterior, tibialis posterior), dermatomal sensory loss at L5, and positive SLR at 25° all confirmed L5 nerve root involvement. Positive response to SMT and traction targeted at L2/3 supports this level as the causative lesion."
+      },
+      {
+        label: "L4/5 or L5/S1 disc herniation causing L5 radiculopathy",
+        correct: false,
+        blurb: "The most common explanation for L5 radiculopathy — herniation at the adjacent level compressing the exiting or traversing root. However, MRI showed no significant pathology at L4/5 or L5/S1. The only compressive lesion was at L2/3, making this a diagnosis of exclusion in this case."
+      },
+      {
+        label: "Lumbar spinal stenosis (central or foraminal)",
+        correct: false,
+        blurb: "Central canal stenosis was noted at L2/3 (AP diameter 0.78 cm), contributing to the neural compression. However, the symptoms were clearly unilateral and L5 in distribution rather than bilateral neurogenic claudication, making isolated stenosis an incomplete explanation."
+      },
+      {
+        label: "Diabetic peripheral neuropathy",
+        correct: false,
+        blurb: "The patient had a 10-year history of diabetes. Diabetic neuropathy can cause lower extremity numbness and weakness. However, the focal L5 dermatomal distribution, unilateral presentation, and acute worsening are not consistent with the typically symmetrical, stocking-glove pattern of diabetic neuropathy."
+      },
+      {
+        label: "Malignant spinal cord or cauda equina compression",
+        correct: false,
+        blurb: "With a history of colon cancer in 1991, spinal metastasis must be considered in any elderly patient with progressive radicular symptoms. The acute post-COVID worsening adds to the concern. MRI did not demonstrate metastatic lesions, and the focal L2/3 disc pathology provided an adequate structural explanation."
+      },
+      {
+        label: "Piriformis syndrome / deep gluteal syndrome",
+        correct: false,
+        blurb: "Hypertonicity of the gluteal muscles was palpated and could theoretically irritate the sciatic nerve at the level of the piriformis. However, this would not explain the focal L5 myotomal weakness pattern, and the MRI demonstrably shows a compressive disc lesion explaining the neurological findings."
+      },
+      {
+        label: "Hip osteoarthritis with referred pain",
+        correct: false,
+        blurb: "The patient had severe knee osteoarthritis documented, and hip OA is possible in this age group. Hip pathology can refer pain to the groin and anterolateral thigh, but does not account for left foot numbness, EHL weakness, or a positive SLR at 25°."
+      },
+      {
+        label: "Post-viral neuropathy (post-COVID)",
+        correct: false,
+        blurb: "The acute worsening occurred 10 days after COVID-19 recovery, and post-viral neuropathies have been documented. However, the pre-existing MRI disc pathology, the focal L5 distribution, and the structural explanation provided by the L2/3 herniation make this an unlikely primary diagnosis."
+      }
+    ],
+    explanation: `<p>This case illustrates a clinically rare but neuroanatomically explicable phenomenon: a lumbar disc herniation causing radiculopathy at a non-adjacent nerve root level. The standard teaching is that a disc herniation compresses the nerve root exiting at the adjacent inferior level. At L2/3, the expected clinical presentation would be L3 radiculopathy with anterior thigh pain and quadriceps involvement.</p>
+<p>In this patient, the L3 and L4 nerve roots were clinically unaffected. Only the L5 nerve root was involved, producing weakness of the extensor hallucis longus, tibialis anterior, and tibialis posterior, sensory loss in the L5 dermatome, and a positive SLR at 25°. This is explained by the anatomy of the cauda equina: as the lumbar nerve roots descend within the thecal sac before exiting at their respective foramen, a sufficiently large disc herniation at an upper lumbar level can compress a nerve root that is still travelling inferiorly within the canal. In this case, the traversing L5 root was compressed at the L2/3 level due to the size and central-right eccentricity of the disc bulge, with sufficient lateral laxity for the L3 and L4 roots to escape compression.</p>
+<p>The clinical lesson is that when the imaging level and neurological level do not correlate, the anatomy of the cauda equina should be reconsidered rather than defaulting to the assumption that the disc herniation is incidental. The positive response to spinal manipulative therapy and traction targeted specifically at L2/3 — not the lower lumbar spine where prior conservative treatment had been directed — further confirms the causative level.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "smt_l23",
+        label: "Spinal manipulative therapy targeted at L2/3, with intersegmental mobilisation",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> SMT directed at the documented level of restriction (L2/3) addresses the causative segment. The published case demonstrated substantial pain reduction and neurological recovery following segmental manipulation and traction at L2/3. Targeting lower lumbar levels (as previous providers had done) had been ineffective.`
+      },
+      {
+        id: "traction",
+        label: "Intermittent motorised lumbar traction (spinal decompression) at L2/3",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Motorised traction directed at L2/3 aims to reduce intradiscal pressure and create negative pressure to encourage disc retraction. Follow-up MRI at 4 months confirmed a 60% reduction in disc protrusion size. Traction was combined with SMT and soft tissue therapy as part of the documented treatment plan.`
+      },
+      {
+        id: "smt_lower",
+        label: "Spinal manipulative therapy targeted at L4/5 and L5/S1 based on symptom location",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> This approach targets the wrong level. The previous conservative management, which had been directed at the lower lumbar region based on L5 symptom distribution, failed to improve the patient's condition. The structural pathology was at L2/3, and treatment must be directed accordingly.`
+      },
+      {
+        id: "surgical_referral",
+        label: "Refer for urgent surgical consultation",
+        selected: false,
+        explanation: `<strong>Not required at this stage.</strong> The patient's orthopaedic surgeon had recommended surgery. However, conservative chiropractic management was trialled first and was successful — achieving a 60% reduction in disc size on follow-up MRI and return of neurological function. Surgery remains an option if conservative care fails, but should not be the first-line approach.`
+      },
+      {
+        id: "iastm_us",
+        label: "Instrument-assisted soft tissue manipulation (IASTM) and therapeutic ultrasound",
+        selected: true,
+        explanation: `<strong>Appropriate as adjunct therapy.</strong> Both modalities were documented as part of the treatment plan in this case. IASTM and therapeutic ultrasound were used to provide deep heating, relax hypertonic paraspinal and gluteal musculature, and support overall pain reduction as adjuncts to spinal care.`
+      }
+    ],
+    outcomeText: `Following spinal manipulative therapy and intermittent motorised traction at L2/3, combined with therapeutic ultrasound and IASTM, the patient's low back pain reduced from 7/10 to 1/10 and burning sensation reduced by 50%. WHOQOL score improved from 56% to 86%. By the end of treatment, lumbar ROM and neurological and orthopaedic examination findings returned to normal. Follow-up MRI at 4 months confirmed a 60% reduction in disc protrusion size. The patient resumed her daily tai chi exercise and maintained monthly chiropractic care for a further 3 months with stable neurological status.`
+  },
+  reveal: {
+    diagnosisTitle: "<strong>L5 Radiculopathy Secondary to L2/3 Disc Herniation</strong><br>Non-adjacent nerve root compression within the cauda equina",
+    outcomes: [
+      { label: "Published Source", text: "Chu EC, Yau KH, Bellin DL. Curr Health Sci J. 2023;49(1):129–133" },
+      { label: "PMID / PMC", text: "PMID: 37780195 — PMC10541075 (open access)" },
+      { label: "Final Diagnosis", text: "L5 radiculopathy caused by L2/3 disc herniation (non-adjacent compressive lesion)" },
+      { label: "Intervention", text: "SMT and motorised traction at L2/3, IASTM, therapeutic ultrasound — 60% reduction in disc size on follow-up MRI; full neurological recovery" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "The level of imaging pathology and the level of neurological deficit do not always correspond. At upper lumbar levels, a large disc herniation can compress a nerve root that is still descending within the thecal sac, producing radiculopathy several levels below the structural lesion. Know the cauda equina anatomy." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Directing treatment to the symptomatic level (lower lumbar spine) while ignoring the causative level (L2/3) was the reason all prior conservative treatment failed. Always reconcile the imaging findings with the neurological pattern before deciding where to treat." },
+      { type: "pearl", tag: "Clinical Pearl", text: "When MRI shows upper lumbar disc pathology and the patient has lower lumbar radiculopathy, consider whether the traversing nerve roots of the cauda equina may be involved at the herniation level. The absence of L3 and L4 signs, and the isolation of L5 findings, is the key differentiating feature." },
+      { type: "key", tag: "Scope of Practice", text: "This case demonstrates appropriate conservative chiropractic management of a case where surgery had been recommended. Spinal manipulative therapy and mechanical traction are evidence-supported first-line options for lumbar disc herniation, and should be trialled before surgical referral in appropriate cases without progressive neurological compromise." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "MRI is the gold standard for assessing disc herniation and neural compression, but the clinician must interpret the image in the context of the full neurological examination. An incidental finding at one level should not distract from identifying the causative structural lesion." }
+    ]
+  },
+  cpd: {
+    topics: "Lumbar disc herniation, cauda equina anatomy, non-adjacent radiculopathy, L5 nerve root, spinal manipulative therapy, mechanical traction, clinical-radiological correlation",
+    keyPoints: [
+      "A disc herniation at an upper lumbar level (e.g. L2/3) can compress a nerve root that is still descending within the cauda equina, producing radiculopathy at a non-adjacent level (e.g. L5).",
+      "When imaging pathology and neurological level do not correlate, consider the anatomy of the cauda equina before assuming the disc finding is incidental.",
+      "Treatment must be directed at the causative segment, not the symptomatic level — in this case, targeting L4/5 or L5/S1 based on L5 symptoms would miss the pathology.",
+      "Conservative chiropractic management (SMT, motorised traction, soft tissue therapy) produced both symptomatic resolution and confirmed structural reduction on follow-up MRI.",
+      "Prior malignancy (colon cancer) in an older patient with progressive radicular symptoms always necessitates screening for spinal metastasis, even when a structural explanation is apparent on imaging."
+    ]
+  }
+},
+{
+  id: "003",
+  title: "A 59-year-old male smoker presents with 1 month of aching neck and shoulder pain with numbness that has not improved with physiotherapy, medications, or acupuncture",
+  category: "Red Flag",
+  secondaryCategory: "Cervical",
+  difficulty: "Advanced",
+  estimatedTime: "20–28 mins",
+  source: {
+    short: "Chu EC, Trager RJ, Shum JSF, Lai CR\nAm J Case Rep. 2022;23:e937052\nPMID: 35797264\nPMC: PMC9274787\nOpen access ✓",
+    full: "Chu EC, Trager RJ, Shum JSF, Lai CR. Pancoast Tumor Presenting as Neck Pain in the Chiropractic Office: A Case Report and Literature Review. Am J Case Rep. 2022;23:e937052. doi: 10.12659/AJCR.937052. PMID: 35797264. PMC9274787. Open access."
+  },
+  patient: {
+    ageSex: "59-year-old male",
+    chiefComplaint: "Posterior neck and bilateral shoulder aching and numbness",
+    duration: "1 month",
+    priorProviders: "Primary care physician (prescribed NSAIDs and paracetamol); physiotherapist (rehabilitation exercises); acupuncturist",
+    priorDiagnoses: "No firm diagnosis established prior to chiropractic presentation; active tuberculosis under treatment by specialist chest hospital"
+  },
+  history: {
+    content: `<p>A 59-year-old Asian male interior decorator presented to a chiropractic clinic with a 1-month history of aching and numbness in the posterior neck and bilateral shoulders. He described his pain severity as 8/10 on the numeric rating scale. He reported that the neck pain began following episodes of coughing and had negatively affected his sleep quality. He had received NSAIDs, paracetamol, physiotherapy exercises, and acupuncture without relief.</p>
+<p>He had an active 6-month history of pulmonary tuberculosis currently managed under directly observed therapy with isoniazid, rifampin, pyrazinamide, and ethambutol, with monthly specialist follow-up and serial chest radiographs every 1–2 months. His most recent chest radiograph (1 month prior) had reported patchy airspace opacities with a nodular appearance in the right upper lung zone, described as suggestive of pneumonia. A high-resolution CT thorax performed 6 months prior had identified right apical fibrocalcific changes, mild bronchiectasis, and tiny bilateral nodules up to 2 mm, with no mention of a suspicious mass.</p>
+<p>He had a 50-pack-year smoking history and was a social drinker. Past medical history included hereditary elliptocytosis and a spontaneous pneumothorax at age 33. He denied a personal history of cancer. Family history was significant for lung cancer in his mother and hereditary elliptocytosis in his father. He endorsed occasional hoarseness but denied bowel or bladder symptoms.</p>`,
+    clinicalNote: "Multiple serious red flags are present simultaneously: active tuberculosis (a known independent risk factor for lung cancer), 50-pack-year smoking history, maternal lung cancer, failure of all prior conservative care, reported hoarseness, and right upper lung zone opacities on recent chest radiograph. This constellation demands serious pathology be actively excluded before any manual treatment is considered."
+  },
+  examination: {
+    autoROM: `<p>Cervical ROM: severely restricted in extension and right rotation; moderately restricted in all other planes. Specific degree measurements were not documented in the published source.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Movement</th><th>Muscle</th><th>Nerve Root</th><th>Finding</th></tr></thead><tbody>
+      <tr><td>Shoulder abduction</td><td>Deltoid</td><td>C5 / Axillary nerve</td><td><span class="tt pos">Weakness 4/5 right, with pain (MRC Scale)</span></td></tr>
+    </tbody></table></div>`,
+    checklist: [
+      {
+        group: "Orthopaedic / Foraminal Tests",
+        items: [
+          {
+            id: "foraminal_compression_right",
+            label: "Maximal Foraminal Compression — Right",
+            result: `Exacerbated shoulder pain and paresthesia <span class="tt pos">Positive</span>`,
+            documented: true
+          },
+          {
+            id: "foraminal_compression_left",
+            label: "Maximal Foraminal Compression — Left",
+            result: `Exacerbated shoulder pain and paresthesia <span class="tt pos">Positive</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Palpation",
+        items: [
+          {
+            id: "palp_paraspinal",
+            label: "Paraspinal and shoulder girdle palpation",
+            result: `Muscle hypertonicity of paraspinal muscles from C5 to T2, rhomboids, and teres minors <span class="tt notable">Hypertonic</span>`,
+            documented: true
+          }
+        ]
+      }
+    ],
+    contextText: "The chiropractor's working differential was chiefly discogenic C6 radiculopathy given neck and shoulder symptoms, deltoid weakness, and bilateral foraminal signs. However, the accumulation of red flags — active tuberculosis, family history of lung cancer, heavy smoking, failure of prior care — prompted urgent cervical MRI on the day of the first visit. The examination findings alone did not rule out serious pathology; the clinical context demanded investigation before treatment."
+  },
+  investigations: {
+    options: [
+      {
+        id: "mri_cervical",
+        label: "Urgent MRI — Cervical Spine",
+        consequence: null,
+        ordered: true,
+        result: `<p>A small cervical disc protrusion at C6–7 was identified, without corresponding central canal stenosis or neuroforaminal stenosis. No other serious cervical pathology was found. The disc protrusion was considered as a possible correlate for the patient's radicular symptoms at the time of first review.</p>`
+      },
+      {
+        id: "mri_thoracic",
+        label: "Urgent MRI — Thoracic Spine",
+        consequence: "When symptoms do not respond to a trial of care and red flags are present, extending imaging beyond the cervical spine is critical. In this case, failure to order thoracic MRI after the cervical MRI returned only minor findings would have delayed the diagnosis of a large spinal-invasive Pancoast tumour. Thoracic MRI was the investigation that identified the mass.",
+        ordered: true,
+        result: `<p>An abnormal mass in the medial right lung apex and superior mediastinum extending into the right paraspinal region and infiltrating the upper to mid-thoracic vertebrae (T1–T6) was identified. The radiologist noted the possibility of a Pancoast tumour and recommended further evaluation. Follow-up CT thorax with contrast revealed areas of vertebral necrosis from T1 to T6, and full-spine MRI with gadolinium contrast demonstrated enhancing right epidural extension at T2/3 to T5/6 causing cord compression, with erosion and destruction of the right 3rd to 5th ribs.</p>`
+      },
+      {
+        id: "chest_xray",
+        label: "Plain chest radiograph",
+        consequence: "A chest radiograph had already been performed 1 month prior and had been interpreted as showing pneumonia-like opacities. Pancoast tumours can be missed or mischaracterised on plain chest radiographs, particularly in the presence of active tuberculosis which can obscure apical lesions. Chest radiograph alone is insufficient to exclude a Pancoast tumour.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Pancoast tumour (superior sulcus tumour) — adenocarcinoma of the lung",
+        correct: true,
+        blurb: "Confirmed by CT-guided fine-needle aspiration revealing adenocarcinoma histopathology. The tumour invaded the right apex, superior mediastinum, paraspinal region, and upper to mid-thoracic vertebrae. Symptoms were caused by brachial plexus invasion (Pancoast syndrome), consistent with the deltoid weakness (axillary nerve / middle trunk), bilateral shoulder and neck symptoms, and failure to respond to cervical spine treatment."
+      },
+      {
+        label: "Cervical radiculopathy (C6 or C7)",
+        correct: false,
+        blurb: "The chiropractor's initial working diagnosis given neck and shoulder symptoms, deltoid weakness, and bilateral foraminal compression signs. A small C6/7 disc protrusion was identified on cervical MRI. However, symptoms did not respond to a trial of care directed at the cervical spine, and the disc herniation was small without corresponding stenosis — making it an insufficient explanation for the severity of symptoms."
+      },
+      {
+        label: "Spinal tuberculosis (Pott's disease)",
+        correct: false,
+        blurb: "A clinically important differential given active pulmonary tuberculosis. TB can spread haematogenously to the spine, causing vertebral destruction, paraspinal abscesses, and cord compression. The chiropractor explicitly considered this. Thoracic MRI identified vertebral involvement, but CT-guided biopsy confirmed adenocarcinoma rather than TB, and the pattern of invasion was consistent with primary lung malignancy."
+      },
+      {
+        label: "Thoracic outlet syndrome",
+        correct: false,
+        blurb: "Compression of the brachial plexus or subclavian vessels at the thoracic outlet can present with shoulder, neck, and upper extremity symptoms. However, TOS does not explain progressive vertebral body destruction, multiple level cord compression, or rib erosion, all of which were identified on advanced imaging."
+      },
+      {
+        label: "Brachial neuritis (Parsonage–Turner syndrome)",
+        correct: false,
+        blurb: "Brachial neuritis can cause acute, severe shoulder and upper extremity pain with rapid onset of weakness, sometimes following infection or immunological stress. The bilateral involvement, severe cervical restriction, and failure to improve are atypical. Imaging findings of a mass lesion make this diagnosis untenable."
+      },
+      {
+        label: "C5 radiculopathy (disc herniation or foraminal stenosis)",
+        correct: false,
+        blurb: "Deltoid weakness and shoulder symptoms are consistent with C5 nerve root pathology. Bilateral foraminal compression tests were positive. However, C5 involvement from a cervical disc herniation would not account for the bilateral symptom distribution, the upper thoracic vertebral involvement, or the tumour mass identified on thoracic MRI."
+      },
+      {
+        label: "Metastatic spinal disease from an unknown primary",
+        correct: false,
+        blurb: "The imaging findings of vertebral necrosis, epidural extension, and rib erosion are consistent with spinal malignancy. The distinction between primary Pancoast tumour invading the spine versus haematogenous metastases from an occult primary was resolved by histopathology confirming primary lung adenocarcinoma with direct extension."
+      },
+      {
+        label: "Shoulder impingement or rotator cuff pathology",
+        correct: false,
+        blurb: "Bilateral shoulder aching and restricted movement could initially be attributed to shoulder girdle pathology. However, the combined neck symptoms, neurological signs (deltoid weakness, bilateral foraminal provocation), failure of conservative care, and extensive red flag history make a primary shoulder diagnosis entirely inadequate."
+      }
+    ],
+    explanation: `<p>This case is a prototypical example of a serious visceral malignancy presenting to a manual therapy clinic with a musculoskeletal symptom profile. Pancoast tumours arise at the lung apex and, because of their location, frequently invade adjacent structures — the brachial plexus, sympathetic chain, and/or vertebral bodies — producing Pancoast syndrome: shoulder, neck, and upper extremity pain and weakness, sometimes accompanied by Horner's syndrome.</p>
+<p>The chiropractor's initial differential of cervical radiculopathy was clinically reasonable. The patient had neck and shoulder pain, deltoid weakness, and positive foraminal compression tests — findings that are entirely consistent with a C5 or C6 radiculopathy. A small C6/7 disc protrusion was identified on cervical MRI and was considered as a possible correlate. However, the absence of meaningful stenosis, the severity of symptoms, and the patient's failure to respond to a brief trial of care triggered reassessment.</p>
+<p>Crucially, the chiropractor recognised that the cervical MRI findings did not adequately explain the clinical picture, and ordered urgent thoracic MRI. This identified the causative mass. The lesson here is not only about red flag identification at the outset, but about ongoing reassessment during a trial of care: persistent failure to respond is itself a red flag that demands diagnostic review.</p>
+<p>The histopathological diagnosis was primary lung adenocarcinoma. The patient received radiotherapy and chemotherapy, reporting reduced pain severity and improved sleep at 2-month follow-up.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "urgent_mri_cerv",
+        label: "Order urgent cervical MRI on day of first visit given red flags",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> The combination of red flags present at first visit — active tuberculosis, 50-pack-year smoking history, maternal lung cancer, failure of all prior care, reported hoarseness — warranted urgent imaging before commencing any manual treatment. Ordering cervical MRI urgently on the first visit was documented and appropriate.`
+      },
+      {
+        id: "gentle_mt_trial",
+        label: "Brief trial of gentle manual therapy (non-thrust) while awaiting imaging review",
+        selected: true,
+        explanation: `<strong>Appropriate as a cautious limited trial only.</strong> The chiropractor used instrument-assisted soft tissue manipulation, gentle non-thrust joint mobilisation, and cervical flexion-distraction — avoiding high-velocity manipulation given the extensive red flags. This is documented as appropriate clinical reasoning: gentle techniques were used as a precaution until further diagnostic information was available. High-velocity manipulation is absolutely contraindicated in the presence of spinal malignancy.`
+      },
+      {
+        id: "hvla_thrust",
+        label: "High-velocity, low-amplitude spinal manipulation of the cervical spine",
+        selected: false,
+        explanation: `<strong>Not appropriate and contraindicated.</strong> High-velocity thrust manipulation is absolutely contraindicated in the presence of spinal malignancy, vertebral necrosis, and cord compression. In this case, the tumour had already invaded multiple thoracic vertebral levels and the epidural space. Thrust manipulation in this setting carries a risk of vertebral fracture, cord injury, or catastrophic neurological deterioration.`
+      },
+      {
+        id: "thoracic_mri",
+        label: "Order urgent thoracic MRI after failure to respond to trial of care",
+        selected: true,
+        explanation: `<strong>Appropriate and diagnostic.</strong> When the patient's symptoms did not improve with four days of treatment and the cervical MRI provided only a minor finding inconsistent with symptom severity, the chiropractor conferred with the supervising clinician and arranged urgent thoracic MRI. This investigation identified the Pancoast tumour. Persistent failure to respond to treatment is itself a red flag requiring diagnostic reassessment.`
+      },
+      {
+        id: "refer_medical",
+        label: "Immediate medical referral to chest specialist upon diagnosis",
+        selected: true,
+        explanation: `<strong>Appropriate and essential.</strong> Upon identification of the apical mass on thoracic MRI, the chiropractor immediately referred the patient back to the chest hospital. This is the correct scope-of-practice response. The patient subsequently received specialist evaluation by oncology and spinal surgery, histopathological confirmation by CT-guided FNA, and treatment with radiotherapy and chemotherapy.`
+      }
+    ],
+    outcomeText: `CT-guided fine-needle aspiration confirmed histopathological diagnosis of adenocarcinoma. CT thorax with contrast revealed vertebral necrosis from T1 to T6. Full-spine MRI with gadolinium demonstrated epidural extension at T2/3 to T5/6 with cord compression and displacement to the left, and erosion/destruction of the right 3rd to 5th ribs. The spine surgery team deemed the patient ineligible for surgery due to extent of tumour invasion. He was treated with oral dexamethasone, radiotherapy, and ongoing chemotherapy. At 2-month follow-up the patient reported feeling lighter, with less severe neck and shoulder pain and numbness, and improved sleep quality — though he still experienced severe pain on waking for 2–3 hours.`
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Pancoast Tumour (Superior Sulcus Tumour)</strong><br>Primary lung adenocarcinoma with brachial plexus and thoracic spinal invasion",
+    outcomes: [
+      { label: "Published Source", text: "Chu EC, Trager RJ, Shum JSF, Lai CR. Am J Case Rep. 2022;23:e937052" },
+      { label: "PMID / PMC", text: "PMID: 35797264 — PMC9274787 (open access)" },
+      { label: "Final Diagnosis", text: "Pancoast tumour — lung adenocarcinoma with vertebral necrosis T1–T6, epidural extension, cord compression, and rib erosion" },
+      { label: "Intervention", text: "Medical referral → CT-guided FNA → radiotherapy and chemotherapy; chiropractic care was discontinued at point of diagnosis" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Pancoast tumours invade the brachial plexus and spine, producing symptoms — shoulder, neck, and upper extremity pain with weakness — that are indistinguishable from common musculoskeletal presentations. The diagnosis requires awareness of the red flag cluster: smoking, male sex, sixth decade, family history of lung cancer, failure of conservative care." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "A minor finding on cervical MRI (small C6/7 disc protrusion) can create diagnostic anchoring, distracting from the true cause. When imaging findings are minor and do not match symptom severity, extend the investigation rather than treating the incidental finding." },
+      { type: "pearl", tag: "Clinical Pearl", text: "Persistent failure to respond to a trial of care is itself a red flag. This case demonstrates the critical importance of ongoing reassessment: if symptoms do not improve as expected, the working diagnosis must be revisited and further investigation arranged regardless of initial imaging results." },
+      { type: "key", tag: "Scope of Practice", text: "This case illustrates exemplary scope-of-practice reasoning: the chiropractor used gentle, non-thrust techniques as a cautious trial while red flags were evaluated; ordered urgent imaging; recognised the limits of the cervical MRI findings; arranged thoracic MRI; and immediately referred to the appropriate specialist. High-velocity manipulation is absolutely contraindicated in spinal malignancy." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Plain chest radiographs can miss Pancoast tumours, particularly when apical changes are attributed to active tuberculosis or pneumonia. When a patient presents with upper extremity neurological signs, persistent severe symptoms, and lung cancer risk factors, thoracic MRI — not chest X-ray — is the appropriate investigation to evaluate for an apical mass and spinal invasion." }
+    ]
+  },
+  cpd: {
+    topics: "Pancoast tumour, superior sulcus tumour, red flag screening, brachial plexus invasion, spinal malignancy, scope of practice, imaging decision-making, cervical radiculopathy differential",
+    keyPoints: [
+      "Pancoast tumours present with shoulder, neck, and upper extremity pain and weakness due to brachial plexus and spinal invasion — symptoms that closely mimic musculoskeletal conditions seen in chiropractic practice.",
+      "Key risk factors include male sex, age in the 6th decade, heavy smoking history, and family history of lung cancer; active tuberculosis is an additional independent risk factor.",
+      "High-velocity spinal manipulation is absolutely contraindicated in the presence of spinal malignancy, vertebral necrosis, or cord compression.",
+      "Failure to respond to a trial of conservative care is a clinical red flag warranting diagnostic reassessment, even if initial imaging reveals a plausible minor finding.",
+      "When cervical MRI findings are disproportionately minor relative to symptom severity, extending imaging to the thoracic spine and/or brachial plexus should be considered."
+    ]
+  }
+},
+{
+  id: "004",
+  title: "A 27-year-old male cricketer presents with 10 days of right shoulder pain and difficulty moving his arm after throwing a ball forcefully during a match",
+  category: "Shoulder",
+  secondaryCategory: "Sports/Acute",
+  difficulty: "Beginner",
+  estimatedTime: "12–18 mins",
+  source: {
+    short: "Kochar SS, Ramteke SU, Samal S\nCureus. 2024;16(1):e52336\nPMID: 38361674\nPMC: PMC10867298\nOpen access ✓",
+    full: "Kochar SS, Ramteke SU, Samal S. The Rehabilitation Journey of a Cricket Player With Partial Rotator Cuff Tear: A Case Report of Pre and Postoperative Physiotherapy. Cureus. 2024;16(1):e52336. doi: 10.7759/cureus.52336. PMID: 38361674. PMC10867298. Open access."
+  },
+  patient: {
+    ageSex: "27-year-old male",
+    chiefComplaint: "Pain and restricted movement in the right shoulder following a throwing injury",
+    duration: "10 days at presentation",
+    priorProviders: "Local hospital (prescribed analgesic medications — no symptomatic relief)",
+    priorDiagnoses: "Rotator cuff injury suspected clinically; confirmed on MRI as partial supraspinatus tendon tear with Hill-Sachs lesion on X-ray"
+  },
+  history: {
+    content: `<p>A 27-year-old male cricket player presented with pain and difficulty moving the right shoulder for 10 days following a throwing injury sustained while throwing a ball forcefully with his right hand. The pain was gradual in onset and had increased progressively over the 10 days. Symptoms were aggravated by lifting heavy objects and reaching for something on a high shelf, and relieved by rest. He had visited a local hospital where pain medications were prescribed but he experienced no symptomatic relief.</p>
+<p>No past medical history of shoulder problems or prior surgical history was documented. The patient reported no neurological symptoms in the upper extremity. He was subsequently referred to a tertiary hospital (Acharya Vinobha Bhave Rural Hospital) where diagnostic imaging and clinical assessment were performed.</p>`,
+    clinicalNote: "The mechanism — forceful overhead throwing in a young overhead athlete — combined with 10 days of progressive pain without improvement on analgesia warrants imaging to characterise the extent of rotator cuff injury and identify any bony lesion before designing a rehabilitation plan."
+  },
+  examination: {
+    autoROM: `<p>Preoperative: ROM was not formally assessed due to severity of pain. The right shoulder ROM was documented as significantly reduced on clinical assessment. Postoperative (pre-rehabilitation): Flexion 0–30°, Extension 0–25°, Abduction 0–35°, Internal rotation 0–25°, External rotation 0–35°. Postoperative (post-rehabilitation): Flexion 0–155°, Extension 0–50°, Abduction 0–145°, Internal rotation 0–55°, External rotation 0–60°.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Movement</th><th>Muscle</th><th>Nerve Root</th><th>Finding</th></tr></thead><tbody>
+      <tr><td>Shoulder flexion</td><td>Anterior deltoid / Coracobrachialis</td><td>C5–C6</td><td><span class="tt pos">3-/5 postoperative pre-rehab; 4/5 post-rehab</span></td></tr>
+      <tr><td>Shoulder extension</td><td>Posterior deltoid / Latissimus dorsi</td><td>C5–C8</td><td><span class="tt pos">3-/5 postoperative pre-rehab; 4/5 post-rehab</span></td></tr>
+      <tr><td>Shoulder abduction</td><td>Middle deltoid / Supraspinatus</td><td>C5</td><td><span class="tt pos">3-/5 postoperative pre-rehab; 4/5 post-rehab</span></td></tr>
+      <tr><td>Shoulder internal rotation</td><td>Subscapularis / Pectoralis major</td><td>C5–C6</td><td><span class="tt pos">3-/5 postoperative pre-rehab; 4/5 post-rehab</span></td></tr>
+      <tr><td>Shoulder external rotation</td><td>Infraspinatus / Teres minor</td><td>C5–C6</td><td><span class="tt pos">3-/5 postoperative pre-rehab; 4/5 post-rehab</span></td></tr>
+    </tbody></table></div>`,
+    checklist: [
+      {
+        group: "Special Tests",
+        items: [
+          {
+            id: "full_can_test",
+            label: "Full Can Test (supraspinatus integrity)",
+            result: `Positive — documented clinically and consistent with rotator cuff injury <span class="tt pos">Positive</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Palpation",
+        items: [
+          {
+            id: "palp_shoulder",
+            label: "Palpation of right shoulder region",
+            result: `Grade III tenderness (patient winces and withdraws affected part) around the right shoulder region <span class="tt pos">Grade III tenderness</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Outcome Measures",
+        items: [
+          {
+            id: "vas",
+            label: "Visual Analogue Scale (VAS)",
+            result: `Preoperative: rest 4.5/10, movement 8.3/10. Postoperative pre-rehab: rest 4.2/10, movement 8.2/10. Post-rehabilitation: rest 2.5/10, movement 4.1/10 <span class="tt notable">Moderate–severe pain on movement</span>`,
+            documented: true
+          },
+          {
+            id: "uefs",
+            label: "Upper Extremity Functional Scale (UEFS)",
+            result: `Preoperative pre-rehab: 6/80. Preoperative post-rehab: 10/80. Postoperative pre-rehab: 36/80. Post-rehabilitation: 68/80 <span class="tt notable">Progressive functional improvement</span>`,
+            documented: true
+          }
+        ]
+      }
+    ],
+    contextText: "The Full Can Test was used to assess supraspinatus integrity — it is the primary provocative test for supraspinatus pathology. Palpation and ROM were used to characterise the severity and functional impact of the injury. Outcome measures (VAS, UEFS, DASH) were used to track progress across the preoperative and postoperative rehabilitation phases."
+  },
+  investigations: {
+    options: [
+      {
+        id: "mri_shoulder",
+        label: "MRI — Right Shoulder",
+        consequence: null,
+        ordered: true,
+        result: `<p>Partial tear of the supraspinatus tendon of the right shoulder was identified.</p>`
+      },
+      {
+        id: "xray_shoulder",
+        label: "X-ray — Right Shoulder",
+        consequence: null,
+        ordered: true,
+        result: `<p>Hill-Sachs lesion identified in the posterosuperior aspect of the head of the humerus. No fracture documented.</p>`
+      },
+      {
+        id: "ultrasound_shoulder",
+        label: "Diagnostic Ultrasound — Right Shoulder",
+        consequence: "Ultrasound is a useful, dynamic, cost-effective investigation for rotator cuff tears and can identify partial and full-thickness tears in real time. It would have been an appropriate adjunct or alternative to MRI for initial assessment of this injury. In this case, MRI was performed and provided the diagnostic information required.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Partial supraspinatus tendon tear",
+        correct: true,
+        blurb: "Confirmed on MRI. The injury mechanism — forceful overhead throwing — is consistent with partial RCT in a young overhead athlete. The Full Can Test was positive, grade III tenderness was present at the shoulder, and ROM was severely restricted. A Hill-Sachs lesion on X-ray indicated a prior glenohumeral dislocation or subluxation event."
+      },
+      {
+        label: "Full-thickness rotator cuff tear",
+        correct: false,
+        blurb: "MRI confirmed a partial rather than full-thickness tear. Full-thickness tears typically produce more profound functional loss and are more common in older patients with degenerative changes. Partial tears in young overhead athletes often result from acute overload or repetitive microtrauma."
+      },
+      {
+        label: "Shoulder impingement syndrome (subacromial)",
+        correct: false,
+        blurb: "Subacromial impingement can cause shoulder pain, arc-of-motion pain, and positive provocative tests including the Full Can Test. However, the acute throwing injury mechanism, severity of findings, and MRI confirmation of a structural tear make this a less specific diagnosis and clinically secondary to the confirmed partial RCT."
+      },
+      {
+        label: "Acromioclavicular joint sprain or separation",
+        correct: false,
+        blurb: "AC joint injury is common in overhead and contact sports. It typically produces pain localised to the AC joint with possible step deformity. The imaging confirmed supraspinatus tendon pathology rather than AC joint disruption as the primary finding."
+      },
+      {
+        label: "Glenohumeral instability / subluxation",
+        correct: false,
+        blurb: "The Hill-Sachs lesion on X-ray indicates a prior episode of humeral head translation against the glenoid rim, consistent with glenohumeral instability or subluxation. However, the primary symptomatic lesion in this case was the partial supraspinatus tear, and instability was not the chief clinical complaint."
+      },
+      {
+        label: "Biceps tendon pathology (long head tenosynovitis or tear)",
+        correct: false,
+        blurb: "Biceps tendon pathology is common in overhead athletes and can coexist with rotator cuff tears. Anterior shoulder pain and tenderness are characteristic. The clinical tests performed and MRI findings in this case implicated supraspinatus pathology rather than the biceps tendon as the primary structure."
+      },
+      {
+        label: "Cervical radiculopathy (C5) with referred shoulder pain",
+        correct: false,
+        blurb: "C5 radiculopathy can present with shoulder pain and deltoid weakness, mimicking a primary shoulder disorder. In this case, the acute mechanism of injury, the localised shoulder tenderness, positive Full Can Test, and MRI demonstrating rotator cuff pathology confirm a primary shoulder rather than cervical nerve root aetiology."
+      },
+      {
+        label: "Contusion or muscle strain without structural tear",
+        correct: false,
+        blurb: "A muscle or tendon contusion following a single forceful throwing effort would be a consideration, but the progression of symptoms over 10 days without improvement, combined with positive Full Can Test and confirmed structural tear on MRI, excludes this as the primary diagnosis."
+      }
+    ],
+    explanation: `<p>Partial rotator cuff tears are a common source of shoulder pain in overhead athletes, including cricketers. The supraspinatus tendon is the most frequently affected structure, typically at the critical zone near its insertion on the greater tuberosity. In young athletes, partial tears most often result from acute overload, such as a forceful throwing action, or from accumulated microtrauma in a setting of overuse.</p>
+<p>In this case, the diagnosis was established through a combination of clinical assessment (positive Full Can Test, grade III tenderness, severely restricted ROM) and confirmed on MRI. The incidentally identified Hill-Sachs lesion on X-ray indicated a prior episode of glenohumeral instability or subluxation that may have predisposed the patient to rotator cuff injury.</p>
+<p>Surgical management (soft tissue reconstruction) was selected given the extent of the tear and the patient's athletic demands. Both preoperative and postoperative physiotherapy were documented and resulted in significant functional improvement, with UEFS improving from 36/80 postoperatively pre-rehabilitation to 68/80 following the rehabilitation programme.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "preop_physio",
+        label: "Preoperative physiotherapy (ROM, isometrics, ice, capsular stretches) for 7 days",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Preoperative physiotherapy was prescribed for 7 days prior to surgical reconstruction. Goals included pain management with ice therapy, maintenance of elbow and wrist ROM, isometric shoulder girdle strengthening, and anterior and posterior capsule stretching. This approach is consistent with evidence showing that preoperative conditioning reduces postoperative complications.`
+      },
+      {
+        id: "surgical_recon",
+        label: "Soft tissue reconstruction of right shoulder rotator cuff",
+        selected: true,
+        explanation: `<strong>Appropriate for this case.</strong> Given the patient's age, athletic demands, symptom severity, and confirmed partial supraspinatus tear with Hill-Sachs lesion, surgical reconstruction was undertaken. Surgery is indicated when conservative management has failed or when the tear is significant enough to impair function in a high-demand athlete.`
+      },
+      {
+        id: "postop_physio",
+        label: "Structured postoperative physiotherapy (PROM → AROM → strengthening → sports-specific)",
+        selected: true,
+        explanation: `<strong>Appropriate and essential.</strong> Postoperative physiotherapy progressed from passive ROM exercises through active-assisted to active ROM, then to progressive strengthening and sports-specific activities (throwing, catching). This staged approach is well-documented and produced significant functional recovery — shoulder flexion improved from 0–30° to 0–155° and UEFS improved from 36/80 to 68/80.`
+      },
+      {
+        id: "immediate_return",
+        label: "Immediate return to cricket bowling/throwing activity",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> Return to full throwing activity without structured rehabilitation following a partial supraspinatus tear and surgical reconstruction would risk re-tear, poor healing, and chronic shoulder dysfunction. Sports-specific activities were only introduced in the later stages of the postoperative rehabilitation programme, after adequate ROM and strength had been restored.`
+      },
+      {
+        id: "corticosteroid_injection",
+        label: "Subacromial corticosteroid injection for pain management",
+        selected: false,
+        explanation: `<strong>Not documented as part of this case and not appropriate given surgical pathway.</strong> Corticosteroid injections may be used in the non-operative management of rotator cuff pathology for short-term pain relief, but are generally avoided in the perioperative period as they may impair tendon healing and increase infection risk. Surgical management was the chosen pathway for this patient.`
+      }
+    ],
+    outcomeText: `Following preoperative physiotherapy, surgical soft tissue reconstruction, and a structured postoperative rehabilitation programme, the patient demonstrated significant functional improvement. Shoulder flexion improved from 0–30° to 0–155°, abduction from 0–35° to 0–145°. Upper extremity muscle strength improved from 3-/5 to 4/5 across all shoulder movements. UEFS improved from 36/80 postoperatively pre-rehabilitation to 68/80 following rehabilitation. VAS on movement reduced from 8.2/10 to 4.1/10. The patient was able to resume sports-specific activities including throwing and catching with medium intensity by the end of the programme.`
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Partial Supraspinatus Tendon Tear</strong><br>Throwing injury in a young overhead athlete with incidental Hill-Sachs lesion",
+    outcomes: [
+      { label: "Published Source", text: "Kochar SS, Ramteke SU, Samal S. Cureus. 2024;16(1):e52336" },
+      { label: "PMID / PMC", text: "PMID: 38361674 — PMC10867298 (open access)" },
+      { label: "Final Diagnosis", text: "Partial tear of the supraspinatus tendon, right shoulder; Hill-Sachs lesion on plain radiograph" },
+      { label: "Intervention", text: "Preoperative physiotherapy × 7 days → soft tissue surgical reconstruction → structured postoperative physiotherapy → return to sports-specific activity; significant functional recovery documented" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Partial rotator cuff tears in young overhead athletes result from either acute overload (as in this case) or cumulative microtrauma. The Full Can Test has high sensitivity for supraspinatus pathology and should be a standard inclusion in any shoulder examination involving an overhead athlete." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "A Hill-Sachs lesion on shoulder X-ray indicates prior glenohumeral instability or subluxation — this finding should prompt assessment for underlying glenohumeral instability in addition to rotator cuff integrity, as the two pathologies frequently coexist in overhead athletes." },
+      { type: "pearl", tag: "Clinical Pearl", text: "Preoperative physiotherapy is often overlooked but has documented benefit in reducing postoperative complications and improving outcomes. Even a 7-day programme of ROM maintenance, isometrics, and capsular stretching can positively influence the post-surgical recovery trajectory." },
+      { type: "key", tag: "Scope of Practice", text: "For a young, active patient with a confirmed partial rotator cuff tear and Hill-Sachs lesion who has not responded to initial management, orthopaedic surgical referral is appropriate. The chiropractor or physiotherapist's role in this setting transitions to perioperative rehabilitation — an important scope-of-practice contribution." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Plain X-ray is insufficient to characterise soft tissue injury. MRI is essential for confirmed characterisation of rotator cuff tears, including size, depth, and affected structure. Always obtain MRI before committing to a management plan in a patient with a significant overhead throwing injury and clinical signs of structural pathology." }
+    ]
+  },
+  cpd: {
+    topics: "Rotator cuff tear, supraspinatus, Full Can Test, overhead athlete, Hill-Sachs lesion, perioperative physiotherapy, shoulder rehabilitation, DASH score, UEFS",
+    keyPoints: [
+      "Partial supraspinatus tears are common in overhead throwing athletes and may result from a single overload event or cumulative microtrauma.",
+      "The Full Can Test (supraspinatus integrity) should be a standard component of shoulder examination for overhead athletes presenting with acute pain and functional loss.",
+      "A Hill-Sachs lesion on shoulder X-ray indicates prior glenohumeral instability and should prompt combined assessment of rotator cuff integrity and glenohumeral stability.",
+      "MRI is the gold standard for characterising rotator cuff tears — plain X-ray alone is insufficient for treatment planning in this population.",
+      "Preoperative physiotherapy, including pain management, ROM maintenance, isometrics, and capsular stretching, reduces postoperative complications and improves recovery trajectory."
+    ]
+  }
+},
+{
+  id: "005",
+  title: "A 12-year-old elite female karateka presents with bilateral knee pain that began several months ago and has worsened with increasing training load and a recent growth spurt",
+  category: "Paediatric",
+  secondaryCategory: "Knee",
+  difficulty: "Beginner",
+  estimatedTime: "12–16 mins",
+  source: {
+    short: "Gaweł E, Zwierzchowska A\nMedicine (Baltimore). 2021;100(50):e28257\nPMID: 34918694\nPMC: PMC8678013\nOpen access ✓",
+    full: "Gaweł E, Zwierzchowska A. Therapeutic interventions in Osgood-Schlatter disease: A case report. Medicine (Baltimore). 2021;100(50):e28257. doi: 10.1097/MD.0000000000028257. PMID: 34918694. PMC8678013. Open access."
+  },
+  patient: {
+    ageSex: "12-year-old female",
+    chiefComplaint: "Bilateral knee pain, worse with training activity",
+    duration: "Several months; worsening with growth spurt and increased training volume",
+    priorProviders: "Orthopaedic surgeon (diagnosis established via ultrasound and MRI)",
+    priorDiagnoses: "Osgood-Schlatter disease, bilateral, confirmed on ultrasound and MRI following second growth spurt"
+  },
+  history: {
+    content: `<p>A 12-year-old elite female karateka presented with bilateral knee pain that had developed over several months. She had commenced sport-specific karate training at the age of 4 years. The diagnosis of Osgood-Schlatter disease (OSD) was established by an orthopaedic surgeon following her second growth spurt. Significant progression of the condition was reported during subsequent periods of height and weight gain and in the context of increasing training volume and intensity.</p>
+<p>The patient competed at Olympic karate level. She had experienced a uniform developmental trajectory for body height, but a more variable pattern of weight gain. No prior knee injuries or surgeries were documented. The therapeutic intervention programme lasted 20 months in 5 stages, combining physical therapy, kinesiotherapy, pharmacological treatment (details not specified beyond this), and gradual reintroduction of physical activity.</p>`,
+    clinicalNote: "The combination of a rapid growth spurt, early sport specialisation, and high-volume/high-intensity training is the documented risk factor constellation for OSD in this case. The bilateral presentation is not uncommon in OSD and should not reflexively prompt investigation for inflammatory or systemic pathology when the clinical context is consistent."
+  },
+  examination: {
+    autoROM: `<p>Specific ROM measurements were not documented in the published source. The publication focused on therapeutic process and monitoring of the patellar ligament–tibial apophysis distance via serial ultrasonography rather than traditional ROM assessment.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Movement</th><th>Muscle</th><th>Nerve Root</th><th>Finding</th></tr></thead><tbody>
+      <tr><td colspan="4" style="text-align:center; font-style:italic;">Myotome testing was not documented in the published source. Neurological signs were not a feature of this presentation.</td></tr>
+    </tbody></table></div>`,
+    checklist: [
+      {
+        group: "Imaging Assessment",
+        items: [
+          {
+            id: "ultrasound_tibial",
+            label: "Ultrasonography — patellar ligament to tibial apophysis distance (bilateral)",
+            result: `Baseline measurement documented. The rate and dynamics of change in the distance from the patellar ligament to the tibial apophysis were irregular, with dominance in the right knee (highest rate of change −3.3 mm) and twice the regression rate (−2.5 mm). The distance never exceeded the baseline value of 5.5 mm in the right knee. Serial measurements were used to monitor therapeutic progress across all 5 stages. <span class="tt notable">Irregular bilateral progression; right knee dominant</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Orthopaedic Tests",
+        items: [
+          {
+            id: "wall_slide",
+            label: "Wall Slide Test",
+            result: `Performed as part of the diagnostic workup — result not individually specified in the published source beyond diagnostic confirmation <span class="tt notable">Performed</span>`,
+            documented: true
+          }
+        ]
+      }
+    ],
+    contextText: "Serial ultrasonography was the primary monitoring tool in this case, used to objectively measure the distance from the patellar ligament to the tibial apophysis — a key structural marker of Osgood-Schlatter progression and resolution. MRI was also used diagnostically. Clinical palpation of the tibial tubercle and assessment of pain with activity are standard in OSD but were not individually tabulated in the published source."
+  },
+  investigations: {
+    options: [
+      {
+        id: "ultrasound_knee",
+        label: "Ultrasonography — bilateral knees",
+        consequence: null,
+        ordered: true,
+        result: `<p>Confirmed Osgood-Schlatter disease bilaterally. Serial measurements of the patellar ligament to tibial apophysis distance were used to monitor treatment response. Baseline measured at 5.5 mm in the right knee. Right knee showed highest rate of change and the most significant progression.</p>`
+      },
+      {
+        id: "mri_knee",
+        label: "MRI — bilateral knees",
+        consequence: null,
+        ordered: true,
+        result: `<p>MRI was performed as part of the orthopaedic diagnostic workup. Confirmed findings consistent with Osgood-Schlatter disease. No pathological changes were identified on final follow-up MRI following completion of the therapeutic programme.</p>`
+      },
+      {
+        id: "xray_knee",
+        label: "Plain X-ray — bilateral knees",
+        consequence: "Plain radiographs are often used as a first-line investigation in adolescent knee pain and can demonstrate fragmentation of the tibial tubercle in OSD. They would be a reasonable first step before considering ultrasound or MRI. In this case, ultrasound and MRI were the primary diagnostic modalities, with ultrasound providing serial quantitative monitoring.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Osgood-Schlatter disease (bilateral)",
+        correct: true,
+        blurb: "Confirmed diagnosis. OSD is a traction apophysitis of the tibial tubercle, occurring in adolescents during periods of rapid growth when the extensor mechanism places excessive load on the developing tibial apophysis. The combination of rapid growth, early sport specialisation, and high training volume are the documented causative factors in this case."
+      },
+      {
+        label: "Sinding-Larsen-Johansson syndrome",
+        correct: false,
+        blurb: "SLJ syndrome is a similar traction apophysitis affecting the inferior pole of the patella rather than the tibial tubercle. It presents with anterior knee pain and tenderness at the patellar apex in the same age group. Differentiation is by location of pain and tenderness on palpation, and confirmed by imaging demonstrating the site of apophyseal involvement."
+      },
+      {
+        label: "Patellofemoral pain syndrome (PFPS)",
+        correct: false,
+        blurb: "PFPS is common in adolescents and presents with anterior knee pain aggravated by squatting, jumping, and running. It does not involve tibial tubercle swelling or fragmentation. Imaging and the clinical pattern of tenderness at the tibial apophysis distinguish OSD from PFPS."
+      },
+      {
+        label: "Tibial stress fracture",
+        correct: false,
+        blurb: "Tibial stress fractures can occur in young athletes with high training loads, presenting with localised tibial pain. They are typically located at the tibial shaft or proximal metaphysis rather than the apophysis. MRI and plain X-ray would differentiate; the apophyseal location and bilateral symmetry are more consistent with OSD."
+      },
+      {
+        label: "Juvenile idiopathic arthritis (JIA)",
+        correct: false,
+        blurb: "Bilateral knee joint involvement in a child warrants consideration of inflammatory arthritis. JIA typically presents with joint swelling, warmth, and morning stiffness, and can involve multiple joints. The clear activity-related pattern, absence of systemic features, and growth-spurt timing are consistent with OSD rather than JIA."
+      },
+      {
+        label: "Patellar tendinopathy",
+        correct: false,
+        blurb: "Patellar tendinopathy produces pain at the inferior pole of the patella or along the tendon, aggravated by jumping activities. In an elite young athlete it is a reasonable differential. Imaging in this case demonstrated tibial apophyseal involvement rather than mid-tendon or patellar insertion pathology."
+      },
+      {
+        label: "Referred pain from lumbar spine or hip",
+        correct: false,
+        blurb: "In any adolescent with knee pain, referred sources should be considered. Hip pathology (e.g. slipped capital femoral epiphysis) can present with knee pain in this age group. However, the bilateral tibial tubercle tenderness, activity aggravation, growth spurt context, and imaging confirmation of apophyseal pathology make OSD the confirmed diagnosis."
+      },
+      {
+        label: "Neoplasm of the proximal tibia",
+        correct: false,
+        blurb: "Primary bone tumours including osteosarcoma have a predilection for the distal femur and proximal tibia in adolescents. Night pain, constitutional symptoms, or rapidly expanding swelling would raise concern. The bilateral presentation, activity-related pattern, and typical OSD imaging appearance make malignancy extremely unlikely here, but it should be considered in any atypical presentation."
+      }
+    ],
+    explanation: `<p>Osgood-Schlatter disease is a traction apophysitis of the developing tibial tubercle, occurring in physically active adolescents during periods of rapid skeletal growth. During growth spurts, the tibial apophysis has not yet fully ossified and is vulnerable to repetitive tensile stress from the quadriceps mechanism via the patellar ligament. This produces microavulsion and local inflammation at the apophyseal insertion.</p>
+<p>The risk factors documented in this case — growth spurt, early sport specialisation (training since age 4), and progressive increases in training volume and intensity — are the most commonly cited contributors to OSD onset and progression. Right knee dominance with a higher rate of apophyseal displacement was documented on serial ultrasound, reflecting asymmetric loading consistent with the physical demands of karate.</p>
+<p>The 20-month therapeutic programme involved kinesiotherapy, physical therapy, pharmacological support, and a structured return to sport. Return to competition was possible from the second month due to early intervention. At the stabilisation of growth, no pathological changes were found on final MRI, and full recovery was documented with no recurrence.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "kinesiotherapy_stretching",
+        label: "Kinesiotherapy and static stretching programme",
+        selected: true,
+        explanation: `<strong>Appropriate — documented as the most effective component.</strong> The authors identified kinesiotherapy and static stretching as the most effective therapeutic interventions in this case. Stretching targeted the quadriceps and patellar ligament complex to reduce traction on the tibial apophysis. Kinesiotherapy addressed muscular balance, movement quality, and load management.`
+      },
+      {
+        id: "physical_therapy",
+        label: "Physical therapy modalities",
+        selected: true,
+        explanation: `<strong>Appropriate as part of multimodal management.</strong> Physical therapy was included across all 5 stages of the 20-month programme alongside kinesiotherapy and pharmacological treatment. Specific modalities are not individually detailed in the published source beyond this classification.`
+      },
+      {
+        id: "return_to_sport",
+        label: "Graduated return to sport with early return to competition",
+        selected: true,
+        explanation: `<strong>Appropriate with proper progression.</strong> Early return to sport competition was documented from the second month of therapy. This was feasible due to the early initiation of intervention and the use of a structured, staged rehabilitation approach. Complete cessation of sport is not required in OSD management, provided load is appropriately modified.`
+      },
+      {
+        id: "immobilisation_prolonged",
+        label: "Prolonged immobilisation and complete sport cessation",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> Complete immobilisation and long-term sport cessation are not indicated in OSD. This approach leads to loss of proprioception, muscle atrophy, and psychological deconditioning. The evidence and this case support a staged return to sport with modification of load rather than cessation of activity.`
+      },
+      {
+        id: "surgical_apophyseal",
+        label: "Surgical excision of tibial tubercle ossicle",
+        selected: false,
+        explanation: `<strong>Not appropriate at this stage.</strong> Surgical intervention in OSD is reserved for cases where persistent, symptomatic ossicle fragments remain after skeletal maturity and have failed conservative management. Surgery in an actively growing child carries risks and is not indicated unless conservative therapy fails over an extended period. This case achieved full resolution without surgery.`
+      }
+    ],
+    outcomeText: `The therapeutic programme lasted 20 months across 5 stages, combining kinesiotherapy, physical therapy, pharmacological treatment, and graduated return to sport. Return to competition was possible from the second month of therapy. The rate of change in the patellar ligament–tibial apophysis distance was irregular but remained within acceptable limits throughout. At the stabilisation of body height and weight gain, a relatively correct apophyseal distance was achieved. Final MRI demonstrated no pathological changes. Full recovery was documented with no recurrence of OSD.`
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Osgood-Schlatter Disease — Bilateral</strong><br>Traction apophysitis of the tibial tubercle in an elite adolescent overhead athlete",
+    outcomes: [
+      { label: "Published Source", text: "Gaweł E, Zwierzchowska A. Medicine (Baltimore). 2021;100(50):e28257" },
+      { label: "PMID / PMC", text: "PMID: 34918694 — PMC8678013 (open access)" },
+      { label: "Final Diagnosis", text: "Osgood-Schlatter disease, bilateral, in a 12-year-old elite karateka" },
+      { label: "Intervention", text: "20-month multimodal programme: kinesiotherapy, static stretching, physical therapy, graduated return to sport — full recovery without surgery; return to competition from month 2" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Osgood-Schlatter disease is a traction apophysitis driven by the combination of rapid skeletal growth, a developing tibial apophysis not yet fully ossified, and repetitive quadriceps loading. Early specialisation and high training volume amplify risk. Kinesiotherapy and static stretching are the most effective therapeutic components." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Bilateral knee pain in an adolescent should not immediately trigger investigation for inflammatory or systemic pathology. When the history reveals a growth spurt, a young athlete in a high-demand sport, and activity-related anterior knee pain with tibial tubercle tenderness, OSD should be the working diagnosis and confirmed with imaging." },
+      { type: "pearl", tag: "Clinical Pearl", text: "Serial ultrasonography of the patellar ligament–tibial apophysis distance provides an objective quantitative measure of OSD progression and response to treatment — a useful monitoring tool in clinical practice for young athletes managed conservatively over time." },
+      { type: "key", tag: "Scope of Practice", text: "OSD is well within the scope of chiropractic and physiotherapy practice. Load management, activity modification, kinesiotherapy, and soft tissue care are the primary interventions. Imaging referral is appropriate for confirmation and baseline measurement. Surgical referral is only required if symptomatic ossicle fragments persist post skeletal maturity after failed conservative care." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Plain X-ray can identify tibial tubercle fragmentation in OSD and should be used as a first-line investigation. MRI and ultrasound provide greater soft tissue detail and allow serial monitoring of apophyseal change. Ultrasound is particularly useful in clinical settings for tracking treatment response over time." }
+    ]
+  },
+  cpd: {
+    topics: "Osgood-Schlatter disease, traction apophysitis, tibial tubercle, adolescent knee pain, growth spurt, early sport specialisation, kinesiotherapy, return to sport",
+    keyPoints: [
+      "Osgood-Schlatter disease is a traction apophysitis of the tibial tubercle occurring during adolescent growth spurts, particularly in young athletes with high training loads.",
+      "The triad of rapid growth, early sport specialisation, and progressive training volume is the documented risk factor constellation for OSD onset and progression.",
+      "Kinesiotherapy and static stretching were identified as the most clinically effective interventions, with return to competition possible from month 2 of a structured programme.",
+      "Complete immobilisation and sport cessation are not appropriate — graduated return to activity with load modification is the evidence-supported approach.",
+      "Serial ultrasound measurement of the patellar ligament–tibial apophysis distance provides objective monitoring of apophyseal change and treatment response in OSD."
+    ]
+  }
+},
+{
+  id: "006",
+  title: "A 42-year-old man presents with persistent left ankle pain and instability 6 months after an ankle sprain that was treated initially at several clinics without lasting improvement",
+  category: "Ankle/Foot",
+  secondaryCategory: "Sports/Acute",
+  difficulty: "Intermediate",
+  estimatedTime: "15–20 mins",
+  source: {
+    short: "Pechlivani C, Grammatikopoulou D, Antonoglou G, et al.\nJ Orthop Case Rep. 2023;13(8):137–141\nPMID: 37654758\nPMC: PMC10465758\nOpen access ✓",
+    full: "Pechlivani C, Grammatikopoulou D, Antonoglou G, Pelopidas T, Varvarousis DN, Vrettakos A. Lateral Ankle Instability after Rotational Injury: A Case Report. J Orthop Case Rep. 2023;13(8):137–141. doi: 10.13107/jocr.2023.v13.i08.3848. PMID: 37654758. PMC10465758. Open access."
+  },
+  patient: {
+    ageSex: "42-year-old male",
+    chiefComplaint: "Persistent left ankle pain and a subjective sense of giving way after an ankle sprain 6 months prior",
+    duration: "6 months of persistent symptoms following the index injury",
+    priorProviders: "Multiple primary healthcare centres (4 visits over 6 months); prior management inadequately characterised ligamentous injury",
+    priorDiagnoses: "Ankle sprain — no instability diagnosed or documented at any of the four prior presentations"
+  },
+  history: {
+    content: `<p>A 42-year-old Caucasian male presented with persistent left ankle pain and instability 6 months after sustaining an ankle sprain. He had attended various primary healthcare centres on four separate occasions within the six months following the injury, with persistent symptoms throughout. At no prior presentation had lateral ankle instability been formally diagnosed.</p>
+<p>The initial injury involved a rotational mechanism to the left ankle. Despite repeated presentations to primary care, the ligamentous injury was not fully assessed or characterised, and the underlying instability was allowed to become chronic. At the time of specialist presentation, stress-view radiographs demonstrated a talar tilt angle of 21° and an anterior drawer of 13 mm, confirming lateral ankle instability resistant to conservative treatment. No further past medical history was documented in the published source. The patient's ankle was assessed as suitable for surgical reconstruction following failure of conservative management.</p>`,
+    clinicalNote: "The core clinical issue in this case is the failure of four separate primary care presentations to identify lateral ligamentous instability. The persistent symptoms, mechanism of injury, and chronicity indicate that a structured ligamentous assessment — including stress testing — should have been performed much earlier. Chronically missed ankle instability has significant functional consequences."
+  },
+  examination: {
+    autoROM: `<p>Active ROM values were not individually documented in the published source. Stress-view radiographs were used as the primary objective measurement of ligamentous laxity.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Movement</th><th>Muscle</th><th>Nerve Root</th><th>Finding</th></tr></thead><tbody>
+      <tr><td colspan="4" style="text-align:center; font-style:italic;">Neurological examination was not documented in the published source. No neurological signs were described as part of this presentation.</td></tr>
+    </tbody></table></div>`,
+    checklist: [
+      {
+        group: "Ligamentous Stress Testing",
+        items: [
+          {
+            id: "stress_xray_talar_tilt",
+            label: "Stress Radiograph — Talar Tilt Angle (left ankle)",
+            result: `21° — confirms lateral collateral ligament complex laxity (normal <5°) <span class="tt pos">21° — markedly abnormal</span>`,
+            documented: true
+          },
+          {
+            id: "stress_xray_anterior_drawer",
+            label: "Stress Radiograph — Anterior Drawer (left ankle)",
+            result: `13 mm anterior translation — confirms anterior talofibular ligament insufficiency (normal <10 mm, pathological >10 mm) <span class="tt pos">13 mm — pathological</span>`,
+            documented: true
+          }
+        ]
+      },
+      {
+        group: "Outcome Measures",
+        items: [
+          {
+            id: "aofas",
+            label: "American Orthopaedic Foot and Ankle Score (AOFAS)",
+            result: `Pre-treatment: 60/100. At 11-month post-surgical follow-up: 85/100 <span class="tt notable">Significant improvement</span>`,
+            documented: true
+          }
+        ]
+      }
+    ],
+    contextText: "Stress-view radiographs are the objective standard for quantifying lateral ankle ligamentous laxity and confirming instability. Talar tilt angle and anterior drawer measurement on stress radiographs directly assess the integrity of the calcaneofibular ligament (CFL) and anterior talofibular ligament (ATFL) respectively. These investigations are critical when chronic instability is suspected following repeated ankle sprains or persistent post-sprain symptoms."
+  },
+  investigations: {
+    options: [
+      {
+        id: "stress_xray",
+        label: "Stress-view radiographs — talar tilt and anterior drawer (left ankle)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Talar tilt angle: 21° (normal <5°). Anterior drawer: 13 mm (pathological threshold >10 mm). Findings confirm chronic lateral ankle instability resistant to conservative management, involving the calcaneofibular ligament and anterior talofibular ligament.</p>`
+      },
+      {
+        id: "plain_xray_ankle",
+        label: "Plain weight-bearing radiograph — left ankle",
+        consequence: "Plain radiographs are essential to exclude fracture in any acute ankle injury and should be part of the initial assessment. They would not, however, demonstrate ligamentous laxity. Stress views are required to quantify instability. At the initial presentations following the acute sprain, failure to perform stress testing (and likely plain X-ray alone) contributed to the missed diagnosis of instability.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "mri_ankle",
+        label: "MRI — Left Ankle",
+        consequence: "MRI provides detailed soft tissue characterisation of ligamentous injury, allowing identification of the specific ligaments torn (ATFL, CFL, posterior talofibular ligament) and the degree of disruption. It would have been a valuable investigation to characterise the injury fully and guide surgical planning. It was not documented as performed in this published case.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Chronic lateral ankle instability (post-traumatic ATFL and CFL insufficiency)",
+        correct: true,
+        blurb: "Confirmed by stress radiographs showing talar tilt of 21° and anterior drawer of 13 mm. The mechanism of rotational injury, persistent symptoms across 6 months despite repeated presentations to primary care, and subjective giving way are all consistent with chronic lateral ankle instability from anterior talofibular and calcaneofibular ligament disruption."
+      },
+      {
+        label: "Peroneal tendon pathology (tendinopathy or subluxation)",
+        correct: false,
+        blurb: "Peroneal tendon injuries are commonly associated with lateral ankle sprains and can cause persistent lateral ankle pain and a sense of instability. Peroneal tendon subluxation may mimic giving way. However, the objective stress radiograph findings of ligamentous laxity confirm bony instability as the primary finding, and peroneal pathology was not documented."
+      },
+      {
+        label: "Osteochondral lesion of the talus",
+        correct: false,
+        blurb: "Osteochondral lesions of the talus (OLT) are a recognised complication of lateral ankle sprains, particularly when symptoms persist despite adequate conservative management. OLT presents with deep ankle pain and can cause joint catching. MRI would be required to identify this. It was not documented in this case but warrants consideration in any patient with persistent post-sprain symptoms."
+      },
+      {
+        label: "Ankle fracture (acute or stress)",
+        correct: false,
+        blurb: "Fracture must be excluded after any ankle injury (Ottawa Ankle Rules guide plain radiograph use). An acute fracture would typically have been identified at one of the four prior presentations if plain X-ray had been performed. Stress fractures can present with persistent pain and should be considered in patients with high activity levels whose pain does not resolve."
+      },
+      {
+        label: "Sinus tarsi syndrome",
+        correct: false,
+        blurb: "Sinus tarsi syndrome produces lateral ankle pain, localised tenderness in the sinus tarsi, and a sense of instability following ankle sprain. It is caused by inflammatory or scar tissue in the sinus tarsi. It can coexist with ligamentous instability and may be missed on plain X-ray. The gross instability documented on stress views in this case makes it a secondary consideration."
+      },
+      {
+        label: "Syndesmotic (high) ankle sprain",
+        correct: false,
+        blurb: "Syndesmotic sprains result from external rotation injury and cause pain superior to the lateral malleolus with positive squeeze test and external rotation stress test. Stress radiographs would show tibiofibular diastasis rather than talar tilt or anterior drawer. The injury mechanism and stress radiograph pattern in this case are consistent with lateral rather than syndesmotic ligament injury."
+      },
+      {
+        label: "Complex regional pain syndrome (CRPS)",
+        correct: false,
+        blurb: "CRPS can follow ankle injury and presents with disproportionate pain, allodynia, autonomic changes, and vasomotor instability. The clear structural explanation (ligamentous laxity on stress radiographs) and the mechanical symptom pattern (giving way with activity) make CRPS an unlikely primary diagnosis in this case."
+      },
+      {
+        label: "Grade I or II ankle sprain (incompletely resolved)",
+        correct: false,
+        blurb: "At all four prior presentations, the injury was managed as a simple ankle sprain without formal stress testing. While grade I–II sprains can take weeks to resolve, 6 months of persistent instability with objective stress radiograph findings of talar tilt 21° and anterior drawer 13 mm indicates a chronic, structurally unstable ankle requiring more than simple sprain management."
+      }
+    ],
+    explanation: `<p>This case illustrates the consequence of inadequate ligamentous assessment following an acute lateral ankle sprain. The anterior talofibular ligament (ATFL) and calcaneofibular ligament (CFL) are the primary stabilisers of the lateral ankle. When these structures are completely disrupted and not adequately rehabilitated, the ankle can develop chronic mechanical instability — characterised by recurrent giving way, persistent pain, and objective ligamentous laxity on stress testing.</p>
+<p>The patient attended primary care four times over 6 months without the instability being diagnosed. The probable reason is that standard management of ankle sprains (RICE protocol, analgesia, avoidance of weight bearing) was applied without functional stress testing to quantify ligamentous integrity. Stress radiographs demonstrated a talar tilt of 21° and anterior drawer of 13 mm — both markedly beyond normal limits — confirming complete ligamentous insufficiency that was resistant to conservative management.</p>
+<p>Surgical reconstruction using an autologous semitendinosus graft was performed, anatomically restoring the ATFL and CFL. Post-surgical stress radiographs demonstrated significant improvement (talar tilt 3°, anterior drawer 4 mm). AOFAS improved from 60 to 85 at 11-month follow-up. The key learning is that persistent ankle symptoms following a sprain should prompt formal ligamentous stress assessment well before the 6-month mark.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "stress_testing_early",
+        label: "Perform structured ligamentous stress testing at or before the 6-week mark",
+        selected: true,
+        explanation: `<strong>Should have been performed — retrospectively appropriate.</strong> The anterior drawer test and talar tilt test (manual or with stress radiographs) should be performed once acute swelling allows, typically within 3–6 weeks of injury. Earlier diagnosis of complete ligamentous disruption would have permitted appropriate conservative rehabilitation or earlier surgical consideration, avoiding 6 months of missed instability.`
+      },
+      {
+        id: "conservative_rehab",
+        label: "Structured conservative rehabilitation with peroneal strengthening and proprioception training",
+        selected: true,
+        explanation: `<strong>Appropriate as first-line management.</strong> Conservative rehabilitation including peroneal muscle strengthening, proprioception and balance training, and bracing is the first-line management for most cases of lateral ankle instability. The published case notes that the patient's instability was resistant to conservative treatment, implying it had been attempted. Surgical reconstruction was therefore indicated.`
+      },
+      {
+        id: "surgical_reconstruction",
+        label: "Surgical reconstruction of ATFL and CFL using autologous semitendinosus graft",
+        selected: true,
+        explanation: `<strong>Appropriate after failure of conservative management.</strong> Anatomical ligament reconstruction using an autologous semitendinosus graft from the left knee was performed. Post-surgical stress radiographs showed talar tilt reduced from 21° to 3° and anterior drawer from 13 mm to 4 mm. AOFAS improved from 60 to 85 at 11-month follow-up. Surgical reconstruction is indicated for chronic instability resistant to conservative care.`
+      },
+      {
+        id: "rice_only",
+        label: "RICE protocol and analgesia only, without further assessment",
+        selected: false,
+        explanation: `<strong>Insufficient for persistent symptoms beyond 6 weeks.</strong> RICE and analgesia are appropriate immediate management for acute ankle sprains. However, continuing this approach across 4 presentations over 6 months without formal ligamentous assessment is the reason instability went undiagnosed in this case. Persistent ankle symptoms beyond 4–6 weeks require structured re-evaluation including clinical ligamentous stress testing.`
+      },
+      {
+        id: "orthotic_taping_only",
+        label: "Bracing and taping without rehabilitation or further imaging",
+        selected: false,
+        explanation: `<strong>Insufficient as the sole long-term strategy.</strong> Ankle bracing and taping provide external mechanical support and may reduce the frequency of giving-way episodes, but they do not address the underlying ligamentous insufficiency or restore functional stability. In the absence of adequate neuromuscular rehabilitation, bracing alone is a management bandage rather than a solution.`
+      }
+    ],
+    outcomeText: `Surgical reconstruction of the ATFL and CFL using an autologous semitendinosus graft from the left knee was performed, with the graft pinned at the anatomical insertion sites using absorbable screws. A 2-month post-surgical physiotherapy programme was completed. Post-surgical stress radiographs demonstrated talar tilt reduced to 3° (from 21°) and anterior drawer reduced to 4 mm (from 13 mm). At 11-month post-surgical follow-up, AOFAS was 85 (improved from pre-treatment score of 60).`
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Chronic Lateral Ankle Instability</strong><br>Post-traumatic ATFL and CFL insufficiency — missed across four primary care presentations",
+    outcomes: [
+      { label: "Published Source", text: "Pechlivani C et al. J Orthop Case Rep. 2023;13(8):137–141" },
+      { label: "PMID / PMC", text: "PMID: 37654758 — PMC10465758 (open access)" },
+      { label: "Final Diagnosis", text: "Chronic lateral ankle instability (ATFL and CFL insufficiency) — talar tilt 21°, anterior drawer 13 mm on stress radiographs" },
+      { label: "Intervention", text: "Surgical reconstruction with autologous semitendinosus graft → 2-month postoperative physiotherapy; AOFAS improved from 60 to 85 at 11-month follow-up" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Persistent ankle pain and instability beyond 4–6 weeks following a lateral ankle sprain should trigger formal ligamentous stress assessment. The anterior drawer test and talar tilt test are the primary clinical tools; stress radiographs provide objective quantification. Failing to perform these assessments allows chronic instability to develop." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Repeatedly applying the same treatment (RICE, analgesia, activity modification) to a patient who re-presents with unchanged or worsening symptoms is a clinical failure pattern. Each re-presentation is a diagnostic opportunity — persistent ankle giving way at 6 months is not a sprain that needs more rest; it is instability that needs a structural assessment." },
+      { type: "pearl", tag: "Clinical Pearl", text: "Stress radiographs are the objective gold standard for quantifying lateral ankle ligamentous laxity. A talar tilt angle >5–9° and anterior drawer >10 mm are considered pathological thresholds indicating significant ligamentous disruption. Manual stress tests (anterior drawer, talar tilt) should be performed clinically; imaging confirms and quantifies." },
+      { type: "key", tag: "Scope of Practice", text: "Chiropractors and physiotherapists are frequently first-contact providers for ankle sprains and are well-positioned to identify chronic instability. When subjective giving way and objective stress test positivity are present, imaging referral and orthopaedic consultation are appropriate. Early identification significantly improves outcomes." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Plain X-rays taken acutely will exclude fracture but will not demonstrate ligamentous laxity. Stress-view radiographs (talar tilt and anterior drawer) are required to objectively characterise instability. MRI provides soft tissue characterisation of specific ligament tears but stress radiography remains the functional test of ligamentous competency." }
+    ]
+  },
+  cpd: {
+    topics: "Lateral ankle instability, ATFL, calcaneofibular ligament, ankle sprain, stress radiograph, talar tilt, anterior drawer, chronic instability, surgical reconstruction, missed diagnosis",
+    keyPoints: [
+      "Persistent ankle pain and giving way beyond 4–6 weeks after a lateral ankle sprain should prompt formal clinical stress testing (anterior drawer, talar tilt) to identify ligamentous instability.",
+      "Talar tilt >5–9° and anterior drawer >10 mm on stress radiographs are pathological thresholds indicating significant ATFL and/or CFL disruption.",
+      "Repeated primary care presentations with unchanged symptoms indicate inadequate assessment, not inadequate recovery time — each re-presentation is a diagnostic opportunity.",
+      "Conservative rehabilitation (peroneal strengthening, proprioception, bracing) is first-line management for lateral ankle instability; surgical reconstruction is indicated after conservative failure.",
+      "Chiropractors and physiotherapists as first-contact practitioners play a critical role in early identification of ankle instability before it becomes chronic — early recognition substantially improves long-term functional outcomes."
+    ]
+  }
+}
+// ─────────────────────────────────────────────
+// PASTE ADDITIONAL CASES ABOVE THIS LINE
+// Add a comma after the closing } of the previous case
+// then paste the new case data block here
+// ─────────────────────────────────────────────
+
+]; // END OF CASES ARRAY — DO NOT EDIT THIS LINE
+
+// ═══════════════════════════════════════════════════════════════════
+//  APP ENGINE — DO NOT EDIT BELOW THIS LINE
+// ═══════════════════════════════════════════════════════════════════
+
+const STAGES = ['intro','history','examination','investigations','differential','management','reveal'];
+const STAGE_NAMES = { intro:'Introduction', history:'History', examination:'Examination', investigations:'Investigations', differential:'Differential Dx', management:'Management', reveal:'Full Reveal' };
+
+let currentCase = null;
+let currentStage = 'intro';
+let stagesRevealed = {};
+let stagesVisited = {};
+let rankOrder = [];
+let decisionLog = [];
+
+function getCompleted() {
+  try { return JSON.parse(localStorage.getItem('crs_completed') || '[]'); } catch(e) { return []; }
+}
+function markCompleted(id) {
+  const c = getCompleted(); if (!c.includes(id)) { c.push(id); localStorage.setItem('crs_completed', JSON.stringify(c)); }
+}
+
+// FILTERS
+let activeFilters = { diff: 'all', cat: 'all' };
+function setFilter(type, val, btn) {
+  activeFilters[type] = val;
+  document.querySelectorAll(`[data-filter="${type}"]`).forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  renderLibrary();
+}
+
+function renderLibrary() {
+  const completed = getCompleted();
+  const grid = document.getElementById('case-grid');
+  const filtered = CASES.filter(c => {
+    const diffOk = activeFilters.diff === 'all' || c.difficulty === activeFilters.diff;
+    const catOk = activeFilters.cat === 'all' || c.category === activeFilters.cat || c.secondaryCategory === activeFilters.cat;
+    return diffOk && catOk;
+  });
+
+  document.getElementById('stat-total').textContent = CASES.length;
+  document.getElementById('stat-done').textContent = completed.length;
+  document.getElementById('stat-remain').textContent = CASES.length - completed.length;
+
+  if (!filtered.length) { grid.innerHTML = '<div class="no-results">No cases match the selected filters.</div>'; return; }
+
+  grid.innerHTML = filtered.map(c => {
+    const isDone = completed.includes(c.id);
+    const diffClass = c.difficulty === 'Beginner' ? 'beg' : c.difficulty === 'Intermediate' ? 'int' : 'adv';
+    return `<div class="c-card${isDone ? ' done' : ''}" onclick="launchCase('${c.id}')">
+      <div class="c-card-top">
+        <div class="c-tags">
+          <span class="ctag cat">${c.category}</span>
+          ${c.secondaryCategory ? `<span class="ctag cat">${c.secondaryCategory}</span>` : ''}
+          <span class="ctag ${diffClass}">${c.difficulty}</span>
+          ${isDone ? '<span class="ctag comp">&#10003; Done</span>' : ''}
+        </div>
+        <span class="c-num">#${c.id}</span>
+      </div>
+      <div class="c-title">${c.title}</div>
+      <div class="c-dx">${c.reveal.diagnosisTitle.replace(/<[^>]+>/g,'')}</div>
+      <div class="c-bottom">
+        <span class="c-time">&#128337; ${c.estimatedTime}</span>
+        <span class="c-arrow">&#8594;</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function launchRandom() {
+  const completed = getCompleted();
+  const incomplete = CASES.filter(c => !completed.includes(c.id));
+  if (!incomplete.length) { alert('You have completed all available cases! Restart a case from the library.'); return; }
+  const c = incomplete[Math.floor(Math.random() * incomplete.length)];
+  launchCase(c.id);
+}
+
+function launchCase(id) {
+  currentCase = CASES.find(c => c.id === id);
+  if (!currentCase) return;
+  stagesRevealed = {}; stagesVisited = { intro: true }; rankOrder = []; decisionLog = [];
+
+  // Reset UI
+  document.getElementById('decision-log').innerHTML = '<li class="log-li" style="color:var(--rule);">No decisions yet</li>';
+  document.querySelectorAll('.rb').forEach(r => { if (!r.classList.contains('info')) r.classList.remove('show'); });
+  document.querySelectorAll('.btn-p[id$="-next"]').forEach(b => b.disabled = true);
+
+  // Populate intro
+  document.getElementById('intro-num').textContent = `Case ${currentCase.id}`;
+  document.getElementById('intro-title').innerHTML = currentCase.title;
+  document.getElementById('intro-age').textContent = currentCase.patient.ageSex;
+  document.getElementById('intro-cc').textContent = currentCase.patient.chiefComplaint;
+  document.getElementById('intro-dur').textContent = currentCase.patient.duration;
+
+  // Sidebar patient
+  const pat = currentCase.patient;
+  let patHTML = `<div class="pt-f"><div class="pt-fl">Age / Sex</div><div class="pt-fv">${pat.ageSex}</div></div>
+    <div class="pt-f"><div class="pt-fl">Chief Complaint</div><div class="pt-fv">${pat.chiefComplaint}</div></div>
+    <div class="pt-f"><div class="pt-fl">Duration</div><div class="pt-fv">${pat.duration}</div></div>`;
+  if (pat.priorProviders) patHTML += `<div class="pt-f"><div class="pt-fl">Prior Providers</div><div class="pt-fv">${pat.priorProviders}</div></div>`;
+  if (pat.priorDiagnoses) patHTML += `<div class="pt-f"><div class="pt-fl">Prior Diagnoses</div><div class="pt-fv">${pat.priorDiagnoses}</div></div>`;
+  document.getElementById('sb-patient').innerHTML = patHTML;
+
+  // Sidebar source
+  document.getElementById('sb-source').innerHTML = currentCase.source.short.replace(/\n/g,'<br>');
+
+  // History
+  document.getElementById('hist-content').innerHTML = currentCase.history.content;
+  document.getElementById('hist-note-text').innerHTML = currentCase.history.clinicalNote;
+
+  // Examination checklist
+  const examCklist = document.getElementById('exam-checklist');
+  examCklist.innerHTML = '';
+  currentCase.examination.checklist.forEach(group => {
+    const gl = document.createElement('div');
+    gl.className = 'ck-gl'; gl.textContent = group.group;
+    examCklist.appendChild(gl);
+    group.items.forEach(item => {
+      const el = document.createElement('div');
+      el.className = 'ck-item'; el.dataset.id = item.id;
+      el.innerHTML = `<div class="ck-box">&#10003;</div>${item.label}`;
+      el.onclick = () => {
+        el.classList.toggle('checked');
+        addLog(`Exam: ${item.label.substring(0,45)}${item.label.length>45?'…':''}`);
+      };
+      examCklist.appendChild(el);
+    });
+  });
+
+  // Exam auto content
+  document.getElementById('exam-auto-content').innerHTML =
+    `<p style="margin-bottom:10px;"><strong>ROM &amp; Myotomes (always performed):</strong></p>` +
+    currentCase.examination.autoROM + currentCase.examination.autoMyotomes;
+  document.getElementById('exam-context-text').textContent = currentCase.examination.contextText;
+
+  // Investigations checklist
+  const invCklist = document.getElementById('inv-checklist');
+  invCklist.innerHTML = '<div class="ck-gl">Available Investigations</div>';
+  currentCase.investigations.options.forEach(opt => {
+    const el = document.createElement('div');
+    el.className = 'ck-item'; el.dataset.id = opt.id;
+    el.innerHTML = `<div class="ck-box">&#10003;</div>${opt.label}`;
+    el.onclick = () => {
+      el.classList.toggle('checked');
+      addLog(`Inv: ${opt.label.substring(0,45)}${opt.label.length>45?'…':''}`);
+    };
+    invCklist.appendChild(el);
+  });
+
+  // Investigations reveal content
+  const invContent = document.getElementById('inv-content');
+  invContent.innerHTML = currentCase.investigations.options.map(opt => {
+    if (opt.ordered) {
+      return `<div class="rb show" style="margin-bottom:10px; padding:14px 16px; background:var(--accent-light); border-left:3px solid var(--accent);">
+        <div class="rl" style="color:var(--accent);">Ordered &amp; Documented</div>
+        <div style="font-size:13px; font-weight:600; margin-bottom:8px;">${opt.label}</div>
+        <div class="rt">${opt.result}</div>
+      </div>`;
+    } else {
+      return `<div class="rb warn show" style="margin-bottom:10px; padding:14px 16px;">
+        <div class="rl">Not Ordered / Consequence</div>
+        <div style="font-size:13px; font-weight:600; margin-bottom:8px;">${opt.label}</div>
+        <div class="rt">${opt.consequence}</div>
+      </div>`;
+    }
+  }).join('');
+
+  // Differential
+  rankOrder = [];
+  const diffList = document.getElementById('diff-list');
+  diffList.innerHTML = '';
+  currentCase.differential.conditions.forEach((cond, i) => {
+    const el = document.createElement('div');
+    el.className = 'diff-item'; el.dataset.idx = i;
+    el.innerHTML = `<div class="diff-badge"></div>${cond.label}`;
+    el.onclick = () => toggleRank(el, i);
+    diffList.appendChild(el);
+  });
+  document.getElementById('rank-counter').textContent = '0 of 8 ranked';
+
+  // Differential reveal
+  const diffContent = document.getElementById('diff-content');
+  diffContent.innerHTML = currentCase.differential.explanation +
+    `<table class="ft" style="margin-top:16px;"><thead><tr><th>Condition</th><th>Assessment</th></tr></thead><tbody>` +
+    currentCase.differential.conditions.map(c =>
+      `<tr><td>${c.label}${c.correct ? ' <span class="tt normal">Correct</span>' : ''}</td><td style="font-size:12px;">${c.blurb}</td></tr>`
+    ).join('') + `</tbody></table>`;
+
+  // Management checklist
+  const mgmtCklist = document.getElementById('mgmt-checklist');
+  mgmtCklist.innerHTML = '<div class="ck-gl">Management Options</div>';
+  currentCase.management.options.forEach(opt => {
+    const el = document.createElement('div');
+    el.className = 'ck-item'; el.dataset.id = opt.id;
+    el.innerHTML = `<div class="ck-box">&#10003;</div>${opt.label}`;
+    el.onclick = () => {
+      el.classList.toggle('checked');
+      addLog(`Mgmt: ${opt.label.substring(0,45)}${opt.label.length>45?'…':''}`);
+    };
+    mgmtCklist.appendChild(el);
+  });
+
+  // Management reveal
+  const mgmtContent = document.getElementById('mgmt-content');
+  mgmtContent.innerHTML = `<div class="rb show" style="padding:14px 16px; background:var(--accent-light); border-left:3px solid var(--accent); margin-bottom:16px;">
+    <div class="rl" style="color:var(--accent);">What the Published Case Did</div>
+    <div class="rt">${currentCase.management.outcomeText}</div>
+  </div>` +
+  currentCase.management.options.map(opt =>
+    `<div class="rb ${opt.selected ? 'show' : 'warn show'}" style="margin-bottom:8px; padding:12px 16px;">
+      <div class="rl">${opt.label}</div>
+      <div class="rt">${opt.explanation}</div>
+    </div>`
+  ).join('');
+
+  // Full reveal
+  document.getElementById('reveal-dx-title').innerHTML = currentCase.reveal.diagnosisTitle;
+  document.getElementById('reveal-outcome-grid').innerHTML = currentCase.reveal.outcomes.map(o =>
+    `<div class="oc"><div class="ocl">${o.label}</div><div class="oct">${o.text}</div></div>`
+  ).join('');
+  document.getElementById('reveal-reflections').innerHTML = currentCase.reveal.reflections.map(r =>
+    `<div class="refl-item ${r.type}"><div class="refl-tag">${r.tag}</div>${r.text}</div>`
+  ).join('');
+  document.getElementById('reveal-source').innerHTML = `<strong>Source:</strong> ${currentCase.source.full}`;
+
+  // CPD
+  document.getElementById('cpd-case').textContent = `${currentCase.id} — ${currentCase.reveal.diagnosisTitle.replace(/<[^>]+>/g,'')}`;
+  document.getElementById('cpd-source').textContent = currentCase.source.full;
+  document.getElementById('cpd-topics').textContent = currentCase.cpd.topics;
+  document.getElementById('cpd-points').innerHTML = currentCase.cpd.keyPoints.map(p => `<li>${p}</li>`).join('');
+  document.getElementById('cpd-box').classList.remove('show');
+  document.getElementById('cpd-toggle').innerHTML = '&#8595; Generate CPD Summary';
+
+  showView('view-case');
+  syncMobileSidebar();
+  goStage('intro');
+}
+
+function toggleRank(el, idx) {
+  if (el.classList.contains('ranked')) {
+    const pos = rankOrder.indexOf(idx);
+    rankOrder.splice(pos, 1);
+    el.classList.remove('ranked');
+    el.querySelector('.diff-badge').textContent = '';
+    // Re-number remaining
+    rankOrder.forEach((i, p) => {
+      const item = document.querySelector(`.diff-item[data-idx="${i}"]`);
+      if (item) item.querySelector('.diff-badge').textContent = p + 1;
+    });
+  } else {
+    if (rankOrder.length >= 8) return;
+    rankOrder.push(idx);
+    el.classList.add('ranked');
+    el.querySelector('.diff-badge').textContent = rankOrder.length;
+    addLog(`Diff #${rankOrder.length}: ${el.textContent.replace(/^\d+/,'').trim().substring(0,40)}…`);
+  }
+  const counter = document.getElementById('rank-counter');
+  counter.textContent = `${rankOrder.length} of 8 ranked`;
+  if (rankOrder.length === 8) {
+    counter.textContent = '8 of 8 ranked — ready to reveal';
+    counter.style.color = 'var(--accent)';
+  } else {
+    counter.style.color = '';
+  }
+}
+
+function showView(id) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function goHome() {
+  showView('view-library');
+  renderLibrary();
+  document.getElementById('g-meta').textContent = 'Case Library';
+  document.getElementById('g-pill').textContent = 'Library';
+  document.getElementById('g-pill').classList.remove('active');
+}
+
+function goStage(stage) {
+  document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
+  document.getElementById('stage-' + stage).classList.add('active');
+  currentStage = stage;
+  stagesVisited[stage] = true;
+
+  // Update progress sidebar
+  let passed = false;
+  STAGES.forEach(s => {
+    const el = document.getElementById('ps-' + s);
+    if (!el) return;
+    if (s === stage) { el.className = 'prog-step current'; passed = true; }
+    else if (!passed) { el.className = 'prog-step done'; }
+    else { el.className = stagesVisited[s] ? 'prog-step' : 'prog-step locked'; }
+  });
+
+  const pill = document.getElementById('g-pill');
+  pill.textContent = STAGE_NAMES[stage] || stage;
+  pill.className = 'g-pill' + (stage !== 'intro' ? ' active' : '');
+  document.getElementById('g-meta').textContent = `Case ${currentCase?.id || ''}`;
+
+  if (stage === 'reveal') { markCompleted(currentCase.id); renderLibrary(); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goStageIfUnlocked(stage) {
+  if (stagesVisited[stage]) goStage(stage);
+}
+
+function revealStage(revealId, nextBtnId, stage) {
+  const r = document.getElementById(revealId);
+  r.classList.add('show');
+  if (nextBtnId) document.getElementById(nextBtnId).disabled = false;
+  stagesRevealed[stage] = true;
+  r.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function addLog(text) {
+  const log = document.getElementById('decision-log');
+  const empty = log.querySelector('[style*="color:var(--rule)"]');
+  if (empty) empty.remove();
+  decisionLog.push(text);
+  const li = document.createElement('li');
+  li.className = 'log-li';
+  li.textContent = text;
+  log.appendChild(li);
+}
+
+function toggleCPD() {
+  const box = document.getElementById('cpd-box');
+  const btn = document.getElementById('cpd-toggle');
+  if (box.classList.contains('show')) {
+    box.classList.remove('show');
+    btn.innerHTML = '&#8595; Generate CPD Summary';
+  } else {
+    box.classList.add('show');
+    btn.innerHTML = '&#8593; Hide CPD Summary';
+    document.getElementById('cpd-date').textContent = 'Activity completed: ' + new Date().toLocaleDateString('en-AU', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+    box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function restartCase() {
+  if (currentCase) launchCase(currentCase.id);
+}
+
+// INIT
+renderLibrary();
+</script>
+</body>
+</html>
