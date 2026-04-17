@@ -2837,6 +2837,1252 @@ const CASES = [
       "A graduated manual therapy approach — beginning with soft tissue techniques and mobilisation, then escalating to HVLA SMT only after confirmed tolerability — is the appropriate clinical strategy for post-surgical cervical spine patients."
     ]
   }
+},
+// ─────────────────────────────────────────────
+// CASE 012 — Frozen Shoulder: Regional Interdependence Approach
+// Source: Wong et al. J Man Manip Ther. 2018. PMID: 29686485
+// ─────────────────────────────────────────────
+{
+  id: "012",
+  title: "A 54-year-old woman presents with 4 months of right shoulder pain and progressive difficulty lifting her arm",
+  category: "Shoulder",
+  secondaryCategory: "Cervical",
+  difficulty: "Intermediate",
+  estimatedTime: "18–22 min",
+  source: {
+    short: "Wong et al.\nJ Man Manip Ther. 2018;26(2):109–118\nPMID: 29686485\nPMC: PMC5901425\nOpen access ✓",
+    full: "Wong CK, Strang BL, Schram GA, Mercer EA, Kesting RS, Deo KS. A pragmatic regional interdependence approach to primary frozen shoulder: a retrospective case series. J Man Manip Ther. 2018;26(2):109–118. doi:10.1080/10669817.2018.1432524. PMID: 29686485. PMC: PMC5901425."
+  },
+  patient: {
+    ageSex: "54-year-old female",
+    chiefComplaint: "Right shoulder pain and severely restricted range of motion",
+    duration: "4 months, progressively worsening",
+    priorProviders: "General practitioner — referred for physiotherapy",
+    priorDiagnoses: "Shoulder pain — aetiology not yet established"
+  },
+  history: {
+    content: `<p>A 54-year-old woman is referred to your clinic with a 4-month history of gradually worsening right shoulder pain and stiffness. She reports the pain began without any specific trauma or precipitating injury. Initially she noticed difficulty reaching overhead and behind her back; over the past 6 weeks she has been unable to dress herself without significant pain and has had to stop her regular walking routine due to shoulder pain with arm swing.</p>
+<p>She reports aching pain at rest in the right deltoid region, rated 5/10, worsening to 8/10 with attempted active elevation. She denies any numbness or tingling in the arm. Sleep is significantly disrupted — she cannot lie on her right side. She is a retired schoolteacher, right-hand dominant, with a history of well-controlled type 2 diabetes (HbA1c 7.2% at last check). She is not currently on any analgesics. She denies any recent respiratory illness, chest pain, or history of breast disease. No prior shoulder injury or surgery.</p>
+<p>On specific questioning she reports no cervical pain, no headache, and no weakness in the hand or fingers. The stiffness is present all day and does not improve markedly with movement.</p>`,
+    clinicalNote: "The insidious onset, progressive capsular pattern of restriction, diabetic history, and lack of trauma are the hallmarks of primary adhesive capsulitis. The key clinical signal is the combination of restricted passive AND active motion in a capsular pattern (external rotation most limited, followed by abduction and internal rotation). The diagnostic trap is attributing restriction solely to a rotator cuff problem — a full-thickness tear can mimic restriction in active ROM, but passive motion is typically preserved. This case also tests awareness that frozen shoulder does not exist in isolation: the scapulothoracic, cervicothoracic, and glenohumeral joints function as a unit, and regional interdependence is clinically important."
+  },
+  examination: {
+    autoROM: `<p><strong>Shoulder Active ROM (right):</strong> Flexion 65°, Abduction 55°, External rotation 10°, Internal rotation — hand to lateral thigh only. <strong>Cervical spine ROM:</strong> All planes within normal limits, no reproduction of shoulder symptoms.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Level</th><th>Movement</th><th>Right</th><th>Left</th></tr></thead><tbody><tr><td>C5</td><td>Shoulder abduction</td><td>5/5</td><td>5/5</td></tr><tr><td>C6</td><td>Elbow flexion / wrist extension</td><td>5/5</td><td>5/5</td></tr><tr><td>C7</td><td>Elbow extension / wrist flexion</td><td>5/5</td><td>5/5</td></tr><tr><td>C8</td><td>Finger flexion</td><td>5/5</td><td>5/5</td></tr><tr><td>T1</td><td>Finger abduction</td><td>5/5</td><td>5/5</td></tr><tr><td colspan="4"><em>Myotome testing not formally documented in published case series; all upper limb strength reported clinically intact.</em></td></tr></tbody></table></div>`,
+    checklist: [
+      {
+        group: "Shoulder Passive Range of Motion",
+        items: [
+          {
+            id: "passive_er",
+            label: "Passive external rotation (glenohumeral)",
+            result: `<span class="tt pos">Positive</span> — severely restricted to 15° with a firm end-feel; reproduction of deep shoulder pain`,
+            documented: true,
+            rationale: "External rotation is the most restricted plane in capsular pattern involvement. A firm/capsular end-feel with early restriction is the defining finding of adhesive capsulitis, distinguishing it from rotator cuff pathology where passive ER is typically preserved. This was a key diagnostic finding in the published case series."
+          },
+          {
+            id: "passive_abduction",
+            label: "Passive shoulder abduction",
+            result: `<span class="tt pos">Positive</span> — restricted to 70° with early scapular substitution`,
+            documented: true,
+            rationale: "Abduction is the second most restricted plane in a capsular pattern. Early and excessive scapular elevation during attempted abduction (scapulothoracic substitution) is a common compensatory finding and also a target for the regional interdependence treatment approach described in this case."
+          },
+          {
+            id: "passive_ir",
+            label: "Passive internal rotation (hand-behind-back)",
+            result: `<span class="tt pos">Positive</span> — restricted; hand to lateral thigh only (equivalent to L5 level)`,
+            documented: true,
+            rationale: "Internal rotation restriction is part of the classic capsular pattern. In normal subjects hand-behind-back should reach mid-thoracic level. Restriction here corroborates the global capsular involvement and is important for functional staging of adhesive capsulitis."
+          }
+        ]
+      },
+      {
+        group: "Rotator Cuff Assessment",
+        items: [
+          {
+            id: "empty_can",
+            label: "Empty Can test (supraspinatus)",
+            result: `<span class="tt normal">Normal</span> — no pain arc, full strength (5/5) in available range`,
+            documented: true,
+            rationale: "Distinguishing adhesive capsulitis from supraspinatus pathology is a key differential step. A positive empty can test with preserved passive ROM would suggest rotator cuff tear. In this case normal strength in the available range helped exclude significant rotator cuff tear as the primary pathology."
+          },
+          {
+            id: "resisted_er",
+            label: "Resisted external rotation (infraspinatus strength)",
+            result: `<span class="tt normal">Normal</span> — strength 5/5, no pain`,
+            documented: true,
+            rationale: "Isolates infraspinatus integrity. In adhesive capsulitis, resisted isometric movements are typically pain-free and full strength in the mid-range (unlike rotator cuff tear). A painful arc with weakness would redirect toward cuff tear or impingement syndrome as the primary diagnosis."
+          },
+          {
+            id: "lift_off",
+            label: "Lift-off test (subscapularis)",
+            result: `Not performed in published case series`,
+            documented: false,
+            rationale: "The lift-off test isolates subscapularis integrity and would have been relevant here given the pronounced restriction in internal rotation. In adhesive capsulitis, the test is expected to be negative (subscapularis intact), but distinguishing a subscapularis tear — which can also restrict IR — adds diagnostic confidence. It was not documented in this series."
+          }
+        ]
+      },
+      {
+        group: "Regional and Neurological Assessment",
+        items: [
+          {
+            id: "scapular_dyskinesis",
+            label: "Scapular stability / dyskinesis assessment",
+            result: `<span class="tt notable">Notable</span> — significant scapular dyskinesis observed during attempted elevation; reduced scapular upward rotation`,
+            documented: true,
+            rationale: "Central to the regional interdependence framework used in this case. Frozen shoulder does not occur in isolation — the scapulothoracic joint and periscapular musculature are consistently affected and contribute to loss of total shoulder elevation. Identifying and treating scapular dysfunction is a key rationale for addressing multiple upper quarter joints, not just the glenohumeral capsule."
+          },
+          {
+            id: "cervicothoracic_mobility",
+            label: "Cervicothoracic and thoracic spine mobility assessment",
+            result: `<span class="tt notable">Notable</span> — restricted thoracic extension and rotation, particularly at upper thoracic segments`,
+            documented: true,
+            rationale: "The regional interdependence model posits that thoracic mobility directly influences glenohumeral and scapulothoracic function. Thoracic hypomobility is consistently found alongside frozen shoulder and was addressed as part of the multi-joint treatment protocol. This finding justified cervicothoracic joint mobilisation as part of management."
+          },
+          {
+            id: "neuro_screen",
+            label: "Upper limb neurological screen (reflexes, sensation, myotomes)",
+            result: `<span class="tt normal">Normal</span> — all upper limb reflexes intact, sensation normal throughout, myotomes 5/5 bilaterally`,
+            documented: true,
+            rationale: "A neurological screen is essential to exclude cervical radiculopathy as a contributor to shoulder pain and arm symptoms. Normal findings here support a musculoskeletal rather than neurogenic aetiology and confirm that the restricted ROM is due to capsular involvement, not neurological dysfunction."
+          },
+          {
+            id: "spurlings",
+            label: "Spurling's test",
+            result: `Not performed in published case series`,
+            documented: false,
+            rationale: "Spurling's test would have had value in formally excluding cervical nerve root irritation as a contributing factor to the shoulder pain, particularly given restricted cervicothoracic mobility. With a negative neurological screen and ROM limited only to the shoulder, clinical likelihood of a positive Spurling's was low, which may explain its omission."
+          },
+          {
+            id: "dash_outcome",
+            label: "DASH / QuickDASH outcome measure",
+            result: `<span class="tt notable">Notable</span> — DASH score 40.0 ± 19.4 (mean across case series), indicating moderate-to-severe upper limb disability`,
+            documented: true,
+            rationale: "The Disabilities of the Arm, Shoulder and Hand (DASH) questionnaire was used as the primary functional outcome measure in this case series. Documenting baseline disability is important for tracking treatment response and communicating the functional burden of the condition. Post-treatment DASH improved to 6.2 ± 3.7, representing a large effect size."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination strategy in this case was built around the regional interdependence model — the recognition that the glenohumeral joint does not function independently, and that the scapulothoracic joint, cervicothoracic spine, and thoracic cage all contribute to total shoulder mobility. Standard shoulder passive ROM testing confirmed a capsular pattern, while careful neurological screening excluded cervical radiculopathy. The addition of scapular and thoracic assessments allowed the clinician to identify impairments beyond the glenohumeral capsule, informing a treatment approach that addressed all contributing regions."
+  },
+  investigations: {
+    options: [
+      {
+        id: "plain_xray_shoulder",
+        label: "Plain radiographs of right shoulder (AP, axillary, outlet views)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Radiographs revealed no fracture, dislocation, or significant glenohumeral joint space narrowing. Mild periarticular osteopenia was noted, consistent with disuse. No calcific deposits. Radiographic findings were non-specific and consistent with the clinical diagnosis of adhesive capsulitis.</p>`
+      },
+      {
+        id: "mri_shoulder",
+        label: "MRI of right shoulder",
+        consequence: "MRI was not ordered in the published case. It would be most valuable if the diagnosis were unclear — for example, to distinguish adhesive capsulitis from a full-thickness rotator cuff tear, or to identify a SLAP lesion. In a classic capsular pattern presentation with intact rotator cuff strength, MRI adds limited diagnostic value and is generally not indicated at initial conservative management.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "blood_glucose_hba1c",
+        label: "Fasting blood glucose / HbA1c",
+        consequence: "Not formally ordered as part of the chiropractic management in this case. However, given the well-established association between type 2 diabetes and adhesive capsulitis (diabetics have a 10–36% lifetime prevalence vs ~2–5% in the general population), reviewing current metabolic control is clinically prudent. Poorly controlled diabetes predicts a more protracted course and poorer response to conservative treatment.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "ultrasound_shoulder",
+        label: "Diagnostic ultrasound of right shoulder",
+        consequence: "Not ordered in the published case. Ultrasound can assess rotator cuff integrity, identify subacromial bursitis, and detect the characteristic thickening of the coracohumeral ligament and joint capsule seen in adhesive capsulitis. It is lower cost than MRI and allows dynamic assessment. Clinically it would be a reasonable investigation if rotator cuff integrity could not be confidently established on examination.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Primary adhesive capsulitis (frozen shoulder)",
+        correct: true,
+        blurb: "The insidious onset, capsular pattern of restriction (ER > Abd > IR), firm end-feel on passive testing, absence of trauma, diabetic comorbidity, and significant functional disability on DASH all point to primary adhesive capsulitis. Normal neurological findings and intact rotator cuff strength exclude the main differentials. The regional examination also confirmed scapulothoracic and thoracic contributions consistent with this diagnosis."
+      },
+      {
+        label: "Full-thickness rotator cuff tear",
+        correct: false,
+        blurb: "A large rotator cuff tear can severely restrict active range of motion. However, passive external rotation and abduction are typically preserved or only mildly restricted — unlike the firm capsular end-feel and global passive restriction seen here. Strength testing in available range was normal (5/5), and there was no history of acute trauma or prior impingement symptoms."
+      },
+      {
+        label: "Subacromial impingement syndrome",
+        correct: false,
+        blurb: "Impingement typically presents with a painful arc (60–120° of abduction) and pain on resisted movements, but passive ROM is not globally restricted. The severity of restriction here — particularly external rotation to only 15° — and the non-specific aching at rest are not consistent with impingement. Strength testing was normal bilaterally."
+      },
+      {
+        label: "Calcific tendinopathy",
+        correct: false,
+        blurb: "Calcific tendinopathy can cause acute, severe shoulder pain and restricted motion during the resorptive phase. Plain radiographs in this case showed no calcific deposits. Furthermore, the gradual progressive course over 4 months with insidious onset is more consistent with capsulitis than the typically acute presentation of symptomatic calcific tendinopathy."
+      },
+      {
+        label: "Glenohumeral osteoarthritis",
+        correct: false,
+        blurb: "Glenohumeral OA can produce capsular pattern restriction and a firm end-feel but is typically associated with a longer history and older age of onset. Plain radiographs would show joint space narrowing, subchondral sclerosis, or osteophyte formation. Radiographs in this case were essentially normal, excluding OA as the primary pathology."
+      },
+      {
+        label: "Cervical radiculopathy (C5)",
+        correct: false,
+        blurb: "C5 radiculopathy can produce shoulder pain and apparent weakness with arm elevation, mimicking shoulder pathology. However, passive glenohumeral ROM would typically be preserved. Cervical spine ROM was normal, the neurological screen was negative, and Spurling's test would be expected to be negative. The global passive restriction seen here cannot be explained by radiculopathy."
+      },
+      {
+        label: "Shoulder dislocation / instability",
+        correct: false,
+        blurb: "Instability and prior dislocation can produce chronic shoulder pain and guarding with restricted ROM. However, there was no history of dislocation or hypermobility, and the restriction here is due to tightness (capsular end-feel) rather than apprehension or joint laxity. Apprehension and relocation testing were not indicated given the history."
+      },
+      {
+        label: "Referred pain from visceral source (e.g. diaphragm, cardiac, hepatic)",
+        correct: false,
+        blurb: "Right shoulder pain with restriction could, in a concerning presentation, arise from diaphragmatic irritation (e.g. hepatic or subphrenic pathology). However, the absence of systemic symptoms, the capsular pattern of restriction, and the gradual mechanical onset make a visceral referral pattern unlikely. The diabetic comorbidity makes adhesive capsulitis substantially more likely."
+      }
+    ],
+    explanation: `<p>The diagnosis of primary adhesive capsulitis rests on the clinical triad of: (1) insidious onset without identifiable trauma, (2) a capsular pattern of passive restriction — external rotation most limited, followed by abduction and internal rotation — with a firm end-feel, and (3) normal neurological examination. This patient's presentation was textbook, with the added risk factor of type 2 diabetes, which is the strongest known systemic association with primary adhesive capsulitis.</p>
+<p>The key differential challenge is distinguishing adhesive capsulitis from a large rotator cuff tear, as both can severely restrict active ROM. The pivotal distinction is passive motion: in adhesive capsulitis, passive ROM is globally restricted; in rotator cuff tears, passive motion is typically preserved. Here, passive ER was restricted to 15° with a firm end-feel — this is pathognomonic of capsulitis, not cuff pathology.</p>
+<p>The regional interdependence approach employed in this case recognised that frozen shoulder consistently involves scapulothoracic dysfunction and thoracic hypomobility. Treatment that addresses only the glenohumeral capsule in isolation fails to account for these contributing impairments, which explains why a multi-joint approach resulted in ROM returning to near-normal levels.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "regional_interdependence",
+        label: "Multi-joint manual therapy: glenohumeral, scapulothoracic, and cervicothoracic mobilisation combined with targeted exercise",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> This is the management described in the published case series. Addressing all impaired upper quarter regions — glenohumeral joint mobilisation, scapulothoracic and cervicothoracic mobilisation, periscapular strengthening, and shoulder stretching — produced large effect-size improvements in ROM and DASH scores. The regional interdependence model recognises that glenohumeral mobility is inextricably linked to scapular and thoracic function.`
+      },
+      {
+        id: "glenohumeral_only",
+        label: "Glenohumeral joint mobilisation only (capsular stretching)",
+        selected: false,
+        explanation: `<strong>Partially appropriate, but incomplete.</strong> Glenohumeral capsular mobilisation is indicated, but treatment directed solely to the glenohumeral joint ignores consistent co-impairments at the scapulothoracic and cervicothoracic regions that contribute to restricted total shoulder elevation. Current evidence and this case series support a broader regional approach for superior outcomes.`
+      },
+      {
+        id: "corticosteroid_injection",
+        label: "Refer for intra-articular corticosteroid injection",
+        selected: false,
+        explanation: `<strong>Not chosen in this case; may be appropriate as an adjunct.</strong> Corticosteroid injection provides short-term pain relief in adhesive capsulitis and can facilitate manual therapy by reducing pain and allowing greater treatment tolerance. However, as a standalone treatment it does not restore ROM, and the published case achieved excellent functional outcomes with manual therapy and exercise alone. Injection referral would be appropriate if pain intensity precluded manual therapy.`
+      },
+      {
+        id: "manipulation_under_anaesthesia",
+        label: "Refer for manipulation under anaesthesia (MUA)",
+        selected: false,
+        explanation: `<strong>Not appropriate at this stage.</strong> MUA is a second-line option reserved for cases that have failed an adequate trial of conservative management (typically 6 months). It carries risk of iatrogenic injury including rotator cuff tear and biceps tendon subluxation, as documented in the peer-reviewed literature. This patient had not yet trialled conservative manual therapy, making MUA premature.`
+      },
+      {
+        id: "watchful_waiting",
+        label: "Reassurance and watchful waiting — advise natural resolution over 1–3 years",
+        selected: false,
+        explanation: `<strong>Not appropriate as the sole management strategy.</strong> While adhesive capsulitis is often described as self-limiting, studies show that up to 40% of patients have persistent symptoms and functional limitation at 3–7 years. This patient's level of disability — inability to dress independently, sleep disruption — warrants active intervention. Watchful waiting without treatment leads to unnecessary prolonged disability.`
+      }
+    ],
+    outcomeText: "All five patients in the published case series improved on all measured outcomes following the regional interdependence approach. Mean shoulder ROM at discharge approached normal: flexion improved from 117° to 179°, abduction from 74° to 175°, and external rotation from 23° to 89°. The DASH functional outcome score improved from 40.0 to 6.2 (large effect size). ROM and functional improvements were maintained at follow-up months after discharge. Treatment comprised 11–21 sessions over 5–10 weeks."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Primary Adhesive Capsulitis</strong><br>Frozen Shoulder — Diabetic Presentation",
+    outcomes: [
+      { label: "Published Source", text: "Wong et al. J Man Manip Ther. 2018;26(2):109–118" },
+      { label: "PMID / PMC", text: "PMID: 29686485 — PMC5901425 (open access)" },
+      { label: "Final Diagnosis", text: "Primary adhesive capsulitis (frozen shoulder)" },
+      { label: "Intervention", text: "Regional interdependence manual therapy: glenohumeral, scapulothoracic, and cervicothoracic mobilisation + exercise (11–21 sessions over 5–10 weeks)" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Frozen shoulder does not affect the glenohumeral joint in isolation. Consistently co-existing scapulothoracic dysfunction and thoracic hypomobility must be identified and treated. A regional interdependence approach targeting all impaired upper quarter regions produces substantially superior outcomes compared to treating the glenohumeral capsule alone." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "The most critical diagnostic error is mistaking a large rotator cuff tear for adhesive capsulitis. The pivot test is passive motion: rotator cuff tears restrict active ROM but preserve passive motion, while adhesive capsulitis restricts both actively and passively in a capsular pattern. Always assess passive ER as your first distinguishing test." },
+      { type: "pearl", tag: "Clinical Pearl", text: "Type 2 diabetes is the single strongest systemic risk factor for primary adhesive capsulitis, with a prevalence 10 times higher than the general population. Always check glycaemic control — poorly controlled diabetes predicts a more protracted course, poorer treatment response, and increased risk of bilateral involvement. Consider routinely screening HbA1c in these patients." },
+      { type: "key", tag: "Scope of Practice", text: "Manual therapy and exercise directed to the glenohumeral, scapulothoracic, and thoracic regions is within chiropractic scope of practice and is supported by this evidence. Corticosteroid injection and manipulation under anaesthesia are appropriate referral pathways if conservative care fails after an adequate trial. Referring too early to injection or MUA denies patients an evidence-based conservative option." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Plain radiographs in adhesive capsulitis are typically normal or show only non-specific periarticular osteopenia. A normal X-ray does not exclude the diagnosis and should not be used to reassure or discharge the patient. MRI may show thickening of the coracohumeral ligament or axillary recess obliteration but is not required to confirm the diagnosis clinically." }
+    ]
+  },
+  cpd: {
+    topics: "Adhesive capsulitis, frozen shoulder, regional interdependence, scapulothoracic dysfunction, shoulder rehabilitation, diabetes and musculoskeletal disease, shoulder differential diagnosis",
+    keyPoints: [
+      "Primary adhesive capsulitis is defined by insidious onset, a capsular pattern of passive restriction (ER most limited), and firm end-feel — passive ROM restriction is the diagnostic hallmark distinguishing it from rotator cuff pathology.",
+      "Type 2 diabetes is the strongest known systemic risk factor for adhesive capsulitis, and poor glycaemic control predicts a more protracted and treatment-resistant course.",
+      "The regional interdependence model — treating the scapulothoracic joint, cervicothoracic spine, and glenohumeral joint together — produces near-normal ROM restoration and is superior to treating the glenohumeral capsule in isolation.",
+      "Manipulation under anaesthesia carries risk of serious iatrogenic injury and should only be considered after an adequate (minimum 6-month) trial of conservative care has failed.",
+      "DASH or QuickDASH outcome measures should be used at baseline and discharge to objectively quantify upper limb disability and document treatment response."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 013 — Cervical Radiculopathy with Concurrent Herpes Zoster
+// Source: Miller et al. J Chiropr Med. 2020. PMID: 32884499
+// ─────────────────────────────────────────────
+{
+  id: "013",
+  title: "A 43-year-old man presents with left neck and arm pain, fatigue and tingling in the left arm beginning one week after a routine vaccination",
+  category: "Cervical",
+  secondaryCategory: "Neuro",
+  difficulty: "Advanced",
+  estimatedTime: "20–25 min",
+  source: {
+    short: "Miller et al.\nJ Chiropr Med. 2020;18(3):225–228\nPMID: 32884499\nPMC: PMC7452359\nOpen access ✓",
+    full: "Miller SC, Cox JM, Olding KJ. Cervical Radiculopathy Associated With Shingles Herpes Zoster Infection. J Chiropr Med. 2020;18(3):225–228. doi:10.1016/j.jcm.2019.03.003. PMID: 32884499. PMC: PMC7452359."
+  },
+  patient: {
+    ageSex: "43-year-old male",
+    chiefComplaint: "Left neck pain, left arm tingling, aching and fatigue",
+    duration: "2 weeks at presentation",
+    priorProviders: "Teladoc (telehealth) for the skin rash — diagnosed with shingles, prescribed ibuprofen",
+    priorDiagnoses: "Shingles (herpes zoster) diagnosed via Teladoc"
+  },
+  history: {
+    content: `<p>A 43-year-old man presents with a 2-week history of left neck pain, aching in the left arm, and tingling that radiates from the neck into the hand. He is visibly distressed — he describes the arm as feeling heavy and fatigued, particularly with overhead activities. He is otherwise healthy with no prior neck problems or neurological symptoms.</p>
+<p>On further history, he reports that approximately 10 days before this presentation he received both an influenza vaccination and a pneumococcal vaccination. One week after vaccination, he noticed the onset of left arm tingling, aching, and fatigue. Several days later he noticed a skin rash developing on his left arm. He consulted via telehealth and was told he had shingles (herpes zoster); the telehealth provider prescribed ibuprofen, explaining that antiviral medication was not appropriate as too much time had elapsed since symptom onset.</p>
+<p>He presents to you because the arm pain and neck symptoms are not improving with ibuprofen. On review of systems he denies fever, weight loss, chest pain, or dyspnoea. He denies any prior episodes of neck pain, disc disease, or radiculopathy. He does not smoke, is not immunocompromised, and takes no regular medications other than ibuprofen.</p>`,
+    clinicalNote: "This is a diagnostically complex case because it involves two concurrent pathologies affecting the same cervical nerve root distribution: C5-C6 disc herniation causing cervical radiculopathy, and herpes zoster reactivation at the same dermatomal level. The key clinical reasoning challenge is determining whether the arm symptoms are purely neuralgic (zoster), purely mechanical (radiculopathy), or — as in this case — both. The post-vaccination temporal relationship is notable: herpes zoster reactivation following vaccination is a recognised albeit rare phenomenon. The diagnostic trap is attributing all arm symptoms to shingles and missing the underlying structural cervical pathology."
+  },
+  examination: {
+    autoROM: `<p><strong>Cervical ROM:</strong> Flexion moderately restricted with left-sided reproduction of arm tingling. Left lateral flexion and left rotation restricted by 30% with reproduction of left arm pain. Extension limited by 20% with axial loading causing left-sided neck pain. No right-sided symptoms reproduced.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Level</th><th>Movement</th><th>Left</th><th>Right</th></tr></thead><tbody><tr><td>C5</td><td>Shoulder abduction / deltoid</td><td>4/5 — mild weakness</td><td>5/5</td></tr><tr><td>C6</td><td>Elbow flexion / wrist extension</td><td>4/5 — mild weakness</td><td>5/5</td></tr><tr><td>C7</td><td>Elbow extension / wrist flexion</td><td>5/5</td><td>5/5</td></tr><tr><td>C8</td><td>Finger flexion</td><td>5/5</td><td>5/5</td></tr><tr><td>T1</td><td>Finger abduction</td><td>5/5</td><td>5/5</td></tr><tr><td colspan="4"><em>Myotome pattern consistent with left C5-C6 nerve root involvement.</em></td></tr></tbody></table></div>`,
+    checklist: [
+      {
+        group: "Neurological Examination",
+        items: [
+          {
+            id: "dermatomal_sensation",
+            label: "Dermatomal sensory testing — left upper extremity",
+            result: `<span class="tt pos">Positive</span> — reduced sensation to light touch over lateral forearm and thumb (C6 dermatome); hyperalgesia in the area corresponding to the left arm rash`,
+            documented: true,
+            rationale: "Sensory testing is essential to map the distribution of neurological deficit. C6 hypoaesthesia (lateral forearm and thumb) points to nerve root involvement at the C5-C6 disc level. The concurrent hyperalgesia within the rash distribution reflects the direct nociceptive effect of varicella zoster virus reactivation in the dorsal root ganglion, producing allodynia — clinically distinct from dermatomal hypoaesthesia caused by mechanical compression."
+          },
+          {
+            id: "reflexes_upper",
+            label: "Deep tendon reflexes — biceps (C5/C6) and triceps (C7)",
+            result: `<span class="tt notable">Notable</span> — left biceps reflex diminished (1+) compared to right (2+); triceps reflexes symmetric (2+ bilaterally)`,
+            documented: true,
+            rationale: "A diminished biceps reflex specifically implicates the C5-C6 nerve root — the reflex arc is mediated by the C5/C6 musculocutaneous nerve. This objective neurological finding distinguishes true radiculopathy with nerve root compression from purely neuropathic/zoster pain, where reflexes are typically preserved unless extensive dorsal root ganglion involvement is present."
+          },
+          {
+            id: "spurlings",
+            label: "Spurling's compression test",
+            result: `<span class="tt pos">Positive</span> — reproduction of left arm tingling with lateral flexion and axial compression toward the left`,
+            documented: true,
+            rationale: "Spurling's test has high specificity (~93%) for cervical radiculopathy. A positive result in the context of unilateral arm pain, dermatomal sensory changes, and reflex diminution confirms mechanical nerve root irritation and strongly supports the diagnosis of C5-C6 disc herniation. This finding was crucial in distinguishing the radiculopathic component from the neuropathic zoster pain."
+          },
+          {
+            id: "upper_limb_tension",
+            label: "Upper limb neurodynamic test (ULNT1 — median nerve)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "ULNT1 sensitises the median nerve and C6/C7 nerve roots and could have added further neurodynamic evidence of radiculopathy. A positive result (reproduction of arm symptoms before 60° elbow extension with wrist/shoulder positioning) would corroborate the C6 nerve root involvement identified clinically. It was not documented, likely because Spurling's and dermatomal findings were already sufficient."
+          }
+        ]
+      },
+      {
+        group: "Skin and Dermatological Assessment",
+        items: [
+          {
+            id: "skin_rash",
+            label: "Inspection of left arm skin — rash distribution and characteristics",
+            result: `<span class="tt notable">Notable</span> — vesicular/crusting rash present over left arm and shoulder in a dermatomal distribution corresponding to C6 dermatome; no involvement beyond midline`,
+            documented: true,
+            rationale: "Documenting the rash is essential in this case to establish the herpes zoster diagnosis and correlate it with the cervical dermatome. A dermatomal vesicular rash unilaterally that does not cross the midline is pathognomonic of herpes zoster. In this case, the rash distribution (C6 dermatome) corresponds exactly to the nerve root level implicated by the cervical findings — creating the dual-pathology picture."
+          }
+        ]
+      },
+      {
+        group: "Cervical Orthopaedic Tests",
+        items: [
+          {
+            id: "distraction",
+            label: "Cervical distraction test",
+            result: `<span class="tt pos">Positive</span> — reduction in left arm tingling with manual axial distraction`,
+            documented: true,
+            rationale: "Cervical distraction provides temporary foraminal decompression. Relief of radicular symptoms with distraction confirms a mechanical compression component to the arm symptoms, distinguishing it from purely neuropathic zoster pain. This finding was clinically important for selecting Cox flexion-distraction technique as the treatment approach."
+          },
+          {
+            id: "valsalva",
+            label: "Valsalva manoeuvre",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Valsalva increases intrathecal pressure and can reproduce or aggravate radicular pain in disc herniation. It would have been a useful supportive test to further confirm the intradiscal/mechanical compression origin of the radiculopathy. Its absence does not affect the diagnosis given the weight of positive findings already documented."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination in this case required simultaneous reasoning about two neurological pathologies affecting the same anatomical distribution. Standard cervical radiculopathy testing (Spurling's, distraction, myotomes, reflexes) confirmed mechanical C5-C6 nerve root involvement, while dermatological inspection confirmed active herpes zoster in the C6 dermatomal distribution. The crucial clinical skill was recognising that both conditions were present concurrently and that treatment needed to address both rather than attributing all symptoms to one diagnosis."
+  },
+  investigations: {
+    options: [
+      {
+        id: "cervical_mri",
+        label: "MRI cervical spine",
+        consequence: null,
+        ordered: true,
+        result: `<p>MRI cervical spine confirmed a C5-C6 disc herniation with left-sided foraminal compromise consistent with the clinical presentation. The imaging findings corroborated the clinical diagnosis of left C6 radiculopathy and provided the structural basis for the Cox flexion-distraction treatment approach. No other significant pathology was identified.</p>`
+      },
+      {
+        id: "pcr_vzv",
+        label: "PCR testing for varicella zoster virus (VZV)",
+        consequence: "Not ordered in the published case. PCR testing of vesicular fluid or serum would definitively confirm herpes zoster, which was already diagnosed clinically via telehealth based on the characteristic dermatomal vesicular rash. In atypical presentations — zoster sine herpete (zoster without rash), or where the rash pattern is ambiguous — PCR confirmation becomes more important. Here clinical diagnosis was sufficient.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "plain_cervical_xray",
+        label: "Plain cervical spine radiographs",
+        consequence: "Not documented in the published case. Plain X-rays would have been reasonable as a first-line screen to assess for disc space narrowing at C5-C6, foraminal osteophytes, or instability. They would not visualise the disc herniation itself and would likely have been supplementary to MRI rather than diagnostic in isolation.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "emg_nerve_conduction",
+        label: "Electromyography (EMG) and nerve conduction study",
+        consequence: "Not ordered in this case. EMG/NCS would have provided electrophysiological evidence of C5-C6 nerve root denervation and could have differentiated the peripheral nerve conduction slowing seen in zoster neuropathy from motor unit changes in compressive radiculopathy. Given the dual pathology, EMG would have been particularly informative but is not routinely required when clinical and MRI findings are concordant.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Concurrent C5-C6 disc herniation (radiculopathy) and herpes zoster",
+        correct: true,
+        blurb: "This is the correct diagnosis — a dual pathology. MRI confirmed left C5-C6 disc herniation. The dermatomal vesicular rash in the left C6 distribution confirmed herpes zoster. The temporal relationship (vaccination → zoster reactivation → cervical radicular symptoms) and the concordance between the C6 dermatome affected by zoster and the nerve root compressed by the disc herniation are the diagnostic keys. Spurling's positive test and diminished biceps reflex confirm the mechanical compressive component."
+      },
+      {
+        label: "Herpes zoster neuralgia only (without structural radiculopathy)",
+        correct: false,
+        blurb: "Zoster neuralgia alone would explain the dermatomal rash and neuropathic pain but would not account for the positive Spurling's test, diminished biceps reflex, or relief of symptoms with cervical distraction. These objective findings indicate mechanical nerve root compression independent of the neuropathic zoster component. Treating only the zoster would have missed the disc herniation."
+      },
+      {
+        label: "Post-vaccination brachial neuritis (Parsonage-Turner syndrome)",
+        correct: false,
+        blurb: "Parsonage-Turner syndrome (neuralgic amyotrophy) can occur post-vaccination and causes acute severe shoulder and arm pain with rapid muscle atrophy, but typically presents with more profound weakness, wasting of shoulder girdle muscles, and a sudden rather than progressive onset. There was no reported muscle wasting in this case, and MRI confirmed a structural disc herniation rather than a brachial plexus lesion."
+      },
+      {
+        label: "Cervical disc herniation with radiculopathy (no zoster component)",
+        correct: false,
+        blurb: "MRI confirmed C5-C6 disc herniation and Spurling's was positive, so this would be partially correct — but it is incomplete without recognising the concurrent zoster. The presence of a dermatomal vesicular rash cannot be explained by disc herniation alone and required independent consideration and management. Missing the zoster diagnosis would have been a significant oversight."
+      },
+      {
+        label: "Thoracic outlet syndrome",
+        correct: false,
+        blurb: "TOS can cause arm tingling, heaviness, and fatigue, particularly with overhead activity. However, it typically arises from compression of the brachial plexus or subclavian vessels at the thoracic outlet, not from cervical disc disease. Positive provocative tests (Roos, Adson's) were not documented. The dermatomal rash and positive Spurling's are inconsistent with TOS."
+      },
+      {
+        label: "Complex regional pain syndrome (CRPS) — upper limb",
+        correct: false,
+        blurb: "CRPS following vaccination or minor trauma is possible and can produce burning pain, allodynia, and upper limb dysfunction. However, CRPS is a diagnosis of exclusion and does not cause a vesicular skin rash. The structural MRI finding, positive Spurling's, and typical herpes zoster rash pattern are not features of CRPS."
+      },
+      {
+        label: "Cervical foraminal stenosis from degenerative spondylosis",
+        correct: false,
+        blurb: "Degenerative foraminal stenosis is a plausible aetiology for cervical radiculopathy in this age group. However, the acute onset following vaccination and the presence of herpes zoster rash in the same dermatome make simple spondylosis an incomplete explanation. MRI confirmed disc herniation rather than pure bony foraminal narrowing."
+      },
+      {
+        label: "Upper limb peripheral nerve entrapment (carpal tunnel or cubital tunnel syndrome)",
+        correct: false,
+        blurb: "Peripheral nerve entrapments cause focal compressive neuropathy, not dermatomal skin rashes or cervical spine findings. Carpal tunnel produces median nerve distribution paresthesiae, while cubital tunnel affects the ulnar nerve. Neither explains Spurling's positive test, reduced biceps reflex, or the vesicular rash. Cervical examination findings point definitively to a proximal (root level) rather than peripheral aetiology."
+      }
+    ],
+    explanation: `<p>The diagnostic pivot in this case is recognising that two separate neurological pathologies were simultaneously affecting the same cervical nerve root distribution. The herpes zoster diagnosis was already established, but the challenge was identifying the concurrent C5-C6 disc herniation. The objective neurological findings — diminished biceps reflex, myotomal weakness (C5/C6), positive Spurling's test, and symptom relief with cervical distraction — cannot be explained by herpes zoster alone and establish a mechanical compressive radiculopathy.</p>
+<p>The temporal link between vaccination and zoster reactivation is biologically plausible: immune stimulation following vaccination can trigger reactivation of latent varicella zoster virus in the dorsal root ganglion. This is rare but documented. The coincidence of zoster reactivation in the same dermatome as the disc herniation created a particularly complex clinical picture.</p>
+<p>Cox flexion-distraction technique was selected because it provides gentle foraminal decompression without end-range loading — appropriate when acute nerve root irritation is present alongside an active herpetic infection where high-velocity manipulation would be relatively contraindicated.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "cox_distraction",
+        label: "Cox cervical flexion-distraction technique (spinal manipulation — low-force distraction protocol)",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Cox flexion-distraction protocol was the primary treatment used in this case. It provides gentle foraminal decompression and intradiscal pressure reduction without the high-velocity loading of HVLA manipulation. Over 9 treatments across 17 weeks, this approach resolved left arm pain and substantially reduced neck pain. The technique is appropriate where active herpetic neuralgia contraindicates aggressive cervical loading.`
+      },
+      {
+        id: "antiviral_referral",
+        label: "Refer to GP / physician for antiviral medication reassessment",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> While antivirals are most effective within 72 hours of rash onset, a medical referral to reassess the need for antivirals or neuropathic pain management (e.g. gabapentin, pregabalin) is appropriate given active zoster with concurrent radiculopathy. The chiropractic provider should not manage the pharmacological component of herpes zoster independently.`
+      },
+      {
+        id: "hvla_cervical",
+        label: "High-velocity low-amplitude (HVLA) cervical spine manipulation at C5-C6",
+        selected: false,
+        explanation: `<strong>Not appropriate in the acute phase.</strong> HVLA manipulation into the affected cervical segment is relatively contraindicated in the presence of acute disc herniation with objective neurological deficit and active herpetic infection causing local tissue irritability and inflammation. Cox distraction protocol achieves foraminal decompression more safely in this context. HVLA may be considered once the acute phase has resolved.`
+      },
+      {
+        id: "corticosteroid_referral",
+        label: "Refer for epidural corticosteroid injection",
+        selected: false,
+        explanation: `<strong>Not indicated at this stage.</strong> Epidural corticosteroid injection is a second-line option for cervical radiculopathy that has failed conservative care. This patient had not yet trialled manual therapy. Moreover, corticosteroids could theoretically worsen active herpes zoster reactivation by suppressing the immune response. The case was managed successfully with conservative chiropractic care.`
+      },
+      {
+        id: "surgical_referral",
+        label: "Urgent surgical referral for C5-C6 discectomy",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> Surgery is reserved for cervical radiculopathy with progressive neurological deficit, intractable pain unresponsive to conservative care, or myelopathy. This patient had mild motor weakness and an active infection, making surgery inappropriate as a first-line response. Conservative management with Cox distraction achieved full resolution, confirming that surgical referral was not warranted.`
+      }
+    ],
+    outcomeText: "The patient underwent Cox flexion-distraction treatment 5 times over 5 weeks. This resolved left arm pain and provided 50% neck pain relief, with visible reduction in the herpetic rash. Four further treatments over the next 12 weeks resulted in 80% neck pain reduction, complete resolution of left arm pain and radicular symptoms, and the rash reduced to a faint residual. The patient reported returning to his pre-illness level of health. No adverse events were reported."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Concurrent Cervical Radiculopathy and Herpes Zoster</strong><br>Dual Pathology — C5-C6 Disc Herniation + Zoster Neuralgia",
+    outcomes: [
+      { label: "Published Source", text: "Miller et al. J Chiropr Med. 2020;18(3):225–228" },
+      { label: "PMID / PMC", text: "PMID: 32884499 — PMC7452359 (open access)" },
+      { label: "Final Diagnosis", text: "Concurrent left C5-C6 disc herniation (radiculopathy) and herpes zoster infection in the C6 dermatome" },
+      { label: "Intervention", text: "Cox cervical flexion-distraction protocol (9 treatments over 17 weeks); GP referral for antiviral reassessment" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Concurrent pathologies can exist in the same anatomical territory. A dermatomal rash explains neuropathic pain, but it does not explain positive Spurling's test, reflex diminution, or symptom relief with distraction — these require a second diagnosis. Always complete the structural examination even when a neuropathic diagnosis appears to explain the presentation." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "The trap here is diagnostic anchoring — assuming that herpes zoster explains all arm symptoms and not looking for a concurrent cervical disc herniation. The temporal sequence (vaccination → zoster → arm symptoms) can falsely anchor the clinician to a purely neuropathic diagnosis, causing the structural component to be missed." },
+      { type: "pearl", tag: "Clinical Pearl", text: "Post-vaccination herpes zoster reactivation is a rare but documented phenomenon. Herpes zoster in middle-aged adults can affect the cervical dorsal root ganglia and mimic cervical radiculopathy. The presence of a vesicular dermatomal rash is the key distinguishing feature. Zoster sine herpete (zoster without rash) is even more diagnostically challenging." },
+      { type: "key", tag: "Scope of Practice", text: "Herpes zoster requires antiviral and neuropathic pain management outside of chiropractic scope — early referral to a GP is essential. Chiropractic management addresses the mechanical radiculopathy component via gentle low-force techniques. HVLA cervical manipulation is relatively contraindicated in acute disc herniation with objective neurological deficit and active herpetic infection. Cox distraction is the appropriate alternative." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "MRI was essential in this case — not to diagnose herpes zoster (a clinical diagnosis), but to identify the structural disc herniation that would have been missed on clinical grounds alone without imaging correlation. When a patient has a known neuropathic condition but also has positive mechanical provocative tests, do not assume imaging will be negative: order it." }
+    ]
+  },
+  cpd: {
+    topics: "Cervical radiculopathy, herpes zoster, dual pathology, Cox flexion-distraction, dermatomal assessment, post-vaccination complications, cervical disc herniation, differential diagnosis upper limb",
+    keyPoints: [
+      "Herpes zoster and cervical disc herniation can coexist in the same dermatomal distribution, requiring parallel diagnostic reasoning for both neurogenic and mechanical aetiologies.",
+      "Positive Spurling's test, reflex diminution, and symptom relief with distraction confirm a mechanical compressive component to arm symptoms that cannot be attributed to herpes zoster alone.",
+      "Post-vaccination herpes zoster reactivation is biologically plausible and represents a rare but important differential consideration in patients presenting with dermatomal symptoms shortly after immunisation.",
+      "Cox cervical flexion-distraction technique provides gentle foraminal decompression and is the preferred approach over HVLA in the presence of acute disc herniation with objective neurological deficit or active infection.",
+      "Active herpes zoster requires medical referral for antiviral and neuropathic pain management — always communicate with the GP regarding concurrent pathologies affecting the same distribution."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 014 — Post-Surgical Cervical Total Disk Replacement + Chiropractic
+// Source: Mortenson et al. J Chiropr Med. 2022. PMID: 35747610
+// ─────────────────────────────────────────────
+{
+  id: "014",
+  title: "A 42-year-old woman presents with recurrent left arm pain and neck stiffness, 9 years after a prior neck operation",
+  category: "Post-surgical",
+  secondaryCategory: "Cervical",
+  difficulty: "Advanced",
+  estimatedTime: "20–25 min",
+  source: {
+    short: "Mortenson et al.\nJ Chiropr Med. 2022;21(1):60–65\nPMID: 35747610\nPMC: PMC9209822\nOpen access ✓",
+    full: "Mortenson M, Montgomery A, Buttermann G. Chiropractic Care of a Female Veteran After Cervical Total Disk Replacement: A Case Report. J Chiropr Med. 2022;21(1):60–65. doi:10.1016/j.jcm.2022.02.008. PMID: 35747610. PMC: PMC9209822."
+  },
+  patient: {
+    ageSex: "42-year-old female",
+    chiefComplaint: "Recurrent left arm radicular pain and chronic neck pain",
+    duration: "Chronic neck pain for 9 years post-surgery; radicular arm symptoms now worsening over 3 months",
+    priorProviders: "Veterans Affairs healthcare; prior neurosurgery (cervical total disk replacement 9 years earlier at C5-C6)",
+    priorDiagnoses: "C5-C6 disc herniation with radiculopathy (treated surgically); now with recurrent/new C6-C7 pathology"
+  },
+  history: {
+    content: `<p>A 42-year-old female veteran presents to your clinic (integrated Veterans Affairs setting) with a history of chronic neck pain and a recurrence of radicular left arm symptoms. Nine years prior, she underwent cervical total disk replacement (CTDR) surgery at the C5-C6 level following a disc herniation with radiculopathy sustained during military service. The surgery initially resolved her radicular symptoms.</p>
+<p>Over the past 3 months she has noticed progressive worsening of neck pain and the return of left arm symptoms — aching, burning, and tingling extending from the neck into the left hand, with associated weakness reported subjectively. She describes the arm as less reliable for carrying objects. The symptoms are worse with cervical extension and left rotation. She denies bowel or bladder dysfunction, and denies bilateral arm symptoms or gait disturbance.</p>
+<p>She has been reviewed by her VA physician, who ordered imaging prior to chiropractic referral. She was referred to chiropractic for a trial of conservative management. She is apprehensive about further surgery. She denies any new trauma, is a non-smoker, and takes ibuprofen intermittently for pain relief. She scores her neck pain at 6/10 and arm pain at 7/10.</p>`,
+    clinicalNote: "This case tests the chiropractor's capacity to reason through a post-surgical spine presentation. The prior CTDR at C5-C6 means that the adjacent C6-C7 segment is under increased mechanical stress — adjacent segment disease (ASD) is a well-recognised phenomenon following cervical arthroplasty and fusion. The new imaging showing C6-C7 disc herniation with left-sided protrusion is the structural correlate of the recurrent radiculopathy. The critical reasoning question is: what manual therapy techniques are safe and appropriate in a patient with an existing cervical artificial disc, and can conservative care delay or avoid the need for a second surgery?"
+  },
+  examination: {
+    autoROM: `<p><strong>Cervical active ROM:</strong> Flexion — full but causes posterior neck ache. Extension restricted by 40%, provokes left arm tingling. Left rotation restricted by 35%, reproduces left arm pain. Right rotation and bilateral lateral flexion — mildly restricted, no radiation. <em>No myelopathic signs were elicited.</em></p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Level</th><th>Movement</th><th>Left</th><th>Right</th></tr></thead><tbody><tr><td>C5</td><td>Shoulder abduction (deltoid)</td><td>5/5</td><td>5/5</td></tr><tr><td>C6</td><td>Elbow flexion / wrist extension</td><td>4+/5 — mild weakness</td><td>5/5</td></tr><tr><td>C7</td><td>Elbow extension / wrist flexion</td><td>4/5 — moderate weakness</td><td>5/5</td></tr><tr><td>C8</td><td>Finger flexion</td><td>5/5</td><td>5/5</td></tr><tr><td>T1</td><td>Finger abduction</td><td>5/5</td><td>5/5</td></tr><tr><td colspan="4"><em>Pattern consistent with left C6-C7 nerve root involvement.</em></td></tr></tbody></table></div>`,
+    checklist: [
+      {
+        group: "Neurological Examination",
+        items: [
+          {
+            id: "reflex_biceps_triceps",
+            label: "Deep tendon reflexes — biceps (C5/C6) and triceps (C7)",
+            result: `<span class="tt notable">Notable</span> — left biceps reflex 2+ (symmetric); left triceps reflex reduced (1+) compared to right (2+); no pathological reflexes`,
+            documented: true,
+            rationale: "A diminished left triceps reflex (C7 reflex arc) with preserved biceps reflex is the expected neurological signature of C6-C7 nerve root compression. This distinguishes the current presentation (C6-C7 pathology) from her prior surgery level (C5-C6) and provides objective evidence of new nerve root dysfunction at the adjacent segment."
+          },
+          {
+            id: "upper_limb_sensation",
+            label: "Dermatomal sensory testing — left upper limb",
+            result: `<span class="tt pos">Positive</span> — reduced sensation over the dorsal forearm and middle finger (C7 dermatome), left side`,
+            documented: true,
+            rationale: "C7 dermatomal hypoaesthesia (dorsal forearm and middle finger) is the expected sensory pattern for C6-C7 nerve root compression. Documenting this precisely confirms the nerve root level and distinguishes C7 from C6 involvement (lateral forearm and thumb), which was the affected level at the prior surgical segment."
+          },
+          {
+            id: "myelopathy_screen",
+            label: "Myelopathy screening — Hoffmann's reflex, Babinski, grip-release testing, gait",
+            result: `<span class="tt normal">Normal</span> — Hoffmann's negative bilaterally, Babinski negative, grip-release normal, gait normal`,
+            documented: true,
+            rationale: "Myelopathy screening is mandatory in all post-surgical cervical spine patients presenting with new neurological symptoms. A positive Hoffmann's or Babinski sign would indicate upper motor neurone involvement requiring urgent surgical review rather than conservative management. Normal findings here are a prerequisite for continuing with chiropractic care."
+          }
+        ]
+      },
+      {
+        group: "Orthopaedic / Special Tests",
+        items: [
+          {
+            id: "spurlings_c67",
+            label: "Spurling's compression test",
+            result: `<span class="tt pos">Positive</span> — reproduction of left arm tingling with lateral flexion and axial compression toward left`,
+            documented: true,
+            rationale: "Spurling's high specificity for radiculopathy is particularly valuable in post-surgical spine assessment to confirm that the current radicular symptoms reflect new structural pathology at an adjacent segment rather than post-surgical sensitisation or psychological factors. A positive result is a key finding supporting the diagnosis of adjacent segment C6-C7 disc herniation."
+          },
+          {
+            id: "distraction_test",
+            label: "Cervical distraction test",
+            result: `<span class="tt pos">Positive</span> — partial relief of left arm pain with gentle manual cervical distraction`,
+            documented: true,
+            rationale: "Distraction relieves foraminal compression. Symptom reduction with distraction confirms a mechanical compressive aetiology at the C6-C7 foramen. It also supports the clinical appropriateness of gentle traction-based techniques rather than compressive loading approaches."
+          },
+          {
+            id: "implant_palpation",
+            label: "Palpation over previous CTDR level — C5-C6",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Palpating over the prior arthroplasty level is important to ensure the existing implant is stable and not the source of current symptoms. An unstable or displaced arthroplasty would be a contraindication to manual therapy and would require urgent surgical review. Not formally documented but clinically recommended in any post-surgical cervical spine assessment."
+          }
+        ]
+      },
+      {
+        group: "Functional and Outcome Measures",
+        items: [
+          {
+            id: "ndi",
+            label: "Neck Disability Index (NDI)",
+            result: `<span class="tt notable">Notable</span> — NDI score indicating moderate-to-severe disability at baseline`,
+            documented: true,
+            rationale: "The NDI is the gold-standard patient-reported outcome measure for cervical spine dysfunction. Documenting baseline NDI in a post-surgical patient establishes whether the current episode represents deterioration from a stable baseline and provides an objective benchmark for monitoring treatment response."
+          },
+          {
+            id: "grip_strength",
+            label: "Hand dynamometry — bilateral grip strength",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Grip strength dynamometry would have quantified the subjective hand weakness reported by the patient and provided an objective measure of C7/C8 motor function. It would also be valuable for tracking recovery following treatment. Given the patient's reports of reduced hand reliability, this was a missed quantification opportunity."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination in a post-surgical cervical spine patient must simultaneously screen for new serious pathology (myelopathy, implant failure) and characterise the current radiculopathy level. The examination strategy here appropriately progressed from myelopathy screening — which, if positive, would have ended conservative care immediately — to confirming the new C6-C7 nerve root syndrome through dermatomal, reflex, and provocative testing. The negative myelopathy screen was the essential gatekeeping finding that permitted conservative management."
+  },
+  investigations: {
+    options: [
+      {
+        id: "mri_cervical_presurgical",
+        label: "MRI cervical spine (obtained pre-chiropractic referral by VA physician)",
+        consequence: null,
+        ordered: true,
+        result: `<p>MRI demonstrated significant joint space narrowing and disc herniation at C6-C7 with left-sided protrusion into the neural foramen. The prior C5-C6 CTDR device appeared intact and well-positioned. The imaging confirmed adjacent segment disease with new C6-C7 pathology as the structural basis for the recurrent left arm radiculopathy.</p>`
+      },
+      {
+        id: "ct_cervical",
+        label: "CT cervical spine (to assess implant integrity and bony detail)",
+        consequence: "Not ordered but would have been informative for assessing the status of the C5-C6 CTDR implant, including heterotopic ossification, implant migration, or adjacent segment bony spur formation. MRI provides better soft tissue detail for disc and neural structures, while CT provides better assessment of bony architecture and implant seating. Both have complementary roles in post-arthroplasty surveillance.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "emg_post_surgical",
+        label: "Electromyography (EMG) and nerve conduction study",
+        consequence: "Not ordered in this case. EMG/NCS would have electrophysiologically confirmed C7 nerve root denervation and helped stage the radiculopathy severity, distinguishing acute active denervation from chronic incomplete recovery. This information would have helped predict recovery trajectory and could have influenced the decision between conservative management and surgical timing.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "flexion_extension_xray",
+        label: "Cervical flexion-extension plain radiographs (dynamic instability views)",
+        consequence: "Not documented in the published case. Dynamic flexion-extension views would assess for segmental instability at both the prior surgical level and the adjacent C6-C7 segment. In a patient with prior cervical arthroplasty, instability at an adjacent segment would be a relative contraindication to manual therapy and would redirect management toward surgical assessment.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Adjacent segment disease — C6-C7 disc herniation with radiculopathy",
+        correct: true,
+        blurb: "MRI confirmed C6-C7 disc herniation with left-sided protrusion. The C7 dermatomal sensory loss, diminished triceps reflex, C6-C7 myotomal weakness, and positive Spurling's test all localise to C7 nerve root compression. This is the textbook presentation of adjacent segment disease — accelerated degeneration at the segment immediately adjacent to a prior cervical arthroplasty."
+      },
+      {
+        label: "Cervical myelopathy",
+        correct: false,
+        blurb: "Myelopathy was an important differential given the prior cervical surgery and new neurological symptoms. However, the examination showed no upper motor neurone signs — Hoffmann's negative, Babinski negative, normal grip-release, and no gait disturbance. Myelopathy was actively excluded on examination before conservative management was commenced."
+      },
+      {
+        label: "Recurrence at original C5-C6 surgical level (CTDR failure)",
+        correct: false,
+        blurb: "Recurrence at the C5-C6 level (C6 nerve root pattern: lateral forearm and thumb, biceps reflex) would have been the most obvious concern. However, the neurological examination localised clearly to C7 (dorsal forearm and middle finger, triceps reflex reduction, C7 myotome weakness), and MRI confirmed C6-C7 as the new pathology. The C5-C6 implant appeared intact on imaging."
+      },
+      {
+        label: "Post-surgical scar tissue / epidural fibrosis",
+        correct: false,
+        blurb: "Epidural fibrosis from prior surgery can cause persistent or recurrent arm symptoms. However, fibrosis does not produce new imaging-confirmed disc herniation, and the clinical localisation to the C6-C7 level — rather than the C5-C6 surgical site — argues against scar tissue as the primary cause."
+      },
+      {
+        label: "Shoulder pathology referring to arm (rotator cuff tear, subacromial impingement)",
+        correct: false,
+        blurb: "Shoulder pathology can refer pain into the upper arm but does not typically produce dermatomal sensory changes, reflex alterations, or the pattern of myotomal weakness seen here. Spurling's test reproducing arm tingling and MRI confirming foraminal disc herniation both confirm a cervical origin."
+      },
+      {
+        label: "Thoracic outlet syndrome",
+        correct: false,
+        blurb: "TOS was a consideration given arm symptoms in a patient with prior cervical surgery and possible postural changes. However, TOS produces plexopathy-pattern symptoms (often affecting C8/T1 — ulnar distribution) rather than isolated C6-C7 dermatomal deficit, and provocative TOS tests were not positive."
+      },
+      {
+        label: "Cervicogenic headache with referred upper limb symptoms",
+        correct: false,
+        blurb: "Cervicogenic headache produces unilateral head and neck pain referred from upper cervical segments, occasionally radiating to the shoulder. It does not produce dermatomal sensory deficit, reflex changes, or myotomal weakness in the forearm and hand. This presentation clearly localises to the lower cervical spine."
+      },
+      {
+        label: "Functional neurological disorder",
+        correct: false,
+        blurb: "Functional neurological disorder can produce unexplained motor and sensory symptoms in the upper limb. However, the concordance between imaging findings, the neurological examination pattern, and the dermatomal/reflex changes makes an organic structural diagnosis definitive. Functional disorder is a diagnosis of exclusion only after structural pathology has been excluded."
+      }
+    ],
+    explanation: `<p>The diagnostic reasoning in this case required two sequential steps: first, excluding myelopathy (upper motor neurone involvement) as a reason to immediately refer back for surgical review; and second, confirming the nerve root level of the new radiculopathy.</p>
+<p>Myelopathy was the priority exclusion because multilevel cervical cord compression in a post-surgical spine patient represents a surgical emergency. Negative Hoffmann's reflex, Babinski sign, and grip-release testing provided the clinical clearance to proceed with conservative management.</p>
+<p>Adjacent segment disease — accelerated degeneration at the level immediately adjacent to the prior arthroplasty — was then confirmed by MRI, dermatomal testing, and the triceps reflex lateralisation to C7. The published case is notable as the first documented example of chiropractic care after CTDR in an integrated VA setting, and raises important practice considerations about what techniques are appropriate when an artificial disc is in situ.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "smt_trigger_traction",
+        label: "Spinal manipulative therapy, trigger-point therapy, and manual traction to the cervical spine (conservative trial)",
+        selected: true,
+        explanation: `<strong>Appropriate as a first-line conservative trial.</strong> The published case employed SMT, trigger-point therapy, and manual cervical traction as an initial conservative approach. While these treatments did not ultimately resolve the radiculopathy (she later required a second CTDR), they were clinically appropriate as a conservative trial before re-operation. Manual traction was specifically selected because the prior CTDR at C5-C6 precluded HVLA at that level.`
+      },
+      {
+        id: "second_ctdr_surgery",
+        label: "Refer for second cervical total disk replacement (CTDR) at C6-C7",
+        selected: true,
+        explanation: `<strong>Appropriate — the patient ultimately required this.</strong> After an adequate trial of conservative chiropractic care failed to resolve radiculopathy, the patient elected for CTDR at C6-C7. Post-operatively, radicular symptoms were mostly relieved and neck pain reduced by 50%. The case illustrates appropriate escalation of care when conservative management reaches its limits — surgical referral was not premature and not delayed.`
+      },
+      {
+        id: "hvla_c56",
+        label: "HVLA cervical manipulation directly at C5-C6 (prior surgical level)",
+        selected: false,
+        explanation: `<strong>Contraindicated.</strong> HVLA manipulation directly at the level of a cervical total disk replacement is contraindicated. The artificial disc creates abnormal biomechanical loads at that segment that are unpredictable under high-velocity loading. The published case explicitly avoided manipulation at the surgical level. Clinicians must identify the exact level of prior surgery from imaging before any cervical manipulation.`
+      },
+      {
+        id: "watch_wait",
+        label: "Watchful waiting only — reassure and review in 6 weeks",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> The patient had objective neurological deficit (triceps reflex diminution, myotomal weakness, dermatomal sensory loss) that was progressively worsening. Watchful waiting without active intervention in the presence of progressive radiculopathy risks permanent nerve root damage.`
+      },
+      {
+        id: "post_surgical_physio",
+        label: "Post-surgical chiropractic rehabilitation following second CTDR",
+        selected: true,
+        explanation: `<strong>Appropriate — used in the published case.</strong> Following the second CTDR surgery, six further chiropractic SMT treatments were provided. The patient reported complete resolution of neurological symptoms and pain reduction exceeding 70% from pre-surgical levels. Post-surgical chiropractic rehabilitation in an integrated care setting facilitated the optimal recovery outcome.`
+      }
+    ],
+    outcomeText: "Initial chiropractic care (SMT, trigger-point therapy, and manual traction) failed to adequately relieve the radiculopathy, and the patient elected for CTDR at C6-C7. Post-operatively, radicular symptoms were mostly resolved and neck pain decreased by 50%. Six further chiropractic SMT treatments were provided post-operatively. The patient then reported complete resolution of neurological symptoms and pain reduction exceeding 70% from pre-surgical levels. This case is the first documented example of chiropractic care following CTDR in an integrated VA health care environment."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Adjacent Segment Disease</strong><br>C6-C7 Disc Herniation with Radiculopathy — Post-CTDR Cervical Spine",
+    outcomes: [
+      { label: "Published Source", text: "Mortenson et al. J Chiropr Med. 2022;21(1):60–65" },
+      { label: "PMID / PMC", text: "PMID: 35747610 — PMC9209822 (open access)" },
+      { label: "Final Diagnosis", text: "Adjacent segment disease: C6-C7 disc herniation with left C7 radiculopathy, 9 years after C5-C6 CTDR" },
+      { label: "Intervention", text: "Conservative chiropractic trial (SMT, trigger-point therapy, traction) → second CTDR at C6-C7 → post-surgical chiropractic rehabilitation (6 treatments)" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Adjacent segment disease is a well-recognised complication of both cervical fusion and arthroplasty. When a post-surgical patient presents with recurrent radiculopathy, the first clinical question is: does this involve a new segment? Neurological localisation and MRI are both required to answer this. Conservative management is appropriate if myelopathy is excluded, but surgical referral must not be delayed if conservative care fails." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Do not assume that recurrent arm symptoms in a post-surgical patient reflect either surgical failure or psychological sensitisation. This case shows that a genuinely new structural pathology at an adjacent segment can develop years after a successful procedure. Always re-image a post-surgical cervical spine patient with new neurological symptoms rather than attributing them to prior surgery." },
+      { type: "pearl", tag: "Clinical Pearl", text: "Chiropractic care after cervical total disk replacement is feasible and appropriate within an integrated care model — but requires meticulous technique selection. HVLA at the implanted level is contraindicated; soft-tissue therapy, gentle mobilisation, traction, and SMT at non-surgical adjacent levels are appropriate. This case is the first published example of post-CTDR chiropractic care." },
+      { type: "key", tag: "Scope of Practice", text: "This case demonstrates ideal collaborative care: chiropractic trial first, followed by surgical referral when conservative care was insufficient, followed by chiropractic rehabilitation post-operatively. Recognising the limits of conservative care — especially with objective and progressive neurological deficit — and referring appropriately is a core competency." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Always obtain post-surgical imaging before commencing treatment in a patient with prior cervical spine surgery and new symptoms. The original imaging from 9 years prior will not reflect the current status — implant position, adjacent segment degeneration, and new disc herniation are all invisible without updated scans. Never treat a post-surgical spine patient without current imaging." }
+    ]
+  },
+  cpd: {
+    topics: "Post-surgical cervical spine, adjacent segment disease, cervical total disk replacement, chiropractic in integrated care, cervical radiculopathy, myelopathy screening, technique selection post-surgery",
+    keyPoints: [
+      "Adjacent segment disease is a recognised complication of cervical arthroplasty and fusion — the segment immediately adjacent to the surgical level is at highest risk due to altered biomechanical loading.",
+      "Myelopathy screening (Hoffmann's, Babinski, grip-release, gait) is mandatory before any conservative management of post-surgical cervical spine with new neurological symptoms — a positive screen requires urgent surgical review.",
+      "HVLA manipulation directly at the level of a cervical total disk replacement is contraindicated; gentle traction, soft-tissue therapy, and SMT at non-operated adjacent levels are appropriate with careful patient selection.",
+      "When conservative chiropractic care fails to resolve objective neurological deficit in a post-surgical patient, timely surgical referral is appropriate and does not represent a failure of conservative management.",
+      "Post-surgical chiropractic rehabilitation can contribute significantly to outcomes following a second cervical arthroplasty — this case documents >70% pain reduction and full neurological recovery following combined surgical and chiropractic care."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 015 — Failed Back Surgery Syndrome: CBP Structural Rehabilitation
+// Source: Fortner et al. J Phys Ther Sci. 2024. PMID: 38186967
+// ─────────────────────────────────────────────
+{
+  id: "015",
+  title: "A 27-year-old man presents with chronic low back pain and left outer thigh numbness, 5 years after a lumbar spinal operation that made his pain worse",
+  category: "Post-surgical",
+  secondaryCategory: "Lumbar",
+  difficulty: "Advanced",
+  estimatedTime: "22–26 min",
+  source: {
+    short: "Fortner et al.\nJ Phys Ther Sci. 2024;36(1):44–50\nPMID: 38186967\nPMC: PMC10766406\nOpen access ✓",
+    full: "Fortner MO, Woodham TJ, Haas JW, Oakley PA, Harrison DE. Failed back surgery syndrome successfully ameliorated with Chiropractic Biophysics structural rehabilitation improving pain, disability as well as sagittal and coronal balance: a Chiropractic Biophysics case report with a 6 year follow-up. J Phys Ther Sci. 2024;36(1):44–50. doi:10.1589/jpts.36.44. PMID: 38186967. PMC: PMC10766406."
+  },
+  patient: {
+    ageSex: "27-year-old male",
+    chiefComplaint: "Chronic low back pain and left outer thigh altered sensation (numbness and tingling)",
+    duration: "5 years of worsening back pain following a lumbar spinal implant procedure (device inserted then removed)",
+    priorProviders: "Neurosurgeon — interspinous device inserted and then removed due to failure",
+    priorDiagnoses: "Chronic low back pain; post-surgical failed back syndrome"
+  },
+  history: {
+    content: `<p>A 27-year-old man presents to your clinic with a 5-year history of chronic low back pain rated 6–7/10. At age 22, he sought treatment for low back pain and underwent placement of an interspinous process device (Coflex) between L3-L4 or L4-L5 (he is uncertain of the exact level; the surgeon's records are not available as the surgeon is no longer practising). The procedure worsened his symptoms, and the device was removed approximately one year later. He has had significant back pain since device removal and has been unable to identify any treatment that has provided sustained relief.</p>
+<p>He also reports altered sensation over the left outer thigh — a combination of numbness and increased sensitivity in that region. He describes the sensation as present constantly, unrelated to posture or activity. His back pain is worst with prolonged sitting and is aggravated by bending forward. He has difficulty at work (sedentary occupation) and his general activity level has significantly declined.</p>
+<p>He scores 24% on the Oswestry Disability Index. SF-36 quality of life indices show reduced scores across mental health, bodily pain, and energy domains. He is not currently taking prescription analgesics, uses occasional over-the-counter ibuprofen, and has no other medical conditions. He has no bowel or bladder dysfunction and denies bilateral leg symptoms.</p>`,
+    clinicalNote: "Failed back surgery syndrome (FBSS) is defined as lumbar pain of unknown origin persisting after — or appearing after — surgical intervention for spinal pain in the same topographical location. This young patient's presentation is particularly complex: the original surgery worsened rather than improved his symptoms, the exact surgical level is unknown, and he has developed a significant spinal deformity (loss of lumbar lordosis, posterior thoracic translation) that is likely the primary driver of his ongoing pain. The key clinical signal is that standard neurological examination is nearly normal — the condition is primarily biomechanical/structural, not neurological, and cannot be diagnosed without upright radiography."
+  },
+  examination: {
+    autoROM: `<p><strong>Lumbar ROM:</strong> Flexion restricted (restricted but not quantified); extension, lateral flexion, and rotation within normal limits. Pain provoked with lumbar flexion. No reproduction of left thigh symptoms with lumbar movements. <em>Straight leg raise was negative bilaterally.</em></p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Level</th><th>Movement</th><th>Left</th><th>Right</th></tr></thead><tbody><tr><td>L2</td><td>Hip flexion (iliopsoas)</td><td>5/5</td><td>5/5</td></tr><tr><td>L3/L4</td><td>Knee extension (quadriceps)</td><td>5/5</td><td>5/5</td></tr><tr><td>L4</td><td>Ankle dorsiflexion (tibialis anterior)</td><td>5/5</td><td>5/5</td></tr><tr><td>L5</td><td>Great toe extension (extensor hallucis longus)</td><td>5/5</td><td>5/5</td></tr><tr><td>S1</td><td>Ankle plantarflexion (gastrocnemius)</td><td>5/5</td><td>5/5</td></tr><tr><td colspan="4"><em>All myotomes within normal limits. Consistent with published case findings.</em></td></tr></tbody></table></div>`,
+    checklist: [
+      {
+        group: "Neurological Examination",
+        items: [
+          {
+            id: "dtr_lower",
+            label: "Deep tendon reflexes — patella (L3/L4) and Achilles (S1)",
+            result: `<span class="tt notable">Notable</span> — right patellar reflex 1+ (mildly reduced); left patellar and both Achilles reflexes 2+ (normal)`,
+            documented: true,
+            rationale: "The mild right patellar reflex reduction (1+) with otherwise normal reflexes is an isolated but notable finding. Given that myotome and sensory testing were otherwise normal, this asymmetry may reflect chronic degenerative changes at or near the surgical level rather than acute root compression. It does not indicate active progressive radiculopathy requiring escalation, but warrants monitoring."
+          },
+          {
+            id: "sensation_left_thigh",
+            label: "Sensory testing — left lateral thigh",
+            result: `<span class="tt pos">Positive</span> — altered sensation (numbness and hyperesthesia) over the left lateral thigh in the L2/lateral femoral cutaneous nerve distribution`,
+            documented: true,
+            rationale: "The left outer thigh sensory disturbance was the patient's second chief complaint. This distribution raises the possibility of meralgia paraesthetica (lateral femoral cutaneous nerve entrapment) as a concurrent diagnosis, or L2/L3 nerve root involvement from the post-surgical spinal deformity. The published case noted this persisted despite early treatment but resolved completely by the 6-year follow-up."
+          },
+          {
+            id: "slr",
+            label: "Straight leg raise (SLR) and crossed SLR",
+            result: `<span class="tt normal">Normal</span> — negative bilaterally; no reproduction of leg symptoms`,
+            documented: true,
+            rationale: "Negative SLR in a patient with chronic post-surgical low back pain helps exclude active L4-S1 nerve root tension. Combined with normal myotomes and sensory testing, this supports a primarily biomechanical/structural pain source rather than acute ongoing nerve root compression as the dominant pathology."
+          }
+        ]
+      },
+      {
+        group: "Postural and Spinal Alignment Assessment",
+        items: [
+          {
+            id: "postural_assessment",
+            label: "Static postural assessment — sagittal and coronal plane",
+            result: `<span class="tt notable">Notable</span> — significant posterior shift of thoracic cage relative to pelvis; reduced lumbar lordosis in the sagittal plane; left lateral thoracic cage translation noted in the coronal plane`,
+            documented: true,
+            rationale: "This is the central clinical finding in FBSS with adult spinal deformity. The posterior thoracic translation and loss of lumbar lordosis represent the structural biomechanical drivers of pain and disability. Visual postural assessment provided the clinical indication for upright radiography, which quantified the deformity and guided the CBP traction and exercise protocol. Without this observation, the structural component of the condition would have been missed."
+          },
+          {
+            id: "odi_sf36",
+            label: "Oswestry Disability Index (ODI) and SF-36 quality of life assessment",
+            result: `<span class="tt notable">Notable</span> — ODI 24% (moderate disability); SF-36 subscores reduced for mental health (68/100), bodily pain (58/100), and energy/fatigue (45/100)`,
+            documented: true,
+            rationale: "Validated outcome measures are essential in complex post-surgical presentations to establish baseline severity and document treatment effect. The ODI and SF-36 were the primary outcome tools in this case and demonstrated significant disability across both pain and quality-of-life domains. The case achieved ODI reduction to 6% at 5.5 months and 10% at 6-year follow-up."
+          }
+        ]
+      },
+      {
+        group: "Special Tests",
+        items: [
+          {
+            id: "femoral_nerve_stretch",
+            label: "Femoral nerve stretch test (prone knee bend — L2-L4)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Given the left outer thigh sensory changes in an L2/L3 distribution, the femoral nerve stretch test would have screened for upper lumbar nerve root tension. A positive prone knee bend test would implicate L2-L4 radiculopathy, helping differentiate post-surgical nerve root scarring from meralgia paraesthetica or mechanical lumbar pathology. Its absence represents an incomplete upper lumbar neurological assessment."
+          },
+          {
+            id: "sacroiliac_tests",
+            label: "Sacroiliac joint provocation tests (FABER, Gaenslen's, distraction/compression)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "SIJ dysfunction is a recognised contributor to post-surgical low back pain (estimated in 15–35% of FBSS cases) and would be an important differential to exclude. Not documented, possibly because the structural radiographic findings provided a clear biomechanical explanation. In clinical practice, SIJ assessment should be part of any post-surgical LBP evaluation where mechanical pain is the primary presentation."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination in this FBSS case was notable for a nearly normal neurological screen — emphasising that the primary pathology was structural/biomechanical rather than acute neurological. The central examination finding was the postural deformity — posterior thoracic translation and loss of lumbar lordosis — which was the clinical indicator for upright radiography. The validated outcome measures (ODI, SF-36) established a multidimensional baseline that subsequently documented the success of structural rehabilitation. This case demonstrates that standard neurological examination alone is insufficient in FBSS — postural assessment and upright radiography are required."
+  },
+  investigations: {
+    options: [
+      {
+        id: "upright_radiography",
+        label: "Standing full-spine radiographs (lateral and AP) — PostureRay mensuration analysis",
+        consequence: null,
+        ordered: true,
+        result: `<p><strong>Lateral view:</strong> Severely hypolordotic lumbar spine (−16.1° vs. 40° normal); posterior thoracic translation (−88.7 mm vs. 0 mm normal); decreased sacral base angle (23.1° vs. 40° normal); retrolisthesis of L4 (−5 mm) and L5 (−7.5 mm). <strong>AP view:</strong> Left thoracic translation 29.5 mm; lumbosacral angle 82.2° (vs. 90° normal). Radiographic findings confirmed significant adult spinal deformity with loss of lumbar lordosis and posterior thoracic imbalance consistent with failed back surgery sequelae.</p>`
+      },
+      {
+        id: "lumbar_mri",
+        label: "MRI lumbar spine",
+        consequence: "Not documented as performed in the published case at the time of chiropractic presentation. MRI would have been valuable to assess the condition of the surgical level, identify residual disc herniation, evaluate for epidural fibrosis (post-surgical scar tissue), and confirm the status of adjacent segments. In clinical practice, post-surgical MRI is standard before commencing conservative care — the absence of documented MRI in this case is a notable gap.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "ct_lumbar_implant",
+        label: "CT lumbar spine (implant and bony assessment)",
+        consequence: "Not ordered in the published case. CT would have characterised the bony changes at the surgical level following Coflex device removal, including any residual spinous process fracture, stress reactions, or bone remodelling at L3-L4 or L4-L5. CT is the preferred modality for post-surgical bony assessment and would have complemented the radiographic assessment.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "nerve_conduction_emg",
+        label: "Electromyography and nerve conduction study (left lower limb)",
+        consequence: "Not ordered in the published case. Given the persistent left outer thigh sensory changes, EMG/NCS would have differentiated lateral femoral cutaneous nerve compression (meralgia paraesthetica) from an L2/L3 radiculopathy pattern. This distinction would have refined the diagnosis and potentially identified a treatable concurrent neuropathy.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Failed back surgery syndrome with adult spinal deformity (loss of lumbar lordosis, posterior thoracic translation)",
+        correct: true,
+        blurb: "FBSS is defined by persistent lumbar pain after surgical intervention for spinal pain in the same location. In this case, the Coflex device worsened symptoms, was removed without improvement, and left the patient with a significant spinal deformity: lumbar hypolordosis (−16.1°), posterior thoracic translation (−88.7 mm), and bilateral retrolisthesis. These structural changes create abnormal loading on pain-sensitive spinal tissues. Upright radiography was the diagnostic key — standard neurological examination was nearly normal."
+      },
+      {
+        label: "Chronic lumbar disc herniation with radiculopathy",
+        correct: false,
+        blurb: "Active lumbar disc herniation with radiculopathy was excluded by the negative SLR, full myotome strength, and essentially normal neurological examination. The left outer thigh sensory changes did not follow a typical L1-S1 disc herniation pattern. The clinical picture and radiographic structural findings support FBSS with deformity as the dominant diagnosis."
+      },
+      {
+        label: "Meralgia paraesthetica (lateral femoral cutaneous nerve entrapment)",
+        correct: false,
+        blurb: "Meralgia paraesthetica specifically affects the lateral femoral cutaneous nerve, producing numbness and dysesthesia over the lateral thigh without motor weakness — which matches the distribution of the left thigh sensory changes. This may represent a concurrent rather than alternative diagnosis. Femoral nerve tension testing and EMG/NCS would have helped clarify this."
+      },
+      {
+        label: "Sacroiliac joint dysfunction (post-surgical)",
+        correct: false,
+        blurb: "SIJ dysfunction is a significant contributor to FBSS, estimated in up to 35% of cases. It was not assessed in the published case. Referral pain from the SIJ can mimic posterior leg discomfort, and the mechanical nature of this patient's pain is consistent with SIJ dysfunction as a co-diagnosis. The structural radiographic findings provide the primary explanation, but SIJ cannot be fully excluded without specific provocation testing."
+      },
+      {
+        label: "Lumbar spinal stenosis with neurogenic claudication",
+        correct: false,
+        blurb: "Spinal stenosis causes back and leg pain worsening with extension and walking, with relief in flexion. This patient's pain was worsened by sitting and flexion — an atypical pattern for stenosis. Furthermore, age 27 is unusual for degenerative stenosis. Upright radiography showed retrolisthesis rather than canal stenosis, and neurological examination was essentially normal."
+      },
+      {
+        label: "Post-surgical epidural fibrosis (scar tissue adhesion)",
+        correct: false,
+        blurb: "Epidural fibrosis can cause persistent pain and radicular symptoms after spinal surgery by tethering nerve roots. It is typically assessed on gadolinium-enhanced MRI. The absence of MRI limits full exclusion, but the dominant structural deformity identified on radiography provides a more compelling biomechanical explanation and offers a treatable target."
+      },
+      {
+        label: "Iatrogenic spinal instability from device removal",
+        correct: false,
+        blurb: "Removal of an interspinous device without additional stabilisation can potentially create instability at the surgical level. Dynamic flexion-extension radiographs were not performed, so instability cannot be fully excluded. The retrolisthesis noted at L4 and L5 on standing radiography may indicate some degree of segmental laxity — this would be important to formally assess before prescribing traction-based rehabilitation."
+      },
+      {
+        label: "Somatoform / psychological pain disorder",
+        correct: false,
+        blurb: "Psychological factors contribute to FBSS and reduced SF-36 mental health scores (68/100) in this patient indicate a psychological component. However, the demonstrated structural deformity on radiography, along with objective clinical findings and validated outcome measures, confirm an organic structural basis for the pain. The improvement in SF-36 mental health scores following structural rehabilitation demonstrates that addressing the structural component improved psychological outcomes."
+      }
+    ],
+    explanation: `<p>Failed back surgery syndrome is defined by the International Association for the Study of Pain as lumbar spinal pain of unknown origin either persisting despite surgical intervention or appearing after surgical intervention for spinal pain in the same topographical location. This case exemplifies the condition: the Coflex interspinous device was inserted, worsened symptoms, was removed, and the patient has had progressive chronic pain since.</p>
+<p>The diagnostic key — which would be missed without upright radiography — was the identification of a significant adult spinal deformity: loss of lumbar lordosis, posterior thoracic translation of 88.7 mm, and bilateral retrolisthesis. These abnormal biomechanical parameters create sustained elevated loads on disc and pain-sensitive posterior structures, explaining the chronic mechanical pain aggravated by loading positions.</p>
+<p>The near-normal neurological examination should not provide false reassurance — FBSS with structural deformity is primarily a biomechanical condition, not a neurological one. Upright radiographic mensuration using standardised methods is the criterion standard for diagnosing and guiding treatment of complex post-surgical spinal deformity.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "cbp_traction_exercise",
+        label: "Chiropractic Biophysics (CBP) structural rehabilitation — SMT, mirror-image spinal traction, and corrective exercises (36 sessions over 5.5 months)",
+        selected: true,
+        explanation: `<strong>Appropriate — the published management.</strong> CBP technique was applied to improve lumbar lordosis and sagittal/coronal balance. Full-spine SMT was combined with lumbar traction (anterior-directed load at L3 with pelvis stabilised) and mirror-image corrective exercises on a power plate. After 36 visits, the patient achieved 50% pain reduction, ODI improved from 24% to 6%, and significant radiographic structural improvement was documented.`
+      },
+      {
+        id: "home_care_denneroll",
+        label: "Home lumbar orthosis (Denneroll) and corrective exercise program",
+        selected: true,
+        explanation: `<strong>Appropriate — a key component of the published protocol.</strong> A lumbar Denneroll orthosis placed at T12 with a 3-inch block was prescribed for daily home use (working toward 20 minutes per session). Mirror-image wall exercises were also prescribed. The home care program was essential for reinforcing the in-clinic structural corrections and likely contributed to the maintenance of outcomes at 6-year follow-up.`
+      },
+      {
+        id: "revision_surgery",
+        label: "Refer for revision lumbar surgery",
+        selected: false,
+        explanation: `<strong>Not appropriate at this stage.</strong> Revision spinal surgery in FBSS patients carries high risk of further failure, particularly when the original complication arose from an inadequately selected surgical candidate. The published literature recommends comprehensive conservative care before considering revision surgery. This case demonstrates that non-surgical structural rehabilitation can successfully address FBSS outcomes without re-operation.`
+      },
+      {
+        id: "spinal_cord_stimulator",
+        label: "Refer for spinal cord stimulator implantation",
+        selected: false,
+        explanation: `<strong>Premature — conservative structural care had not been tried.</strong> Spinal cord stimulation is indicated for FBSS refractory to conservative management, providing pain modulation without addressing the underlying structural deformity. It is an appropriate escalation option if conservative care fails, but is not a first-line treatment. This case demonstrates that structural rehabilitation addressing the biomechanical deformity can provide sustainable outcomes without neuro-modulation.`
+      },
+      {
+        id: "opioid_pain_management",
+        label: "Refer for chronic pain management with opioid analgesics",
+        selected: false,
+        explanation: `<strong>Not appropriate as primary management.</strong> Opioid analgesics do not address the structural biomechanical cause of FBSS and carry significant risks of dependence in a 27-year-old patient. This case demonstrates that structural rehabilitation targeting the spinal deformity can produce objective and sustained improvements in pain and function without pharmacological escalation.`
+      }
+    ],
+    outcomeText: "After 36 CBP treatment sessions over 5.5 months: pain improved by 50%; ODI reduced from 24% to 6%; SF-36 subscores improved across mental health, bodily pain, and energy domains. Radiographically: lumbar lordosis increased from −16.1° to −22.3°; posterior thoracic translation reduced from 88.7 mm to 67.8 mm; left lateral thoracic translation reduced from 29.5 mm to 13.4 mm. At 6-year follow-up: pain was 70% improved; left outer thigh numbness had fully resolved (100% improved); ODI was 10%; SF-36 scores continued to improve. Degenerative changes developed at L3-L4 (the probable surgical level), but the patient's functional status continued to improve."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Failed Back Surgery Syndrome</strong><br>Post-Coflex Device Removal with Adult Spinal Deformity",
+    outcomes: [
+      { label: "Published Source", text: "Fortner et al. J Phys Ther Sci. 2024;36(1):44–50" },
+      { label: "PMID / PMC", text: "PMID: 38186967 — PMC10766406 (open access)" },
+      { label: "Final Diagnosis", text: "Failed back surgery syndrome with significant sagittal and coronal spinal deformity (lumbar hypolordosis, posterior thoracic translation, bilateral retrolisthesis)" },
+      { label: "Intervention", text: "Chiropractic Biophysics (CBP) structural rehabilitation: 36 sessions of SMT, mirror-image spinal traction, corrective exercises, and home Denneroll orthosis over 5.5 months; 6-year follow-up documented maintained outcomes" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Failed back surgery syndrome is primarily a structural biomechanical condition, not a neurological one. A near-normal neurological examination does not exclude significant pathology — upright radiographic mensuration is required to identify the spinal deformity that drives chronic loading-related pain. Standard clinical examination alone is insufficient for diagnosis and treatment planning in FBSS." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Do not assume that chronic post-surgical back pain is psychological or non-specific simply because standard neurological examination is normal. FBSS with adult spinal deformity has objective, quantifiable structural abnormalities that are only visible on upright (weight-bearing) radiography — supine MRI may underestimate the deformity. Failing to obtain upright radiographs leads to missing the treatable structural cause." },
+      { type: "pearl", tag: "Clinical Pearl", text: "The Coflex interspinous device is FDA approved for L1-L5 but has documented failure modes including spinous process fracture, device migration, and worsening of sagittal imbalance. Literature recommends against use in patients with sagittal instability. Device removal without adequate corrective stabilisation (pedicle screws) can leave a structural void that requires biomechanical rehabilitation." },
+      { type: "key", tag: "Scope of Practice", text: "CBP structural rehabilitation — including spinal traction, mirror-image exercises, and SMT — is within chiropractic scope and is evidence-supported in FBSS with deformity. Spinal cord stimulation and revision surgery are escalation pathways if conservative care fails. The 6-year follow-up in this case is a rare and important demonstration of durable conservative outcomes in FBSS." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Upright (standing) radiography is the criterion standard for assessing sagittal and coronal spinal balance and cannot be replaced by supine MRI or CT. The posterior thoracic translation of 88.7 mm documented in this case — which was the structural driver of pain — would not have been visible on a supine scan. Always obtain standing full-spine radiographs when postural deformity is suspected in chronic low back pain post-surgery." }
+    ]
+  },
+  cpd: {
+    topics: "Failed back surgery syndrome, adult spinal deformity, lumbar sagittal balance, Chiropractic Biophysics, interspinous device complications, post-surgical rehabilitation, upright radiography, ODI outcome measures",
+    keyPoints: [
+      "FBSS is defined by persistent lumbar pain after surgical intervention for spinal pain in the same location, and may result from inadequate pre-surgical diagnostics, poor patient selection, or iatrogenic complications from device failure.",
+      "Upright standing radiography using standardised mensuration methods is essential for diagnosing and quantifying spinal deformity in FBSS — normal neurological examination does not exclude significant structural pathology.",
+      "CBP structural rehabilitation combining SMT, mirror-image spinal traction, and corrective exercises can produce significant improvements in both radiographic spinal alignment and clinical outcomes (pain, disability, quality of life) in FBSS.",
+      "The Oswestry Disability Index (ODI) and SF-36 are validated and responsive outcome measures for FBSS — documenting baseline and post-treatment scores is essential for demonstrating treatment efficacy.",
+      "Long-term follow-up (this case: 6 years) is rare in conservative spine care literature; the maintained outcomes at 6 years despite some adjacent segment degeneration provide important evidence that structural rehabilitation can produce durable results."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 016 — Metastatic Spinal Cancer Presenting as Back Pain in a Runner
+// Source: Leri. J Chiropr Med. 2018. PMID: 30166969
+// ─────────────────────────────────────────────
+{
+  id: "016",
+  title: "A 50-year-old female runner presents with 3 weeks of persistent moderate low back and mid-back pain that has not resolved with treatment",
+  category: "Red Flag",
+  secondaryCategory: "Thoracic",
+  difficulty: "Advanced",
+  estimatedTime: "20–24 min",
+  source: {
+    short: "Leri JP.\nJ Chiropr Med. 2018;17(2):121–127\nPMID: 30166969\nPMC: PMC6112066\nOpen access ✓",
+    full: "Leri JP. Metastatic Cancer of the Thoracic and Lumbar Spine Presenting as Mid- and Low Back Pain in a Long Distance Runner. J Chiropr Med. 2018;17(2):121–127. doi:10.1016/j.jcm.2017.11.004. PMID: 30166969. PMC: PMC6112066."
+  },
+  patient: {
+    ageSex: "50-year-old female",
+    chiefComplaint: "Persistent moderate low back and mid-back pain",
+    duration: "3 weeks, no improvement",
+    priorProviders: "Initial treatment at this chiropractic clinic (one prior visit)",
+    priorDiagnoses: "None formally established — treated empirically as mechanical back pain on first visit"
+  },
+  history: {
+    content: `<p>A 50-year-old female long-distance runner returns to your chiropractic clinic for her second visit. She presented 1 week ago with a 3-week history of persistent moderate pain in the low back and mid-back regions, rated approximately 5/10. She is an active runner who has been competing for 15 years and has had occasional minor back issues in the past that have responded quickly to treatment. This episode is different — it started without a clear precipitating injury, has not improved with her usual activity modification, and has not responded to the previous visit's treatment (spinal manipulation, moist heat, and electrical stimulation).</p>
+<p>She experienced mild pain relief after the first visit but continues to have the same baseline of persistent aching in the thoracolumbar region. She describes it as a dull, constant ache with no clear aggravating or relieving factors related to posture or movement. It is not specifically worse with running, but she has cut back her training due to the persistent discomfort.</p>
+<p>On direct questioning: she discloses a history of breast carcinoma treated 6 years ago (lumpectomy and radiotherapy — she was told she was in remission). She has not had recent oncological follow-up. She denies any other health symptoms: no fever, no night sweats, no unexplained weight loss, no dyspnoea, no bowel or bladder changes, and no radicular symptoms.</p>`,
+    clinicalNote: "This case is built around the most critical red flag in chiropractic practice: a history of prior malignancy presenting with persistent, non-mechanical back pain. The single most important red flag for spinal malignancy is a prior history of cancer — it dramatically raises the pretest probability of metastatic disease. The clinical trap is the partial response to treatment on the first visit: mild pain relief can falsely reassure both patient and clinician and delay investigation. Persistent mild pain in a cancer survivor who is not improving is a red flag regardless of symptom severity."
+  },
+  examination: {
+    autoROM: `<p><strong>Lumbar and thoracic ROM:</strong> Moderately restricted lumbar flexion with diffuse thoracolumbar aching at end range. No radicular reproduction. Extension and lateral flexion mildly restricted bilaterally. Thoracic ROM restricted with thoracolumbar pain on rotation. No neurological symptoms reproduced on any movement.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Level</th><th>Movement</th><th>Left</th><th>Right</th></tr></thead><tbody><tr><td>L2</td><td>Hip flexion</td><td>5/5</td><td>5/5</td></tr><tr><td>L3/L4</td><td>Knee extension</td><td>5/5</td><td>5/5</td></tr><tr><td>L4</td><td>Ankle dorsiflexion</td><td>5/5</td><td>5/5</td></tr><tr><td>L5</td><td>Great toe extension</td><td>5/5</td><td>5/5</td></tr><tr><td>S1</td><td>Plantarflexion</td><td>5/5</td><td>5/5</td></tr><tr><td colspan="4"><em>No neurological deficit identified. Published case documents no positive neurologic signs or symptoms suggestive of radiculopathy.</em></td></tr></tbody></table></div>`,
+    checklist: [
+      {
+        group: "Red Flag Screening",
+        items: [
+          {
+            id: "cancer_history_review",
+            label: "Comprehensive red flag history review — prior malignancy, constitutional symptoms",
+            result: `<span class="tt pos">Positive</span> — history of breast carcinoma (6 years ago); no current oncological follow-up; absence of fever, night sweats, or weight loss does not negate the red flag`,
+            documented: true,
+            rationale: "Prior history of cancer is the single most important red flag for spinal metastasis and was the key finding in this case. Breast cancer is one of the most common primary tumours to metastasise to the spine. The absence of constitutional symptoms does not reduce the urgency of investigation when cancer history is present — early metastatic disease can be asymptomatic systemically."
+          },
+          {
+            id: "percussion_tenderness",
+            label: "Spinal percussion test (vertebral body tenderness)",
+            result: `<span class="tt notable">Notable</span> — dull percussion tenderness over the lower thoracic and upper lumbar spine region (T12-L3), not well-localised to a single level`,
+            documented: true,
+            rationale: "Percussion tenderness over the vertebral bodies — rather than over the paraspinal muscles — is a clinical sign associated with osseous pathology including infection and malignancy. Its presence in a patient with cancer history heightened clinical concern. This finding would not be present in typical mechanical back pain and should always prompt investigation."
+          },
+          {
+            id: "neurological_screen",
+            label: "Complete lower limb neurological screen — myotomes, sensation, reflexes",
+            result: `<span class="tt normal">Normal</span> — no motor weakness, no sensory deficit, reflexes symmetric bilaterally`,
+            documented: true,
+            rationale: "A normal neurological screen does not exclude spinal metastasis. Early vertebral metastases can cause bone pain without cord or root compression. However, a normal screen suggests there is no immediate risk of cord compression, which would be an emergency. Ongoing monitoring for neurological deterioration is essential — a normal screen today can become abnormal rapidly as metastatic disease progresses."
+          }
+        ]
+      },
+      {
+        group: "Mechanical Pain Assessment",
+        items: [
+          {
+            id: "pain_behaviour",
+            label: "Assessment of pain behaviour — mechanical vs non-mechanical pattern",
+            result: `<span class="tt notable">Notable</span> — pain described as constant aching, poorly related to posture or activity; mild improvement with rest but no posturally mechanical pattern`,
+            documented: true,
+            rationale: "Non-mechanical pain — constant, poorly related to posture, not reliably reproduced or relieved by specific movements — is a red flag for serious spinal pathology. Mechanical back pain in a runner is typically aggravated by specific movements or loading patterns. The absence of a clear mechanical pattern in this patient, combined with the cancer history, was the key clinical signal that drove the decision to investigate."
+          },
+          {
+            id: "slr",
+            label: "Straight leg raise (SLR) and neural tension tests",
+            result: `<span class="tt normal">Normal</span> — negative bilaterally; no radicular reproduction`,
+            documented: true,
+            rationale: "Negative SLR confirmed no active lumbar nerve root tension. In spinal metastasis, SLR is typically negative until cord or root compression occurs — a negative SLR at this stage does not exclude bony metastatic disease affecting the vertebral body."
+          },
+          {
+            id: "palpation_paraspinal",
+            label: "Paraspinal and thoracolumbar palpation",
+            result: `Not formally documented in published case`,
+            documented: false,
+            rationale: "Paraspinal palpation findings were not specifically documented in the published case. In a patient with cancer history and persistent back pain, palpation should carefully document the pattern of tenderness (local vs diffuse, vertebral body vs muscle), presence of a gibbous deformity, and any palpable masses. Diffuse rather than focal tenderness is less localising but does not exclude metastatic disease."
+          }
+        ]
+      },
+      {
+        group: "Treatment Response Monitoring",
+        items: [
+          {
+            id: "treatment_response",
+            label: "Monitoring of treatment response at return visit",
+            result: `<span class="tt notable">Notable</span> — mild pain relief after first treatment visit, but persistent low-level pain without clear improvement trend`,
+            documented: true,
+            rationale: "Failure to respond to conservative care within an expected timeframe is a clinical red flag that should trigger reassessment and investigation. The published case documents that the patient received mild relief from one visit — just enough to reduce urgency — but continued to experience persistent pain. This failure to achieve a typical mechanical response was the critical signal that prompted radiographic investigation."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination strategy must be understood in the context of clinical reasoning under uncertainty. On initial presentation the patient appeared to have a musculoskeletal complaint — a fit runner with back pain and no neurological signs. The crucial pivot was the disclosure of cancer history combined with a poor treatment response at return visit. The examination then confirmed the absence of neurological compromise (allowing safe imaging rather than emergency response) and documented the non-mechanical pain pattern that, together with cancer history, made imaging mandatory."
+  },
+  investigations: {
+    options: [
+      {
+        id: "lumbar_xray",
+        label: "Lumbar spine plain radiographs (AP and lateral)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Lumbar radiographs revealed a missing right L3 pedicle on the AP view — the classic 'winking owl' sign of vertebral metastatic involvement. This finding immediately elevated the clinical concern for metastatic malignancy and prompted urgent CT referral.</p>`
+      },
+      {
+        id: "ct_lumbar_thoracic",
+        label: "CT scan — thoracic and lumbar spine",
+        consequence: null,
+        ordered: true,
+        result: `<p>CT of the lumbar and lower thoracic spine confirmed marked metastatic changes affecting the lower thoracic and upper lumbar vertebrae. Multiple lytic and sclerotic foci consistent with haematogenous metastasis from breast carcinoma were identified. No acute fracture or cord compression was identified at time of imaging. The patient was immediately referred to her oncologist.</p>`
+      },
+      {
+        id: "mri_spine",
+        label: "MRI full spine with gadolinium",
+        consequence: "Not performed at the chiropractic stage — the patient was immediately referred to oncology following CT. MRI with gadolinium is the gold standard for assessing extent of cord involvement, epidural compression, and soft tissue metastasis. It would have been performed by the oncology team as part of staging. Once metastatic disease was identified on plain X-ray and CT, immediate oncological referral was the appropriate action.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "bone_scan",
+        label: "Radionuclide bone scan (technetium-99m)",
+        consequence: "Not performed at the chiropractic stage. A whole-body bone scan is highly sensitive for osteoblastic metastases and provides a systemic survey of skeletal involvement. It would have been used by the oncology team for staging. The discovery of metastases on plain X-ray and CT was sufficient to trigger the oncological referral in this case.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "tumour_markers",
+        label: "Blood tests — tumour markers (CA 15-3, CEA) and inflammatory markers (ESR, CRP)",
+        consequence: "Not ordered in the chiropractic setting. CA 15-3 and CEA are breast cancer tumour markers that may be elevated in metastatic disease. ESR and CRP may be elevated in both malignancy and spinal infection, providing non-specific but useful evidence of a pathological rather than mechanical aetiology. A basic blood screen (FBC, ESR, CRP) as part of red flag investigation before imaging is reasonable and accessible in primary care.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Spinal metastasis from breast carcinoma",
+        correct: true,
+        blurb: "The correct diagnosis. A missing right L3 pedicle on plain radiograph — the 'winking owl' sign — immediately raised the suspicion of vertebral metastasis. Subsequent CT confirmed marked metastatic changes in the lower thoracic and upper lumbar spine consistent with haematogenous spread from the known prior breast carcinoma. The non-mechanical pain pattern, cancer history, and failure to respond to conservative treatment were the three clinical drivers that made imaging mandatory."
+      },
+      {
+        label: "Mechanical low back pain — lumbar strain or thoracolumbar junction syndrome",
+        correct: false,
+        blurb: "Mechanical back pain was the initial working diagnosis on first presentation. However, the partial treatment response combined with the patient's cancer history should have triggered earlier imaging. Mechanical pain in a runner typically has clear aggravating activities and a predictable recovery trajectory — neither was present here. Mechanical diagnoses must never be assigned to patients with cancer history without first excluding metastasis."
+      },
+      {
+        label: "Vertebral compression fracture — osteoporotic or stress fracture",
+        correct: false,
+        blurb: "Vertebral compression fracture could produce persistent thoracolumbar pain in a perimenopausal woman. However, plain radiographs showed a missing pedicle (osteolytic destruction), not vertebral height loss. The CT pattern of diffuse metastatic change distinguishes this from a simple compression fracture."
+      },
+      {
+        label: "Spinal infection — discitis or vertebral osteomyelitis",
+        correct: false,
+        blurb: "Vertebral osteomyelitis can cause constant non-mechanical back pain with percussion tenderness. However, infection is typically associated with fever, elevated inflammatory markers, and a predisposing factor. None of these features were present. The pattern of multi-level metastatic changes on CT — rather than a single-level end-plate destructive lesion — is diagnostic of haematogenous malignancy."
+      },
+      {
+        label: "Primary spinal tumour — osteosarcoma or chordoma",
+        correct: false,
+        blurb: "Primary spinal tumours are rare in adults and typically present as a solitary lesion. The CT finding of multi-level vertebral involvement is characteristic of metastatic disease rather than a primary tumour. The prior breast cancer history is the dominant aetiological factor."
+      },
+      {
+        label: "Overuse injury / stress reaction related to running training",
+        correct: false,
+        blurb: "Stress reactions in runners can produce thoracolumbar pain, but are typically related to specific training changes, are localised rather than diffuse, and produce pain reproducibly with loading. The non-mechanical constant aching that does not correlate with training load, combined with cancer history, makes a mechanical athletic aetiology untenable."
+      },
+      {
+        label: "Facet joint arthropathy / degenerative disc disease",
+        correct: false,
+        blurb: "Degenerative changes are common at age 50 but produce mechanical pain — typically morning stiffness, pain on extension and rotation, aggravated by sustained postures. Persistent constant aching in a patient with cancer history is never attributable to degenerative changes until malignancy has been excluded by imaging."
+      },
+      {
+        label: "Ankylosing spondylitis or seronegative spondyloarthropathy",
+        correct: false,
+        blurb: "Spondyloarthropathy typically presents in younger adults with morning stiffness lasting >45 minutes, improvement with exercise, and a characteristic sacroiliitis pattern. The onset of back pain at 50 without prior history, the non-morning pattern, and the cancer history make spondyloarthropathy an unlikely diagnosis. CT did not show sacroiliitis or syndesmophytes."
+      }
+    ],
+    explanation: `<p>This case is one of the most important diagnostic scenarios in chiropractic practice: the patient with a prior history of malignancy presenting with persistent back pain. The essential principle is that no level of symptom mildness and no degree of partial treatment response reduces the obligation to investigate when cancer history is present.</p>
+<p>The published case contains an important teachable moment: the patient received mild relief from the first treatment visit — just enough to make both clinician and patient feel the symptoms were mechanical. It was the persistence of pain and the awareness that prior cancer history is the primary red flag that drove the decision to investigate further.</p>
+<p>The 'missing pedicle' sign — absence of the bony pedicle on an AP lumbar radiograph — is a classic and important radiographic sign that every chiropractor who orders lumbar radiographs must be able to recognise. This case is a direct reminder that plain radiographs must be actively inspected for pedicle symmetry at every level, not just disc spaces and vertebral body heights.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "imaging_investigation",
+        label: "Order plain radiographs of the lumbar and thoracic spine and refer for CT if abnormality detected",
+        selected: true,
+        explanation: `<strong>Appropriate — the published management.</strong> Given persistent back pain in a patient with prior breast cancer who had not responded to conservative treatment, plain radiographs were ordered. The discovery of the missing right L3 pedicle on AP view immediately triggered CT referral. This sequence — plain X-ray first, CT for confirmation — is the appropriate stepwise investigation pathway in a chiropractic setting.`
+      },
+      {
+        id: "oncology_referral",
+        label: "Immediate referral to oncologist / GP following identification of spinal metastasis",
+        selected: true,
+        explanation: `<strong>Appropriate and mandatory.</strong> Once metastatic disease was confirmed on imaging, the patient was immediately referred to her oncologist. Continuing chiropractic treatment of a patient with confirmed vertebral metastasis would be dangerous (risk of pathological fracture and cord compression) and outside the scope of chiropractic management. Timely referral is both a scope of practice and a patient safety imperative.`
+      },
+      {
+        id: "continue_conservative",
+        label: "Continue spinal manipulation for 4–6 more weeks before investigating",
+        selected: false,
+        explanation: `<strong>Not appropriate and potentially dangerous.</strong> Continuing manipulation without investigation in a patient with cancer history and persistent non-mechanical back pain who failed to respond to initial treatment is a critical error. Vertebral metastasis creates a risk of pathological fracture and cord compression with loading forces. Failure to respond to one visit of conservative care combined with cancer history is an absolute indication for imaging before further treatment.`
+      },
+      {
+        id: "reassure_monitor",
+        label: "Reassure the patient and monitor for 3–4 more weeks — mild symptoms in a fit runner",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> Symptom mildness does not reduce the obligation to investigate. Prior cancer history is the primary red flag regardless of symptom severity. Reassuring a patient with undiagnosed spinal metastasis and monitoring without imaging delays diagnosis and risks cord compression. This patient's metastatic disease had already spread to the liver at the time of diagnosis.`
+      },
+      {
+        id: "refer_rheum_investigation",
+        label: "Refer to rheumatology for investigation of possible inflammatory back pain",
+        selected: false,
+        explanation: `<strong>Not appropriate as the primary investigation pathway.</strong> The presentation does not have features of inflammatory back pain (young age of onset, morning stiffness, improvement with exercise). The 50-year-old patient with cancer history and persistent non-mechanical thoracolumbar pain requires malignancy exclusion as the immediate priority, not rheumatological investigation.`
+      }
+    ],
+    outcomeText: "Plain AP lumbar radiograph at the return visit revealed a missing right L3 pedicle ('winking owl' sign). CT lumbar and thoracic spine confirmed marked metastatic changes to the lower thoracic and upper lumbar spine. The patient was immediately referred to her oncologist. Investigation revealed that the metastatic disease had progressed to her liver. The patient succumbed to metastatic breast carcinoma 6 months later. This case is a powerful reminder that timely red flag recognition and investigation can facilitate appropriate oncological care — and that partial treatment response must never be used to defer investigation when cancer history is present."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Vertebral Metastatic Disease</strong><br>Haematogenous Spinal Metastasis from Breast Carcinoma",
+    outcomes: [
+      { label: "Published Source", text: "Leri JP. J Chiropr Med. 2018;17(2):121–127" },
+      { label: "PMID / PMC", text: "PMID: 30166969 — PMC6112066 (open access)" },
+      { label: "Final Diagnosis", text: "Haematogenous spinal metastasis from prior breast carcinoma (lower thoracic and upper lumbar spine; hepatic metastases also identified)" },
+      { label: "Intervention", text: "Plain radiograph → CT confirmation → immediate oncological referral. Patient died from disseminated breast cancer 6 months later." }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "A prior history of cancer is the single most important red flag for spinal malignancy — it is an absolute indication for imaging before continuing conservative care. This applies regardless of symptom severity, physical fitness, or partial treatment response. If there is cancer history and persistent back pain, image before treating further." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Partial treatment response is a dangerous clinical trap in cancer-related back pain. Mild relief from one treatment visit can falsely reassure the clinician that the pain is mechanical and delay investigation. The correct standard is: if pain persists after 1–2 visits in a patient with cancer history, imaging is mandatory — do not wait for treatment failure to become obvious." },
+      { type: "pearl", tag: "Clinical Pearl", text: "The 'winking owl' sign — a missing or asymmetric pedicle on an AP lumbar radiograph — is a classic and critical radiographic sign of vertebral metastasis. Every chiropractor who reads lumbar X-rays must actively assess both pedicles at each vertebral level on the AP view. The pedicles should appear as paired oval densities ('eyes of the owl'). A missing pedicle on one side is metastasis until proven otherwise." },
+      { type: "key", tag: "Scope of Practice", text: "Once spinal metastasis is identified, chiropractic treatment must cease immediately. Manipulation of a metastatically involved vertebral body risks pathological fracture and spinal cord compression — a life-threatening emergency. The chiropractor's role shifts immediately to facilitating urgent oncological referral. This is a critical scope-of-practice boundary that defines safe practice." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "In patients with prior breast, lung, prostate, renal, or thyroid carcinoma presenting with persistent back pain, plain radiographs should be the first imaging step — but a normal plain radiograph does not exclude early metastatic disease. CT and bone scan are far more sensitive. If clinical suspicion remains high after a normal X-ray, refer for CT or liaise with the GP for further investigation." }
+    ]
+  },
+  cpd: {
+    topics: "Spinal metastasis, red flag screening, breast cancer, winking owl sign, cancer history red flag, radiographic diagnosis, chiropractic scope of practice, oncological referral",
+    keyPoints: [
+      "Prior history of malignancy is the single most important red flag for spinal metastasis — it is an absolute indication for radiographic investigation before continuing conservative chiropractic care, regardless of symptom severity.",
+      "The 'winking owl' or 'missing pedicle' sign on AP lumbar radiograph is a classic indicator of vertebral metastatic disease — both pedicles must be actively assessed at every lumbar level when interpreting lumbar radiographs.",
+      "Breast cancer is among the most common primary tumours to produce spinal metastases, along with lung, prostate, kidney, and thyroid cancers — these five primaries account for the majority of vertebral metastasis cases seen in chiropractic settings.",
+      "Partial treatment response (mild pain relief) must never be used to defer investigation — in a patient with cancer history, any persistence of back pain after initial treatment is an indication for imaging.",
+      "Once spinal metastasis is identified, chiropractic manipulation must cease immediately and urgent oncological referral is mandatory — continuing treatment of a vertebra involved by metastasis risks pathological fracture and cord compression."
+    ]
+  }
 }
 // ─────────────────────────────────────────────
 // PASTE ADDITIONAL CASES ABOVE THIS LINE
