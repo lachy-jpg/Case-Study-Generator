@@ -588,6 +588,7 @@
         <div class="nav-row" style="margin-top:8px;">
           <button class="btn-b" onclick="goStage('management')">&larr; Back</button>
           <button class="btn-s" onclick="restartCase()">Restart Case</button>
+          <button class="btn-s" onclick="unmarkCompleted(currentCase.id); goHome()">Unmark as Complete</button>
           <button class="btn-s" onclick="goHome()">Back to Library</button>
         </div>
       </div>
@@ -3183,7 +3184,11 @@ function toggleCPD() {
     box.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
-
+function unmarkCompleted(id) {
+    const c = getCompleted().filter(x => x !== id);
+    localStorage.setItem('crs_completed', JSON.stringify(c));
+    renderLibrary();
+  }
 function restartCase() {
   if (currentCase) launchCase(currentCase.id);
 }
