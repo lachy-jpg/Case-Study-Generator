@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="Cache-Control" content="no-store">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clinical Reasoning Simulator</title>
+<title>Case Study Simulator </title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -3144,7 +3144,7 @@ function goStage(stage) {
   pill.className = 'g-pill' + (stage !== 'intro' ? ' active' : '');
   document.getElementById('g-meta').textContent = `Case ${currentCase?.id || ''}`;
 
-  if (stage === 'reveal') { markCompleted(currentCase.id); renderLibrary(); }
+  if (stage === 'reveal' && !window._restarting) { markCompleted(currentCase.id); renderLibrary(); }
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -3157,6 +3157,7 @@ function revealStage(revealId, nextBtnId, stage) {
   r.classList.add('show');
   if (nextBtnId) document.getElementById(nextBtnId).disabled = false;
   stagesRevealed[stage] = true;
+  if (stage === 'examination') buildExamReveal();
   r.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
@@ -3190,9 +3191,76 @@ function unmarkCompleted(id) {
     renderLibrary();
   }
 function restartCase() {
-  if (currentCase) launchCase(currentCase.id);
+  if (!currentCase) return;
+  const id = currentCase.id;
+  // Temporarily prevent markCompleted from firing during restart
+  const origMark = markCompleted;
+  window._restarting = true;
+  launchCase(id);
+  window._restarting = false;
+}
+function syncMobileSidebar() {
+  const pat = document.getElementById('sb-patient');
+  const patMob = document.getElementById('sb-patient-mob');
+  if (pat && patMob) patMob.innerHTML = pat.innerHTML;
+  const src = document.getElementById('sb-source');
+  const srcMob = document.getElementById('sb-source-mob');
+  if (src && srcMob) srcMob.innerHTML = src.innerHTML;
 }
 
+function toggleMobileSidebar() {
+  const sidebar = document.getElementById('sidebar-mobile');
+  const toggle = document.getElementById('sb-toggle');
+  const isOpen = sidebar.classList.contains('open');
+  if (isOpen) {
+    sidebar.classList.remove('open');
+    toggle.classList.remove('open');
+  } else {
+    syncMobileSidebar();
+    sidebar.classList.add('open');
+    toggle.classList.add('open');
+  }
+}
+function buildExamReveal() {
+  const checklist = currentCase.examination.checklist;
+  const selectedIds = new Set(
+    [...document.querySelectorAll('#exam-checklist .ck-item.checked')]
+      .map(el => el.dataset.id)
+  );
+
+  let html = '';
+  checklist.forEach(group => {
+    group.items.forEach(item => {
+      const userSelected = selectedIds.has(item.id);
+      const wasDocumented = item.documented;
+
+      if (wasDocumented) {
+        if (userSelected) {
+          html += `<div class="rb show" style="margin-bottom:8px; padding:12px 16px;">
+            <div class="rl">You selected this — performed in case</div>
+            <div style="font-size:13px; font-weight:600; margin-bottom:6px;">${item.label}</div>
+            <div class="rt">${item.result}</div>
+          </div>`;
+        } else {
+          html += `<div class="rb gold show" style="margin-bottom:8px; padding:12px 16px;">
+            <div class="rl">You didn't select this — but it was performed</div>
+            <div style="font-size:13px; font-weight:600; margin-bottom:6px;">${item.label}</div>
+            <div class="rt">${item.result}</div>
+            ${item.rationale ? `<div style="margin-top:10px; padding-top:8px; border-top:1px solid var(--rule); font-size:12px; color:var(--gold); font-style:italic;">Why it was performed: ${item.rationale}</div>` : ''}
+          </div>`;
+        }
+      } else if (userSelected) {
+        html += `<div class="rb warn show" style="margin-bottom:8px; padding:12px 16px;">
+          <div class="rl">You selected this — not performed in published case</div>
+          <div style="font-size:13px; font-weight:600; margin-bottom:6px;">${item.label}</div>
+          <div class="rt">${item.rationale || item.result}</div>
+        </div>`;
+      }
+    });
+  });
+
+  document.getElementById('exam-selected-content').innerHTML = html;
+}
 // INIT
 renderLibrary();
 </script>
