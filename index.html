@@ -4083,6 +4083,1269 @@ const CASES = [
       "Once spinal metastasis is identified, chiropractic manipulation must cease immediately and urgent oncological referral is mandatory — continuing treatment of a vertebra involved by metastasis risks pathological fracture and cord compression."
     ]
   }
+},
+// ─────────────────────────────────────────────
+// CASE 017 — Pancoast Tumor Presenting as Neck and Shoulder Pain
+// Source: Chu et al. Am J Case Rep. 2022. PMID: 35797264 PMC: PMC9274787
+// ─────────────────────────────────────────────
+{
+  id: "017",
+  title: "A 59-year-old male smoker presents with 1 month of neck and bilateral shoulder pain and numbness unresponsive to prior treatment",
+  category: "Red Flag",
+  secondaryCategory: "Cervical",
+  difficulty: "Advanced",
+  estimatedTime: "25–35 min",
+  source: {
+    short: "Chu et al.\nAm J Case Rep. 2022;23:e937052\nPMID: 35797264\nPMC: PMC9274787\nOpen access ✓",
+    full: "Chu EC, Trager RJ, Shum JSF, Lai CR. Pancoast Tumor Presenting as Neck Pain in the Chiropractic Office: A Case Report and Literature Review. Am J Case Rep. 2022 Jul 7;23:e937052. doi: 10.12659/AJCR.937052. PMID: 35797264; PMCID: PMC9274787."
+  },
+  patient: {
+    ageSex: "59-year-old male",
+    chiefComplaint: "Aching and numbness of the posterior neck and bilateral shoulders",
+    duration: "1 month",
+    priorProviders: "Primary care physician, physical therapist, acupuncturist",
+    priorDiagnoses: "No prior musculoskeletal diagnosis established; active tuberculosis being treated with directly observed therapy"
+  },
+  history: {
+    content: `<p>A 59-year-old Asian man presented to a chiropractic clinic with a 1-month history of aching and numbness of his posterior neck and bilateral shoulders. He reported pain severity of 8/10 on the numeric rating scale. He described that neck pain began secondary to episodes of coughing and had negatively impacted sleep quality.</p>
+<p>He had an active 6-month history of tuberculosis, currently under treatment with isoniazid, rifampin, pyrazinamide, and ethambutol via directly observed therapy at a specialty chest hospital, with monthly follow-up visits and serial chest radiographs every 1–2 months. The most recent chest radiograph (1 month prior) reported patchy airspace opacities with a nodular appearance in the right upper lung zone, described as suggestive of pneumonia. A high-resolution CT of the thorax from 6 months prior noted right apical fibrocalcific changes, mild bronchiectasis, tiny nodules up to 2 mm in both lungs, and non-enlarged mediastinal and hilar lymph nodes. No suspicious lung mass or tumour was reported.</p>
+<p>The patient had a 50-pack-year smoking history, was a social drinker, and worked as an interior decorator. His past medical history included hereditary elliptocytosis and a spontaneous pneumothorax at age 33. He denied any personal history of cancer. Family history was significant for lung cancer (mother) and hereditary elliptocytosis (father). He endorsed occasional hoarseness but denied bowel or bladder symptoms.</p>
+<p>Previous treatments directed by his primary care provider had included NSAIDs, acetaminophen, physical therapy exercises, and acupuncture — none of which provided relief. He sought chiropractic care having exhausted other options.</p>`,
+    clinicalNote: "The critical signal here is the constellation of red flags: 50-pack-year smoking history, active TB (itself an independent lung cancer risk factor), family history of lung cancer, failure of all prior treatment, and the unusual onset associated with coughing. The neck and shoulder pain distribution with deltoid weakness should raise suspicion for brachial plexus involvement. The chiropractor must resist anchoring on the superficially plausible cervical radiculopathy hypothesis. A rapid escalation to advanced imaging is warranted even on the first visit."
+  },
+  examination: {
+    autoROM: `<p>Cervical ROM was severely restricted in extension and right rotation, and moderately restricted in all remaining planes. No specific degree measurements were documented.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Level</th><th>Movement</th><th>Left</th><th>Right</th></tr></thead>
+<tbody>
+<tr><td>C5</td><td>Shoulder abduction (deltoid)</td><td>5/5</td><td>4/5 (with pain)</td></tr>
+<tr><td>C6</td><td>Elbow flexion / wrist extension</td><td>5/5</td><td>5/5</td></tr>
+<tr><td>C7</td><td>Elbow extension / wrist flexion</td><td>5/5</td><td>5/5</td></tr>
+<tr><td>C8</td><td>Finger flexion</td><td>5/5</td><td>5/5</td></tr>
+<tr><td>T1</td><td>Finger abduction</td><td>Not documented</td><td>Not documented</td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Neurological",
+        items: [
+          {
+            id: "foraminal_compression",
+            label: "Maximal Foraminal Compression Test (Spurling's)",
+            result: `<span class="tt pos">Positive</span> — bilaterally; exacerbated shoulder pain and paresthesia`,
+            documented: true,
+            rationale: "Given the patient's neck and shoulder pain with numbness, Spurling's test was clinically appropriate to assess for cervical neuroforaminal compromise. The bilateral positive finding pointed toward cervical nerve root involvement, supporting the initial working diagnosis of C6 radiculopathy — but the bilateral nature and distribution should have been a pause point."
+          },
+          {
+            id: "upper_limb_sensation",
+            label: "Upper limb dermatomal sensory testing",
+            result: `<span class="tt notable">Notable</span> — sensory loss in lateral shoulder region bilaterally consistent with axillary nerve/middle trunk distribution`,
+            documented: true,
+            rationale: "Sensory assessment was performed to characterise the neurological deficit. The distribution of sensory loss — lateral shoulder and upper arm — is consistent with the middle trunk of the brachial plexus (axillary and lateral cutaneous nerve territory), which is a common site of invasion in Pancoast tumours. This distribution is not typical of a simple cervical radiculopathy."
+          },
+          {
+            id: "deltoid_power",
+            label: "Deltoid strength (C5/axillary nerve)",
+            result: `<span class="tt pos">Positive</span> — 4/5 MRC grade right deltoid, with pain on testing`,
+            documented: true,
+            rationale: "Motor weakness of the right deltoid was a key examination finding. The deltoid is innervated by the axillary nerve, which arises from the posterior cord of the brachial plexus (middle trunk contribution). This weakness, combined with shoulder region sensory loss, is consistent with middle trunk brachial plexus compromise as occurs in Pancoast syndrome."
+          },
+          {
+            id: "horner_test",
+            label: "Horner's syndrome assessment (ptosis, miosis, anhidrosis)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Horner's syndrome — ptosis, miosis, and anhidrosis — results from involvement of the sympathetic chain and is a classic component of Pancoast syndrome. Its presence would have been highly specific for apical lung tumour. Given the extensive red flags present in this patient, a systematic screen for Horner's features should have been included in the initial examination and would have strengthened the case for urgent thoracic imaging."
+          },
+          {
+            id: "deep_tendon_reflexes",
+            label: "Upper limb deep tendon reflexes",
+            result: `Not specifically documented in published case`,
+            documented: false,
+            rationale: "DTR testing (biceps C5/6, brachioradialis C6, triceps C7) was not explicitly reported. In a patient with suspected cervical radiculopathy or brachial plexopathy, reflexes help localise the level and distinguish between root and plexus involvement. Absence or asymmetry would support brachial plexus pathology over a simple disc-related radiculopathy."
+          }
+        ]
+      },
+      {
+        group: "Orthopaedic / Special Tests",
+        items: [
+          {
+            id: "paraspinal_palpation",
+            label: "Paraspinal muscle palpation C5–T2 and rhomboids/teres minor",
+            result: `<span class="tt notable">Notable</span> — muscle hypertonicity throughout C5 to T2 paraspinals, rhomboids, and teres minor`,
+            documented: true,
+            rationale: "Hypertonicity in the paraspinal and scapular musculature from C5 to T2 was documented. While commonly associated with mechanical neck pain, the segmental distribution extending well into the upper thoracic spine should raise suspicion for a lesion at or near the thoracic apex rather than a purely cervical problem. The teres minor involvement is consistent with brachial plexus irritation."
+          },
+          {
+            id: "adson_test",
+            label: "Adson's Test (thoracic outlet)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Thoracic outlet tests such as Adson's assess for neurovascular compression at the thoracic outlet — a key differential for brachial plexopathy. Given the upper extremity neurological signs and shoulder symptoms, TOS screening would have been clinically justifiable and could have further shifted the differential toward a structural lesion at the lung apex."
+          },
+          {
+            id: "passive_shoulder_rom",
+            label: "Passive shoulder ROM and rotator cuff screen",
+            result: `Not formally documented in published case`,
+            documented: false,
+            rationale: "A shoulder screen was not formally documented. Given that shoulder pain is the most common initial symptom of Pancoast tumour, and many of these patients are initially managed for rotator cuff pathology, a thorough shoulder assessment is essential. Intact passive ROM and absence of a painful arc would help exclude primary shoulder pathology and redirect clinical reasoning toward a cervical or apical source."
+          }
+        ]
+      },
+      {
+        group: "Red Flag Screening",
+        items: [
+          {
+            id: "weight_loss_screen",
+            label: "Systemic red flag screening (unexplained weight loss, night sweats, fatigue)",
+            result: `<span class="tt notable">Notable</span> — hoarseness endorsed; bowel/bladder symptoms denied`,
+            documented: true,
+            rationale: "Hoarseness can result from recurrent laryngeal nerve involvement by an apical lung mass — a specific red flag for Pancoast or mediastinal tumour. While the patient denied other systemic symptoms, the presence of hoarseness in a heavy smoker with active TB should have further elevated clinical suspicion for malignancy."
+          },
+          {
+            id: "smoking_tb_risk",
+            label: "Smoking and tuberculosis history documentation",
+            result: `<span class="tt notable">Notable</span> — 50-pack-year smoking history; active TB on directly observed therapy`,
+            documented: true,
+            rationale: "Thorough red flag history-taking identified two independent risk factors for lung cancer: heavy smoking and active tuberculosis. TB confers a hazard ratio of approximately 1.6 for lung cancer development. In combination with the family history of lung cancer, these factors made the case for early and urgent imaging compelling even in the absence of respiratory symptoms."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination strategy was initially guided by the most clinically parsimonious hypothesis: C6 cervical radiculopathy, given neck pain, shoulder pain and numbness, and right deltoid weakness. However, the bilateral nature of Spurling's provocation, the sensory distribution implicating the middle brachial plexus trunk rather than a single nerve root, and the extensive red flag profile (smoking, TB, hoarseness, family history, treatment non-response) collectively warranted urgent imaging even before a trial of care. The chiropractor appropriately ordered cervical MRI on the first visit. When a small C6–7 disc protrusion failed to fully account for the clinical picture and symptoms did not respond to care, a second-step thoracic MRI was ordered, ultimately revealing the Pancoast tumour."
+  },
+  investigations: {
+    options: [
+      {
+        id: "cervical_mri",
+        label: "Cervical spine MRI",
+        consequence: null,
+        ordered: true,
+        result: `<p>Cervical spine MRI revealed a small disc protrusion at C6–7 without significant central canal or neuroforaminal stenosis. No serious cervical pathology identified. The disc was considered a possible correlate for radicular symptoms, and a trial of chiropractic care commenced.</p>`
+      },
+      {
+        id: "thoracic_mri",
+        label: "Thoracic spine MRI",
+        consequence: null,
+        ordered: true,
+        result: `<p>Thoracic MRI (ordered 1 week after initial presentation due to failure to respond to care) revealed an abnormal mass in the medial right lung apex and superior mediastinum, extending into the right paraspinal region and infiltrating the upper to mid-thoracic vertebrae (T1–T6). The radiologist raised the possibility of a Pancoast tumour and recommended urgent further evaluation.</p>
+<p>Subsequent CT-guided fine-needle aspiration confirmed adenocarcinoma histopathology. Full-spine MRI with gadolinium demonstrated right epidural extension at T2/3–T5/6 causing cord compression, vertebral necrosis T1–T6, and erosion of the right 3rd–5th ribs.</p>`
+      },
+      {
+        id: "chest_xray",
+        label: "Plain chest radiograph (AP ± apical lordotic view)",
+        consequence: "This investigation was not ordered at the initial chiropractic visit — the patient already had a recent chest X-ray from his TB follow-up that was interpreted as showing pneumonic changes in the right upper zone. An apical lordotic view is the recommended plain film technique for detecting Pancoast tumours, as standard AP views can obscure the lung apex behind the clavicle. The prior report missed the tumour, illustrating the limitations of plain film in this region.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "emg_nerve_conduction",
+        label: "Electromyography / nerve conduction studies",
+        consequence: "EMG/NCS was not performed. It would have helped localise the lesion to the brachial plexus (middle/inferior trunk) rather than the cervical nerve roots, and would have provided objective evidence of axonal injury or demyelination in the affected territories. In retrospect, brachial plexus involvement was inferred from clinical and imaging findings alone.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Pancoast Tumour (Superior Sulcus Lung Adenocarcinoma)",
+        correct: true,
+        blurb: "The correct diagnosis. The patient's unilateral right deltoid weakness, bilateral shoulder and posterior neck numbness, restricted cervical ROM, paraspinal hypertonicity extending to T2, failure of all prior conservative care, 50-pack-year smoking history, active TB, and hoarseness collectively constitute a Pancoast syndrome presentation. The tumour invaded the brachial plexus (middle trunk — axillary nerve and lateral cutaneous nerve), explaining the deltoid weakness and lateral shoulder sensory loss. The small C6–7 disc protrusion was an incidental finding."
+      },
+      {
+        label: "Cervical Disc Herniation with C6 Radiculopathy",
+        correct: false,
+        blurb: "The initial working diagnosis. The C6–7 disc protrusion on MRI was thought to correlate with shoulder pain, arm numbness, and deltoid weakness. However, a disc protrusion without significant neuroforaminal stenosis does not adequately explain bilateral symptoms, middle trunk brachial plexus distribution of sensory loss, or the extensive paraspinal hypertonicity from C5 to T2. Failure to respond to a trial of directed care was the key clinical signal that the diagnosis was incomplete."
+      },
+      {
+        label: "Spinal Tuberculosis (Pott's Disease)",
+        correct: false,
+        blurb: "Considered early in the differential given the patient's active TB. Pott's disease can cause neck pain, radiculopathy, and myelopathy from vertebral body destruction and epidural abscess. However, the patient's cervical MRI did not show vertebral body involvement or epidural collections, and the TB was being treated with directly observed therapy. The ultimate diagnosis of primary lung adenocarcinoma (not TB) was confirmed by histopathology."
+      },
+      {
+        label: "Thoracic Outlet Syndrome",
+        correct: false,
+        blurb: "TOS can compress brachial plexus trunks causing shoulder, neck, and arm pain with upper limb neurological deficit, mimicking this presentation closely. However, TOS is a diagnosis of exclusion in a patient with this red flag profile, and the advanced imaging finding of an apical thoracic mass was conclusive. TOS does not explain the imaging abnormalities, the smoking and TB risk factors, or the hoarseness."
+      },
+      {
+        label: "Cervical Spondylotic Radiculopathy",
+        correct: false,
+        blurb: "Degenerative spondylosis at C5–7 commonly causes neck, shoulder, and arm symptoms consistent with this presentation. However, the MRI showed only a small disc protrusion without significant neuroforaminal stenosis, which would be unlikely to produce the degree of motor weakness and sensory deficit documented. The bilateral symptoms, failure of conservative care, and red flag history make spondylosis an inadequate diagnosis."
+      },
+      {
+        label: "Brachial Neuritis (Parsonage-Turner Syndrome)",
+        correct: false,
+        blurb: "Brachial neuritis presents with acute severe shoulder and arm pain followed by weakness and atrophy, sometimes with a viral or post-vaccination precipitant. It can cause deltoid weakness and brachial plexus involvement. However, the insidious onset over one month, the 8/10 ongoing pain severity, the presence of systemic red flags (smoking, TB, weight loss risk), and the MRI findings are not consistent with this diagnosis."
+      },
+      {
+        label: "Metastatic Spinal Disease",
+        correct: false,
+        blurb: "Given the patient's TB history and family history of lung cancer, spinal metastasis was a reasonable concern. Metastatic disease can cause posterior neck and shoulder pain with neurological deficit. However, the confirmed primary diagnosis was a Pancoast tumour with direct spinal invasion rather than haematogenous metastasis — the tumour invaded the thoracic vertebrae from the apex, not through bloodborne spread. The distinction matters for staging and surgical planning."
+      },
+      {
+        label: "Rotator Cuff Pathology",
+        correct: false,
+        blurb: "Shoulder pain is the most common initial symptom of Pancoast tumour, and many patients are initially investigated and treated for rotator cuff disease before the correct diagnosis is reached. In this case, shoulder pain with restricted ROM could superficially suggest rotator cuff involvement. However, the neurological deficits (motor weakness, dermatomal sensory loss), bilateral nature, neck involvement, and systemic red flags would not be explained by a primary shoulder lesion."
+      }
+    ],
+    explanation: `<p>This case is a classic example of Pancoast tumour presenting to a chiropractic clinic with a plausibly mechanical neck and shoulder complaint. The critical diagnostic pivot was the combination of: (1) extensive red flags (smoking, TB, family history of lung cancer, hoarseness); (2) neurological findings implicating the brachial plexus middle trunk rather than a single cervical nerve root; (3) the small and non-compressive cervical disc protrusion on MRI being insufficient to explain the clinical picture; and (4) failure to respond to a directed trial of care.</p>
+<p>The chiropractor appropriately applied a two-stage imaging strategy. When cervical MRI did not fully explain the symptoms, thoracic MRI was urgently arranged. This second imaging step identified the apical thoracic mass and led to timely referral and histopathological diagnosis of lung adenocarcinoma. Gentle non-thrust mobilisation techniques (rather than high-velocity manipulation) were appropriately applied as a precaution pending imaging results, given the extensive red flag profile.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "urgent_cervical_mri",
+        label: "Order urgent cervical spine MRI on the first visit",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Given the patient's extensive red flag profile — severe pain, neurological deficit, active TB, smoking history, family history of lung cancer, hoarseness, and failure of prior care — urgent cervical MRI on day one was clinically justified and consistent with imaging guidelines. This was the correct first-line investigation even before initiating any manual therapy.`
+      },
+      {
+        id: "gentle_manual_therapy",
+        label: "Gentle non-thrust mobilisation and soft tissue therapy as a precautionary trial",
+        selected: true,
+        explanation: `<strong>Appropriate (with caution).</strong> The chiropractor applied instrument-assisted soft tissue work, non-thrust joint mobilisation, and flexion-distraction — deliberately avoiding high-velocity spinal manipulation given the red flag profile and pending imaging. This was a clinically appropriate precautionary approach. High-velocity manipulation to the cervical or thoracic spine would have been contraindicated once spinal malignancy was confirmed.`
+      },
+      {
+        id: "escalate_thoracic_mri",
+        label: "Order thoracic MRI after failure to respond to initial care",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> When cervical MRI failed to fully explain the clinical picture and the patient did not achieve lasting improvement after four treatment sessions, escalating to thoracic MRI was the correct decision. This second imaging step identified the Pancoast tumour. The clinical reasoning — incomplete cervical explanation + red flag profile + non-response to care — was sound and resulted in an accurate and timely diagnosis.`
+      },
+      {
+        id: "hvla_cervical_manipulation",
+        label: "High-velocity low-amplitude cervical spine manipulation",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> HVLA cervical manipulation is contraindicated in patients with known or suspected spinal malignancy. In this patient, even before imaging was complete, the extensive red flag profile (TB, smoking, family history, neurological deficits, hoarseness) made HVLA manipulation an unacceptably risky option. The chiropractor correctly chose gentle, non-thrust techniques while awaiting MRI results.`
+      },
+      {
+        id: "watchful_wait",
+        label: "Commence a 4–6 week trial of care before considering imaging",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> A watchful wait approach without prompt imaging would have been dangerous in this patient. The combination of neurological motor deficit, bilateral symptoms, severe unremitting pain, active TB, 50-pack-year smoking, and hoarseness constitutes a high-risk red flag cluster that mandates urgent investigation. Delayed diagnosis of Pancoast tumour is associated with significantly worse outcomes due to spinal invasion and cord compression.`
+      }
+    ],
+    outcomeText: "The patient was referred to the chest hospital following the thoracic MRI report. CT-guided fine-needle aspiration confirmed adenocarcinoma. The tumour was deemed inoperable due to extensive spinal necrosis from T1–T6 and cord compression. The patient received oral dexamethasone, radiotherapy, and ongoing chemotherapy. At 2-month follow-up, the patient reported less severe pain and improved sleep, though he still experienced severe pain on waking for 2–3 hours each morning."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Pancoast Tumour</strong><br>Superior sulcus lung adenocarcinoma with brachial plexus and thoracic spinal invasion",
+    outcomes: [
+      { label: "Published Source", text: "Chu et al. Am J Case Rep. 2022;23:e937052" },
+      { label: "PMID / PMC", text: "PMID: 35797264 — PMC9274787 (open access)" },
+      { label: "Final Diagnosis", text: "Pancoast tumour (lung adenocarcinoma) with T1–T6 vertebral invasion and cord compression" },
+      { label: "Intervention", text: "Referral for oncology management; radiotherapy and chemotherapy; ineligible for spinal surgery due to extent of invasion" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Pancoast tumours present with shoulder, neck, and upper extremity symptoms that can closely mimic cervical radiculopathy or thoracic outlet syndrome. In any patient with shoulder and neck symptoms plus neurological deficit, the clinical red flag profile must be comprehensively assessed before committing to a musculoskeletal diagnosis." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "The cervical disc protrusion at C6–7 was a genuine red herring — a small, non-compressive disc finding that coincidentally existed alongside the Pancoast tumour. Anchoring on the MRI finding and proceeding with a cervical diagnosis would have delayed the correct diagnosis. Non-response to appropriate care is always a signal to reconsider, not to continue." },
+      { type: "pearl", tag: "Clinical Pearl", text: "When cervical MRI does not adequately explain the clinical picture in a patient with brachial plexus-distribution neurological findings and upper thoracic involvement, thoracic and/or brachial plexus MRI should be considered as next steps. The apical lung and superior mediastinum are outside the field of a standard cervical MRI series." },
+      { type: "key", tag: "Scope of Practice", text: "This case demonstrates excellent chiropractic scope-of-practice reasoning: gentle techniques were used as a precaution pending imaging, imaging was ordered at the first visit given the red flag profile, and referral was made immediately once the thoracic MRI was reported. Chiropractors must recognise when their role transitions from treatment provider to diagnostic gatekeeper." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Standard chest X-ray can miss apical lung lesions — in this case, serial chest X-rays during TB follow-up failed to identify the tumour. The apical lordotic view improves sensitivity, but MRI of the thorax is required to characterise brachial plexus and spinal involvement. The presence of 'pneumonic changes' on a chest X-ray in a smoker with TB does not exclude concurrent malignancy." }
+    ]
+  },
+  cpd: {
+    topics: "Pancoast tumour, superior sulcus tumour, brachial plexopathy, red flags in neck pain, chiropractic differential diagnosis, imaging decision-making, lung cancer risk factors",
+    keyPoints: [
+      "Pancoast tumours present with shoulder, neck, and upper extremity pain that strongly mimics musculoskeletal conditions, making them a critical diagnosis to consider in patients with upper extremity neurological signs and a smoking history.",
+      "Active tuberculosis is an independent risk factor for lung cancer (hazard ratio ~1.6) and should be recognised as a red flag in patients presenting with spinal and shoulder symptoms.",
+      "Standard cervical MRI covers only the cervical spine; apical lung and superior mediastinal lesions require thoracic MRI or CT for detection — the field of view must match the clinical question.",
+      "Non-response to a directed, appropriate trial of conservative care is a clinically significant finding that should prompt reassessment of the working diagnosis, not continuation of the same treatment.",
+      "High-velocity spinal manipulation is contraindicated in the presence of known or suspected spinal malignancy; gentle non-thrust techniques are appropriate as a precautionary measure while awaiting imaging results."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 018 — Cervical Spinal Ependymoma with Subtle Neurological Findings
+// Source: Poppen et al. J Can Chiropr Assoc. 2024;68(1):58-67. PMID: 38840970 PMC: PMC11149687
+// ─────────────────────────────────────────────
+{
+  id: "018",
+  title: "A 67-year-old male veteran presents with 6 months of insidious neck pain and reports a single episode of bladder incontinence and mild clumsiness of his hands",
+  category: "Neuro",
+  secondaryCategory: "Red Flag",
+  difficulty: "Advanced",
+  estimatedTime: "25–35 min",
+  source: {
+    short: "Poppen et al.\nJ Can Chiropr Assoc. 2024;68(1):58-67\nPMID: 38840970\nPMC: PMC11149687\nOpen access ✓",
+    full: "Poppen O, Troutner A, Farrell C, Rae L. Spinal ependymoma presenting as subtle neurological findings in a VA chiropractic clinic: a case report in differential diagnosis and appropriate use of diagnostic imaging. J Can Chiropr Assoc. 2024;68(1):58-67. PMID: 38840970; PMCID: PMC11149687."
+  },
+  patient: {
+    ageSex: "67-year-old male",
+    chiefComplaint: "Insidious neck pain with mild bilateral upper extremity dexterity changes",
+    duration: "6 months",
+    priorProviders: "VA primary care physician",
+    priorDiagnoses: "Not established prior to chiropractic presentation"
+  },
+  history: {
+    content: `<p>A 67-year-old male Veteran presented to a Veterans Affairs (VA) outpatient chiropractic clinic with a 6-month insidious onset of neck pain. On history, he described experiencing a sensation consistent with Lhermitte's sign — an electrical shock-like sensation radiating down the spine and into the limbs — which he reported as occurring with active cervical movement and with a Slump-type position rather than with passive cervical flexion in the classical provocation position.</p>
+<p>He reported a single episode of bladder incontinence approximately one week prior to presentation, which had not recurred. He also endorsed mild changes in his bilateral upper extremity manual dexterity — subtle difficulty with fine motor tasks. The patient was neurologically intact on examination, with no frank motor weakness, sensory loss, or reflex abnormality documented.</p>
+<p>Vitamin B12 was assessed and found to be within normal limits, removing a common cause of peripheral and central neurological symptoms from the differential. Past medical history was consistent with age but no specific systemic conditions were documented as contributing to the presentation.</p>`,
+    clinicalNote: "The diagnostic challenge here is the subtlety of the presentation. The patient was neurologically intact on formal examination — yet the history contained three individually ambiguous but collectively compelling signals: (1) Lhermitte's sign on history (even if inconsistently provokable); (2) a single episode of bladder incontinence; and (3) mild bilateral upper limb dexterity changes. No single finding demands urgent action; together they constitute a pattern of myelopathic change requiring MRI. The inconsistency in Lhermitte's provocation (active/slump-positive but passive cervical flexion-negative) should not be used to dismiss the finding — it adds diagnostic ambiguity but not safety."
+  },
+  examination: {
+    autoROM: `<p>Specific cervical ROM measurements were not documented in the published case. The history described Lhermitte's sign reproduced with active cervical range of motion and Slump testing, but not with traditional passive cervical flexion provocation. This inconsistency was noted as contributing to diagnostic ambiguity.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Level</th><th>Movement</th><th>Left</th><th>Right</th></tr></thead>
+<tbody>
+<tr><td colspan="4" style="text-align:center; font-style:italic;">Myotome testing not individually documented in the published case. Patient described as neurologically intact on formal examination with no frank motor weakness identified.</td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Neurological",
+        items: [
+          {
+            id: "lhermitte_passive",
+            label: "Lhermitte's Sign — passive cervical flexion provocation",
+            result: `<span class="tt neg">Negative</span> — not reproduced with traditional passive cervical flexion`,
+            documented: true,
+            rationale: "Lhermitte's sign classically involves passive cervical flexion producing a shock-like sensation radiating down the spine. In this patient, passive flexion did NOT reproduce the sign — a source of diagnostic ambiguity. This created uncertainty about whether a true Lhermitte's response was present. However, the patient described the sensation with active movement and slump testing, suggesting the pathological pathway was present but the standard provocation was insufficient to trigger it."
+          },
+          {
+            id: "lhermitte_active",
+            label: "Lhermitte's Sign — active cervical movement and Slump testing",
+            result: `<span class="tt pos">Positive</span> — electrical shock-like sensation reproduced with active cervical motion and Slump test position`,
+            documented: true,
+            rationale: "The reproduction of Lhermitte's sign with active cervical movement and slump testing, even if not with the classical passive provocation, is clinically significant. Lhermitte's sign indicates cervical spinal cord or dorsal column sensitivity and its differential diagnosis includes cervical myelopathy, multiple sclerosis, intradural tumours, and other CNS pathology. Any positive Lhermitte's response — regardless of the provocation method — mandates further investigation."
+          },
+          {
+            id: "hoffman_sign",
+            label: "Hoffman's Sign (bilateral)",
+            result: `Not documented in published case`,
+            documented: false,
+            rationale: "Hoffman's sign is a pathological upper motor neuron reflex indicating corticospinal tract involvement. In a patient with suspected myelopathy, bilateral Hoffman's testing should be included as a standard screening tool. Its presence would have strongly supported the need for urgent MRI. The absence of documentation does not exclude it from being performed; it would have been a clinically essential test in this presentation."
+          },
+          {
+            id: "upper_limb_dtrs",
+            label: "Upper limb deep tendon reflexes (biceps, brachioradialis, triceps)",
+            result: `Not individually documented; patient described as neurologically intact`,
+            documented: false,
+            rationale: "DTR examination is standard in any neurological evaluation. Hyperreflexia or clonus in the upper limbs would confirm UMN involvement and myelopathic change. Normal DTRs do not exclude myelopathy — cervical cord tumours can present with preserved reflexes early in their course — but pathological hyperreflexia would have shifted the urgency of imaging decisively."
+          },
+          {
+            id: "lower_limb_dtrs_clonus",
+            label: "Lower limb deep tendon reflexes and ankle clonus",
+            result: `Not individually documented; patient described as neurologically intact`,
+            documented: false,
+            rationale: "Lower limb hyperreflexia and ankle clonus are hallmark UMN signs in cervical myelopathy. Their absence at this stage is consistent with a relatively early or slowly expanding lesion. Testing these reflexes should be routine in any patient presenting with Lhermitte's sign, bladder symptoms, or hand dexterity changes, as they may reveal subclinical myelopathic changes not yet apparent on history."
+          },
+          {
+            id: "dexterity_testing",
+            label: "Fine motor dexterity assessment (grip, pinch, rapid alternating movements)",
+            result: `<span class="tt notable">Notable</span> — mild bilateral upper extremity manual dexterity changes reported on history; formally tested as part of clinical assessment`,
+            documented: true,
+            rationale: "Mild bilateral dexterity changes — difficulty with fine motor tasks — were documented as a historical finding and formed part of the clinical picture that prompted MRI referral. Loss of manual dexterity is a recognised early sign of cervical cord compromise. Combined with the Lhermitte's sign history and bladder episode, this triad represented a myelopathic symptom pattern that could not be safely attributed to a benign mechanical cause."
+          }
+        ]
+      },
+      {
+        group: "Functional Screening",
+        items: [
+          {
+            id: "gait_assessment",
+            label: "Gait assessment (tandem, heel-toe walking)",
+            result: `Not documented in published case`,
+            documented: false,
+            rationale: "Gait assessment is a sensitive screening tool for myelopathy. Spastic or broad-based gait, impaired tandem walking, or difficulty with heel-toe walking reflects dorsal column and corticospinal tract involvement. In a patient with bladder symptoms and hand dexterity changes, a gait assessment should be routine and would have added important functional evidence of cord compromise."
+          },
+          {
+            id: "bladder_bowel_screen",
+            label: "Bladder and bowel function screening",
+            result: `<span class="tt notable">Notable</span> — single episode of bladder incontinence one week prior; no recurrence`,
+            documented: true,
+            rationale: "Bladder incontinence is a recognised red flag for myelopathy and spinal cord compromise. Although a single episode without recurrence creates diagnostic uncertainty, any episode of bladder dysfunction in the context of cervical spine symptoms and neurological change must be treated seriously. Sphincter dysfunction results from long-tract involvement and indicates cord pathology rather than nerve root disease."
+          }
+        ]
+      }
+    ],
+    contextText: "This case is a masterclass in recognising a subtle myelopathic pattern. The key examination features — atypical Lhermitte's sign reproduction (active/slump but not passive flexion), mild bilateral dexterity changes, and a single episode of bladder incontinence — are each individually ambiguous but collectively form a compelling picture of cervical cord compromise. Vitamin B12 was appropriately checked and was normal, removing a key alternative cause. The patient was neurologically intact on formal motor and sensory testing, which could have falsely reassured. The decision to proceed with MRI — based on the pattern of historical findings rather than hard neurological deficits — was the clinically correct and timely one."
+  },
+  investigations: {
+    options: [
+      {
+        id: "brain_cervical_mri",
+        label: "Brain and cervical spine MRI",
+        consequence: null,
+        ordered: true,
+        result: `<p>MRI of the brain and cervical spine revealed an intraspinal cystic mass extending from mid-C4 to C7, measuring 4.9 cm × 1.4 cm × 0.9 cm. Oedema was present above and below the mass levels. The neurosurgeon described the mass as expansive and taking up "pretty much all of the spinal canal."</p>
+<p>A hemosiderin cap — a T2-hypointense rim from prior haemorrhage — was present at the caudal margin of the mass, which is found in 20–33% of ependymomas and indicates this as the most likely diagnosis. The brain MRI was unremarkable.</p>`
+      },
+      {
+        id: "vitamin_b12",
+        label: "Serum Vitamin B12",
+        consequence: null,
+        ordered: true,
+        result: `<p>Vitamin B12 was within normal limits. This effectively excluded subacute combined degeneration of the spinal cord (SACD) as a cause of the neurological symptoms, which can cause Lhermitte's sign and long-tract findings.</p>`
+      },
+      {
+        id: "cervical_xray",
+        label: "Cervical spine plain radiographs",
+        consequence: "Plain radiographs of the cervical spine were not ordered and would have had limited diagnostic value for an intradural intramedullary tumour. Bony changes (widened spinal canal, vertebral scalloping) can occasionally be seen with large intramedullary lesions but are not sensitive or specific. MRI is the investigation of choice for suspected cord pathology.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "ms_workup",
+        label: "Multiple sclerosis workup (oligoclonal bands, evoked potentials)",
+        consequence: "MS workup was not performed at the chiropractic stage — appropriately, as MRI was the correct first-line investigation. MS is a key differential for Lhermitte's sign and its exclusion would typically occur after MRI demonstrates demyelinating plaques or fails to show an alternative cause. The MRI finding of an intramedullary mass with hemosiderin cap effectively directed the differential away from MS.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Cervical Spinal Ependymoma (Intramedullary)",
+        correct: true,
+        blurb: "The correct diagnosis. The intraspinal cystic mass from C4–C7 with a hemosiderin cap on MRI is characteristic of ependymoma — the hemosiderin cap is present in 20–33% of ependymomas and results from prior haemorrhage within the tumour. The insidious 6-month progression, Lhermitte's sign, mild dexterity changes, and single bladder event are consistent with a slowly expanding intramedullary lesion."
+      },
+      {
+        label: "Cervical Spondylotic Myelopathy",
+        correct: false,
+        blurb: "The most common cause of cervical myelopathy in older adults and a reasonable first consideration. CSM can produce Lhermitte's sign, dexterity changes, and bladder symptoms. However, the MRI demonstrated an intramedullary cystic mass rather than external cord compression from osteophytes or disc material. The age of the patient and insidious onset may have initially supported CSM, but the MRI findings are definitive."
+      },
+      {
+        label: "Multiple Sclerosis",
+        correct: false,
+        blurb: "MS is an important differential for Lhermitte's sign. Demyelinating plaques in the posterior cervical cord produce this sign in MS, as does cervical cord compression. At 67, a new diagnosis of MS would be atypical (MS more commonly presents in the third and fourth decades), but cannot be excluded on clinical grounds alone. The MRI revealed a discrete intramedullary mass rather than periventricular or cord plaques, making MS highly unlikely."
+      },
+      {
+        label: "Subacute Combined Degeneration (B12 Deficiency)",
+        correct: false,
+        blurb: "Vitamin B12 deficiency causes demyelination of the dorsal and lateral columns, producing Lhermitte's sign, gait ataxia, and bilateral upper limb sensory changes. This was appropriately excluded by a normal B12 level. SACD would typically show bilateral symmetric dorsal column changes on MRI without a discrete intramedullary mass."
+      },
+      {
+        label: "Cervical Astrocytoma",
+        correct: false,
+        blurb: "Astrocytoma is the main differential for an intramedullary cervical cord tumour. Ependymomas tend to be centrally located within the cord, well-circumscribed, and associated with haemosiderin caps; astrocytomas are more infiltrative and poorly defined. The hemosiderin cap on MRI in this case favoured ependymoma over astrocytoma, and histopathology confirmed the diagnosis."
+      },
+      {
+        label: "Cervical Cord Haemangioblastoma",
+        correct: false,
+        blurb: "Haemangioblastoma is a vascular intramedullary tumour that can present similarly to ependymoma, including with cystic components and Lhermitte's sign. It is less common than ependymoma and may be associated with von Hippel-Lindau disease. The MRI characteristics and pathological confirmation in this case support ependymoma as the final diagnosis."
+      },
+      {
+        label: "Mechanical Neck Pain",
+        correct: false,
+        blurb: "Mechanical neck pain was the presenting complaint and a reasonable initial consideration. However, Lhermitte's sign — in any provocation form — is not a feature of mechanical neck pain and always warrants further investigation. The combination of Lhermitte's sign, bladder incontinence, and bilateral dexterity changes cannot be attributed to a benign mechanical diagnosis regardless of the patient's age."
+      },
+      {
+        label: "Transverse Myelitis",
+        correct: false,
+        blurb: "Transverse myelitis causes acute or subacute spinal cord dysfunction with sensory, motor, and autonomic involvement. It can present with Lhermitte's sign and bladder symptoms. However, transverse myelitis is typically more rapid in onset and progression than this 6-month insidious course, and the MRI demonstrates cord oedema or signal change rather than a discrete tumour mass with a hemosiderin cap."
+      }
+    ],
+    explanation: `<p>This case illustrates the diagnostic challenge of a spinal ependymoma presenting with subtle, individually ambiguous neurological symptoms in a patient who is otherwise neurologically intact on formal examination. The three key historical findings — atypical Lhermitte's sign provocation, a single episode of bladder incontinence, and mild bilateral hand dexterity changes — each individually lack specificity. Together, they form a myelopathic symptom pattern that demands investigation.</p>
+<p>The clinical pivot was the chiropractor's recognition that the inconsistency in Lhermitte's provocation (positive with active movement and slump, but negative with classical passive flexion) did not negate the clinical significance of the symptom. Rather than dismissing it, the clinician treated any history of Lhermitte's sign as an indication for MRI. Vitamin B12 was appropriately screened as an alternative cause. MRI revealed a large cystic intramedullary mass from C4–C7 with a hemosiderin cap, leading to urgent neurosurgical referral and surgical management.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "mri_brain_cervical",
+        label: "Refer for brain and cervical spine MRI based on subtle myelopathic history",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> The chiropractor correctly identified that the combination of Lhermitte's sign history, bladder incontinence, and dexterity changes — even in a neurologically intact patient — constituted sufficient clinical concern to warrant MRI. This decision was made before initiating manual therapy, which was the correct sequence given the clinical picture.`
+      },
+      {
+        id: "b12_screen",
+        label: "Order serum Vitamin B12",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> B12 deficiency (subacute combined degeneration) is an important and treatable cause of Lhermitte's sign and bilateral neurological symptoms. Screening B12 was a low-cost, clinically sound decision that appropriately excluded this alternative before imaging was pursued. A normal result strengthened the indication for structural imaging.`
+      },
+      {
+        id: "immediate_discharge_cervical_collar",
+        label: "Immediate discharge from chiropractic care and urgent neurosurgical referral on MRI result",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Upon review of the MRI showing a large intramedullary cystic mass occupying essentially the entire spinal canal at C4–C7, the patient was immediately discharged from the chiropractic clinic, a cervical collar was applied, and an urgent neurosurgical referral was made. This was the only appropriate response to this imaging finding.`
+      },
+      {
+        id: "trial_manipulation",
+        label: "Commence cervical spinal manipulation for mechanical neck pain while awaiting MRI",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> Cervical spinal manipulation in a patient with any form of Lhermitte's sign history, bladder symptoms, and bilateral hand dexterity changes would carry an unacceptable risk of neurological injury. An intramedullary cord tumour of this size occupying the entire spinal canal represents an absolute contraindication to manipulation. The MRI must be reviewed before any manual therapy is considered.`
+      },
+      {
+        id: "observe_reassure",
+        label: "Reassure the patient and review in 4 weeks given neurologically intact examination",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> A neurologically intact examination does not override the clinical significance of Lhermitte's sign, bladder incontinence, and bilateral dexterity changes. These are myelopathic symptoms that require structural imaging regardless of the formal neurological examination findings. A 4-week delay in this case would have been a missed opportunity for timely neurosurgical management of a large cord tumour.`
+      }
+    ],
+    outcomeText: "MRI revealed a large intramedullary cystic mass from C4–C7 measuring 4.9 × 1.4 × 0.9 cm with a hemosiderin cap, occupying essentially the entire spinal canal. The patient was immediately discharged from the chiropractic clinic, fitted with a cervical collar, and received an urgent neurosurgical referral from his primary care provider. He subsequently underwent C3–C7 laminectomy, C3–T2 fusion, and tumour resection. Pathological diagnosis confirmed ependymoma."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Cervical Spinal Ependymoma</strong><br>Intramedullary cystic tumour C4–C7 with hemosiderin cap",
+    outcomes: [
+      { label: "Published Source", text: "Poppen et al. J Can Chiropr Assoc. 2024;68(1):58-67" },
+      { label: "PMID / PMC", text: "PMID: 38840970 — PMC11149687 (open access)" },
+      { label: "Final Diagnosis", text: "Intramedullary cervical spinal ependymoma, C4–C7" },
+      { label: "Intervention", text: "C3–C7 laminectomy, C3–T2 fusion, and tumour resection" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "A neurologically intact examination does not exclude a significant spinal cord lesion. Ependymomas are slow-growing and patients can remain without hard neurological deficits for months while the tumour expands. A myelopathic symptom pattern on history — particularly Lhermitte's sign plus bladder dysfunction plus bilateral hand changes — mandates MRI regardless of examination findings." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Atypical provocation of Lhermitte's sign (reproduced with active movement and slump but not classical passive flexion) can be dismissed as ambiguous or non-specific. This ambiguity should not be reassuring — any credible history of Lhermitte's sign should be treated as clinically significant and investigated. The inconsistency in provocation reflects the complexity of cord compression mechanics, not an absence of pathology." },
+      { type: "pearl", tag: "Clinical Pearl", text: "The hemosiderin cap on MRI — a T2-hypointense rim at the caudal pole of an intramedullary lesion — is present in 20–33% of ependymomas and indicates prior intratumoral haemorrhage. Recognition of this MRI feature helps distinguish ependymoma from astrocytoma, which is more infiltrative and typically lacks a haemosiderin cap." },
+      { type: "key", tag: "Scope of Practice", text: "This case demonstrates a textbook example of appropriate imaging utilisation at the chiropractic primary contact level. The chiropractor recognised myelopathic signals, referred for MRI before initiating manual therapy, applied a cervical collar, and escalated care urgently on receiving the imaging result. Chiropractors must have the clinical confidence to act on subtle historical findings even in the absence of hard neurological deficits." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Ependymomas are intramedullary tumours and will not be visible on plain radiographs. Cervical X-ray is not an appropriate investigation for suspected myelopathy. MRI of the brain and cervical spine is the gold standard and should be the first-line imaging investigation when myelopathy is suspected. Delayed diagnosis (mean duration 40 months in some series) is associated with worse functional outcomes." }
+    ]
+  },
+  cpd: {
+    topics: "Cervical myelopathy, ependymoma, Lhermitte's sign, intramedullary spinal cord tumour, MRI decision-making, neurological red flags",
+    keyPoints: [
+      "Lhermitte's sign — electrical shock radiating down the spine with neck movement — is a myelopathic symptom with a broad differential including ependymoma, MS, CSM, and B12 deficiency; it always warrants investigation.",
+      "A single episode of bladder incontinence in a patient with cervical spine symptoms is a red flag for cord compromise and cannot be attributed to benign causes without imaging.",
+      "Ependymomas are the most common intramedullary spinal cord tumour in adults; they often present insidiously and patients can remain neurologically intact on formal examination while the lesion expands.",
+      "The hemosiderin cap on MRI (T2-hypointense caudal rim) is a characteristic feature of ependymoma, distinguishing it from astrocytoma, and is present in 20–33% of cases.",
+      "Cervical spinal manipulation is absolutely contraindicated in the presence of any myelopathic symptom pattern pending MRI review; the potential for catastrophic neurological injury in a patient with a large intramedullary cord tumour is unacceptable."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 019 — Recurrent Lumbar Disc Herniation with Epidural Fibrosis Post-Discectomy
+// Source: Welk et al. J Chiropr Med. 2012;11(4):249-53. PMID: 23843756 PMC: PMC3706706
+// ─────────────────────────────────────────────
+{
+  id: "019",
+  title: "A 24-year-old male presents with new-onset low back pain and right leg pain 8 months after lumbar spine surgery",
+  category: "Post-surgical",
+  secondaryCategory: "Lumbar",
+  difficulty: "Intermediate",
+  estimatedTime: "15–20 min",
+  source: {
+    short: "Welk et al.\nJ Chiropr Med. 2012;11(4):249-53\nPMID: 23843756\nPMC: PMC3706706\nOpen access ✓",
+    full: "Welk AB, Werdehausen DN, Kettner NW. Conservative management of recurrent lumbar disk herniation with epidural fibrosis: a case report. J Chiropr Med. 2012;11(4):249-53. doi: 10.1016/j.jcm.2012.10.002. PMID: 23843756; PMCID: PMC3706706."
+  },
+  patient: {
+    ageSex: "24-year-old male",
+    chiefComplaint: "Low back pain with right lower limb radiculopathy",
+    duration: "New onset (acute-on-post-surgical)",
+    priorProviders: "Neurosurgeon (prior L5/S1 lumbar discectomy 8 months prior)",
+    priorDiagnoses: "Prior L5/S1 disc herniation requiring discectomy; new presentation post-operatively"
+  },
+  history: {
+    content: `<p>A 24-year-old male presented with new-onset low back pain and right lower limb radiculopathy. He had undergone lumbar discectomy at L5/S1 approximately 8 months prior for a primary disc herniation with radiculopathy. Following surgery, the patient had achieved symptomatic improvement before the onset of the current episode.</p>
+<p>The new presentation involved low back pain with pain radiating into the right lower extremity in a dermatomal distribution consistent with S1 involvement. The onset was associated with a mechanical incident (specific details consistent with lifting or physical activity causing acute radiculopathy, as described in the case). The patient was not currently under the care of the neurosurgeon at the time of presentation to the chiropractic clinic.</p>
+<p>Relevant history included the previous surgical intervention at L5/S1, the known risk of recurrent disc herniation post-discectomy (reported at 5–15% in the literature), and the possibility of epidural fibrosis — scar tissue formation around the nerve root following surgery — which can both cause pain directly and tether the nerve root, making it more susceptible to mechanical irritation.</p>`,
+    clinicalNote: "The key clinical challenge is distinguishing recurrent disc herniation from post-surgical epidural fibrosis, which can present identically on clinical examination. Both produce nerve root symptoms in the distribution of the previously operated level. The MRI finding of T1-enhancing scar tissue adjacent to the nerve root (epidural fibrosis) versus a T2-hyperintense disc fragment helps differentiate them. The clinical question for chiropractic management is whether conservative care is appropriate or whether re-referral to surgery is needed — this patient improved with conservative care, demonstrating that surgical revision is not the automatic next step."
+  },
+  examination: {
+    autoROM: `<p>Lumbar ROM was restricted with pain provocation on extension and right lateral flexion. Specific degree measurements were not documented in the published case.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Level</th><th>Movement</th><th>Left</th><th>Right</th></tr></thead>
+<tbody>
+<tr><td>L3/L4</td><td>Knee extension (quadriceps)</td><td>5/5</td><td>5/5</td></tr>
+<tr><td>L4/L5</td><td>Great toe/ankle dorsiflexion</td><td>5/5</td><td>Documented as potentially reduced — see checklist</td></tr>
+<tr><td>L5/S1</td><td>Ankle plantarflexion / eversion</td><td>5/5</td><td>Reduced consistent with S1 level (documented)</td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Neurological",
+        items: [
+          {
+            id: "slr_right",
+            label: "Straight Leg Raise (right)",
+            result: `<span class="tt pos">Positive</span> — radicular reproduction in right lower extremity at restricted range`,
+            documented: true,
+            rationale: "SLR is the primary neural tension test for lumbar nerve root compromise and was appropriate given the right-sided radicular complaint following L5/S1 surgery. A positive SLR confirms ongoing neural tension at the right S1 nerve root. In the post-surgical context, this may reflect recurrent disc herniation compressing the root, epidural fibrosis tethering the root, or a combination of both. Epidural fibrosis can restrict neural mobility, making the SLR positive even without a recurrent disc fragment."
+          },
+          {
+            id: "ankle_reflex",
+            label: "Ankle jerk reflex (S1)",
+            result: `<span class="tt notable">Notable</span> — diminished right ankle jerk reflex consistent with S1 nerve root compromise`,
+            documented: true,
+            rationale: "The ankle jerk reflex assesses the integrity of the S1 nerve root arc. A diminished or absent ankle jerk in the context of right-sided radiculopathy following L5/S1 discectomy localises the lesion to the S1 nerve root and is consistent with either recurrent disc herniation or nerve root tethering by epidural fibrosis. Reflex asymmetry is an objective finding that supports the diagnosis of nerve root compromise."
+          },
+          {
+            id: "s1_sensory",
+            label: "S1 dermatomal sensory testing (lateral foot and small toe)",
+            result: `<span class="tt notable">Notable</span> — altered sensation in S1 dermatomal distribution (lateral foot/small toe)`,
+            documented: true,
+            rationale: "Sensory testing of the S1 dermatome (lateral border of the foot and 5th toe) was performed to assess the extent of nerve root compromise. Hypersensitivity or hyposensitivity in this distribution, in the context of prior L5/S1 surgery, indicates ongoing nerve root involvement at this level and informs both diagnosis and prognosis."
+          },
+          {
+            id: "bowel_bladder_screen",
+            label: "Bowel and bladder function screening (cauda equina)",
+            result: `<span class="tt normal">Normal</span> — no bowel or bladder dysfunction reported`,
+            documented: true,
+            rationale: "Cauda equina syndrome is the critical red flag in lumbar disc disease, particularly in a post-surgical patient who may develop recurrent herniation or haematoma. Documenting normal bowel and bladder function is essential to exclude this surgical emergency. Its absence in this patient confirmed that conservative management was a safe option."
+          },
+          {
+            id: "femoral_stretch",
+            label: "Femoral Nerve Stretch Test (L3/L4 nerve roots)",
+            result: `Not documented in published case`,
+            documented: false,
+            rationale: "The femoral nerve stretch test assesses L2, L3, and L4 nerve root tension. While the clinical picture pointed to L5/S1 involvement, including this test would have excluded higher lumbar pathology contributing to the presentation. In a young post-surgical patient, a broader neurological screen is warranted to ensure the clinical picture is complete."
+          }
+        ]
+      },
+      {
+        group: "Orthopaedic Tests",
+        items: [
+          {
+            id: "lumbar_palpation",
+            label: "Lumbar spine segmental palpation and motion assessment",
+            result: `<span class="tt notable">Notable</span> — reduced intersegmental motion and tenderness at L5/S1`,
+            documented: true,
+            rationale: "Palpation of the lumbar spine to assess segmental motion and tenderness was documented at the surgical level L5/S1. Post-surgical fibrosis and scarring can alter normal spinal mechanics and create areas of restricted motion. This finding helped guide the manual therapy approach and confirmed the affected spinal level."
+          },
+          {
+            id: "pain_provocation_extension",
+            label: "Extension loading and repeated movement assessment (McKenzie)",
+            result: `<span class="tt notable">Notable</span> — symptoms changed with repeated lumbar movement testing`,
+            documented: true,
+            rationale: "Repeated movement assessment (McKenzie method) was used to assess directional preference of the lumbar complaint. In recurrent disc herniation, centralisation of symptoms with repeated extension or other movements can guide rehabilitation strategy. The response to repeated movement testing was documented as part of the objective functional assessment."
+          }
+        ]
+      },
+      {
+        group: "Outcome Measures",
+        items: [
+          {
+            id: "oswestry",
+            label: "Oswestry Disability Index",
+            result: `<span class="tt notable">Notable</span> — moderate disability documented at initial assessment; improvement documented at discharge`,
+            documented: true,
+            rationale: "The Oswestry Disability Index (ODI) is a validated outcome measure for lumbar spine disability. Documenting ODI at intake and discharge provided objective evidence of functional improvement following conservative chiropractic management — an important finding given the post-surgical context and the clinical question of whether surgical revision was required."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination was designed to confirm L5/S1 nerve root compromise in a post-surgical patient and assess for cauda equina involvement. Neural tension testing (SLR), reflex assessment (ankle jerk), and dermatomal sensory testing consistently localised the pathology to the right S1 nerve root. The absence of cauda equina features was an essential finding supporting conservative management. Segmental palpation and repeated movement testing guided the manual therapy approach. Validated outcome measures documented functional status at baseline and improvement at discharge."
+  },
+  investigations: {
+    options: [
+      {
+        id: "lumbar_mri_gadolinium",
+        label: "Lumbar MRI with and without gadolinium contrast",
+        consequence: null,
+        ordered: true,
+        result: `<p>MRI demonstrated recurrent herniation at L5/S1 with left nerve root displacement and epidural fibrosis. The gadolinium contrast sequence was critical in differentiating recurrent disc herniation (which does not enhance) from epidural fibrosis (which enhances peripherally due to vascular scar tissue). Both pathologies were present.</p>`
+      },
+      {
+        id: "ct_myelogram",
+        label: "CT myelogram",
+        consequence: "CT myelogram is an alternative investigation for post-surgical lumbar patients when MRI is contraindicated (e.g., certain implants). It was not performed in this case as MRI was available and appropriate. CT myelogram provides excellent definition of nerve root compression but involves intrathecal contrast injection and radiation, and has largely been superseded by MRI in modern practice.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "plain_lumbar_xray",
+        label: "Lumbar spine plain radiographs",
+        consequence: "Plain radiographs were not the investigation of choice here. They would identify post-surgical hardware (if placed) and bony architecture but cannot visualise disc material, neural elements, or epidural scar tissue. MRI with gadolinium is the gold standard for post-surgical lumbar evaluation.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Recurrent L5/S1 Disc Herniation with Epidural Fibrosis",
+        correct: true,
+        blurb: "The correct diagnosis. MRI demonstrated both recurrent disc herniation at L5/S1 and epidural fibrosis — a combination of pathologies common in the post-discectomy setting. Recurrent herniation occurs in 5–15% of cases and typically presents with the same or similar radicular symptoms as the original episode. Epidural fibrosis contributes by tethering the nerve root, limiting its mobility, and producing neural tension signs even in the absence of significant disc compression."
+      },
+      {
+        label: "Post-surgical Scar Tissue (Epidural Fibrosis) Without Recurrent Herniation",
+        correct: false,
+        blurb: "Epidural fibrosis alone — without recurrent disc herniation — is a common cause of persistent or recurrent radiculopathy after discectomy. It produces the same clinical picture as recurrent herniation and cannot be reliably distinguished on clinical grounds. Gadolinium-enhanced MRI is the key investigation: enhancing scar tissue without a non-enhancing disc fragment suggests fibrosis as the primary pathology. In this case, both pathologies co-existed."
+      },
+      {
+        label: "Adjacent Segment Disc Herniation (L4/L5)",
+        correct: false,
+        blurb: "Following lumbar surgery, adjacent spinal segments can develop increased mechanical stress and disc degeneration. An L4/L5 herniation could produce overlapping symptoms including low back pain and lower limb radiculopathy. However, the clinical localisation to S1 (ankle reflex reduction, S1 dermatomal sensory change) and the positive SLR are most consistent with L5/S1 pathology. MRI confirmed recurrence at the original surgical level."
+      },
+      {
+        label: "Post-surgical Haematoma or Seroma",
+        correct: false,
+        blurb: "An early post-operative haematoma or seroma can compress nerve roots and reproduce radicular symptoms. However, this patient's new-onset symptoms occurred 8 months after surgery — a timeline inconsistent with a primary haematoma, which would typically manifest in the immediate or early post-operative period. MRI would show a fluid collection rather than a disc fragment or fibrotic tissue."
+      },
+      {
+        label: "Piriformis Syndrome / Deep Gluteal Syndrome",
+        correct: false,
+        blurb: "Piriformis syndrome involves sciatic nerve compression at the deep gluteal space, producing buttock pain and posterior leg symptoms that can mimic lumbar radiculopathy. In a post-surgical patient, this may enter the differential for 'failed back surgery syndrome' where the surgical level has been addressed but symptoms persist from another source. However, the MRI finding of recurrent disc herniation with epidural fibrosis and the positive SLR with reduced ankle jerk strongly support L5/S1 nerve root pathology as the primary diagnosis."
+      },
+      {
+        label: "Failed Back Surgery Syndrome (Non-specific)",
+        correct: false,
+        blurb: "Failed back surgery syndrome (FBSS) describes persistent or recurrent pain following lumbar surgery without a specific identifiable pathological cause. While FBSS is a clinical reality, it is a diagnosis of exclusion. In this patient, MRI identified specific structural pathology (recurrent herniation + fibrosis) that explains the symptoms, making FBSS an imprecise label that would not have guided appropriate management."
+      },
+      {
+        label: "Sacroiliac Joint Dysfunction",
+        correct: false,
+        blurb: "SIJ dysfunction can cause buttock and posterior leg pain that mimics lumbar radiculopathy. In a post-discectomy patient, SIJ pathology may develop due to altered gait mechanics and loading. However, the positive SLR, absent ankle jerk, and S1 dermatomal sensory change are not consistent with isolated SIJ pathology, and MRI confirmed the structural diagnosis at L5/S1."
+      },
+      {
+        label: "Lumbar Spinal Stenosis",
+        correct: false,
+        blurb: "Lumbar stenosis can develop or progress following discectomy, particularly if the surgery altered spinal mechanics or if pre-existing degenerative changes worsen. Stenosis produces neurogenic claudication and bilateral symptoms in its classic form. However, the patient's unilateral radiculopathy, young age, and acute onset following prior surgery at a single level are more consistent with recurrent disc pathology than spinal stenosis."
+      }
+    ],
+    explanation: `<p>The key diagnostic challenge in this case is the post-surgical setting. Recurrent radiculopathy following lumbar discectomy has multiple potential causes: recurrent disc herniation, epidural fibrosis, adjacent segment disease, or failed surgery syndrome. Clinical examination alone cannot reliably differentiate these, making gadolinium-enhanced MRI the essential investigation.</p>
+<p>The MRI finding of recurrent herniation at L5/S1 with epidural fibrosis established the diagnosis. Gadolinium contrast is critical in this context because recurrent disc material does not enhance, while vascular scar tissue does — allowing differentiation on the same imaging study. The co-existence of both pathologies is common in recurrent disc presentations and does not preclude conservative management.</p>
+<p>The clinical significance of this case is that conservative chiropractic management — spinal manipulation and rehabilitation exercises — produced documented subjective and objective improvement, demonstrating that surgical revision is not the automatic response to post-discectomy recurrence. Careful patient selection, cauda equina screening, and progressive functional rehabilitation are the cornerstones of management in this scenario.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "chiropractic_smr",
+        label: "Lumbar spinal manipulative therapy",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Lumbar spinal manipulative therapy was performed as the primary treatment intervention in this post-surgical patient. The absence of cauda equina features, the presence of segmental dysfunction on examination, and the patient's documented functional limitation supported its use. The published case documents subjective and objective functional improvement following this approach.`
+      },
+      {
+        id: "rehabilitation_exercises",
+        label: "Progressive lumbar rehabilitation exercises",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Rehabilitation exercises were prescribed alongside spinal manipulation. Active rehabilitation addresses the underlying neuromuscular deficits, restores functional lumbar stability, and reduces the risk of further recurrence. This multimodal approach is consistent with best-evidence guidelines for lumbar disc radiculopathy management.`
+      },
+      {
+        id: "refer_neurosurgery",
+        label: "Immediate re-referral to neurosurgery for surgical revision",
+        selected: false,
+        explanation: `<strong>Not immediately appropriate.</strong> While neurosurgical re-evaluation is appropriate in patients with progressive neurological deficit, intractable pain, or cauda equina syndrome, this patient had no cauda equina features and no progressive neurological deficit. This case demonstrates that recurrent disc herniation with epidural fibrosis in the absence of urgent surgical indications can be successfully managed conservatively, with documented functional improvement.`
+      },
+      {
+        id: "corticosteroid_injection",
+        label: "Referral for epidural corticosteroid injection",
+        selected: false,
+        explanation: `<strong>Not the first-line choice in this case.</strong> Epidural steroid injection is a reasonable option in post-surgical radiculopathy, particularly when conservative care fails or when epidural fibrosis is the predominant pathology. In this patient, conservative chiropractic management produced documented improvement, suggesting that injection was not required. It remains a valid co-management option for patients not responding adequately to manual therapy and rehabilitation.`
+      },
+      {
+        id: "high_velocity_hvla_surgical_level",
+        label: "High-velocity manipulation directly at the surgical level L5/S1",
+        selected: false,
+        explanation: `<strong>Requires caution.</strong> Applying HVLA thrust manipulation directly at a previously operated disc level requires careful clinical judgement. The post-surgical anatomy is altered, and the presence of epidural fibrosis may restrict normal tissue compliance. Most conservative management of post-surgical disc pathology favours mobilisation, distraction techniques, or adjacent-segment manipulation rather than direct HVLA at the surgical level. The published case describes lumbar SMT without specifying the exact technique applied.`
+      }
+    ],
+    outcomeText: "The patient received a course of chiropractic care including lumbar spinal manipulation and rehabilitation exercises. Documented subjective and objective functional and symptomatic improvement was achieved. Outcome measures confirmed improved function and reduced disability, demonstrating that conservative management was effective in this post-surgical recurrent disc presentation and surgical revision was not required."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Recurrent L5/S1 Disc Herniation with Epidural Fibrosis</strong><br>Post-lumbar discectomy recurrence with nerve root tethering",
+    outcomes: [
+      { label: "Published Source", text: "Welk et al. J Chiropr Med. 2012;11(4):249-53" },
+      { label: "PMID / PMC", text: "PMID: 23843756 — PMC3706706 (open access)" },
+      { label: "Final Diagnosis", text: "Recurrent L5/S1 disc herniation with epidural fibrosis (post-discectomy)" },
+      { label: "Intervention", text: "Chiropractic spinal manipulative therapy and progressive rehabilitation exercises; documented subjective and objective improvement" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Recurrent disc herniation following lumbar discectomy does not automatically require surgical revision. In the absence of cauda equina syndrome or progressive neurological deficit, conservative chiropractic management including spinal manipulation and active rehabilitation can produce documented functional improvement." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Epidural fibrosis and recurrent disc herniation produce clinically identical presentations. Plain radiographs and non-contrast MRI cannot reliably differentiate them. Gadolinium-enhanced MRI is essential in the post-surgical lumbar spine — enhancing scar tissue versus non-enhancing recurrent disc material is the key distinguishing feature, and the management implications differ." },
+      { type: "pearl", tag: "Clinical Pearl", text: "Epidural fibrosis tethers the nerve root to the surrounding scar tissue, reducing its mobility and lowering the threshold for mechanical irritation. A positive SLR in the post-surgical setting may therefore reflect neural tethering by scar tissue rather than direct mechanical compression from a disc fragment — with important implications for treatment and prognosis." },
+      { type: "key", tag: "Scope of Practice", text: "Post-surgical lumbar spine patients are within chiropractic scope of practice provided the examiner screens carefully for surgical red flags (cauda equina, progressive deficit) and documents findings rigorously. Co-management with the original surgeon and clear communication about imaging findings and clinical progress is best practice in this patient population." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Non-contrast MRI cannot differentiate recurrent disc herniation from epidural fibrosis — both appear as hypointense material adjacent to the dural sac on T2 sequences. Gadolinium contrast is essential: scar tissue enhances (due to its vascularity); disc material does not. Requesting contrast-enhanced MRI should be standard practice for all post-discectomy patients with recurrent radiculopathy." }
+    ]
+  },
+  cpd: {
+    topics: "Post-surgical lumbar spine, recurrent disc herniation, epidural fibrosis, failed back surgery syndrome, lumbar SMT, gadolinium MRI",
+    keyPoints: [
+      "Recurrent lumbar disc herniation occurs in 5–15% of patients following discectomy and can present with the same or similar radiculopathy as the original episode.",
+      "Gadolinium-enhanced MRI is essential in the post-surgical lumbar spine to differentiate recurrent disc herniation (non-enhancing) from epidural fibrosis (peripherally enhancing) — this distinction is not reliably made on clinical grounds alone.",
+      "Conservative chiropractic management including spinal manipulation and rehabilitation exercises can produce documented improvement in post-discectomy recurrence in the absence of surgical red flags.",
+      "Epidural fibrosis tethers the nerve root, reducing its mobility and producing neural tension signs (positive SLR) even without significant direct nerve root compression by a disc fragment.",
+      "Cauda equina syndrome — including bladder or bowel dysfunction — is the critical red flag that mandates urgent re-referral in any post-surgical lumbar patient presenting with recurrent radiculopathy."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 020 — Pregnancy-Related Lumbopelvic Pain
+// Source: Bernard & Tuchin. J Chiropr Med. 2016;15(2):129-33. PMID: 27330515 PMC: PMC4913124
+// ─────────────────────────────────────────────
+{
+  id: "020",
+  title: "A 35-year-old woman at 32 weeks' gestation presents with moderate to severe low back and leg pain that has progressively worsened over the past month",
+  category: "Lumbar",
+  secondaryCategory: "Sacral/SIJ",
+  difficulty: "Beginner",
+  estimatedTime: "10–15 min",
+  source: {
+    short: "Bernard & Tuchin\nJ Chiropr Med. 2016;15(2):129-33\nPMID: 27330515\nPMC: PMC4913124\nOpen access ✓",
+    full: "Bernard M, Tuchin P. Chiropractic Management of Pregnancy-Related Lumbopelvic Pain: A Case Study. J Chiropr Med. 2016;15(2):129-33. doi: 10.1016/j.jcm.2016.04.003. PMID: 27330515; PMCID: PMC4913124."
+  },
+  patient: {
+    ageSex: "35-year-old female",
+    chiefComplaint: "Moderate to severe low back pain and leg pain",
+    duration: "Insidious onset, progressive over approximately 4 weeks; presenting at 32 weeks' gestation",
+    priorProviders: "Obstetrician (weekly obstetric visits)",
+    priorDiagnoses: "Pregnancy-related low back pain (informal; no formal chiropractic or musculoskeletal assessment)"
+  },
+  history: {
+    content: `<p>A 35-year-old woman at 32 weeks' gestation presented with insidious onset of moderate to severe low back pain and leg pain. The pain was progressively worsening and had significantly limited her endurance capacity for walking and sitting. She reported difficulty travelling comfortably in a car due to pain.</p>
+<p>The pain was described as involving the low back and pelvic girdle region, with radiation into one or both legs. Pain was aggravated by weight-bearing activities, prolonged sitting, and postural transitions. The insidious onset was consistent with the mechanical and hormonal changes associated with advancing pregnancy — in particular the effects of relaxin on pelvic ligament laxity, the shifting centre of gravity as the uterus grows, and compensatory postural changes in the lumbar spine and pelvis.</p>
+<p>The patient was under regular obstetric care and her obstetrician had been informed of the musculoskeletal complaint. She had no history of significant prior low back pathology. No neurological symptoms (numbness, weakness, bowel or bladder change) were reported. There were no red flags for serious spinal pathology or obstetric complications.</p>`,
+    clinicalNote: "This is a clinically straightforward presentation when approached systematically. The key skills tested are: (1) correctly differentiating pregnancy-related low back pain (PLBP) from pregnancy-related pelvic girdle pain (PPGP) — both can co-exist; (2) appropriate clinical testing in the context of pregnancy (modified testing positions, sacroiliac provocation tests); and (3) recognising that chiropractic management is safe, evidence-informed, and appropriate for this population, while maintaining clear communication with the obstetrician."
+  },
+  examination: {
+    autoROM: `<p>Lumbar ROM was assessed with the patient in a standing position modified for comfort and safety at 32 weeks' gestation. Restriction and pain provocation were noted, particularly with lumbar extension and ipsilateral lateral flexion. Specific degree measurements were not documented.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Level</th><th>Movement</th><th>Left</th><th>Right</th></tr></thead>
+<tbody>
+<tr><td colspan="4" style="text-align:center; font-style:italic;">No myotomal deficits were documented. The neurological examination was unremarkable in the context of this presentation.</td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Sacroiliac Joint Assessment",
+        items: [
+          {
+            id: "active_slr",
+            label: "Active Straight Leg Raise Test (aSLR)",
+            result: `<span class="tt pos">Positive</span> — positive on the left; increased effort required to raise the leg with reproduction of back/pelvic symptoms`,
+            documented: true,
+            rationale: "The active SLR test is the most validated test for pregnancy-related pelvic girdle pain (PPGP) and assesses load transfer through the lumbopelvic region. A positive test indicates impaired force closure of the sacroiliac joint — the hallmark of pelvic girdle dysfunction. It was the key diagnostic test in this case and clinically localised the pelvic component of the presentation."
+          },
+          {
+            id: "posterior_pelvic_pain_provocation",
+            label: "Posterior Pelvic Pain Provocation Test (P4 / Thigh Thrust)",
+            result: `<span class="tt pos">Positive</span> — reproduction of familiar posterior pelvic/buttock pain on the affected side`,
+            documented: true,
+            rationale: "The P4 test (posterior pelvic pain provocation / thigh thrust) is a specific test for sacroiliac joint dysfunction in pregnancy. It is applied with the patient supine, hip flexed to 90°, and a posterior-directed force through the femur loading the ipsilateral SI joint. Its positive result confirmed a left SIJ functional disturbance as a component of the lumbopelvic presentation."
+          },
+          {
+            id: "faber_test",
+            label: "FABER Test (Patrick's) — hip/SIJ screen",
+            result: `Not documented in published case`,
+            documented: false,
+            rationale: "The FABER test assesses hip joint and SIJ pathology by placing the hip in flexion, abduction, and external rotation. It is not specific to SIJ dysfunction in pregnancy but is part of a thorough hip/SIJ differential screen. Its omission in favour of more specific SIJ provocation tests (P4, aSLR) was clinically appropriate, though it would have helped exclude primary hip pathology contributing to the leg pain."
+          },
+          {
+            id: "palpation_sij",
+            label: "Sacroiliac joint and posterior pelvic palpation",
+            result: `<span class="tt notable">Notable</span> — local tenderness over the left posterior SIJ region and adjacent musculature`,
+            documented: true,
+            rationale: "Palpation of the SIJ and surrounding musculature confirmed local tenderness at the left posterior SIJ. Combined with the positive functional tests, this finding supported a left-sided SIJ functional disturbance as the primary pelvic diagnosis. Palpation also identified myofascial trigger points in the posterior lumbar and gluteal musculature."
+          }
+        ]
+      },
+      {
+        group: "Myofascial Assessment",
+        items: [
+          {
+            id: "trigger_point_palpation",
+            label: "Myofascial trigger point palpation (lumbar and gluteal musculature)",
+            result: `<span class="tt pos">Positive</span> — active trigger points in the lumbar paraspinals and gluteal muscles reproducing referred back and leg pain`,
+            documented: true,
+            rationale: "Active myofascial trigger points were identified in the lumbar and gluteal musculature. Trigger point referral patterns from the gluteus medius and piriformis can reproduce posterior leg pain, contributing to the radicular-pattern leg symptoms in the absence of true nerve root compromise. Identifying and treating these trigger points was part of the multimodal management approach."
+          }
+        ]
+      },
+      {
+        group: "Neurological Screening",
+        items: [
+          {
+            id: "lower_limb_neurology",
+            label: "Lower limb neurological screen (reflexes, sensation, strength)",
+            result: `<span class="tt normal">Normal</span> — neurological examination unremarkable; no deficits identified`,
+            documented: true,
+            rationale: "A neurological screen was performed to exclude lumbar nerve root compromise. Normal reflexes, sensation, and strength confirmed that the leg pain was referred (myofascial or pelvic ligament origin) rather than radicular in nature. This finding was important for safe management — it confirmed that chiropractic care targeting the SIJ and lumbar spine was appropriate and that no neural emergency was present."
+          },
+          {
+            id: "slr_test",
+            label: "Straight Leg Raise (passive neural tension)",
+            result: `<span class="tt normal">Normal</span> — negative; no radicular reproduction`,
+            documented: true,
+            rationale: "A negative passive SLR confirmed the absence of lumbar nerve root tension. This is distinct from the active SLR (which tests load transfer). The combination of a positive active SLR (pelvic load transfer deficit) and a negative passive SLR (no nerve root tension) is characteristic of pelvic girdle pain rather than lumbar disc radiculopathy — a key clinical distinction in pregnant patients."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination was modified for patient comfort and safety at 32 weeks' gestation. The key diagnostic approach was to differentiate between pregnancy-related low back pain (lumbar origin) and pregnancy-related pelvic girdle pain (SIJ/pelvic ring origin), as each has different examination findings and management implications. The active SLR and P4 tests confirmed a left SIJ functional disturbance. A normal passive SLR and unremarkable neurological examination excluded lumbar disc radiculopathy. Active myofascial trigger points in the posterior musculature contributed to the referred leg pain pattern."
+  },
+  investigations: {
+    options: [
+      {
+        id: "no_imaging",
+        label: "No imaging — clinical diagnosis based on history and examination",
+        consequence: null,
+        ordered: true,
+        result: `<p>No diagnostic imaging was performed. In the absence of neurological deficit, red flags for serious spinal pathology, or obstetric complications, imaging is not indicated for pregnancy-related lumbopelvic pain. Plain radiographs involve ionising radiation which is avoided in pregnancy unless clinically essential. MRI of the lumbar spine (no radiation) may be used if serious pathology is suspected but was not indicated here.</p>`
+      },
+      {
+        id: "lumbar_mri",
+        label: "Lumbar spine MRI",
+        consequence: "MRI was not performed and was not indicated in this case. There were no neurological deficits, no red flag history, and the clinical findings were consistent with a benign pregnancy-related musculoskeletal presentation. MRI in pregnancy is generally considered safe (no ionising radiation) but is reserved for cases where serious pathology cannot be excluded on clinical grounds.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "lumbar_xray",
+        label: "Lumbar spine plain radiographs",
+        consequence: "Plain radiographs were not ordered and would have been inappropriate in this case. Ionising radiation exposure during pregnancy carries a small but measurable risk to the developing foetus. Plain films would not alter the management of a clinically straightforward pelvic girdle pain presentation and were correctly avoided.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Pregnancy-Related Pelvic Girdle Pain (PPGP) with Low Back Pain",
+        correct: true,
+        blurb: "The correct diagnosis. Positive active SLR and P4 tests confirmed a left SIJ functional disturbance (pelvic girdle pain). Co-existing lumbar low back pain was also identified, producing the combined lumbopelvic presentation. PPGP affects up to 50% of pregnant women and is caused by hormonal-mediated ligament laxity (relaxin), mechanical load changes, and impaired force closure of the pelvic ring."
+      },
+      {
+        label: "Lumbar Disc Herniation with L4/L5 or L5/S1 Radiculopathy",
+        correct: false,
+        blurb: "Lumbar disc herniation can occur or worsen during pregnancy due to altered biomechanics and increased spinal load. However, the negative passive SLR and normal neurological examination (intact reflexes, sensation, and strength) make nerve root compression an unlikely primary diagnosis. The leg pain in this case was referred from myofascial trigger points and SIJ irritation rather than from nerve root compromise."
+      },
+      {
+        label: "Sacroiliac Joint Dysfunction (Non-Pregnancy)",
+        correct: false,
+        blurb: "SIJ dysfunction can occur independently of pregnancy for various reasons (spondylarthropathy, prior trauma, biomechanical dysfunction). In this case, however, the strong temporal association with advancing pregnancy and the role of relaxin-mediated ligament laxity in increasing SIJ mobility make pregnancy-related pelvic girdle pain the more accurate and clinically useful diagnosis."
+      },
+      {
+        label: "Pubic Symphysis Dysfunction (Diastasis Symphysis Pubis)",
+        correct: false,
+        blurb: "Symphysis pubis dysfunction (SPD) is a related condition in pregnancy causing anterior pelvic pain, waddling gait, and difficulty with weight-bearing activities. It can co-exist with posterior pelvic girdle pain and may require specific management modifications. The dominant posterior pelvic symptoms and positive posterior SIJ provocation tests in this case are more consistent with posterior PPGP than isolated SPD."
+      },
+      {
+        label: "Piriformis Syndrome",
+        correct: false,
+        blurb: "Piriformis syndrome causes buttock pain and posterior leg symptoms through sciatic nerve irritation at the deep gluteal space. It can be difficult to distinguish from SIJ-mediated pain clinically. However, the positive active SLR and P4 tests are more specific to SIJ dysfunction, and active myofascial trigger points were identified as contributing to the referred leg symptoms. The overall presentation pattern and response to SIJ-directed treatment support pelvic girdle pain over piriformis syndrome."
+      },
+      {
+        label: "Deep Vein Thrombosis (DVT)",
+        correct: false,
+        blurb: "Pregnancy is a hypercoagulable state and DVT is an important differential for leg pain in pregnant patients. DVT typically presents with calf or thigh tenderness, swelling, warmth, and redness — it does not produce low back pain. The clinical picture in this patient — reproduced by mechanical SIJ provocation tests and associated with advancing pregnancy — is not consistent with DVT. Any unexplained unilateral leg swelling or acute calf pain in pregnancy should prompt urgent DVT screening."
+      },
+      {
+        label: "Hip Joint Pathology (Transient Osteoporosis of Pregnancy)",
+        correct: false,
+        blurb: "Transient osteoporosis of the hip (TOH) is a rare pregnancy-related condition that causes groin and thigh pain and can be mistaken for musculoskeletal low back pain. It is more common in the third trimester. The dominant posterior pelvic and low back distribution in this case, and the positive posterior SIJ provocation tests, are not consistent with TOH, which would present with groin-dominant pain and restricted passive hip ROM."
+      },
+      {
+        label: "Mechanical Low Back Pain (Non-Pregnancy-Specific)",
+        correct: false,
+        blurb: "Non-specific mechanical low back pain could co-exist with the pregnancy-related presentation. However, given the temporal association with 32 weeks' gestation, the specific positive SIJ provocation tests, the active trigger points reproducing leg symptoms, and the normal neurological examination, a specific pregnancy-related diagnosis (PPGP + PLBP) is both more accurate and more clinically useful than a non-specific label."
+      }
+    ],
+    explanation: `<p>The diagnostic approach in pregnancy-related lumbopelvic pain requires differentiating two distinct but often co-existing conditions: pregnancy-related low back pain (PLBP), which arises from the lumbar spine and is managed like standard LBP, and pregnancy-related pelvic girdle pain (PPGP), which arises from the sacroiliac joints and pelvic ring due to hormonally-mediated ligament laxity.</p>
+<p>In this patient, the positive active SLR and P4 tests confirmed left SIJ functional disturbance (PPGP), while the lumbar pain component represented co-existing PLBP. The negative passive SLR and normal neurological examination excluded lumbar disc radiculopathy. Active myofascial trigger points in the posterior musculature contributed to the referred leg pain pattern.</p>
+<p>The clinical significance of differentiating PPGP from PLBP is that SIJ-specific treatment (including pelvic belt, sacroiliac manipulation, stabilisation exercises) is required for PPGP, while lumbar-focused treatment addresses the PLBP component. Treating only one component when both are present produces incomplete outcomes.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "chiropractic_manipulation",
+        label: "Chiropractic spinal manipulation (lumbar and pelvic girdle)",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Chiropractic manipulation directed at the lumbar spine and sacroiliac joint was performed as part of the multimodal treatment plan. Spinal manipulation is considered safe during pregnancy when applied by a trained practitioner with appropriate patient positioning. In this case, 13 visits over 6 weeks produced significant reduction in pain from 7/10 to 2/10 on the NRS.`
+      },
+      {
+        id: "soft_tissue_therapy",
+        label: "Soft tissue therapy targeting myofascial trigger points",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Active myofascial trigger points were identified as contributing to the referred leg pain pattern. Soft tissue therapy targeting the lumbar paraspinals and gluteal musculature was a clinically appropriate component of the management, directly addressing one of the identified pain generators.`
+      },
+      {
+        id: "exercises_ergonomic",
+        label: "Therapeutic exercises and ergonomic advice",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Specific exercises for lumbar and pelvic stabilisation, combined with ergonomic advice for daily activities (sitting, standing, car travel), were prescribed as part of the management. Exercise during pregnancy is safe and evidence-based for both PLBP and PPGP, improving muscle recruitment patterns and force closure of the pelvic girdle.`
+      },
+      {
+        id: "imaging_referral",
+        label: "Refer for lumbar spine MRI to exclude disc herniation",
+        selected: false,
+        explanation: `<strong>Not indicated in this case.</strong> MRI was not required given the absence of neurological deficit, the normal passive SLR, and the clinically consistent pregnancy-related musculoskeletal presentation. While MRI is generally considered safe in pregnancy (no radiation), it should be reserved for cases where serious pathology cannot be excluded clinically. Unnecessary imaging adds anxiety and cost without changing management.`
+      },
+      {
+        id: "obs_communication",
+        label: "Maintain communication with the obstetrician throughout management",
+        selected: true,
+        explanation: `<strong>Appropriate and important.</strong> The patient had weekly obstetric visits during her chiropractic treatment. Clear communication between the chiropractor and obstetrician is best practice for pregnant patients. The obstetric team should be aware of the musculoskeletal diagnosis and treatment plan, and any changes in the clinical presentation (neurological symptoms, new pain patterns, or obstetric concerns) should be immediately communicated.`
+      }
+    ],
+    outcomeText: "The patient was treated with chiropractic spinal manipulation, soft tissue therapy, therapeutic exercises, and ergonomic advice over 13 visits in 6 weeks. Pain reduced from 7/10 to 2/10 on the numeric rating scale. Functional activities — walking, sitting, and car travel — all improved significantly. Weekly obstetric visits continued throughout without complication. The outcome demonstrated that multimodal chiropractic management is safe and effective for pregnancy-related lumbopelvic pain at 32 weeks' gestation."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Pregnancy-Related Pelvic Girdle Pain and Low Back Pain</strong><br>Left sacroiliac joint functional disturbance with myofascial contribution at 32 weeks' gestation",
+    outcomes: [
+      { label: "Published Source", text: "Bernard & Tuchin. J Chiropr Med. 2016;15(2):129-33" },
+      { label: "PMID / PMC", text: "PMID: 27330515 — PMC4913124 (open access)" },
+      { label: "Final Diagnosis", text: "Pregnancy-related low back pain and pelvic girdle pain with left SIJ functional disturbance" },
+      { label: "Intervention", text: "Chiropractic manipulation, soft tissue therapy, exercises, ergonomic advice — 13 visits over 6 weeks; pain 7/10 → 2/10 NRS" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Pregnancy-related pelvic girdle pain (PPGP) and pregnancy-related low back pain (PLBP) are distinct but commonly co-existing conditions. Differentiating them requires specific examination tests — the active SLR and P4 test for PPGP, versus passive SLR and neurological examination for PLBP. Both can contribute to the same clinical presentation and require targeted treatment." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "Leg pain in a pregnant patient does not automatically indicate lumbar disc radiculopathy. Referred pain from myofascial trigger points (gluteal, piriformis) and from sacroiliac joint irritation can reproduce posterior leg symptoms without neural compromise. A normal passive SLR and intact neurological examination are the key distinguishing features." },
+      { type: "pearl", tag: "Clinical Pearl", text: "The active SLR test is the most validated test for pregnancy-related pelvic girdle pain. It assesses force closure capacity of the SIJ under active load. Improvement in active SLR score over the course of treatment is a reliable marker of clinical progress in PPGP management." },
+      { type: "key", tag: "Scope of Practice", text: "Chiropractic care during pregnancy is safe and evidence-based for lumbopelvic pain when appropriate patient positioning is used, contraindicated techniques are avoided, and communication with the obstetric team is maintained. Pregnant patients present frequently to chiropractic clinics and should not be declined care on the basis of pregnancy alone." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Plain radiographs are avoided in pregnancy due to ionising radiation exposure. MRI is safe (no radiation) and may be used when serious pathology cannot be excluded clinically. In this case, the clinical findings were sufficient for diagnosis and management, and imaging was correctly not pursued — avoiding unnecessary anxiety, cost, and delay." }
+    ]
+  },
+  cpd: {
+    topics: "Pregnancy-related pelvic girdle pain, sacroiliac joint dysfunction, pregnancy low back pain, active SLR test, chiropractic in pregnancy, multimodal management",
+    keyPoints: [
+      "Pregnancy-related pelvic girdle pain (PPGP) and pregnancy-related low back pain (PLBP) require differentiated examination and management — the active SLR and P4 tests are the most validated tools for diagnosing PPGP.",
+      "Leg pain in pregnancy can arise from multiple sources including lumbar nerve roots, SIJ referral, and myofascial trigger points — a normal passive SLR and intact neurological examination help exclude nerve root compromise.",
+      "Chiropractic manipulation is safe and effective during pregnancy when applied with appropriate technique modification and positioning, and with clear communication with the obstetric care team.",
+      "Plain radiographs should be avoided in pregnancy unless absolutely necessary; lumbar MRI (no radiation) may be used when serious pathology requires exclusion, but was not indicated in this straightforward presentation.",
+      "Relaxin-mediated ligament laxity in the third trimester increases sacroiliac joint mobility and reduces force closure capacity, predisposing pregnant women to pelvic girdle pain — this hormonal mechanism is the primary driver of PPGP."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 021 — Chronic Cervicogenic Headache
+// Source: Novicky SD. J Chiropr Med. 2003;2(3):96-101. PMID: 19674602 PMC: PMC2646967
+// ─────────────────────────────────────────────
+{
+  id: "021",
+  title: "A 28-year-old woman presents with 10 years of right-sided occipital and cervical headache unresponsive to medication",
+  category: "Headache",
+  secondaryCategory: "Cervical",
+  difficulty: "Intermediate",
+  estimatedTime: "15–20 min",
+  source: {
+    short: "Novicky SD\nJ Chiropr Med. 2003;2(3):96-101\nPMID: 19674602\nPMC: PMC2646967\nOpen access ✓",
+    full: "Novicky SD. Chiropractic/rehabilitative management of chronic headaches: A retrospective case report. J Chiropr Med. 2003;2(3):96-101. doi: 10.1016/S0899-3467(07)60052-4. PMID: 19674602; PMCID: PMC2646967."
+  },
+  patient: {
+    ageSex: "28-year-old female",
+    chiefComplaint: "Right-sided occipital and cervical headache with paraspinal radiation",
+    duration: "Approximately 10 years",
+    priorProviders: "Multiple medical (allopathic) providers",
+    priorDiagnoses: "Recurrent headache; treated with pharmaceutical approaches without resolution of symptoms"
+  },
+  history: {
+    content: `<p>A 28-year-old woman presented with a 10-year history of headaches. The headaches were located in the right occipital-cervical region with radiation into the right paraspinal musculature of the cervical spine. The pain was described as unilateral and consistently right-sided.</p>
+<p>Prior allopathic intervention had included pharmaceutical approaches — the specific medications were not detailed in the case report — which had not resolved her symptoms. The patient had not previously received chiropractic or manual therapy assessment.</p>
+<p>The history included altered postural biomechanics, which appeared relevant to the clinical presentation. Past trauma was considered as a contributing factor to the postural changes, though the specific nature and timeline of any prior injury were not fully detailed. The patient's headaches were chronic in nature and had been present essentially throughout her adult life without a clear episodic or progressive pattern distinct from the baseline chronic complaint.</p>
+<p>No nausea, vomiting, photophobia, phonophobia, aura, or visual disturbance was reported (these features would have directed the differential toward migraine). No autonomic features (tearing, rhinorrhoea, ptosis, conjunctival injection) that would suggest a trigeminal autonomic cephalalgia were documented.</p>`,
+    clinicalNote: "The diagnostic key here is correct classification within the headache differential. The clinical features — unilateral, fixed right-sided location, occipital-cervical onset, radiation into cervical paraspinal musculature, 10-year duration, no migrainous features — are characteristic of cervicogenic headache (CGH). The examination reveals the critical distinguishing features: marked palpation tenderness at the suboccipital joint, restricted cervical ROM limited by pain reproduction, and the diagnostic pattern of muscle testing (decreased pain with resisted testing of cervical flexors; increased pain with resisted testing of SCM and anterior scalenes). This pattern implicates the upper cervical joints and local musculature as the pain generator."
+  },
+  examination: {
+    autoROM: `<p>Seated cervical spine range of motion was diminished in all planes. All movements were limited by an increase in the patient's familiar right suboccipital pain. Specific degree measurements were not documented in the published case.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Muscle Group</th><th>Test</th><th>Response</th></tr></thead>
+<tbody>
+<tr><td>Suboccipitals</td><td>Manual resisted testing</td><td><span style="color:green;">Pain decreased with resisted testing</span></td></tr>
+<tr><td>Upper trapezius</td><td>Manual resisted testing</td><td><span style="color:green;">Pain decreased with resisted testing</span></td></tr>
+<tr><td>Levator scapulae</td><td>Manual resisted testing</td><td><span style="color:green;">Pain decreased with resisted testing</span></td></tr>
+<tr><td>Rhomboids</td><td>Manual resisted testing</td><td><span style="color:green;">Pain decreased with resisted testing</span></td></tr>
+<tr><td>Anterior scalenes</td><td>Manual resisted testing</td><td><span style="color:red;">Pain increased with resisted testing</span></td></tr>
+<tr><td>Sternocleidomastoid (SCM)</td><td>Manual resisted testing</td><td><span style="color:red;">Pain increased with resisted testing</span></td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Cervical Palpation",
+        items: [
+          {
+            id: "suboccipital_palpation",
+            label: "Static and motion palpation — suboccipital and upper cervical joints",
+            result: `<span class="tt pos">Positive</span> — marked point tenderness at the right suboccipital joint with both static and motion palpation`,
+            documented: true,
+            rationale: "The right suboccipital joint demonstrated marked tenderness and restricted motion on palpation. This finding is the central diagnostic feature of cervicogenic headache — tenderness at the C0-C1 or C1-C2 joints on the symptomatic side, reproduced by palpation, is a key characteristic distinguishing CGH from primary headache disorders. The consistency of right-sided tenderness with the patient's right-sided headache localises the source."
+          },
+          {
+            id: "cervical_paraspinal_palpation",
+            label: "Cervical paraspinal muscle palpation",
+            result: `<span class="tt notable">Notable</span> — tenderness in right cervical paraspinal musculature consistent with radiation pattern described`,
+            documented: true,
+            rationale: "Palpation of the right cervical paraspinal musculature confirmed tenderness consistent with the reported radiation of headache pain into this region. Cervicogenic headache frequently involves referred pain from the upper cervical joints and suboccipital musculature into the posterior cervical and paraspinal region — this finding was consistent with the clinical picture."
+          }
+        ]
+      },
+      {
+        group: "Orthopaedic / Special Tests",
+        items: [
+          {
+            id: "cervical_flexion_rotation",
+            label: "Cervical Flexion-Rotation Test (CFRT)",
+            result: `Not documented in published case`,
+            documented: false,
+            rationale: "The CFRT is the most specific orthopaedic test for cervicogenic headache, assessing mobility of the C1-C2 segment by rotating the cervical spine in full flexion. Restricted range (typically less than 32–33° total or greater than 10° asymmetry) on the symptomatic side is highly specific for CGH. This test was not documented but would have been the most valuable single test for confirming the cervicogenic diagnosis in a contemporary context."
+          },
+          {
+            id: "upper_cervical_compression",
+            label: "Upper cervical compression / cervical quadrant testing",
+            result: `Not documented in published case`,
+            documented: false,
+            rationale: "Upper cervical compression testing can reproduce headache from the suboccipital region in CGH, confirming the segmental source. It was not documented in this case. In a patient with a 10-year history of right-sided occipital headache and marked right suboccipital tenderness, this test would have added objective confirmation of the cervical pain generator."
+          },
+          {
+            id: "cervical_distraction_relief",
+            label: "Manual cervical distraction (traction) — symptom change",
+            result: `Not documented in published case`,
+            documented: false,
+            rationale: "Manual cervical distraction can produce temporary relief in CGH by unloading the cervicogenic pain generator. Symptom relief with distraction supports a cervical source for the headache. Its omission from the documented examination represents a missed opportunity to demonstrate a mechanically responsive cervicogenic pattern."
+          }
+        ]
+      },
+      {
+        group: "Neurological Screening",
+        items: [
+          {
+            id: "cranial_nerve_screen",
+            label: "Cranial nerve screen (II, III, IV, VI — visual fields, extra-ocular movements)",
+            result: `Not documented in published case; remainder of examination described as unremarkable`,
+            documented: false,
+            rationale: "A cranial nerve screen, including visual field assessment and extra-ocular movements, is part of a thorough headache neurological evaluation. It helps exclude serious intracranial pathology (raised ICP, posterior fossa lesion) and distinguishes CGH from headache with autonomic features. The case reports the remainder of the examination as unremarkable, which likely encompasses this screen."
+          },
+          {
+            id: "upper_limb_neurology",
+            label: "Upper limb neurological examination (reflexes, sensation, strength)",
+            result: `<span class="tt normal">Normal</span> — remainder of examination described as unremarkable, consistent with normal upper limb neurology`,
+            documented: true,
+            rationale: "A normal neurological examination is expected in cervicogenic headache and was consistent with the published case finding that 'the remainder of the examination was unremarkable.' Normal upper limb reflexes, sensation, and strength exclude significant cervical nerve root compression contributing to the headache pattern."
+          }
+        ]
+      },
+      {
+        group: "Postural Assessment",
+        items: [
+          {
+            id: "posture_assessment",
+            label: "Postural assessment — head, cervical, and thoracic alignment",
+            result: `<span class="tt notable">Notable</span> — altered postural biomechanics identified, considered a contributing aetiological factor`,
+            documented: true,
+            rationale: "Postural assessment identified altered cervical and head-on-neck positioning. Forward head posture increases the mechanical load on the upper cervical facet joints and suboccipital musculature, which can perpetuate cervicogenic headache. Identifying postural dysfunction was integral to the management plan, which included specific postural correction as part of the rehabilitation program."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination strategy was designed to confirm the cervicogenic origin of the headache. The most diagnostically significant findings were: marked right suboccipital tenderness reproduced with palpation; restricted cervical ROM limited by familiar right-sided headache; and the distinctive manual muscle testing pattern — decreased pain with resisted suboccipitals, trapezius, levator scapulae, and rhomboids, but increased pain with resisted SCM and anterior scalenes. This pattern implicates overload and dysfunction of the posterior cervical musculature and upper cervical joints as the pain generator, with the anterior cervical muscles responding to altered postural mechanics. A normal neurological examination excluded nerve root compression."
+  },
+  investigations: {
+    options: [
+      {
+        id: "no_imaging",
+        label: "No imaging — clinical diagnosis of cervicogenic headache",
+        consequence: null,
+        ordered: true,
+        result: `<p>No diagnostic imaging was performed. The clinical presentation was consistent with cervicogenic headache — a chronic, unilateral, occipital-cervical headache with reproducible cervical examination findings and no features of serious intracranial pathology. In the absence of red flag features, imaging is not routinely indicated for chronic headache. The ICHD-3 criteria for CGH do not require imaging for diagnosis.</p>`
+      },
+      {
+        id: "cervical_mri",
+        label: "Cervical spine MRI",
+        consequence: "MRI was not performed. In a patient with a 10-year chronic headache history and no red flags, neurological deficits, or progression, MRI was not clinically indicated. MRI may be considered if the headache pattern changes, neurological signs develop, or if a secondary cervical cause (disc herniation, instability, tumour) needs to be excluded. The clinical findings were sufficient for a CGH diagnosis.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "cervical_xray",
+        label: "Cervical spine plain radiographs",
+        consequence: "Cervical X-rays were not ordered. Plain films can identify structural changes (spondylosis, instability, fracture) that may contribute to CGH but do not diagnose the condition. In a 28-year-old with no trauma history and a chronic benign-pattern headache, X-rays were not indicated and would not have changed initial management.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Cervicogenic Headache (CGH)",
+        correct: true,
+        blurb: "The correct diagnosis. The presentation satisfies the ICHD-3 criteria for cervicogenic headache: unilateral, non-side-shifting headache; originating in the neck with reproduction by cervical movement or palpation; marked point tenderness at the right suboccipital joint; cervical ROM restricted by familiar headache reproduction; 10-year history with no migrainous features. The distinctive muscle testing pattern (posterior cervical decreases pain, SCM/scalenes increases pain) further supports a cervical musculoskeletal origin."
+      },
+      {
+        label: "Tension-Type Headache (TTH)",
+        correct: false,
+        blurb: "Tension-type headache is the most common headache disorder and must be considered in any chronic headache presentation. TTH is typically bilateral (though may be unilateral), pressing or tightening in quality, and not associated with nausea or phonophobia. The key distinguishing feature from CGH is the absence of a reproducible cervical pain generator — TTH does not typically produce headache on cervical palpation or have marked suboccipital joint tenderness as documented in this case."
+      },
+      {
+        label: "Migraine Without Aura",
+        correct: false,
+        blurb: "Migraine is common in women in this age group. It presents with moderate to severe unilateral headache often associated with nausea, photophobia, or phonophobia. A 10-year history of unilateral headache without these migrainous features, combined with a consistent cervical examination source, effectively excludes migraine as the primary diagnosis. The absence of nausea, vomiting, photophobia, phonophobia, and aura was specifically noted."
+      },
+      {
+        label: "Occipital Neuralgia",
+        correct: false,
+        blurb: "Occipital neuralgia involves paroxysmal stabbing pain in the distribution of the greater or lesser occipital nerves. It can closely mimic CGH, particularly in its posterior cranial and cervical distribution. Distinguishing features include the paroxysmal lancinating quality of pain (versus the dull aching pattern of CGH) and diagnostic confirmation by local anaesthetic block of the occipital nerve. In this case, the chronic non-paroxysmal course and the positive cervical joint examination favour CGH."
+      },
+      {
+        label: "Upper Cervical Instability (C1-C2)",
+        correct: false,
+        blurb: "Atlantoaxial instability can produce suboccipital headache and cervical pain. In younger patients, causes include rheumatoid arthritis, Down syndrome, or prior trauma. While upper cervical joint dysfunction is central to the CGH diagnosis in this case, frank instability would require specific screening (Sharp-Purser test) and imaging. The clinical presentation and management response are more consistent with functional joint dysfunction than structural instability."
+      },
+      {
+        label: "Temporomandibular Disorder (TMD)",
+        correct: false,
+        blurb: "TMD can produce headache and face pain that radiates into the occipital and cervical region. Co-existing TMD and CGH is common. The absence of jaw pain, clicking, or restricted jaw opening in this case, combined with the specific cervical examination findings and clear cervicogenic pattern, effectively exclude primary TMD as the headache source. TMD screening should always be part of a comprehensive headache assessment."
+      },
+      {
+        label: "New Daily Persistent Headache (NDPH)",
+        correct: false,
+        blurb: "New daily persistent headache develops suddenly and becomes continuous within days, typically in a patient with no prior headache history. In contrast, this patient has a 10-year gradual history without a clear sudden onset. NDPH typically lacks reproducible cervical examination findings. The pattern in this case — chronic, mechanical, cervical source confirmed — is inconsistent with NDPH."
+      },
+      {
+        label: "Intracranial Pathology (Secondary Headache)",
+        correct: false,
+        blurb: "Secondary headache from intracranial causes (space-occupying lesion, raised ICP, vascular malformation) must be excluded, particularly in a chronic headache of long duration. However, the 10-year stable pattern without progression, the absence of neurological deficits, and the clear cervical examination findings make serious intracranial pathology highly unlikely. Red flag features such as thunderclap onset, progressive worsening, nocturnal waking, papilloedema, or systemic symptoms would mandate urgent neurological referral and imaging."
+      }
+    ],
+    explanation: `<p>Cervicogenic headache is a secondary headache disorder arising from structures in the cervical spine — most commonly the C0-C1, C1-C2, or C2-C3 facet joints. Its defining clinical feature is the ability to reproduce the patient's familiar headache by provocation of the cervical source: palpation of the suboccipital joint, cervical ROM restriction with headache reproduction, or the cervical flexion-rotation test demonstrating restricted C1-C2 mobility.</p>
+<p>The key differential challenge in this case is distinguishing CGH from the primary headache disorders — particularly tension-type headache and migraine — which share some overlapping features. The decisive clinical evidence in favour of CGH was: (1) consistent right-sided unilateral distribution without side-shift; (2) reproduction of headache by cervical palpation and movement; (3) marked suboccipital joint tenderness; and (4) the distinctive muscle testing pattern. The absence of migrainous autonomic features (nausea, photophobia, phonophobia, aura) further excluded migraine as the primary diagnosis.</p>
+<p>The management response — improvement with chiropractic manipulation and cervical rehabilitation targeting the upper cervical dysfunction and postural mechanics — provides retrospective diagnostic confirmation that a cervicogenic pain generator was responsible.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "chiropractic_manipulation",
+        label: "Cervical spinal manipulation targeting the upper cervical dysfunction",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Cervical spinal manipulation was the primary treatment intervention. Multiple high-quality trials and systematic reviews support spinal manipulation for cervicogenic headache. In this case, manipulation was directed at the suboccipital dysfunction identified on examination. The initial treatment response included a temporary increase in symptoms (visits 1–3) before progressive improvement (visits 3–5), which is a recognised pattern in manual therapy of chronic musculoskeletal conditions.`
+      },
+      {
+        id: "active_rehabilitation",
+        label: "Active cervical and postural rehabilitation program",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> An active in-office rehabilitation program addressing the identified postural dysfunction was a central component of treatment, progressing to a home therapy program. Deep cervical flexor training, scapular stabilisation, and postural correction exercises address the underlying neuromuscular dysfunction that perpetuates CGH. A rehabilitation-only approach without manual therapy may also be effective; the combination used here produced a positive outcome.`
+      },
+      {
+        id: "patient_education",
+        label: "Patient education on posture and biomechanics",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> The patient received education on postural mechanics as part of the management plan. In CGH, sustained forward head posture and altered cervical alignment increase mechanical load on the upper cervical facet joints. Education that promotes postural awareness and modification during daily activities (work, screen use, sleep position) is an evidence-based component of CGH management.`
+      },
+      {
+        id: "prophylactic_medication",
+        label: "Referral for prophylactic headache medication",
+        selected: false,
+        explanation: `<strong>Not indicated as the primary approach in this case.</strong> The patient had already received pharmaceutical management for 10 years without resolution. The clinical findings clearly localised a cervicogenic source that is appropriately managed with manual therapy and rehabilitation. Pharmacological prophylaxis (topiramate, amitriptyline, beta-blockers) is more appropriate for migraine and tension-type headache, and has limited evidence for cervicogenic headache specifically.`
+      },
+      {
+        id: "greater_occipital_nerve_block",
+        label: "Referral for greater occipital nerve block",
+        selected: false,
+        explanation: `<strong>Not required as first-line in this case.</strong> GON block can be both diagnostic and therapeutic in CGH and occipital neuralgia. It is a reasonable co-management option for patients who fail to respond to conservative care. In this patient, conservative chiropractic management produced documented improvement, making injection therapy unnecessary. It remains a valid escalation option for refractory cases.`
+      }
+    ],
+    outcomeText: "The patient underwent an in-office treatment program comprising chiropractic manipulation, active rehabilitation, and postural education, progressing to a home therapy program. An initial increase in symptoms was noted over the first 3 visits, followed by progressive reduction in primary signs and symptoms from visits 3–5. The patient was released to a home therapy program and supportive chiropractic manipulation. Continued positive response was documented on follow-up. The 10-year chronic headache pattern showed significant improvement through this multimodal approach."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Cervicogenic Headache</strong><br>Upper cervical joint dysfunction with postural perpetuation; right C0-C1/C1-C2 origin",
+    outcomes: [
+      { label: "Published Source", text: "Novicky SD. J Chiropr Med. 2003;2(3):96-101" },
+      { label: "PMID / PMC", text: "PMID: 19674602 — PMC2646967 (open access)" },
+      { label: "Final Diagnosis", text: "Cervicogenic headache arising from right upper cervical joint dysfunction with postural contribution" },
+      { label: "Intervention", text: "Chiropractic manipulation, active cervical rehabilitation, postural education; progressive improvement with continued positive response at follow-up" }
+    ],
+    reflections: [
+      { type: "key", tag: "Key Lesson", text: "Cervicogenic headache is diagnosed by demonstrating a cervical pain generator — specifically, reproduction of the patient's familiar headache by palpation of the suboccipital joint or cervical movement. The cervical flexion-rotation test, which assesses C1-C2 mobility, is the most specific orthopaedic test and should be performed in all suspected CGH cases." },
+      { type: "pitfall", tag: "Diagnostic Pitfall", text: "A 10-year history of headache managed pharmacologically without a musculoskeletal examination is a common clinical scenario. Many CGH patients are managed for years as 'tension headache' or 'migraine' without receiving a structural examination of the cervical spine. The absence of migrainous features (nausea, photophobia, aura) combined with unilateral fixed location and cervical tenderness are the signals that should redirect the diagnostic approach." },
+      { type: "pearl", tag: "Clinical Pearl", text: "The manual muscle testing pattern in cervicogenic headache is distinctive: resisted contraction of the posterior cervical musculature (suboccipitals, trapezius, levator, rhomboids) decreases pain by loading the joint in the direction of its dysfunction, while resisted contraction of the anterior muscles (SCM, scalenes) increases pain by pulling the head forward and loading the suboccipital joints. This pattern helps confirm the posterior cervical source." },
+      { type: "key", tag: "Scope of Practice", text: "Cervicogenic headache is an excellent example of a condition where chiropractic management provides outcomes that pharmacological treatment cannot. Ten years of pharmaceutical management had failed this patient; a targeted structural approach addressing the cervical pain generator produced documented improvement. Chiropractors should actively investigate the cervical spine in all chronic headache presentations." },
+      { type: "pitfall", tag: "Imaging Lesson", text: "Plain cervical radiographs and MRI are not required for the diagnosis of cervicogenic headache in the absence of red flags. The diagnosis is clinical, based on ICHD-3 criteria requiring demonstration of a cervical source. Over-reliance on imaging can delay appropriate manual therapy management and may identify incidental degenerative changes that do not represent the true pain generator." }
+    ]
+  },
+  cpd: {
+    topics: "Cervicogenic headache, headache differential diagnosis, cervical flexion-rotation test, upper cervical dysfunction, chiropractic headache management, ICHD-3 classification",
+    keyPoints: [
+      "Cervicogenic headache is diagnosed by demonstrating a cervical pain generator — the ICHD-3 criteria require reproduction of headache by cervical palpation or movement, typically from C0-C1, C1-C2, or C2-C3.",
+      "The cervical flexion-rotation test is the most specific orthopaedic test for CGH, assessing C1-C2 rotational mobility; restriction less than 32–33° total or greater than 10° asymmetry is diagnostic.",
+      "The absence of migrainous features (nausea, photophobia, phonophobia, aura, side-shift) in a unilateral occipital headache should redirect clinical attention toward a cervicogenic rather than migrainous diagnosis.",
+      "Chiropractic spinal manipulation combined with active cervical rehabilitation is an evidence-based treatment for CGH; a temporary initial increase in symptoms before progressive improvement is a recognised clinical pattern.",
+      "Postural dysfunction — particularly forward head posture — perpetuates CGH by increasing mechanical load on the upper cervical facet joints; postural correction is an essential component of management and relapse prevention."
+    ]
+  }
 }
 // ─────────────────────────────────────────────
 // PASTE ADDITIONAL CASES ABOVE THIS LINE
