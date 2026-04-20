@@ -5346,6 +5346,1351 @@ const CASES = [
       "Postural dysfunction — particularly forward head posture — perpetuates CGH by increasing mechanical load on the upper cervical facet joints; postural correction is an essential component of management and relapse prevention."
     ]
   }
+},
+// ─────────────────────────────────────────────
+// CASE 022 — Hip/Thigh: Bilateral meralgia paresthetica managed with lumbar chiropractic
+// Source: Roecker et al. J Can Chiropr Assoc. 2023;67(2):175-185. PMID: 37840579
+// ─────────────────────────────────────────────
+{
+  id: "022",
+  title: "A 40-year-old man presents with 2 years of bilateral anterior thigh pain and numbness that worsens with prolonged standing and hip extension",
+  category: "Hip",
+  secondaryCategory: "Neuro",
+  difficulty: "Intermediate",
+  estimatedTime: "18–22 min",
+  source: {
+    short: "Roecker et al.\nJ Can Chiropr Assoc. 2023;67(2):175-185\nPMID: 37840579\nPMC: PMC10575328\nOpen access ✓",
+    full: "Roecker CB, Hewawasam SR, Skalski MR. Chiropractic management of bilateral meralgia paresthetica: a case report. J Can Chiropr Assoc. 2023 Aug;67(2):175-185. PMID: 37840579. PMC: PMC10575328."
+  },
+  patient: {
+    ageSex: "40-year-old male",
+    chiefComplaint: "Bilateral anterior and lateral thigh pain and paresthesia",
+    duration: "2 years",
+    priorProviders: "Referred to chiropractic care by VA healthcare system",
+    priorDiagnoses: "Bilateral meralgia paresthetica (referred diagnosis)"
+  },
+  history: {
+    content: `<p>A 40-year-old male U.S. Veteran was referred to chiropractic care through the VA healthcare system for a 2-year history of bilateral anterolateral thigh pain and paresthesia. The patient reported that symptoms worsened with inguinal pressure, prolonged standing, and activities involving hip extension. He described the pain as burning and tingling in distribution across the anterior and lateral thighs bilaterally. The condition had significantly limited his participation in recreational activities.</p>
+<p>There was no history of significant trauma. The patient had no reported history of diabetes, hypothyroidism, or other metabolic conditions. He denied low back pain as a primary complaint, though lumbar examination later revealed relevant findings. His reported pain intensity was 6/10 on a numeric pain rating scale.</p>`,
+    clinicalNote: "The key diagnostic signal here is the bilateral and symmetric distribution of anterolateral thigh sensory symptoms — this pattern, combined with provocation at the inguinal region and hip extension, points to the lateral femoral cutaneous nerve (LFCN) rather than lumbar radiculopathy. The critical reasoning challenge is identifying that a lumbar source (somatic dysfunction at L2–L3) may compress or irritate the LFCN proximally, making lumbar-directed treatment the correct approach rather than purely local inguinal management."
+  },
+  examination: {
+    autoROM: `<p>Lumbar range of motion: mild restriction noted in extension. Hip ROM: within normal limits bilaterally, though hip extension reproduced anterolateral thigh paresthesia bilaterally. No hip joint pathology identified on provocation testing.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Level</th><th>Movement</th><th>Left</th><th>Right</th></tr></thead><tbody><tr><td>L1–L2</td><td>Hip flexion</td><td>5/5</td><td>5/5</td></tr><tr><td>L3</td><td>Knee extension</td><td>5/5</td><td>5/5</td></tr><tr><td>L4</td><td>Ankle dorsiflexion</td><td>5/5</td><td>5/5</td></tr><tr><td>L5</td><td>Great toe extension</td><td>5/5</td><td>5/5</td></tr><tr><td>S1</td><td>Ankle plantarflexion</td><td>5/5</td><td>5/5</td></tr></tbody><tfoot><tr><td colspan="4">All myotomes intact bilaterally. No motor deficit identified.</td></tr></tfoot></table></div>`,
+    checklist: [
+      {
+        group: "Neurological",
+        items: [
+          {
+            id: "lfcn_palpation",
+            label: "LFCN palpation at inguinal ligament",
+            result: `Reproduction of anterolateral thigh paresthesia on bilateral palpation — <span class="tt pos">Positive</span>`,
+            documented: true,
+            rationale: "Palpation over the LFCN at the inguinal ligament is a key provocation test for meralgia paresthetica. Reproduction of the patient's characteristic burning/tingling in the anterolateral thigh on bilateral palpation strongly supports LFCN entrapment as the diagnosis. This was documented and performed in the published case."
+          },
+          {
+            id: "hip_ext_provocation",
+            label: "Hip extension provocation test",
+            result: `Bilateral anterolateral thigh paresthesia reproduced — <span class="tt pos">Positive</span>`,
+            documented: true,
+            rationale: "Hip extension tightens the inguinal ligament and can compress the LFCN, particularly when the nerve passes under or through the ligament. Bilateral reproduction with extension is consistent with bilateral LFCN compromise and was specifically noted in the case."
+          },
+          {
+            id: "dermatome_sensory",
+            label: "Dermatomal sensory testing (L1–S1)",
+            result: `Reduced sensation to light touch in bilateral anterolateral thigh distribution (LFCN territory). L2–S1 dermatomes otherwise intact — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "Sensory mapping is essential to distinguish LFCN distribution (anterolateral thigh only, no medial thigh or leg involvement) from L2/L3 radiculopathy, which would include medial thigh and potentially knee. The isolated anterolateral deficit was a key distinguishing feature documented in this case."
+          },
+          {
+            id: "reflexes",
+            label: "Deep tendon reflexes (patella, Achilles)",
+            result: `<span class="tt normal">Normal</span> bilaterally`,
+            documented: true,
+            rationale: "The LFCN is a purely sensory nerve — it carries no motor fibres and does not contribute to any deep tendon reflex arc. Normal reflexes bilaterally help exclude L3/L4 radiculopathy, where the patellar reflex may be diminished. This was confirmed in the examination."
+          },
+          {
+            id: "straight_leg_raise",
+            label: "Straight leg raise",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "SLR is a test for lumbar nerve root tension, particularly L4–S1. While it was not documented in this case, its inclusion would have been reasonable to exclude concurrent lumbar radiculopathy. A negative SLR would further support a peripheral entrapment mechanism rather than a spinal source, helping to narrow the differential."
+          }
+        ]
+      },
+      {
+        group: "Lumbar / Pelvic",
+        items: [
+          {
+            id: "lumbar_palpation",
+            label: "Lumbar segmental palpation (L2–L3)",
+            result: `Restricted segmental mobility and tenderness at L2–L3 bilaterally — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "The LFCN originates from the L2 and L3 nerve roots. Lumbar segmental restriction at these levels may contribute to LFCN irritability proximally, even if the primary entrapment is at the inguinal ligament. Identifying this finding supported the rationale for lumbar-directed spinal manipulation as part of the treatment strategy."
+          },
+          {
+            id: "faber_test",
+            label: "FABER test (hip)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "FABER (Patrick's test) assesses hip joint integrity, labral pathology, and SIJ provocation. It was not documented in this case but would have been clinically useful to exclude intra-articular hip pathology as a contributing source of groin/thigh symptoms — particularly given the bilateral presentation which can sometimes overlap with hip joint referral."
+          },
+          {
+            id: "hip_compression_distraction",
+            label: "SIJ compression and distraction tests",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "SIJ provocation tests were not documented. Given the bilateral presentation and lumbar involvement, a brief cluster of SIJ tests would have been clinically reasonable to confirm or exclude sacroiliac contributions to the symptom picture before committing to a lumbar manipulation approach."
+          }
+        ]
+      },
+      {
+        group: "Outcome Measures",
+        items: [
+          {
+            id: "numeric_pain_rating",
+            label: "Numeric Pain Rating Scale (NPRS)",
+            result: `6/10 at initial presentation — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "A standardised pain intensity measure was recorded at baseline, enabling objective tracking of treatment response across the 6-visit, 10-week episode of care. This is important for documenting meaningful clinical change in a condition with subjective sensory symptoms."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination was designed to confirm LFCN entrapment as the primary diagnosis while excluding lumbar radiculopathy and hip joint pathology. Palpation provocation at the inguinal ligament, dermatomal mapping, and hip extension testing all reproduced the patient's familiar bilateral anterolateral thigh symptoms. The intact myotomes and reflexes argued strongly against a spinal nerve root lesion. Lumbar segmental palpation identified restriction at L2–L3 — the root levels that give rise to the LFCN — which provided the anatomical rationale for including spinal manipulation in the management plan despite the peripheral entrapment presentation."
+  },
+  investigations: {
+    options: [
+      {
+        id: "lumbar_xray",
+        label: "Lumbar spine X-ray",
+        consequence: "Not ordered in this case. Plain films of the lumbar spine would assess for bony pathology, degenerative changes, or foraminal narrowing at L2–L3. In a young veteran with no red flags, X-ray was not clinically indicated; examination findings alone were sufficient to guide conservative management.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "nerve_conduction",
+        label: "Nerve conduction studies / EMG",
+        consequence: "Not ordered. NCS can confirm LFCN compromise by demonstrating reduced sensory nerve action potential amplitude or conduction velocity. In a straightforward clinical presentation with typical symptom distribution and provocation findings, electrodiagnostic testing is not required before initiating conservative care; however, it would be appropriate if the diagnosis remained uncertain or symptoms failed to respond to treatment.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "mri_lumbar",
+        label: "MRI lumbar spine",
+        consequence: "Not ordered. MRI would be warranted if lumbar radiculopathy could not be clinically excluded, or if symptoms were unilateral with dermatomal features extending below the knee. In this case, the isolated anterolateral thigh distribution, bilateral symmetry, and inguinal provocation made LFCN entrapment the most parsimonious diagnosis without requiring advanced imaging.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Meralgia paresthetica (LFCN entrapment)",
+        correct: true,
+        blurb: "The 2-year bilateral anterolateral thigh burning and paresthesia, reproduced by inguinal palpation and hip extension, is the characteristic presentation of LFCN entrapment. The purely sensory distribution without motor deficit, intact reflexes, and worsening with inguinal pressure all confirm this diagnosis. Lumbar segmental restriction at L2–L3 may represent a proximal contributing factor."
+      },
+      {
+        label: "L2/L3 lumbar radiculopathy",
+        correct: false,
+        blurb: "L2/L3 radiculopathy could produce anterolateral thigh pain and paresthesia, but would typically also affect the medial thigh (L2) or anterior knee (L3) and may reduce the patellar reflex. This patient had intact reflexes, no motor deficit, and symptom distribution limited strictly to the LFCN territory without medial thigh involvement."
+      },
+      {
+        label: "Lumbar spinal stenosis",
+        correct: false,
+        blurb: "Spinal stenosis could produce bilateral lower limb symptoms, but would typically cause neurogenic claudication — worsening with walking and extension, relieved by sitting or lumbar flexion — with broader dermatomal involvement. This patient's symptoms were sensory-only, bilateral thigh-limited, and provoked by inguinal palpation rather than axial loading."
+      },
+      {
+        label: "Hip osteoarthritis",
+        correct: false,
+        blurb: "Hip OA can refer pain to the groin and anterior thigh, but would be expected to reduce hip ROM, provoke pain on hip rotation testing (FABER), and be associated with joint-line tenderness. This patient had full, pain-free hip ROM with no intra-articular provocation signs."
+      },
+      {
+        label: "Femoral nerve neuropathy",
+        correct: false,
+        blurb: "Femoral nerve injury would present with anterior thigh and medial leg symptoms (saphenous distribution), weakness of knee extension (L3/L4 myotome), and a reduced or absent patellar reflex. This patient had no motor deficit, intact patellar reflexes, and no medial leg involvement — the sensory deficit was limited to the LFCN territory."
+      },
+      {
+        label: "Iliopsoas bursitis / tendinopathy",
+        correct: false,
+        blurb: "Iliopsoas pathology produces deep groin and anterior hip pain that worsens with resisted hip flexion and is reproduced on palpation of the iliopsoas. It does not typically produce the bilateral burning paresthesia pattern across the anterolateral thigh seen here, nor would it be provoked by direct inguinal nerve palpation."
+      },
+      {
+        label: "Diabetic peripheral neuropathy",
+        correct: false,
+        blurb: "Diabetic neuropathy can cause bilateral lower limb paresthesia but typically presents in a stocking-glove distribution starting distally, involving the feet and lower legs rather than being isolated to the anterolateral thigh. No metabolic history was documented in this patient."
+      },
+      {
+        label: "Intra-abdominal or pelvic pathology",
+        correct: false,
+        blurb: "Pelvic masses, inguinal hernias, or retroperitoneal pathology can compress the LFCN. In this case, no abdominal or pelvic pathology was identified on clinical examination, and the VA referral for chiropractic care suggests a musculoskeletal assessment had already been undertaken without identifying any visceral source."
+      }
+    ],
+    explanation: `<p>Meralgia paresthetica is caused by compression or irritation of the lateral femoral cutaneous nerve (LFCN) as it passes under, through, or over the inguinal ligament near the anterior superior iliac spine. The LFCN is a purely sensory branch of the lumbar plexus (L2–L3) that supplies the anterolateral thigh. The diagnostic pivot in this case was the bilateral and symmetric nature of the presentation combined with a clear inguinal provocation sign and intact neurological examination below the knee. These features exclude lumbar radiculopathy and hip joint pathology as primary diagnoses.</p>
+<p>The identification of L2–L3 segmental restriction on lumbar palpation provided anatomical context for the lumbar-directed treatment — spinal manipulation at these levels may reduce proximal mechanical irritation of the nerve roots contributing to the LFCN. In this case, chiropractic care incorporating patient education, soft-tissue therapy, exercise, and lumbar manipulation over 6 visits across 10 weeks resulted in complete resolution of pain (0/10) and return to recreational activity.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "lumbar_smt",
+        label: "Spinal manipulative therapy directed at L2–L3",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Lumbar manipulation targeting the L2–L3 segments — the root levels of the LFCN — was a central component of treatment. Restoring segmental mobility may reduce proximal nerve irritability. Combined with soft-tissue therapy and exercise, this multimodal approach led to complete pain resolution across 6 visits.`
+      },
+      {
+        id: "soft_tissue_inguinal",
+        label: "Soft-tissue therapy to inguinal region and hip flexors",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Soft-tissue techniques targeting the inguinal ligament and hip flexors can reduce mechanical compression on the LFCN at its passage point. This was documented as part of the treatment in the published case and is consistent with evidence-based manual therapy for entrapment neuropathies.`
+      },
+      {
+        id: "therapeutic_exercise",
+        label: "Therapeutic exercise prescription",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Exercise targeting the hip and lumbar stabilisers was included to address postural and load-related contributors to LFCN compression. This is consistent with current evidence supporting active rehabilitation in entrapment neuropathies and reduces the risk of symptom recurrence.`
+      },
+      {
+        id: "corticosteroid_injection",
+        label: "Corticosteroid injection at inguinal ligament",
+        selected: false,
+        explanation: `<strong>Not the initial approach taken.</strong> Corticosteroid injection at the LFCN can provide short-term symptom relief and is a reasonable option for refractory cases. However, given that conservative chiropractic care produced complete resolution in this case, injection was not required. It would be a reasonable step if conservative management failed after an adequate trial.`
+      },
+      {
+        id: "neurological_referral",
+        label: "Referral for neurological investigation",
+        selected: false,
+        explanation: `<strong>Not required in this case.</strong> The clinical presentation was sufficiently clear to support a clinical diagnosis of meralgia paresthetica without electrodiagnostic confirmation. Neurological referral and nerve conduction studies would be appropriate if the diagnosis was uncertain, symptoms were rapidly progressive, or conservative care failed to produce improvement.`
+      }
+    ],
+    outcomeText: "Over 6 chiropractic visits combining telehealth and in-person appointments across 10 weeks, the patient's bilateral anterolateral thigh pain resolved from 6/10 to 0/10. He was able to reengage in recreational activities without discomfort, and sustained improvement was reported at follow-up."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Bilateral Meralgia Paresthetica</strong><br>LFCN entrapment with lumbar segmental contribution at L2–L3",
+    outcomes: [
+      { label: "Published Source", text: "Roecker et al. J Can Chiropr Assoc. 2023;67(2):175-185" },
+      { label: "PMID / PMC", text: "PMID: 37840579 — PMC10575328 (open access)" },
+      { label: "Final Diagnosis", text: "Bilateral meralgia paresthetica (LFCN entrapment)" },
+      { label: "Intervention", text: "Lumbar SMT (L2–L3), soft-tissue therapy, therapeutic exercise, patient education — 6 visits over 10 weeks" }
+    ],
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Bilateral anterolateral thigh burning and paresthesia with inguinal provocation and preserved myotomes/reflexes is the hallmark presentation of meralgia paresthetica. The symmetry and inguinal trigger point distinguish it decisively from unilateral lumbar radiculopathy."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "The most common error is attributing bilateral thigh paresthesia to L2/L3 radiculopathy or spinal stenosis without carefully mapping the sensory deficit. LFCN territory is strictly anterolateral thigh — if symptoms extend medially or below the knee, reconsider the diagnosis."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "Always look proximally when the nerve has a lumbar plexus origin. The LFCN arises from L2–L3, and lumbar segmental restriction at these levels may perpetuate proximal neural irritability even when the primary entrapment is at the inguinal ligament. Treating the lumbar spine as well as the local entrapment site often produces superior outcomes."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "This case demonstrates that meralgia paresthetica — typically managed medically with injections or neuromodulators — is amenable to chiropractic conservative care including SMT, soft-tissue therapy, and exercise. Chiropractors should be confident in managing this condition, with the understanding that refractory cases warrant co-management or referral."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "Imaging plays a limited role in uncomplicated meralgia paresthetica. Plain X-rays and MRI are insensitive to LFCN pathology. High-resolution nerve ultrasound or MR neurography can identify nerve enlargement or perineural changes but are not required in straightforward presentations. Reserve imaging for atypical or treatment-refractory cases."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Meralgia paresthetica, LFCN entrapment, lumbar plexus anatomy, regional interdependence, chiropractic management of peripheral neuropathy",
+    keyPoints: [
+      "Meralgia paresthetica results from lateral femoral cutaneous nerve (L2–L3 origin) compression at the inguinal ligament, producing purely sensory anterolateral thigh symptoms.",
+      "Intact deep tendon reflexes and absent motor deficit distinguish LFCN entrapment from L2/L3 radiculopathy, which would also involve the medial thigh and patellar reflex.",
+      "Bilateral symmetry and provocation by inguinal palpation and hip extension are the key clinical features pointing to LFCN entrapment rather than a spinal source.",
+      "Lumbar segmental restriction at L2–L3 may represent a proximal contributor to LFCN irritability, providing the rationale for spinal manipulation directed at these levels.",
+      "Conservative chiropractic care combining lumbar SMT, soft-tissue therapy, and exercise can produce complete resolution in meralgia paresthetica without requiring injection or surgery."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 023 — Knee: Knee pain after total knee arthroplasty caused by cervical spondylotic myelopathy
+// Source: Chu & Lin. Curr Health Sci J. 2022;48(2):226-229. PMID: 36320881
+// ─────────────────────────────────────────────
+{
+  id: "023",
+  title: "A 78-year-old woman presents with 14 months of progressive bilateral knee spasms and pain following bilateral knee replacement surgery",
+  category: "Knee",
+  secondaryCategory: "Cervical",
+  difficulty: "Advanced",
+  estimatedTime: "22–28 min",
+  source: {
+    short: "Chu & Lin\nCurr Health Sci J. 2022;48(2):226-229\nPMID: 36320881\nPMC: PMC9590355\nOpen access ✓",
+    full: "Chu EC, Lin AFC. Knee Pain Following Total Knee Arthroplasty Secondary to Cervical Spondylotic Myelopathy. Curr Health Sci J. 2022 Jun 30;48(2):226-229. doi: 10.12865/CHSJ.48.02.13. PMID: 36320881. PMC: PMC9590355."
+  },
+  patient: {
+    ageSex: "78-year-old female",
+    chiefComplaint: "Progressive bilateral knee tightness, spasms, and pain",
+    duration: "14 months (onset 8 months post-bilaterally TKA)",
+    priorProviders: "5 orthopedic consultations; psychiatrist (psychological illness excluded); referred to chiropractic",
+    priorDiagnoses: "Post-TKA pain; knee osteoarthritis (original diagnosis); psychological illness (excluded)"
+  },
+  history: {
+    content: `<p>A 78-year-old woman presented with a 14-month history of progressive bilateral knee tightness, spasms, and pain following bilateral total knee arthroplasty (TKA). Prior to surgery, she had experienced 24 months of severe knee pain and difficulty walking, diagnosed as bilateral knee osteoarthritis. She underwent uncomplicated bilateral TKA and initially recovered well, with partial recovery within 6 months.</p>
+<p>After 8 months of post-operative rehabilitation, she experienced a return of severe knee pain with gait instability and progressive lower limb weakness. She also reported difficulty with household tasks (washing dishes), leg muscle spasms at night, and restricted knee flexion and extension. She had sought 5 separate orthopedic consultations for the recurrent spasms and pain, and psychological illness was excluded by a psychiatrist before she was referred to chiropractic rehabilitation.</p>
+<p>Her peak pain intensity was 8/10 on an 11-point numeric pain rating scale. She reported difficulty maintaining a normal daily routine.</p>`,
+    clinicalNote: "This is a classic example of funicular (myelopathic) pain — a phenomenon where cervical cord compression produces pain referred far distal to the compressed segment. The pivotal diagnostic clue is the progression of bilateral lower limb symptoms in an elderly patient AFTER knee surgery that had initially succeeded. The coexistence of upper limb findings (reduced elbow flexor and wrist extensor strength, positive Hoffmann sign) alongside the knee complaints is the diagnostic pivot that should redirect the clinician to the cervical spine rather than the knee."
+  },
+  examination: {
+    autoROM: `<p>Knee ROM: Right knee restricted to 125° flexion (normal 140°) and 125° extension (normal 135°). Left knee restricted to 130° flexion and 120° extension. Lumbar ROM: not specifically documented. Cervical ROM: not documented; cervical assessment was prompted by upper limb findings.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Level</th><th>Movement</th><th>Left</th><th>Right</th></tr></thead><tbody><tr><td>C5</td><td>Elbow flexion</td><td>4/5</td><td>5/5</td></tr><tr><td>C6</td><td>Wrist extension</td><td>4/5</td><td>5/5</td></tr><tr><td>C7</td><td>Elbow extension</td><td>5/5</td><td>5/5</td></tr><tr><td>L2–L4</td><td>Lower limb (dynamometer)</td><td>4/5</td><td>5/5</td></tr></tbody><tfoot><tr><td colspan="4">Reduced motor strength in left upper and lower limbs documented on dynamometer testing. This upper limb deficit was the diagnostic pivot for cervical investigation.</td></tr></tfoot></table></div>`,
+    checklist: [
+      {
+        group: "Upper Motor Neuron / Myelopathy",
+        items: [
+          {
+            id: "hoffmann_sign",
+            label: "Hoffmann's sign",
+            result: `<span class="tt pos">Positive</span> — left upper extremity`,
+            documented: true,
+            rationale: "Hoffmann's sign is an upper motor neuron reflex, analogous to Babinski in the lower limb. A positive finding indicates corticospinal tract compromise above C5. Its presence in the left upper limb was the critical examination finding that shifted the clinical hypothesis from a knee/orthopaedic problem to a cervical spinal cord lesion. This was the diagnostic pivot of the entire case."
+          },
+          {
+            id: "upper_limb_strength",
+            label: "Upper limb motor strength (dynamometer)",
+            result: `Left elbow flexors and wrist extensors: 4/5. Right upper limb: <span class="tt normal">Normal</span> — left upper limb: <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "Reduced motor strength in the left upper limb, discovered alongside the positive Hoffmann sign, confirmed involvement of the motor pathways in the cervical cord. Crucially, upper limb deficits in a patient presenting with knee pain should immediately prompt suspicion of a spinal cord lesion — the upper limb findings proved essential to the diagnosis."
+          },
+          {
+            id: "upper_trapezius_palpation",
+            label: "Upper trapezius palpation",
+            result: `Tenderness to palpation bilaterally — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "Tenderness in the upper trapezius is a common but non-specific finding in cervical pathology. While it does not confirm myelopathy, it provided an early indicator of cervical involvement and was consistent with the cervical spondylosis confirmed on MRI."
+          },
+          {
+            id: "babinski_sign",
+            label: "Babinski's sign (plantar response)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Babinski's sign (extensor plantar response) is one of the most sensitive indicators of upper motor neuron dysfunction and corticospinal tract compromise. Its omission from the documented examination is notable — a positive Babinski in the lower limbs would have further corroborated the myelopathic diagnosis and is standard in any suspected cord lesion. It should have been included given the Hoffmann positivity and lower limb symptoms."
+          },
+          {
+            id: "clonus",
+            label: "Ankle/patellar clonus",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Clonus is a hallmark of upper motor neuron lesions and would be expected in a patient with significant cervical cord compression causing bilateral lower limb spasticity. Testing for clonus was not documented, but its presence would have strongly supported myelopathy and reinforced the urgency of cervical investigation and appropriate referral considerations."
+          }
+        ]
+      },
+      {
+        group: "Knee / Lower Limb",
+        items: [
+          {
+            id: "knee_palpation",
+            label: "Knee palpation and joint-line tenderness",
+            result: `Clinical examination of the knee was described as unremarkable — <span class="tt normal">Normal</span>`,
+            documented: true,
+            rationale: "The absence of local knee pathological signs in a patient who had undergone TKA and had satisfactory post-operative imaging was clinically informative. A normal knee examination despite severe knee symptoms (spasms, restriction, pain) is a key red flag for a distant source — in this case, the cervical spinal cord."
+          },
+          {
+            id: "hamstring_tone",
+            label: "Hamstring hypertonicity assessment",
+            result: `Left hamstring hypertonicity documented — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "Increased lower limb muscle tone, particularly in the hamstrings, is consistent with upper motor neuron involvement. Spasticity-driven hypertonicity contributes to the knee spasms and restricted ROM seen in this case and is a clinical sign that points toward a central (myelopathic) rather than peripheral (orthopaedic) mechanism."
+          },
+          {
+            id: "mcmurray_lachman",
+            label: "McMurray's / Lachman test (knee instability)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Standard orthopaedic knee tests such as McMurray's (meniscal) and Lachman (ACL) were not documented, likely because the clinical picture rapidly pointed toward a central neurological source. In the context of a post-TKA knee, these tests would have limited diagnostic yield; however, their documentation would have helped formally exclude residual intra-articular pathology."
+          }
+        ]
+      },
+      {
+        group: "Outcome Measures",
+        items: [
+          {
+            id: "nprs_pain",
+            label: "Numeric Pain Rating Scale (NPRS)",
+            result: `Peak knee spasm pain: 8/10 at presentation — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "NPRS documentation at baseline allowed objective tracking of treatment response. The severity (8/10) was disproportionate to what would be expected from post-TKA mechanical pain alone, which further suggested a central sensitisation or neuropathic mechanism consistent with myelopathy."
+          },
+          {
+            id: "whoqol",
+            label: "WHO Quality of Life Assessment (WHOQOL)",
+            result: `64% at initial chiropractic consultation — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "Quality of life measurement provided a broader functional context, capturing the impact of the bilateral knee spasms and weakness on daily activities and sleep. Post-treatment improvement from 64% to 92% demonstrated clinically meaningful functional recovery after chiropractic rehabilitation."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination strategy evolved from knee assessment to a full neurological screen once upper limb deficits were detected. The positive Hoffmann sign and left upper limb motor weakness in a patient presenting with bilateral post-TKA knee pain and spasm were the critical redirecting findings. A normal local knee examination in the context of severe knee symptoms further supported a remote source. These findings collectively justified cervical MRI as the next investigation, which confirmed cervical spondylotic myelopathy as the underlying cause."
+  },
+  investigations: {
+    options: [
+      {
+        id: "cervical_mri",
+        label: "Cervical MRI",
+        consequence: null,
+        ordered: true,
+        result: `<p>MRI revealed cervical spondylosis with grade I degenerative spondylolisthesis at multiple segments. C2/C3 and C3/C4 disc herniation causing central spinal canal stenosis was identified, along with myelomalacia and cord oedema. These findings confirmed cervical spondylotic myelopathy as the aetiology of the bilateral lower limb spasm and knee pain.</p>`
+      },
+      {
+        id: "knee_xray",
+        label: "Knee X-ray / EOS imaging",
+        consequence: null,
+        ordered: true,
+        result: `<p>EOS® imaging evaluation of the bilateral knee arthroplasty components was satisfactory — no hardware failure, loosening, or malalignment identified. Normal post-operative appearances confirmed that the knee prostheses were not the source of the patient's symptoms.</p>`
+      },
+      {
+        id: "lab_tests",
+        label: "Laboratory blood tests (CBC, LFT, renal function)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Complete blood count, liver function tests, and kidney function tests all within normal limits. No metabolic, haematological, or inflammatory abnormality identified to explain the bilateral lower limb symptoms.</p>`
+      },
+      {
+        id: "emg_ncs",
+        label: "Electromyography / nerve conduction studies",
+        consequence: "Not ordered. EMG/NCS could have differentiated upper motor neuron (myelopathic) from lower motor neuron (radiculopathic or peripheral neuropathic) involvement. Given the clinical findings of hypertonicity, hyperreflexia (Hoffmann), and upper limb weakness, the clinical picture was sufficiently compelling for MRI to be the priority investigation. EMG would not be required for diagnosis of myelopathy and might have delayed the more informative MRI.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Cervical spondylotic myelopathy (funicular pain)",
+        correct: true,
+        blurb: "Cervical cord compression at C2/C3 and C3/C4 produces funicular (myelopathic) pain and spasticity that can manifest far below the lesion level. The bilateral lower limb spasms, hypertonicity, positive Hoffmann sign, upper limb weakness, and normal knee examination are all consistent with upper motor neuron involvement from cervical cord compromise. Funicular pain directed to the knee from a cervical lesion is a recognised but rare phenomenon."
+      },
+      {
+        label: "TKA component failure / loosening",
+        correct: false,
+        blurb: "Hardware failure would present with mechanical pain on weight-bearing, periarticular tenderness, possible effusion, and abnormalities on imaging such as subsidence, radiolucency, or malalignment. EOS imaging was satisfactory, and the clinical pattern — bilateral, with night spasms and upper limb findings — is not consistent with a mechanical prosthetic problem."
+      },
+      {
+        label: "Post-surgical knee fibrosis / arthrofibrosis",
+        correct: false,
+        blurb: "Arthrofibrosis can produce painful restriction of knee ROM after TKA, but it does not cause bilateral simultaneous onset 8 months post-operatively, night spasms, upper limb weakness, or a positive Hoffmann sign. Restricted ROM in this case was driven by spasticity rather than fibrous tissue, as confirmed by the normal knee examination and the response to cervical-directed treatment."
+      },
+      {
+        label: "Lumbar spinal stenosis with neurogenic claudication",
+        correct: false,
+        blurb: "Lumbar stenosis could produce bilateral lower limb weakness and gait disturbance, but would not explain the positive Hoffmann sign, the upper limb motor deficit, or bilateral night spasms. Neurogenic claudication characteristically worsens with walking and improves with sitting flexion, which does not match this patient's nocturnal spasm pattern."
+      },
+      {
+        label: "Deep vein thrombosis / vascular complication",
+        correct: false,
+        blurb: "DVT is a recognised post-TKA risk and would present with unilateral leg swelling, warmth, and tenderness rather than bilateral symmetric spasms with upper limb neurological deficits. The 14-month duration and progressive neurological course make an acute vascular complication unlikely."
+      },
+      {
+        label: "Referred pain from lumbar facet joints",
+        correct: false,
+        blurb: "Lumbar facet referral can produce posterior thigh and knee pain, but does not cause anterior knee spasm, bilateral simultaneous presentation at this intensity, night spasms, or upper limb neurological signs. The positive Hoffmann sign alone effectively excludes a pure lumbar facet origin."
+      },
+      {
+        label: "Complex regional pain syndrome (CRPS)",
+        correct: false,
+        blurb: "CRPS can complicate joint replacement surgery and produces burning, hypersensitivity, and autonomic changes (swelling, skin changes). It is typically unilateral and would not explain the bilateral presentation, upper limb findings, or MRI evidence of cord compression."
+      },
+      {
+        label: "Psychological pain disorder / somatisation",
+        correct: false,
+        blurb: "This diagnosis was formally excluded by a psychiatrist before the chiropractic referral. Furthermore, the objective findings of positive Hoffmann sign, motor weakness, hamstring hypertonicity, and MRI-confirmed myelomalacia provide clear organic aetiology, making psychological somatisation an inappropriate conclusion."
+      }
+    ],
+    explanation: `<p>The diagnostic pivot in this case was the identification of upper motor neuron signs during a routine chiropractic examination of a patient presenting with knee complaints. A positive Hoffmann sign in the left upper limb, combined with left-sided motor weakness in elbow flexors and wrist extensors, revealed bilateral lower limb symptoms as manifestations of cervical cord compression — so-called funicular pain.</p>
+<p>Funicular pain occurs when the ascending tracts of the spinal cord (spinothalamic or posterior column) are compressed, producing pain that may be felt at sites remote from and below the compression level. This mechanism explains why bilateral knee pain and spasm persisted and worsened despite technically successful knee arthroplasty — the real pathology lay 40+ vertebral segments above the symptomatic joint.</p>
+<p>The case underscores that in any patient with persistent post-surgical joint pain, a complete neurological examination including upper motor neuron testing is mandatory. The normal knee examination findings were equally informative — the absence of local pathological signs in the symptomatic joint was a powerful signal to look elsewhere.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "cervical_traction",
+        label: "Intermittent motorised cervical traction",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Cervical traction creates distraction of the intervertebral space, reducing disc bulge and compressive forces on the spinal cord. It was a central component of treatment in this case and is one of the few conservative modalities with evidence for symptomatic benefit in cervical myelopathy where surgery is not immediately indicated.`
+      },
+      {
+        id: "cervical_smt",
+        label: "Cervical spinal manipulative therapy",
+        selected: true,
+        explanation: `<strong>Used with caution and appropriate clinical reasoning.</strong> Gentle cervical manipulation was applied in this case as part of the chiropractic rehabilitation programme. This requires careful clinical judgement in myelopathy — high-velocity techniques are relatively contraindicated in the presence of significant cord compromise. The published case documented improvement, though this represents a clinical decision requiring close patient monitoring.`
+      },
+      {
+        id: "scraping_therapy",
+        label: "Soft-tissue therapy (scraping/gua sha) to hamstrings and quadriceps",
+        selected: true,
+        explanation: `<strong>Appropriate for symptomatic management.</strong> Gua sha applied to the spastic lower limb musculature was used to reduce muscle hypertonicity and improve local tissue mobility, contributing to the improvement in knee ROM and symptom relief. This addresses the downstream consequences of the myelopathy without targeting the cord lesion directly.`
+      },
+      {
+        id: "further_knee_surgery",
+        label: "Repeat knee surgery or TKA revision",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> TKA revision was not indicated — EOS imaging confirmed the implants were satisfactory. Proceeding with additional knee surgery without identifying the true neurological source would have been a serious error. The case explicitly notes that TKA could have been avoided altogether if CSM had been diagnosed before the original joint replacement.`
+      },
+      {
+        id: "cervical_surgery_referral",
+        label: "Urgent neurosurgical referral for cervical decompression",
+        selected: false,
+        explanation: `<strong>Not taken in this case — conservative management was trialled first.</strong> Surgical decompression is indicated for progressive myelopathy with significant neurological deficit. In this case, conservative chiropractic rehabilitation produced marked improvement, and surgery was not required. Neurosurgical referral would be appropriate if conservative care failed or if rapid neurological deterioration occurred.`
+      }
+    ],
+    outcomeText: "After 4 weeks of chiropractic rehabilitation (3 sessions/week), both knee pain and ROM returned to normal. Left-hand and leg motor strength improved on dynamometer testing. The WHO Quality of Life score improved from 64% to 92%. At 6-month follow-up, the patient maintained a normal daily routine without difficulty."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Cervical Spondylotic Myelopathy</strong><br>Funicular pain presenting as bilateral post-TKA knee spasm and pain",
+    outcomes: [
+      { label: "Published Source", text: "Chu & Lin. Curr Health Sci J. 2022;48(2):226-229" },
+      { label: "PMID / PMC", text: "PMID: 36320881 — PMC9590355 (open access)" },
+      { label: "Final Diagnosis", text: "Cervical spondylotic myelopathy (C2/C3 and C3/C4 stenosis with cord oedema and myelomalacia)" },
+      { label: "Intervention", text: "Cervical traction, SMT, gua sha to lower limbs, proprioception training — 3x/week for 4 weeks" }
+    ],
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Persistent bilateral knee pain or spasm following apparently successful TKA — especially with progressive neurological features — demands a complete neurological screen including upper motor neuron testing. The source of the pain may be in the cervical spinal cord, not the knee."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "Anchoring bias almost led this patient to unnecessary additional knee surgery. Five orthopedic consultations focused on the symptomatic joint and missed the cervical lesion entirely. When a post-surgical patient does not follow the expected recovery trajectory, always re-examine with fresh eyes — including the neurological system from head to toe."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "Funicular pain is real and underrecognised. Cervical cord compression can produce pain and spasticity far below the level of the lesion. A positive Hoffmann sign in the context of lower limb pain is the key that unlocks the diagnosis — never omit upper limb neurological testing when assessing bilateral lower limb complaints in elderly patients."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "This case illustrates the critical value of a thorough chiropractic neurological examination as a diagnostic tool. The chiropractor identified the cervical cause where five orthopaedic consultations had not. This is a powerful demonstration of the neuromusculoskeletal expertise chiropractors bring — and it also highlights the responsibility to identify when surgical or neurological co-management is required."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "EOS imaging of the knee implants was normal — demonstrating that imaging of the symptomatic joint alone is insufficient when neurological signs point elsewhere. The key investigation was cervical MRI, which revealed myelomalacia and cord oedema. Imaging must follow the clinical hypothesis, not just the symptomatic joint."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Cervical spondylotic myelopathy, funicular pain, post-TKA complications, upper motor neuron signs, Hoffmann's sign, regional interdependence",
+    keyPoints: [
+      "Cervical spondylotic myelopathy can produce funicular pain — nociceptive and neuropathic symptoms referred to locations remote and distal to the cervical cord compression.",
+      "A positive Hoffmann sign in the upper limb in a patient presenting with lower limb pain is a critical redirecting finding that demands cervical evaluation and imaging.",
+      "Bilateral lower limb spasticity and hypertonicity after joint replacement with a normal prosthesis on imaging should trigger suspicion of a central neurological source.",
+      "Anchoring on the presenting joint — in this case the knee — without a complete neurological screen is a dangerous diagnostic shortcut in elderly patients with progressive symptoms.",
+      "Conservative chiropractic rehabilitation including traction, SMT, and soft-tissue therapy can produce meaningful recovery in cervical myelopathy where surgical intervention is not yet indicated."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 024 — Knee: Isolated medial knee pain in runner caused by sacroiliac joint dysfunction
+// Source: Vaughn DW. J Orthop Sports Phys Ther. 2008;38(10):616-23. PMID: 18827328
+// ─────────────────────────────────────────────
+{
+  id: "024",
+  title: "A 25-year-old female runner presents with 4½ weeks of medial knee pain with no mechanism of injury, preventing marathon training",
+  category: "Knee",
+  secondaryCategory: "Sacral/SIJ",
+  difficulty: "Intermediate",
+  estimatedTime: "16–20 min",
+  source: {
+    short: "Vaughn DW\nJ Orthop Sports Phys Ther. 2008;38(10):616-23\nPMID: 18827328\nOpen access ✓",
+    full: "Vaughn DW. Isolated knee pain: a case report highlighting regional interdependence. J Orthop Sports Phys Ther. 2008 Oct;38(10):616-23. doi: 10.2519/jospt.2008.2759. PMID: 18827328."
+  },
+  patient: {
+    ageSex: "25-year-old female",
+    chiefComplaint: "Medial knee pain, left side",
+    duration: "4½ weeks",
+    priorProviders: "Self-referred to physical therapy",
+    priorDiagnoses: "None documented prior to this consultation"
+  },
+  history: {
+    content: `<p>A 25-year-old female runner self-referred for medial left knee pain of 4½ weeks' duration. There was no significant onset event — the pain had developed insidiously during a period of increased marathon training. The pain had completely curtailed her training for the Boston Marathon and was causing significant functional limitation.</p>
+<p>She denied any locking, catching, or swelling of the knee. There was no history of previous knee injury or surgery. She described the pain as localised to the medial aspect of the knee, reproduced by running but also present during daily activities. She had not trialled any specific treatment prior to this consultation.</p>`,
+    clinicalNote: "The key diagnostic signal is the complete absence of positive findings on thorough knee and hip examination in a runner with medial knee pain and no mechanism of injury. When local examination is unremarkable, the clinician must look proximal. Pelvic girdle assessment revealed significant sacral landmark asymmetry — but without positive SIJ provocation tests. This is a textbook case of regional interdependence: a joint remote from the symptom site is the driver. Single-session resolution after SIJ manipulation strongly supports the diagnosis by outcome."
+  },
+  examination: {
+    autoROM: `<p>Knee ROM: full and pain-free bilaterally. Hip ROM: full and pain-free bilaterally. Lumbar ROM: not restricted. No ROM-based reproduction of medial knee pain documented during standard joint assessment.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Level</th><th>Movement</th><th>Left</th><th>Right</th></tr></thead><tbody><tr><td>L2–L3</td><td>Hip flexion</td><td>5/5</td><td>5/5</td></tr><tr><td>L3–L4</td><td>Knee extension</td><td>5/5</td><td>5/5</td></tr><tr><td>L4</td><td>Ankle dorsiflexion</td><td>5/5</td><td>5/5</td></tr><tr><td>L5</td><td>Great toe extension</td><td>5/5</td><td>5/5</td></tr><tr><td>S1</td><td>Ankle plantarflexion</td><td>5/5</td><td>5/5</td></tr></tbody><tfoot><tr><td colspan="4">All myotomes intact. No neurological deficit identified.</td></tr></tfoot></table></div>`,
+    checklist: [
+      {
+        group: "Knee Orthopaedic Tests",
+        items: [
+          {
+            id: "mcmurray_test",
+            label: "McMurray's test (meniscal)",
+            result: `<span class="tt normal">Normal</span> — no pain, no click`,
+            documented: true,
+            rationale: "McMurray's is the primary clinical screen for medial and lateral meniscal tears, which are the most common local cause of medial knee pain in a young runner. A negative result helps exclude meniscal pathology as the primary source and directs the clinician to consider alternative diagnoses."
+          },
+          {
+            id: "valgus_stress",
+            label: "Valgus stress test (MCL integrity)",
+            result: `<span class="tt normal">Normal</span> — no laxity or pain`,
+            documented: true,
+            rationale: "The MCL is the primary stabiliser against valgus force and, when sprained, produces medial knee pain. A normal valgus stress test excludes significant MCL injury. Combined with no mechanism of injury, this finding makes a structural ligament injury very unlikely."
+          },
+          {
+            id: "lachman_test",
+            label: "Lachman test (ACL integrity)",
+            result: `<span class="tt normal">Normal</span>`,
+            documented: true,
+            rationale: "ACL injury typically presents with a traumatic onset and often involves lateral knee pain or the 'terrible triad'. A normal Lachman result in the context of an insidious medial presentation with no trauma effectively excludes ACL pathology as a contributing factor."
+          },
+          {
+            id: "joint_line_palpation",
+            label: "Medial joint-line palpation",
+            result: `Tenderness to palpation on the medial knee joint line — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "Medial joint-line tenderness is a sensitive (but not highly specific) finding for medial meniscal pathology. Its presence was the only positive finding on knee examination. Critically, it was the sole local sign, prompting more proximal investigation when all other knee tests were normal."
+          },
+          {
+            id: "thessaly_test",
+            label: "Thessaly test (dynamic meniscal compression)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "The Thessaly test — weight-bearing single-leg knee rotation — has better specificity for meniscal tears than McMurray's in some studies. Its inclusion would have strengthened the ruling-out of meniscal pathology before attributing the medial tenderness to a distant source. However, given the negative McMurray and the absence of other meniscal signs, its absence does not substantially alter the clinical conclusion."
+          }
+        ]
+      },
+      {
+        group: "Hip Tests",
+        items: [
+          {
+            id: "faber_hip",
+            label: "FABER test (hip joint and SIJ)",
+            result: `<span class="tt normal">Normal</span> — no hip joint pain reproduced`,
+            documented: true,
+            rationale: "A normal FABER test helped exclude intra-articular hip pathology (labral tear, hip OA) and major SIJ provocation as a source of referred medial knee pain. Its negativity directed the examiner away from hip joint pathology while keeping the SIJ in the differential."
+          },
+          {
+            id: "ober_test",
+            label: "Ober's test (ITB tightness)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Ober's test assesses iliotibial band tightness, which in runners can contribute to lateral knee pain (ITB syndrome) and alter patellar tracking. While less directly relevant to medial knee pain, a tight ITB can alter hip and pelvic mechanics, potentially contributing to SIJ loading. Its inclusion would have added completeness to the biomechanical assessment."
+          }
+        ]
+      },
+      {
+        group: "Pelvic Girdle / SIJ",
+        items: [
+          {
+            id: "sacral_landmark_asymmetry",
+            label: "Sacral bony landmark assessment",
+            result: `Significant asymmetry of sacral bony landmarks detected — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "Asymmetry of sacral landmarks (posterior superior iliac spine levels, sacral base, inferior lateral angles) suggested sacroiliac joint positional fault or dysfunction ipsilateral to the knee symptoms. This was the critical proximal finding that explained the medial knee pain via regional interdependence — altered SIJ mechanics affecting lower limb loading patterns."
+          },
+          {
+            id: "sij_provocation_cluster",
+            label: "SIJ provocation test cluster (distraction, compression, thigh thrust, FABER, Gaenslen's)",
+            result: `No significant provocation of pain on SIJ-specific tests — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "Paradoxically, the SIJ provocation cluster was negative despite the positive landmark asymmetry. This is a recognised pattern in SIJ dysfunction where joint mobility asymmetry is present without inflammatory provocation. The discrepancy between positive landmark assessment and negative provocation tests is important — it suggests a mechanical dysfunction rather than SIJ inflammation, which is more responsive to manipulation."
+          },
+          {
+            id: "pubic_symphysis_palpation",
+            label: "Pubic symphysis tenderness",
+            result: `Not specifically documented`,
+            documented: false,
+            rationale: "Pubic symphysis dysfunction can accompany or contribute to SIJ dysfunction in runners and can refer pain toward the medial knee region via the adductor attachment. Manual therapy was directed to both the pubic symphysis and SIJ in the treatment session, suggesting clinical suspicion of pubic symphysis involvement, even if formal palpation findings were not recorded."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination strategy in this case was systematic and instructive. Standard knee and hip testing produced only a single positive finding — medial joint-line tenderness — with no reproduction of pain on any orthopaedic provocation test. This triggered a more proximal assessment of the pelvic girdle. The diagnostic key was the sacral landmark asymmetry in the absence of positive SIJ pain provocation tests — a pattern pointing to a mechanical SIJ dysfunction affecting lower limb mechanics and producing referred medial knee pain via altered load transfer. Treatment directed at the SIJ and pubic symphysis resolved the knee pain in a single session."
+  },
+  investigations: {
+    options: [
+      {
+        id: "knee_mri",
+        label: "MRI knee",
+        consequence: "Not ordered. Given the unremarkable knee examination (negative McMurray's, negative stress tests, absent effusion) and the 4.5-week insidious onset with no mechanism, MRI was not clinically indicated as a first step. The clinical picture directed examination proximally, where the SIJ dysfunction was identified and successfully treated. MRI would be appropriate if the patient had failed conservative management or if examination had revealed meniscal or ligamentous provocation signs.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "pelvis_xray",
+        label: "Pelvic X-ray",
+        consequence: "Not ordered. There were no clinical indicators for structural pelvic pathology — no trauma, no red flags, and no leg length discrepancy requiring assessment. Plain films of the pelvis would not be expected to reveal a mechanical SIJ dysfunction and would not have changed the management approach.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "lower_limb_biomechanical",
+        label: "Running gait analysis",
+        consequence: "Not ordered in this case, though it would represent a reasonable adjunct in a competitive runner. Gait analysis might have revealed altered pelvic drop, foot strike patterns, or contralateral lower limb mechanics contributing to ipsilateral SIJ loading. This would be especially valuable for prevention and return-to-running programming after resolution of the acute presentation.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Sacroiliac joint dysfunction with referred knee pain",
+        correct: true,
+        blurb: "Sacral landmark asymmetry without positive SIJ provocation tests is a recognised pattern of mechanical SIJ dysfunction. SIJ referral patterns extend to the posterior and medial thigh and knee via altered load transfer and neurological referral from L4–S3. The single-session resolution of knee pain following manipulation directed at the SIJ and pubic symphysis ipsilateral to the knee pain provides strong outcome-based support for this diagnosis."
+      },
+      {
+        label: "Medial meniscus tear",
+        correct: false,
+        blurb: "A medial meniscal tear in a runner would typically be provoked by McMurray's test, Thessaly test, and compression in loaded positions. While medial joint-line tenderness was present, all other meniscal provocation tests were negative and there was no mechanism of injury, no locking or catching, and no effusion. The complete resolution after a single session of SIJ manipulation without any knee treatment effectively excludes the knee as the primary source."
+      },
+      {
+        label: "MCL sprain",
+        correct: false,
+        blurb: "An MCL sprain would require a valgus mechanism of injury and would produce pain and laxity on valgus stress testing. This patient had no trauma history, a negative valgus stress test, and no laxity — MCL injury is excluded."
+      },
+      {
+        label: "Pes anserine bursitis",
+        correct: false,
+        blurb: "Pes anserine bursitis produces medial proximal tibial pain, often in overweight or osteoarthritic patients. It would present with localised tenderness at the pes anserine insertion (2–3 cm below the joint line, medially) rather than joint-line tenderness. A 25-year-old competitive runner is an atypical demographic for this diagnosis."
+      },
+      {
+        label: "Medial plica syndrome",
+        correct: false,
+        blurb: "Medial plica irritation in runners produces medial knee pain with a palpable, snapping plica band, often with pseudo-locking. It can produce medial joint-line tenderness but would typically worsen with prolonged knee flexion and stair climbing. In this case, no plica was documented on examination, and the single-session resolution after SIJ manipulation — without any local knee treatment — argues against a local structural source."
+      },
+      {
+        label: "Lumbar radiculopathy with knee referral",
+        correct: false,
+        blurb: "Lumbar L3/L4 radiculopathy can refer pain to the medial knee, but would typically present with dermatomal leg symptoms, reduced patellar reflex, and lumbar ROM restriction. This patient had intact myotomes, normal reflexes, no spinal symptoms, and full lumbar ROM — a lumbar source is unlikely."
+      },
+      {
+        label: "Patellofemoral pain syndrome",
+        correct: false,
+        blurb: "PFPS produces anterior and peripatellar pain aggravated by stairs, squatting, and prolonged sitting with the knee flexed. Medial joint-line pain as the primary complaint without patellar provocation findings does not fit this diagnosis. There were no patellar grind, patellar tilt, or J-sign findings documented."
+      },
+      {
+        label: "Stress fracture of the medial tibial plateau",
+        correct: false,
+        blurb: "Tibial stress fractures occur in distance runners and can present with insidious medial pain. However, they typically demonstrate bony tenderness on direct palpation and a positive hop or tuning fork test, and would not resolve with a single session of SIJ manipulation. The clinical picture and single-session outcome exclude this diagnosis."
+      }
+    ],
+    explanation: `<p>This case is a landmark example of regional interdependence — the concept that musculoskeletal dysfunction at one joint can produce symptoms at a distant joint through mechanical, neurological, or reflex pathways. The medial knee pain in this case was not driven by any local knee pathology but by sacroiliac joint dysfunction ipsilateral to the symptoms.</p>
+<p>The proposed mechanism involves altered SIJ mechanics changing load transfer through the pelvic girdle and ipsilateral lower limb, placing abnormal stress on the medial knee structures during running. Neurological referral from the SIJ (which receives innervation from L4–S3) can also contribute to medial knee pain via the posterior branch of the obturator nerve and other geniculate branches.</p>
+<p>The paradox of positive landmark asymmetry without positive SIJ pain provocation tests is clinically instructive — it identifies a mechanical dysfunction without an inflammatory component. This subgroup responds well to manipulation, as demonstrated by the complete resolution of the medial knee pain after a single treatment session directed solely at the pubic symphysis and ipsilateral SIJ, with no local knee treatment administered.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "sij_manipulation",
+        label: "Manual therapy to pubic symphysis and ipsilateral SIJ",
+        selected: true,
+        explanation: `<strong>Appropriate — and diagnostically confirmatory by outcome.</strong> A single session of manual therapy procedures directed to the pubic symphysis and sacroiliac joint ipsilateral to the knee pain produced complete resolution of medial knee pain and allowed return to marathon training. This strongly supports the SIJ as the primary source. The treatment approach is consistent with regional interdependence principles and evidence-based manual therapy for pelvic girdle dysfunction.`
+      },
+      {
+        id: "knee_local_treatment",
+        label: "Local knee treatment (ultrasound, taping, knee exercises)",
+        selected: false,
+        explanation: `<strong>Not indicated in this case.</strong> No local knee treatment was administered — and the case resolved with proximal pelvic treatment alone. Applying knee-directed therapy would have treated the symptom site while missing the source, likely producing temporary benefit at best. This case illustrates why thorough examination identifying the true source is essential before committing to symptom-site treatment.`
+      },
+      {
+        id: "running_cessation",
+        label: "Running cessation and relative rest",
+        selected: false,
+        explanation: `<strong>Not the primary treatment approach.</strong> While reducing training load is a reasonable short-term adjunct, rest alone does not address the underlying SIJ dysfunction. This patient had already stopped training due to pain — simply continuing rest would not have resolved the problem. Active identification and treatment of the source (SIJ) was necessary for return to sport.`
+      },
+      {
+        id: "mri_and_ortho_referral",
+        label: "MRI knee and orthopaedic referral",
+        selected: false,
+        explanation: `<strong>Not indicated given the clinical findings.</strong> With a normal knee examination (except medial tenderness), no mechanism of injury, and a plausible proximal diagnosis confirmed by outcome, MRI and orthopaedic referral would have been premature and potentially led to unnecessary investigation or intervention targeting a joint that was not the source of the problem.`
+      }
+    ],
+    outcomeText: "After a single session of manual therapy directed to the pubic symphysis and sacroiliac joint ipsilateral to the symptomatic knee, the patient was able to return to running without further incident of knee pain. No follow-up treatment was required."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Sacroiliac Joint Dysfunction</strong><br>Isolated medial knee pain via regional interdependence — single-session resolution",
+    outcomes: [
+      { label: "Published Source", text: "Vaughn DW. J Orthop Sports Phys Ther. 2008;38(10):616-23" },
+      { label: "PMID", text: "PMID: 18827328" },
+      { label: "Final Diagnosis", text: "Sacroiliac joint dysfunction producing referred medial knee pain" },
+      { label: "Intervention", text: "Single session of manual therapy to pubic symphysis and ipsilateral SIJ — complete resolution" }
+    ],
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "When a thorough knee and hip examination is unremarkable in a patient with medial knee pain, always examine the pelvic girdle. Sacroiliac joint dysfunction can produce referred medial knee pain via altered load transfer and neurological referral pathways — and it can resolve completely with a single proximal treatment session."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "Medial joint-line tenderness, while a sensitive sign for meniscal pathology, is not specific. Treating the tender site without investigating its source risks perpetuating the problem. In runners with insidious onset knee pain and a normal orthopaedic exam, look to the pelvis before imaging the knee."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "SIJ landmark asymmetry without positive SIJ pain provocation tests represents a mechanical dysfunction subtype that responds particularly well to manipulation. The combination of positive motion assessment (asymmetry) and negative pain provocation is a recognised clinical pattern that should not be dismissed simply because the standard provocation cluster is negative."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Regional interdependence is a foundational concept in chiropractic and manual therapy. The ability to identify SIJ dysfunction as the driver of knee pain — and to confirm it through treatment outcome — exemplifies the unique value of the chiropractic assessment model. This case is a powerful teaching example for the clinical significance of examining beyond the symptomatic joint."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "No imaging was required or ordered in this case, and the outcome was perfect. This illustrates that MRI of the knee — the most expensive first step a clinician could have taken — would have been unnecessary and potentially misleading. Clinical reasoning, not reflexive imaging, should drive the management pathway in young athletes with insidious joint pain."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Regional interdependence, sacroiliac joint dysfunction, knee pain referral, pelvic girdle examination, manual therapy, runners",
+    keyPoints: [
+      "Regional interdependence describes how dysfunction at one joint can produce symptoms at a remote joint — the SIJ can be the driver of ipsilateral medial knee pain in runners.",
+      "A thorough examination finding no local knee pathology in a patient with knee pain is a clinical signal to examine the pelvic girdle and lumbar spine systematically.",
+      "Sacral landmark asymmetry without positive SIJ pain provocation tests identifies a mechanical dysfunction subtype that responds well to manipulation.",
+      "Single-session resolution of knee pain after SIJ-directed manual therapy provides strong outcome-based evidence supporting the proximal source hypothesis.",
+      "In runners with insidious knee pain and no mechanism of injury, pelvic girdle assessment — not knee MRI — should be the next diagnostic step when local examination is unremarkable."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 025 — Ankle/Foot: Maisonneuve fracture — proximal fibula fracture presenting as ankle sprain
+// Source: Wang et al. Medicine (Baltimore). 2024;103(19):e38105. PMID: 38728515
+// ─────────────────────────────────────────────
+{
+  id: "025",
+  title: "A woman in her early twenties presents with acute left ankle pain, swelling, and inability to weight-bear after rolling her ankle while running",
+  category: "Ankle/Foot",
+  secondaryCategory: "Sports/Acute",
+  difficulty: "Intermediate",
+  estimatedTime: "16–20 min",
+  source: {
+    short: "Wang et al.\nMedicine (Baltimore). 2024;103(19):e38105\nPMID: 38728515\nPMC: PMC11081625\nOpen access ✓",
+    full: "Wang C, Dong S, Li X, Ma J, Wang W, Ling Z. Maisonneuve fracture treated with short leg cast: A case report with 41-month follow-up. Medicine (Baltimore). 2024 May 10;103(19):e38105. doi: 10.1097/MD.0000000000038105. PMID: 38728515. PMC: PMC11081625."
+  },
+  patient: {
+    ageSex: "Female, early twenties",
+    chiefComplaint: "Acute left ankle pain, swelling, and inability to weight-bear",
+    duration: "Acute — 2 hours post-injury",
+    priorProviders: "None — direct presentation to outpatient clinic",
+    priorDiagnoses: "None prior; initial clinician examination initially missed the proximal fibula fracture"
+  },
+  history: {
+    content: `<p>A female patient in her early twenties sprained her left ankle while running approximately 2 hours before presenting to the outpatient clinic. She reported regional ankle pain and swelling. The pain was severe enough that she could not stand or walk independently on the affected limb. The condition did not improve after a brief period of rest.</p>
+<p>There was no relevant past illness and no history of genetic or familial conditions. She denied any previous ankle injury or surgery. The injury involved a forced pronation and external rotation mechanism — she described her ankle "rolling outward" while running.</p>
+<p>On initial presentation, the examining clinician focused on the ankle and initially missed the proximal fibular injury. It was only after further clinical reasoning — recognising an inconsistency between imaging and injury mechanics — that the complete Maisonneuve fracture pattern was identified.</p>`,
+    clinicalNote: "The critical teaching point is the missed proximal fibula fracture. The clinical rule is: always examine the two joints adjacent to any suspected ankle injury. A pronation-external rotation mechanism transmits force proximally along the interosseous membrane to the proximal fibula — the ankle may show minimal signs while the proximal fibula harbours the most significant fracture. The initial clinician forgot to examine the proximal leg, and the diagnosis was nearly missed."
+  },
+  examination: {
+    autoROM: `<p>Active ROM not testable due to acute pain — patient unable to actively move the ankle in any direction. Passive dorsiflexion and plantarflexion both reproduced pain. Passive internal and external rotation also reproduced pain. Weight-bearing was impossible.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Assessment</th><th>Finding</th></tr></thead><tbody><tr><td>Lower limb myotomes</td><td>Not formally documented — testing limited by acute pain and inability to weight-bear</td></tr><tr><td>Neurovascular status</td><td>No vascular or neurological compromise documented</td></tr></tbody><tfoot><tr><td colspan="2">Full myotome testing was not performed in the acute setting; no neurovascular deficit was identified.</td></tr></tfoot></table></div>`,
+    checklist: [
+      {
+        group: "Ankle / Distal Assessment",
+        items: [
+          {
+            id: "ankle_swelling_ecchymosis",
+            label: "Inspection for swelling, ecchymosis, deformity",
+            result: `Slight swelling around the ankle. No subcutaneous ecchymosis (only 2 hours post-injury). No visible deformity — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "Early inspection provides vital baseline information. The absence of ecchymosis at 2 hours is expected — bruising typically takes 12–24 hours to develop. The minimal swelling despite inability to weight-bear was a subtle clue that the primary injury may not be at the ankle itself."
+          },
+          {
+            id: "palpation_ankle_regions",
+            label: "Palpation — anterolateral, posterolateral, anteromedial ankle",
+            result: `Tenderness in anterolateral, posterolateral, and anteromedial ankle regions — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "Palpation of the ankle ligament regions (ATFL, CFL, deltoid) identifies the pattern of ligamentous and bony involvement. Multi-region tenderness in a pronation-external rotation mechanism should heighten suspicion for syndesmotic or combined injury rather than a simple lateral ligament sprain. The involvement of the anteromedial region suggests deltoid ligament involvement, which is a key feature of the Maisonneuve injury pattern."
+          },
+          {
+            id: "ottawa_ankle_rules",
+            label: "Ottawa Ankle Rules (bony tenderness, weight-bearing status)",
+            result: `Unable to weight-bear for 4 steps (Ottawa Ankle Rules positive for X-ray) — <span class="tt pos">Positive</span>`,
+            documented: true,
+            rationale: "Ottawa Ankle Rules were implicitly applied — inability to take 4 steps weight-bearing is sufficient to indicate X-ray regardless of bony tenderness location. However, the critical Ottawa extension relevant here is that medial malleolus and base of 5th metatarsal were assessed; the rules do NOT cover the proximal fibula, which requires a separate clinical reasoning step based on injury mechanism."
+          },
+          {
+            id: "syndesmosis_tests",
+            label: "Syndesmotic squeeze test and external rotation stress test",
+            result: `Not formally documented in published case`,
+            documented: false,
+            rationale: "The squeeze test (compression of tibia and fibula at mid-calf) and external rotation stress test are the primary clinical screens for tibiofibular syndesmosis disruption. Their documentation would have been essential in a pronation-external rotation mechanism — a positive squeeze test in this patient should immediately prompt imaging of the full fibula rather than just the ankle. These tests should never be omitted in suspected high ankle sprain presentations."
+          }
+        ]
+      },
+      {
+        group: "Proximal Leg — Critical Assessment",
+        items: [
+          {
+            id: "proximal_fibula_palpation",
+            label: "Palpation of proximal fibula and fibular head",
+            result: `Tenderness and percussion pain at proximal fibula — <span class="tt pos">Positive</span> (identified on second examination after clinical re-evaluation)`,
+            documented: true,
+            rationale: "This is the most critical examination finding in this case — and it was initially missed. The pronation-external rotation mechanism transmits disruptive forces proximally along the interosseous membrane to the fibular head. Proximal fibula tenderness after an ankle injury must trigger suspicion for Maisonneuve fracture and mandates imaging of the full length of the fibula. The first examination failed to reach the proximal leg; the diagnosis was only considered after CT findings suggested an inconsistency."
+          },
+          {
+            id: "interosseous_membrane_tenderness",
+            label: "Palpation of interosseous membrane (mid-leg)",
+            result: `Not specifically documented`,
+            documented: false,
+            rationale: "The interosseous membrane is the conduit for force transmission from the ankle to the proximal fibula in Maisonneuve injuries. Tenderness along the membrane between ankle and proximal fibula fracture is a highly specific finding for this injury pattern. Its systematic palpation from the syndesmosis proximally — known as the 'syndesmotic tenderness gradient' — was not documented but would have been an invaluable examination step."
+          }
+        ]
+      },
+      {
+        group: "Outcome / Functional Assessment",
+        items: [
+          {
+            id: "omas_aofas_baseline",
+            label: "Functional outcome scores (OMAS / AOFAS-AHS) at baseline",
+            result: `Not formally scored at initial presentation (acute injury setting) — outcome scores applied at follow-up`,
+            documented: false,
+            rationale: "Formal functional scoring was not performed at the acute presentation stage, which is understandable in an emergency/urgent care setting. However, baseline Olerud-Molander Ankle Score (OMAS) and AOFAS-Hindfoot scores would have provided an objective benchmark for tracking recovery. Both scored 100/100 at 22-month follow-up, confirming complete functional restoration."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination had a critical learning point embedded within it: the first clinician forgot to examine the proximal leg, nearly missing the Maisonneuve fracture entirely. The injury mechanism (pronation–external rotation) should always prompt systematic palpation from the ankle proximally along the entire fibula. Multi-region ankle tenderness involving the medial ankle (deltoid) and apparent syndesmotic widening on imaging are the clinical flags that should redirect examination proximally."
+  },
+  investigations: {
+    options: [
+      {
+        id: "ankle_xray_initial",
+        label: "Ankle X-ray (initial)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Initial ankle X-rays revealed an unsure fracture of the posterior malleolus (Volkmann tuberosity) and a slight widening of the inferior tibiofibular space. No lateral or medial malleolus fractures were visible. These findings were inconsistent with a simple ligament sprain and raised suspicion for a more complex injury pattern.</p>`
+      },
+      {
+        id: "ankle_ct",
+        label: "CT scan — ankle",
+        consequence: null,
+        ordered: true,
+        result: `<p>CT confirmed a Volkmann tuberosity fracture and slight widening of the inferior tibiofibular space, but without malleolar fractures. This violated the expected mechanics of simple ankle fracture patterns, triggering clinical re-evaluation and suspicion for a Maisonneuve injury. Proximal fibula examination and additional imaging were then requested.</p>`
+      },
+      {
+        id: "knee_xray_and_full_fibula",
+        label: "Knee X-ray (to visualise proximal fibula)",
+        consequence: null,
+        ordered: true,
+        result: `<p>X-ray of the knee and proximal leg revealed a clear proximal fibula fracture — confirming the Maisonneuve injury pattern. This fracture would have been entirely invisible on standard ankle films, highlighting the necessity of imaging the full fibula in all pronation-external rotation ankle injuries with syndesmotic signs.</p>`
+      },
+      {
+        id: "ankle_mri",
+        label: "MRI — ankle",
+        consequence: null,
+        ordered: true,
+        result: `<p>MRI demonstrated ruptures of the anterior inferior tibiofibular ligament, deltoid ligament, and interosseous membrane of the leg. Critically, the calcaneofibular ligament and both anterior and posterior talofibular ligaments appeared injured but not completely ruptured — confirming partial residual lateral stability. Stress radiographs did not show significant widening of the inferior tibiofibular syndesmosis compared to non-stress views, indicating the syndesmosis remained relatively stable. This finding supported the decision to attempt conservative management.</p>`
+      },
+      {
+        id: "stress_xray",
+        label: "Stress view X-ray of ankle",
+        consequence: null,
+        ordered: true,
+        result: `<p>Stress view radiography showed no significant increase in the inferior tibiofibular symphysis width compared to non-stress views (5.54 mm stressed vs 5.29 mm non-stressed), confirming relative syndesmotic stability. This was the key factor in the decision to manage conservatively rather than proceed to surgery.</p>`
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Maisonneuve fracture (pronation-external rotation ankle injury)",
+        correct: true,
+        blurb: "The combination of ankle pain after a pronation-external rotation mechanism, Volkmann tuberosity fracture on CT, syndesmotic widening, proximal fibula fracture on knee X-ray, and deltoid/interosseous membrane rupture on MRI confirms a Maisonneuve fracture. This is a pronation-external rotation Type III–IV injury per the Lauge-Hansen classification. The injury force travels from the medial ankle up the interosseous membrane to exit through the proximal fibula."
+      },
+      {
+        label: "Simple lateral ankle sprain (ATFL/CFL)",
+        correct: false,
+        blurb: "A simple lateral sprain would involve isolated ATFL/CFL tenderness with no medial tenderness, no syndesmotic widening, and no inability to weight-bear of this severity. The multi-region ankle tenderness, CT fracture findings, and inability to take 4 steps effectively exclude a straightforward lateral ligament sprain."
+      },
+      {
+        label: "Weber B ankle fracture (supination-external rotation)",
+        correct: false,
+        blurb: "Weber B fractures involve a transverse or spiral fibular fracture at the level of the ankle mortise with a supination-external rotation mechanism. The proximal fibula location of the fracture in this case (well above the mortise) and the pronation mechanism are inconsistent with Weber B classification. The Maisonneuve pattern is a pronation injury with a high fibular fracture."
+      },
+      {
+        label: "Isolated syndesmotic sprain (high ankle sprain)",
+        correct: false,
+        blurb: "A high ankle sprain involves anterior inferior tibiofibular ligament and interosseous membrane disruption without a fibula fracture. This patient has both the ligament ruptures AND a proximal fibula fracture, confirming the full Maisonneuve pattern. Isolated syndesmotic sprain would not include a proximal fibula fracture on imaging."
+      },
+      {
+        label: "Talus fracture",
+        correct: false,
+        blurb: "Talar fractures typically occur from high-energy axial loading and are associated with significant deformity and extensive swelling. CT of the ankle showed no talar fracture, and the injury mechanism (running with pronation-external rotation) is not the typical mechanism for talar neck or body fracture."
+      },
+      {
+        label: "5th metatarsal base avulsion fracture",
+        correct: false,
+        blurb: "5th MT base avulsion is the most common fracture to accompany a lateral ankle sprain (inversion mechanism). It produces localised tenderness at the lateral midfoot. This patient had an eversion/pronation mechanism and medial ankle involvement — not the lateral midfoot pattern. CT excluded this diagnosis."
+      },
+      {
+        label: "Posterior malleolus fracture (isolated Volkmann fracture)",
+        correct: false,
+        blurb: "The Volkmann fracture (posterior malleolus) was indeed present, but as a component of the Maisonneuve pattern rather than an isolated injury. An isolated posterior malleolus fracture would not involve syndesmotic widening and proximal fibula fracture. Treating it in isolation without recognising the complete injury complex would result in inadequate management."
+      },
+      {
+        label: "Peroneal tendon subluxation/dislocation",
+        correct: false,
+        blurb: "Peroneal tendon dislocation occurs with sudden dorsiflexion and can present with lateral ankle pain and snapping. It would not explain the medial ankle tenderness, CT fracture findings, syndesmotic widening, or inability to weight-bear at this severity. Clinical palpation and imaging findings are inconsistent with an isolated peroneal tendon injury."
+      }
+    ],
+    explanation: `<p>The Maisonneuve fracture is one of the most commonly missed ankle injuries in clinical practice. Its mechanism — forced pronation-external rotation — drives a rotational force from the ankle medially and proximally through the interosseous membrane, ultimately exiting through a proximal fibula fracture that may be at the level of the fibular neck or even the fibular head. The critical error in diagnosis is limiting examination and imaging to the ankle without imaging the full fibula.</p>
+<p>The diagnosis is confirmed by the triad: (1) medial ankle injury (deltoid sprain or medial malleolus fracture), (2) disruption of the tibiofibular syndesmosis, and (3) proximal fibula fracture. The severity of ankle findings can be deceptively minimal — the patient may have only slight ankle swelling while harbouring a complete syndesmotic disruption and a proximal fibula fracture.</p>
+<p>The management decision — conservative versus surgical — hinges on syndesmotic stability. Stress radiography showing less than 2 mm increase in the inferior tibiofibular space under stress, and MRI confirming intact lateral collateral ligaments, supported conservative management in this case. The 41-month follow-up with 100/100 functional scores and no post-traumatic arthritis demonstrates that appropriately selected Maisonneuve fractures can achieve excellent outcomes without surgery.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "short_leg_cast_8_weeks",
+        label: "Short leg cast immobilisation for 8 weeks",
+        selected: true,
+        explanation: `<strong>Appropriate — in this specific case with demonstrated syndesmotic stability.</strong> Conservative management with a short leg cast was justified by the MRI evidence of intact lateral collateral ligaments and stress radiography confirming no significant syndesmotic widening. This is not the standard approach for all Maisonneuve fractures — surgical fixation is typically recommended — but was appropriate given the stability findings in this case, achieving 100/100 functional scores at 41-month follow-up.`
+      },
+      {
+        id: "non_weightbearing_rehabilitation",
+        label: "Progressive weight-bearing rehabilitation programme",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> After cast removal at 8 weeks, a structured programme of non-weight-bearing ROM exercises progressing to partial and then full weight-bearing over 8 weeks was implemented. This graded loading approach prevented disuse and promoted progressive healing of the ligamentous and osseous structures. Return to full weight-bearing walking and functional activities was achieved by 22 months.`
+      },
+      {
+        id: "immediate_surgical_fixation",
+        label: "Immediate open reduction and internal fixation (ORIF)",
+        selected: false,
+        explanation: `<strong>Not taken in this case — though it is the standard recommendation for most Maisonneuve fractures.</strong> Surgery is generally recommended to restore anatomical syndesmotic alignment and prevent post-traumatic arthritis. In this case, stress radiography and MRI demonstrated sufficient residual stability for a conservative approach. Clinicians should not extrapolate this outcome broadly — the majority of Maisonneuve fractures require surgical stabilisation.`
+      },
+      {
+        id: "simple_ankle_sprain_protocol",
+        label: "Treat as a simple lateral ankle sprain (RICE, early mobilisation)",
+        selected: false,
+        explanation: `<strong>Inappropriate and potentially dangerous.</strong> Managing this injury as a lateral ankle sprain would fail to address the proximal fibula fracture, syndesmotic disruption, and deltoid ligament injury. Early unprotected mobilisation of an unstable Maisonneuve fracture risks syndesmotic diastasis, progressive ankle incongruity, and post-traumatic osteoarthritis. This management approach would represent a serious clinical error.`
+      }
+    ],
+    outcomeText: "The patient was managed with a short leg cast for 8 weeks followed by progressive rehabilitation. At 22 months, she reported no ankle pain, full ROM (22° dorsiflexion, 40° plantarflexion), and scored 100/100 on both OMAS and AOFAS-AHS functional assessments with Stage 0 arthritis on the Morrey-Wiedeman classification. At 41-month follow-up, all gains were maintained with no post-traumatic osteoarthritis and bilateral ankle symmetry."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Maisonneuve Fracture</strong><br>Pronation-external rotation ankle injury with proximal fibula fracture — initially missed",
+    outcomes: [
+      { label: "Published Source", text: "Wang et al. Medicine (Baltimore). 2024;103(19):e38105" },
+      { label: "PMID / PMC", text: "PMID: 38728515 — PMC11081625 (open access)" },
+      { label: "Final Diagnosis", text: "Maisonneuve fracture: proximal fibula fracture, Volkmann tuberosity fracture, deltoid ligament and AITFL rupture, syndesmotic disruption" },
+      { label: "Intervention", text: "Short leg cast 8 weeks; progressive weight-bearing rehabilitation; 41-month follow-up with full functional recovery" }
+    ],
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "The Maisonneuve rule: always examine and image the full fibula in any ankle injury with a pronation-external rotation mechanism, syndesmotic tenderness, or medial ankle involvement. The proximal fibula fracture may be the most significant part of the injury complex — and it is completely invisible on standard ankle films."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "Anchoring on the ankle is the characteristic error in Maisonneuve injuries. The initial clinician in this case forgot to examine the proximal leg — a mistake that nearly led to missed diagnosis. Syndesmotic widening on ankle X-ray without a fibula fracture at the mortise level should always prompt imaging of the proximal leg."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "In any ankle injury, Ottawa Ankle Rules tell you whether to X-ray the ankle — but they do not cover the proximal fibula. A separate clinical question must be asked: was there a pronation-external rotation mechanism? Is there syndesmotic tenderness? Is there medial ankle injury? If yes to any of these, image the full fibula from ankle to knee."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Chiropractors encountering acute ankle injuries must be alert to the Maisonneuve pattern. Failure to identify this injury and inappropriately managing it as a simple sprain risks long-term syndesmotic instability and post-traumatic arthritis. Prompt identification, appropriate immobilisation, and referral for surgical evaluation where indicated are within the chiropractor's scope as a primary contact practitioner."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "Ankle X-rays are not ankle plus leg X-rays. A Maisonneuve fracture will show normal or near-normal standard ankle films while the key pathology lies at the proximal fibula — entirely outside the radiographic field. Never assume an adequate ankle X-ray series rules out all significant ankle injuries when the mechanism or signs suggest a high-energy pattern."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Maisonneuve fracture, ankle injury classification, Lauge-Hansen, syndesmotic injury, Ottawa Ankle Rules, proximal fibula, sports injury diagnosis",
+    keyPoints: [
+      "The Maisonneuve fracture is a pronation-external rotation ankle injury combining medial ankle disruption, syndesmotic rupture, and a proximal fibula fracture — all three components must be identified.",
+      "Standard ankle X-rays will miss the proximal fibula fracture entirely; knee-level imaging is required whenever the injury mechanism or syndesmotic signs raise suspicion.",
+      "Ottawa Ankle Rules cover the lateral and medial malleolus and 5th metatarsal base — they do not screen for the proximal fibula, which requires separate clinical reasoning based on mechanism.",
+      "Syndesmotic stability — assessed by stress radiography and MRI integrity of lateral collateral ligaments — determines whether conservative or surgical management is appropriate.",
+      "Medial ankle involvement (deltoid tenderness) after an ankle sprain mechanism is a red flag for a more complex injury pattern than a simple lateral sprain."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 026 — Ankle/Foot: Achilles pain caused by plantaris tendon — source not in Achilles
+// Source: Alfredson et al. J Med Case Rep. 2021;15(1):513. PMID: 34657632
+// ─────────────────────────────────────────────
+{
+  id: "026",
+  title: "A 32-year-old female professional footballer presents with 2 years of sharp midportion Achilles pain during sprinting and direction change that has failed conservative treatment",
+  category: "Ankle/Foot",
+  secondaryCategory: "Sports/Acute",
+  difficulty: "Advanced",
+  estimatedTime: "20–25 min",
+  source: {
+    short: "Alfredson et al.\nJ Med Case Rep. 2021;15(1):513\nPMID: 34657632\nPMC: PMC8522164\nOpen access ✓",
+    full: "Alfredson H, Masci L, Spang C. Sharp pain in a normal Achilles tendon of a professional female football player was related to a plantaris tendon in a rare position: a case report. J Med Case Rep. 2021 Oct 18;15(1):513. doi: 10.1186/s13256-021-03131-7. PMID: 34657632. PMC: PMC8522164."
+  },
+  patient: {
+    ageSex: "32-year-old female",
+    chiefComplaint: "Sharp pain at the Achilles tendon midportion during sprinting and change of direction",
+    duration: "2 years",
+    priorProviders: "Previous clinical examination and conservative treatment at another clinic",
+    priorDiagnoses: "Midportion Achilles tendinopathy (working diagnosis — ultimately incorrect as primary source)"
+  },
+  history: {
+    content: `<p>A 32-year-old professional female soccer player presented with a 2-year history of sharp pain in the midportion of the Achilles tendon. Pain initially occurred only during sudden changes of direction and sprinting, settling within minutes and allowing her to continue training. Over time, episodes increased in frequency and intensity. Eventually she was unable to participate in training or match play.</p>
+<p>Previous assessment had identified a minimal thickening of the Achilles tendon midportion with tenderness on the medial and superficial side, leading to a working diagnosis of midportion Achilles tendinopathy. Eccentric exercise loading — the recommended first-line treatment for Achilles tendinopathy — was trialled but caused worsening irritation in the affected region rather than improvement. She had no systemic conditions, was a non-smoker, did not abuse alcohol, and was on no medications.</p>
+<p>She presented to this clinic after failing to improve sufficiently to return to playing level despite a prolonged conservative trial.</p>`,
+    clinicalNote: "The key diagnostic pivot is the failure of eccentric loading — the standard evidence-based treatment for Achilles tendinopathy. When eccentric exercises worsen rather than improve symptoms, the clinician must reconsider whether the Achilles tendon is the primary pain generator. The tenderness localised to the medial AND superficial side of the Achilles (not the posterior-central body) is the anatomical clue pointing to the plantaris tendon, which runs medially and can adopt rare superficial positions. A normal Achilles on imaging despite Achilles-region symptoms is the critical confirmation that the source is elsewhere."
+  },
+  examination: {
+    autoROM: `<p>Ankle ROM was not restricted. Achilles tendon midportion showed minimal thickening. Tenderness was localised to the medial and superficial side of the Achilles tendon — not the posterior-central Achilles body as expected in classic midportion tendinopathy. The distribution of tenderness was the critical anatomical clue.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft"><thead><tr><th>Assessment</th><th>Finding</th></tr></thead><tbody><tr><td>Plantarflexion strength (S1)</td><td>Normal — no weakness documented</td></tr><tr><td>Single-leg calf raise</td><td>Normal — no plantarflexion deficit</td></tr><tr><td>Neurovascular status</td><td>Normal</td></tr></tbody><tfoot><tr><td colspan="2">No neurological deficit. Full strength of plantarflexion confirmed, inconsistent with significant Achilles tendon pathology.</td></tr></tfoot></table></div>`,
+    checklist: [
+      {
+        group: "Tendon Palpation",
+        items: [
+          {
+            id: "achilles_central_palpation",
+            label: "Palpation of posterior-central Achilles tendon body",
+            result: `Minimal thickening, no significant central tenderness — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "Classic midportion Achilles tendinopathy produces maximum tenderness over the posterior-central tendon body at 2–6 cm proximal to the calcaneal insertion. The absence of significant central tenderness despite 2 years of Achilles-region pain was an important clue that the Achilles itself was not the primary pain generator."
+          },
+          {
+            id: "medial_superficial_tenderness",
+            label: "Palpation of medial and superficial aspect of Achilles midportion",
+            result: `Tenderness localised to medial and superficial side — <span class="tt pos">Positive</span>`,
+            documented: true,
+            rationale: "Tenderness at the medial side of the Achilles midportion (rather than the central posterior body) is the characteristic clinical finding of plantaris tendon involvement. In this case, the tenderness was also on the superficial aspect — indicating the unusual position of the plantaris tendon running over the top of (superficial to) the Achilles, rather than the more common medioventral position."
+          },
+          {
+            id: "achilles_arc_sign",
+            label: "Arc sign (tendon moves with ankle but nodule stays fixed)",
+            result: `Not formally documented in published case`,
+            documented: false,
+            rationale: "The arc sign differentiates intratendinous pathology (the thickening moves with ankle dorsiflexion as the tendon glides under the skin) from paratendinous pathology (the nodule or swelling remains stationary). Performing the arc sign would have helped confirm whether any thickening was within the tendon body or in the paratendinous tissues — which in this case would have been in the plantaris region."
+          },
+          {
+            id: "achilles_squeeze_test",
+            label: "Thompson (Simmonds) squeeze test",
+            result: `Normal plantar flexion response — <span class="tt normal">Normal</span>`,
+            documented: true,
+            rationale: "A positive Thompson test (absence of plantar flexion on calf squeeze) indicates complete Achilles tendon rupture. A normal test confirms structural Achilles continuity. In this case, the intact Thompson response was consistent with the imaging finding of a structurally normal Achilles tendon — further supporting the diagnosis of plantaris-related pain rather than Achilles pathology."
+          }
+        ]
+      },
+      {
+        group: "Functional / Loading Tests",
+        items: [
+          {
+            id: "eccentric_loading_test",
+            label: "Eccentric loading (single-leg calf raises)",
+            result: `Worsened pain in affected region with eccentric loading — <span class="tt pos">Positive provocation</span>`,
+            documented: true,
+            rationale: "Eccentric loading of the Achilles-gastrocnemius complex is the standard treatment for Achilles tendinopathy, and typically reduces pain over time with a structured programme. The fact that eccentric exercises caused worsening of symptoms — rather than improvement — was a critical clinical alarm signal that the Achilles was not the primary pathological structure. This failure of expected treatment response was the key prompt to re-investigate the source of pain."
+          },
+          {
+            id: "running_sprinting_provocation",
+            label: "Running / sprinting pain provocation",
+            result: `Sharp pain during sudden change of direction and sprinting — <span class="tt pos">Positive</span>`,
+            documented: true,
+            rationale: "The specific provocation of sharp pain during direction change and sprinting — activities involving rapid eccentric loading and directional forces on the posterior ankle — is consistent with plantaris tendon irritation. The plantaris undergoes significant shearing forces during these explosive movements, particularly when positioned superficially or medially to the Achilles where dynamic compression occurs."
+          },
+          {
+            id: "windlass_test",
+            label: "Windlass test (plantar fascia)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "The windlass test assesses plantar fascia integrity. While not primarily relevant to this Achilles-region presentation, it was not documented. Its inclusion would have formally excluded plantar fascia pathology as a contributor to posterior ankle and hindfoot pain — a reasonable step in a 2-year history of posterior ankle symptoms that failed standard management."
+          }
+        ]
+      },
+      {
+        group: "Imaging-Guided Assessment",
+        items: [
+          {
+            id: "ultrasound_achilles",
+            label: "Diagnostic ultrasound of Achilles tendon",
+            result: `Achilles tendon normal (5 mm AP diameter in midportion, normal blood flow). Plantaris tendon identified proximally; distally — a wide and thick plantaris tendon was found at the <em>superficial</em> side of the Achilles midportion — <span class="tt notable">Notable</span>`,
+            documented: true,
+            rationale: "Ultrasound was the diagnostic investigation that cracked this case. A normal Achilles tendon in a patient with 2 years of Achilles-region pain is paradoxical and should prompt careful plantaris tendon assessment. Dynamic ultrasound tracking the plantaris from proximal to distal revealed the tendon in an unusual superficial position — directly over the Achilles midportion — where it could produce compressive and shearing forces with loading."
+          },
+          {
+            id: "mri_achilles",
+            label: "MRI of Achilles tendon",
+            result: `Not ordered — ultrasound was diagnostic`,
+            documented: false,
+            rationale: "MRI was not required in this case as dynamic ultrasound provided the diagnosis by directly visualising the plantaris tendon position and its relationship to the Achilles. MRI would have been an appropriate complementary investigation if ultrasound was inconclusive, or to characterise the degree of plantaris tendinopathy and any associated peritendinous changes. For clinicians without access to high-quality musculoskeletal ultrasound, MRI would be the investigation of choice."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination in this case required synthesis of three converging lines of evidence: (1) tenderness at an atypical location for Achilles tendinopathy (medial and superficial rather than posterior-central), (2) paradoxical worsening with eccentric loading (the standard treatment for Achilles tendinopathy), and (3) dynamic ultrasound revealing a structurally normal Achilles with the plantaris tendon in an unusual superficial position. The clinical lesson is that when the expected treatment for a presumed diagnosis worsens symptoms, the diagnosis must be reconsidered — even when the site of pain appears anatomically straightforward."
+  },
+  investigations: {
+    options: [
+      {
+        id: "dynamic_ultrasound",
+        label: "Dynamic diagnostic ultrasound of Achilles and plantaris tendons",
+        consequence: null,
+        ordered: true,
+        result: `<p>Ultrasound of the Achilles tendon midportion showed a <strong>normal</strong> Achilles tendon measuring 5 mm with normal blood flow — a striking finding given the 2-year symptom history. Dynamic ultrasound tracking the plantaris tendon from its proximal origin distally identified a wide, thick plantaris tendon in an unusual position on the <em>superficial</em> (anterior) side of the Achilles midportion at the symptomatic region. Between the two tendons was a richly vascularised fatty layer. This position — unlike the more typical medioventral location — allowed the plantaris to compress and shear against the Achilles during dynamic loading activities.</p>`
+      },
+      {
+        id: "x_ray_ankle",
+        label: "Plain X-ray of ankle/heel",
+        consequence: "Not ordered. Plain films would have been insensitive to tendon pathology and provided little diagnostic value in this case of soft-tissue origin. X-rays would exclude bony pathology (calcaneal fracture, Haglund deformity enlargement) but would not reveal the plantaris tendon position. They were not required given the clinical and ultrasound findings.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "mri_full",
+        label: "MRI — full ankle and Achilles tendon",
+        consequence: "Not ordered in this case — ultrasound was diagnostic. MRI with high-resolution plantaris tendon sequences could have confirmed the unusual plantaris position and characterised peritendinous changes. It would have been the investigation of choice if high-resolution ultrasound were not available, or if ultrasound findings were equivocal. MRI neurography may have also identified any local nociceptive nerve involvement.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Plantaris tendinopathy in rare superficial position",
+        correct: true,
+        blurb: "The combination of medial and superficial Achilles tenderness, normal Achilles on ultrasound, worsening with eccentric loading (contra-indicated in plantaris involvement), and dynamic ultrasound identification of a wide, thick plantaris tendon superficial to the Achilles midportion confirms plantaris-related pain as the source. This is a rare anatomical variant — most plantaris tendons run medioventral to the Achilles — but it explains the complete clinical picture."
+      },
+      {
+        label: "Midportion Achilles tendinopathy",
+        correct: false,
+        blurb: "Classic midportion Achilles tendinopathy would produce tenderness at the posterior-central tendon body (2–6 cm above insertion), improve with eccentric loading, and show tendon thickening, increased signal, and neovascularisation on imaging. In this case, the Achilles measured a normal 5 mm with normal blood flow on ultrasound — a structurally normal tendon. Eccentric exercises worsened symptoms. The diagnosis was a working hypothesis that was ultimately incorrect."
+      },
+      {
+        label: "Plantaris-associated Achilles tendinopathy (medioventral position)",
+        correct: false,
+        blurb: "The more common form of plantaris involvement runs medioventral to the Achilles and typically co-exists with Achilles tendinopathy. In that subtype, both tendons are pathological and medial Achilles tenderness is typical. In this case, the Achilles was structurally normal and the plantaris was in an unusual superficial position — making this an isolated plantaris pathology rather than the combined medioventral variant."
+      },
+      {
+        label: "Insertional Achilles tendinopathy / Haglund's deformity",
+        correct: false,
+        blurb: "Insertional Achilles pathology produces pain at the calcaneal attachment (2 cm or less from insertion), is associated with a bony prominence (Haglund's), and is provoked by shoe heel counter pressure and resisted plantarflexion from a loaded position. This patient's pain was at the midportion (not insertion), and imaging showed no insertional changes."
+      },
+      {
+        label: "Paratendinitis (peritendinous inflammation)",
+        correct: false,
+        blurb: "Paratendinitis produces diffuse Achilles region tenderness, crepitus on movement, and a positive arc sign (paratendinous swelling does not move with ankle dorsiflexion). It does not typically produce the sharp, episodic pain pattern during specific loading tasks seen here, nor would it explain normal central Achilles tendon structure on ultrasound."
+      },
+      {
+        label: "Retrocalcaneal bursitis",
+        correct: false,
+        blurb: "Retrocalcaneal bursitis presents at the posterior superior calcaneus between the tendon and bone, causes tenderness in the 'soft spots' medial and lateral to the Achilles near the insertion, and is aggravated by dorsiflexion compressing the bursa. The midportion location and superficial tenderness in this case are not consistent with this diagnosis."
+      },
+      {
+        label: "Posterior ankle impingement (os trigonum)",
+        correct: false,
+        blurb: "Posterior ankle impingement produces deep posterior ankle pain provoked by plantarflexion and may be associated with an os trigonum. It would not produce medial Achilles midportion tenderness and would be expected to present with restriction or provocation on end-range plantarflexion rather than with sprinting and direction change."
+      },
+      {
+        label: "Tibial nerve entrapment at the ankle (tarsal tunnel syndrome)",
+        correct: false,
+        blurb: "Tarsal tunnel syndrome produces burning, tingling, and numbness along the medial ankle and plantar foot — neurogenic symptoms consistent with posterior tibial nerve compression. This patient had sharp mechanical pain during loading without sensory symptoms, and no tibial nerve provocation signs. The diagnosis is inconsistent with a neurogenic mechanism."
+      }
+    ],
+    explanation: `<p>This case illustrates a critical and underappreciated diagnostic principle: when the expected treatment for a presumed diagnosis fails or worsens symptoms, the diagnosis must be reconsidered. Eccentric loading is highly effective for Achilles tendinopathy — when it worsens the patient's symptoms, the Achilles tendon is almost certainly not the primary pain generator.</p>
+<p>The plantaris tendon is a vestigial structure present in approximately 90% of people. Its position relative to the Achilles is anatomically variable. When it courses medioventral to the Achilles, or — as in this rare case — superficially over the Achilles midportion, it can produce compressive and shearing forces that drive local nociception. The rich sensory innervation of the peritendinous soft tissues between the two tendons explains why plantaris pathology can produce intense, sharp pain despite a structurally normal Achilles.</p>
+<p>The clinical pearl is that tenderness location matters precisely. Classic Achilles tendinopathy: posterior-central midportion. Plantaris involvement: medial side. Rare superficial plantaris: superficial aspect. Dynamic ultrasound, by a skilled operator, is the key investigation — it can follow the plantaris tendon distally and identify its relationship to the Achilles in real time.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "surgical_plantaris_removal",
+        label: "Surgical local removal of the plantaris tendon",
+        selected: true,
+        explanation: `<strong>Appropriate — after failure of conservative management.</strong> Local removal of the plantaris tendon under local anaesthesia was performed after 2 years of failed conservative treatment. The procedure took approximately 30 minutes, with immediate weight-bearing permitted post-operatively. At 8-week follow-up, the patient was in full training with no recurrence of sharp pain. Surgical excision is typically the only definitive option for plantaris-related pain in high-level athletes.`
+      },
+      {
+        id: "structured_rehabilitation_post_op",
+        label: "Graduated post-operative rehabilitation (immediate weight-bearing, progressive loading, return to running at 4 weeks)",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Rehabilitation began immediately post-operatively with ROM exercises and immediate weight-bearing. Progressive loading over 4 weeks led to return to running activities, followed by a return to full professional training. This rapid rehabilitation was facilitated by the normal structural integrity of the Achilles tendon, which required no tendon healing programme.`
+      },
+      {
+        id: "continued_eccentric_loading",
+        label: "Continue/intensify eccentric Achilles loading programme",
+        selected: false,
+        explanation: `<strong>Not appropriate — and potentially harmful.</strong> Eccentric loading is the evidence-based treatment for Achilles tendinopathy, but had already been trialled and caused worsening of symptoms in this patient. Continuing or intensifying a treatment that is causing deterioration is a clinical error. The worsening response to eccentric loading was the key signal that the Achilles was not the source of pain — persisting with this approach would have further delayed the correct diagnosis.`
+      },
+      {
+        id: "corticosteroid_injection_achilles",
+        label: "Corticosteroid injection to Achilles paratenon",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> Corticosteroid injection into or around the Achilles tendon is associated with the risk of tendon rupture and is generally avoided in Achilles tendinopathy management. More critically, the Achilles was structurally normal — injection at the wrong structure would provide no benefit and carries unnecessary risk. If injection were considered, it would need to be targeted to the correct structure (the plantaris or peritendinous tissue) under ultrasound guidance.`
+      },
+      {
+        id: "activity_modification_rest",
+        label: "Activity modification and relative rest from football",
+        selected: false,
+        explanation: `<strong>Insufficient as a sole strategy.</strong> Activity modification had been attempted over the 2-year history and had not resolved the problem — only temporarily reducing symptoms. Rest does not address the mechanical source of the problem (the aberrant plantaris tendon position compressing the Achilles during loading). Definitive treatment requires structural correction.`
+      }
+    ],
+    outcomeText: "Following surgical local removal of the plantaris tendon under local anaesthesia, the patient had a rapid 4–6 week rehabilitation with immediate weight-bearing and graduated loading. At 8-week follow-up, she had returned to full professional training and had not experienced any recurrence of sharp pain during change of direction or sprinting."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Plantaris Tendinopathy — Superficial Anatomical Variant</strong><br>Achilles-region pain from the plantaris tendon: the Achilles itself was normal",
+    outcomes: [
+      { label: "Published Source", text: "Alfredson et al. J Med Case Rep. 2021;15(1):513" },
+      { label: "PMID / PMC", text: "PMID: 34657632 — PMC8522164 (open access)" },
+      { label: "Final Diagnosis", text: "Isolated plantaris tendinopathy in a rare superficial position, producing sharp Achilles-region pain with a structurally normal Achilles tendon" },
+      { label: "Intervention", text: "Surgical local removal of the plantaris tendon under local anaesthesia; 4–6 week graduated rehabilitation; return to full professional football at 8 weeks" }
+    ],
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "When the expected treatment for a presumed diagnosis worsens symptoms, the diagnosis is almost certainly wrong. Eccentric loading is highly effective for Achilles tendinopathy — if it causes deterioration, the Achilles is not the pain source. Think plantaris, paratenon, or another structure entirely."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "Tenderness in the 'Achilles region' does not equal Achilles tendinopathy. Precise localisation matters — medial tenderness points to the plantaris (medioventral position) or medial paratenon. Superficial tenderness points to this rare plantaris variant positioned over the top of the Achilles. Central posterior tenderness indicates the Achilles body itself. Always map the tenderness precisely."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "Dynamic ultrasound is the investigation of choice for posterior ankle and Achilles-region pain — not MRI. By following the plantaris tendon distally in real time during ankle movement, skilled ultrasound can identify aberrant positions and dynamic compression phenomena that static MRI may miss. A normal Achilles on ultrasound in a patient with Achilles-region pain is the key finding that opens the differential."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Chiropractors managing posterior ankle and Achilles-region pain should be aware that approximately 10% of cases involve the plantaris tendon rather than (or in addition to) the Achilles. Conservative management of plantaris-related pain is often unsuccessful in high-level athletes, and early identification allows appropriate referral for surgical consultation rather than prolonged ineffective conservative trials."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "A structurally normal Achilles tendon on imaging in a patient with years of Achilles-region pain should trigger a specific search for plantaris pathology and an atypical tendon position. Standard Achilles imaging protocols may not specifically assess the plantaris tendon course — request or perform dynamic plantaris-specific ultrasound assessment when the clinical picture does not match the Achilles imaging."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Plantaris tendon, Achilles tendinopathy differential diagnosis, dynamic ultrasound, posterior ankle pain, sports injury, regional interdependence, treatment response as diagnostic tool",
+    keyPoints: [
+      "The plantaris tendon is an anatomically variable vestigial structure that can cause sharp Achilles-region pain while the Achilles tendon remains structurally completely normal.",
+      "Worsening of symptoms with eccentric loading — the standard first-line treatment for Achilles tendinopathy — is a critical alarm signal that the Achilles is not the primary pain generator.",
+      "Tenderness location within the posterior ankle region has specific diagnostic value: posterior-central = Achilles body; medial = plantaris (medioventral); superficial = rare plantaris superficial variant.",
+      "Dynamic diagnostic ultrasound is the investigation of choice for suspected plantaris pathology, allowing real-time tracking of the plantaris course relative to the Achilles during ankle movement.",
+      "Isolated plantaris tendinopathy in high-level athletes typically does not respond to conservative management, and surgical plantaris removal is often required for definitive treatment and return to sport."
+    ]
+  }
 }
 // ─────────────────────────────────────────────
 // PASTE ADDITIONAL CASES ABOVE THIS LINE
