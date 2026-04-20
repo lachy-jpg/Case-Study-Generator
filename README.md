@@ -1,8 +1,18 @@
 https://lachy-jpg.github.io/Case-Study-Generator/
 
-Claude pulls real peer-reviewed case studies from Pub-Med and established text books, and creates customised interactive case studies to work through. All options/questions are specific to the case, no extra information is extrapolated or inferred so that the case can remain 100% real.
+Chiropractic Clinical Reasoning Simulator
+A self-directed clinical case library for chiropractic and physiotherapy students and practitioners. Each case is built from a published, peer-reviewed case report sourced from PubMed Central and presents a real patient encounter — from chief complaint through to diagnosis, management, and outcome.
 
-To use yourself, generate new cases via the claude project. This will give you the HTML code to input. Paste the new code in the index.html file under the Add New Cases section. 
+How it works
+You work through each case the way you would in clinic. Read the history, review standard examination findings, then decide which additional tests to perform, which investigations to order, what the diagnosis is, and how you would manage the patient. The simulator reveals what was actually done in the published case, explains the clinical reasoning at each step, and highlights what to look for, what to avoid, and what the imaging showed.
+
+What the cases cover
+Cases span the full breadth of chiropractic practice — cervical, thoracic, and lumbar spine, peripheral joints, headache, paediatric presentations, post-surgical patients, sports injuries, and serious pathology requiring referral. Each case is tagged by difficulty (Beginner, Intermediate, or Advanced) and estimated completion time so you can choose cases that match your learning goals.
+
+Where the cases come from
+Every case is sourced from an open-access peer-reviewed case report retrieved directly from PubMed Central. Clinical details — history, examination findings, investigations, diagnosis, and outcomes — are taken from the published source. Each case includes the full citation and PMID so you can read the original paper.
+
+
 
 Claude Project Instructions: 
 Clinical Reasoning Simulator — Case Generation Project
