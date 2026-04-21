@@ -6691,6 +6691,1933 @@ const CASES = [
       "Isolated plantaris tendinopathy in high-level athletes typically does not respond to conservative management, and surgical plantaris removal is often required for definitive treatment and return to sport."
     ]
   }
+},
+// ─────────────────────────────────────────────
+// CASE 027 — Cervical radiculopathy with dystonic tremor, 46yo male
+// Source: Chu EC & Ng L. Cureus. 2024;16(1):e51441. PMID: 38298318
+// ─────────────────────────────────────────────
+{
+  id: "027",
+  title: "A 46-year-old male delivery driver presents with 10 days of severe progressive neck pain radiating to the right shoulder and arm, with inability to work",
+  category: "Cervical",
+  secondaryCategory: "Neuro",
+  difficulty: "Advanced",
+  estimatedTime: "25–35 min",
+  source: {
+    short: "Chu EC & Ng L.\nCureus. 2024;16(1):e51441\nPMID: 38298318\nPMC: PMC10829058\nOpen access ✓",
+    full: "Chu EC, Ng L. Dystonic Tremor as an Atypical Presentation of Cervical Radiculopathy. Cureus. 2024;16(1):e51441. doi: 10.7759/cureus.51441. PMID: 38298318. PMC: PMC10829058."
+  },
+  patient: {
+    ageSex: "46-year-old male",
+    chiefComplaint: "Severe progressive neck pain with right shoulder pain and arm symptoms, unable to work",
+    duration: "10 days",
+    priorProviders: "General practitioner",
+    priorDiagnoses: "Cervical degenerative joint disease (radiograph); prescribed gabapentin 300 mg TDS and ibuprofen 400 mg PRN without relief"
+  },
+  history: {
+    content: `<p>A 46-year-old right-hand-dominant male delivery driver presented with a 10-day history of severe, progressive neck pain. The pain began suddenly at work, initially rated 8/10, and disrupted his ability to drive and load packages. Over the first week the pain worsened and became constant, progressing to 10/10 by the time of the chiropractic visit. Approximately five days after onset, the patient noticed the development of a dystonic posture — involuntary holding of his neck with his right hand and a 5-degree right lateral flexion of the neck. Pain then spread into the right shoulder and arm, producing radicular symptoms in the right upper extremity.</p>
+<p>He had controlled hypertension but no other significant past medical history. He denied any recent trauma. His GP ordered a cervical radiograph that revealed degenerative joint disease at C5/6, and prescribed gabapentin and ibuprofen, neither of which provided relief. He had been unable to work for 10 days before presenting to the chiropractic clinic.</p>`,
+    clinicalNote: "The key diagnostic signal here is the constellation of cervical radiculopathy accompanied by an involuntary dystonic posture and tremor — an extremely atypical presentation that could easily be mistaken for a primary movement disorder. Do not be distracted by the tremor; work backwards from the radiculopathy. The elevated BP (145/90 mmHg) and cold extremities are consistent with autonomic dysregulation from sympathetic chain irritation — another feature that can mislead the clinician. The prior radiograph showing C5/6 DJD is a useful anchor but does not exclude significant nerve root compression requiring MRI."
+  },
+  examination: {
+    autoROM: `<p>Cervical range of motion was significantly restricted in multiple planes. Flexion was limited to approximately 50% of normal range; extension to approximately 60%. Right lateral flexion induced severe pain, limited to approximately 30% of normal. Rotation was restricted approximately 40% bilaterally. All movements were associated with pain and discomfort. On presentation the patient displayed a 5-degree right lateral flexion dystonic posture and held his neck with his right hand.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+  <thead><tr><th>Level</th><th>Side</th><th>Movement</th><th>Grade</th></tr></thead>
+  <tbody>
+    <tr><td>C5</td><td>Right</td><td>Shoulder abduction / deltoid</td><td>2/5</td></tr>
+    <tr><td>C6</td><td>Right</td><td>Wrist extension / biceps</td><td>4/5 (limited by pain)</td></tr>
+    <tr><td>C7</td><td>Right</td><td>Elbow extension / wrist flexion</td><td>4/5 (limited by pain)</td></tr>
+    <tr><td>C8</td><td>Right</td><td>Finger flexion</td><td>Not specifically documented</td></tr>
+    <tr><td>T1</td><td>Right</td><td>Finger abduction</td><td>Not specifically documented</td></tr>
+    <tr><td>All levels</td><td>Left</td><td>All myotomes</td><td>Normal</td></tr>
+  </tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Neurological",
+        items: [
+          {
+            id: "spurling_test",
+            label: "Spurling's test (cervical compression)",
+            result: `<span class="tt pos">Positive</span> — provoked right-sided radicular symptoms`,
+            documented: true,
+            rationale: "Directly indicated by the presentation of unilateral arm pain and weakness. Spurling's test is the standard provocative test for cervical nerve root compression; a positive result here strongly supported C6 radiculopathy and directed the diagnostic workup toward advanced imaging."
+          },
+          {
+            id: "cervical_distraction",
+            label: "Cervical distraction test",
+            result: `<span class="tt pos">Positive</span> — relieved right upper extremity symptoms on initial testing; provoked intolerable pain on manual cervical distraction during a later assessment`,
+            documented: true,
+            rationale: "Cervical distraction is both a diagnostic and therapeutic manoeuvre for nerve root compression. The initial positive (symptom relief with axial distraction) confirmed foraminal/root involvement. The later intolerable response during hands-on distraction was a key safety signal that prompted immediate hospital referral."
+          },
+          {
+            id: "ultt",
+            label: "Upper Limb Tension Test (ULTT)",
+            result: `<span class="tt pos">Positive</span> — reproduced right upper extremity symptoms`,
+            documented: true,
+            rationale: "Positive ULTT is a sensitive test for cervical nerve root mechanosensitivity. Given the radicular arm symptoms, it was clinically indicated to confirm neural tissue involvement and differentiate radicular from referred or peripheral causes of shoulder/arm pain."
+          },
+          {
+            id: "sensation",
+            label: "Dermatomal sensation testing",
+            result: `<span class="tt normal">Normal</span> — sensation intact bilaterally`,
+            documented: true,
+            rationale: "With significant motor weakness, it was important to formally assess sensory function in the cervical dermatomes. Intact sensation in the setting of motor weakness helped characterise the nature of the radiculopathy and guided prognosis."
+          },
+          {
+            id: "msrs",
+            label: "Muscle stretch reflexes (biceps, brachioradialis, triceps)",
+            result: `<span class="tt normal">Normal</span> — reflexes intact bilaterally`,
+            documented: true,
+            rationale: "With a significant motor deficit at C5 (2/5) and C6/C7 (4/5), reflex testing was essential to determine whether the lesion was upper or lower motor neuron. Normal (not hyperreflexic) reflexes confirmed a lower motor neuron / nerve root level of pathology rather than cord involvement, directing management accordingly."
+          },
+          {
+            id: "emg",
+            label: "Electromyography (EMG)",
+            result: `<span class="tt pos">Positive</span> — neurogenic abnormality consistent with C6/7 radiculopathy`,
+            documented: true,
+            rationale: "EMG was ordered following MRI to objectively confirm neural involvement and characterise the level of radiculopathy. Electrodiagnostic confirmation of C6/7 neurogenic changes corroborated imaging findings and excluded a primary movement disorder as the cause of the dystonic tremor."
+          }
+        ]
+      },
+      {
+        group: "Orthopaedic / Special Tests",
+        items: [
+          {
+            id: "hoffman_reflex",
+            label: "Hoffman's reflex",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Although motor strength was markedly reduced and autonomic signs were present, Hoffman's was not documented — likely because the reflex pattern and EMG findings were already consistent with a lower motor neuron / root level lesion. Had UMN signs been suspected (e.g., with myelopathy as a differential), Hoffman's testing would have been highly relevant."
+          },
+          {
+            id: "valsalva_test",
+            label: "Valsalva manoeuvre",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "A Valsalva manoeuvre can increase intradiscal pressure and reproduce radicular symptoms, supporting disc herniation as a cause of radiculopathy. Its absence in this case is understandable given the degree of pain and the availability of MRI and EMG for definitive characterisation."
+          },
+          {
+            id: "adson_test",
+            label: "Adson's test (thoracic outlet)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Thoracic outlet syndrome can mimic cervical radiculopathy with shoulder/arm pain and autonomic features including cold extremities. This test was not documented, but would have been a useful differentiator — especially given the cold extremities on examination. Its absence is a gap in the documented workup."
+          }
+        ]
+      },
+      {
+        group: "Autonomic / Vascular",
+        items: [
+          {
+            id: "bp_measurement",
+            label: "Blood pressure measurement",
+            result: `<span class="tt notable">Notable</span> — 145/90 mmHg (elevated); returned to normal during chiropractic care`,
+            documented: true,
+            rationale: "The elevated blood pressure was a notable finding attributed to sympathetic dysregulation from cervical nerve root compression and sympathetic chain irritation. Monitoring BP was important both to rule out an independent cardiovascular cause and to track the autonomic response to treatment, which normalised with chiropractic intervention."
+          },
+          {
+            id: "cold_extremities",
+            label: "Peripheral temperature / cold extremity assessment",
+            result: `<span class="tt notable">Notable</span> — cold extremities noted bilaterally`,
+            documented: true,
+            rationale: "Cold extremities alongside elevated BP pointed to sympathetic overactivation secondary to cervical nerve root and sympathetic chain irritation. This supported a central/spine-mediated mechanism for the autonomic changes and was important in forming the overall clinical picture of atypical cervical radiculopathy."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination was appropriately targeted at characterising a florid cervical radiculopathy with an atypical motor presentation. The combination of Spurling's, cervical distraction, and ULTT testing established nerve root involvement. Myotomal grading identified a severe C5 deficit and milder C6/7 weakness. The normal sensory and reflex findings were important negative findings, establishing a pure LMN / root-level pathology without cord compression. The autonomic findings (elevated BP, cold extremities, dystonic posture) were correctly linked to sympathetic chain irritation rather than treated as unrelated. The decision to order MRI and then EMG was entirely appropriate given the severity of neurological deficit and atypical motor presentation."
+  },
+  investigations: {
+    options: [
+      {
+        id: "cervical_xray",
+        label: "Cervical spine radiograph (performed by GP prior to chiropractic presentation)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Multilevel degenerative changes with anterior marginal osteophytes along the cervical spine. Intervertebral disc space narrowing at levels C2–C6 with greatest narrowing at C4/5 and C5/6. Findings consistent with cervical degenerative joint disease. No fracture identified.</p>`
+      },
+      {
+        id: "cervical_mri",
+        label: "Cervical spine MRI",
+        consequence: null,
+        ordered: true,
+        result: `<p>Posterior disc bulging/prolapse from C2/3 to C7/T1 with bilateral intervertebral foraminal narrowing from C4/5 to C7/T1. Spinal cord abutment at C4/5 and C5/6. Degenerative osteophyte complex at C5/6 causing <strong>impingement of the right C6 exiting nerve root</strong>. Slight bilateral C7 nerve root impingement at C6/7. No myelomalacia identified.</p>`
+      },
+      {
+        id: "emg_study",
+        label: "Electromyography (EMG) / nerve conduction study",
+        consequence: null,
+        ordered: true,
+        result: `<p>Neurogenic abnormality identified on EMG <strong>consistent with C6/7 radiculopathy</strong>. Findings supported the clinical and imaging diagnosis of right-sided cervical nerve root compression.</p>`
+      },
+      {
+        id: "ct_guided_nerve_block",
+        label: "CT-guided right C6/C7 nerve root block (performed by spine surgeon)",
+        consequence: null,
+        ordered: true,
+        result: `<p>CT-guided right C6 and C7 nerve root block with local anaesthetic performed. <strong>Complete alleviation of all symptoms including resolution of the dystonic tremor</strong> immediately post-procedure. Patient hospitalised for 7 days for pain stabilisation. Pain decreased to 7/10; blood pressure returned to normal. Confirmed C6/C7 nerve root compression as the source of both radicular and dystonic symptoms.</p>`
+      },
+      {
+        id: "ct_cervical",
+        label: "CT cervical spine",
+        consequence: "A CT scan would have provided superior bony detail of the osteophyte complex and foraminal dimensions compared to radiograph alone, and could have quantified the degree of foraminal narrowing. However, given that MRI was ordered and provided excellent soft tissue and nerve root information, CT was not necessary in this case.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "vascular_doppler",
+        label: "Doppler ultrasound / vascular imaging of upper extremity",
+        consequence: "Given the cold extremities and elevated blood pressure, vascular imaging could have been used to exclude thoracic outlet syndrome or subclavian artery compression. This was not ordered because the clinical picture, EMG findings, and MRI evidence strongly pointed to a cervical spine origin for the autonomic symptoms.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Cervical radiculopathy with dystonic tremor",
+        correct: true,
+        blurb: "This is the correct diagnosis. Cervical radiculopathy typically presents with unilateral arm pain, weakness, and sensory change. In this case, severe nerve root irritation at C5/6–C6/7 produced not only radicular arm pain but also an involuntary dystonic posture and tremor — a rare but documented consequence of excruciating radiculopathy disrupting inhibitory signalling to the shoulder and cervical musculature.",
+        supports: [
+          "10-day history of progressively worsening unilateral neck and right arm pain consistent with C6/C7 dermatomal distribution",
+          "Significant motor weakness: right C5 2/5, right C6/C7 4/5",
+          "Positive Spurling's test, cervical distraction test, and upper limb tension test",
+          "MRI confirmed osteophyte complex impinging right C6 nerve root at C5/6, with bilateral C7 involvement at C6/7",
+          "EMG confirmed neurogenic abnormality consistent with C6/7 radiculopathy",
+          "CT-guided C6/C7 nerve root block resolved all symptoms including the dystonic tremor, confirming nerve root as the pain generator",
+          "Elevated BP and cold extremities consistent with sympathetic chain irritation from cervical nerve root compression",
+          "Complete resolution of dystonic tremor with chiropractic care targeting cervical decompression"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Primary cervical dystonia",
+        correct: false,
+        blurb: "Cervical dystonia (spasmodic torticollis) is a focal movement disorder causing involuntary neck muscle contractions. Given the dystonic posture on presentation, this was a plausible initial consideration. However, the clinical and investigative findings firmly exclude it.",
+        supports: [
+          "Dystonic neck posture (5-degree right lateral flexion) visible on presentation",
+          "Involuntary rhythmic contractions in right rotator cuff muscles exacerbated by elbow and wrist extension"
+        ],
+        arguesAgainst: [
+          "Dystonia emerged secondary to severe radicular pain — it was not the primary complaint and appeared 5 days after pain onset",
+          "EMG confirmed C6/7 radiculopathy as the neurological substrate, not a primary movement disorder",
+          "Complete resolution of the dystonic tremor following nerve root block and chiropractic care is inconsistent with primary dystonia, which would not resolve with cervical spine treatment",
+          "No history of primary dystonia, neurological disease, or medication-induced movement disorder"
+        ]
+      },
+      {
+        label: "Thoracic outlet syndrome",
+        correct: false,
+        blurb: "Thoracic outlet syndrome (TOS) can compress brachial plexus elements causing arm pain, weakness, and autonomic symptoms including cold extremities. The presentation of unilateral arm symptoms with cold hands and autonomic changes makes TOS a reasonable differential.",
+        supports: [
+          "Right upper extremity pain and weakness",
+          "Cold extremities (autonomic / vascular TOS feature)",
+          "Occupational heavy lifting (delivery driver) — a risk factor for TOS"
+        ],
+        arguesAgainst: [
+          "MRI clearly demonstrated cervical foraminal stenosis with right C6 nerve root impingement — a structural explanation for the symptoms",
+          "EMG confirmed neurogenic C6/7 radiculopathy, which is not the typical pattern of TOS",
+          "Positive Spurling's test strongly points to cervical root rather than plexus-level compression",
+          "CT-guided C6/7 nerve root block completely resolved symptoms — definitive evidence for a cervical, not thoracic outlet, origin"
+        ]
+      },
+      {
+        label: "Cervical myelopathy",
+        correct: false,
+        blurb: "Cervical myelopathy results from spinal cord compression and can present with arm weakness and occasionally with movement abnormalities. Given MRI evidence of cord abutment at C4/5 and C5/6, this was an important differential to consider and exclude.",
+        supports: [
+          "MRI demonstrated cord abutment at C4/5 and C5/6",
+          "Significant motor weakness in the right upper extremity",
+          "Cervical spondylosis at multiple levels with multilevel disc disease"
+        ],
+        arguesAgainst: [
+          "Normal muscle stretch reflexes — myelopathy would typically produce hyperreflexia",
+          "No lower extremity involvement, gait disturbance, or bladder/bowel dysfunction",
+          "EMG confirmed root-level neurogenic changes (LMN), not cord-level (UMN) pathology",
+          "No pathological reflexes (Hoffman's not documented but motor/reflex pattern was LMN)",
+          "Symptoms completely resolved with C6/7 nerve root block and conservative care"
+        ]
+      },
+      {
+        label: "Brachial neuritis (Parsonage-Turner syndrome)",
+        correct: false,
+        blurb: "Parsonage-Turner syndrome presents with acute severe shoulder girdle pain followed by weakness and is often misdiagnosed as cervical radiculopathy. The sudden onset and severe arm weakness in this case make it worth considering.",
+        supports: [
+          "Acute onset of severe pain rated 8–10/10",
+          "Significant weakness in right shoulder and arm (C5 2/5)",
+          "Pain disproportionate to findings — a Parsonage-Turner feature"
+        ],
+        arguesAgainst: [
+          "Classic Parsonage-Turner presents with initial severe pain that then subsides as weakness emerges — here pain remained progressive",
+          "MRI demonstrated clear structural cause: C5/6 osteophyte complex impinging right C6 nerve root",
+          "EMG confirmed C6/7 radiculopathy consistent with compressive aetiology, not the patchy plexopathy pattern of Parsonage-Turner",
+          "Symptoms resolved with cervical decompression — not consistent with a primary immune/inflammatory plexitis"
+        ]
+      },
+      {
+        label: "Cervicogenic headache / upper cervical facet syndrome",
+        correct: false,
+        blurb: "Upper cervical facet syndrome or cervicogenic headache can produce neck pain, restricted ROM, and referred arm discomfort. However, the degree of neurological deficit in this case goes far beyond what facet dysfunction alone would produce.",
+        supports: [
+          "Significant cervical ROM restriction in multiple planes",
+          "Muscular hypertonicity and pain on movement",
+          "History of degenerative joint disease on radiograph"
+        ],
+        arguesAgainst: [
+          "Marked motor weakness (C5 2/5) is not a feature of cervicogenic headache or isolated facet syndrome",
+          "Dystonic tremor is not produced by facet dysfunction",
+          "Positive Spurling's, ULTT, and nerve root block response all indicate compressive radiculopathy, not referred facet pain",
+          "EMG confirmed neurogenic C6/7 changes inconsistent with pure facet-mediated pain"
+        ]
+      },
+      {
+        label: "Hypertensive urgency / secondary hypertension",
+        correct: false,
+        blurb: "With a BP of 145/90 mmHg on presentation and a history of 'controlled hypertension', elevated BP could suggest inadequate BP control or a secondary cause. This was appropriately considered but ultimately linked to the spine pathology.",
+        supports: [
+          "BP 145/90 mmHg on presentation",
+          "Known history of hypertension (controlled)"
+        ],
+        arguesAgainst: [
+          "Elevated BP resolved without antihypertensive intervention as cervical nerve root symptoms improved — strongly suggests a secondary, spine-mediated autonomic aetiology",
+          "Cold extremities and autonomic signs localise to sympathetic cervical chain irritation from nerve root compression",
+          "BP normalised during hospitalisation following nerve root block and subsequently with chiropractic care, without escalating antihypertensive therapy"
+        ]
+      },
+      {
+        label: "Acute rotator cuff tear / shoulder pathology",
+        correct: false,
+        blurb: "Right shoulder pain with weakness and inability to abduct could suggest a structural shoulder problem such as a rotator cuff tear, which is a common presentation in a male manual worker in his 40s.",
+        supports: [
+          "Right shoulder pain and weakness including C5-distribution (deltoid/supraspinatus) weakness graded 2/5",
+          "Dystonic tremor affecting the right rotator cuff muscles",
+          "Occupational heavy lifting — a risk factor for rotator cuff pathology"
+        ],
+        arguesAgainst: [
+          "Cervical origin confirmed by positive Spurling's test and ULTT reproducing arm symptoms",
+          "Weakness in multiple cervical myotomes (C5, C6, C7) rather than an isolated rotator cuff pattern",
+          "Dystonic tremor in shoulder muscles is not caused by structural shoulder pathology",
+          "MRI and EMG confirmed C5/6 osteophyte and C6/7 root impingement as the structural source"
+        ]
+      }
+    ],
+    explanation: `<p>This case demonstrates one of the most striking atypical presentations of cervical radiculopathy documented in the chiropractic literature. The key diagnostic challenge was not the radiculopathy itself — the combination of unilateral arm pain, multi-level weakness, positive Spurling's test, and ULTT was sufficient to identify C6/C7 nerve root involvement. The challenge was recognising that the dystonic tremor and autonomic features (hypertension, cold extremities) were <em>secondary</em> to the radiculopathy rather than independent primary conditions.</p>
+<p>The pathophysiological mechanism is that severe nerve root irritation disrupts inhibitory signalling to the surrounding musculature, producing involuntary contractions and dystonic posturing. Simultaneously, compression of the sympathetic cervical chain elevates sympathetic tone, producing hypertension and peripheral vasoconstriction. These features disappeared entirely when the nerve roots were blocked — providing definitive evidence of causation.</p>
+<p>The GP's management with gabapentin and NSAIDs without imaging of the neural elements was an understandable but insufficient first step. The chiropractor correctly identified that the degree of motor weakness and atypical presentation warranted MRI and specialist referral. The intolerable response to manual cervical distraction was an important safety signal — correctly prompting hospital referral rather than persisting with hands-on treatment. Following the nerve root block and hospitalisation, chiropractic care with cervical manipulation and mechanical decompression achieved complete and sustained resolution.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "mri_referral",
+        label: "Order cervical MRI and refer to specialist for nerve root block",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> With severe, progressive radiculopathy, multi-level motor weakness (C5 2/5, C6/C7 4/5), and an atypical movement disorder presentation, cervical MRI was essential to characterise the structural pathology before proceeding with any manual intervention. The MRI revealed C5/6 osteophyte impinging the right C6 root and multilevel foraminal narrowing. Subsequent CT-guided nerve root block by the spine surgeon completely resolved all symptoms including the dystonic tremor, confirming the diagnosis and providing therapeutic benefit.`
+      },
+      {
+        id: "cervical_manipulation_early",
+        label: "Proceed with high-velocity cervical manipulation at first visit",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> In a patient with severe, progressive neurological deficit (C5 motor 2/5), intolerable pain, and an atypical movement disorder presentation, cervical HVLA manipulation at the first visit would be contraindicated. The case explicitly documents that manual cervical distraction provoked intolerable pain, prompting hospital referral. Imaging must precede any cervical manipulation in the presence of significant or progressive neurological deficit.`
+      },
+      {
+        id: "chiro_post_nerve_block",
+        label: "Conservative chiropractic management (manipulation + mechanical decompression) following specialist nerve root block and hospitalisation",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> After the nerve root block resolved acute pain and hospitalisation stabilised the patient, chiropractic treatment with daily cervical manipulation (diversified technique) for the first week — alongside existing medications — achieved a remarkable pain reduction to 5/10 and enabled the patient to return to work. Subsequent reduction to 3x/week plus mechanical spinal decompression over the following three weeks led to complete resolution of brachialgia and dystonic tremor. This staged, conservative approach was well-matched to the patient's post-block clinical status.`
+      },
+      {
+        id: "cervical_collar_only",
+        label: "Cervical collar immobilisation and continued NSAID/gabapentin therapy",
+        selected: false,
+        explanation: `<strong>Not appropriate as the sole management.</strong> The patient had already failed a course of gabapentin and NSAIDs prescribed by the GP. Continuing this approach without addressing the structural nerve root compression would be unlikely to change the clinical trajectory. While a soft collar may have a brief role in acute cervical radiculopathy, passive immobilisation without active rehabilitation is not evidence-based and was not the management chosen.`
+      },
+      {
+        id: "surgical_discectomy_first",
+        label: "Immediate surgical referral for anterior cervical discectomy and fusion",
+        selected: false,
+        explanation: `<strong>Not appropriate as a first-line intervention.</strong> While anterior cervical discectomy and fusion has been used for similar cases in the literature, this patient ultimately achieved complete symptom resolution with conservative management (nerve root block + chiropractic care). Surgery carries risks including infection, dural tear, and hardware complications. The case illustrates that conservative care is a viable and effective alternative before surgery is considered, and should be attempted first in neurologically stable patients.`
+      }
+    ],
+    outcomeText: "Following CT-guided C6/C7 nerve root block, the patient was hospitalised for seven days for pain stabilisation. Pain decreased to 7/10 and blood pressure normalised. After discharge, daily chiropractic cervical manipulation reduced pain to 5/10 within one week, allowing return to work. Over the following three weeks with 3x/week visits and mechanical spinal decompression, all medications were discontinued and the patient achieved complete and sustained resolution of right-sided brachialgia and dystonic tremor."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Cervical Radiculopathy</strong><br>Atypical presentation with secondary dystonic tremor and autonomic dysregulation (C5/6–C6/7)",
+    outcomes: [
+      { label: "Published Source", text: "Chu EC & Ng L. Cureus. 2024;16(1):e51441" },
+      { label: "PMID / PMC", text: "PMID: 38298318 — PMC10829058 (open access)" },
+      { label: "Final Diagnosis", text: "Cervical radiculopathy (C6/C7) with secondary dystonic tremor and sympathetic autonomic dysregulation" },
+      { label: "Intervention", text: "CT-guided C6/C7 nerve root block → inpatient stabilisation → chiropractic manipulation (diversified) + mechanical spinal decompression" }
+    ],
+    conditionSummary: {
+      overview: "Cervical radiculopathy results from compression or irritation of a cervical nerve root, most commonly due to disc herniation or osteophyte formation at the C5/6 or C6/7 levels. It affects approximately 83 per 100,000 persons annually and is most prevalent in the fifth decade of life. The condition typically produces radicular arm pain, sensory disturbance, and motor weakness in the distribution of the affected nerve root, though atypical presentations involving movement disorders or autonomic changes can occur when nerve root irritation is severe.",
+      presentation: [
+        "Unilateral arm pain, numbness, or tingling radiating in a dermatomal pattern (C6: thumb/index; C7: middle finger; C8: ring/little finger)",
+        "Motor weakness in the myotome of the compressed root (e.g., wrist extension at C6, elbow extension at C7)",
+        "Diminished or absent muscle stretch reflex at the affected level (e.g., reduced biceps reflex at C6, triceps at C7)",
+        "Positive provocative tests: Spurling's, upper limb tension test, and symptom relief with cervical distraction"
+      ],
+      pathology: [
+        "Posterolateral disc herniation or osteophyte formation reduces intervertebral foraminal dimensions, compressing the exiting nerve root",
+        "Inflammatory mediators (phospholipase A2, cytokines) released from herniated disc material sensitise and irritate adjacent nerve root fibres independent of mechanical compression",
+        "Severe afferent nociceptive input can disrupt inhibitory interneuronal signalling in the spinal cord, producing secondary motor phenomena such as dystonia or tremor",
+        "Sympathetic fibres coursing alongside or within compressed cervical nerve roots may become irritated, producing autonomic dysregulation including elevated blood pressure and peripheral vasoconstriction"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Dystonic tremor and autonomic signs (hypertension, cold extremities) in the context of cervical radiculopathy are secondary phenomena — not independent diagnoses. Recognising that these features resolve with nerve root decompression is critical to avoid over-investigation or misdirected treatment."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "The dystonic posture could easily be mistaken for primary cervical dystonia or a movement disorder, leading to neurology referral and delay. The key differentiator is temporal — dystonia emerged five days after the onset of radicular pain, making it clearly secondary. Always ask: what came first?"
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "Intolerable pain provoked by manual cervical distraction is a red flag for significant nerve root compression. This is the opposite of the expected finding (symptom relief with distraction) and should prompt immediate referral rather than persisting with hands-on assessment."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "This case illustrates excellent chiropractic scope-of-practice management: ordering MRI when neurological deficit was significant, referring for specialist nerve root block when manipulation was not safe, and then stepping back in as the primary conservative provider once acute risk was managed. Knowing when not to treat is as important as knowing how to treat."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "The prior GP cervical radiograph showed C5/6 DJD but could not visualise soft tissue or nerve root compression. Normal radiographs do not exclude significant radiculopathy. When motor deficit is present and progressive, MRI is mandatory — not optional — regardless of what plain films show."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Cervical radiculopathy, dystonic tremor, autonomic dysregulation, cervical spine MRI, nerve root block, chiropractic scope of practice",
+    keyPoints: [
+      "Cervical radiculopathy can produce secondary movement disorders (dystonia, tremor) through disruption of inhibitory signalling — these are not primary diagnoses",
+      "Autonomic features including hypertension and cold extremities can result from sympathetic cervical chain irritation secondary to nerve root compression",
+      "Intolerable pain on cervical distraction testing is a safety signal warranting immediate specialist referral rather than continued hands-on treatment",
+      "Significant or progressive motor deficit requires MRI before cervical manipulation, regardless of plain radiograph findings",
+      "Conservative chiropractic care (manipulation + mechanical decompression) can achieve complete resolution of complex cervical radiculopathy when properly sequenced after specialist intervention"
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 028 — Lumbar apophyseal ring fracture + disc herniation, 14yo tennis player
+// Source: Chu EC et al. Cureus. 2025;17(8):e90771. PMID: 40988830
+// ─────────────────────────────────────────────
+{
+  id: "028",
+  title: "A 14-year-old male competitive tennis player presents with six months of bilateral posterior leg tightness and mild radiating sensations that prevent him from competing",
+  category: "Paediatric",
+  secondaryCategory: "Sports/Acute",
+  difficulty: "Advanced",
+  estimatedTime: "25–35 min",
+  source: {
+    short: "Chu EC et al.\nCureus. 2025;17(8):e90771\nPMID: 40988830\nPMC: PMC12450614\nOpen access ✓",
+    full: "Chu EC, Cheong BKC, Chu EY. Lumbar Apophyseal Ring Fracture With Central Disc Herniation: A Case Report. Cureus. 2025;17(8):e90771. doi: 10.7759/cureus.90771. PMID: 40988830. PMC: PMC12450614."
+  },
+  patient: {
+    ageSex: "14-year-old male",
+    chiefComplaint: "Bilateral posterior lower extremity tightness and mild electric sensations radiating toward both legs, preventing competition",
+    duration: "6 months",
+    priorProviders: "Sports team physiotherapist, sports physician, orthopaedic surgeon",
+    priorDiagnoses: "Initially diagnosed as training-related muscle strain by physiotherapist; subsequent MRI confirmed S1 apophyseal ring fracture with L5/S1 central disc herniation. Six months of physiotherapy (joint mobilisations, interferential current, soft tissue therapy, core training) produced no improvement. Surgical intervention recommended but declined by parents."
+  },
+  history: {
+    content: `<p>A 14-year-old professional-level male tennis player presented with a six-month history of bilateral posterior lower extremity tightness accompanied by mild electric sensations radiating toward both legs. Symptoms began during intensive tennis training and were initially attributed to overexertion and muscle strain by the sports team physiotherapist.</p>
+<p>The patient rated stiffness and pain at 5/10. Symptoms were exacerbated by prolonged training sessions and deep palpation of the posterior lower extremities. Despite no significant lower back pain, the symptoms were sufficiently disruptive to prevent competition. He denied frank numbness or weakness. After evaluation by a sports physician and orthopaedic surgeon, MRI confirmed an S1 posterior ring apophyseal fracture (LARF) with a medium-sized central and paracentral disc extrusion at L5/S1 (1.9 cm length × 0.9 cm depth × 2.5 cm width), causing moderate bilateral lateral recess narrowing with encroachment of both descending S1 nerve roots.</p>
+<p>Six months of physiotherapy (joint mobilisations, interferential current, soft tissue therapy, core muscle training) produced no improvement. Surgery was recommended by the orthopaedic team but declined by the patient's parents, who sought a conservative chiropractic approach.</p>`,
+    clinicalNote: "The key diagnostic signal in this case is bilateral neurological symptoms in an adolescent athlete — which should immediately redirect suspicion away from simple muscular strain. The 'bilateral' component is critical: isolated disc herniation typically produces unilateral radiculopathy; bilateral involvement suggests central canal pathology. LARF is rare and is most commonly missed in adolescents because plain radiographs underdiagnose it; CT and MRI are essential. The absence of frank back pain in this case is also atypical and could delay diagnosis — electric sensations radiating bilaterally without back pain should prompt imaging."
+  },
+  examination: {
+    autoROM: `<p>Lumbar spine active range of motion was significantly restricted: flexion 30° (normal adolescent: 60–80°), extension 15° (normal: 25–35°), lateral bending 20° bilaterally (normal: 30–40°), rotation 25° bilaterally (normal: 40–50°). End-range tightness was noted without sharp pain. After six months of conservative chiropractic treatment, full ROM was restored: flexion 70°, extension 30°, lateral bending 35°, rotation 45°.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+  <thead><tr><th>Level</th><th>Side</th><th>Movement</th><th>Grade</th></tr></thead>
+  <tbody>
+    <tr><td>L1/L2</td><td>Bilateral</td><td>Hip flexion</td><td>Normal</td></tr>
+    <tr><td>L3/L4</td><td>Bilateral</td><td>Knee extension</td><td>Normal</td></tr>
+    <tr><td>L4/L5</td><td>Bilateral</td><td>Ankle dorsiflexion / EHL</td><td>Normal</td></tr>
+    <tr><td>S1</td><td>Bilateral</td><td>Knee flexion (hamstrings)</td><td>4+/5 (restricted range due to tightness, not weakness)</td></tr>
+    <tr><td>S1</td><td>Bilateral</td><td>Ankle plantarflexion</td><td>Normal</td></tr>
+    <tr><td>S2</td><td>Bilateral</td><td>Toe flexion</td><td>Normal</td></tr>
+  </tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Neurological",
+        items: [
+          {
+            id: "slr_test",
+            label: "Straight leg raise (SLR) test",
+            result: `<span class="tt pos">Positive</span> — inability to fully flex the knee due to posterior tightness; reproduction of bilateral symptoms at 60° bilaterally`,
+            documented: true,
+            rationale: "SLR is the primary tension sign for lumbosacral nerve root involvement. Bilateral positive SLR at 60° with reproduction of posterior leg symptoms directly implicated the S1 nerve roots — consistent with the MRI finding of bilateral S1 root encroachment from the central disc extrusion. Bilateral positivity is a key feature suggesting central rather than lateral disc pathology."
+          },
+          {
+            id: "dermatomal_sensation",
+            label: "Dermatomal sensation testing",
+            result: `<span class="tt normal">Normal</span> — dermatomal testing was normal`,
+            documented: true,
+            rationale: "Normal dermatomal sensation in the context of bilateral SLR positivity and motor near-normality helped characterise the severity of neural compromise as moderate rather than severe. It also informed the decision to trial conservative management — intact sensation with preserved motor function suggests the nerve roots are irritated but not critically compromised."
+          },
+          {
+            id: "reflexes",
+            label: "Lower limb reflexes (patella, Achilles)",
+            result: `Not specifically documented in the published case`,
+            documented: false,
+            rationale: "Reflex testing was not explicitly reported in this case but would have been clinically important. An absent or reduced Achilles reflex would have confirmed S1 nerve root involvement consistent with the imaging. Its documentation would have strengthened the neurological examination record and aided monitoring of recovery."
+          }
+        ]
+      },
+      {
+        group: "Orthopaedic / Special Tests",
+        items: [
+          {
+            id: "kemps_test",
+            label: "Kemp's test (lumbar extension / rotation compression)",
+            result: `<span class="tt neg">Negative</span> — Kemp's test was negative bilaterally`,
+            documented: true,
+            rationale: "Kemp's test loads the posterior elements and facet joints; a negative result argues against facet-mediated pain or significant posterior element irritation. In the context of a central disc herniation and LARF, the disc and endplate pathology rather than the facets are the primary pain generators — the negative Kemp's is clinically coherent."
+          },
+          {
+            id: "squat_test",
+            label: "Functional squat test",
+            result: `<span class="tt notable">Notable</span> — limited to 50% depth due to posterior lower extremity tightness`,
+            documented: true,
+            rationale: "The squat test provided a functional assessment of lower extremity capacity and served as a sport-relevant outcome measure for this athlete. Limitation to 50% depth reflected the bilateral posterior tightness and neural irritation. Restoration to full depth at 6 months was a key return-to-sport milestone."
+          },
+          {
+            id: "single_leg_balance",
+            label: "Single-leg balance test",
+            result: `<span class="tt notable">Notable</span> — instability after 10 seconds on each side`,
+            documented: true,
+            rationale: "Single-leg balance assesses proprioceptive and neuromuscular stability, which is commonly impaired with lumbar nerve root involvement. Bilateral instability at 10 seconds was an objective marker of neuromuscular deficits that was used to guide the core stability and rehabilitation component of treatment."
+          },
+          {
+            id: "slump_test",
+            label: "Slump test",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "The slump test is a sensitive neural tension test for lumbosacral radiculopathy and often complements SLR. Given that bilateral SLR was positive, the slump test would have added further sensitivity and characterised the neurodynamic component of the presentation. Its absence is a minor gap in the examination record."
+          },
+          {
+            id: "palpation",
+            label: "Lumbar palpation and motion palpation",
+            result: `<span class="tt notable">Notable</span> — hypertonicity and tenderness bilaterally in lumbar erector spinae, gluteal muscles, and quadratus lumborum (pain 4/10 on palpation). Segmental hypomobility at C4-5, T4-6, L2-L5, and S1 on motion palpation`,
+            documented: true,
+            rationale: "Palpation identified the paraspinal muscular response to the underlying disc and endplate pathology, and motion palpation localised segmental dysfunction at L2-S1. This guided the chiropractic treatment plan — specifically the decision to address upper spinal segments (C4-5, T4-6) with SMT while avoiding direct high-force lumbar/sacral manipulation given the confirmed fracture and disc herniation."
+          }
+        ]
+      },
+      {
+        group: "Functional Assessment",
+        items: [
+          {
+            id: "spondylolysis_extension",
+            label: "One-legged hyperextension test (for spondylolysis)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "In an adolescent athlete with low back and posterior leg symptoms, the one-legged hyperextension test (or stork test) screens for spondylolysis — a common cause of posterior element pain in young athletes. While LARF was confirmed on imaging, this test would be appropriate in the initial clinical workup of any adolescent athlete with lumbar symptoms before imaging is available."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination was shaped by two key facts known at presentation: the patient was an adolescent competitive athlete with pre-confirmed LARF and central disc herniation on MRI. The examination appropriately focused on characterising the neurological status (SLR, dermatomal testing, motor grading), functional capacity (squat, balance), and the musculoskeletal substrate for treatment planning (palpation, motion palpation). The negative Kemp's test and intact dermatomal sensation provided reassurance for conservative management. High-force lumbar manipulation was appropriately avoided given the confirmed fracture and disc pathology."
+  },
+  investigations: {
+    options: [
+      {
+        id: "mri_lumbar",
+        label: "MRI lumbar spine (performed prior to chiropractic presentation)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Suspected posterior ring apophyseal fracture at the S1 posterior vertebral body (LARF), characterised by separation of a bone fragment at the posterior rim of the endplate. Medium-sized central and paracentral disc extrusion at L5/S1 (1.9 cm × 0.9 cm × 2.5 cm) causing <strong>moderate bilateral lateral recess narrowing with encroachment of both descending S1 nerve roots</strong>, as well as moderate bilateral exit foraminal narrowing without compression of the exiting L5 nerve roots.</p>`
+      },
+      {
+        id: "ct_lumbar",
+        label: "CT lumbar spine",
+        consequence: "CT was not specifically documented in this case but would have provided superior bony detail of the apophyseal ring fracture compared to MRI. In suspected LARF, CT is the gold standard for characterising the fracture morphology, fragment displacement, and degree of cortical involvement. Its absence in this case is notable, and CT would be standard practice when LARF is confirmed on MRI in a young athlete.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "plain_xray_lumbar",
+        label: "Plain lumbar radiograph",
+        consequence: "Plain radiographs have limited sensitivity for LARF and central disc herniation. They may show disc space narrowing or secondary vertebral changes but frequently miss the apophyseal ring fracture itself. If plain radiographs had been ordered first, the diagnosis may have been delayed — reinforcing the need for MRI or CT in adolescent athletes with persistent neurological symptoms.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Lumbar apophyseal ring fracture (LARF) with central disc herniation",
+        correct: true,
+        blurb: "This is the correct diagnosis. LARF is a rare injury unique to adolescents and young adults in whom the ring apophysis has not yet fully fused. Biomechanical stress during repetitive sport-specific loading separates this secondary ossification centre, which is frequently associated with concurrent disc herniation. The diagnosis was confirmed on MRI.",
+        supports: [
+          "Fourteen-year-old male — prime demographic for LARF (incomplete apophyseal ring fusion in adolescents)",
+          "Intensive repetitive tennis training — high biomechanical stress at the lumbosacral junction",
+          "Bilateral posterior lower extremity tightness with mild electric sensations — pattern consistent with bilateral S1 nerve root encroachment from central disc herniation",
+          "MRI confirmed S1 posterior ring apophyseal fracture with medium-sized L5/S1 central disc extrusion and bilateral S1 nerve root encroachment",
+          "Bilateral positive SLR at 60° — consistent with bilateral S1 neural tension",
+          "Restricted lumbar ROM in all planes with end-range tightness",
+          "Segmental hypomobility at L2-S1 on motion palpation",
+          "Complete symptom resolution with conservative chiropractic care including mechanical lumbar distraction targeting L5/S1"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Hamstring strain / muscle tightness",
+        correct: false,
+        blurb: "The initial diagnosis by the sports physiotherapist was training-related muscle strain. Bilateral posterior thigh tightness in a high-volume athlete is a common presentation and an understandable first impression. However, the failure to improve over six months and the neurological features should have redirected the diagnosis earlier.",
+        supports: [
+          "Bilateral posterior lower extremity tightness exacerbated by prolonged training",
+          "Professional-level tennis training with high repetitive loading volume",
+          "Initial physiotherapy diagnosis of training-related muscle strain"
+        ],
+        arguesAgainst: [
+          "Six months without improvement despite physiotherapy is inconsistent with a simple muscle strain",
+          "Mild electric sensations radiating bilaterally are neurological features inconsistent with isolated muscle strain",
+          "SLR limited to 60° bilaterally — this is a neural tension sign, not a simple muscle flexibility limitation",
+          "MRI confirmed structural pathology (LARF + L5/S1 disc extrusion with S1 nerve root encroachment) — a definitive structural cause identified"
+        ]
+      },
+      {
+        label: "Lumbar disc herniation (without apophyseal ring fracture)",
+        correct: false,
+        blurb: "L5/S1 disc herniation alone would produce bilateral S1 nerve root symptoms with the neurological findings described here. In many respects this diagnosis is partially correct — the disc herniation is real and does contribute to the presentation. The full diagnosis, however, includes the LARF, which changes the management approach.",
+        supports: [
+          "MRI-confirmed L5/S1 central disc extrusion with bilateral S1 nerve root encroachment",
+          "Bilateral posterior leg symptoms with SLR positivity at 60°",
+          "Adolescent athlete with high lumbar loading"
+        ],
+        arguesAgainst: [
+          "MRI specifically identified a posterior ring apophyseal fracture at S1 — this is a concurrent pathology that changes the diagnosis and management",
+          "The presence of LARF means high-force lumbar manipulation is absolutely contraindicated — an important management distinction from isolated disc herniation",
+          "LARF is the primary structural lesion; the disc herniation is an associated finding"
+        ]
+      },
+      {
+        label: "Lumbar spondylolysis",
+        correct: false,
+        blurb: "Spondylolysis (pars interarticularis stress fracture) is the most common cause of low back pain in adolescent athletes and must be considered in any young competitive athlete with lumbar symptoms. However, the clinical and imaging features of this case argue against it.",
+        supports: [
+          "Adolescent male competitive athlete — the classic demographic for spondylolysis",
+          "Intensive, repetitive lumbar loading sport (tennis)"
+        ],
+        arguesAgainst: [
+          "MRI demonstrated LARF at the S1 posterior vertebral endplate, not a pars interarticularis defect",
+          "Kemp's test was negative — this test is frequently positive in spondylolysis",
+          "Bilateral posterior leg symptoms and S1 nerve root encroachment are not typical features of spondylolysis",
+          "No spondylolisthesis identified on imaging"
+        ]
+      },
+      {
+        label: "Piriformis syndrome",
+        correct: false,
+        blurb: "Piriformis syndrome can produce posterior hip and thigh symptoms mimicking radiculopathy. In an athlete with bilateral posterior leg symptoms without back pain, this could initially be considered.",
+        supports: [
+          "Bilateral posterior lower extremity tightness",
+          "Absence of frank lower back pain",
+          "Hypertonicity in gluteal muscles on palpation"
+        ],
+        arguesAgainst: [
+          "Bilateral involvement is very unusual for piriformis syndrome, which is typically unilateral",
+          "MRI confirmed structural neural compromise from central disc herniation — a definitive alternative explanation",
+          "Bilateral positive SLR is a neurological finding not explained by piriformis syndrome",
+          "Electric sensations radiating bilaterally are not a feature of piriformis compression of the sciatic nerve"
+        ]
+      },
+      {
+        label: "Scheuermann's disease (thoracic kyphosis with lumbar extension overload)",
+        correct: false,
+        blurb: "Scheuermann's disease can produce endplate changes in adolescents and thoracolumbar pain. In an athlete with restricted lumbar ROM and thoracic hypomobility, it is worth considering.",
+        supports: [
+          "Adolescent with restricted lumbar ROM",
+          "Segmental hypomobility noted at T4-6 on motion palpation"
+        ],
+        arguesAgainst: [
+          "MRI confirmed LARF specifically at S1 posterior endplate — inconsistent with Scheuermann's disease, which involves anterior vertebral body endplates",
+          "Scheuermann's does not produce bilateral leg symptoms or S1 nerve root encroachment",
+          "No mention of thoracic kyphosis or Schmorl's nodes on imaging"
+        ]
+      },
+      {
+        label: "Sacroiliac joint dysfunction",
+        correct: false,
+        blurb: "SIJ dysfunction in a young athlete can produce posterior thigh pain and restricted lumbar movement. It is a commonly encountered presentation in chiropractic practice.",
+        supports: [
+          "Bilateral posterior thigh symptoms",
+          "Young athlete with high lumbar and pelvic loading",
+          "Segmental dysfunction at S1 on motion palpation"
+        ],
+        arguesAgainst: [
+          "MRI demonstrated a specific structural lesion at L5/S1 with S1 nerve root encroachment — not characteristic of SIJ dysfunction",
+          "Bilateral SLR positivity is not a feature of isolated SIJ dysfunction",
+          "Electric sensations radiating bilaterally into the posterior legs suggest neurogenic rather than referred SIJ pain"
+        ]
+      },
+      {
+        label: "Growing pains / apophysitis (Osgood-Schlatter equivalent at lumbar spine)",
+        correct: false,
+        blurb: "Apophysitis at various sites is common in adolescent athletes. A clinician unfamiliar with LARF might broadly categorise endplate pathology as 'growth plate injury' or apophysitis.",
+        supports: [
+          "Adolescent at peak growth velocity",
+          "Repetitive athletic loading causing endplate stress"
+        ],
+        arguesAgainst: [
+          "MRI confirmed a discrete fracture of the S1 posterior ring apophysis with disc herniation — this is a fracture with structural neural compromise, not simple apophysitis",
+          "Bilateral radiating electric sensations are neurological features absent in apophysitis",
+          "Bilateral SLR positivity confirms nerve root involvement inconsistent with apophysitis"
+        ]
+      }
+    ],
+    explanation: `<p>LARF is one of the most underdiagnosed causes of lumbar symptoms in adolescent athletes. It occurs because the ring apophysis — the secondary ossification centre around the vertebral endplate — has not yet fused to the vertebral body in adolescents, making it susceptible to avulsion or fracture under repetitive high-load stress. The L4, L5, and S1 endplates are most commonly affected, reflecting the biomechanical stresses of athletic activity.</p>
+<p>The key diagnostic pivots in this case were two: (1) bilateral neurological symptoms in an adolescent athlete without back pain, and (2) failure to improve after six months of appropriate physiotherapy. Both features should have raised suspicion for structural pathology beyond muscle strain much earlier. Bilateral S1 nerve root encroachment from a central disc herniation — rather than the typical unilateral posterolateral herniation — is consistent with the central location of the LARF-associated disc extrusion.</p>
+<p>The management decision-making is instructive: the confirmed fracture and disc herniation made high-force lumbar and sacral manipulation contraindicated. The chiropractic treatment plan cleverly addressed global segmental hypomobility (cervical, thoracic) with SMT while applying mechanical lumbar distraction — a low-force technique that decompresses the L5/S1 disc space — to the target level. Shockwave therapy to the posterior knees addressed the distal hamstring component. This stratified approach achieved complete resolution and return to competition in six months, with maintained outcomes at 24 months.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "conservative_multimodal",
+        label: "Multimodal chiropractic protocol: cervical/thoracic SMT + mechanical lumbar distraction (L5/S1) + shockwave therapy + progressive core rehabilitation",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Given the confirmed LARF and central disc herniation, high-force lumbar or sacral manipulation was contraindicated. The treatment plan appropriately substituted mechanical lumbar distraction (28 kg force, 40:30 hold-to-rest, 5° incline) targeting L5/S1 disc decompression. Cervical and thoracic SMT addressed remote segmental dysfunction. Shockwave therapy targeted the posterior knee tightness component. Progressive core strengthening was added after initial symptom reduction. Complete symptom resolution and return to competitive tennis within 6 months, maintained at 24 months.`
+      },
+      {
+        id: "high_force_lumbar_manipulation",
+        label: "High-velocity low-amplitude lumbar manipulation directly targeting L5/S1",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> A confirmed apophyseal ring fracture at S1 with adjacent disc herniation is a contraindication to high-force lumbar manipulation at the involved level. Direct HVLA thrust to L5/S1 in this context risks fragment displacement, exacerbation of disc herniation, or worsening of neural compromise. This case explicitly documents that high-force lumbar/sacral techniques were avoided — and successful outcomes were achieved with indirect, low-force approaches.`
+      },
+      {
+        id: "continue_physiotherapy",
+        label: "Continue standard physiotherapy (joint mobilisations, interferential current, soft tissue, core training)",
+        selected: false,
+        explanation: `<strong>Not appropriate as the sole ongoing management.</strong> Six months of standard physiotherapy had produced no improvement before this presentation. While the individual components of physiotherapy are not contraindicated, simply continuing the same approach that had already failed would be unlikely to achieve a different outcome. The chiropractic approach added mechanical lumbar distraction and shockwave therapy — treatments not included in the prior physiotherapy protocol — which produced clinical change.`
+      },
+      {
+        id: "surgical_referral",
+        label: "Surgical referral for posterior discectomy and fragment removal",
+        selected: false,
+        explanation: `<strong>Not appropriate as the first-line intervention in this case.</strong> Surgery was recommended by the orthopaedic team but declined by the parents. Conservative chiropractic management ultimately achieved complete symptom resolution and full return to high-level competitive tennis — outcomes comparable to or better than surgical series for similar cases, without the operative risks (infection, dural tear, recurrence). Surgery should be reserved for cases with progressive neurological deficit, failed conservative management, or intractable pain.`
+      },
+      {
+        id: "activity_restriction_only",
+        label: "Complete rest from sport and activity restriction without active treatment",
+        selected: false,
+        explanation: `<strong>Not appropriate as the primary strategy.</strong> Activity restriction alone had not resolved symptoms during the preceding six months of attempted conservative management. While reduced training volume was part of the management plan, passive rest without active intervention (spinal decompression, targeted exercise) was insufficient. Current guidelines for adolescent spinal injury emphasise active conservative management rather than prolonged rest.`
+      }
+    ],
+    outcomeText: "The patient underwent treatment three times per week for four weeks (initial phase), followed by twice per week with progressive core strengthening. After six months of consistent treatment, complete symptom resolution was achieved — pain and stiffness reduced from 5/10 to 0/10, lumbar ROM fully restored, functional squat depth normalised to 100%, and single-leg balance exceeded 30 seconds bilaterally. The patient returned to competitive tennis without limitations. At 24-month follow-up, the patient remained asymptomatic and expressed high satisfaction with the conservative approach, noting it was 'life-changing' to avoid surgery and return to his athletic career."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Lumbar Apophyseal Ring Fracture (LARF)</strong><br>S1 posterior ring apophysis with associated L5/S1 central disc herniation and bilateral S1 nerve root encroachment",
+    outcomes: [
+      { label: "Published Source", text: "Chu EC et al. Cureus. 2025;17(8):e90771" },
+      { label: "PMID / PMC", text: "PMID: 40988830 — PMC12450614 (open access)" },
+      { label: "Final Diagnosis", text: "LARF at S1 with central disc herniation and bilateral S1 nerve root encroachment" },
+      { label: "Intervention", text: "Cervical/thoracic SMT + mechanical lumbar distraction (L5/S1) + shockwave therapy (posterior knees) + progressive core rehabilitation — 3×/week × 4 weeks, then 2×/week" }
+    ],
+    conditionSummary: {
+      overview: "Lumbar apophyseal ring fracture (LARF) is a rare spinal injury occurring predominantly in adolescent athletes, in whom the vertebral ring apophysis — a secondary ossification centre at the endplate periphery — has not yet fully fused. Under repetitive high-load biomechanical stress, this incompletely fused structure is susceptible to separation or fracture, frequently accompanied by concurrent disc herniation. LARF accounts for 5.8% to 42% of paediatric lumbar disc herniation cases, with higher rates in young male athletes, and most commonly affects the L4, L5, and S1 vertebral endplates.",
+      presentation: [
+        "Adolescent or young adult athlete with posterior lower extremity tightness, radiating pain, or neurological symptoms following intensive training",
+        "Bilateral symptoms when herniation is central; unilateral symptoms when posterolateral",
+        "Restricted lumbar range of motion with end-range stiffness rather than acute sharp pain",
+        "SLR positivity and functional deficits (squat limitation, balance instability) — frank weakness is less common than in adult disc herniation"
+      ],
+      pathology: [
+        "The ring apophysis is a secondary ossification centre that serves as the attachment site for the annulus fibrosus via Sharpey's fibres; incomplete fusion in adolescents renders it vulnerable to avulsion under axial and shear loading",
+        "Separation of the ring apophysis allows the adjacent disc to herniate, with the bone fragment and disc material together compressing nerve roots",
+        "The posterior endplate at S1 (and L4/L5) is the most common site, reflecting peak biomechanical stress during sport-specific loading patterns (serving, twisting, hyperextension)",
+        "Standard plain radiographs frequently fail to identify LARF; CT provides superior bony detail and MRI best characterises the neural compromise and disc component"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Bilateral posterior leg symptoms without back pain in an adolescent athlete should never be assumed to be simple muscle strain. The bilateral and neurological character of the symptoms — electric sensations, bilateral SLR positivity — demands imaging. LARF is rare but occurs precisely in this population."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "LARF is chronically underdiagnosed because plain radiographs frequently miss the fracture. In this case, six months elapsed between symptom onset and correct diagnosis. CT is the gold standard for bony detail; MRI characterises the neural component. Requesting only X-ray in an adolescent athlete with persistent neurological symptoms will miss the diagnosis."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "When LARF is confirmed, the standard chiropractic reflex to manipulate the lumbar spine must be overridden. Mechanical lumbar distraction — applied indirectly with low force — can decompress the L5/S1 disc space without risking fragment displacement. Addressing remote segmental dysfunction (cervical, thoracic) with SMT is both safe and productive in this context."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "This case illustrates collaborative scope of practice: the orthopaedic team appropriately confirmed the diagnosis and offered surgery; the chiropractor provided a legitimate conservative alternative. Complete resolution at 24 months validates this approach, but the decision to defer surgery requires regular neurological monitoring — progressive deficit would mandate surgical referral."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "MRI demonstrated the LARF and disc herniation; CT was not performed but would have provided superior bony characterisation of the fracture morphology and fragment displacement. When LARF is suspected or confirmed on MRI in a young athlete, CT should be considered as a complementary study to guide the degree of activity restriction and inform the safety of conservative versus surgical management."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Lumbar apophyseal ring fracture, paediatric disc herniation, adolescent athlete spine, mechanical lumbar distraction, return to sport",
+    keyPoints: [
+      "LARF is a rare but important cause of neurological symptoms in adolescent athletes, occurring because the ring apophysis is not yet fully fused to the vertebral body",
+      "Bilateral posterior leg symptoms with SLR positivity in an adolescent athlete should prompt imaging — plain radiographs frequently miss LARF; MRI and CT are required",
+      "High-force lumbar manipulation is contraindicated when LARF is confirmed; mechanical lumbar distraction is a safe and effective alternative for decompressing the affected disc level",
+      "Six months of failed physiotherapy should trigger diagnostic reassessment, not continuation of the same approach",
+      "Conservative chiropractic management of LARF can achieve complete symptom resolution and full return to competitive sport, with outcomes comparable to surgical series"
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 029 — Abdominal migraine in a child with thoracic scoliosis, 10yo girl
+// Source: Chu EC. Cureus. 2025;17(8):e89887. PMID: 40951010
+// ─────────────────────────────────────────────
+{
+  id: "029",
+  title: "A 10-year-old girl presents with 16 months of recurrent severe periumbilical pain and vomiting, occurring several times per month and causing school absence",
+  category: "Paediatric",
+  secondaryCategory: "Headache",
+  difficulty: "Intermediate",
+  estimatedTime: "20–30 min",
+  source: {
+    short: "Chu EC.\nCureus. 2025;17(8):e89887\nPMID: 40951010\nPMC: PMC12424515\nOpen access ✓",
+    full: "Chu EC. Remission of Abdominal Migraines Following Chiropractic Care for Thoracic Scoliosis. Cureus. 2025;17(8):e89887. doi: 10.7759/cureus.89887. PMID: 40951010. PMC: PMC12424515."
+  },
+  patient: {
+    ageSex: "10-year-old female",
+    chiefComplaint: "Recurrent severe periumbilical pain and vomiting, lasting 2–24 hours per episode",
+    duration: "16 months (episodic)",
+    priorProviders: "Paediatrician",
+    priorDiagnoses: "Work-up by paediatrician including blood tests and abdominal ultrasound — all negative, ruling out gastrointestinal pathology. Ibuprofen provided only temporary and incomplete relief. Parents noted mild scoliosis on a routine school physical 6 months prior to this visit."
+  },
+  history: {
+    content: `<p>A 10-year-old underweight girl presented to the chiropractic clinic with a chief complaint of mild scoliosis and back stiffness, first noted during a routine school physical six months prior. Her parents also described a 16-month history of recurrent moderate to severe stomach pain. Episodes lasted between two and 24 hours and were characterised by a dull ache localised around the umbilicus, rated 5–8/10 on the numeric pain scale.</p>
+<p>Associated symptoms included nausea, vomiting, loss of appetite, and noticeable pallor. She felt completely normal between episodes, with no residual fatigue or gastrointestinal issues. Over the previous six months the pain had caused eight days of school absence. Triggers included poor sleep, travel, motion sickness, skipped meals, and academic or family stress.</p>
+<p>Her paediatrician had performed blood tests and an abdominal ultrasound, both of which were normal, ruling out appendicitis and inflammatory bowel disease. Ibuprofen provided only temporary relief. There was no personal history of migraine headaches and no chronic illnesses or allergies.</p>`,
+    clinicalNote: "The key diagnostic signal is the classic triad of recurrent periumbilical pain + nausea/vomiting + pallor in a child who is completely well between episodes, with episodic triggers (stress, hunger, travel) and a normal GI work-up. This fits the Rome IV criteria for abdominal migraine. The concurrent finding of thoracic scoliosis adds a chiropractic-relevant dimension: the question is whether spinal dysfunction could be contributing to autonomic dysregulation via the gut-brain axis. The absence of organic pathology on investigations is not just reassuring — it is the diagnostic pivot that makes a functional/neurological mechanism plausible."
+  },
+  examination: {
+    autoROM: `<p>Restricted thoracic extension at 20° (normal 30–40°) and lumbar flexion at 40° (normal 50–60°), limited by stiffness rather than pain. After treatment, both measures normalised to within normal range. The scoliosis was associated with restricted thoracolumbar rotation but specific measurements were not documented for all planes.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+  <thead><tr><th>Assessment</th><th>Finding</th></tr></thead>
+  <tbody>
+    <tr><td>Full neurological examination (cognitive, cranial nerves, reflexes, sensory, motor, cerebellar, gait)</td><td>Normal throughout — no neurological abnormalities identified</td></tr>
+    <tr><td>Formal myotomal grading</td><td>Not specifically documented — neurological examination was described as unremarkable</td></tr>
+  </tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Postural and Spinal Assessment",
+        items: [
+          {
+            id: "postural_analysis",
+            label: "Postural analysis",
+            result: `<span class="tt notable">Notable</span> — mild thoracic scoliosis with rightward convexity; forward head posture; increased thoracic kyphosis`,
+            documented: true,
+            rationale: "Postural analysis was the entry point for this case — the chief complaint was scoliosis and back stiffness. Identifying the rightward convexity, forward head posture, and kyphosis defined the structural abnormality driving the treatment plan and provided the radiographic targets for outcome measurement."
+          },
+          {
+            id: "palpation",
+            label: "Spinal palpation and muscle assessment",
+            result: `<span class="tt notable">Notable</span> — tenderness along mid-thoracic paraspinals T6-T10 and lumbar region L2-L4; hypertonicity in erector spinae and quadratus lumborum bilaterally`,
+            documented: true,
+            rationale: "Palpation identified the segmental levels of dysfunction and associated muscle hypertonicity, directly informing the treatment targets for spinal manipulation and soft tissue therapy. The mid-thoracic paraspinal tenderness at T6-T10 corresponded to the region of scoliotic apex and was the primary treatment zone."
+          },
+          {
+            id: "abdominal_exam",
+            label: "Abdominal examination",
+            result: `<span class="tt notable">Notable</span> — mild periumbilical tenderness consistent with the patient's pain description; no rebound tenderness, guarding, or organomegaly`,
+            documented: true,
+            rationale: "An abdominal examination was essential in a child presenting with recurring periumbilical pain and vomiting. The findings were consistent with the patient's history but the absence of peritoneal signs (rebound, guarding) confirmed this was not a surgical or acutely inflammatory abdominal condition, supporting a functional/neurological diagnosis."
+          }
+        ]
+      },
+      {
+        group: "Orthopaedic / Scoliosis Screening",
+        items: [
+          {
+            id: "adams_test",
+            label: "Adam's forward bend test",
+            result: `<span class="tt pos">Positive</span> — indicated presence of scoliosis`,
+            documented: true,
+            rationale: "The Adam's test is the standard screening tool for structural scoliosis. A positive result confirmed the clinical suspicion from postural analysis and directly indicated the need for full-spine radiography to measure the Cobb angle and characterise the curve."
+          },
+          {
+            id: "full_spine_xray",
+            label: "Full-spine radiograph (EOS imaging)",
+            consequence: null,
+            documented: true,
+            result: `<span class="tt notable">Notable</span> — 18° Cobb angle in the thoracic curve with vertebral rotation; no congenital anomalies. Forward head posture confirmed on lateral view. Post-treatment (3 months): Cobb angle reduced to 2°; pelvic obliquity reduced from 5° to 2°; C7 plumb line shifted closer to central sacral vertical line.`
+          }
+        ]
+      },
+      {
+        group: "Neurological",
+        items: [
+          {
+            id: "full_neuro_exam",
+            label: "Full neurological examination",
+            result: `<span class="tt normal">Normal</span> — cognitive function, cranial nerves II-XII, reflexes, sensory system, motor system, cerebellar function, and gait all within normal limits`,
+            documented: true,
+            rationale: "A comprehensive neurological examination was essential to exclude central nervous system pathology as a cause of the episodes (e.g., abdominal epilepsy, central sensitisation from structural neurological disease). The entirely normal neurological examination, combined with normal GI investigations, supported a functional gut-brain axis disorder as the most likely mechanism."
+          },
+          {
+            id: "rome_iv_criteria",
+            label: "Application of Rome IV and ICHD-3 diagnostic criteria for abdominal migraine",
+            result: `<span class="tt notable">Notable</span> — patient satisfied both Rome IV and ICHD-3 criteria for abdominal migraine`,
+            documented: true,
+            rationale: "Abdominal migraine is a clinical diagnosis requiring no specific investigation — it is defined by the pattern of symptoms. Applying formal diagnostic criteria (Rome IV: recurrent abdominal pain, duration 1 hour minimum, periumbilical location, associated vasomotor symptoms, symptom-free intervals, no organic cause; ICHD-3: at least 5 attacks) confirmed the diagnosis and was an important documentation step."
+          },
+          {
+            id: "eeg",
+            label: "Electroencephalogram (EEG)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Abdominal epilepsy is a rare but important differential for recurrent abdominal pain in children. An EEG was not performed in this case, likely because the clinical picture was entirely consistent with abdominal migraine and the episodes had clear migraine-type triggers, duration, and associated features. In cases with atypical features or where an ictal aetiology is suspected, EEG would be appropriate."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination combined a chiropractic structural assessment (postural analysis, palpation, scoliosis screening) with a careful neurological and abdominal examination appropriate to the presenting complaint of recurrent abdominal pain. The entirely normal neurology, combined with a positive Adam's test, thoracic paraspinal tenderness, and restricted thoracic/lumbar ROM, produced a coherent clinical picture: a child with thoracic scoliosis and associated spinal dysfunction who also met formal diagnostic criteria for abdominal migraine. The examination supported the hypothesis that spinal dysfunction may contribute to autonomic dysregulation via the gut-brain axis."
+  },
+  investigations: {
+    options: [
+      {
+        id: "blood_tests",
+        label: "Blood tests (full blood count, inflammatory markers, metabolic panel — performed by paediatrician)",
+        consequence: null,
+        ordered: true,
+        result: `<p>All results within normal limits. Organic gastrointestinal pathology excluded.</p>`
+      },
+      {
+        id: "abdominal_ultrasound",
+        label: "Abdominal ultrasound (performed by paediatrician)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Normal. No evidence of appendicitis, inflammatory bowel disease, or other structural gastrointestinal or abdominal pathology.</p>`
+      },
+      {
+        id: "full_spine_xray_inv",
+        label: "Full-spine radiograph — EOS imaging system",
+        consequence: null,
+        ordered: true,
+        result: `<p>Anteroposterior (AP) view: Cobb angle 18° thoracic curve with vertebral rotation, rightward convexity; C7 plumb line deviation from central sacral vertical line indicating trunk shift; pelvic obliquity 5°. Lateral view: Forward head posture; cervical gravity line anterior to C7. No congenital anomalies. Post-treatment (3 months): Cobb angle reduced to 2°, pelvic obliquity 2°, improved trunk alignment.</p>`
+      },
+      {
+        id: "mri_brain",
+        label: "Brain MRI",
+        consequence: "Brain MRI was not performed in this case. In a child with recurrent episodic neurological-type symptoms (headache, nausea, pallor), brain MRI could be considered to exclude structural causes such as posterior fossa lesions. However, given the entirely characteristic clinical presentation of abdominal migraine with normal neurology and normal GI investigations, MRI was not indicated in this case.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "eeg_inv",
+        label: "Electroencephalogram (EEG)",
+        consequence: "EEG was not ordered. Abdominal epilepsy (ictal abdominal pain) is a rare differential for recurrent abdominal episodes in children and would require EEG for diagnosis. However, the episodic pattern, migraine-type triggers, and associated vasomotor features (nausea, pallor) strongly favoured abdominal migraine over an epileptic aetiology. EEG would be appropriate if anticonvulsants were being considered or if the clinical picture was atypical.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Abdominal migraine",
+        correct: true,
+        blurb: "This is the correct diagnosis. Abdominal migraine is a paediatric functional gastrointestinal disorder characterised by recurrent episodes of periumbilical pain with vasomotor features (pallor, nausea, vomiting), occurring between periods of complete wellness. It is under-recognised and under-diagnosed. This patient satisfied both Rome IV and ICHD-3 diagnostic criteria.",
+        supports: [
+          "16-month history of recurrent periumbilical pain rated 5–8/10, lasting 2–24 hours per episode",
+          "Associated pallor, nausea, vomiting, and loss of appetite with each episode",
+          "Complete wellness between episodes — no residual symptoms",
+          "Episodic triggers: stress, poor sleep, skipped meals, travel, motion sickness — classic migraine-type triggers",
+          "Satisfies Rome IV and ICHD-3 diagnostic criteria for abdominal migraine",
+          "Normal paediatric blood tests and abdominal ultrasound exclude organic GI pathology",
+          "Normal neurological examination",
+          "Complete resolution of episodes by second month of chiropractic care"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Irritable bowel syndrome (IBS)",
+        correct: false,
+        blurb: "IBS produces recurrent abdominal pain related to bowel habits and is the most common functional GI disorder in children. It is a reasonable differential given the recurrent episodic abdominal pain.",
+        supports: [
+          "Recurrent periumbilical abdominal pain in a child",
+          "Normal investigations excluding organic pathology",
+          "Stress as a recognised trigger"
+        ],
+        arguesAgainst: [
+          "IBS pain is typically related to defecation (relieved or worsened with bowel movements) — no such relationship documented here",
+          "IBS does not typically produce pallor, nausea, and vomiting as prominent associated features",
+          "The episodic, completely symptom-free pattern between attacks is more characteristic of abdominal migraine than IBS",
+          "Motion sickness and hunger as triggers are more consistent with a migraine-spectrum disorder than IBS"
+        ]
+      },
+      {
+        label: "Functional dyspepsia",
+        correct: false,
+        blurb: "Functional dyspepsia produces recurrent upper abdominal discomfort without organic cause. In a child with negative GI investigations, this is a plausible consideration.",
+        supports: [
+          "Recurrent abdominal pain with nausea",
+          "Normal blood tests and ultrasound"
+        ],
+        arguesAgainst: [
+          "Functional dyspepsia pain is typically located in the epigastric region, not periumbilical",
+          "Pallor as a prominent associated feature is not characteristic of functional dyspepsia",
+          "The episodic pattern with complete resolution between attacks, lasting 2–24 hours, is more consistent with abdominal migraine",
+          "Hunger and stress as migraine-type triggers favour abdominal migraine over functional dyspepsia"
+        ]
+      },
+      {
+        label: "Appendicitis (recurrent or chronic)",
+        correct: false,
+        blurb: "Recurrent abdominal pain in a child always requires appendicitis to be considered and excluded. The paediatrician appropriately investigated this.",
+        supports: [
+          "Recurrent periumbilical pain in a child",
+          "Pain significant enough to cause school absence"
+        ],
+        arguesAgainst: [
+          "Abdominal ultrasound was normal — appendix not visualised as abnormal",
+          "Blood tests (white cell count, CRP) were normal — no inflammatory markers",
+          "No rebound tenderness or guarding on abdominal examination — no peritoneal irritation",
+          "Symptoms present for 16 months with complete resolution between episodes — chronic appendicitis would not resolve spontaneously between attacks"
+        ]
+      },
+      {
+        label: "Ovarian pathology (functional cyst)",
+        correct: false,
+        blurb: "In a pre-adolescent girl, ovarian pathology including functional cysts can produce recurrent pelvic or periumbilical pain. This warrants consideration given the patient's age and sex.",
+        supports: [
+          "Ten-year-old female presenting with recurrent periumbilical pain",
+          "Episodes varying in severity and duration"
+        ],
+        arguesAgainst: [
+          "Abdominal ultrasound was normal and would typically identify significant ovarian pathology",
+          "Nausea, pallor, and vomiting as prominent episodic features, with complete wellness between attacks, are not characteristic of ovarian cyst pain",
+          "Triggers (stress, hunger, sleep, motion sickness) strongly favour a migraine-spectrum aetiology"
+        ]
+      },
+      {
+        label: "Abdominal epilepsy (ictal abdominal pain)",
+        correct: false,
+        blurb: "Abdominal epilepsy is a rare seizure disorder in which ictal activity produces abdominal pain as the primary symptom. It is an important differential for recurrent episodic abdominal symptoms in children.",
+        supports: [
+          "Recurrent episodic abdominal pain with associated autonomic features (pallor, nausea)",
+          "Episodes lasting minutes to hours"
+        ],
+        arguesAgainst: [
+          "No ictal features documented: no loss of consciousness, no post-ictal confusion, no stereotyped automatisms",
+          "Clear identifiable triggers (stress, sleep, hunger, motion) suggest a non-ictal aetiology",
+          "Normal neurological examination",
+          "EEG not performed but clinical picture strongly favours abdominal migraine over epilepsy"
+        ]
+      },
+      {
+        label: "Mesenteric adenitis",
+        correct: false,
+        blurb: "Mesenteric adenitis causes periumbilical or central abdominal pain in children, often following or associated with viral illness.",
+        supports: [
+          "Periumbilical pain in a child",
+          "Nausea and pallor as associated features"
+        ],
+        arguesAgainst: [
+          "Mesenteric adenitis is typically associated with a preceding or concurrent viral infection — no such history documented",
+          "Abdominal ultrasound was normal — no mesenteric lymphadenopathy identified",
+          "Blood tests were normal — no elevation of inflammatory markers typical of mesenteric adenitis",
+          "16-month history with episodic pattern and symptom-free intervals is inconsistent with infective adenitis"
+        ]
+      },
+      {
+        label: "Psychosomatic abdominal pain / somatic symptom disorder",
+        correct: false,
+        blurb: "Recurrent abdominal pain in children is often incorrectly labelled as psychosomatic, particularly when investigations are normal. Stress is indeed a trigger in this case, which could reinforce this view.",
+        supports: [
+          "Stress as a documented trigger",
+          "Normal blood tests and abdominal ultrasound",
+          "School-age child with academic pressures"
+        ],
+        arguesAgainst: [
+          "The structured episodic pattern — discrete attacks lasting 2–24 hours with complete freedom between episodes — is not consistent with chronic psychosomatic pain, which tends to be more continuous",
+          "Objective vasomotor features (pallor, vomiting) are physiological responses not typically produced by psychosomatic mechanisms alone",
+          "The patient satisfies formal Rome IV and ICHD-3 diagnostic criteria for a recognised functional GI condition (abdominal migraine)",
+          "Symptoms resolved with spinal manipulation targeting structural dysfunction — a response inconsistent with a purely psychosomatic aetiology"
+        ]
+      }
+    ],
+    explanation: `<p>Abdominal migraine is one of the most under-recognised conditions in the paediatric population, affecting 1–4% of children and often going undiagnosed for years. The diagnosis is clinical and requires applying formal criteria — Rome IV and ICHD-3 — rather than simply excluding other pathology. The key features are: (1) recurrent periumbilical pain, (2) duration of at least one hour, (3) associated vasomotor features (pallor, nausea, vomiting), (4) complete wellness between attacks, and (5) no organic cause identified.</p>
+<p>The diagnostic pivot in this case was the paediatrician's negative workup. Rather than leaving the family with no diagnosis ('functional abdominal pain'), the chiropractor applied a clinical framework that identified the pattern as abdominal migraine and connected it to a structural finding (18° thoracic scoliosis with segmental dysfunction) that provided a treatment target.</p>
+<p>The proposed mechanism — that spinal misalignment disrupts normal autonomic nervous system signalling, contributing to visceral hypersensitivity and abnormal gut-brain axis function — is speculative but biologically plausible. The clinical outcome (complete resolution of abdominal migraine episodes correlated with correction of scoliosis and restoration of spinal function) is striking and documented across 11 months of follow-up. While causation cannot be established from a single case, the temporal correlation is compelling.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "spinal_manipulation_traction",
+        label: "Spinal manipulation (HVLA to thoracic and lumbar spine) + axial traction + myofascial release, 3×/week for first month, tapering to monthly maintenance",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> The treatment plan directly addressed the structural finding of thoracic scoliosis and segmental dysfunction. Gentle paediatric-appropriate HVLA thrusts to the thoracic and lumbar spine targeted the dysfunctional segments. Axial traction aimed to improve spinal alignment, and myofascial release addressed muscle hypertonicity. Home exercises (core strengthening) and avoidance of known triggers complemented in-office care. By the second month, abdominal migraine episodes had ceased entirely. At 11 months, the patient remained symptom-free with Cobb angle reduced from 18° to 2°.`
+      },
+      {
+        id: "nsaid_continued",
+        label: "Continue ibuprofen for acute episodes and refer back to paediatrician",
+        selected: false,
+        explanation: `<strong>Not appropriate as the primary ongoing management.</strong> Ibuprofen had already been shown to provide only temporary and incomplete relief over 16 months. NSAIDs address the pain of individual episodes but do not modify the underlying condition. In paediatric abdominal migraine, prophylactic management and addressing potential contributing factors (including spinal dysfunction) are more appropriate long-term strategies than repeated acute NSAID use.`
+      },
+      {
+        id: "biofeedback_only",
+        label: "Biofeedback and stress management only",
+        selected: false,
+        explanation: `<strong>Insufficient as the sole intervention, though a useful adjunct.</strong> Biofeedback for stress management was incorporated into the treatment plan during the second phase (months 3–5) and appropriately addressed the psychosocial triggers. However, managing triggers alone without addressing the structural spinal dysfunction would be an incomplete approach given the documented scoliosis, segmental hypomobility, and paraspinal tenderness.`
+      },
+      {
+        id: "pharmacological_prophylaxis",
+        label: "Pharmacological migraine prophylaxis (beta-blockers, calcium channel blockers, or antiepileptics)",
+        selected: false,
+        explanation: `<strong>Not selected in this case — conservative management was trialled first.</strong> Standard paediatric migraine prophylaxis is pharmacologically based and can be effective. However, these agents carry potential side effects (fatigue, bradycardia, cognitive effects) that are particularly concerning in children, and ibuprofen had already failed in this patient. The chiropractic approach achieved complete resolution without medication, which is an important outcome for a paediatric patient.`
+      },
+      {
+        id: "diet_trigger_avoidance",
+        label: "Dietary trigger avoidance and lifestyle modification (sleep hygiene, regular meals)",
+        selected: true,
+        explanation: `<strong>Appropriate as an adjunct.</strong> Parental guidance to minimise triggers — poor sleep, skipped meals, stress, motion — was provided as part of the management plan. These are standard non-pharmacological recommendations for abdominal migraine and are supported by evidence for migraine-spectrum disorders. They complement but do not replace structural treatment.`
+      }
+    ],
+    outcomeText: "By the second month of chiropractic treatment (3×/week), abdominal migraine episodes had ceased entirely. At the three-month mark, treatment was tapered to once per week and follow-up radiography showed Cobb angle reduced from 18° to 2°, balanced pelvic alignment, and resolution of back stiffness. At the 11-month follow-up on monthly maintenance care, the patient remained completely symptom-free with no recurrence of abdominal pain or progression of scoliosis. School attendance normalised. The patient reported 100% quality of life score on the WHO QoL assessment."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Abdominal Migraine</strong><br>Paediatric functional GI disorder with concurrent thoracic scoliosis",
+    outcomes: [
+      { label: "Published Source", text: "Chu EC. Cureus. 2025;17(8):e89887" },
+      { label: "PMID / PMC", text: "PMID: 40951010 — PMC12424515 (open access)" },
+      { label: "Final Diagnosis", text: "Abdominal migraine (Rome IV / ICHD-3) with concurrent 18° thoracic scoliosis" },
+      { label: "Intervention", text: "Spinal manipulation (thoracic/lumbar HVLA) + axial traction + myofascial release + home core exercises + trigger avoidance; episodes resolved by month 2" }
+    ],
+    conditionSummary: {
+      overview: "Abdominal migraine is a paediatric functional gastrointestinal disorder classified within the disorders of gut-brain interaction. It affects approximately 1–4% of children, predominantly between ages 7 and 12, and is characterised by paroxysmal episodes of moderate to severe periumbilical pain with associated nausea, vomiting, and pallor, between which the child is completely well. It is widely under-recognised and frequently mislabelled as psychosomatic pain or IBS.",
+      presentation: [
+        "Recurrent discrete episodes of periumbilical pain lasting 1–72 hours, with complete freedom from symptoms between attacks",
+        "Associated vasomotor features: pallor, nausea, vomiting, anorexia — often more prominent than the pain itself",
+        "Identifiable migraine-type triggers: stress, hunger, sleep deprivation, motion sickness, bright lights",
+        "Family history of migraine in a significant proportion of cases; condition often evolves into typical migraine headache by adolescence"
+      ],
+      pathology: [
+        "Visceral hypersensitivity: abnormal secretion of excitatory neurotransmitters including serotonin by enteric neurons, contributing to abnormal gut pain signalling",
+        "Gut-brain axis dysregulation: disrupted bidirectional communication between the central nervous system and the enteric nervous system leads to abnormal motility and visceral pain",
+        "Hypothalamic-pituitary-adrenal axis sensitisation: stress-induced increases in central nervous system arousal lower the threshold for visceral pain perception",
+        "Genetic predisposition: a significant heritable component is suggested by the high rate of first-degree relatives with migraine disorders"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Abdominal migraine satisfies formal diagnostic criteria (Rome IV, ICHD-3) and should be actively diagnosed in children with recurrent episodic periumbilical pain, vasomotor features, and completely normal investigations — not simply labelled 'functional pain'. Applying these criteria in practice allows a specific diagnosis and a treatment framework."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "The most common pitfall is dismissing recurrent abdominal pain in children as 'psychosomatic' when investigations are normal. In this case, 16 months passed before abdominal migraine was recognised. The structured episodic pattern — discrete attacks lasting hours with complete wellness between — should always prompt a migraine-spectrum diagnosis."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "Abdominal migraine often evolves into typical migraine headache in adolescence. Ask about family history of migraine and about episodic headache in the child. The gut-brain axis connection means that identifying and treating spinal dysfunction may plausibly modulate visceral hypersensitivity — a novel mechanism worth exploring in clinical practice."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "This case demonstrates an expanded chiropractic diagnostic role: identifying abdominal migraine as a formal diagnosis and connecting it to spinal dysfunction is well within chiropractic scope. However, the paediatrician's prior workup was essential — the chiropractor's diagnosis depended on organic pathology having been excluded. Co-management with the paediatrician for monitoring and pharmacological backup is good practice."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "The 18° Cobb angle was identified on full-spine radiography. Standard plain radiographs could have been used, but EOS imaging provided biplanar data with substantially lower radiation dose — an important consideration in paediatric patients who may require serial imaging. When scoliosis monitoring requires repeat radiographs in a child, low-dose imaging systems should be prioritised."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Abdominal migraine, paediatric functional GI disorders, gut-brain axis, thoracic scoliosis, Rome IV criteria, paediatric chiropractic",
+    keyPoints: [
+      "Abdominal migraine is a distinct paediatric functional GI condition diagnosed by Rome IV and ICHD-3 criteria — not simply a label for unexplained recurrent abdominal pain",
+      "Key diagnostic features: recurrent periumbilical pain lasting 1–72 hours, with pallor/nausea/vomiting, complete wellness between attacks, and migraine-type triggers",
+      "Normal GI investigations are a diagnostic requirement, not just a negative finding — they confirm the functional/neurological mechanism",
+      "Spinal dysfunction may contribute to visceral hypersensitivity via gut-brain axis dysregulation; addressing structural spinal dysfunction is a plausible and novel therapeutic target",
+      "Abdominal migraine frequently evolves into typical migraine headache in adolescence; early diagnosis and management may modify the long-term headache burden"
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 030 — Paediatric text neck syndrome, 6yo boy
+// Source: Chu EY et al. Cureus. 2023;15(4):e38034. PMID: 37101802
+// ─────────────────────────────────────────────
+{
+  id: "030",
+  title: "A 6-year-old boy presents with one month of right-sided headache and neck pain that coincided with starting to use a mobile device for extended periods",
+  category: "Paediatric",
+  secondaryCategory: "Cervical",
+  difficulty: "Beginner",
+  estimatedTime: "15–20 min",
+  source: {
+    short: "Chu EY et al.\nCureus. 2023;15(4):e38034\nPMID: 37101802\nPMC: PMC10123387\nOpen access ✓",
+    full: "Chu EY, Mok TKS, Ng GSN, Chu EC. Pediatric Text Neck Syndrome. Cureus. 2023;15(4):e38034. doi: 10.7759/cureus.38034. PMID: 37101802. PMC: PMC10123387."
+  },
+  patient: {
+    ageSex: "6-year-old male",
+    chiefComplaint: "Right-sided headache and posterior cervical pain with intermittent radiation to the right shoulder and interscapular area",
+    duration: "1 month",
+    priorProviders: "Paediatrician (consulted 48 hours after onset)",
+    priorDiagnoses: "No specific diagnosis from paediatrician. NSAIDs (aspirin/ibuprofen), muscle relaxants, and stretching exercises prescribed without significant relief."
+  },
+  history: {
+    content: `<p>A 6-year-old boy presented with a one-month history of headache and neck pain. The insidious onset of symptoms coincided with prolonged use of a mobile device — more than eight hours per day, primarily for viewing videos and handheld gaming. The patient described the pain as a constant, non-pulsatile discomfort localised to the posterior and inferior aspects of the right cranium, rated 7/10 on the numeric pain scale.</p>
+<p>Pain occasionally radiated to the right cervical region and interscapular area, sometimes with ipsilateral frontal and supraorbital involvement. Maintaining a flexed posture while engaging with his mobile device exacerbated symptoms. Hot showers and baths temporarily alleviated the discomfort. Daily screen time exceeded 10 hours including gaming and video watching. Episodes typically persisted for at least 30 minutes, sometimes extending over several days.</p>
+<p>A paediatrician was consulted 48 hours after symptom onset. NSAIDs, muscle relaxants, and a stretching regimen were prescribed without significant relief. The patient subsequently sought chiropractic care. His quality of life score (WHO QoL assessment) was 80% at baseline.</p>`,
+    clinicalNote: "The key clinical signal in this case is the temporal correlation between symptom onset and the commencement of excessive screen time with sustained cervical flexion. In a 6-year-old, screen time of 8–10 hours daily represents extreme forward head posture loading on a developing spine. The pain pattern — posterior cranium, right-sided, radiating to shoulder and interscapular area — is characteristic of cervicogenic headache arising from upper cervical dysfunction. The partially effective response to NSAIDs (temporary relief only) and the exacerbation with flexed posture are important clinical indicators. Failure to address the structural cause — cervical misalignment and reduced lordosis — explains why medication alone was insufficient."
+  },
+  examination: {
+    autoROM: `<p>Cervical range of motion was restricted: right rotation limited to 40° (normal >80°) and extension limited to 25° (normal >50°). These were the two most significantly restricted planes on documented examination. On EOS radiography, loss of cervical lordosis was confirmed; at 9-month follow-up, lordosis was restored and ROM was normalised bilaterally.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+  <thead><tr><th>Assessment</th><th>Finding</th></tr></thead>
+  <tbody>
+    <tr><td>Comprehensive neurological examination (cognitive function, cranial nerves, reflexes, sensory, motor, cerebellar, gait)</td><td>No abnormalities identified — neurological examination entirely normal</td></tr>
+    <tr><td>Formal myotomal grading</td><td>Not specifically documented — motor examination was described as normal within the full neurological assessment</td></tr>
+  </tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Postural and Structural Assessment",
+        items: [
+          {
+            id: "postural_observation",
+            label: "Postural analysis",
+            result: `<span class="tt notable">Notable</span> — kyphotic posture; scapular asymmetry; lateral cervical flexion noted on presentation`,
+            documented: true,
+            rationale: "Postural assessment is the entry point for text neck syndrome. The combination of kyphotic posture, scapular asymmetry, and lateral cervical flexion directly reflected the structural consequences of sustained forward head posture and were the primary targets for treatment planning and radiographic outcome measurement."
+          },
+          {
+            id: "palpation",
+            label: "Palpation of scalp, cervical, and shoulder muscles",
+            result: `<span class="tt notable">Notable</span> — tenderness on the right side of the scalp and cervical/shoulder muscles; hypertonicity in rectus capitis, rectus longus, upper trapezius, serratus anterior, and levator scapulae`,
+            documented: true,
+            rationale: "Palpation identified the myofascial component of the pain generator. Tenderness over the right scalp and posterior cervical muscles is consistent with cervicogenic headache arising from suboccipital and upper cervical dysfunction. Identifying specific hypertonic muscles directed the soft tissue component of treatment."
+          },
+          {
+            id: "segmental_motion_palpation",
+            label: "Intersegmental motion palpation",
+            result: `<span class="tt notable">Notable</span> — intersegmental dysfunction at C5-6, T1-2, and T7-8`,
+            documented: true,
+            rationale: "Motion palpation localised the specific segmental levels of dysfunction — critical for directing chiropractic spinal adjustments. The C5-6 dysfunction corresponds to the cervical levels most vulnerable to forward head posture load, and the T1-2 and T7-8 levels reflect thoracic compensatory changes from the kyphotic postural pattern."
+          }
+        ]
+      },
+      {
+        group: "Neurological",
+        items: [
+          {
+            id: "cranial_nerve_exam",
+            label: "Cranial nerve examination (II–XII)",
+            result: `<span class="tt normal">Normal</span> — all cranial nerves intact`,
+            documented: true,
+            rationale: "In a child presenting with right-sided headache and supraorbital involvement, assessment of cranial nerves — particularly the trigeminal (V) and oculomotor nerves — was essential to exclude central causes of headache such as raised intracranial pressure, intracranial lesion, or cranial nerve palsy. The entirely normal cranial nerve examination supported a musculoskeletal/cervicogenic aetiology."
+          },
+          {
+            id: "cerebellar_gait",
+            label: "Cerebellar function and gait assessment",
+            result: `<span class="tt normal">Normal</span> — cerebellar function and gait within normal limits`,
+            documented: true,
+            rationale: "Normal cerebellar function and gait in a child with posterior cranial and cervical pain helped exclude posterior fossa pathology. Ataxia or gait disturbance would be important warning signs for a serious central cause of symptoms."
+          },
+          {
+            id: "hoffmann_babinski",
+            label: "Pathological reflexes (Babinski / Hoffman's)",
+            result: `Not specifically documented in the published case`,
+            documented: false,
+            rationale: "Pathological reflexes were not specifically documented, though the overall neurological examination was described as normal. In a 6-year-old with cervical symptoms, pathological reflexes would have been an important indicator of upper motor neuron involvement. The normal general neurological examination makes their presence extremely unlikely in this case."
+          }
+        ]
+      },
+      {
+        group: "Scoliosis Screening",
+        items: [
+          {
+            id: "adams_test_030",
+            label: "Adam's forward bend test",
+            result: `<span class="tt pos">Positive</span> — indicated scoliosis`,
+            documented: true,
+            rationale: "The Adam's test identified scoliosis as a concurrent finding on examination, which was confirmed radiographically (14° Cobb angle thoracolumbar scoliosis). This finding added an important component to the treatment plan and monitoring."
+          },
+          {
+            id: "eos_radiograph",
+            label: "EOS full-spine biplanar radiograph",
+            result: `<span class="tt notable">Notable</span> — loss of cervical lordosis (sagittal); thoracolumbar scoliosis with 14° Cobb angle (coronal); shoulder asymmetry. Post-treatment (9 months): cervical lordosis restored; Cobb angle improved from 14° to 5°; improved coronal balance.`,
+            documented: true,
+            rationale: "Radiography provided objective structural data to quantify the cervical alignment loss and scoliosis, and to monitor radiographic outcomes of treatment. EOS low-dose biplanar imaging was used — a paediatric-appropriate choice given the need for serial imaging and the importance of minimising radiation exposure in children."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination for this 6-year-old combined a comprehensive neurological assessment (essential to exclude serious pathology in a child with headache) with a detailed structural assessment targeted at identifying the musculoskeletal basis of cervicogenic headache. The entirely normal neurology established safety for chiropractic management. Restricted cervical ROM, segmental dysfunction at C5-6/T1-2/T7-8, myofascial tenderness, and loss of cervical lordosis on radiography all cohered to support a diagnosis of text neck syndrome with associated cervicogenic headache."
+  },
+  investigations: {
+    options: [
+      {
+        id: "eos_xray",
+        label: "EOS full-spine biplanar radiograph",
+        consequence: null,
+        ordered: true,
+        result: `<p>Sagittal view: Loss of cervical lordosis confirmed. Lateral view shows cervical gravity line anterior to C7 vertebral body, consistent with forward head posture. Coronal view: Shoulder asymmetry and thoracolumbar scoliosis with 14° Cobb angle to the left. Post-treatment (9 months): Cervical lordosis restored; Cobb angle improved from 14° to 5° with improved coronal balance.</p>`
+      },
+      {
+        id: "mri_brain_030",
+        label: "MRI brain",
+        consequence: "MRI brain was not ordered in this case. In a child with one month of headache, a normal neurological examination (including normal cranial nerves, cerebellar function, and gait) makes a significant intracranial cause unlikely. The temporal correlation with screen use and the cervicogenic pain pattern further support a musculoskeletal aetiology. MRI would be appropriate if headache were progressive, position-dependent (worse lying flat), nocturnal, or associated with neurological signs — none of which were present here.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "cervical_xray_only",
+        label: "Cervical spine plain radiograph only",
+        consequence: "A standard cervical spine radiograph would have identified the loss of cervical lordosis but would not have provided the biplanar spinal assessment or the low-dose protocol of EOS imaging. Given the concurrent finding of thoracolumbar scoliosis and the paediatric context requiring serial imaging, EOS was the appropriate imaging choice.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Text neck syndrome with cervicogenic headache",
+        correct: true,
+        blurb: "This is the correct diagnosis. Text neck syndrome is an overuse syndrome produced by sustained cervical flexion during prolonged mobile device use. The resulting postural load on the cervical spine leads to loss of cervical lordosis, segmental dysfunction, and myofascial hypertonicity, which in turn generate cervicogenic headache and neck pain.",
+        supports: [
+          "One-month history of headache and neck pain temporally correlated with commencement of >8 hours/day mobile device use",
+          "Pain exacerbated by sustained flexed posture during device use; alleviated by hydrotherapy",
+          "Kyphotic posture, scapular asymmetry, and lateral cervical flexion on postural assessment",
+          "Restricted cervical rotation (right 40°; normal >80°) and extension (25°; normal >50°)",
+          "Segmental dysfunction at C5-6, T1-2, T7-8 on motion palpation",
+          "Tenderness in right suboccipital, cervical, and upper trapezius muscles",
+          "EOS radiography confirming loss of cervical lordosis",
+          "Complete symptom resolution following chiropractic care targeting cervical realignment"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Tension-type headache (primary)",
+        correct: false,
+        blurb: "Tension-type headache (TTH) is the most common headache type in children and produces bilateral or unilateral head pain of pressing quality, often associated with neck stiffness. It could easily be considered given the clinical features.",
+        supports: [
+          "Constant, non-pulsatile quality of pain",
+          "Bilateral and cervical distribution at times",
+          "Stress as a possible contributing factor (academic, screen use)"
+        ],
+        arguesAgainst: [
+          "Clear structural aetiology identified: forward head posture, loss of cervical lordosis, segmental dysfunction at C5-6",
+          "Temporal correlation with mobile device use makes a postural mechanical cause more specific than primary TTH",
+          "Supraorbital and frontal involvement is more characteristic of cervicogenic headache (referred from upper cervical segments) than typical TTH",
+          "Failure to respond to NSAIDs suggests a structural rather than primary headache aetiology"
+        ]
+      },
+      {
+        label: "Cervicogenic headache (without text neck aetiology)",
+        correct: false,
+        blurb: "Cervicogenic headache arises from structural cervical dysfunction and overlaps substantially with text neck syndrome. The distinction is aetiological: text neck syndrome identifies the specific cause (sustained flexion from device use) whereas cervicogenic headache is the symptom pattern. In this case both are correct — the preferred diagnosis incorporates the aetiology.",
+        supports: [
+          "Unilateral right-sided headache with radiation from posterior cranium to right shoulder",
+          "Restricted cervical ROM and segmental dysfunction at C5-6",
+          "Tenderness in right-sided cervical and suboccipital muscles"
+        ],
+        arguesAgainst: [
+          "The diagnosis of 'cervicogenic headache without a specific cause' is incomplete — the documented temporal correlation with screen use and the structural findings on examination and radiograph together define text neck syndrome as the specific aetiological diagnosis"
+        ]
+      },
+      {
+        label: "Migraine (common migraine in childhood)",
+        correct: false,
+        blurb: "Childhood migraine is common and produces recurrent headaches that can be unilateral, throbbing, with nausea and photosensitivity. This warrants consideration in a 6-year-old with right-sided head pain.",
+        supports: [
+          "Right-sided headache with supraorbital involvement",
+          "Pain rated 7/10 — significant intensity"
+        ],
+        arguesAgainst: [
+          "Pain is described as constant and non-pulsatile — migraine classically produces a pulsatile/throbbing quality",
+          "No documented episodes of nausea, vomiting, photophobia, or phonophobia",
+          "No family history of migraine documented",
+          "Pain directly correlated with and exacerbated by flexed posture — a mechanical rather than episodic pattern",
+          "Structural examination and radiographic findings provide a complete musculoskeletal explanation"
+        ]
+      },
+      {
+        label: "Juvenile idiopathic arthritis (JIA) affecting the cervical spine",
+        correct: false,
+        blurb: "JIA can affect the cervical spine in children and produce morning stiffness, restricted ROM, and neck pain. It is important to exclude given the patient's age.",
+        supports: [
+          "Cervical ROM restriction in a 6-year-old",
+          "Neck pain with radiation"
+        ],
+        arguesAgainst: [
+          "No systemic features: no fever, no joint swelling, no morning stiffness pattern, no systemic symptoms",
+          "Clear temporal correlation with screen use onset — a mechanical trigger inconsistent with inflammatory arthritis",
+          "Normal blood tests (not specifically documented but no inflammatory markers raised in the paediatric workup implied)"
+        ]
+      },
+      {
+        label: "Atlantoaxial instability",
+        correct: false,
+        blurb: "Atlantoaxial instability in a child can produce cervical pain and restricted movement. The upper cervical involvement and young age make this worth considering.",
+        supports: [
+          "Restricted cervical rotation in a young child",
+          "Right-sided cervical and suboccipital pain"
+        ],
+        arguesAgainst: [
+          "Normal neurological examination throughout — no upper motor neuron signs, no myelopathy",
+          "No history of Down syndrome, rheumatoid arthritis, or prior cervical trauma",
+          "EOS radiography did not identify atlantoaxial pathology",
+          "Complete resolution with chiropractic care inconsistent with structural atlantoaxial instability"
+        ]
+      },
+      {
+        label: "Psychosomatic / school avoidance headache",
+        correct: false,
+        blurb: "Headaches in children are sometimes attributed to school avoidance or psychosomatic factors, particularly when they are recurrent and associated with stress. This is an important alternative to consider and exclude.",
+        supports: [
+          "Six-year-old with daily headache potentially associated with school and gaming",
+          "Partial response to activities (hot bath providing relief)"
+        ],
+        arguesAgainst: [
+          "Objective structural findings on examination: restricted ROM, segmental dysfunction, muscle hypertonicity, loss of cervical lordosis on radiograph",
+          "Clear temporal and postural correlation with mobile device use — a mechanical, not psychological, trigger",
+          "Complete symptom resolution with structural treatment directly inconsistent with a psychosomatic aetiology"
+        ]
+      },
+      {
+        label: "Posterior fossa lesion / raised intracranial pressure",
+        correct: false,
+        blurb: "In any child with persistent headache, a clinician must maintain awareness of serious intracranial pathology. It is the most important diagnosis not to miss.",
+        supports: [
+          "Persistent headache rated 7/10 in a 6-year-old",
+          "Posterior cranial location of pain"
+        ],
+        arguesAgainst: [
+          "Normal cerebellar function and gait — no ataxia or incoordination",
+          "Normal cranial nerve examination — no papilloedema equivalent documented",
+          "Pain worsens with flexed posture and improves with hydrotherapy — postural mechanical pattern inconsistent with raised ICP (which typically worsens with Valsalva, lying flat, or morning)",
+          "No nausea/vomiting as a consistent feature of the headaches (unlike abdominal migraine or ICP)",
+          "Complete resolution with chiropractic structural care — entirely inconsistent with intracranial pathology"
+        ]
+      }
+    ],
+    explanation: `<p>Text neck syndrome in a 6-year-old represents an important and increasingly prevalent paediatric presentation. The diagnostic reasoning is relatively straightforward once the temporal correlation between symptom onset and screen time is identified. The critical examination tasks are: (1) comprehensively exclude neurological red flags, and (2) identify the structural musculoskeletal basis of the cervicogenic headache.</p>
+<p>The normal neurological examination — including normal cranial nerves, cerebellar function, and gait — confidently excluded serious intracranial pathology without requiring MRI. This is an important clinical lesson: in a child with a clear mechanical trigger, a characteristic postural examination, and a normal neurological assessment, the investigation of choice is structural (radiograph) rather than neuroimaging.</p>
+<p>The EOS radiograph provided quantitative evidence of loss of cervical lordosis and concurrent thoracolumbar scoliosis. These findings made a clear case for chiropractic management directed at cervical realignment. The treatment outcome — complete pain resolution within one month, 100% quality of life at 9 months, and radiographic restoration of cervical lordosis with improvement in Cobb angle — illustrates the potential for structural chiropractic care to modify both symptoms and radiographic findings in paediatric text neck.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "chiropractic_adjustment_traction",
+        label: "Spinal adjustment (C5-6, T1-2, T7-8) + cervical extension-traction (iTrac system) + instrument-assisted soft tissue manipulation",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> The treatment plan directly addressed the segmental dysfunction and loss of cervical lordosis identified on examination and radiograph. Spinal adjustments at C5-6, T1-2, and T7-8 restored intersegmental mobility. Cervical extension-traction targeted ligamentous creep restoration of cervical lordosis. Instrument-assisted soft tissue manipulation addressed the hypertonic upper trapezius, levator scapulae, and suboccipital muscles. Pain resolved within the first month (0/10 from 7/10), and radiographic lordosis was restored at 9-month follow-up.`
+      },
+      {
+        id: "continue_nsaids",
+        label: "Continue NSAIDs and muscle relaxants",
+        selected: false,
+        explanation: `<strong>Not appropriate as the primary ongoing strategy.</strong> NSAIDs and muscle relaxants had already been prescribed by the paediatrician without significant relief. Pharmacological management addresses symptoms but does not correct the structural cause — loss of cervical lordosis and segmental dysfunction from sustained forward head posture. Ongoing NSAID use in a 6-year-old without structural treatment is not appropriate management for a mechanical, postural condition.`
+      },
+      {
+        id: "screen_time_reduction",
+        label: "Screen time reduction and ergonomic advice",
+        selected: true,
+        explanation: `<strong>Appropriate — essential adjunct.</strong> Reducing daily screen time from >10 hours, optimising device ergonomics (screen height, neck neutral position), and incorporating core strengthening exercises were provided as part of the management plan. Without addressing the root cause of sustained cervical flexion, structural treatment alone would produce diminishing returns. Behavioural modification is an essential co-intervention for text neck syndrome.`
+      },
+      {
+        id: "watchful_waiting",
+        label: "Watchful waiting with reassurance only",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> One month of progressive symptoms with demonstrated structural changes (loss of cervical lordosis, segmental dysfunction, thoracolumbar scoliosis) in a 6-year-old is not a situation for watchful waiting. In children, sustained postural loading during spinal development can produce progressive biomechanical changes and potentially long-term spinal health consequences. Early intervention is specifically indicated.`
+      },
+      {
+        id: "mri_and_neurology_referral",
+        label: "MRI brain and neurology referral",
+        selected: false,
+        explanation: `<strong>Not appropriate given the clinical picture.</strong> With a normal neurological examination, a clear mechanical trigger, and characteristic postural findings, the probability of intracranial pathology is very low. MRI brain exposes a 6-year-old to an investigation that is not indicated by the clinical evidence. Neurological referral would be appropriate if red flag features were present: progressive headache, morning headache, nocturnal waking, vomiting without nausea, or abnormal neurology — none of which were documented.`
+      }
+    ],
+    outcomeText: "Following 12 treatment sessions in the first month (3×/week initially, then tapering), the patient's numeric pain rating decreased from 7/10 to 0/10. Quality of life improved from 80% to 100%. By three months, cervical ROM was restored bilaterally. At the 9-month follow-up, the patient remained headache-free with restored cervical lordosis on radiograph and improvement in thoracolumbar Cobb angle from 14° to 5°."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Text Neck Syndrome</strong><br>Paediatric cervicogenic headache from sustained forward head posture — screen overuse",
+    outcomes: [
+      { label: "Published Source", text: "Chu EY et al. Cureus. 2023;15(4):e38034" },
+      { label: "PMID / PMC", text: "PMID: 37101802 — PMC10123387 (open access)" },
+      { label: "Final Diagnosis", text: "Text neck syndrome with cervicogenic headache and concurrent thoracolumbar scoliosis" },
+      { label: "Intervention", text: "Spinal adjustment (C5-6, T1-2, T7-8) + cervical extension-traction + instrument-assisted soft tissue manipulation + ergonomic counselling; pain 0/10 by month 1" }
+    ],
+    conditionSummary: {
+      overview: "Text neck syndrome is an overuse musculoskeletal condition caused by repetitive stress injury of the cervical spine from sustained forward head posture during prolonged use of mobile devices and screens. The head weighs approximately 4–5 kg in neutral; for every degree of forward head posture, the effective load on the cervical spine increases substantially, producing compressive and tensile stresses on the posterior cervical structures. Children are particularly vulnerable due to the developing nature of their spinal structures and the increasing prevalence of screen-based activity from very young ages.",
+      presentation: [
+        "Posterior and lateral cervical pain and headache correlated with screen time and flexed posture",
+        "Restricted cervical extension and rotation; forward head posture and increased thoracic kyphosis on postural assessment",
+        "Muscle hypertonicity in upper trapezius, levator scapulae, suboccipital, and anterior cervical muscles",
+        "Progressive loss of cervical lordosis on radiograph; may be accompanied by segmental instability or early degenerative changes if untreated"
+      ],
+      pathology: [
+        "Sustained cervical flexion increases compressive load on anterior vertebral bodies and tensile stress on posterior ligamentous structures; with repetition, this produces posterior ligamentous laxity and vertebral segment instability",
+        "Prolonged static flexion posture alters neuromuscular signalling patterns, reducing deep cervical flexor activation and increasing superficial extensor hypertonicity",
+        "Forward head posture shifts the cervical centre of gravity anteriorly, progressively loading C4-6 in extension relative to the cranium and reducing cervical lordosis",
+        "In the developing paediatric spine, repeated mechanical stress can cause biomechanical adaptations including altered vertebral body shape, accelerated disc degeneration, and potentially persistent curvature changes"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Text neck is not a trivial diagnosis in children. Screen time of >8 hours/day in a 6-year-old produces sufficient cervical loading to cause measurable loss of lordosis, segmental dysfunction, and cervicogenic headache within one month. Early structural intervention before spinal adaptation becomes permanent is essential."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "Persistent headache in a child is often sent for brain MRI by default. In this case, a careful history (temporal correlation with screen use), postural examination, and cervical ROM assessment provided a complete structural diagnosis without neuroimaging. Selective clinical reasoning — not reflexive imaging — is the appropriate approach when red flag features are absent."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "In text neck, the structural treatment (restoring cervical lordosis and correcting segmental dysfunction) must be paired with behavioural change (screen time reduction, ergonomic correction) — otherwise the underlying mechanical load continues and outcomes will be short-lived. Ask about screen time in every paediatric cervical patient."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Chiropractic is ideally placed to diagnose and manage text neck syndrome — structural assessment, radiographic analysis, and spinal intervention are core competencies. However, the educational component (screen time limits, ergonomics, core strengthening) is equally important and often under-emphasised. Patient and parent education is a fundamental part of management."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "EOS low-dose biplanar imaging was used here — an excellent choice for a child requiring serial spine imaging, as it provides biplanar data at approximately 6–9× lower radiation dose than standard full-spine radiography. When scoliosis monitoring or serial spinal imaging is planned in a child, EOS or equivalent low-dose systems should be prioritised over conventional radiograph protocols."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Text neck syndrome, paediatric cervicogenic headache, forward head posture, cervical lordosis, screen time, paediatric chiropractic, EOS imaging",
+    keyPoints: [
+      "Text neck syndrome produces measurable structural changes — loss of cervical lordosis, segmental dysfunction, myofascial hypertonicity — within weeks of excessive screen use in children",
+      "Cervicogenic headache in a child with a clear mechanical trigger and normal neurology does not require brain MRI; structural examination and cervical radiograph are sufficient",
+      "Restoration of cervical lordosis through extension-traction combined with segmental adjustment is the treatment of choice for text neck-related loss of lordosis",
+      "Behavioural modification (screen time reduction, ergonomic correction) is an essential co-intervention — structural treatment without addressing the underlying postural loading will produce transient outcomes",
+      "Children are disproportionately vulnerable to text neck because of their developing spinal structures; a 6-year-old can develop significant cervical structural changes in as little as one month of excessive screen use"
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 031 — Cervicogenic dizziness + upper cervical instability + POTS, 27yo woman
+// Source: Trager RJ et al. Cureus. 2024;16(10):e72765. PMID: 39618563
+// ─────────────────────────────────────────────
+{
+  id: "031",
+  title: "A 27-year-old woman presents with six years of chronic dizziness, neck and upper thoracic pain, and occipital headaches that have failed to respond to multiple medical treatments",
+  category: "Cervical",
+  secondaryCategory: "Neuro",
+  difficulty: "Intermediate",
+  estimatedTime: "20–30 min",
+  source: {
+    short: "Trager RJ et al.\nCureus. 2024;16(10):e72765\nPMID: 39618563\nPMC: PMC11608111\nOpen access ✓",
+    full: "Trager RJ, Schuster A, Tao C, Zamary G. Conservative Management of Cervicogenic Dizziness Associated With Upper Cervical Instability and Postural Orthostatic Tachycardia Syndrome: A Case Report. Cureus. 2024;16(10):e72765. doi: 10.7759/cureus.72765. PMID: 39618563. PMC: PMC11608111."
+  },
+  patient: {
+    ageSex: "27-year-old female",
+    chiefComplaint: "Chronic dizziness (frequent lightheadedness with occasional near syncope), constant mild neck pain, and occipital-temporal-orbital headaches",
+    duration: "6 years",
+    priorProviders: "Neurologist, otorhinolaryngologist, cardiologist, psychiatrist, and multiple general practitioners",
+    priorDiagnoses: "Multiple sclerosis suspected by neurologist (2019) — excluded by MRI; BPPV suspected by ENT — vestibular exercises ineffective; anxiety diagnosed — SSRIs (fluoxetine, escitalopram) and bupropion ineffective; POTS suspected by prior cardiologist — increased salt/hydration and fludrocortisone only mildly helpful; panic disorder diagnosed by psychiatrist — venlafaxine 150 mg ineffective for dizziness"
+  },
+  history: {
+    content: `<p>A 27-year-old woman presented to a chiropractor and cardiologist in 2024 with over six years of dizziness, neck and cervicothoracic muscle tightness and pain, and occipital, temporal, and orbital headaches. Symptoms began suddenly in early 2018 after sleeping on a mattress with an uncomfortable support rod. Prior to symptom onset she had a history of: a motor vehicle collision, a soccer-related concussion causing temporary dizziness, a molar infection requiring root canal and amoxicillin, and regular soccer header drills throughout high school.</p>
+<p>The dizziness was described as frequent lightheadedness with occasional near syncope, without distinct spinning. Once or twice per year she experienced severe incapacitating episodes where any movement provoked dizziness severe enough to cause vomiting and bedrest. Neck pain was mild but constant, with the patient regularly massaging her suboccipital regions. Dizziness was worsened by hunger, walking down supermarket aisles, quick head movements, and sometimes bending over.</p>
+<p>The condition substantially limited her quality of life: she avoided supermarkets alone, drove only in the slow lane, had difficulty cooking due to dizziness, and avoided prolonged standing. Her Dizziness Handicap Inventory (DHI) score was 50 (moderate handicap). GAD-7 score was 14 (moderate anxiety); PHQ-9 was 7 (mild depression) — she attributed her anxiety largely to fear of triggering severe episodes.</p>
+<p>Prior investigations including brain and cervical MRI with contrast showed no evidence of multiple sclerosis or structural central pathology. Vestibular exercises for BPPV were ineffective. Pharmacological management with SSRIs, bupropion, fludrocortisone, and venlafaxine produced no significant improvement in dizziness.</p>`,
+    clinicalNote: "The key diagnostic signal in this case is the constellation of: (1) constant mild neck pain with regular suboccipital self-massage, (2) dizziness worsened by quick head movements and supermarket aisle walking (visual-vestibular conflict), (3) history of repetitive cervical loading (soccer headers, concussion, MVA, sudden onset after uncomfortable mattress), and (4) failure of BPPV treatment, SSRI therapy, and vestibular exercises. Together these strongly point to a cervicogenic origin for the dizziness. The POTS diagnosis is real but incomplete — the fact that fludrocortisone only mildly helped and the dizziness did not resolve with salt/hydration suggests a cervical spine contributor. The diagnostic pivot is the dynamic APOM radiograph showing lateral C1 instability."
+  },
+  examination: {
+    autoROM: `<p>Cervical range of motion was documented as normal overall; however, pain was present at end-range. Soft end feel was noted during motion palpation of the upper cervical region, suggesting ligamentous laxity rather than a hard capsular end feel. Specifically, the lateral neutral and bending views demonstrated abnormal odontoid-lateral mass interval asymmetry and a 2.4 mm lateral step-off of C1 on C2, consistent with lateral upper cervical instability.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+  <thead><tr><th>Assessment</th><th>Finding</th></tr></thead>
+  <tbody>
+    <tr><td>Upper extremity motor strength</td><td>Normal</td></tr>
+    <tr><td>Lower extremity motor strength</td><td>Normal</td></tr>
+    <tr><td>Coordination</td><td>Normal</td></tr>
+    <tr><td>Cranial nerves II–XII</td><td>Normal</td></tr>
+    <tr><td>Muscle stretch reflexes</td><td>Normal</td></tr>
+    <tr><td>Sensation</td><td>Normal</td></tr>
+    <tr><td>Pathological reflexes (Hoffman's, Rossolimo)</td><td>Absent</td></tr>
+  </tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Vestibular / Oculomotor Screening",
+        items: [
+          {
+            id: "vor_test",
+            label: "Vestibulo-ocular reflex (VOR) testing — horizontal and vertical",
+            result: `<span class="tt pos">Positive</span> — active head movements while maintaining fixed gaze exacerbated dizziness in both horizontal and vertical planes`,
+            documented: true,
+            rationale: "VOR testing assesses the integrity of the vestibular-ocular pathway. Exacerbation of dizziness during active head movements with fixed gaze suggests either vestibular dysfunction or cervical proprioceptive input disrupting vestibular processing. In the context of cervical instability and chronic neck pain, the positive VOR response supports a cervicogenic contribution to dizziness — the cervical proprioceptive input mismatches with visual and vestibular signals."
+          },
+          {
+            id: "visual_motion_sensitivity",
+            label: "Visual motion sensitivity test",
+            result: `<span class="tt pos">Positive</span> — rotating torso while fixing gaze on outstretched thumb provoked dizziness`,
+            documented: true,
+            rationale: "Visual motion sensitivity testing provokes visually-driven dizziness by creating a visual-vestibular conflict. A positive test (provoked dizziness) is consistent with vestibulo-ocular reflex dysfunction or heightened visual-vestibular sensitivity — seen in both CGD and post-concussion syndrome. In this case, the history of concussion and cervical instability both contribute to this response."
+          },
+          {
+            id: "romberg_test",
+            label: "Romberg's test",
+            result: `<span class="tt normal">Normal</span>`,
+            documented: true,
+            rationale: "Normal Romberg's testing argues against significant proprioceptive or vestibular deficit producing frank balance impairment under static conditions. This helped differentiate CGD (which produces dynamic rather than static balance impairment) from vestibular hypofunction or peripheral proprioceptive neuropathy."
+          },
+          {
+            id: "fukuda_stepping",
+            label: "Fukuda stepping test",
+            result: `<span class="tt normal">Normal</span>`,
+            documented: true,
+            rationale: "The Fukuda stepping test screens for unilateral vestibular hypofunction. A normal result argued against significant unilateral peripheral vestibular pathology (e.g., vestibular neuritis or uncompensated BPPV), directing attention towards a cervicogenic or central contribution to the dizziness."
+          },
+          {
+            id: "dix_hallpike",
+            label: "Dix-Hallpike test",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "The Dix-Hallpike test is the standard diagnostic test for posterior canal BPPV. It was not performed by the chiropractor, likely because BPPV had already been excluded by the ENT specialist (vestibular exercises were ineffective) and the dizziness character — lightheadedness rather than rotatory vertigo, lasting hours rather than seconds — was inconsistent with BPPV. Had the prior BPPV assessment not been completed, Dix-Hallpike would be mandatory."
+          }
+        ]
+      },
+      {
+        group: "Upper Cervical Stability",
+        items: [
+          {
+            id: "motion_palpation_uc",
+            label: "Upper cervical motion palpation",
+            result: `<span class="tt notable">Notable</span> — soft end feel in the upper cervical region; hypertonic and tender suboccipital muscles, cervical erectors, upper trapezii, and temporomandibular muscles`,
+            documented: true,
+            rationale: "A soft end feel on upper cervical motion palpation is a clinical indicator of ligamentous laxity and potential instability — in contrast to the firm capsular end feel expected in a normal upper cervical joint. This finding prompted the decision to order dynamic radiographs (APOM views with lateral bending) rather than proceeding with cervical manipulation."
+          },
+          {
+            id: "apom_xray",
+            label: "Dynamic APOM radiograph (neutral + lateral bending) — C1/C2 assessment",
+            result: `<span class="tt pos">Positive for upper cervical instability</span> — Neutral APOM: OLMI asymmetry 1.7 mm (left 7.5 mm, right 5.8 mm). Left lateral bending: OLMI asymmetry increased to 4.2 mm (left 8.0 mm, right 3.8 mm); 2.4 mm lateral step-off of C1 on C2.`,
+            documented: true,
+            rationale: "Dynamic APOM views are the key investigation for lateral upper cervical instability. The neutral OLMI asymmetry of 1.7 mm exceeded normal (mean 3.5 mm ± 0.8 SD), and the significant worsening with lateral bending (to 4.2 mm asymmetry with a 2.4 mm step-off) confirmed pathological lateral C1 laxity. This finding was the critical pivot that explained the cervicogenic origin of the dizziness and dictated the gentle (non-thrust) approach to cervical treatment."
+          },
+          {
+            id: "beighton_scale",
+            label: "Beighton hypermobility scale",
+            result: `<span class="tt normal">Normal</span> — no features of generalised hypermobility`,
+            documented: true,
+            rationale: "The Beighton scale screens for generalised connective tissue hypermobility (e.g., Ehlers-Danlos syndrome), which could explain upper cervical instability as part of a systemic hypermobility syndrome. A normal Beighton score suggests the upper cervical instability was focal and trauma-related rather than systemic — an important distinction for prognosis and management."
+          }
+        ]
+      },
+      {
+        group: "Cardiovascular / Autonomic",
+        items: [
+          {
+            id: "tilt_table",
+            label: "Tilt table test (performed by cardiologist)",
+            result: `<span class="tt pos">Positive for POTS</span> — heart rate rise from 67 to 112 bpm on tilt (normal rise <30 bpm; POTS: ≥30 bpm rise within 10 minutes); no hypotension (vasovagal negative)`,
+            documented: true,
+            rationale: "Tilt table testing is the gold standard for diagnosing POTS. The confirmed diagnosis of POTS explained the postural lightheadedness and near-syncope component of the dizziness. However, the incomplete response to standard POTS management (salt/hydration, fludrocortisone) was the key clinical signal that an additional cervicogenic mechanism was contributing."
+          },
+          {
+            id: "ecg_echo",
+            label: "ECG and echocardiography",
+            result: `<span class="tt normal">Normal</span> — sinus rhythm; normal left ventricular systolic function; ejection fraction 55–60%; no structural cardiac pathology`,
+            documented: true,
+            rationale: "Structural cardiac investigation was performed by the cardiologist to exclude arrhythmia or structural heart disease as causes of near-syncope. Normal ECG and echocardiography confirmed the tachycardia was functional (autonomic) rather than secondary to structural cardiac pathology."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination was structured around the three most likely mechanisms for this patient's dizziness: (1) vestibular, (2) cervicogenic, and (3) autonomic (POTS). The vestibulo-oculomotor screening demonstrated abnormal VOR and visual motion sensitivity responses consistent with cervicogenic or post-concussion dizziness, while normal Romberg's and Fukuda tests argued against significant peripheral vestibular pathology. The soft upper cervical end feel prompted dynamic APOM radiography, which confirmed lateral C1 instability — the critical structural finding. The tilt table test confirmed concurrent POTS. The combination of these findings directed a conservative, non-thrust cervical approach."
+  },
+  investigations: {
+    options: [
+      {
+        id: "brain_cervical_mri",
+        label: "Brain and cervical MRI with contrast (performed by neurologist in 2019)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Brain MRI: no evidence of demyelinating plaques, no structural abnormalities, no evidence of multiple sclerosis. Cervical MRI: no significant pathology identified. Both studies were normal — effectively excluding MS, central vestibular lesions, and significant cervical cord compression as causes of dizziness.</p>`
+      },
+      {
+        id: "tilt_table_test",
+        label: "Tilt table test with autonomic testing battery (cardiologist)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Tilt table test: <strong>exaggerated orthostatic tachycardia</strong> — heart rate rise from 67 bpm to 112 bpm (rise of 45 bpm; POTS threshold ≥30 bpm). Deep breathing, Valsalva manoeuvre, and sudomotor axon reflex all within normal limits. Echocardiography: normal LV systolic function, EF 55–60%. ECG: sinus rhythm 67 bpm, normal AV conduction and ventricular repolarisation. <strong>Diagnosis: POTS</strong>.</p>`
+      },
+      {
+        id: "apom_dynamic_xray",
+        label: "Static and dynamic cervical radiographs including APOM with lateral bending views",
+        consequence: null,
+        ordered: true,
+        result: `<p>Lateral view (flexion, neutral, extension): Relatively straight cervical lordosis in neutral; no abnormal listheses or instability evident on lateral views. APOM neutral: OLMI asymmetry 1.7 mm (left 7.5 mm, right 5.8 mm — normal mean 3.5 mm ± 0.8 SD). APOM left lateral bending: OLMI asymmetry increased to 4.2 mm; left lateral mass displaced 2.4 mm to the left relative to C2 articular pillar (step-off). APOM right lateral bending: smaller residual asymmetry (1.5 mm). <strong>Findings consistent with lateral C1/C2 upper cervical instability.</strong></p>`
+      },
+      {
+        id: "vestibular_function_testing",
+        label: "Formal vestibular function testing (videonystagmography / caloric testing)",
+        consequence: "Formal vestibular function testing was not performed in this case. Given the prior ENT assessment had excluded BPPV and vestibular exercises had been ineffective, the chiropractor proceeded without formal vestibulometry. This is a reasonable clinical decision, though formal testing would have provided more objective characterisation of any peripheral vestibular deficit. In cases where vestibular testing has not been performed prior to chiropractic assessment of chronic dizziness, referral for formal vestibulometry should be considered.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "autonomic_antibodies",
+        label: "Autoimmune / POTS serology (ganglionic acetylcholine receptor antibodies, antinuclear antibody panel)",
+        consequence: "Autoimmune serology was not ordered in this case. Autoimmune POTS (positive ganglionic AChR antibodies) is an important differential, as it has different management implications. Given the onset after infection (molar root canal requiring amoxicillin) and trauma (soccer, MVA, concussion), an autoimmune or post-infectious aetiology was plausible and full serology was not documented. This is a minor gap in the workup.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Cervicogenic dizziness with upper cervical instability",
+        correct: true,
+        blurb: "This is the primary correct diagnosis. Cervicogenic dizziness (CGD) arises from dysfunction of cervical spine structures — most commonly upper cervical instability, disc herniation, or spondylosis — disrupting normal cervical proprioceptive input to the vestibular system. In this case, lateral instability at C1/C2 was confirmed on dynamic APOM radiography. POTS was a concurrent co-diagnosis that contributed to the postural symptoms but did not fully explain the dizziness.",
+        supports: [
+          "Six-year history of dizziness directly correlated with constant mild neck pain and regular suboccipital self-massage",
+          "History of repetitive upper cervical loading: soccer header drills, concussion, MVA, and sudden onset after sleeping on uncomfortable mattress",
+          "Dizziness triggered by quick head movements and visual motion (supermarket aisles) — characteristic of cervicogenic/proprioceptive origin",
+          "Soft end feel on upper cervical motion palpation — clinical indicator of ligamentous laxity",
+          "Dynamic APOM radiograph confirmed lateral C1/C2 instability: OLMI asymmetry 1.7 mm at rest increasing to 4.2 mm with lateral bending, with 2.4 mm C1 step-off",
+          "Normal neurological examination, normal Romberg's and Fukuda's tests — argues against peripheral vestibular or central pathology",
+          "Abnormal VOR and visual motion sensitivity testing — consistent with cervicogenic proprioceptive mismatch",
+          "DHI improved from 50 (moderate) to 10 (below mild threshold) following cervical treatment — objective outcome measurement"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Benign paroxysmal positional vertigo (BPPV)",
+        correct: false,
+        blurb: "BPPV is the most common cause of dizziness, accounting for approximately 24% of cases. Given the dizziness triggered by head movements, it is an understandable initial working diagnosis — and indeed was trialled by the ENT specialist.",
+        supports: [
+          "Dizziness provoked by quick head movements",
+          "History of prior concussion — a recognised BPPV risk factor",
+          "ENT specialist suspected BPPV"
+        ],
+        arguesAgainst: [
+          "Vestibular exercises (Epley, Semont) were ineffective — definitive evidence against active BPPV",
+          "BPPV produces brief (seconds) rotatory vertigo, not the sustained lightheadedness and near syncope described here",
+          "Long-lasting dizziness episodes (sometimes hours) and constant background lightheadedness are inconsistent with BPPV",
+          "Dizziness triggered by supermarket aisles and hunger points to visual-vestibular and autonomic mechanisms rather than BPPV",
+          "Normal Fukuda stepping test argues against significant vestibular asymmetry"
+        ]
+      },
+      {
+        label: "Postural orthostatic tachycardia syndrome (POTS) alone",
+        correct: false,
+        blurb: "POTS was confirmed by tilt table testing and is a real co-diagnosis in this case. However, attributing all of the dizziness to POTS alone is insufficient — standard POTS management (salt, hydration, fludrocortisone) provided only minimal benefit, and the substantial improvement following cervical treatment demonstrates a cervicogenic contribution beyond POTS.",
+        supports: [
+          "Tilt table test confirmed POTS (heart rate rise from 67 to 112 bpm on tilt)",
+          "Lightheadedness worsened by prolonged standing and bending over — classic postural/orthostatic features",
+          "Near-syncope episodes and avoidance of prolonged standing consistent with POTS"
+        ],
+        arguesAgainst: [
+          "Salt/hydration and fludrocortisone only mildly alleviated symptoms — incomplete response to first-line POTS management",
+          "Dizziness triggered by quick head movements (rather than purely positional/orthostatic) points to a cervicogenic component",
+          "DHI score improved dramatically (from 50 to 10) with cervical treatment — a response not expected from POTS management alone",
+          "Venlafaxine (prescribed for the anxious component) did not alleviate dizziness — further evidence for a non-psychogenic structural cause"
+        ]
+      },
+      {
+        label: "Multiple sclerosis",
+        correct: false,
+        blurb: "Multiple sclerosis was the neurologist's initial working diagnosis given the young woman with dizziness and neurological symptoms. This was appropriately investigated and excluded.",
+        supports: [
+          "Young woman with multisystem neurological-type symptoms including dizziness and headache",
+          "Neurologist suspected MS in 2019"
+        ],
+        arguesAgainst: [
+          "Brain and cervical MRI with contrast were entirely normal — no demyelinating plaques identified",
+          "Normal neurological examination throughout — no focal deficits, no optic neuritis, no pathological reflexes",
+          "Six years without neurological progression — MS typically produces relapsing-remitting neurological deficits over time",
+          "Symptoms improved with cervical mechanical treatment — not consistent with MS"
+        ]
+      },
+      {
+        label: "Vestibular neuritis / chronic uncompensated vestibular hypofunction",
+        correct: false,
+        blurb: "Vestibular neuritis causes sudden onset vertigo from viral inflammation of the vestibular nerve and can leave residual uncompensated hypofunction. The sudden onset and chronic course in this patient make it worth considering.",
+        supports: [
+          "Relatively sudden onset of dizziness (after sleeping incident)",
+          "Chronic course of dizziness over 6 years"
+        ],
+        arguesAgainst: [
+          "Vestibular neuritis classically produces severe acute rotatory vertigo with nausea lasting days — the onset here was not described as a vertigo crisis",
+          "Normal Fukuda stepping test argues against significant peripheral vestibular asymmetry consistent with uncompensated hypofunction",
+          "Formal vestibular rehabilitation exercises were ineffective — if uncompensated hypofunction were the cause, appropriately directed exercises would have provided benefit"
+        ]
+      },
+      {
+        label: "Menière's disease",
+        correct: false,
+        blurb: "Menière's disease produces episodic vertigo with tinnitus and low-frequency hearing loss. In a young woman with episodic dizziness, it is worth excluding.",
+        supports: [
+          "Episodic severe dizziness with vomiting once or twice per year"
+        ],
+        arguesAgainst: [
+          "No tinnitus or hearing loss documented — the classic accompanying features of Menière's disease",
+          "Dizziness is primarily lightheadedness rather than rotatory vertigo",
+          "No fluctuating aural fullness described",
+          "Response to cervical treatment is inconsistent with Menière's disease, which requires aural/endolymphatic management"
+        ]
+      },
+      {
+        label: "Panic disorder / anxiety-mediated dizziness",
+        correct: false,
+        blurb: "The patient had documented moderate anxiety (GAD-7 14), had been diagnosed with panic disorder by a psychiatrist, and was prescribed venlafaxine. Anxiety-mediated dizziness is a plausible consideration given the psychometric scores.",
+        supports: [
+          "GAD-7 score 14 (moderate anxiety) and PHQ-9 score 7 (mild depression)",
+          "Psychiatrist diagnosed panic disorder",
+          "Avoidance behaviours suggesting anxiety-driven amplification of symptoms"
+        ],
+        arguesAgainst: [
+          "Venlafaxine 150 mg did not alleviate dizziness — the primary treatment for panic-disorder dizziness",
+          "Psychiatrist reassessment found no signs of panic disorder after chiropractic treatment — the psychiatric presentation appears secondary to dizziness rather than primary",
+          "Patient attributed her anxiety to fear of triggering episodes — anxiety was a consequence of the dizziness, not the cause",
+          "Dynamic APOM confirmed structural lateral C1 instability — a physical finding not produced by anxiety",
+          "DHI improved with structural cervical treatment — not a response expected from anxiety management alone"
+        ]
+      },
+      {
+        label: "Post-concussion syndrome",
+        correct: false,
+        blurb: "The patient had a prior concussion from soccer, which is a recognised cause of chronic dizziness, vestibulo-ocular dysfunction, and headache. Post-concussion syndrome (PCS) was appropriately considered in this differential.",
+        supports: [
+          "History of soccer concussion with temporary dizziness — a documented prior CNS injury",
+          "Abnormal VOR and visual motion sensitivity testing consistent with PCS",
+          "The cardiologist initially suspected dysautonomia related to prior concussion"
+        ],
+        arguesAgainst: [
+          "Symptoms began several years after the soccer concussion — not within the typical PCS onset window of days to weeks",
+          "Symptoms appeared to begin acutely after sleeping on an uncomfortable mattress, not from the concussion",
+          "Normal brain MRI argues against persistent post-concussion structural pathology",
+          "Dynamic APOM radiograph identified a structural cervical explanation (lateral C1 instability) for the proprioceptive and vestibular symptoms"
+        ]
+      }
+    ],
+    explanation: `<p>This case exemplifies the diagnostic complexity of chronic dizziness, which requires systematic exclusion of multiple overlapping conditions. The case unfolded over six years across multiple specialties before a cervicogenic diagnosis was established. The pivotal steps were: (1) recognising that dizziness triggered by head movements, with constant neck pain and suboccipital tenderness, pointed to a cervicogenic mechanism; (2) identifying the soft upper cervical end feel as a clinical instability indicator; and (3) ordering dynamic APOM lateral bending radiographs that confirmed pathological lateral C1/C2 movement.</p>
+<p>The POTS diagnosis is real and co-existing — confirmed by tilt table testing — but incomplete as a sole explanation given the partial pharmacological response. The elegant insight in this case is that cervical instability may plausibly contribute to POTS through compression or irritation of the C2 nerve root, mechanical effects on the brainstem, or cerebrospinal fluid dynamics. The fact that the patient's dizziness, POTS symptoms, and psychiatric symptoms all improved with cervical treatment — and that venlafaxine was discontinued without symptom recurrence — supports a shared cervicogenic mechanism.</p>
+<p>The management decision to use gentle non-thrust manual therapy, cervical stabilisation exercises, and a cervical orthosis (avoiding HVLA cervical manipulation) in the context of confirmed ligamentous instability is an important scope-of-practice lesson. The DHI improvement from 50 to 10 over eight months — exceeding the minimally clinically important difference of 18 points — represents an outstanding and objectively measured outcome.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "gentle_manual_therapy_exercises",
+        label: "Gentle non-thrust cervical manual therapy (suboccipital release, myofascial release, dry needling, mid-cervical posterior-anterior mobilisation) + cervical stabilisation exercises + thoracic HVLA manipulation",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Given the confirmed lateral upper cervical instability, cervical HVLA thrust manipulation was specifically avoided to prevent exacerbating the instability. Instead, gentle non-thrust techniques — supine suboccipital release, myofascial release, dry needling of upper trapezius and levator scapulae, and low-amplitude posterior-anterior mid-cervical mobilisation — were used. Thoracic HVLA manipulation was safe and appropriate. This staged conservative approach produced progressive improvement with DHI reducing from 50 to 24 (3 months) and then 10 (8 months), exceeding the clinically important difference of 18 points.`
+      },
+      {
+        id: "cervical_hvla",
+        label: "High-velocity low-amplitude cervical manipulation",
+        selected: false,
+        explanation: `<strong>Not appropriate in this case.</strong> Dynamic APOM radiography confirmed lateral C1/C2 upper cervical instability with a 2.4 mm lateral step-off on lateral bending. Cervical HVLA thrust manipulation is contraindicated in the context of confirmed upper cervical ligamentous instability, as it risks exacerbating the instability or producing iatrogenic neurological or vascular injury. The case explicitly documents that all cervical manipulative techniques were performed without a thrust/impulse.`
+      },
+      {
+        id: "cervical_stab_exercises",
+        label: "Isometric cervical lateral bending exercises + neutral-spine chin retractions (deep cervical stabiliser strengthening)",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Deep cervical flexor and stabiliser strengthening is the cornerstone of conservative management for upper cervical instability. Isometric lateral bending exercises (patient's hand provides opposing force, 10 seconds × 3/day) and chin retractions (10 repetitions × 3/day) directly targeted the weakened stabilising musculature at the craniocervical junction. The patient performed these diligently, likely contributing substantially to the progressive improvement in DHI scores.`
+      },
+      {
+        id: "salt_diet_modification",
+        label: "Increased dietary salt intake and hydration for POTS management",
+        selected: true,
+        explanation: `<strong>Appropriate — recommended by cardiologist and maintained throughout care.</strong> POTS management includes non-pharmacological first-line measures: increased salt and fluid intake. The patient adopted a dietary change to include more salty snacks. This addresses the orthostatic/autonomic component of her dizziness and is complementary to the cervical management. The combined approach is more effective than either intervention alone for this patient with dual pathology.`
+      },
+      {
+        id: "continue_venlafaxine",
+        label: "Continue venlafaxine 150 mg for panic disorder",
+        selected: false,
+        explanation: `<strong>Not appropriate — medication was discontinued during care.</strong> Venlafaxine had not improved dizziness despite adequate dosing. As the patient's dizziness improved with cervical treatment, she requested a taper from venlafaxine via her psychiatrist. This was completed successfully without recurrence of dizziness or psychiatric symptoms. The psychiatrist subsequently found no evidence of panic disorder — supporting the view that the psychiatric symptoms were secondary to the dizziness rather than primary.`
+      }
+    ],
+    outcomeText: "Over eight months of chiropractic treatment (initially fortnightly, progressively spaced), the patient's DHI score decreased from 50 (moderate handicap) to 24 at three months, then to 10 at eight months — below the threshold for mild handicap and exceeding the minimal clinically important difference. She resumed running and began exercise classes. Venlafaxine was successfully discontinued with no dizziness recurrence. The psychiatrist found no remaining signs of panic disorder and discharged her from psychiatric care. At eight months, 13 chiropractic visits had been completed; the patient experienced only occasional mild dizziness with no severe episodes."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Cervicogenic Dizziness</strong><br>Associated with lateral C1/C2 upper cervical instability and concurrent POTS",
+    outcomes: [
+      { label: "Published Source", text: "Trager RJ et al. Cureus. 2024;16(10):e72765" },
+      { label: "PMID / PMC", text: "PMID: 39618563 — PMC11608111 (open access)" },
+      { label: "Final Diagnosis", text: "Cervicogenic dizziness with lateral upper cervical instability (C1/C2) and concurrent POTS" },
+      { label: "Intervention", text: "Gentle non-thrust cervical manual therapy + cervical stabilisation exercises + thoracic HVLA + dietary salt modification; DHI 50 → 10 over 8 months" }
+    ],
+    conditionSummary: {
+      overview: "Cervicogenic dizziness (CGD) is a clinical syndrome in which dizziness arises from dysfunction in the cervical spine — most commonly upper cervical instability, disc herniation, or spondylosis — disrupting normal cervical proprioceptive afferent input to the vestibular nuclei and cerebellum. It is diagnosed by exclusion of vestibular, vascular, and central causes, combined with evidence of cervical spine dysfunction and improvement of dizziness with cervical treatment. The estimated prevalence among adults with neck pain is approximately 8.1%, but it is widely under-recognised as a diagnosis.",
+      presentation: [
+        "Persistent lightheadedness or unsteadiness (rather than the rotatory vertigo of BPPV) directly correlated with neck pain and suboccipital tenderness",
+        "Dizziness provoked by quick head movements, sustained neck positions, or visual-vestibular conflict environments (busy visual scenes, supermarket aisles)",
+        "History of cervical trauma (MVA, concussion, sports injury) or repetitive cervical loading — a common antecedent",
+        "Associated occipital headache and myofascial tenderness in the suboccipital and upper cervical region, with restricted or painful cervical ROM"
+      ],
+      pathology: [
+        "Disrupted cervical proprioceptive afferent input from damaged or dysfunctional facet joint mechanoreceptors and muscle spindles, producing a cervico-vestibular mismatch and dizziness",
+        "Upper cervical instability (lateral, rotational, or anterior-posterior) from ligamentous laxity following trauma — most commonly affecting the alar, transverse, and accessory atlanto-axial ligaments",
+        "Compression or irritation of the C1/C2 nerve roots or vertebral artery by instability or degenerative change can contribute to occipital headache and autonomic symptoms respectively",
+        "Concurrent conditions such as POTS may share a cervicogenic mechanism — upper cervical instability potentially contributing to brainstem, CSF, or autonomic dysfunction that perpetuates orthostatic tachycardia"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Chronic dizziness that has failed multiple pharmacological treatments from multiple specialists should prompt systematic consideration of a cervicogenic origin — especially when constant neck pain, suboccipital tenderness, and head-movement provocation are present. Dynamic APOM radiographs should be considered when a soft upper cervical end feel suggests instability."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "This patient waited six years and saw five different specialists before cervicogenic dizziness was recognised. The diagnostic pitfall was that each specialist treated their piece of the presentation in isolation — anxiety, POTS, BPPV — without synthesising the whole picture. Dizziness is a multifactorial presentation that requires integration of vestibular, cardiovascular, psychiatric, and musculoskeletal findings."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "The soft end feel on upper cervical motion palpation is a critical clinical sign that should always prompt dynamic radiographic assessment before cervical manipulation. Normal static cervical radiographs and even normal cervical MRI can miss lateral C1/C2 instability — only APOM lateral bending views will reveal the dynamic displacement."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Upper cervical instability is a contraindication to HVLA cervical thrust manipulation. This case demonstrates that excellent outcomes (DHI 50→10) can be achieved using gentle non-thrust manual therapy and stabilisation exercises alone. Knowing the limitations of your toolbox — and adapting to the clinical findings — is essential practice in chiropractic."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "Standard cervical radiographs (lateral flexion/extension views) were normal in this case — no instability was visible on lateral views. The diagnosis depended entirely on APOM lateral bending views. If upper cervical instability is suspected and standard views are normal, dynamic APOM views must be specifically requested. This investigation is not performed routinely and clinicians must know to ask for it."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Cervicogenic dizziness, upper cervical instability, POTS, dizziness differential diagnosis, dynamic APOM radiograph, Dizziness Handicap Inventory",
+    keyPoints: [
+      "Cervicogenic dizziness is defined by dizziness arising from cervical spine dysfunction, diagnosed by exclusion plus evidence of cervical pathology and improvement with cervical treatment",
+      "A soft upper cervical end feel on motion palpation is a clinical indicator of ligamentous instability and should prompt APOM lateral bending radiographs before cervical manipulation",
+      "Dynamic APOM radiographs are the key investigation for lateral C1/C2 instability — standard lateral flexion/extension views and MRI can appear normal while instability is present",
+      "Upper cervical instability is a contraindication to HVLA cervical thrust manipulation; gentle non-thrust mobilisation and cervical stabilisation exercises can achieve excellent outcomes",
+      "The Dizziness Handicap Inventory (DHI) is a validated 25-item outcome measure for CGD — a reduction of ≥18 points represents the minimum clinically important difference"
+    ]
+  }
 }
 // ─────────────────────────────────────────────
 // PASTE ADDITIONAL CASES ABOVE THIS LINE
