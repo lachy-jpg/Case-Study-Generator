@@ -42,6 +42,13 @@
     text-transform: uppercase; border: 1px solid var(--rule); padding: 3px 10px; color: var(--muted); transition: all 0.3s;
   }
   .g-pill.active { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+  .reg-btn {
+    margin-left: 10px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; border: 1px solid var(--rule); padding: 4px 12px;
+    background: none; cursor: pointer; color: var(--muted); transition: all 0.15s;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .reg-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
 
   /* VIEWS */
   .view { display: none; }
@@ -320,8 +327,42 @@
     .nav-row { gap: 6px; }
     .btn-p, .btn-s, .btn-b { padding: 10px 14px; font-size: 10px; }
   }
+  /* ═══════════════════════════════════════
+     REGISTRY VIEW
+  ═══════════════════════════════════════ */
+  .reg-wrap { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+  .reg-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+  .reg-title h1 { font-size: 26px; font-weight: 300; font-style: italic; }
+  .reg-title h1 strong { font-weight: 600; font-style: normal; }
+  .reg-title p { font-size: 13px; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+  .reg-actions { display: flex; gap: 10px; align-items: center; flex-shrink: 0; }
+  .reg-copy-btn {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 10px 22px; background: var(--accent); color: #fff; border: none; cursor: pointer; transition: opacity 0.15s;
+  }
+  .reg-copy-btn:hover { opacity: 0.85; }
+  .reg-copy-btn.copied { background: var(--gold); }
+  .reg-home-btn {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 10px 22px; background: none; color: var(--muted); border: 1px solid var(--rule); cursor: pointer; transition: all 0.15s;
+  }
+  .reg-home-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .reg-table-wrap { border: 1px solid var(--rule); overflow-x: auto; }
+  table.reg-tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table.reg-tbl thead tr { background: var(--paper2); border-bottom: 2px solid var(--rule); }
+  table.reg-tbl th { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); text-align: left; padding: 10px 14px; white-space: nowrap; }
+  table.reg-tbl td { padding: 10px 14px; border-bottom: 1px solid var(--rule-light); vertical-align: top; line-height: 1.5; }
+  table.reg-tbl tr:last-child td { border-bottom: none; }
+  table.reg-tbl tr:hover td { background: var(--accent-light); }
+  .reg-id { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .reg-pmid { font-family: var(--mono); font-size: 11px; color: var(--accent); }
+  .reg-pmid.none { color: var(--rule); font-style: italic; }
+  .reg-diff { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; padding: 2px 7px; border: 1px solid; display: inline-block; }
+  .reg-diff.beg { border-color: var(--accent); color: var(--accent); }
+  .reg-diff.int { border-color: var(--gold); color: var(--gold); }
+  .reg-diff.adv { border-color: var(--warn); color: var(--warn); }
+  .reg-note { margin-top: 20px; font-family: var(--mono); font-size: 10px; color: var(--muted); line-height: 1.7; padding: 12px 16px; border: 1px solid var(--rule-light); background: var(--paper2); }
 </style>
-</head>
 <body>
 
 <!-- GLOBAL HEADER -->
@@ -332,6 +373,7 @@
   <div class="g-divider"></div>
   <span class="g-meta" id="g-meta">Case Library</span>
   <div class="g-pill" id="g-pill">Library</div>
+  <button class="reg-btn" onclick="goRegistry()">PMID Registry</button>
 </header>
 
 <!-- ═══════════════════════════════════════
@@ -387,6 +429,39 @@
     </div>
 
     <div class="case-grid" id="case-grid"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     VIEW: REGISTRY
+═══════════════════════════════════════ -->
+<div class="view" id="view-registry">
+  <div class="reg-wrap">
+    <div class="reg-top">
+      <div class="reg-title">
+        <h1><strong>PMID Registry</strong><br>Case Duplicate Checker</h1>
+        <p>Auto-generated from the CASES array. Copy and paste into Claude at the start of each case generation session.</p>
+      </div>
+      <div class="reg-actions">
+        <button class="reg-home-btn" onclick="goHome()">&#8592; Back to Library</button>
+        <button class="reg-copy-btn" id="reg-copy-btn" onclick="copyRegistry()">Copy Registry for Claude</button>
+      </div>
+    </div>
+    <div class="reg-table-wrap">
+      <table class="reg-tbl" id="reg-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Diagnosis</th>
+            <th>Category</th>
+            <th>Difficulty</th>
+            <th>PMID / Source ID</th>
+          </tr>
+        </thead>
+        <tbody id="reg-tbody"></tbody>
+      </table>
+    </div>
+    <div class="reg-note" id="reg-note"></div>
   </div>
 </div>
 
@@ -9042,6 +9117,97 @@ function buildExamReveal() {
 
   document.getElementById('exam-selected-content').innerHTML = html;
 }
+// ─── REGISTRY ───────────────────────────────────────────────────────
+function goRegistry() {
+  showView('view-registry');
+  document.getElementById('g-meta').textContent = 'PMID Registry';
+  document.getElementById('g-pill').textContent = 'Registry';
+  document.getElementById('g-pill').classList.remove('active');
+  renderRegistry();
+}
+
+function extractPMID(c) {
+  // Try source.short for PMID: pattern
+  const src = (c.source?.short || c.source?.full || '');
+  const pmidMatch = src.match(/PMID[:\s]+(\d{6,9})/i);
+  if (pmidMatch) return 'PMID: ' + pmidMatch[1];
+  const pmcMatch = src.match(/PMC[:\s]*(PMC\d+|\d+)/i);
+  if (pmcMatch) return 'PMC: ' + pmcMatch[1].replace(/^(\d)/, 'PMC$1');
+  const doiMatch = src.match(/doi[:\s]*(10\.\S+)/i);
+  if (doiMatch) return 'DOI: ' + doiMatch[1];
+  return null;
+}
+
+function getDiagnosis(c) {
+  // Pull from reveal.diagnosisTitle — strip HTML tags
+  const raw = c.reveal?.diagnosisTitle || c.reveal?.outcomes?.find(o => o.label === 'Final Diagnosis')?.text || '';
+  return raw.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() || '—';
+}
+
+function renderRegistry() {
+  const tbody = document.getElementById('reg-tbody');
+  tbody.innerHTML = '';
+  const diffClass = { Beginner: 'beg', Intermediate: 'int', Advanced: 'adv' };
+
+  CASES.forEach(c => {
+    const pmid = extractPMID(c);
+    const dx = getDiagnosis(c);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="reg-id">${c.id}</td>
+      <td>${dx}</td>
+      <td><span style="font-family:var(--mono);font-size:10px;">${c.category}${c.secondaryCategory ? ' / ' + c.secondaryCategory : ''}</span></td>
+      <td><span class="reg-diff ${diffClass[c.difficulty] || ''}">${c.difficulty}</span></td>
+      <td class="reg-pmid ${pmid ? '' : 'none'}">${pmid || 'Not recorded'}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Summary note
+  const cats = {};
+  const diffs = { Beginner: 0, Intermediate: 0, Advanced: 0 };
+  CASES.forEach(c => {
+    cats[c.category] = (cats[c.category] || 0) + 1;
+    if (diffs[c.difficulty] !== undefined) diffs[c.difficulty]++;
+  });
+  const catStr = Object.entries(cats).sort((a,b) => b[1]-a[1]).map(([k,v]) => `${k}: ${v}`).join(' · ');
+  document.getElementById('reg-note').innerHTML =
+    `<strong>Total cases:</strong> ${CASES.length} &nbsp;|&nbsp; ` +
+    `<strong>Beginner:</strong> ${diffs.Beginner} · <strong>Intermediate:</strong> ${diffs.Intermediate} · <strong>Advanced:</strong> ${diffs.Advanced}<br>` +
+    `<strong>By category:</strong> ${catStr}`;
+}
+
+function copyRegistry() {
+  const lines = ['EXISTING CASES — DUPLICATE AUDIT LIST', ''];
+  lines.push('ID  | Diagnosis | Category | Difficulty | Source ID');
+  lines.push('----+----------------------------------------------');
+  CASES.forEach(c => {
+    const pmid = extractPMID(c) || 'No source ID';
+    const dx = getDiagnosis(c);
+    lines.push(`${c.id}  | ${dx} | ${c.category} | ${c.difficulty} | ${pmid}`);
+  });
+  lines.push('');
+  lines.push(`Total: ${CASES.length} cases`);
+  const cats = {};
+  const diffs = { Beginner: 0, Intermediate: 0, Advanced: 0 };
+  CASES.forEach(c => {
+    cats[c.category] = (cats[c.category] || 0) + 1;
+    if (diffs[c.difficulty] !== undefined) diffs[c.difficulty]++;
+  });
+  lines.push(`Difficulty: Beginner ${diffs.Beginner} · Intermediate ${diffs.Intermediate} · Advanced ${diffs.Advanced}`);
+  lines.push('Categories: ' + Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`${k}(${v})`).join(', '));
+
+  navigator.clipboard.writeText(lines.join('\n')).then(() => {
+    const btn = document.getElementById('reg-copy-btn');
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy Registry for Claude'; btn.classList.remove('copied'); }, 2200);
+  }).catch(() => {
+    alert('Copy failed — please select and copy the table manually.');
+  });
+}
+// ─────────────────────────────────────────────────────────────────────
+
 // INIT
 renderLibrary();
 </script>
