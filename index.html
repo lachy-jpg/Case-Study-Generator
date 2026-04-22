@@ -8693,6 +8693,1845 @@ const CASES = [
       "The Dizziness Handicap Inventory (DHI) is a validated 25-item outcome measure for CGD — a reduction of ≥18 points represents the minimum clinically important difference"
     ]
   }
+},
+// ─────────────────────────────────────────────
+// CASE 032 — Pronator Teres Syndrome
+// Source: Shojaie et al. J Ultrason. 2023;23(94):e165–e169. PMID: 37701054
+// sourceTier: PeerReviewed
+// ─────────────────────────────────────────────
+{
+  id: "032",
+  title: "A 23-year-old right-handed male presents with 5 years of left forearm pain and progressive hand weakness",
+  category: "Wrist/Hand",
+  secondaryCategory: "Elbow",
+  difficulty: "Intermediate",
+  estimatedTime: "18–25 min",
+  sourceTier: "PeerReviewed",
+  source: {
+    short: "Shojaie et al.\nJ Ultrason. 2023;23(94):e165–e169\nPMID: 37701054\nPMC: PMC10494808\nOpen access ✓",
+    full: "Shojaie P, Botchu R, Iyengar K, Drakonaki E, Sharma GK. Ultrasound-guided median nerve hydrodissection of pronator teres syndrome: a case report and a literature review. J Ultrason. 2023 Sep 11;23(94):e165–e169. doi: 10.15557/jou.2023.0026. PMID: 37701054; PMC: PMC10494808."
+  },
+  patient: {
+    ageSex: "23-year-old male",
+    chiefComplaint: "Chronic right forearm pain, tingling in radial-sided fingers, and progressive hand weakness",
+    duration: "5 years",
+    priorProviders: "Upper limb unit referral; previous intermittent physiotherapy",
+    priorDiagnoses: "No formal diagnosis documented prior to this presentation"
+  },
+  history: {
+    content: `<p>A 23-year-old right-handed professional badminton player was referred to an upper limb unit with a 5-year history of chronic right forearm pain and noticeable progressive weakness in hand function. He reported an inability to hold a bottle or pen between his thumb and index finger. Symptoms developed after prolonged periods of badminton — particularly during intensive smashing — and were also aggravated by lifting moderate to heavy weights and gymnastic activities.</p>
+<p>The patient reported a VAS score of 8/10 and had experienced two episodes of vasovagal syncope during play due to the severity of pain. He had been unable to play professional badminton for the previous 4 years. He had been prescribed paracetamol and NSAIDs with minimal benefit. A previous course of physiotherapy provided no significant relief.</p>`,
+    clinicalNote: "The 5-year duration, sport-specific aggravation with pronation, and progressive key-pinch weakness in a young overhead athlete with no nocturnal worsening should immediately flag the proximal forearm as the likely site of median nerve compression — not the carpal tunnel. The absence of nocturnal symptoms and the thenar eminence sensory involvement are the pivotal distinguishing features from CTS."
+  },
+  examination: {
+    autoROM: `<p>Elbow and wrist range of motion was full and pain-free in passive testing. Pain was specifically provoked by resisted forearm pronation with the elbow in flexion and by resisted flexion of the middle finger at the proximal interphalangeal joint. No restriction of shoulder or cervical ROM was documented.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Level</th><th>Movement</th><th>Finding</th></tr></thead>
+<tbody>
+<tr><td>C6</td><td>Wrist extension</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>C7</td><td>Wrist flexion / finger extension</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>C8</td><td>Finger flexion</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>T1</td><td>Finger abduction / adduction</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>Median (intrinsic)</td><td>Key pinch (FPL / FDP index)</td><td><span class="tt notable">Reduced — weak key pinch</span></td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Neurological",
+        items: [
+          {
+            id: "tinel_pt",
+            label: "Tinel's sign at proximal pronator teres",
+            result: `<span class="tt pos">Positive</span> — reproduction of forearm pain and paresthesia`,
+            documented: true,
+            rationale: "This is the most important localising sign in PTS. A positive Tinel's over the proximal PT edge confirms the site of entrapment. Crucially, Tinel's was negative at the wrist, directing clinical attention away from the carpal tunnel."
+          },
+          {
+            id: "tinel_wrist",
+            label: "Tinel's sign at wrist (carpal tunnel level)",
+            result: `<span class="tt neg">Negative</span>`,
+            documented: true,
+            rationale: "Negative Tinel's at the wrist is critical in differentiating PTS from carpal tunnel syndrome — the most common misdiagnosis. The site-specific contrast between positive proximal and negative distal Tinel's is diagnostically definitive in this case."
+          },
+          {
+            id: "phalen_pt",
+            label: "Phalen's test over pronator teres",
+            result: `<span class="tt notable">Equivocal</span>`,
+            documented: true,
+            rationale: "Phalen's applied over the PT rather than the wrist was equivocal. This test can be positive in ~50% of PTS cases. The equivocal finding does not exclude the diagnosis — it simply adds less discriminatory value here than the Tinel's."
+          },
+          {
+            id: "resisted_pronation",
+            label: "Resisted forearm pronation with elbow flexed",
+            result: `<span class="tt pos">Positive</span> — pain reproduced in anteromedial forearm`,
+            documented: true,
+            rationale: "Resisted pronation with elbow flexed compresses the median nerve between the two heads of the pronator teres — this is the pathognomonic provocation test for PTS. It is the primary clinical differentiator from anterior interosseous nerve syndrome (which causes no sensory symptoms)."
+          },
+          {
+            id: "ok_sign",
+            label: "\"OK\" sign test (FPL/FDP index integrity)",
+            result: `<span class="tt pos">Positive (deficient)</span> — visible weakness, could not form clean circle`,
+            documented: true,
+            rationale: "The OK sign tests the anterior interosseous nerve (AIN) branch of the median nerve. A positive (deficient) sign implies at minimum co-involvement of the AIN or profound proximal entrapment affecting AIN fibres. This finding added to the clinical complexity — a pure AIN palsy would be motor-only with no sensory symptoms."
+          },
+          {
+            id: "thenar_sensation",
+            label: "Sensory testing — thenar eminence (palmar cutaneous branch of median nerve)",
+            result: `Not formally documented in source as a discrete test`,
+            documented: false,
+            rationale: "Testing sensation over the thenar eminence via the palmar cutaneous branch is the single most important distinguishing feature between PTS and CTS: PTS affects this branch (it exits proximal to the carpal tunnel) while CTS spares it. Its absence from the documented examination represents a notable gap — confirming thenar hypaesthesia would have definitively excluded CTS."
+          },
+          {
+            id: "nocturnal_sx",
+            label: "Assessment for nocturnal symptom worsening",
+            result: `Not documented in source`,
+            documented: false,
+            rationale: "Nocturnal paraesthesia is a hallmark of CTS and is typically absent in PTS. Specifically asking whether symptoms wake the patient at night is a simple but powerful triage question. Its absence from documentation is a clinical gap — but the sport-specific, effort-related pattern of symptoms in this case strongly implies no nocturnal worsening."
+          }
+        ]
+      },
+      {
+        group: "Special Tests",
+        items: [
+          {
+            id: "resisted_fds_middle",
+            label: "Resisted FDS contraction — middle finger",
+            result: `<span class="tt pos">Positive</span> — pain provoked in proximal forearm`,
+            documented: true,
+            rationale: "Resisted contraction of the flexor digitorum superficialis at the middle finger creates a fibromuscular arch that can compress the median nerve as it passes beneath the FDS origin. This is the second key provocative manoeuvre for PTS after resisted pronation."
+          },
+          {
+            id: "durkan_carpal",
+            label: "Durkan's carpal compression test",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Direct carpal compression would have further excluded CTS. Given that Tinel's at the wrist was already negative, Durkan's test was not documented — its clinical value would have been confirmatory rather than diagnostic at this point."
+          },
+          {
+            id: "cervical_screen",
+            label: "Cervical spine neurological screen (C6/C7 dermatomes)",
+            result: `Not documented in source`,
+            documented: false,
+            rationale: "A cervical radiculopathy at C6 or C7 can produce forearm pain, weakness, and digital paraesthesia that closely mimic PTS. Cervical AROM, Spurling's test, and upper limb tension testing should always be included to exclude double crush or purely cervical origin before attributing symptoms to a peripheral entrapment."
+          }
+        ]
+      },
+      {
+        group: "Imaging / Investigations",
+        items: [
+          {
+            id: "uss_pt",
+            label: "Diagnostic ultrasound of median nerve at pronator teres",
+            result: `<span class="tt pos">Positive</span> — mild compression and narrowing of median nerve between PT heads; mildly increased CSA proximal to entrapment; positive sonographic Tinel's`,
+            documented: true,
+            rationale: "High-resolution ultrasound confirmed what clinical examination suspected: focal compression at the PT. The increased cross-sectional area proximal to the entrapment site is the key ultrasound sign of compressive neuropathy. Dynamic probe pressure (sonographic Tinel) reproducing symptoms is highly specific for this diagnosis."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination was structured around two primary goals: confirming the site of median nerve entrapment as proximal (pronator teres) rather than distal (carpal tunnel), and establishing the degree of functional motor deficit. Resisted pronation and Tinel's sign at the PT were the central clinical tests. The absence of a Tinel's response at the wrist, combined with the effort-specific sport pattern and key-pinch weakness, made CTS clinically untenable. Ultrasound was then used to confirm the diagnosis and guide treatment."
+  },
+  investigations: {
+    options: [
+      {
+        id: "uss_nerve",
+        label: "Diagnostic ultrasound — median nerve at pronator teres",
+        consequence: null,
+        ordered: true,
+        result: `<p>USS revealed mild compression and narrowing of the median nerve between the two heads of the pronator teres muscle. The cross-sectional area (CSA) of the nerve was mildly increased immediately proximal to the entrapment point. No increased vascularity on Doppler. Sonographic Tinel's sign was positive on compression of the nerve at and between the PT heads with a hockey stick probe.</p>`
+      },
+      {
+        id: "nerve_conduction",
+        label: "Nerve conduction study / EMG",
+        consequence: "NCS/EMG would be the next logical investigation if clinical and USS findings were equivocal. In PTS, NCS typically shows reduced conduction velocity and amplitude in the forearm segment with relatively preserved distal latencies — the opposite pattern from CTS. EMG may show denervation in pronator teres-innervated muscles. In this case, the combination of clinical provocation and USS findings was sufficient for diagnosis without NCS.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "mri_forearm",
+        label: "MRI of forearm",
+        consequence: "MRI can demonstrate nerve oedema, increased signal intensity of the median nerve, and muscle denervation changes in severe or chronic cases. It was not required here — USS provided dynamic real-time assessment that MRI cannot. MRI is generally reserved for cases where USS is inconclusive or surgical planning is being considered.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "cervical_mri",
+        label: "Cervical spine MRI",
+        consequence: "Would be warranted if cervical radiculopathy had not been clinically excluded. Given this patient's clear sport-specific mechanism, localised Tinel's at the PT, and confirmatory USS, cervical imaging was appropriately deferred. It would become indicated if the patient failed to improve after PT decompression treatment.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Pronator Teres Syndrome",
+        correct: true,
+        blurb: "PTS is a compressive neuropathy of the median nerve as it passes between the two heads of the pronator teres muscle in the proximal forearm. In this case, every element of the clinical picture converges on this diagnosis: the sport-specific mechanism, the positive provocative tests at the PT, the absent nocturnal symptoms, the thenar-distribution sensory loss, and the confirmatory ultrasound.",
+        supports: [
+          "5-year history of forearm pain aggravated specifically by pronation in badminton",
+          "Positive Tinel's at proximal PT, negative at wrist",
+          "Pain reproduced by resisted forearm pronation with elbow flexed",
+          "Pain reproduced by resisted FDS contraction at middle finger",
+          "Weakness of key pinch (FPL/FDP index) — median nerve motor deficit",
+          "USS: focal median nerve compression at PT with increased CSA proximally",
+          "No nocturnal symptoms (argues against CTS)"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Carpal Tunnel Syndrome",
+        correct: false,
+        blurb: "CTS is by far the most common median nerve entrapment and is the principal differential in any case of hand and finger symptoms. The two conditions share digital paraesthesia and hand weakness, making differentiation critical — and in this case several features cleanly exclude CTS.",
+        supports: [
+          "Sensory symptoms in radial-sided fingers (median nerve distribution)",
+          "Weakness of key pinch (both CTS and PTS can affect FPL)"
+        ],
+        arguesAgainst: [
+          "Negative Tinel's at the wrist and negative carpal compression — both hallmarks of CTS are absent",
+          "Absence of nocturnal worsening — a cardinal CTS feature",
+          "Pain in proximal forearm, not hand or wrist",
+          "Provocations are at the proximal forearm (pronation, FDS contraction) rather than at wrist loading",
+          "Thenar eminence numbness — the palmar cutaneous branch (which exits proximal to the carpal tunnel) is involved, a feature exclusive to proximal entrapment"
+        ]
+      },
+      {
+        label: "Anterior Interosseous Nerve Syndrome (AINS)",
+        correct: false,
+        blurb: "AINS is a pure motor branch entrapment arising from the median nerve just distal to the PT. It can occur in throwing athletes. The positive OK sign in this case initially raised this possibility, but the sensory symptoms definitively exclude a pure AIN palsy.",
+        supports: [
+          "Young throwing/racquet athlete with forearm pain",
+          "Positive OK sign suggesting FPL/FDP weakness",
+          "Activity-related onset"
+        ],
+        arguesAgainst: [
+          "AINS is a purely motor neuropathy — no sensory symptoms; this patient has tingling in radial-sided fingers",
+          "AINS does not cause Tinel's at the proximal PT",
+          "Pain in AINS is typically a vague ache only; this patient has severe reproduced pain at the PT",
+          "AINS is exceedingly rare (<1% of upper limb neuropathies)"
+        ]
+      },
+      {
+        label: "Cervical Radiculopathy (C6/C7)",
+        correct: false,
+        blurb: "C6 radiculopathy produces forearm pain, thumb and index finger symptoms, and key-pinch weakness — a presentation that can closely mimic PTS. This must always be systematically excluded before attributing symptoms to a peripheral entrapment.",
+        supports: [
+          "Radial-sided finger paresthesia (C6 distribution)",
+          "Forearm pain with activity",
+          "Key pinch weakness (C6 motor territory includes FPL)"
+        ],
+        arguesAgainst: [
+          "No cervical pain, neck stiffness, or restriction of cervical ROM",
+          "Positive Tinel's sign localised to the proximal forearm, not neurodynamic in character",
+          "Sport-specific aggravation is pronation-dependent, not neck-position-dependent",
+          "USS confirms focal median nerve pathology at PT — there is no proximal explanation",
+          "Symptoms strictly unilateral and sport-related without axial neck component"
+        ]
+      },
+      {
+        label: "Double Crush Syndrome (cervical + peripheral)",
+        correct: false,
+        blurb: "Double crush hypothesises that proximal axonal compromise lowers the threshold for distal entrapment. A player with repetitive overhead loading may have minor cervical changes that sensitise the median nerve to forearm entrapment. While theoretically plausible, this is a diagnosis of exclusion.",
+        supports: [
+          "Prolonged overhead sport activity could stress both cervical and forearm neural structures",
+          "Severity of symptoms and bilateral syncope episodes may suggest multifocal sensitisation"
+        ],
+        arguesAgainst: [
+          "No clinical evidence of cervical pathology documented",
+          "USS confirms single focal compression at PT — a single-level explanation suffices",
+          "Clinical response to localised PT decompression would argue against a meaningful proximal contribution"
+        ]
+      },
+      {
+        label: "Lateral Epicondylitis (Common Extensor Tendinopathy)",
+        correct: false,
+        blurb: "Lateral epicondylitis is the most common overuse injury in racquet sports and would be the first diagnosis considered in a badminton player presenting with forearm pain. However, the distribution and character of symptoms diverge significantly from what is seen here.",
+        supports: [
+          "Young male racquet sport athlete",
+          "Forearm pain aggravated by overhead sport activity"
+        ],
+        arguesAgainst: [
+          "Pain is anteromedial forearm, not lateral epicondyle",
+          "Sensory symptoms in thumb and index finger — not seen in lateral epicondylitis",
+          "Weakness of key pinch is a neurological finding, not a tendinopathic one",
+          "Resisted wrist extension (the primary provocative test for lateral epicondylitis) was not positive"
+        ]
+      },
+      {
+        label: "Radial Tunnel Syndrome (Posterior Interosseous Nerve Entrapment)",
+        correct: false,
+        blurb: "Radial tunnel syndrome involves compression of the deep branch of the radial nerve at the arcade of Frohse and is also seen in overhead athletes. The lateral forearm pain and activity-aggravated presentation can cause confusion with PTS.",
+        supports: [
+          "Young overhead athlete with forearm pain",
+          "Activity-related aggravation"
+        ],
+        arguesAgainst: [
+          "Radial tunnel syndrome affects the radial nerve — it does not cause median nerve distribution symptoms (thumb/index sensory loss, key-pinch weakness)",
+          "Pain is in the lateral or dorsal forearm in radial tunnel syndrome, not anteromedial",
+          "Provocations in this case (pronation, FDS) are median nerve specific"
+        ]
+      },
+      {
+        label: "Medial Epicondylitis (Golfer's Elbow)",
+        correct: false,
+        blurb: "Medial epicondylitis involves the common flexor-pronator origin and is seen in throwing and racquet sport athletes. The medial forearm pain and pronation aggravation can superficially resemble PTS.",
+        supports: [
+          "Badminton player with activity-related medial forearm pain",
+          "Pain aggravated by repetitive pronation and forearm loading"
+        ],
+        arguesAgainst: [
+          "Sensory symptoms (tingling in radial fingers, key-pinch weakness) are neurological — not features of tendinopathy",
+          "Tinel's sign is not positive in medial epicondylitis",
+          "The pain generator in medial epicondylitis is the common flexor origin at the epicondyle, not the proximal muscle belly of the PT",
+          "USS showed nerve pathology, not tendinopathic change"
+        ]
+      }
+    ],
+    explanation: `<p>The diagnostic pivot in this case was the contrast between a positive Tinel's at the proximal edge of the pronator teres and a negative Tinel's at the wrist. This single physical examination pairing — combined with sport-specific provocation (resisted pronation, elbow flexed) and the absence of nocturnal symptoms — was sufficient to localise the site of entrapment to the proximal forearm rather than the carpal tunnel. The involvement of the palmar cutaneous branch (thenar eminence sensation) further confirmed a proximal site, as this branch exits the median nerve before the carpal tunnel.</p>
+<p>The partial positive OK sign introduced the possibility of AINS, but this was excluded by the presence of sensory symptoms — AINS is a purely motor syndrome. Cervical radiculopathy was a necessary consideration given the C6 dermatomal overlap, but the lack of any cervical findings and the focal ultrasound confirmation at the PT made this clinically untenable.</p>
+<p>Ultrasound was the confirmatory investigation of choice — providing dynamic, real-time assessment of nerve morphology and the ability to reproduce symptoms via sonographic Tinel's sign. The combination of increased nerve CSA proximal to the entrapment and focal compression at the PT heads is the definitive ultrasound pattern for PTS.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "physio_conservative",
+        label: "Conservative physiotherapy — activity modification, nerve mobilisation, ergonomic advice",
+        selected: true,
+        explanation: `<strong>Appropriate — first-line.</strong> Conservative management including rest from provocative loading, activity modification, nerve gliding exercises, and ergonomic correction of badminton technique is always the first step. This patient had previously attempted physiotherapy without significant relief, which is why further options were explored.`
+      },
+      {
+        id: "us_hydrodissection",
+        label: "Ultrasound-guided median nerve hydrodissection (5% dextrose + lignocaine + corticosteroid)",
+        selected: true,
+        explanation: `<strong>Appropriate — escalated conservative option.</strong> Following failure of physiotherapy and analgesics, the patient underwent two sessions of ultrasound-guided hydrodissection four weeks apart. After the first session, VAS improved from 8/10 to 4/10 within two weeks. Three months post-procedure, VAS was 1/10 and he returned to professional badminton. Hydrodissection separates the nerve from surrounding adhesive tissue — the addition of a small corticosteroid volume addresses local inflammation.`
+      },
+      {
+        id: "surgical_release",
+        label: "Surgical or endoscopic pronator teres release",
+        selected: false,
+        explanation: `<strong>Not selected — premature at this stage.</strong> Surgery is reserved for PTS refractory to at least 6 weeks of conservative management and failed interventional options. With the patient's clinical improvement following two hydrodissection sessions, surgical release was neither required nor appropriate. It would remain an option only if symptoms recurred and failed to respond to further conservative care.`
+      },
+      {
+        id: "corticosteroid_injection",
+        label: "Blind corticosteroid injection at pronator teres",
+        selected: false,
+        explanation: `<strong>Not appropriate as standalone.</strong> Injecting corticosteroid around the median nerve without ultrasound guidance carries a significant risk of intraneural injection and nerve damage. Ultrasound-guided delivery (as was performed here) is a far safer and more precise approach. A blind injection is not recommended for peripheral nerve entrapment syndromes.`
+      },
+      {
+        id: "referral_only",
+        label: "Refer immediately for surgical opinion without conservative trial",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> The duration of 5 years does not mandate immediate surgery. A trial of conservative management and ultrasound-guided intervention is both clinically appropriate and evidence-supported before surgical referral. Even in longstanding cases, hydrodissection has shown over 70% excellent symptom relief at 3 months in PTS.`
+      }
+    ],
+    outcomeText: "Following two sessions of ultrasound-guided median nerve hydrodissection four weeks apart (using 8 mL 5% dextrose, 3 mL 2% lidocaine, and 1 mL triamcinolone), the patient's VAS dropped from 8/10 to 1/10 at the 3-month follow-up. Follow-up ultrasound showed normalisation of median nerve CSA and a negative sonographic Tinel's. The patient returned to full professional badminton and remained pain-free at 7 months post-procedure."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Pronator Teres Syndrome</strong><br>Median nerve entrapment in the proximal forearm — sport-related overuse neuropathy",
+    outcomes: [
+      { label: "Published Source", text: "Shojaie et al. J Ultrason. 2023;23(94):e165–e169" },
+      { label: "PMID / PMC", text: "PMID: 37701054 — PMC10494808 (open access)" },
+      { label: "Final Diagnosis", text: "Pronator Teres Syndrome (PTS) — median nerve entrapment between PT heads" },
+      { label: "Intervention", text: "Two sessions of ultrasound-guided median nerve hydrodissection (5% dextrose + lignocaine + triamcinolone); supervised rehabilitation post-procedure" }
+    ],
+    conditionSummary: {
+      overview: "Pronator teres syndrome is an entrapment neuropathy of the median nerve at the level of the proximal forearm, where the nerve passes between the two heads of the pronator teres muscle. It accounts for a minority of median nerve compression syndromes but is frequently misdiagnosed as carpal tunnel syndrome, with which it shares digital paraesthesia and key-pinch weakness. PTS is most commonly seen in individuals performing repetitive forearm pronation and is estimated to be misdiagnosed in 13–50% of cases.",
+      presentation: [
+        "Vague, chronic anteromedial forearm pain aggravated by repetitive pronation (e.g., racquet sports, manual work)",
+        "Numbness and tingling in the thumb, index, and middle fingers — with involvement of thenar eminence (palmar cutaneous nerve territory)",
+        "Positive Tinel's sign at the proximal PT, negative at the wrist; absent nocturnal symptom worsening",
+        "Weakness of key pinch (FPL and FDP to index finger) and sometimes the 'OK' sign in chronic or severe cases"
+      ],
+      pathology: [
+        "Compression of the median nerve between the humeral and ulnar heads of the pronator teres — hypertrophy of PT is the commonest cause in athletes",
+        "Can also occur at the fibrous arch of the flexor digitorum superficialis (FDS) or at the bicipital aponeurosis (lacertus fibrosus)",
+        "Repetitive pronation causes mechanical compression and intraneural oedema, increasing nerve cross-sectional area proximal to the entrapment",
+        "Unlike CTS, the palmar cutaneous branch (arising proximal to the carpal tunnel) is involved, confirming the proximal site of pathology"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "The single most important clinical distinction between PTS and CTS is the combination of thenar eminence (palmar cutaneous) sensory involvement AND absent nocturnal worsening. In this case, the negative Tinel's at the wrist confirmed that the carpal tunnel was not the culprit — a finding that should be tested first in any hand and forearm paraesthesia presentation."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "PTS is misdiagnosed as CTS in up to 50% of cases, leading to unnecessary carpal tunnel surgery that fails to relieve symptoms. The sport history — specifically aggravation with forceful pronation during badminton smashing — is the critical contextual clue that points proximally. A chiropractor asking 'what makes it worse?' before reaching for the Phalen's test would have identified this case far earlier."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "Two provocative manoeuvres are pathognomonic for PTS: resisted forearm pronation with the elbow flexed, and resisted middle finger FDS contraction. Performing both — not just one — greatly improves diagnostic sensitivity. The equivocal Phalen's over the PT in this case underscores that no single test is sufficient."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Chiropractors are well-positioned to diagnose PTS through careful history and physical examination but should be aware that ultrasound-guided hydrodissection (the definitive treatment in this case) sits outside the chiropractic scope in most jurisdictions. Once PTS is identified, conservative management (activity modification, nerve mobilisation, ergonomic correction) should be implemented first, with prompt referral to a sports medicine or interventional musculoskeletal physician if symptoms are refractory after 6–8 weeks."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "Plain X-ray has no role in diagnosing PTS. MRI can show nerve oedema but lacks the dynamic assessment capability of diagnostic ultrasound. High-resolution musculoskeletal ultrasound is the imaging modality of choice: it shows increased nerve CSA proximal to the entrapment, confirms focal compression at the PT heads, and enables the sonographic Tinel's test — all in real time. If ultrasound is not available, the clinical examination alone (Tinel's proximal, resisted pronation) should guide diagnosis."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Peripheral nerve entrapment, Forearm neuropathy, Pronator teres syndrome, Carpal tunnel syndrome differential, Sports-related overuse injury, Ultrasound diagnosis, Badminton injuries",
+    keyPoints: [
+      "Pronator teres syndrome and CTS share digital paraesthesia and key-pinch weakness but are distinguished by thenar eminence numbness, absent nocturnal symptoms, and a positive proximal Tinel's sign in PTS",
+      "Resisted forearm pronation (elbow flexed) and resisted middle finger FDS contraction are the two key provocative manoeuvres for PTS",
+      "Negative Tinel's at the wrist in a patient with median nerve distribution symptoms should immediately raise suspicion for a proximal entrapment site",
+      "PTS is misdiagnosed as CTS in 13–50% of cases; failure to respond to carpal tunnel treatment should prompt reassessment of the proximal forearm",
+      "Diagnostic ultrasound demonstrating increased nerve CSA proximal to the pronator teres, combined with a positive sonographic Tinel's, is the confirmatory investigation of choice"
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 033 — Tennis Leg (Gastrocnemius Partial Tear)
+// Source: Adhikari et al. SAGE Open Med Case Rep. 2024;12:2050313X241272690. PMID: 39430721
+// sourceTier: PeerReviewed
+// ─────────────────────────────────────────────
+{
+  id: "033",
+  title: "A 35-year-old male presents with sudden severe right calf pain the morning after a minor leg extension incident",
+  category: "Sports/Acute",
+  secondaryCategory: "Ankle/Foot",
+  difficulty: "Beginner",
+  estimatedTime: "12–18 min",
+  sourceTier: "PeerReviewed",
+  source: {
+    short: "Adhikari et al.\nSAGE Open Med Case Rep. 2024;12:2050313X241272690\nPMID: 39430721\nPMC: PMC11490942\nOpen access ✓",
+    full: "Adhikari S, Devkota S, Lamichhane S, Kunwar D, Bhalla T. Trivial incident leading to tennis leg managed conservatively: A case report. SAGE Open Med Case Rep. 2024 Oct 18;12:2050313X241272690. doi: 10.1177/2050313X241272690. PMID: 39430721; PMC: PMC11490942."
+  },
+  patient: {
+    ageSex: "35-year-old male",
+    chiefComplaint: "Sudden severe right calf pain with swelling and bruising",
+    duration: "1 day (worsened overnight after initial incident)",
+    priorProviders: null,
+    priorDiagnoses: null
+  },
+  history: {
+    content: `<p>A 35-year-old male presented after experiencing sudden severe calf pain following a minor leg extension injury. The previous day he had felt a brief, sharp pain in the calf during the incident, which worsened significantly overnight. On presentation he appeared mildly distressed with visible swelling and bruising in the right calf. His gait was antalgic.</p>
+<p>The injury mechanism involved a rapid change in foot position — from plantar flexion to dorsiflexion — while the knee was in extension, placing abrupt tension on the calf musculature. No audible 'pop' was described, and there was no preceding history of calf injury. The patient had no relevant medical comorbidities and was not taking anticoagulants.</p>`,
+    clinicalNote: "The 'trivial incident, severe consequence' pattern — brief sharp pain during minor movement, then significant overnight deterioration with bruising — is classic for a high-grade partial gastrocnemius tear. The key clinical priority at initial presentation is excluding deep vein thrombosis, which can present identically. Thompson's test is critical to exclude an Achilles tendon rupture."
+  },
+  examination: {
+    autoROM: `<p>Active and passive dorsiflexion of the ankle was restricted with pain reproduction. Pain was most prominent during knee extension combined with ankle dorsiflexion — recreating the injury mechanism. No restriction of knee flexion or hip ROM was documented.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Level</th><th>Movement</th><th>Finding</th></tr></thead>
+<tbody>
+<tr><td>L4</td><td>Ankle dorsiflexion</td><td><span class="tt normal">Normal power</span></td></tr>
+<tr><td>L5</td><td>Great toe extension</td><td><span class="tt normal">Normal power</span></td></tr>
+<tr><td>S1</td><td>Ankle plantarflexion / heel raise</td><td><span class="tt notable">Painful but present; not formally graded</span></td></tr>
+<tr><td colspan="2">Neurovascular exam</td><td><span class="tt normal">Normal — no sensory deficit, pulses intact</span></td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Special Tests",
+        items: [
+          {
+            id: "thompson_test",
+            label: "Thompson's test (Simmonds' test) for Achilles tendon rupture",
+            result: `<span class="tt neg">Negative</span> — plantarflexion present on calf squeeze`,
+            documented: true,
+            rationale: "Thompson's test is non-negotiable in any acute calf injury. A negative result was the single most important finding in this case: it confirmed that the Achilles tendon was intact, changing the working diagnosis from a potentially surgical complete tendon rupture to a muscular injury manageable conservatively."
+          },
+          {
+            id: "palpation_calf",
+            label: "Palpation — medial calf and myotendinous junction of gastrocnemius",
+            result: `<span class="tt pos">Positive</span> — tenderness and swelling over mid-calf at medial head of gastrocnemius`,
+            documented: true,
+            rationale: "Localised tenderness at the medial head of the gastrocnemius — particularly at or near the myotendinous junction — is the hallmark physical finding of tennis leg. This localisation distinguishes it from Achilles tendinopathy (more distal) or plantaris rupture (posteromedial proximal calf)."
+          },
+          {
+            id: "homan_sign",
+            label: "Homan's sign (passive ankle dorsiflexion for DVT)",
+            result: `Not formally documented in source`,
+            documented: false,
+            rationale: "Homan's sign (pain in calf on forced dorsiflexion) has very poor specificity for DVT but may be considered in an acute calf presentation with swelling and ecchymosis. DVT was clinically excluded by ultrasound in this case. Given the clinical importance of ruling out DVT, formal documentation of the DVT risk assessment would have been valuable."
+          },
+          {
+            id: "well_score",
+            label: "Wells score DVT pre-test probability assessment",
+            result: `Not documented in source`,
+            documented: false,
+            rationale: "A clinical Wells score for DVT probability should be calculated in any acute calf swelling with ecchymosis. Even if clinical probability is low, documenting this reasoning is best practice. Misidentifying a DVT as a muscle tear risks catastrophic pulmonary embolism — particularly in a sedentary or post-injury period."
+          },
+          {
+            id: "active_plantar",
+            label: "Active plantarflexion (heel raise) assessment",
+            result: `<span class="tt notable">Painful — restricted by pain, but possible</span>`,
+            documented: true,
+            rationale: "Preservation of some active plantarflexion is important as it indicates an incomplete (partial) tear. Complete loss of active plantarflexion in combination with a negative Thompson's could suggest a complete gastrocnemius rupture without Achilles involvement — which would typically require surgical review."
+          }
+        ]
+      },
+      {
+        group: "Imaging",
+        items: [
+          {
+            id: "uss_calf",
+            label: "Ultrasound — right posterior proximal calf",
+            result: `<span class="tt pos">Positive</span> — hypoechoic areas with disruption of fibres at medial gastrocnemius myotendinous junction; high-grade partial tear confirmed; no DVT`,
+            documented: true,
+            rationale: "Ultrasound is the first-line imaging for acute calf muscle injury. In this case it confirmed a high-grade partial tear of the medial gastrocnemius head at the myotendinous junction and — crucially — excluded DVT. The hypoechoic pattern with fibre disruption is the definitive sonographic signature of a partial muscle tear."
+          },
+          {
+            id: "mri_calf",
+            label: "MRI of calf",
+            consequence: "MRI was not ordered and was not required given that ultrasound provided a clear diagnosis. MRI would be indicated if ultrasound were inconclusive, if soleus or deeper muscle involvement were suspected, or if return-to-sport decisions required precise grading of injury extent.",
+            ordered: false,
+            result: null
+          }
+        ]
+      }
+    ],
+    contextText: "The examination was structured around two non-negotiable objectives: ruling out Achilles tendon rupture (Thompson's test) and excluding deep vein thrombosis (ultrasound). Once both were confirmed, the clinical picture — medial calf tenderness, restricted dorsiflexion, mechanism of forced dorsiflexion with knee extended, and ultrasound confirmation — allowed a definitive diagnosis of tennis leg to be made without further investigation."
+  },
+  investigations: {
+    options: [
+      {
+        id: "uss_calf_ordered",
+        label: "Musculoskeletal ultrasound — right calf",
+        consequence: null,
+        ordered: true,
+        result: `<p>Ultrasound at the right posterior proximal calf showed hypoechoic areas with disruption of fibres of the medial head of the gastrocnemius muscle near the myotendinous junction — consistent with a high-grade partial tear. The soleus and triceps surae intervening septum appeared normal. No evidence of deep vein thrombosis.</p>`
+      },
+      {
+        id: "doppler_dvt",
+        label: "Doppler ultrasound for deep vein thrombosis",
+        consequence: "DVT was excluded on the same ultrasound assessment. In any acute calf swelling with ecchymosis, formal DVT exclusion is mandatory — undiagnosed DVT managed as muscle tear can result in pulmonary embolism.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "mri_calf_option",
+        label: "MRI calf",
+        consequence: "MRI was not ordered as USS was diagnostic. It would be indicated for suspected soleus or posterior compartment involvement, surgical planning for complete tears, or cases where USS is inconclusive.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Tennis Leg — Medial Gastrocnemius Partial Tear",
+        correct: true,
+        blurb: "Tennis leg is the definitive diagnosis, confirmed by the mechanism (forced dorsiflexion + knee extension), the clinical examination findings, and the ultrasound appearance of fibre disruption at the medial gastrocnemius myotendinous junction.",
+        supports: [
+          "Sudden calf pain during forced change from plantarflexion to dorsiflexion with knee extended",
+          "Visible swelling and ecchymosis at the medial calf",
+          "Localised tenderness at the medial gastrocnemius belly",
+          "Active dorsiflexion restricted and painful",
+          "Negative Thompson's (intact Achilles tendon)",
+          "USS: hypoechoic fibre disruption at medial gastrocnemius myotendinous junction",
+          "No DVT on USS"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Achilles Tendon Complete Rupture",
+        correct: false,
+        blurb: "Achilles rupture produces a dramatic sudden onset calf/heel pain and must be the first diagnosis considered in any acute calf injury. The negative Thompson's test unequivocally excluded it in this case.",
+        supports: [
+          "Sudden severe calf pain with acute onset",
+          "Antalgic gait",
+          "History of minor leg extension injury"
+        ],
+        arguesAgainst: [
+          "Thompson's test was negative — plantarflexion was preserved on calf squeeze",
+          "No palpable gap or defect in the Achilles tendon",
+          "Tenderness was at the mid-calf medial belly, not at the Achilles insertion or distal tendon",
+          "USS demonstrated intact triceps surae with no Achilles disruption"
+        ]
+      },
+      {
+        label: "Deep Vein Thrombosis (DVT)",
+        correct: false,
+        blurb: "DVT is the single most dangerous differential in acute calf swelling — mistaking a DVT for a muscle tear can be fatal. The clinical presentation in this case — swelling, bruising, restricted dorsiflexion — overlaps significantly with DVT, making its exclusion non-negotiable.",
+        supports: [
+          "Acute calf swelling and ecchymosis",
+          "Reduced mobility after injury (post-injury immobility is a DVT risk factor)",
+          "Pain on ankle dorsiflexion (Homan's pattern)"
+        ],
+        arguesAgainst: [
+          "Ultrasound confirmed no DVT",
+          "The mechanism (acute leg extension injury) provides a clear biomechanical explanation for the muscle tear",
+          "Ecchymosis is typical of muscle haemorrhage, less characteristic of DVT",
+          "No risk factors for DVT documented"
+        ]
+      },
+      {
+        label: "Plantaris Tendon Rupture",
+        correct: false,
+        blurb: "Plantaris rupture produces a similar sudden posteromedial calf pain pattern and can occur with the same mechanism. Distinguishing it from gastrocnemius tear is primarily an imaging task.",
+        supports: [
+          "Sudden onset calf pain with the knee extended and ankle dorsiflexed",
+          "Posteromedial calf location"
+        ],
+        arguesAgainst: [
+          "USS showed disruption of the medial head of the gastrocnemius, not the plantaris tendon",
+          "The injury extent (high-grade partial tear with significant haematoma) is more consistent with gastrocnemius than the small plantaris",
+          "A pure plantaris rupture would typically produce less ecchymosis and swelling"
+        ]
+      },
+      {
+        label: "Achilles Tendon Partial Tear",
+        correct: false,
+        blurb: "Partial Achilles tears present with posterior calf and heel pain, are aggravated by activity, and may show fluid on ultrasound — producing some overlap with this case.",
+        supports: [
+          "Acute onset pain after activity",
+          "Restricted dorsiflexion"
+        ],
+        arguesAgainst: [
+          "Tenderness is at the medial mid-calf, not at the Achilles tendon itself",
+          "Thompson's test was negative",
+          "USS showed gastrocnemius fibre disruption with intact triceps surae — the Achilles was explicitly documented as normal"
+        ]
+      },
+      {
+        label: "Posterior Compartment Syndrome (Acute)",
+        correct: false,
+        blurb: "Acute compartment syndrome of the posterior calf is a surgical emergency that can follow significant muscle injury. The absence of neurovascular compromise makes this unlikely here.",
+        supports: [
+          "Acute calf swelling and haematoma following injury",
+          "Pain on passive stretch"
+        ],
+        arguesAgainst: [
+          "Neurovascular examination was normal — no paraesthesia, normal distal pulses",
+          "Compartment syndrome would typically show a tense, woody calf with pain disproportionate to examination",
+          "Conservative management was implemented without any escalating compartment signs"
+        ]
+      },
+      {
+        label: "Soleus Strain",
+        correct: false,
+        blurb: "The soleus is the deeper calf muscle and can be strained with similar mechanisms. It is distinguished from gastrocnemius injury by the location of tenderness and the USS findings.",
+        supports: [
+          "Forced dorsiflexion mechanism can strain soleus",
+          "Calf pain and restricted dorsiflexion"
+        ],
+        arguesAgainst: [
+          "USS showed the soleus to be normal",
+          "Tenderness was at the superficial medial calf, consistent with gastrocnemius belly",
+          "Gastrocnemius spans both the knee and ankle joints (making it more vulnerable during this biarticular loading mechanism) while the soleus crosses only the ankle"
+        ]
+      },
+      {
+        label: "Muscle Contusion (Direct Blow)",
+        correct: false,
+        blurb: "Muscle contusion from direct trauma produces immediate localised pain, swelling, and bruising that can mimic a partial tear. However, the mechanism in this case was intrinsic tensile failure, not an external blow.",
+        supports: [
+          "Swelling and ecchymosis at the calf"
+        ],
+        arguesAgainst: [
+          "No history of direct blow or external trauma to the calf",
+          "The mechanism — forced dorsiflexion with knee extension — is intrinsic, not extrinsic",
+          "USS showed fibre disruption at the myotendinous junction, not a contusion pattern"
+        ]
+      }
+    ],
+    explanation: `<p>The diagnostic approach in this case was a step-wise exclusion strategy built around two critical priorities. First, Thompson's test excluded Achilles tendon rupture — the single most important differential that would require immediate surgical assessment. Second, ultrasound excluded DVT, which can present identically to a calf muscle tear and carries potentially fatal consequences if missed.</p>
+<p>Once both critical diagnoses were excluded, the combination of mechanism (biarticular gastrocnemius loading in forced dorsiflexion + knee extension), localised medial calf tenderness at the myotendinous junction, restricted dorsiflexion, and ultrasound fibre disruption provided a definitive diagnosis of tennis leg.</p>
+<p>The importance of not attributing calf swelling and ecchymosis reflexively to a 'muscle strain' without DVT exclusion is the most transferable learning point from this case. Equally, clinicians should be aware that the gastrocnemius — spanning both the knee and ankle joints — is inherently more vulnerable to intrinsic tensile failure than single-joint muscles when both joints are simultaneously loaded.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "rice_physio",
+        label: "RICE protocol + analgesics + progressive physiotherapy",
+        selected: true,
+        explanation: `<strong>Appropriate — standard first-line management.</strong> The patient was managed with protection, rest, ice, compression, and elevation for the first 10 days. Analgesics were prescribed. At day 10, gentle active and passive range-of-motion exercises began, followed by isometric gastrocnemius strengthening at week 4, and progressive return to sport activities from month 1. At 4-month follow-up, near-normal function was restored without surgical intervention.`
+      },
+      {
+        id: "dvt_exclusion_pathway",
+        label: "Formal DVT exclusion prior to mobilisation",
+        selected: true,
+        explanation: `<strong>Appropriate and non-negotiable.</strong> Ultrasound exclusion of DVT was performed as part of the initial assessment. This step is mandatory in any acute calf swelling presentation — commencing weight-bearing and physiotherapy in the presence of an undiagnosed DVT carries a risk of pulmonary embolism.`
+      },
+      {
+        id: "immediate_surgery",
+        label: "Immediate surgical fasciotomy referral",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> Surgical fasciotomy is reserved for compartment syndrome — a diagnosis excluded by normal neurovascular examination in this case. Conservative management is the standard of care for partial gastrocnemius tears.`
+      },
+      {
+        id: "anticoagulation",
+        label: "Anticoagulation therapy",
+        selected: false,
+        explanation: `<strong>Not appropriate in this case.</strong> Anticoagulation was not indicated once DVT was excluded on USS. Initiating anticoagulation for a muscle haematoma without DVT would increase haematoma size and delay healing.`
+      },
+      {
+        id: "immediate_full_wtbearing",
+        label: "Immediate full weight-bearing without restriction",
+        selected: false,
+        explanation: `<strong>Not appropriate in the acute phase.</strong> Unrestricted full weight-bearing in the first 10 days risks expanding the haematoma, causing further fibre disruption, and delaying healing. A graduated return to weight-bearing, guided by pain, is the appropriate approach.`
+      }
+    ],
+    outcomeText: "The patient was managed conservatively with RICE, analgesics, and staged physiotherapy. Gentle range-of-motion exercises commenced at day 10. Isometric gastrocnemius strengthening was introduced at week 4. Progressive sport reintegration commenced from month 1. At the 4-month follow-up the patient had recovered and regained near-normal calf function."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Tennis Leg</strong><br>High-grade partial tear of the medial head of the gastrocnemius at the myotendinous junction",
+    outcomes: [
+      { label: "Published Source", text: "Adhikari et al. SAGE Open Med Case Rep. 2024;12:2050313X241272690" },
+      { label: "PMID / PMC", text: "PMID: 39430721 — PMC11490942 (open access)" },
+      { label: "Final Diagnosis", text: "Tennis leg — high-grade partial tear of medial gastrocnemius head at myotendinous junction" },
+      { label: "Intervention", text: "Conservative: RICE + analgesics + graduated physiotherapy over 4 months; no surgical intervention" }
+    ],
+    conditionSummary: {
+      overview: "Tennis leg is an acute calf injury resulting from sudden tensile failure of the medial head of the gastrocnemius muscle — typically at or near the myotendinous junction. First described in 1883, it occurs when the biarticular gastrocnemius is subjected to abrupt simultaneous loading across both the knee and ankle joints. It is most common in recreational athletes aged 30–50 years performing activities involving rapid changes in foot position such as tennis, running, or stair descent.",
+      presentation: [
+        "Sudden onset of severe posteromedial calf pain during activity — often described as feeling like a blow or kick to the calf",
+        "Rapid development of ecchymosis and swelling in the medial calf, typically appearing within hours of injury",
+        "Antalgic gait with restricted ankle dorsiflexion; Thompson's test negative (distinguishing from Achilles tendon rupture)",
+        "Localised tenderness at the medial gastrocnemius belly, classically at the myotendinous junction; ultrasound shows hypoechoic fibre disruption"
+      ],
+      pathology: [
+        "The gastrocnemius crosses two joints (knee and ankle), making it uniquely vulnerable to tensile failure when both are simultaneously loaded — knee extended + ankle dorsiflexed",
+        "The medial head is more commonly affected than the lateral due to its greater fibre length and differential loading mechanics",
+        "High proportion of type II fast-twitch fibres in the gastrocnemius makes it prone to eccentric overload failure in explosive movements",
+        "Risk factors include muscle fatigue, inadequate warm-up, poor biomechanics, and advancing age (reduced musculotendinous unit compliance)"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Thompson's test must be performed in every acute calf injury before any other assessment. A negative result rules out Achilles tendon rupture — the most important diagnosis to exclude because it changes the management pathway from conservative to surgical. This single test takes 10 seconds and should be reflexive."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "Calf swelling and ecchymosis after a minor leg extension incident can be dismissed as a routine 'muscle strain' without appropriate DVT exclusion. DVT presents identically — undiagnosed DVT mobilised as a muscle tear carries a risk of pulmonary embolism. DVT exclusion must precede the initiation of physiotherapy for any acute calf swelling."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "The classic mechanism of tennis leg — forced dorsiflexion with the knee simultaneously extended — loads the gastrocnemius at its maximum excursion across both joints it crosses. Activities where this combination occurs (e.g., lunging forward in tennis or badminton, descending stairs quickly, sprinting) are specifically high-risk. Eliciting this mechanism from the history is more diagnostically efficient than any single physical test."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Chiropractors should be confident managing partial calf muscle tears conservatively with RICE, graduated return-to-activity guidance, and progressive rehabilitation exercise prescription. Indications for referral include: inability to exclude DVT (refer for Doppler ultrasound), concern for compartment syndrome (urgent surgical referral), complete tear in a high-performance athlete (orthopaedic review), or failure to progress through rehabilitation at expected milestones."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "Musculoskeletal ultrasound is both the diagnostic imaging modality of choice for tennis leg AND the tool for DVT exclusion — potentially resolving two clinical questions in a single appointment. Plain X-ray has no role. MRI adds detail about depth of muscle involvement but is unnecessary for partial gastrocnemius tears where USS is diagnostic and management is conservative."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Acute muscle injury, Tennis leg, Gastrocnemius tear, DVT differential, Thompson's test, Sports/acute management, Calf injury, Return to sport",
+    keyPoints: [
+      "Thompson's test must be performed in every acute calf injury to exclude Achilles tendon rupture before any other assessment",
+      "Deep vein thrombosis can present identically to a calf muscle tear — formal DVT exclusion with Doppler ultrasound is mandatory before commencing physiotherapy for any acute calf swelling",
+      "Tennis leg occurs through biarticular loading failure: the gastrocnemius is maximally stressed when the knee is extended and the ankle is simultaneously dorsiflexed",
+      "The medial head of the gastrocnemius is most commonly affected; tears typically occur at or near the myotendinous junction",
+      "Conservative management with RICE and staged rehabilitation is the standard of care for partial tears, with full recovery expected at 4–6 months"
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 034 — Thoracolumbar (Maigne) Syndrome
+// Source: DiMond ME. J Chiropr Med. 2017;16(4):331–339. PMID: 29276466
+// sourceTier: PeerReviewed
+// ─────────────────────────────────────────────
+{
+  id: "034",
+  title: "A 33-year-old woman presents with 3 weeks of constant low back pain and hip pain that has not improved with rest",
+  category: "Thoracic",
+  secondaryCategory: "Lumbar",
+  difficulty: "Intermediate",
+  estimatedTime: "18–25 min",
+  sourceTier: "PeerReviewed",
+  source: {
+    short: "DiMond ME.\nJ Chiropr Med. 2017;16(4):331–339\nPMID: 29276466\nPMC: PMC5731837\nOpen access ✓",
+    full: "DiMond ME. Rehabilitative Principles in the Management of Thoracolumbar Syndrome: A Case Report. J Chiropr Med. 2017 Dec;16(4):331–339. doi: 10.1016/j.jcm.2017.10.003. PMID: 29276466; PMC: PMC5731837."
+  },
+  patient: {
+    ageSex: "33-year-old female",
+    chiefComplaint: "Constant low back pain with referred pain into the hip and buttock region",
+    duration: "3 weeks",
+    priorProviders: null,
+    priorDiagnoses: null
+  },
+  history: {
+    content: `<p>A 33-year-old woman presented to a chiropractic clinic with a 3-week history of back pain. The pain was rated at 6/10 constant, increasing to 10/10 with provocation. Her STarT Back Screening Tool score was 6/10 total (2-point psychosocial subscale), indicating a medium risk category. Her Oswestry Disability Index score was 62%, indicating severe disability.</p>
+<p>Pain was localised to the lower back, with referral into the hip and gluteal region. There was no history of significant trauma or inciting event. No leg pain, bowel or bladder symptoms, bilateral lower limb weakness, or saddle anaesthesia were reported. Nerve tension tests were positive and local tenderness was present in a pattern consistent with Maigne's thoracolumbar syndrome — pointing to the thoracolumbar junction (T10–L2) as the primary pain generator.</p>`,
+    clinicalNote: "The trap in this case is the referred pain pattern: thoracolumbar junction pathology characteristically refers pain into the lower back, posterior iliac crest, groin, and greater trochanteric region via the lateral and medial cluneal nerves — mimicking lumbar disc or SIJ pathology. The chiropractor who assumes the lumbar spine is the origin without examining the T10–L2 junction will misdiagnose and mistreat this case."
+  },
+  examination: {
+    autoROM: `<p>Lumbar ROM was documented as restricted and painful in extension and lateral flexion. Specific measurements were not documented in the source. Thoracolumbar junction mobility (T10–L2) was assessed by motion palpation and local provocation testing — hypomobility and focal tenderness were found at this level consistent with a zygapophyseal joint dysfunction.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Level</th><th>Movement</th><th>Finding</th></tr></thead>
+<tbody>
+<tr><td>L1–L2</td><td>Hip flexion</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>L3–L4</td><td>Knee extension</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>L4</td><td>Ankle dorsiflexion</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>L5</td><td>Great toe extension</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>S1</td><td>Ankle plantarflexion</td><td><span class="tt normal">Normal</span></td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Neurological",
+        items: [
+          {
+            id: "nerve_tension_tests",
+            label: "Lower limb nerve tension tests (SLR/FABER pattern)",
+            result: `<span class="tt pos">Positive</span> — nerve tension signs present in the pattern described by Maigne`,
+            documented: true,
+            rationale: "Positive nerve tension signs in the Maigne pattern refer to sensitisation of the lateral and medial cluneal nerve branches that originate from the T10–L2 posterior rami, not the classic lumbar plexus. This is the critical distinguishing finding: tension signs that do not map to a conventional lumbar radicular territory should prompt examination of the thoracolumbar junction."
+          },
+          {
+            id: "slr_formal",
+            label: "Formal straight leg raise (SLR) for L4–S1 nerve root tension",
+            result: `Not formally documented as a discrete finding in source`,
+            documented: false,
+            rationale: "A formal SLR (assessing L4–S1 nerve roots) should always be documented in a low back pain presentation with referral symptoms to distinguish lumbar disc radiculopathy from referred thoracolumbar pain. If SLR were negative but Maigne nerve tension signs were positive, it would strongly support a thoracolumbar origin over a lumbar disc."
+          }
+        ]
+      },
+      {
+        group: "Palpation",
+        items: [
+          {
+            id: "t10_l2_palpation",
+            label: "Segmental palpation and provocation — T10 to L2",
+            result: `<span class="tt pos">Positive</span> — local tenderness at the thoracolumbar junction consistent with Maigne syndrome`,
+            documented: true,
+            rationale: "Palpation of the thoracolumbar junction is the cornerstone of diagnosing Maigne syndrome and is frequently omitted in routine low back pain examination. Segmental tenderness at T10–L2 — particularly the zygapophyseal joints and posterior rami — combined with referred pain into the iliac crest, buttock, or groin region, is the diagnostic hallmark."
+          },
+          {
+            id: "cluneal_nerve_palpation",
+            label: "Palpation over iliac crest — cluneal nerve branch tenderness",
+            result: `Not separately documented in source`,
+            documented: false,
+            rationale: "The lateral cluneal nerves (arising from L1–L3 posterior rami) cross the iliac crest and can be directly palpated in Maigne syndrome. Tenderness at the crossing point of the iliac crest, reproducing the patient's referred buttock/hip pain, is a specific clinical sign described by Maigne. Formally documenting this would have strengthened the localisation."
+          },
+          {
+            id: "lumbar_provocation",
+            label: "Lumbar segmental provocation (L3–S1)",
+            result: `Not documented as separately positive in source`,
+            documented: false,
+            rationale: "Documenting negative provocation at the lumbar levels (L3–S1) alongside positive findings at T10–L2 would strengthen the diagnosis by demonstrating that the pain generator is at the thoracolumbar junction rather than the typical lumbar levels. This level-specific contrast is essential in differentiating Maigne syndrome from lumbar facet syndrome."
+          }
+        ]
+      },
+      {
+        group: "Outcome Measures",
+        items: [
+          {
+            id: "oswestry",
+            label: "Oswestry Disability Index",
+            result: `<span class="tt notable">62% — severe disability at baseline</span>`,
+            documented: true,
+            rationale: "The Oswestry provides an objective, patient-reported functional baseline. A score of 62% at presentation indicating severe disability, compared to 8% at discharge, demonstrates remarkable improvement over just 3 treatment sessions. This change was driven by targeting the correct pain generator — the thoracolumbar junction."
+          },
+          {
+            id: "start_back",
+            label: "STarT Back Screening Tool",
+            result: `<span class="tt notable">6/10 total (2-point psychosocial subscale) — medium risk</span>`,
+            documented: true,
+            rationale: "The STarT Back tool stratifies LBP patients into low, medium, or high risk for chronicity based on psychosocial factors. This patient scored medium risk, which guided the clinician toward a rehabilitation-focused approach with exercise audits rather than a purely passive treatment model."
+          },
+          {
+            id: "static_endurance",
+            label: "Static back endurance test (Biering-Sørensen) and side bridge",
+            result: `<span class="tt notable">Static back: 52 sec; Side bridge: 43 sec — documented as baselines for future care</span>`,
+            documented: true,
+            rationale: "Endurance tests were used to establish rehabilitation baselines rather than as diagnostic tools. These are valuable for monitoring treatment response and directing exercise prescription. Their inclusion demonstrates the rehabilitative philosophy of this case — identifying what the patient cannot yet do and progressively addressing the deficit."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination was structured around Maigne's diagnostic framework for thoracolumbar syndrome: identifying local segmental tenderness at the T10–L2 junction, mapping the referred pain to the cluneal nerve territory (lower back, iliac crest, hip, groin), and confirming nerve tension in the pattern characteristic of posterior rami branch sensitisation. The use of validated outcome measures (Oswestry, STarT Back) alongside functional endurance testing reflects a rehabilitation-oriented clinical model that tracked both diagnosis and treatment response."
+  },
+  investigations: {
+    options: [
+      {
+        id: "plain_xray_lx",
+        label: "Lumbar spine plain X-ray",
+        consequence: "X-ray was not ordered and was appropriate to defer in this 3-week LBP presentation in a 33-year-old without red flags. If the patient failed to respond to treatment or if red flag features emerged, lumbar and thoracolumbar junction X-ray would be indicated to assess for structural pathology.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "mri_lumbar",
+        label: "Lumbar MRI",
+        consequence: "MRI was not indicated at initial presentation. In a young woman without neurological deficit, bowel/bladder symptoms, or constitutional features, early MRI would be premature. MRI would become mandatory if symptoms persisted beyond 6 weeks of appropriate treatment, neurological signs developed, or red flag features emerged.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "diagnostic_block",
+        label: "Diagnostic medial branch block at thoracolumbar junction",
+        consequence: "An anaesthetic medial branch block at T10–L2 would provide definitive confirmation of the thoracolumbar junction as the pain generator. While not performed in this case (the clinical response to spinal manipulation was used as the diagnostic test), diagnostic blocks are the gold standard for confirming a zygapophyseal joint source in refractory or recurrent cases.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Thoracolumbar Syndrome (Maigne Syndrome)",
+        correct: true,
+        blurb: "Maigne syndrome describes pain arising from minor intervertebral dysfunction of the thoracolumbar junction (T10–L2), with referral along the posterior rami into the lower back, iliac crest, gluteal region, and groin. In this case, the pattern of referred pain, positive nerve tension in the Maigne distribution, and focal T10–L2 tenderness with rapid resolution following junction-targeted manipulation confirm the diagnosis.",
+        supports: [
+          "Referred pain to lower back, hip, and gluteal region — classic cluneal nerve distribution",
+          "Positive nerve tension signs in the Maigne pattern",
+          "Focal tenderness at T10–L2 on segmental palpation",
+          "No lumbar neurological deficit",
+          "Rapid and dramatic improvement with 3 sessions of thoracolumbar junction manipulation and rehabilitation",
+          "Oswestry dropped from 62% to 8% with junction-targeted treatment"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Lumbar Facet Syndrome (Zygapophyseal Joint Arthralgia)",
+        correct: false,
+        blurb: "Lumbar facet syndrome causes referred lower back, buttock, and posterior thigh pain that closely resembles Maigne syndrome at triage. The key differentiator is the location of the primary pain generator — lumbar (L3–L5) versus thoracolumbar junction (T10–L2).",
+        supports: [
+          "Constant low back and hip referral",
+          "Restricted lumbar extension",
+          "Positive nerve tension signs"
+        ],
+        arguesAgainst: [
+          "No provocation documented at L3–L5 segmental levels",
+          "The nerve tension signs were described as being in the 'Maigne pattern' — not the typical L4/L5/S1 radicular pattern",
+          "Rapid resolution with thoracolumbar junction-targeted treatment would not be expected if lumbar facets were the primary pain generator"
+        ]
+      },
+      {
+        label: "Lumbar Disc Herniation with Referred Pain",
+        correct: false,
+        blurb: "A lumbar disc herniation at L3/4 can produce lower back and anterior thigh/hip referred pain via L3 nerve root. The presentation has some overlap, but neurological findings and the specific location of tenderness distinguish the two.",
+        supports: [
+          "Low back pain with hip referral pattern",
+          "Positive nerve tension tests",
+          "Restricted lumbar movement"
+        ],
+        arguesAgainst: [
+          "No myotomal weakness, no dermatomal sensory deficit",
+          "No bowel or bladder symptoms",
+          "Nerve tension signs mapped to a Maigne distribution, not a classic L3/4/5 or S1 radicular pattern",
+          "Focal tenderness was at T10–L2, not at the lumbar disc levels"
+        ]
+      },
+      {
+        label: "Sacroiliac Joint Dysfunction",
+        correct: false,
+        blurb: "SIJ dysfunction causes posterior iliac, buttock, and groin pain that can be clinically indistinguishable from Maigne syndrome at triage.",
+        supports: [
+          "Posterior iliac and gluteal referral",
+          "Female in the fourth decade (a common SIJ demographic)",
+          "No frank neurological deficit"
+        ],
+        arguesAgainst: [
+          "Primary tenderness was at the thoracolumbar junction, not the posterior SIJ",
+          "No positive SIJ provocation tests documented (FABER, thigh thrust, POSH test)",
+          "Resolution with thoracolumbar manipulation without SIJ-specific treatment"
+        ]
+      },
+      {
+        label: "Hip Joint Pathology (Early FAI or Labral Tear)",
+        correct: false,
+        blurb: "Hip pathology — including early FAI or labral tears — frequently presents as groin and anterior hip pain in active young adults and can refer to the lower back.",
+        supports: [
+          "Hip and buttock pain in a young female",
+          "3-week duration without clear trauma"
+        ],
+        arguesAgainst: [
+          "No hip joint provocation testing documented as positive",
+          "No restriction of hip ROM",
+          "The pain pattern (iliac crest, posterior gluteal) is not typical of hip joint pathology"
+        ]
+      },
+      {
+        label: "Greater Trochanteric Pain Syndrome",
+        correct: false,
+        blurb: "GTPS (gluteal tendinopathy) produces lateral hip and buttock pain in women in the 4th–6th decades and can be referred from the greater trochanteric region toward the lower back.",
+        supports: [
+          "Female in the 4th decade with buttock and hip pain",
+          "Pain without clear trauma"
+        ],
+        arguesAgainst: [
+          "No documented tenderness at the greater trochanter",
+          "Positive nerve tension signs are not a feature of GTPS",
+          "Primary tenderness at T10–L2 rather than lateral hip"
+        ]
+      },
+      {
+        label: "Gluteal Muscle Trigger Points / Myofascial Pain Syndrome",
+        correct: false,
+        blurb: "Myofascial trigger points in the gluteus medius, piriformis, or quadratus lumborum can produce diffuse referred pain into the buttock and lower back that resembles Maigne syndrome clinically.",
+        supports: [
+          "Diffuse lower back and buttock pain without clear radicular pattern",
+          "Moderate disability with relatively intact neurology"
+        ],
+        arguesAgainst: [
+          "Nerve tension signs are not a feature of myofascial trigger points",
+          "Specific segmental tenderness at T10–L2 points to a zygapophyseal source, not diffuse myofascial",
+          "Rapid improvement with spinal manipulation"
+        ]
+      },
+      {
+        label: "Non-Specific Low Back Pain",
+        correct: false,
+        blurb: "Non-specific LBP is the commonest diagnosis applied to acute low back pain when a specific pain generator cannot be identified. In this case, a specific generator was identifiable — making this diagnosis a failure of examination rather than a valid clinical conclusion.",
+        supports: [
+          "3-week acute LBP presentation without neurological signs",
+          "No history of significant trauma"
+        ],
+        arguesAgainst: [
+          "A specific examination pattern (Maigne nerve tension, T10–L2 segmental tenderness) was clearly documented",
+          "Applying a 'non-specific' label would bypass the thoracolumbar junction assessment and likely result in treatment failure",
+          "The dramatic improvement with junction-targeted manipulation demonstrates that a specific pain generator was present and addressable"
+        ]
+      }
+    ],
+    explanation: `<p>Maigne syndrome is one of the most underdiagnosed causes of apparent low back pain in clinical practice, because the pain generator — the thoracolumbar junction (T10–L2) — is spatially remote from the location of perceived pain (lower back, iliac crest, hip, groin). The posterior rami branches at T10–L2 (cluneal nerves) supply the skin and deep tissues of the iliac crest and gluteal region, meaning that minor intervertebral dysfunction at this level produces referred pain that mimics lumbar, SIJ, or hip pathology.</p>
+<p>The diagnostic pivot is the recognition of Maigne's specific examination pattern: nerve tension signs that do not follow a conventional lumbar radicular distribution, combined with focal tenderness at the thoracolumbar junction on segmental palpation. Without examining T10–L2, this diagnosis will always be missed.</p>
+<p>The speed of the clinical response — dramatic improvement in Oswestry from 62% to 8% over just 3 treatment sessions targeting the junction — validates the diagnosis retrospectively. It also underlines the principle that in musculoskeletal diagnosis, a targeted therapeutic trial can serve as a diagnostic confirmation when imaging is non-contributory.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "t10_l2_manipulation",
+        label: "Thoracolumbar junction spinal manipulation (T10–L2 targeted)",
+        selected: true,
+        explanation: `<strong>Appropriate — primary intervention.</strong> Junction-targeted spinal manipulation was the cornerstone of treatment in this case. Applying manipulation specifically to the T10–L2 levels rather than reflexively treating the lumbar spine is the key technical distinction of Maigne syndrome management. The patient received 3 treatment sessions with progressive response at each visit.`
+      },
+      {
+        id: "progressive_exercise",
+        label: "Progressive rehabilitation exercise programme — back endurance, core stabilisation",
+        selected: true,
+        explanation: `<strong>Appropriate — essential adjunct.</strong> Exercise audits were performed at each treatment session to assess functional progress and guide rehabilitation exercise prescription. The programme targeted back extensor endurance and lateral trunk stability. This reflects the rehabilitative philosophy of building durable function, not just resolving acute pain.`
+      },
+      {
+        id: "lumbar_smt_only",
+        label: "Lumbar spine manipulation only (without assessing thoracolumbar junction)",
+        selected: false,
+        explanation: `<strong>Not appropriate — would miss the diagnosis.</strong> Limiting manipulation to the lumbar spine (L3–S1) without examining and treating the thoracolumbar junction is the commonest management error in Maigne syndrome. The pain generator is at T10–L2 — lumbar-only treatment would produce incomplete or no response.`
+      },
+      {
+        id: "lumbar_mri_first",
+        label: "Immediate MRI lumbar spine before starting treatment",
+        selected: false,
+        explanation: `<strong>Not appropriate at this stage.</strong> In a 33-year-old with 3 weeks of LBP and no red flags or neurological deficit, immediate MRI is premature and not aligned with evidence-based imaging guidelines. A diagnostic trial of manipulation and rehabilitation is both clinically appropriate and evidence-supported.`
+      },
+      {
+        id: "nsaid_only",
+        label: "NSAIDs and watchful waiting only",
+        selected: false,
+        explanation: `<strong>Insufficient as sole management.</strong> While analgesics may provide short-term symptom relief, they do not address the segmental dysfunction at the thoracolumbar junction that is generating the pain. Active targeted intervention is indicated.`
+      }
+    ],
+    outcomeText: "The patient received 3 treatment sessions, each incorporating thoracolumbar junction manipulation and progressive exercise audits. At discharge: Oswestry 8% (from 62%), pain 1/10 at rest 10% of the time (from 6/10 constant), STarT Back 1 point (from 6). The patient was discharged with a home exercise programme and self-management advice."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Thoracolumbar Syndrome (Maigne Syndrome)</strong><br>Posterior rami referred pain from T10–L2 junction dysfunction mimicking lower back and hip pathology",
+    outcomes: [
+      { label: "Published Source", text: "DiMond ME. J Chiropr Med. 2017;16(4):331–339" },
+      { label: "PMID / PMC", text: "PMID: 29276466 — PMC5731837 (open access)" },
+      { label: "Final Diagnosis", text: "Thoracolumbar syndrome (Maigne syndrome) — T10–L2 zygapophyseal joint dysfunction with cluneal nerve referral" },
+      { label: "Intervention", text: "3 sessions of thoracolumbar junction spinal manipulation + progressive rehabilitation exercises; home programme at discharge" }
+    ],
+    conditionSummary: {
+      overview: "Thoracolumbar syndrome (Maigne syndrome) is a clinical entity in which minor intervertebral dysfunction at the T10–L2 junction produces referred pain into the lower back, iliac crest, groin, and greater trochanteric region via the lateral and medial cluneal nerve branches. It is a frequently missed diagnosis because the pain is perceived in the lumbar or hip region rather than at the thoracic spine, leading to exhaustive — and often fruitless — lumbar and SIJ investigations.",
+      presentation: [
+        "Lower back, posterior iliac crest, and gluteal pain without a clearly traumatic onset — often indistinguishable from lumbar disc or SIJ pathology on history alone",
+        "Focal segmental tenderness at T10–L2 on palpation, often with restricted motion at the thoracolumbar junction",
+        "Nerve tension signs in the cluneal nerve distribution rather than the conventional L4/L5/S1 radicular pattern",
+        "Pain may include groin or anterior hip referral via the medial cluneal branches, further confusing the clinical picture"
+      ],
+      pathology: [
+        "Minor zygapophyseal joint dysfunction or posterior rami irritation at T10–L2 — the transition zone between the relatively rigid thoracic spine and the mobile lumbar spine",
+        "Lateral cluneal nerves (arising from L1–L3) cross the posterior iliac crest and supply the lateral buttock — entrapment here can reproduce or amplify the referred pain",
+        "Medial cluneal nerves (S1–S3) supply the medial gluteal region and may also be secondarily sensitised",
+        "The thoracolumbar junction is biomechanically stressed during trunk rotation and lateral flexion — repetitive loading in this plane may predispose to junction dysfunction"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Examination of the thoracolumbar junction (T10–L2) must be included in every low back pain assessment — not just the lumbar spine. Maigne syndrome is systematically missed when practitioners only examine from L3 downward. Palpating for segmental tenderness at T10–L2 takes 30 seconds and could prevent months of diagnostic delay."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "The principal pitfall in Maigne syndrome is attributing the referred pain to a lumbar or SIJ source and pursuing escalating lumbar imaging that will return normal or non-specific findings. The thoracolumbar junction is the most likely pain generator when LBP and hip pain coexist without a neurological deficit and without clear lumbar provocation findings."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "The test-treat-retest exercise audit approach used in this case is a powerful diagnostic and rehabilitation tool: performing a functional test (endurance, stair climb) before and immediately after manipulation demonstrates — in real time — whether the treatment is addressing the correct pain generator. Immediate improvement after thoracolumbar junction manipulation validates the junction as the source."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Maigne syndrome is ideally suited to chiropractic management: the primary intervention is targeted spinal manipulation of the thoracolumbar junction, which falls squarely within the chiropractic scope of practice. The rapid and durable improvement achieved in 3 sessions in this case reflects both diagnostic precision (treating the right level) and treatment specificity (junction-targeted HVLA). Rehabilitation exercise should always be prescribed alongside manipulation to prevent recurrence."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "Lumbar MRI in Maigne syndrome is typically normal or shows only incidental age-related changes — it does not image the thoracolumbar junction pain generator. Imaging findings at L4/5 or L5/S1 may co-exist with Maigne syndrome and can create a false sense of diagnosis, leading the clinician to treat the disc rather than the junction. Clinical examination findings should always take diagnostic priority over incidental imaging."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Thoracolumbar junction, Maigne syndrome, Referred low back pain, Cluneal nerves, Spinal manipulation, Lumbar differential diagnosis, Outcome measures, Rehabilitation exercise",
+    keyPoints: [
+      "Maigne syndrome arises from T10–L2 zygapophyseal joint dysfunction and refers pain into the lower back, iliac crest, buttock, and groin via the cluneal nerves — mimicking lumbar disc, SIJ, or hip pathology",
+      "The thoracolumbar junction must be examined in every low back pain assessment; the diagnosis is systematically missed when only the lumbar spine is assessed",
+      "Positive nerve tension signs in the cluneal distribution (not the conventional lumbar radicular pattern) combined with focal T10–L2 tenderness are the diagnostic hallmarks",
+      "Junction-targeted spinal manipulation (not lumbar-only manipulation) is the appropriate primary treatment; Oswestry improved from 62% to 8% in three sessions in this case",
+      "Validated outcome measures (Oswestry, STarT Back) and functional endurance testing should be used to guide treatment and track progress objectively"
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 035 — Discogenic Low Back Pain (Modic I Changes)
+// Source: Billham et al. Cureus. 2024;16(10):e72225. PMID: 39583519
+// sourceTier: PeerReviewed
+// ─────────────────────────────────────────────
+{
+  id: "035",
+  title: "A 29-year-old male presents with chronic low back pain that has not responded to steroid injections",
+  category: "Lumbar",
+  secondaryCategory: null,
+  difficulty: "Intermediate",
+  estimatedTime: "18–25 min",
+  sourceTier: "PeerReviewed",
+  source: {
+    short: "Billham et al.\nCureus. 2024;16(10):e72225\nPMID: 39583519\nPMC: PMC11584172\nOpen access ✓",
+    full: "Billham JF, Shi D, Evans Roland E, Gornet MF, Brinkman KK, Schranck FW, Cox JM, Kettner NW. Intervertebral Disc Magnetic Resonance Spectroscopy Changes After Spinal Manipulative Therapy for Lumbar Discogenic Pain. Cureus. 2024 Oct 23;16(10):e72225. doi: 10.7759/cureus.72225. PMID: 39583519; PMC: PMC11584172."
+  },
+  patient: {
+    ageSex: "29-year-old male",
+    chiefComplaint: "Chronic low back pain without leg pain",
+    duration: "Chronic (exact onset not specified; unresponsive to previous steroid injections)",
+    priorProviders: "Pain management clinic (epidural steroid injections)",
+    priorDiagnoses: "Non-specific low back pain"
+  },
+  history: {
+    content: `<p>A 29-year-old male presented to a chiropractic teaching clinic with uncomplicated chronic low back pain (LBP). The presentation was non-specific — axial low back pain without radiation into the lower limbs, no neurological symptoms, and no constitutional features. The clinician's working hypothesis was that the intervertebral disc (IVD) was the likely pain generator.</p>
+<p>The patient had previously undergone epidural steroid injections at a pain management clinic without meaningful improvement. No prior imaging was referenced at presentation. There were no bowel or bladder symptoms, no bilateral lower limb weakness, no saddle anaesthesia, and no red flag features. The LBP was chronic, functionally limiting, and had not responded to the previous passive interventional approach.</p>`,
+    clinicalNote: "The critical clinical question in uncomplicated chronic LBP is identifying the tissue pain generator. When epidural steroids have failed and the patient is under 30, the disc is the most likely source — particularly if Modic changes are present on MRI. Modic type I changes (vertebral endplate inflammation/oedema) correlate highly with discogenic pain and are often the imaging clue that elevates 'non-specific' LBP to a specific disc diagnosis."
+  },
+  examination: {
+    autoROM: `<p>Specific lumbar ROM measurements were not documented in the source. The clinical examination findings were consistent with an IVD as the pain generator. Lumbar provocation testing directed clinical suspicion to the IVD rather than the zygapophyseal joints or SIJ.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Level</th><th>Movement</th><th>Finding</th></tr></thead>
+<tbody>
+<tr><td>L2–L3</td><td>Hip flexion</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>L3–L4</td><td>Knee extension</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>L4</td><td>Ankle dorsiflexion</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>L5</td><td>Great toe extension</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>S1</td><td>Ankle plantarflexion</td><td><span class="tt normal">Normal</span></td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Lumbar Provocation Testing",
+        items: [
+          {
+            id: "centralisation",
+            label: "Centralisation / peripheralisation response (McKenzie assessment)",
+            result: `Not documented in source`,
+            documented: false,
+            rationale: "McKenzie assessment testing for centralisation is the most clinically valuable examination finding in identifying a disc as the pain generator. Centralisation of pain with repeated lumbar extension is highly specific for discogenic pain and guides mechanical diagnosis and therapy. Its absence from documentation is a notable gap in this case."
+          },
+          {
+            id: "slr_provocation",
+            label: "Straight leg raise (SLR)",
+            result: `Not formally documented as positive or negative in source`,
+            documented: false,
+            rationale: "SLR should be documented in all chronic LBP cases to screen for nerve root tension. A negative SLR in the context of axial-only pain would support discogenic pain rather than radiculopathy — helping confirm that the disc is causing local pain without nerve root compression."
+          },
+          {
+            id: "disc_provocation",
+            label: "Lumbar extension provocation / prone press-up test",
+            result: `Not documented in source`,
+            documented: false,
+            rationale: "Prone press-up or passive lumbar extension provocation can worsen or improve discogenic pain depending on the direction-specific response of the disc. In Modic type I discogenic pain, extension may increase pain by loading the inflamed endplates. Documenting the directional preference would have supported the Cox flexion-distraction approach."
+          },
+          {
+            id: "disc_palpation",
+            label: "Interspinous / discogenic palpation provocation",
+            result: `Not documented in source`,
+            documented: false,
+            rationale: "Direct interspinous percussion or spring testing can provoke discogenic pain by transmitting force through the disc. A concordant pain response at a specific lumbar level would narrow the pain generator to that segment — complementing the MRI Modic changes in pointing to the specific problematic disc."
+          }
+        ]
+      },
+      {
+        group: "Neurological Screen",
+        items: [
+          {
+            id: "lower_limb_neuro",
+            label: "Lower limb neurological examination (reflexes, sensation, power)",
+            result: `<span class="tt normal">Normal</span> — no neurological deficit documented`,
+            documented: true,
+            rationale: "Intact neurological examination confirms that the disc is causing local discogenic pain rather than compressive radiculopathy. This supports conservative management (manipulation, rehabilitation) rather than surgical decompression, and confirms the 'uncomplicated' LBP classification."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination in this case identified an intact neurological system with no radicular features, consistent with isolated axial discogenic pain. The clinical reasoning was built around the combination of a specific imaging pattern (Modic type I changes on MRI) and a failed interventional treatment (epidural steroids), leading the clinician to pursue a mechanically-directed chiropractic approach."
+  },
+  investigations: {
+    options: [
+      {
+        id: "conventional_mri",
+        label: "Conventional lumbar MRI",
+        consequence: null,
+        ordered: true,
+        result: `<p>Conventional MRI demonstrated intervertebral disc degeneration with <strong>Modic type I changes</strong> (low T1 / high T2 signal at the vertebral endplates) — findings consistent with active endplate inflammation and a diagnosis of discogenic low back pain. No significant disc herniation, stenosis, or neural compromise was identified.</p>`
+      },
+      {
+        id: "mrs",
+        label: "Magnetic resonance spectroscopy (MRS) of intervertebral disc",
+        consequence: null,
+        ordered: true,
+        result: `<p>Pre-treatment MRS demonstrated altered spectral features of the IVD biochemistry — increased biochemical pain markers and decreased glycoprotein biosynthesis — confirming an active discogenic pain source. Post-treatment MRS (following 16 Cox flexion-distraction sessions) showed improved spectral features: decreased biochemical pain markers and increased glycoprotein biosynthesis, suggesting improved IVD structural integrity.</p>`
+      },
+      {
+        id: "discography",
+        label: "Provocative discography",
+        consequence: "Discography (injection of contrast into the disc nucleus with pain provocation assessment) is the gold standard for confirming a specific disc as the pain generator before surgical intervention. In this case, MRI Modic I changes and MRS biochemical findings were used as non-invasive surrogates. Discography would be considered if surgical intervention were being planned.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "ct_scan",
+        label: "CT scan lumbar spine",
+        consequence: "CT was not indicated in this case. While CT provides superior bony detail, MRI is the imaging modality of choice for disc pathology and endplate assessment. CT adds radiation exposure without diagnostic benefit over MRI in uncomplicated discogenic LBP.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Discogenic Low Back Pain with Modic Type I Changes",
+        correct: true,
+        blurb: "Discogenic LBP arises from annular disruption, endplate injury, or disc degeneration with nociceptive sensitisation. Modic type I changes on MRI represent active endplate oedema and inflammation — the subtype most strongly associated with symptomatic discogenic pain. The combination of axial-only chronic LBP in a young male, failed epidural steroids, and confirmed Modic I changes with MRS biochemical abnormalities establishes this diagnosis precisely.",
+        supports: [
+          "29-year-old male with chronic axial LBP — discogenic pain is the most common pain generator at this age",
+          "MRI: IVD degeneration with Modic type I endplate changes — highest correlation with discogenic pain of all Modic subtypes",
+          "MRS: biochemical abnormalities confirming active disc as pain source",
+          "Failed epidural steroids — consistent with a discogenic (not inflammatory/nerve root) pain source",
+          "No neurological deficit — supports isolated discogenic (not compressive) pain",
+          "Improvement in pain markers and glycoprotein biosynthesis on post-treatment MRS"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Lumbar Facet Syndrome",
+        correct: false,
+        blurb: "Lumbar facet arthropathy is a common cause of axial low back pain in young adults and can be clinically indistinguishable from discogenic pain on history and examination alone.",
+        supports: [
+          "Axial low back pain without radiculopathy",
+          "Chronic course without clear precipitant"
+        ],
+        arguesAgainst: [
+          "MRI demonstrates Modic type I disc changes — a disc-specific endplate finding not associated with facet arthropathy",
+          "Facet arthropathy in a 29-year-old would be unusual without prior trauma or inflammatory spondyloarthropathy",
+          "Response to Cox flexion-distraction (which loads the disc in decompression) supports a discogenic rather than facetogenic source"
+        ]
+      },
+      {
+        label: "Sacroiliac Joint Dysfunction",
+        correct: false,
+        blurb: "SIJ dysfunction is a common cause of unilateral lower back and posterior pelvic pain in young adults.",
+        supports: [
+          "Chronic axial LBP without neurological features",
+          "Young adult male"
+        ],
+        arguesAgainst: [
+          "MRI findings are at the IVD level — not the sacroiliac joint",
+          "No documented SIJ provocation tests positive",
+          "SIJ pain typically has a unilateral posterior pelvic focus below L5; the presentation here is described as axial LBP"
+        ]
+      },
+      {
+        label: "Lumbar Radiculopathy (Disc Herniation with Nerve Root Compression)",
+        correct: false,
+        blurb: "Lumbar disc herniation with radiculopathy is the most common diagnosis applied to lumbar disc pathology. However, this case has axial LBP only, without leg pain.",
+        supports: [
+          "Lumbar disc degeneration on MRI",
+          "Chronic LBP in a young male"
+        ],
+        arguesAgainst: [
+          "No leg pain, no radicular symptoms",
+          "Normal neurological examination throughout",
+          "MRI does not show significant disc herniation with neural compromise"
+        ]
+      },
+      {
+        label: "Ankylosing Spondylitis / Axial Spondyloarthropathy",
+        correct: false,
+        blurb: "Ankylosing spondylitis is an important differential in any young male with chronic axial LBP — it typically presents before age 40, is worse at night and in the morning, and improves with activity.",
+        supports: [
+          "Young male under 40 with chronic axial LBP",
+          "Unresponsive to some treatments"
+        ],
+        arguesAgainst: [
+          "No inflammatory back pain features (morning stiffness >1 hour, improvement with activity, nocturnal pain) documented",
+          "MRI shows Modic type I IVD changes — not the sacroiliac joint erosion characteristic of axial SpA",
+          "Response to mechanical manipulation rather than anti-inflammatory therapy argues against inflammatory pathology"
+        ]
+      },
+      {
+        label: "Piriformis Syndrome / Deep Gluteal Pain",
+        correct: false,
+        blurb: "Piriformis syndrome and deep gluteal pain can present as axial back and buttock pain in young adults.",
+        supports: [
+          "Chronic LBP without neurological deficit in a young adult"
+        ],
+        arguesAgainst: [
+          "No gluteal or posterior hip localisation described",
+          "MRI confirms lumbar disc pathology as the anatomical finding",
+          "No piriformis or SIJ provocation signs documented"
+        ]
+      },
+      {
+        label: "Non-Specific Low Back Pain",
+        correct: false,
+        blurb: "Non-specific LBP is assigned when no identifiable pain generator is found. In this case, specific findings (Modic type I MRI changes, MRS biochemical abnormalities) elevate the diagnosis beyond non-specific.",
+        supports: [
+          "Uncomplicated axial LBP presentation",
+          "Prior providers had not identified a specific diagnosis"
+        ],
+        arguesAgainst: [
+          "Modic type I changes on MRI are a specific, identifiable endplate pathology with strong correlation with discogenic pain",
+          "MRS biochemical abnormalities confirm the disc as a biochemically active pain source",
+          "Applying 'non-specific' would overlook the disc diagnosis and potentially lead to continued inappropriate treatment"
+        ]
+      },
+      {
+        label: "Spondylolysis / Pars Defect",
+        correct: false,
+        blurb: "Spondylolysis (pars interarticularis stress fracture) presents as chronic axial LBP in young adults, particularly with hyperextension sport history.",
+        supports: [
+          "Young male with chronic axial LBP",
+          "Age-appropriate demographic"
+        ],
+        arguesAgainst: [
+          "No hyperextension sport history documented",
+          "MRI shows disc degeneration and Modic endplate changes — not a pars defect or spondylolisthesis",
+          "No extension-specific aggravation pattern described"
+        ]
+      }
+    ],
+    explanation: `<p>The diagnostic progression in this case illustrates how 'uncomplicated non-specific LBP' in a young adult can be specifically diagnosed when clinical reasoning drives appropriate imaging. The absence of neurological signs, the failed response to epidural steroids, and the age of the patient all pointed to the disc as the most likely pain generator — but it was the MRI Modic type I findings that converted the clinical hypothesis into a specific diagnosis.</p>
+<p>Modic type I changes represent active vertebral endplate oedema and inflammation in continuity with a degenerating disc. Of the three Modic types, type I has the strongest association with symptomatic discogenic pain. The MRS findings added a biochemical layer to the structural diagnosis — confirming altered disc chemistry consistent with active nociception.</p>
+<p>The response to Cox flexion-distraction SMT — both clinically and biochemically (improved MRS spectral features post-treatment) — validates the disc as the target and the treatment approach as mechanically appropriate for this pathology.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "cox_smt",
+        label: "Cox flexion-distraction spinal manipulative therapy (16 sessions)",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Cox flexion-distraction is a specifically designed chiropractic technique applying traction and flexion to the lumbar disc — mechanically decompressing the nucleus pulposus and reducing intradiscal pressure. 16 sessions were delivered at a chiropractic teaching clinic. Post-treatment MRS demonstrated improved IVD biochemistry, providing objective evidence of a disc-level physiological response to the treatment.`
+      },
+      {
+        id: "continued_steroids",
+        label: "Repeat epidural steroid injections",
+        selected: false,
+        explanation: `<strong>Not appropriate as the primary strategy.</strong> The patient had already failed epidural steroids without meaningful improvement. Repeating the same interventional approach that has already failed is not clinically justified. Epidural steroids reduce perineural inflammation but do not address the mechanical and biochemical disc degeneration driving Modic type I discogenic pain.`
+      },
+      {
+        id: "surgical_fusion",
+        label: "Lumbar spinal fusion",
+        selected: false,
+        explanation: `<strong>Premature and not appropriate.</strong> Surgery should only be considered for discogenic LBP after exhaustive conservative management. In a 29-year-old with axial-only pain and intact neurology, the threshold for fusion is high, and the long-term consequences (adjacent segment disease, loss of mobility) are significant. Conservative management should always be exhausted first.`
+      },
+      {
+        id: "exercise_alone",
+        label: "Exercise rehabilitation alone without SMT",
+        selected: false,
+        explanation: `<strong>Insufficient as sole treatment.</strong> Exercise rehabilitation is an important component of discogenic LBP management but its effectiveness is enhanced when combined with directed spinal manipulation. In a patient unresponsive to prior interventional treatment, exercise alone is unlikely to produce the mechanically-mediated disc response demonstrated in this case.`
+      },
+      {
+        id: "reassurance_only",
+        label: "Reassurance and lifestyle advice only",
+        selected: false,
+        explanation: `<strong>Insufficient for chronic, functionally limiting discogenic pain.</strong> While reassurance and activity encouragement are appropriate adjuncts, they are inadequate as the primary management strategy for a patient with specific disc pathology and a history of failed prior treatment. Active directed intervention is indicated.`
+      }
+    ],
+    outcomeText: "The patient underwent 16 sessions of Cox flexion-distraction SMT at a chiropractic teaching clinic. Post-treatment MRS showed improved IVD spectral features including decreased biochemical pain markers and increased glycoprotein biosynthesis — implying that chiropractic SMT may improve IVD structural integrity and alter pain biochemistry."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Discogenic Low Back Pain</strong><br>Modic Type I vertebral endplate changes with confirmed intervertebral disc biochemical dysfunction",
+    outcomes: [
+      { label: "Published Source", text: "Billham et al. Cureus. 2024;16(10):e72225" },
+      { label: "PMID / PMC", text: "PMID: 39583519 — PMC11584172 (open access)" },
+      { label: "Final Diagnosis", text: "Discogenic low back pain — IVD degeneration with Modic type I endplate changes confirmed by MRI and MRS" },
+      { label: "Intervention", text: "16 sessions Cox flexion-distraction SMT; MRS before and after treatment demonstrated IVD biochemical improvement" }
+    ],
+    conditionSummary: {
+      overview: "Discogenic low back pain (DLBP) arises from nociceptive sensitisation within the intervertebral disc — typically from annular disruption, endplate injury, or inflammatory disc degeneration. Modic type I vertebral endplate changes (low T1/high T2 signal on MRI) represent the subtype most strongly associated with active discogenic pain and reflect ongoing endplate inflammation and oedema at the disc–vertebra interface. DLBP is a leading cause of chronic axial LBP in adults under 50 and frequently goes unidentified because the term 'non-specific LBP' is applied without disc-specific imaging.",
+      presentation: [
+        "Chronic axial low back pain without radiculopathy — typically worse with sustained postures (prolonged sitting or standing) and loading",
+        "Most common in adults aged 20–50; male predominance in younger populations",
+        "MRI showing Modic type I endplate changes adjacent to degenerated IVDs is the key imaging correlate",
+        "Often refractory to epidural steroid injections (which target perineural inflammation), helping to distinguish discogenic from radicular pain"
+      ],
+      pathology: [
+        "Annular fissures allow inflammatory mediators (substance P, PGE2, IL-1β, TNF-α) to sensitise nociceptive nerve fibres that grow into the inner annulus with degeneration",
+        "Modic type I changes represent vertebral endplate oedema and vascular granulation tissue — a site of active inflammatory nociception",
+        "Disc degeneration reduces nucleus pulposus hydration and proteoglycan content, increasing mechanical stress and nociceptive loading on the annulus and endplates",
+        "Cox flexion-distraction SMT is hypothesised to reduce intradiscal pressure, improve IVD nutrition, and alter disc biochemistry — consistent with the MRS findings in this case"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Chronic axial LBP in a young adult who has failed injections should prompt consideration of discogenic pain rather than continued labelling as 'non-specific.' Modic type I changes on MRI are not incidental — they represent active endplate inflammation and are the strongest MRI predictor of discogenic pain. A chiropractor who identifies these on a patient's existing MRI is better positioned to direct targeted treatment."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "The pitfall is accepting 'non-specific LBP' as a terminal diagnosis without scrutinising the MRI for Modic changes. Type I Modic changes at one or two levels in a young patient with chronic axial LBP are not incidental — they are a specific structural correlate of the pain. Failing to recognise this leads to ineffective generalised treatment rather than targeted disc-level intervention."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "Cox flexion-distraction SMT is the technique most specifically designed for lumbar disc decompression in chiropractic practice. Unlike HVLA manipulation, it applies sustained traction in flexion, reducing intradiscal pressure and promoting fluid exchange within the disc nucleus. For discogenic pain with Modic I changes — particularly in patients who have failed passive injections — it is the most mechanically appropriate chiropractic intervention."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Discogenic LBP with Modic type I changes falls squarely within the chiropractic scope of practice. Chiropractors should be able to identify Modic changes on patient-provided MRI images, explain their clinical significance, and apply directed SMT techniques (particularly Cox flexion-distraction) rather than generic lumbar manipulation. Referral to a spine surgeon should be considered only after 6+ months of failure to respond to well-directed conservative care."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "Conventional MRI identifies Modic changes and disc degeneration but cannot quantify the biochemical activity of the pain source. MRS provides biochemical specificity that conventional MRI lacks, but remains a research tool rather than a routine clinical investigation. In practice, Modic type I changes on conventional MRI in the context of the clinical presentation are sufficient to guide diagnosis without MRS."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Discogenic low back pain, Modic changes, Intervertebral disc, Cox flexion-distraction, Lumbar MRI, Vertebral endplate pathology, Chronic LBP, Spinal manipulation",
+    keyPoints: [
+      "Modic type I changes (low T1/high T2 vertebral endplate signal) are the MRI finding most strongly associated with active discogenic pain and should not be dismissed as incidental",
+      "Discogenic LBP typically presents as chronic axial LBP without radiculopathy in adults under 50, often refractory to epidural steroid injections",
+      "Cox flexion-distraction SMT applies spinal decompression in flexion to reduce intradiscal pressure — it is mechanically distinct from HVLA manipulation and specifically suited to discogenic pathology",
+      "MRS can quantify IVD biochemical changes before and after treatment, providing objective evidence of a disc-level response to chiropractic care",
+      "The distinction between 'non-specific LBP' and discogenic pain with Modic changes requires MRI review — chiropractors should be able to identify Modic changes on patient-provided imaging and adjust their clinical reasoning accordingly"
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 036 — Piriformis Syndrome / Ischiofemoral Impingement
+// Source: Newman & Zhou. Cureus. 2021;13(9):e18023. PMID: 34667694
+// sourceTier: PeerReviewed
+// ─────────────────────────────────────────────
+{
+  id: "036",
+  title: "A 24-year-old female athlete presents with 3 years of left posterolateral hip and buttock pain following a long hike",
+  category: "Hip",
+  secondaryCategory: "Sacral/SIJ",
+  difficulty: "Intermediate",
+  estimatedTime: "20–28 min",
+  sourceTier: "PeerReviewed",
+  source: {
+    short: "Newman & Zhou.\nCureus. 2021;13(9):e18023\nPMID: 34667694\nPMC: PMC8520408\nOpen access ✓",
+    full: "Newman DP, Zhou L. Piriformis Syndrome Masquerading as an Ischiofemoral Impingement. Cureus. 2021 Sep 16;13(9):e18023. doi: 10.7759/cureus.18023. PMID: 34667694; PMC: PMC8520408."
+  },
+  patient: {
+    ageSex: "24-year-old female",
+    chiefComplaint: "Chronic left posterolateral gluteal pain with radiation to the ankle, intermittent left leg numbness",
+    duration: "3 years",
+    priorProviders: "Orthopaedics (CT-guided injection), physiotherapy (3 separate courses over 12 months), Interdisciplinary Pain Management Clinic",
+    priorDiagnoses: "Initially sciatica; revised to ischiofemoral impingement (IFI) based on MRI findings"
+  },
+  history: {
+    content: `<p>A 24-year-old athletic female presented to the Interdisciplinary Pain Management Clinic (IPMC) with a 3-year history of left posterolateral hip and gluteal pain. The initial onset followed a 16-mile hike carrying a 45-pound pack. The pain was sharp, radiating from the left posterolateral gluteal region down to her ankle, with intermittent numbness in the same distribution. At initial presentation to a physician, pain was rated 4–8/10 on VAS.</p>
+<p>A lumbar series X-ray showed mild degenerative osteoarthritis at L3–L5 facets; SIJ and hip joint spaces were well maintained. She was initially diagnosed with left-sided sciatica. MRI subsequently demonstrated left ischiofemoral impingement (IFI) with quadratus femoris edema and a narrowed ischiofemoral distance (10.02 mm; normal &gt;15 mm). A CT-guided bilateral quadratus femoris steroid injection reduced pain by only 1 point (5/10 → 4/10). Three courses of physiotherapy over 12 months — targeting IFI and aquatics — produced no sustained improvement. A bone scan excluded stress fractures.</p>
+<p>At IPMC physical therapy evaluation, the patient's goal was to run 2 miles under 24 minutes without pain — an occupational fitness requirement. Deep pressure to the piriformis muscle belly reproduced her pain more significantly than pressure to the quadratus femoris, shifting clinical suspicion toward piriformis syndrome as the primary or co-dominant diagnosis.</p>`,
+    clinicalNote: "The diagnostic pivot in this case is the contrast between the MRI findings (IFI with quadratus femoris oedema) and the clinical response: a diagnostic injection into the quadratus femoris produced minimal relief, and three courses of IFI-targeted physiotherapy failed. When an anatomically-supported diagnosis does not respond to appropriately targeted treatment, the diagnosis must be reconsidered — not the treatment escalated."
+  },
+  examination: {
+    autoROM: `<p>Lumbar ROM was full and pain-free. Hip ROM was within normal limits for all motions on passive goniometric assessment. Internal rotation was at the lower limit of normal at 25°. No restriction of flexion, extension, abduction, or external rotation was documented. The combination of full hip ROM with painful reproduced symptoms on provocation testing is characteristic of extra-articular hip pathology (IFI, piriformis).</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Level</th><th>Movement</th><th>Finding</th></tr></thead>
+<tbody>
+<tr><td>L1–L2</td><td>Hip flexion</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>L3–L4</td><td>Knee extension</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>L4</td><td>Ankle dorsiflexion</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>L5</td><td>Great toe extension</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td>S1</td><td>Ankle plantarflexion</td><td><span class="tt normal">Normal</span></td></tr>
+<tr><td colspan="2">Dermatomal sensation L1–S1</td><td><span class="tt normal">No deficits</span></td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "SIJ Provocation & Motion Palpation",
+        items: [
+          {
+            id: "forward_flexion",
+            label: "Forward Flexion Test (standing)",
+            result: `<span class="tt pos">Positive</span> — left PSIS moved first (left-sided SIJ dysfunction indicated)`,
+            documented: true,
+            rationale: "The Forward Flexion Test identifies SIJ dysfunction by detecting which PSIS elevates first during forward flexion. Left PSIS moving first indicates left-sided SIJ restriction — potentially contributing to altered pelvic mechanics and increased piriformis loading. Sensitivity 17%, specificity 79% — useful as part of a cluster."
+          },
+          {
+            id: "gillets",
+            label: "Gillet's Test",
+            result: `<span class="tt pos">Positive</span> — left PSIS failed to move inferiorly on left hip flexion`,
+            documented: true,
+            rationale: "Gillet's test assesses sacral nutation on hip flexion. Failure of the PSIS to descend on the ipsilateral side indicates restricted SIJ movement. Sensitivity 8%, specificity 93% — low sensitivity but highly specific when positive."
+          },
+          {
+            id: "thigh_thrust",
+            label: "Thigh Thrust Test",
+            result: `<span class="tt pos">Positive</span> — left SIJ pain with additional groin referral`,
+            documented: true,
+            rationale: "Thigh Thrust applies an axial shear force through the hip and SIJ and is the single best SIJ provocation test (sensitivity 88%). Positive reproduction with additional left groin referral suggests the SIJ was contributing to the patient's symptom complex. After SIJ manipulation at visit 1, this test became negative."
+          },
+          {
+            id: "supine_long_sit",
+            label: "Supine-to-Long Sit Test",
+            result: `<span class="tt pos">Positive</span> — left medial malleolus shortened on sitting up`,
+            documented: true,
+            rationale: "This test assesses apparent leg length discrepancy related to SIJ dysfunction. The left medial malleolus shortening on sitting is consistent with a left posterior ilium dysfunction. Used as part of a motion palpation cluster with Gillet's and Forward Flexion."
+          }
+        ]
+      },
+      {
+        group: "Piriformis & IFI Assessment",
+        items: [
+          {
+            id: "active_piriformis",
+            label: "Active Piriformis Test",
+            result: `<span class="tt pos">Positive bilaterally</span> — muscle tightness and reproduction of left gluteal pain`,
+            documented: true,
+            rationale: "The Active Piriformis Test detects piriformis tightness and potential sciatic nerve entrapment. Bilateral positivity suggests constitutional piriformis tightness in this patient, with the left side being symptomatic. Sensitivity 78%, specificity 80% — the most valuable piriformis-specific clinical test. Positive at every assessment visit throughout treatment."
+          },
+          {
+            id: "palpation_piriformis",
+            label: "Deep palpation — piriformis muscle belly vs. quadratus femoris",
+            result: `<span class="tt pos">Piriformis: greater pain reproduction than quadratus femoris</span>`,
+            documented: true,
+            rationale: "This was the diagnostic pivot of the entire case. Despite MRI evidence of quadratus femoris oedema (supporting IFI), deep palpation revealed that the piriformis produced the patient's concordant pain more reliably than the quadratus femoris. This clinical finding was the primary reason for reconsidering the IFI diagnosis."
+          },
+          {
+            id: "lsw_test",
+            label: "Long Stride Walking (LSW) Test for IFI",
+            result: `<span class="tt pos">Initially positive</span> at visit 1; <span class="tt neg">Negative</span> at visit 2 and beyond`,
+            documented: true,
+            rationale: "The LSW test reproduces IFI by extending the hip in long-stride walking, narrowing the ischiofemoral space. Initial positivity was consistent with the MRI IFI diagnosis. The fact that it became negative after one session of SIJ manipulation + piriformis IASTM — without any specific IFI-directed intervention — strongly suggests the IFI MRI finding was either incidental or secondary."
+          },
+          {
+            id: "ifi_test",
+            label: "Ischiofemoral Impingement Test (passive adduction in sidelying)",
+            result: `<span class="tt pos">Initially positive</span> at visit 1; <span class="tt neg">Negative</span> at visit 2 and beyond`,
+            documented: true,
+            rationale: "The IFI test passively adducts the hip, mechanically compressing the quadratus femoris in the ischiofemoral space. Like the LSW test, it normalised after one session of treatment directed at the SIJ and piriformis — supporting the hypothesis that the IFI findings were incidental or secondary."
+          }
+        ]
+      },
+      {
+        group: "Lumbar Spine Provocation",
+        items: [
+          {
+            id: "lumbar_palpation",
+            label: "Lumbar spinous process provocation (L1–L5)",
+            result: `<span class="tt neg">Negative</span> — no pain or segmental hypomobility reproduced`,
+            documented: true,
+            rationale: "Negative lumbar provocation in the context of radiation to the ankle and intermittent leg numbness is important: it reduces the probability of the lumbar spine being the primary pain generator. The mild degenerative facet changes seen on X-ray at L3–L5 were not provocable clinically."
+          }
+        ]
+      }
+    ],
+    contextText: "The examination at IPMC was comprehensive and structured around identifying the primary pain generator through clinical testing rather than accepting the imaging-derived diagnosis. The contrast between positive IFI special tests AND positive piriformis provocation — followed by resolution of the IFI tests but persistence of the piriformis test after the first treatment session — provided a clear treatment validation that shifted the primary diagnosis from IFI to piriformis syndrome."
+  },
+  investigations: {
+    options: [
+      {
+        id: "mri_hip",
+        label: "MRI hip — ischiofemoral impingement protocol",
+        consequence: null,
+        ordered: true,
+        result: `<p>Left ischiofemoral impingement confirmed: <strong>ischiofemoral distance 10.02 mm</strong> (normal mean 18.6 ± 8 mm; abnormal &lt;15 mm). <strong>Quadratus femoris space: 4 mm</strong> (abnormal &lt;10 mm). <strong>Quadratus femoris fatty infiltration / oedema</strong> present on axial T1. These findings were consistent with IFI — however, the clinical response to treatment suggested these findings were incidental or secondary.</p>`
+      },
+      {
+        id: "ct_guided_injection",
+        label: "CT-guided quadratus femoris corticosteroid injection",
+        consequence: null,
+        ordered: true,
+        result: `<p>Bilateral CT-guided quadratus femoris steroid injection. Pain reduction: 1 point (5/10 → 4/10 VAS over 2 months) — minimal therapeutic effect. The poor response to a targeted injection into the presumed pain generator was the key evidence that IFI was not the primary pain source.</p>`
+      },
+      {
+        id: "lumbar_xray",
+        label: "Three-view lumbar spine X-ray",
+        consequence: null,
+        ordered: true,
+        result: `<p>Mild degenerative osteoarthritis at L3–L5 zygapophyseal joints. SIJ joint spaces well maintained. Hip joint spaces well maintained. No fractures identified. These findings were considered incidental given their non-provokability on clinical examination.</p>`
+      },
+      {
+        id: "bone_scan",
+        label: "Radionuclide bone scan",
+        consequence: null,
+        ordered: true,
+        result: `<p>No evidence of stress fracture. Normal scan. Stress fracture was excluded as a contributing diagnosis in this patient with an occupational running requirement.</p>`
+      },
+      {
+        id: "mr_neurography",
+        label: "MR neurography of sciatic nerve / piriformis",
+        consequence: "MR neurography (sensitivity 64%, specificity 93% for piriformis syndrome) could provide direct evidence of piriformis-mediated sciatic nerve entrapment — including hypertrophy of the piriformis and signal change in the sciatic nerve. It was not performed in this case; the clinical diagnosis was confirmed by treatment response. This investigation would be appropriate in refractory cases or when surgical decompression is being considered.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Piriformis Syndrome",
+        correct: true,
+        blurb: "Piriformis syndrome — compression or irritation of the sciatic nerve by the piriformis muscle — was ultimately identified as the primary pain generator in this case. The diagnosis was reached not by imaging but by the clinical pattern: greater pain reproduction on piriformis palpation than on quadratus femoris, rapid resolution of IFI clinical tests with piriformis-directed treatment, and progressive return to full running with piriformis-specific rehabilitation.",
+        supports: [
+          "Positive Active Piriformis Test bilaterally with left gluteal pain reproduction",
+          "Piriformis palpation reproduced concordant pain more than quadratus femoris",
+          "Left leg radiation to ankle and intermittent numbness — consistent with piriformis-mediated sciatic nerve irritation",
+          "IFI special tests (LSW, IFI test) normalised after one session of SIJ manipulation + piriformis IASTM",
+          "Progressive improvement and return to 2-mile run in 22:30 minutes with piriformis-focused rehabilitation",
+          "Complete resolution of symptoms at 4 months with piriformis-specific programme"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Ischiofemoral Impingement (IFI)",
+        correct: false,
+        blurb: "IFI was the initial working diagnosis, supported by clear MRI criteria. The reason it was ultimately not the primary diagnosis was the poor response to a targeted quadratus femoris injection and IFI-directed physiotherapy, combined with normalisation of IFI tests after piriformis-targeted treatment.",
+        supports: [
+          "MRI: ischiofemoral distance 10.02 mm (abnormal <15 mm)",
+          "MRI: quadratus femoris space 4 mm (abnormal <10 mm)",
+          "Quadratus femoris oedema on MRI",
+          "Positive LSW and IFI tests at initial IPMC assessment",
+          "Hip pain following a high-load hike in a young female — consistent with IFI mechanism"
+        ],
+        arguesAgainst: [
+          "CT-guided quadratus femoris steroid injection produced minimal relief (1 VAS point over 2 months)",
+          "Three courses of IFI-targeted physiotherapy over 12 months produced no sustained improvement",
+          "Both IFI special tests became negative at visit 2 after piriformis-targeted treatment — without any specific IFI intervention",
+          "Piriformis palpation reproduced concordant pain more reliably than quadratus femoris palpation"
+        ]
+      },
+      {
+        label: "Lumbar Radiculopathy (L5/S1)",
+        correct: false,
+        blurb: "Lumbar radiculopathy was the initial diagnosis (sciatica) given the radiation from the posterolateral gluteal region to the ankle. However, the absence of provokable lumbar spine tenderness and the intact neurological examination throughout made this unlikely.",
+        supports: [
+          "Pain radiating from left posterolateral gluteal region to ankle",
+          "Intermittent left leg numbness",
+          "Mild degenerative facet changes at L3–L5 on X-ray"
+        ],
+        arguesAgainst: [
+          "No lumbar spinous process tenderness or segmental hypomobility on direct provocation",
+          "Normal neurological examination throughout — no myotomal weakness, no dermatomal sensory loss",
+          "Mild facet degeneration at L3–L5 on X-ray is age-appropriate and was not provocable"
+        ]
+      },
+      {
+        label: "Sacroiliac Joint Dysfunction",
+        correct: false,
+        blurb: "Multiple positive SIJ tests confirmed left SIJ dysfunction as a biomechanical contributing factor. However, SIJ manipulation was not sufficient alone — piriformis-directed treatment was required for complete resolution, indicating SIJ dysfunction was contributory rather than the primary diagnosis.",
+        supports: [
+          "Positive Thigh Thrust (sensitivity 88%)",
+          "Positive Gillet's test, Forward Flexion test, Supine-to-Long Sit test",
+          "Pelvic asymmetry (left PSIS and iliac crest elevated)",
+          "Groin referral with Thigh Thrust — consistent with SIJ"
+        ],
+        arguesAgainst: [
+          "After SIJ manipulation resolved Thigh Thrust positivity at visit 2, symptoms persisted requiring ongoing piriformis treatment",
+          "Complete resolution was only achieved with sustained piriformis programme — not SIJ-directed treatment alone",
+          "The primary concordant pain was reproduced by piriformis palpation, not SIJ provocation"
+        ]
+      },
+      {
+        label: "Lumbar Spinal Stenosis with Neurogenic Claudication",
+        correct: false,
+        blurb: "Neurogenic claudication from spinal stenosis can cause leg symptoms aggravated by walking — potentially confused with activity-related piriformis or IFI symptoms.",
+        supports: [
+          "Activity-related leg symptoms aggravated by walking/running",
+          "Intermittent lower limb numbness"
+        ],
+        arguesAgainst: [
+          "Patient is 24 years old — spinal stenosis is rare at this age without congenital factors",
+          "No bilateral leg symptoms or claudication distance",
+          "No lumbar MRI findings consistent with canal stenosis",
+          "Full lumbar ROM and normal neurological examination throughout"
+        ]
+      },
+      {
+        label: "Hip Labral Tear / Femoroacetabular Impingement (FAI)",
+        correct: false,
+        blurb: "Hip labral tears and FAI can present in young active adults with hip and groin pain — occasionally radiating posteriorly.",
+        supports: [
+          "Young athletic female with hip pain following high-load activity",
+          "Internal rotation at lower limit of normal (25°)"
+        ],
+        arguesAgainst: [
+          "Pain is posterolateral gluteal, not anterior groin — which is the hallmark location for FAI/labral pathology",
+          "Hip joint space well maintained on X-ray",
+          "MRI showed IFI changes in the ischiofemoral space — not intra-articular pathology"
+        ]
+      },
+      {
+        label: "Hamstring Proximal Tendinopathy",
+        correct: false,
+        blurb: "Proximal hamstring tendinopathy produces deep buttock and posterior hip pain in runners and endurance athletes, sometimes with radiation into the posterior thigh.",
+        supports: [
+          "Young athletic female with posterior hip and buttock pain",
+          "Activity-related onset with heavy load"
+        ],
+        arguesAgainst: [
+          "No tenderness documented at the ischial tuberosity (the attachment site of proximal hamstring)",
+          "MRI showed IFI pathology, not hamstring tendinopathy",
+          "No pain with specific hamstring loading activities documented as primary aggravating factor"
+        ]
+      },
+      {
+        label: "Gemelli-Obturator Internus Syndrome",
+        correct: false,
+        blurb: "This condition involves the gemelli and obturator internus muscles adjacent to the piriformis and is classified under 'deep gluteal syndrome.' It can compress the sciatic nerve and produce identical posterior hip and leg symptoms.",
+        supports: [
+          "Deep gluteal pain with leg radiation in a young female",
+          "Activity-related posterior hip pain"
+        ],
+        arguesAgainst: [
+          "No specific tenderness or provocation over the obturator internus / gemelli musculature documented",
+          "Clinical response to piriformis-specific treatment (IASTM to piriformis) without gemelli/OI-directed treatment supports piriformis as the primary structure",
+          "No specific diagnostic criteria for gemelli-OI syndrome were met"
+        ]
+      }
+    ],
+    explanation: `<p>This case is a masterclass in the principle that imaging findings drive clinical reasoning only until the clinical response to treatment provides contradictory evidence. The MRI evidence for IFI was clear, the special orthopaedic tests were positive, and the initial working diagnosis was anatomically defensible. What undermined the IFI diagnosis was the clinical data: a targeted injection into the presumed pain generator produced minimal relief, three courses of IFI-targeted physiotherapy failed over 12 months, and the IFI special tests became negative after a single session directed at the SIJ and piriformis — without any IFI-specific intervention.</p>
+<p>This sequence reveals two important clinical principles. First, when an anatomically-supported diagnosis fails to respond to correctly targeted treatment, the diagnosis must be reconsidered rather than the treatment escalated. Second, MRI findings may represent incidental structural changes — the narrowed ischiofemoral space may have been secondary to abnormal pelvic mechanics driven by the true primary problem (piriformis tightness and SIJ dysfunction), rather than being the primary pain source itself.</p>
+<p>The definitive diagnostic confirmation came from the treatment response: progressive and complete resolution of all symptoms with piriformis-directed rehabilitation over 4 months — including the return to the patient's occupational running target of 2 miles under 24 minutes.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "sij_omt",
+        label: "SIJ osteopathic manipulation (left ilium posterior glide)",
+        selected: true,
+        explanation: `<strong>Appropriate — addresses the biomechanical contributing factor.</strong> Left SIJ OMT was performed at visits 1 and 2. After the first session, Thigh Thrust became negative and groin referral resolved. SIJ dysfunction was identified as a biomechanical contributor — likely creating altered pelvic mechanics that increased loading on the piriformis and quadratus femoris.`
+      },
+      {
+        id: "iastm_piriformis",
+        label: "IASTM (instrument-assisted soft tissue mobilisation) to piriformis",
+        selected: true,
+        explanation: `<strong>Appropriate — primary treatment for the piriformis.</strong> IASTM using the VibraCussor was applied directly to the piriformis muscle at every visit. Immediate post-treatment improvements in treadmill running tolerance (from 3:30 minutes at baseline to 6:44 minutes at visit 4) validated the piriformis as the primary treatment target.`
+      },
+      {
+        id: "piriformis_exercise",
+        label: "Piriformis stretching and lumbopelvic stabilisation programme",
+        selected: true,
+        explanation: `<strong>Appropriate — essential for durable outcomes.</strong> The home exercise programme combined piriformis stretching with lumbopelvic stabilisation exercises to address the force-couple imbalances perpetuating piriformis overload. Progressive jogging tolerance was used as the patient's personalised functional metric to guide return-to-sport decisions.`
+      },
+      {
+        id: "ifi_targeted_physio_only",
+        label: "Continue IFI-targeted physiotherapy (aquatics, hip abductor strengthening)",
+        selected: false,
+        explanation: `<strong>Not appropriate — had already failed.</strong> Three courses of IFI-targeted physiotherapy over 12 months had produced no sustained improvement. Repeating the same failed approach is not clinically justified. The correct response to three treatment failures is diagnostic reconsidering — which identified piriformis syndrome as the co-dominant diagnosis requiring a modified approach.`
+      },
+      {
+        id: "surgical_ifi",
+        label: "Surgical ischiofemoral decompression",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> Surgery for IFI was being considered before IPMC referral. The clinical resolution with conservative piriformis-directed management definitively demonstrates that surgery was not required. This case underlines the importance of exhausting conservative management — including consideration of alternative diagnoses — before surgical referral.`
+      },
+      {
+        id: "art_iliopsoas",
+        label: "Active release technique (ART) to iliopsoas",
+        selected: true,
+        explanation: `<strong>Appropriate — addressed at visit 3 as a secondary contributor.</strong> At visit 3, left groin pain was reproduced by iliopsoas assessment, and ART was applied. Post-ART, tenderness over both the piriformis and quadratus femoris reduced — suggesting iliopsoas tightness was contributing to abnormal hip mechanics and secondarily loading the deep external rotators.`
+      }
+    ],
+    outcomeText: "The patient received 9 treatment sessions at IPMC over approximately 4 months. Treatment incorporated SIJ OMT, IASTM to the piriformis, ART to the iliopsoas, piriformis stretching, and progressive lumbopelvic stabilisation. By visit 9, the patient successfully completed her occupational physical fitness assessment — running 2 miles in 22:30 minutes without pain. She was discharged from the IPMC with no recurrence documented at follow-up."
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Piriformis Syndrome</strong><br>Sciatic nerve irritation and deep gluteal syndrome — with concurrent SIJ dysfunction masquerading as ischiofemoral impingement",
+    outcomes: [
+      { label: "Published Source", text: "Newman & Zhou. Cureus. 2021;13(9):e18023" },
+      { label: "PMID / PMC", text: "PMID: 34667694 — PMC8520408 (open access)" },
+      { label: "Final Diagnosis", text: "Piriformis syndrome — with concurrent SIJ dysfunction; prior IFI diagnosis based on MRI likely incidental or secondary" },
+      { label: "Intervention", text: "SIJ OMT + IASTM to piriformis + ART to iliopsoas + piriformis stretching + lumbopelvic stabilisation; 9 sessions over 4 months; complete return to occupational running target" }
+    ],
+    conditionSummary: {
+      overview: "Piriformis syndrome is an extra-articular cause of sciatica arising from compression or irritation of the sciatic nerve by the piriformis muscle within the deep gluteal space. It accounts for up to 8% of all causes of sciatica and is consistently underdiagnosed due to the absence of a gold standard clinical test and the frequency with which it is misdiagnosed as lumbar disc radiculopathy, sacroiliac joint dysfunction, or ischiofemoral impingement. The condition predominantly affects adults in the 4th–5th decades and is more common in women.",
+      presentation: [
+        "Deep posterolateral gluteal pain and buttock ache, often radiating down the posterior thigh to the ankle — mimicking lumbar radiculopathy",
+        "Symptoms aggravated by sitting (particularly on hard surfaces or for prolonged periods) and by running, hiking, or stair climbing",
+        "Positive Active Piriformis Test (provocative hip flexion, adduction, and internal rotation); tenderness on deep palpation of the piriformis muscle belly",
+        "Normal lumbar spine examination and neurological assessment — distinguishes piriformis syndrome from lumbar disc radiculopathy"
+      ],
+      pathology: [
+        "The sciatic nerve passes anterior to, through, or posterior to the piriformis muscle (anatomical variation in approximately 17% of individuals), making it vulnerable to compression when the muscle is hypertrophied, inflamed, or in sustained spasm",
+        "Piriformis overload can result from SIJ dysfunction, hip abductor weakness, or excessive femoral internal rotation — all of which increase the mechanical demand on the piriformis as a hip stabiliser",
+        "Tight iliopsoas can create compensatory piriformis overactivation, explaining the clinical benefit of iliopsoas ART observed in this case",
+        "Co-existence with other deep gluteal syndrome conditions (IFI, gemelli-obturator internus syndrome) is common — supporting a differential diagnostic rather than a single-structure approach to deep gluteal pain"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "When a treatment that is correctly targeted at a specific anatomical diagnosis fails repeatedly, the diagnosis — not the treatment — must be reconsidered. In this case, three courses of physiotherapy and a targeted injection into the MRI-supported IFI diagnosis produced minimal improvement. The failure of the treatment was the most important diagnostic signal. Never anchor to an imaging-supported diagnosis when the clinical response to treatment is contradictory."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "Ischiofemoral impingement is defined radiologically — a narrowed ischiofemoral space and quadratus femoris oedema on MRI appear diagnostic but may represent secondary or incidental findings. In this case, the IFI imaging criteria were met but the IFI was almost certainly secondary to altered pelvic mechanics driven by the piriformis and SIJ pathology. MRI findings without corroborating clinical response to targeted treatment should always prompt diagnostic reconsideration."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "The contrast between piriformis palpation and quadratus femoris palpation — comparing which reproduces the patient's concordant pain more reliably — is a simple but powerful diagnostic tool that guided the correct diagnosis in this case despite contradictory MRI findings. Deep palpation of the piriformis and the adjacent quadratus femoris should be performed in every deep gluteal pain presentation, regardless of what the imaging shows."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "This case demonstrates the chiropractic and manual therapy toolbox at its best: SIJ manipulation, IASTM to the piriformis, ART to the iliopsoas, and progressive functional rehabilitation — all within scope, and collectively achieving a result that injection therapy and surgery could not. Chiropractors should be confident assessing the SIJ, piriformis, and deep hip stabilisers as an integrated system rather than as isolated structures."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "MRI ischiofemoral distance measurements have defined thresholds that appear highly specific. However, this case demonstrates that meeting imaging criteria for IFI does not establish it as the clinical pain source. Imaging in musculoskeletal diagnosis establishes anatomical findings — it is the clinical examination and treatment response that establish the pain source. Always treat the patient, not the scan."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Piriformis syndrome, Deep gluteal syndrome, Ischiofemoral impingement, SIJ dysfunction, Hip pain differential, IASTM, Active Release Technique, Regional interdependence, MRI clinical correlation",
+    keyPoints: [
+      "Piriformis syndrome is an underdiagnosed cause of sciatica mimicking lumbar disc radiculopathy — it is distinguished by posterolateral gluteal tenderness, positive Active Piriformis Test, and a normal lumbar neurological examination",
+      "MRI-supported diagnoses (such as IFI) can be incidental — repeated treatment failure despite correctly targeting the imaging diagnosis is a strong signal to reconsider the primary pain source",
+      "Deep palpation comparing piriformis versus quadratus femoris pain reproduction is a clinically simple and diagnostically powerful tool in deep gluteal pain",
+      "Piriformis syndrome, SIJ dysfunction, and IFI frequently co-exist — a regional interdependence approach (addressing the SIJ and iliopsoas as well as the piriformis directly) is required for complete resolution",
+      "Chiropractors are well-positioned to manage piriformis syndrome conservatively with SIJ manipulation, IASTM, ART, and progressive functional rehabilitation — as demonstrated by complete return to occupational running in this case"
+    ]
+  }
 }
 // ─────────────────────────────────────────────
 // PASTE ADDITIONAL CASES ABOVE THIS LINE
