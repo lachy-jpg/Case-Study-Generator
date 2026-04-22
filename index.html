@@ -362,7 +362,39 @@
   .reg-diff.int { border-color: var(--gold); color: var(--gold); }
   .reg-diff.adv { border-color: var(--warn); color: var(--warn); }
   .reg-note { margin-top: 20px; font-family: var(--mono); font-size: 10px; color: var(--muted); line-height: 1.7; padding: 12px 16px; border: 1px solid var(--rule-light); background: var(--paper2); }
+
+  /* ═══════════════════════════════════════
+     CLINICAL PLANNING (Section B)
+  ═══════════════════════════════════════ */
+  .cp-divider { display: flex; align-items: center; gap: 14px; padding: 20px 0 16px; border-top: 2px solid var(--rule); margin-top: 8px; }
+  .cp-divider-label { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); white-space: nowrap; }
+  .cp-divider-line { flex: 1; height: 1px; background: var(--rule-light); }
+  .cp-prompt { font-size: 13px; color: var(--muted); font-style: italic; line-height: 1.7; padding: 12px 0 4px; }
+  .cp-panel { border: 1px solid var(--rule); background: var(--paper); animation: fadeUp 0.3s ease; margin-bottom: 16px; }
+  .cp-panel:last-child { margin-bottom: 0; }
+  .cp-panel-hd { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--paper); padding: 9px 16px; }
+  .cp-panel-hd.accent { background: var(--accent); }
+  .cp-panel-hd.gold { background: var(--gold); }
+  .cp-panel-bd { padding: 18px 20px; display: flex; flex-direction: column; gap: 14px; }
+  .cp-section { display: flex; flex-direction: column; gap: 6px; }
+  .cp-section-lbl { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); padding-bottom: 5px; border-bottom: 1px solid var(--rule-light); }
+  .cp-section-body { font-size: 13px; line-height: 1.85; }
+  .cp-section-body p { margin-bottom: 10px; }
+  .cp-section-body p:last-child { margin-bottom: 0; }
+  .cp-section-body strong { font-weight: 600; }
+  .cp-section-body em { color: var(--muted); font-style: italic; }
+  .cp-inferred { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 1px 6px; margin-left: 6px; vertical-align: middle; display: inline-block; }
+  .cp-documented { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 1px 6px; margin-left: 6px; vertical-align: middle; display: inline-block; }
+  .cp-contraindicated { background: var(--warn-light); border-left: 3px solid var(--warn); padding: 12px 16px; font-size: 13px; line-height: 1.75; }
+  .cp-contraindicated .cp-section-lbl { color: var(--warn); border-bottom-color: rgba(122,31,31,0.2); }
+  table.rehab-tbl { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 8px; }
+  table.rehab-tbl thead tr { background: var(--paper3); }
+  table.rehab-tbl th { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+  table.rehab-tbl td { padding: 9px 10px; border-bottom: 1px solid var(--rule-light); vertical-align: top; line-height: 1.55; }
+  table.rehab-tbl tr:last-child td { border-bottom: none; }
+  table.rehab-tbl .phase-cell { font-family: var(--mono); font-size: 10px; font-weight: 500; color: var(--accent); white-space: nowrap; }
 </style>
+</head>
 <body>
 
 <!-- GLOBAL HEADER -->
@@ -600,6 +632,8 @@
       <!-- STAGE 5: MANAGEMENT -->
       <div class="stage" id="stage-management">
         <p class="s-label">Stage <span>5 / 5</span> &mdash; Management</p>
+
+        <!-- SECTION A: MANAGEMENT DECISIONS -->
         <div class="s-intro">
           Select everything you would include in your management plan.<br>
           <em>All options will be explained on reveal regardless of what you select.</em>
@@ -609,10 +643,27 @@
           <div class="rl">Management &mdash; sourced from published case report</div>
           <div id="mgmt-content"></div>
         </div>
+
+        <!-- SECTION B: CLINICAL PLANNING -->
+        <div id="cp-section-b" style="display:none;">
+          <div class="cp-divider">
+            <span class="cp-divider-label">Section B &mdash; Clinical Planning</span>
+            <div class="cp-divider-line"></div>
+          </div>
+          <p class="cp-prompt">Before revealing the clinical plan, consider: What prognosis would you give? Which levels would you adjust and why? What rehabilitation program would you prescribe?</p>
+          <div class="rb" id="cp-reveal" style="margin-top:12px;">
+            <div class="rl">Clinical Planning &mdash; evidence-based</div>
+            <div id="cp-content"></div>
+          </div>
+          <div id="cp-reveal-btn-row" style="margin-top:8px;">
+            <button class="btn-s" onclick="revealClinicalPlan()">Reveal Clinical Plan</button>
+          </div>
+        </div>
+
         <div class="nav-row">
           <button class="btn-b" onclick="goStage('differential')">&larr; Back</button>
           <button class="btn-p" id="mgmt-next" disabled onclick="goStage('reveal')">View Full Reveal &rarr;</button>
-          <button class="btn-s" onclick="revealStage('mgmt-reveal','mgmt-next','management')">Reveal Management</button>
+          <button class="btn-s" id="mgmt-reveal-btn" onclick="revealStage('mgmt-reveal','mgmt-next','management')">Reveal Management</button>
         </div>
       </div>
 
@@ -10754,6 +10805,14 @@ function launchCase(id) {
     </div>`
   ).join('');
 
+  // Clinical Planning — build content, reset reveal state
+  buildClinicalPlan(currentCase);
+  document.getElementById('cp-section-b').style.display = 'none';
+  document.getElementById('cp-reveal').classList.remove('show');
+  document.getElementById('cp-reveal-btn-row').style.display = '';
+  document.getElementById('mgmt-reveal-btn').style.display = '';
+  document.getElementById('mgmt-next').disabled = true;
+
   // Full reveal
   document.getElementById('reveal-dx-title').innerHTML = currentCase.reveal.diagnosisTitle;
   document.getElementById('reveal-outcome-grid').innerHTML = currentCase.reveal.outcomes.map(o =>
@@ -10850,9 +10909,17 @@ function goStageIfUnlocked(stage) {
 function revealStage(revealId, nextBtnId, stage) {
   const r = document.getElementById(revealId);
   r.classList.add('show');
-  if (nextBtnId) document.getElementById(nextBtnId).disabled = false;
   stagesRevealed[stage] = true;
   if (stage === 'examination') buildExamReveal();
+  if (stage === 'management') {
+    // Hide reveal button, show Section B — next button stays disabled until clinical plan revealed
+    document.getElementById('mgmt-reveal-btn').style.display = 'none';
+    const sectionB = document.getElementById('cp-section-b');
+    sectionB.style.display = 'block';
+    setTimeout(() => sectionB.scrollIntoView({ behavior: 'smooth', block: 'start' }), 400);
+  } else {
+    if (nextBtnId) document.getElementById(nextBtnId).disabled = false;
+  }
   r.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
@@ -10956,6 +11023,86 @@ function buildExamReveal() {
 
   document.getElementById('exam-selected-content').innerHTML = html;
 }
+// ─── CLINICAL PLANNING (Section B) ──────────────────────────────────
+function buildClinicalPlan(c) {
+  const m = c.management;
+  const missing = !m.prognosis && !m.adjustmentPlan && !m.rehabProgram;
+  if (missing) {
+    document.getElementById('cp-content').innerHTML = `
+      <div style="padding:24px; text-align:center; font-family:var(--mono); font-size:11px; color:var(--muted); line-height:2; letter-spacing:0.06em;">
+        <div style="font-size:20px; margin-bottom:10px; opacity:0.25;">&#9632;</div>
+        This case was generated before the Clinical Planning feature was added.<br>
+        Regenerate it using the updated project instructions to populate<br>
+        the Prognosis, Adjustment Plan, and Rehabilitation Program sections.
+      </div>`;
+    return;
+  }
+
+  let html = '';
+
+  // PANEL 1 — PROGNOSIS
+  if (m.prognosis) {
+    const p = m.prognosis;
+    const badge = p.inferred ? `<span class="cp-inferred">Inferred</span>` : `<span class="cp-documented">From Case</span>`;
+    html += `<div class="cp-panel">
+      <div class="cp-panel-hd accent">&#9632; &nbsp;Prognosis &amp; Treatment Timeline ${badge}</div>
+      <div class="cp-panel-bd">
+        <div class="cp-section"><div class="cp-section-lbl">Treatment Frequency &amp; Duration</div><div class="cp-section-body">${p.frequencyDuration}</div></div>
+        <div class="cp-section"><div class="cp-section-lbl">Expected Trajectory</div><div class="cp-section-body">${p.expectedTrajectory}</div></div>
+        <div class="cp-section"><div class="cp-section-lbl">Outcome Benchmarks</div><div class="cp-section-body">${p.outcomeBenchmarks}</div></div>
+        <div class="cp-section"><div class="cp-section-lbl">Co-management &amp; Referral Triggers</div><div class="cp-section-body">${p.comanagement}</div></div>
+      </div></div>`;
+  }
+
+  // PANEL 2 — ADJUSTMENT PLAN
+  if (m.adjustmentPlan) {
+    const a = m.adjustmentPlan;
+    let adjBody = '';
+    if (a.contraindicated) {
+      adjBody = `<div class="cp-contraindicated"><div class="cp-section-lbl">Manipulation Contraindicated / Precaution</div><div class="cp-section-body">${a.contraindicatedReason}</div></div>`;
+      if (a.alternativeApproach) adjBody += `<div class="cp-section" style="margin-top:12px;"><div class="cp-section-lbl">Appropriate Manual Therapy Alternatives</div><div class="cp-section-body">${a.alternativeApproach}</div></div>`;
+    } else {
+      const badge = a.inferred ? `<span class="cp-inferred">Inferred</span>` : `<span class="cp-documented">From Case</span>`;
+      adjBody = `<div class="cp-section"><div class="cp-section-lbl">Target Levels &amp; Rationale ${badge}</div><div class="cp-section-body">${a.levelsRationale}</div></div>`;
+      if (a.techniqueDetail) adjBody += `<div class="cp-section"><div class="cp-section-lbl">Technique Detail <span class="cp-documented">Documented in Case</span></div><div class="cp-section-body">${a.techniqueDetail}</div></div>`;
+      if (a.precautions) adjBody += `<div class="cp-section"><div class="cp-section-lbl">Precautions &amp; Modifications</div><div class="cp-section-body">${a.precautions}</div></div>`;
+    }
+    html += `<div class="cp-panel"><div class="cp-panel-hd accent">&#9632; &nbsp;Chiropractic Adjustment Plan</div><div class="cp-panel-bd">${adjBody}</div></div>`;
+  }
+
+  // PANEL 3 — REHAB
+  if (m.rehabProgram) {
+    const r = m.rehabProgram;
+    const badge = r.inferred ? `<span class="cp-inferred">Evidence-based</span>` : `<span class="cp-documented">From Case</span>`;
+    let rehabBody = `<div class="cp-section"><div class="cp-section-lbl">Rationale &amp; Target Structures ${badge}</div><div class="cp-section-body">${r.rationale}</div></div>`;
+    if (r.phases && r.phases.length) {
+      let rows = r.phases.map(ph => `<tr>
+        <td class="phase-cell">${ph.phase}</td>
+        <td>${ph.goals}</td>
+        <td>${ph.exercises}</td>
+        <td style="font-family:var(--mono);font-size:11px;white-space:nowrap;">${ph.parameters}</td>
+        <td>${ph.progressionCriteria}</td>
+        <td style="font-family:var(--mono);font-size:11px;white-space:nowrap;">${ph.timeframe}</td>
+      </tr>`).join('');
+      rehabBody += `<div class="cp-section"><div class="cp-section-lbl">Phased Program</div>
+        <div style="overflow-x:auto;"><table class="rehab-tbl"><thead><tr>
+          <th>Phase</th><th>Goals</th><th>Exercises</th><th>Parameters</th><th>Progression Criteria</th><th>Timeframe</th>
+        </tr></thead><tbody>${rows}</tbody></table></div></div>`;
+    }
+    html += `<div class="cp-panel"><div class="cp-panel-hd gold">&#9632; &nbsp;Rehabilitation Program</div><div class="cp-panel-bd">${rehabBody}</div></div>`;
+  }
+
+  document.getElementById('cp-content').innerHTML = html;
+}
+
+function revealClinicalPlan() {
+  document.getElementById('cp-reveal').classList.add('show');
+  document.getElementById('cp-reveal-btn-row').style.display = 'none';
+  document.getElementById('mgmt-next').disabled = false;
+  document.getElementById('cp-reveal').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+// ─────────────────────────────────────────────────────────────────────
+
 // ─── REGISTRY ───────────────────────────────────────────────────────
 function goRegistry() {
   showView('view-registry');
