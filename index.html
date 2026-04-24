@@ -15000,6 +15000,1397 @@ const CASES = [
     ]
   }
 },
+// ─────────────────────────────────────────────────────────────────────────────
+// CASE 037 — Hip arthrosis with cam-type FAI in a young adult female
+// Source: Prather et al. J Orthop Sports Phys Ther. 2009. PMID: 20026881
+// sourceTier: PeerReviewed
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  id: "037",
+  title: "A 28-year-old woman presents with 4 months of left groin and buttock pain worsening with aerobics and prolonged weight-bearing",
+  category: "Hip",
+  secondaryCategory: "Sports/Acute",
+  difficulty: "Intermediate",
+  estimatedTime: "18–22 minutes",
+  sourceTier: "PeerReviewed",
+  source: {
+    short: "Prather et al.\nJ Orthop Sports Phys Ther. 2009;39(12):861–873\nPMID: 20026881\nPMC: PMC2867340\nOpen access ✓",
+    full: "Prather H, Hunt D, McKeon K, Simpson S, Meyer EB, Yemm T, Brophy R. Conservative management of a young adult with hip arthrosis. J Orthop Sports Phys Ther. 2009;39(12):861–873. doi:10.2519/jospt.2009.3207. PMID: 20026881. PMC: PMC2867340."
+  },
+  patient: {
+    ageSex: "28-year-old female",
+    chiefComplaint: "Left groin pain (9/10 worst), left buttock pain (4/10), and left distal quadriceps ache with prolonged weight-bearing and exercise",
+    duration: "4 months",
+    priorProviders: "Primary care physician → physiotherapist (activity modification, foam rolling, passive stretching — minimal improvement) → orthopaedic surgeon (imaging ordered; THA recommended for future) → two additional orthopaedic surgeons and a rheumatologist (all recommended activity reduction and THA when ready)",
+    priorDiagnoses: "Iliotibial band syndrome, hip pain, subluxing patella (prior physiotherapist); cam-type FAI with severe chondrosis and osteochondral loose body (orthopaedic surgeon)"
+  },
+  history: {
+    content: `<p>A 28-year-old part-time aerobics instructor and graduate student presented with a 4-month history of left groin, buttock, and anterior thigh pain. She described her groin pain as a deep ache (9/10 on NRS at worst) aggravated by prolonged weight-bearing — particularly on consecutive days — and by aerobics, lunges, and squats. Her buttock pain (4/10) she attributed to a "deep hip stretching" routine she had self-initiated. She reported left anterior thigh aching that she believed related to altered mechanics following a severe left ankle sprain 4 years prior.</p>
+<p>The patient had seen multiple health care providers. A previous physiotherapist treated her for ITB syndrome and subluxing patella with activity modification, foam rolling, and passive hip rotation stretching, with minimal improvement. An orthopaedic surgeon ordered radiographs and contrast MRI, which revealed a cam-type lesion at the femoral head-neck junction, severe chondrosis with areas of full-thickness cartilage loss, and an osteochondral loose body in the left hip. The surgeon advised that arthroscopic osteotomy would not be appropriate given the advanced chondral changes, and referred her to specialists in joint replacement. Two additional orthopaedic surgeons and a rheumatologist each recommended she reduce activity and return when ready for total hip arthroplasty.</p>
+<p>She sought a further physiotherapy consultation specifically to identify strategies to slow degeneration and delay surgery. She had discontinued her aerobics instructing role. Rest and naproxen reduced symptoms temporarily. She denied radicular symptoms below the knee, bowel or bladder changes, or systemic features.</p>`,
+    clinicalNote: "The key diagnostic signal here is advanced intra-articular hip pathology in a patient far younger than the typical hip OA demographic. The combination of severe chondrosis, cam morphology, and an osteochondral loose body — confirmed on MRI — in a 28-year-old mandates a conservative framework that prioritises load management and biomechanical correction over symptom-chasing. The concurrent sacroiliac joint dysfunction (perceived bony asymmetries, buttock pain responsive to SIJ treatment) adds a secondary driver that must be addressed to achieve meaningful gains. The risk of anchoring entirely on the imaging findings and dismissing conservative care — as multiple prior providers did — is the central pitfall of this case."
+  },
+  examination: {
+    autoROM: `<p><strong>Hip Range of Motion (Left vs Right):</strong> Bilateral hip ROM restriction noted. Left hip internal rotation was limited and reproduced groin pain on testing. Hip flexion with knee extended also reproduced groin symptoms. Right hip demonstrated comparatively greater internal rotation and flexion range without pain provocation. Specific degrees not documented in source.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Level</th><th>Movement</th><th>Left</th><th>Right</th></tr></thead>
+<tbody>
+<tr><td>L2–L3</td><td>Hip flexion</td><td>Not formally graded — resistance testing did not reproduce symptoms</td><td>Normal</td></tr>
+<tr><td>L4–L5</td><td>Knee extension</td><td>Not formally graded — no contractile source of knee pain identified</td><td>Normal</td></tr>
+<tr><td>L4–S1</td><td>Hip extension / abduction</td><td>Considerable weakness detected</td><td>Comparatively stronger</td></tr>
+<tr><td colspan="4"><em>Note: Formal myotome grading not documented in source. Strength testing confirmed weakness of left hip extensors and abductors in neutral; no pain reproduced with resistance testing of hip or knee, reducing likelihood of contractile pathology as primary pain source.</em></td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Hip Special Tests",
+        items: [
+          {
+            id: "scour_test",
+            label: "Scour Test (quadrant test)",
+            result: `<span class="tt pos">Positive</span> — reproduced left groin pain`,
+            documented: true,
+            rationale: "The scour test loads the hip joint through combined flexion, adduction, and axial compression while rotating the femur, making it highly sensitive for intra-articular pathology. A positive result here was consistent with the known cam-type FAI and articular cartilage loss, confirming an intra-articular source of her groin pain rather than a periarticular or contractile cause."
+          },
+          {
+            id: "fadir_impingement",
+            label: "FADIR Impingement Test (flexion–adduction–internal rotation)",
+            result: `<span class="tt pos">Positive</span> at initial evaluation; became negative at 3-month follow-up`,
+            documented: true,
+            rationale: "The FADIR test is the standard impingement provocation for cam and pincer-type FAI. Loading the hip in this position replicates the cam-on-rim contact responsible for the patient's pain and chondral injury. Conversion to negative at follow-up provided an objective measure of treatment success, supporting improved intra-articular load distribution secondary to strengthening and ROM gains."
+          },
+          {
+            id: "hip_ir_rom",
+            label: "Passive Hip Internal Rotation (left)",
+            result: `<span class="tt notable">Notable</span> — restricted, reproducing groin pain; improved from 20° to 30° following self-mobilisation instruction (session 3)`,
+            documented: true,
+            rationale: "Restricted hip internal rotation is one of the most consistent examination findings in cam-type FAI and hip arthrosis. Progressive loss of IR range is associated with advancing cam morphology impinging on the anterior acetabular rim. Tracking IR ROM as a treatment outcome provided a simple objective marker of hip joint mobility change across the course of care."
+          },
+          {
+            id: "strength_hip_ext_abd",
+            label: "Hip Extensor and Abductor Strength",
+            result: `<span class="tt notable">Notable</span> — considerable weakness bilaterally; greater deficit on left`,
+            documented: true,
+            rationale: "Despite her prior high physical activity level as an aerobics instructor, the patient demonstrated significant hip extensor and abductor weakness, consistent with the neuromuscular inhibition and disuse patterns associated with chronic hip pain and arthrosis. Addressing this weakness was the central pillar of the rehabilitation program — improving periarticular strength reduces peak joint contact forces and improves dynamic load distribution across the articular surface."
+          },
+          {
+            id: "sij_palpation",
+            label: "Sacroiliac Joint Palpation and Motion Testing",
+            result: `<span class="tt notable">Notable</span> — perceived bony asymmetries consistent with right ilial up-slip, right anteriorly rotated innominate, and right unilateral sacral extension lesion`,
+            documented: true,
+            rationale: "SIJ asymmetries were identified using the standing forward bending test, supine-to-long-sit test, and lumbosacral motion testing in sitting. The SIJ dysfunction appeared to be the primary driver of her buttock pain — treatment directed at the SIJ produced near-complete elimination of buttock symptoms within 36 hours, distinguishing it from the groin/thigh pain attributable to the hip joint pathology."
+          },
+          {
+            id: "piriformis_flexibility",
+            label: "Piriformis Flexibility / Passive Hip External Rotation Stretch",
+            result: `<span class="tt notable">Notable</span> — flexibility limitation detected on left`,
+            documented: true,
+            rationale: "Piriformis tightness is commonly associated with SIJ dysfunction and can contribute to posterior hip pain. Stretching the piriformis was included in early treatment to address the SIJ component and reduce posterior hip tension. It was also relevant given the proximity of the piriformis to the posterior hip joint capsule in a patient with known intra-articular pathology."
+          },
+          {
+            id: "trendelenburg",
+            label: "Trendelenburg Test / Single-Leg Stance Assessment",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "Given the documented hip abductor weakness and altered lower extremity mechanics (hip adduction/internal rotation in standing), formal Trendelenburg testing would have been highly informative. A positive Trendelenburg would have further confirmed gluteal insufficiency as a biomechanical contributor and would have strengthened the rationale for the abductor strengthening program that became central to the rehabilitation."
+          },
+          {
+            id: "step_down_test",
+            label: "Step-Down Test (single-leg loading assessment)",
+            result: `Not performed at initial assessment — introduced as treatment exercise in sessions 4–6`,
+            documented: false,
+            rationale: "The step-down test was ultimately used as a rehabilitation exercise to train neuromuscular control and reduce hip adduction/internal rotation loading patterns. It was not described as a formal assessment tool at initial evaluation, though it clearly functioned as one — the treating physiotherapist used technique observations during step-down to correct maladaptive movement patterns associated with FAI symptom provocation."
+          },
+          {
+            id: "ankle_anterior_drawer",
+            label: "Anterior Drawer Test (right ankle)",
+            result: `<span class="tt pos">Positive</span> — 2+ laxity`,
+            documented: true,
+            rationale: "The patient attributed altered hip and knee mechanics to a severe ankle sprain 4 years prior. She self-reported that the ankle sprain initiated the movement pattern changes leading to hip symptoms. Confirming residual lateral ankle laxity supported the kinetic chain hypothesis — chronic talar instability may have contributed to altered foot pronation, tibial rotation, and proximal femoral loading patterns that exacerbated cam-on-rim contact over time."
+          }
+        ]
+      },
+      {
+        group: "Outcome Measures",
+        items: [
+          {
+            id: "modified_harris_hip",
+            label: "Modified Harris Hip Score",
+            result: `<span class="tt notable">Notable</span> — 76/100 at initial evaluation; 97/100 at discharge (session 12); maintained at 3-month follow-up`,
+            documented: true,
+            rationale: "The modified Harris Hip Score is a widely-used patient-reported outcome tool for hip pathology covering pain, function, and activities of daily living. A score of 76 at baseline reflected moderate-to-severe functional limitation. The improvement to 97 at discharge — and its maintenance at 3-month follow-up — provided objective evidence that a multimodal conservative programme could achieve clinically meaningful gains even in the presence of advanced structural degeneration on imaging."
+          },
+          {
+            id: "nrs_groin",
+            label: "Numeric Pain Rating Scale (NRS) — groin/thigh",
+            result: `<span class="tt notable">Notable</span> — 9/10 at worst on initial evaluation; substantially reduced at discharge and 3-month follow-up; naproxen discontinued`,
+            documented: true,
+            rationale: "Tracking NRS alongside the functional Harris Hip Score allowed the clinician to distinguish pain reduction from functional recovery — both improved together in this case, validating the biomechanical rationale of the intervention. Discontinuation of naproxen at discharge was a meaningful clinical marker demonstrating durability of the pain reduction achieved."
+          }
+        ]
+      }
+    ],
+    contextText: "Examination prioritised intra-articular hip provocation testing to confirm the joint as the primary pain source, hip strength testing to quantify periarticular muscle deficits, and sacroiliac joint assessment to identify a secondary pain contributor. The FADIR test and scour test together confirmed intra-articular pathology consistent with the cam-type FAI on imaging. The hip abductor/extensor weakness was disproportionate to the patient's fitness level and pointed to reflex inhibition from chronic joint pain. SIJ motion testing guided an early treatment decision — SIJ-directed manual therapy was administered first to establish its role in the buttock pain before progressing to hip-specific interventions. An incidental ankle laxity finding provided a plausible biomechanical explanation for the kinetic chain dysfunction the patient herself had identified."
+  },
+  investigations: {
+    options: [
+      {
+        id: "plain_xray_hip",
+        label: "Plain radiographs — left hip (AP + frog-leg lateral)",
+        consequence: null,
+        ordered: true,
+        result: `<p>Bilateral hip radiographs demonstrated cam-type lesion morphology at the left femoral head-neck junction consistent with FAI. Advanced degenerative changes were present bilaterally, including the <strong>right hip which was radiographically abnormal despite being asymptomatic at the time of presentation</strong>. No acute fracture.</p>`
+      },
+      {
+        id: "contrast_mri_hip",
+        label: "Contrast MRI — left hip (MR arthrography)",
+        consequence: null,
+        ordered: true,
+        result: `<p>MR arthrography of the left hip confirmed: <strong>(1)</strong> cam-type lesion at the femoral head-neck junction; <strong>(2)</strong> severe chondrosis with areas of <strong>full-thickness cartilage loss</strong>; <strong>(3)</strong> osteochondral loose body within the joint. These findings were judged by the orthopaedic surgeon to preclude arthroscopic osteotomy (the cartilage loss — not the cam morphology — was the pain generator). The surgeon recommended eventual total hip arthroplasty.</p>`
+      },
+      {
+        id: "lumbar_spine_xray",
+        label: "Lumbar spine radiograph",
+        consequence: "Not ordered. Given the absence of radicular symptoms below the knee, negative lumbar ROM pain provocation, and clear hip and SIJ examination findings accounting for all pain regions, lumbar imaging was not clinically indicated. Had there been pain below the knee or positive neural tension signs, lumbar imaging would have been warranted to rule out a concurrent L2–L4 contribution to groin and anterior thigh symptoms.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "right_ankle_imaging",
+        label: "Right ankle radiograph",
+        consequence: "Not ordered despite 2+ anterior drawer laxity. The ankle finding was clinically relevant as a historical biomechanical contributor but not acutely symptomatic. Radiographs would not have changed the rehabilitation strategy — the decision to incorporate ankle proprioception training was made on clinical grounds alone. Imaging would only have been warranted if acute bony pathology was suspected.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Hip Arthrosis with Cam-Type FAI (advanced degenerative change)",
+        correct: true,
+        blurb: "The diagnosis in this case was established by imaging before the patient presented to physiotherapy. The clinical question was not 'what is wrong?' but 'what can conservative management achieve?' The examination findings — positive FADIR, restricted and painful internal rotation, intra-articular pain with the scour test, and hip extensor/abductor weakness — all align precisely with the imaging-confirmed cam-type FAI and advanced chondrosis.",
+        supports: [
+          "Cam-type lesion confirmed on MRI at the left femoral head-neck junction",
+          "Severe chondrosis with full-thickness cartilage loss on MRI",
+          "Osteochondral loose body within the left hip joint",
+          "Positive FADIR impingement test reproducing groin pain",
+          "Positive scour test reproducing groin pain — confirming intra-articular source",
+          "Restricted left hip internal rotation with groin pain on end-range loading",
+          "Pain with aerobics, lunges, squats — consistent with cam-on-rim impingement during combined flexion and IR",
+          "Deep aching groin and anterior thigh pain — classic intra-articular hip referral pattern",
+          "Prior severe ankle sprain with residual 2+ laxity — plausible kinetic chain contributor to hip loading abnormality",
+          "28-year-old female — cam morphology acquired through adolescent sport participation is increasingly recognised in this demographic"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Iliopsoas Tendinopathy / Snapping Hip (coxa saltans interna)",
+        correct: false,
+        blurb: "Anterior hip and groin pain in a young active female commonly raises iliopsoas pathology. The patient did develop iliopsoas tightness later in the course of care (post-yoga burning in the anterior hip), but this was a secondary finding, not the primary diagnosis.",
+        supports: [
+          "Anterior groin and hip pain in a young active female",
+          "Pain with hip flexion activities (aerobics, lunges, squats)",
+          "Iliopsoas tightness subsequently identified during treatment (post-yoga anterior hip burning)"
+        ],
+        arguesAgainst: [
+          "No snapping or clicking sensation described over the anterior hip",
+          "Pain provoked by FADIR and scour tests — intra-articular pattern, not tendon-specific",
+          "MRI confirmed the pain generator to be chondral loss and cam morphology, not iliopsoas pathology",
+          "Pain also present with prolonged weight-bearing on consecutive days — not consistent with pure tendon provocation"
+        ]
+      },
+      {
+        label: "Sacroiliac Joint Dysfunction (primary)",
+        correct: false,
+        blurb: "SIJ dysfunction was identified as a co-existing secondary contributor to the buttock pain. However, it could not explain the groin pain, anterior thigh aching, or the positive impingement tests — so it was not the primary diagnosis.",
+        supports: [
+          "Perceived bony asymmetries consistent with right ilial up-slip and anteriorly rotated innominate",
+          "Buttock pain nearly resolved within 36 hours of SIJ-directed manual therapy",
+          "SIJ dysfunction is a recognised co-morbidity in hip pathology presentations"
+        ],
+        arguesAgainst: [
+          "SIJ treatment did not improve groin or thigh pain — confirming a separate intra-articular hip source",
+          "Positive FADIR and scour tests are not explained by SIJ dysfunction alone",
+          "MRI-confirmed cam-type FAI and full-thickness cartilage loss account for the groin pain independently",
+          "SIJ asymmetries were perceived findings of limited specificity — they guided treatment sequencing but did not define the diagnosis"
+        ]
+      },
+      {
+        label: "Iliotibial Band Syndrome",
+        correct: false,
+        blurb: "ITB syndrome was the prior physiotherapist's working diagnosis. It cannot account for the intra-articular hip findings or the groin pain pattern in this patient.",
+        supports: [
+          "Prior physiotherapist diagnosed ITB syndrome",
+          "Patient is an aerobics instructor — repetitive hip flexion/extension loading is present",
+          "Prior ankle sprain altering lower extremity biomechanics could predispose to ITB tension"
+        ],
+        arguesAgainst: [
+          "No lateral knee pain described — the hallmark symptom of ITB syndrome",
+          "Groin pain (9/10) was the dominant complaint — ITB syndrome does not produce groin pain",
+          "Positive FADIR and scour tests are intra-articular, not consistent with ITB pathology",
+          "MRI confirmed the diagnosis as advanced hip arthrosis — ITB syndrome is a soft tissue overuse condition without these structural findings",
+          "Treatment for ITB syndrome (foam rolling, passive stretching) produced minimal improvement"
+        ]
+      },
+      {
+        label: "L2–L3 Lumbar Radiculopathy",
+        correct: false,
+        blurb: "L2–L3 nerve root compression can refer pain to the groin and anterior thigh — the same distribution reported by this patient. However, the clinical examination findings point clearly to the hip joint rather than the spine.",
+        supports: [
+          "Anterior groin and thigh pain is within the L2–L3 dermatome",
+          "Patient's age does not preclude disc pathology",
+          "Prolonged weight-bearing aggravation could theoretically reflect positional lumbar loading"
+        ],
+        arguesAgainst: [
+          "No lumbar motion pain provocation documented",
+          "No neurological deficit — no weakness, reflex change, or sensory loss below the knee",
+          "No pain below the knee, no paraesthesia",
+          "Positive FADIR and scour tests clearly localise the pain source to the hip joint",
+          "MRI confirmed hip as the structural abnormality — lumbar imaging was not obtained as the clinical picture did not support a spinal origin"
+        ]
+      },
+      {
+        label: "Piriformis Syndrome / Deep Gluteal Syndrome",
+        correct: false,
+        blurb: "Piriformis tightness was identified on examination and addressed in treatment. However, the clinical picture extends well beyond what piriformis syndrome can explain, and the imaging findings unambiguously identify the hip joint as the primary pain source.",
+        supports: [
+          "Piriformis flexibility limitation identified on examination",
+          "Buttock pain present — a common referral from piriformis",
+          "Prior heavy stretching routine may have provoked local gluteal muscle irritation"
+        ],
+        arguesAgainst: [
+          "Groin and anterior thigh pain are not typical of piriformis syndrome — they are intra-articular hip referral patterns",
+          "Positive FADIR and scour tests implicate the hip joint, not the piriformis muscle",
+          "MRI confirmed advanced chondrosis and cam FAI as the structural diagnosis",
+          "Buttock pain responded primarily to SIJ treatment, not piriformis-specific intervention"
+        ]
+      },
+      {
+        label: "Labral Tear (isolated, without arthrosis)",
+        correct: false,
+        blurb: "Hip labral tears produce a clinical picture that overlaps strongly with cam FAI and arthrosis. In this patient, an isolated labral tear is an unlikely diagnosis given the MRI evidence of full-thickness cartilage loss and cam morphology.",
+        supports: [
+          "Cam FAI is the most common mechanical cause of anterior acetabular labral tears",
+          "Groin pain pattern and FADIR positivity are shared between labral tear and arthrosis",
+          "Age and activity level are consistent with a labral pathology demographic"
+        ],
+        arguesAgainst: [
+          "MRI arthrogram confirmed full-thickness chondral loss and osteochondral loose body — findings beyond isolated labral pathology",
+          "Cam morphology on MRI represents the underlying structural abnormality driving both labral and chondral damage",
+          "No mechanical catching or clicking described — a classic labral tear symptom",
+          "Scour test was positive without a palpable 'click' — the examiner specifically noted this and elected not to perform a more aggressive impingement test"
+        ]
+      },
+      {
+        label: "Stress Fracture of the Femoral Neck",
+        correct: false,
+        blurb: "Femoral neck stress fractures can present with insidious groin pain worsening with weight-bearing in active females — features present in this patient. However, several key features argue strongly against this diagnosis.",
+        supports: [
+          "Insidious onset groin pain in an active female",
+          "Worsening with prolonged and consecutive days of weight-bearing",
+          "28-year-old female — the demographic most at risk of femoral neck stress fracture"
+        ],
+        arguesAgainst: [
+          "Plain radiographs and MRI were performed and showed cam FAI and chondrosis — no cortical stress reaction or marrow oedema consistent with stress fracture",
+          "4-month history without progression to frank fracture — stress fractures typically escalate more acutely",
+          "No history of relative energy deficiency, amenorrhoea, or rapid increase in training load",
+          "Pain was reproduced by hip rotation and impingement testing, not specifically by axial loading of the femoral shaft (log roll test not documented as positive)"
+        ]
+      }
+    ],
+    explanation: `<p>This case presents a straightforward diagnostic scenario once imaging is available — the challenge lies in recognising that advanced structural pathology on MRI does not preclude meaningful conservative management outcomes. The cam-type FAI with full-thickness cartilage loss was confirmed before the patient arrived for physiotherapy. The examination served two purposes: to confirm the intra-articular hip as the dominant pain source through provocative testing (FADIR, scour), and to identify modifiable contributors — particularly hip extensor/abductor weakness, SIJ dysfunction, and residual ankle instability — that could be targeted to improve load distribution within the compromised joint.</p>
+<p>The key clinical pivot was the decision to trial SIJ-directed manual therapy first, using the buttock pain response as a diagnostic test — its rapid elimination confirmed the SIJ as the buttock pain source and allowed the groin/thigh pain to be attributed exclusively to the hip joint. This structured diagnostic sequencing — treating one component and observing the response — is a model for managing multi-contributor hip presentations.</p>
+<p>The presenting differential challenge was the groin and anterior thigh pain: L2–L3 radiculopathy, iliopsoas tendinopathy, and labral pathology all overlap in this distribution. The absence of neurological deficit and the strongly positive intra-articular provocation tests resolved this, confirmed by MRI. The case teaches that in young active patients with hip pain, cam morphology should be on the radar even without the classic demographics of hip OA — and that the presence of severe imaging findings should not automatically preclude a physiotherapy-led conservative trial.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "manual_sij_hip",
+        label: "Sacroiliac joint manual therapy + hip lateral distraction mobilisation",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> SIJ manual therapy (post-isometric relaxation techniques, high-velocity lumbar manipulation at L5–S1) was applied first to address the perceived SIJ dysfunction driving buttock pain. Hip lateral distraction mobilisation in the FADIR position was subsequently introduced to reduce femoral head/anterior acetabular rim contact and improve hip internal rotation tolerance. Both interventions produced documented improvements in pain and ROM.`
+      },
+      {
+        id: "hip_strengthening_rehab",
+        label: "Progressive hip extensor, abductor, and abdominal strengthening program",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Periarticular hip strengthening was the rehabilitation cornerstone. Exercises progressed from posterior pelvic tilts and transversus abdominis activation, through planks and side-planks, to step-downs and squats with technique correction. This addressed the disproportionate hip extensor/abductor weakness and improved dynamic joint load distribution — the primary mechanism by which conservative management can slow articular cartilage degeneration and reduce symptom burden in hip arthrosis.`
+      },
+      {
+        id: "activity_modification",
+        label: "Activity modification and biomechanical re-education (avoid hip adduction/IR)",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> The patient was counselled to avoid impact activities (running, step aerobics at high frequency) and to consciously avoid hip adduction and internal rotation during weight-bearing exercise. This directly targeted the cam-on-rim impingement mechanism. She was able to maintain cycling, yoga (with modification), and kickboxing with technique adjustments — preserving her fitness and quality of life without accelerating joint damage.`
+      },
+      {
+        id: "total_hip_arthroplasty_now",
+        label: "Immediate referral for total hip arthroplasty",
+        selected: false,
+        explanation: `<strong>Not appropriate at this stage.</strong> Although three orthopaedic surgeons had recommended THA, the patient was only 28 years old. Current implants have a limited lifespan (typically 25 years), revision surgery in the young carries higher failure rates (35–100% 10-year longevity), and the patient retained meaningful functional capacity. Exhausting conservative management first was both clinically appropriate and aligned with the patient's goals. THA should remain on the long-term management plan but is not the appropriate first step in a young, functionally active patient.`
+      },
+      {
+        id: "arthroscopic_osteotomy",
+        label: "Arthroscopic osteotomy for cam lesion",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> The orthopaedic surgeon had already determined that arthroscopic osteotomy was contraindicated in this patient because the chondral loss — not the cam morphology alone — was the primary pain generator. Removing the cam bump without addressing the underlying articular cartilage destruction would not improve outcomes and carries surgical risk. This is a critical imaging lesson: cam morphology and arthrosis coexist and must be considered together when planning intervention.`
+      },
+      {
+        id: "corticosteroid_injection",
+        label: "Intra-articular corticosteroid injection",
+        selected: false,
+        explanation: `<strong>Not selected in this case.</strong> Intra-articular corticosteroid injection can provide short-term pain relief in hip arthrosis and may be a reasonable adjunct in patients with severe flare-ups limiting rehabilitation participation. However, it was not documented in this case and the patient responded sufficiently to manual therapy and exercise. Repeated corticosteroid injections in a young patient carry risks of accelerated cartilage degradation, which must be weighed carefully given the already advanced chondral changes on MRI.`
+      }
+    ],
+    outcomeText: "The patient was seen for 12 visits over approximately 80 days. At discharge she demonstrated substantial improvements in hip ROM and strength, discontinuation of naproxen, a modified Harris Hip Score of 97 (from 76 at baseline), and return to all previous activities with the exception of running. She resumed teaching step aerobics every 2 weeks without increased hip symptoms. At 3-month follow-up, all objective improvements were maintained and the patient was comfortably performing Pilates, yoga, whole-body strengthening, and step aerobics. The previously positive FADIR impingement test converted to negative at follow-up.",
+
+    prognosis: {
+      inferred: false,
+      frequencyDuration: `<p>The documented treatment course was <strong>12 visits over approximately 3 months</strong> (approximately 1 visit per week). For a presentation of this complexity — advanced arthrosis with cam FAI, multiple pain contributors, and a high-demand recreational activity goal — this represents a reasonable minimum course. In practice, a similar case might be scheduled at <strong>2× per week for 4 weeks</strong> (intensive phase for manual therapy and exercise instruction), then <strong>1× per week for 6–8 weeks</strong> (progressive loading and biomechanical re-education), before transition to independent home program with monthly check-ins.</p>`,
+      expectedTrajectory: `<p>Short-term prognosis was rated as fair-to-good in the published case given multiple treatable impairments and evidence supporting manual therapy and exercise for hip OA. Long-term prognosis is more guarded given the degenerative nature of the condition — cartilage loss on MRI does not reverse. The cam morphology remains structurally present and will continue to generate intra-articular stress during combined flexion/IR activities.</p>
+<p>Prognostic factors in this specific case: <em>Favourable</em> — young age, high baseline fitness, strong motivation and compliance, multiple identifiable and treatable contributors (SIJ, weakness, ankle instability), good response to first intervention. <em>Unfavourable</em> — full-thickness chondral loss already present, bilateral hip degeneration on imaging, cam lesion not addressed structurally, high-demand activity goals (aerobics instructing). The goal is symptom management and deceleration of progression, not structural cure. Realistic expectations should be established early: the patient will likely require THA in the future but conservative management can meaningfully delay this and restore quality of life.</p>`,
+      outcomeBenchmarks: `<p>Primary outcome tool documented in this case: <strong>Modified Harris Hip Score</strong> (76 → 97; MCID approximately 8 points — both a statistically and clinically significant change). Secondary markers: NRS pain reduction, hip ROM gains (specifically internal rotation), and functional milestones (return to aerobics instructing, cessation of naproxen). A meaningful response threshold would be: NRS reduction of ≥2 points, hip IR gain of ≥5°, and HHS improvement of ≥8 points within 6 visits. If these thresholds are not met, the management plan should be reassessed and referral for imaging review or orthopaedic consultation considered.</p>`,
+      comanagement: `<p>Orthopaedic surgery review was already documented in this case — the patient had been assessed by three surgeons. Ongoing orthopaedic involvement is appropriate for periodic reassessment of hip arthrosis progression and to monitor timing of eventual surgical decision-making. A <strong>rheumatology review</strong> should be considered if inflammatory arthropathy is not fully excluded — bilateral hip changes in a 28-year-old warrant a systemic workup. <strong>GP involvement</strong> for naproxen prescription, monitoring of GI side effects, and periodic imaging surveillance is appropriate. <strong>Physiotherapy</strong> should remain the core conservative provider. Red flags during treatment warranting escalation: acute severe increase in hip pain at rest (possible acute chondral fragment displacement or fracture), inability to bear weight (rule out femoral neck stress fracture or fracture of the osteochondral loose body), or neurological symptoms developing below the knee.</p>`
+    },
+
+    adjustmentPlan: {
+      contraindicated: false,
+      contraindicatedReason: null,
+      alternativeApproach: null,
+      inferred: true,
+      levelsRationale: `<p>Spinal manipulation is not contraindicated in this case and was documented as a component of SIJ management. Chiropractic adjustment targets are inferred from the clinical and examination findings:</p>
+<p><strong>L5–S1 (left-sided):</strong> The perceived SIJ dysfunction — right ilial up-slip, right anteriorly rotated innominate, right unilateral sacral extension lesion — implicates the L5–S1 segment as the spinal counterpart to the pelvic ring asymmetry. The L5–S1 joint is the key transitional segment between lumbar mobility and sacral fixation. A post-isometric relaxation or HVLA technique targeting a left-sidebent, flexed-rotated L5–S1 restriction addresses the functional coupling between the lumbar spine and the SIJ mechanics. The treating physiotherapist documented applying this technique specifically in session 2.</p>
+<p><strong>Sacroiliac joint (right — manipulative/articulatory):</strong> Right-sided SIJ dysfunction was the primary SIJ target. Muscle energy techniques for a right anteriorly rotated innominate and right-on-left sacral torsion were documented. In a chiropractic context, a sacral manipulation (drop table or blocking technique) targeting right sacral extension restriction would be the equivalent intervention. The SIJ is innervated by L4–S3 nerve roots; normalising SIJ mechanics reduces afferent nociceptive input across this segment and facilitates gluteal muscle activation patterns.</p>
+<p><strong>Hip joint (mobilisation, not manipulation):</strong> Lateral distraction of the left hip in the FADIR position was the key articular intervention. This is within chiropractic scope as a grade III–IV peripheral joint mobilisation. The mechanism is to reduce impingement contact between the cam lesion on the femoral head-neck and the anterior acetabular rim, improving internal rotation tolerance. This was taught as a self-mobilisation technique, allowing the patient to manage her anterior hip pain independently.</p>`,
+      techniqueDetail: `<p>The following techniques were documented in the published source: <strong>(1)</strong> Post-isometric relaxation techniques for a flexed-rotated-sidebent left L5–S1 segment; <strong>(2)</strong> Muscle energy technique for right-on-left sacral torsional lesion; <strong>(3)</strong> Muscle energy technique for right anteriorly rotated innominate; <strong>(4)</strong> Hip lateral distraction mobilisation in the FADIR (flexed-adducted-internally rotated) position — performed by the therapist and subsequently taught as a self-mobilisation technique involving a resistive band around the proximal thigh with the hip loaded into the FADIR position. Patient position: supine, band around proximal left femur, therapist providing lateral distraction while the patient moved the hip into the restricted range.</p>`,
+      precautions: `<p>Full-thickness articular cartilage loss is present in the left hip — this must inform technique selection and force magnitude for any hip joint intervention. Grade I–II oscillatory mobilisation is preferred initially; HVLA hip manipulation is not appropriate given the advanced chondral pathology and risk of displacing the osteochondral loose body. The osteochondral loose body identified on MRI represents a specific caution — any intervention that generates traction or distraction forces in the hip should be monitored carefully for acute symptom change that might indicate loose body displacement. SIJ manipulation should use low-force or muscle energy techniques given the patient's young age and high baseline flexibility; avoid aggressive torsional or long-lever HVLA techniques. Ankle proprioception exercises were incorporated due to residual 2+ ankle laxity — this is relevant context for any lower limb loading progression.</p>`
+    },
+
+    rehabProgram: {
+      inferred: false,
+      rationale: `<p>The rehabilitation program targets three anatomical contributors identified on examination: <strong>(1) periarticular hip weakness</strong> — hip extensors (gluteus maximus, hamstrings) and abductors (gluteus medius, minimus) were both considerably weak, reducing the dynamic stabilisation of the hip joint and increasing peak articular contact forces during weight-bearing. Strengthening these muscles directly reduces the mechanical load transmitted through the articular cartilage during functional activity, the primary mechanism by which exercise slows OA progression. <strong>(2) Lumbopelvic instability</strong> — the combination of SIJ dysfunction and poor transversus abdominis and oblique activation created a proximal instability that transmitted abnormal rotational forces to the hip during movement. Abdominal and lumbar stabilisation work provided the proximal foundation for hip loading. <strong>(3) Ankle instability</strong> — 2+ anterior drawer laxity on the right confirmed residual lateral ligament insufficiency from the 4-year-old ankle sprain. Proprioceptive and peroneal strengthening was incorporated to address the distal kinetic chain contributor to hip loading asymmetry.</p>
+<p>Movement patterns emphasised throughout the program centred on <strong>neutral hip position during weight-bearing</strong> — avoiding the adducted/internally rotated posture that maximises cam-on-rim contact. The step-down exercise was the key functional drill for this, allowing real-time cueing of frontal plane hip control. The rationale is directly biomechanical: in cam FAI, the impingement contact occurs when the non-spherical femoral head-neck junction engages the acetabular rim during combined flexion and internal rotation. Maintaining a neutral or slightly externally rotated femoral position during loading reduces this contact and symptom provocation.</p>
+<p>Evidence base: Clinical practice guidelines for hip OA (OARSI, EULAR) strongly recommend a combination of manual therapy and therapeutic exercise as first-line treatment. Multiple RCTs and systematic reviews have demonstrated small-to-moderate benefits of exercise on pain and function in hip OA. The combination of manual therapy + exercise has shown superior outcomes to either intervention alone. For younger patients with cam-type FAI specifically, conservative management with hip strengthening and biomechanical re-education is recommended as the first-line approach before surgery is considered — particularly in the absence of high-grade symptoms.</p>`,
+      phases: [
+        {
+          phase: "Phase 1",
+          goals: "Reduce pain and inflammation, address SIJ dysfunction, activate deep stabilisers, begin gentle hip mobility work",
+          exercises: "Posterior pelvic tilts (hook-lying), transversus abdominis activation (hook-lying), piriformis stretch (supine figure-4), self-mobilisation lateral hip distraction (FADIR position with band), ankle proprioception exercises (single-leg balance on firm surface)",
+          parameters: "Posterior pelvic tilts: 3 × 15 reps daily<br>TA activation: 3 × 10 reps, 10-second hold, daily<br>Piriformis stretch: 3 × 30 seconds, daily<br>Hip self-mobilisation: 2 × 10 reps in FADIR, daily<br>Ankle balance: 3 × 30 seconds each leg, daily",
+          progressionCriteria: "NRS groin pain ≤4/10 with daily activities; able to perform posterior pelvic tilt with conscious lumbar dissociation; hip IR improved by ≥5° from baseline",
+          timeframe: "Weeks 1–2 (sessions 1–4)"
+        },
+        {
+          phase: "Phase 2",
+          goals: "Progressive periarticular hip and lumbopelvic strengthening, improve neuromuscular control, return to low-impact activity",
+          exercises: "Prone plank (progress to 2 minutes), side-lying hip abduction, side plank, supine bridging (bilateral → unilateral), step-down with hip control cueing, hip flexor stretch, Yamuna ball iliopsoas self-massage",
+          parameters: "Plank: build from 30s to 2 min, daily<br>Hip abduction: 3 × 15 reps, 3×/week<br>Side plank: 3 × 30–60 seconds each side, 3×/week<br>Bridging: 3 × 15 bilateral; 3 × 10 single-leg, 3×/week<br>Step-down: 3 × 10 each leg with mirror feedback, 3×/week",
+          progressionCriteria: "Single-leg bridge with pelvis level and no contralateral hip drop; step-down with neutral hip alignment (no Trendelenburg); NRS ≤2/10 with return to cycling and yoga; able to perform 30-minute cycling session without symptom increase",
+          timeframe: "Weeks 3–8 (sessions 5–9)"
+        },
+        {
+          phase: "Phase 3",
+          goals: "Full return to aerobics instructing and recreational sport, long-term self-management, independent maintenance program",
+          exercises: "Squat with technique cueing (neutral hip, avoid adduction/IR), split squat, lateral band walk, whole-body strengthening integration (per patient's preferred program), step aerobics return (graduated frequency), continued hip self-mobilisation and piriformis stretch",
+          parameters: "Squats: 3 × 12–15 reps, 3×/week<br>Split squat: 3 × 10 each leg, 3×/week<br>Lateral band walk: 3 × 15 steps each direction, 3×/week<br>Step aerobics: begin 1×/2 weeks, progress to 2×/week as tolerated<br>Maintenance stretching and self-mobilisation: daily",
+          progressionCriteria: "Return to step aerobics teaching 2× per week without NRS increase >1 point the following day; modified Harris Hip Score ≥90; able to perform squats and lunges with neutral hip alignment without pain; cessation of naproxen",
+          timeframe: "Weeks 9–12 (sessions 10–12)"
+        }
+      ]
+    }
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Hip Arthrosis with Cam-Type FAI</strong><br>Advanced degenerative change (full-thickness chondral loss + osteochondral loose body) in a 28-year-old",
+    outcomes: [
+      { label: "Published Source", text: "Prather et al. J Orthop Sports Phys Ther. 2009;39(12):861–873" },
+      { label: "PMID / PMC", text: "PMID: 20026881 — PMC2867340 (open access)" },
+      { label: "Final Diagnosis", text: "Hip arthrosis with cam-type FAI, severe chondrosis (full-thickness cartilage loss), and osteochondral loose body — left hip" },
+      { label: "Intervention", text: "12-visit multimodal physiotherapy: SIJ manual therapy, hip lateral distraction mobilisation in FADIR, progressive hip and lumbopelvic strengthening, neuromuscular re-education, ankle proprioception training, activity modification" },
+      { label: "Outcome", text: "Modified Harris Hip Score 76 → 97; return to aerobics instructing; naproxen discontinued; FADIR test converted to negative at 3-month follow-up" }
+    ],
+    conditionSummary: {
+      overview: "Cam-type femoroacetabular impingement (FAI) occurs when a non-spherical femoral head-neck junction contacts the acetabular rim during hip flexion and internal rotation, generating repetitive microtrauma to the articular cartilage and labrum. Over time this leads to progressive chondrosis and, in advanced cases, hip osteoarthritis. Cam morphology is particularly prevalent in young athletic males but is increasingly recognised in active females, where it often goes undiagnosed until significant joint damage has occurred.",
+      presentation: [
+        "Deep, aching groin pain ± anterior thigh referral, worsened by hip flexion activities (squats, stairs, prolonged sitting)",
+        "Restricted hip internal rotation (most sensitive ROM finding) and flexion, especially with the knee extended",
+        "Positive FADIR (flexion–adduction–internal rotation) impingement test — the most sensitive clinical test for cam FAI",
+        "Disproportionate hip extensor and abductor weakness relative to activity level, driven by reflex inhibition from chronic joint pain"
+      ],
+      pathology: [
+        "Cam morphology: non-spherical excess bone at the femoral head-neck junction creates a 'pistol grip' deformity that impinges on the anterior acetabular rim during hip flexion/IR",
+        "Repeated cam-on-rim contact generates shear stress at the cartilage-labrum junction, causing labral tears and progressive articular cartilage delamination",
+        "Full-thickness chondral loss exposes subchondral bone, producing the pain, crepitus, and joint space narrowing characteristic of hip OA",
+        "Secondary contributors include periarticular muscle weakness (gluteus medius/maximus inhibition), SIJ dysfunction, and kinetic chain abnormalities from distal joint pathology (e.g. ankle instability)"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Advanced imaging findings do not preclude meaningful conservative management outcomes. All three orthopaedic surgeons this patient saw dismissed physiotherapy — yet a 12-visit multimodal program achieved a Harris Hip Score improvement of 21 points, pain reduction sufficient to cease NSAIDs, and full return to recreational aerobics. In young patients with hip arthrosis, conservative management should always be exhausted before surgical referral."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "Groin and anterior thigh pain in a young active female is easily misattributed to iliopsoas tendinopathy, ITB syndrome, or lumbar referral — all three of which were considered or diagnosed in this patient before the correct diagnosis was established. The FADIR impingement test and scour test, used together, are the most efficient clinical tools to establish an intra-articular hip pain source and should be standard in any groin pain workup."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "Structuring treatment sequentially — directing the first session at the SIJ and observing the buttock pain response before committing to a unifying diagnosis — is a powerful diagnostic strategy in multi-contributor hip presentations. If buttock pain resolves with SIJ treatment but groin pain persists unchanged, the two pain sources are confirmed as independent and can be managed separately. This avoids the error of over-treating one component while missing the other."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "This case sits comfortably within chiropractic scope: SIJ manipulation, hip lateral distraction mobilisation, progressive loading prescription, and biomechanical re-education are all standard chiropractic competencies. The key scope consideration is the osteochondral loose body — HVLA hip manipulation is contraindicated given the risk of loose body displacement. Grade I–IV mobilisation and muscle energy techniques are appropriate; any sudden onset of locking or acute pain increase should prompt immediate orthopaedic referral."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "Cam morphology and articular cartilage loss must be interpreted together. An arthroscopic osteotomy to address the cam lesion was contraindicated here because the chondral loss — not the cam alone — was the pain generator. Removing the cam bump without addressing the underlying arthrosis would have been ineffective. Always read the full MRI report: the structural diagnosis is the sum of all findings, not just the most visually prominent one."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Hip osteoarthritis, Femoroacetabular impingement, Cam morphology, Hip manual therapy, SIJ dysfunction, Kinetic chain assessment, Peripheral joint mobilisation, Harris Hip Score",
+    keyPoints: [
+      "Cam-type FAI causes progressive articular cartilage damage through repeated impingement of the non-spherical femoral head-neck on the anterior acetabular rim during hip flexion and internal rotation",
+      "The FADIR test and scour test are the most sensitive clinical provocations for intra-articular hip pathology and should be standard in any groin/anterior hip pain workup",
+      "Advanced hip arthrosis on MRI — including full-thickness chondral loss — does not preclude meaningful conservative management outcomes; a multimodal physiotherapy program produced a 21-point Harris Hip Score improvement in this case",
+      "SIJ dysfunction commonly co-exists with hip pathology and can independently drive buttock pain; structured sequential treatment allows clinicians to distinguish each contributor's role",
+      "Biomechanical re-education targeting neutral hip alignment during weight-bearing (avoiding hip adduction/IR) directly reduces cam-on-rim impingement contact forces and is a cornerstone of cam FAI conservative management"
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CASE 038 — Proximal hamstring tendinopathy in a male triathlete
+// Source: Jayaseelan et al. J Orthop Sports Phys Ther. 2015. PMID: 25996362
+// sourceTier: PeerReviewed
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  id: "038",
+  title: "A 34-year-old male triathlete presents with 4 weeks of deep right buttock pain at the ischial tuberosity, worsening with running and prolonged sitting",
+  category: "Sports/Acute",
+  secondaryCategory: "Hip",
+  difficulty: "Intermediate",
+  estimatedTime: "16–20 minutes",
+  sourceTier: "PeerReviewed",
+  source: {
+    short: "Jayaseelan et al.\nJ Orthop Sports Phys Ther. 2015;45(7):557–562\nPMID: 25996362\nPMC: PMC4615691\nOpen access ✓",
+    full: "Jayaseelan DJ, Kecman M, Froehlich MS, Ninos JC. Conservative treatment of subacute proximal hamstring tendinopathy using eccentric exercises performed with a treadmill: a case report. J Orthop Sports Phys Ther. 2015;45(7):557–562. doi:10.2519/jospt.2015.5762. PMID: 25996362. PMC: PMC4615691."
+  },
+  patient: {
+    ageSex: "34-year-old male",
+    chiefComplaint: "Deep right buttock pain localised to the ischial tuberosity, worsening with running and prolonged sitting on hard surfaces",
+    duration: "4 weeks (subacute)",
+    priorProviders: "Self-managed with NSAIDs — no improvement",
+    priorDiagnoses: "None formally established prior to presentation"
+  },
+  history: {
+    content: `<p>A 34-year-old healthy male triathlete presented with a 4-week history of insidious onset deep right buttock pain localised to the ischial tuberosity. He had been participating in local triathlons for 14 years. Pain was exacerbated by forward bending of the trunk with locked knees, prolonged sitting on hard surfaces, and running — particularly at high intensity, when pain could reach 7/10 on a numeric pain rating scale. He denied any referred pain below the right ischial tuberosity other than mild lateral hamstring radiation when pain was most intense.</p>
+<p>He tried non-steroidal anti-inflammatory drugs without significant relief. He denied numbness, tingling, weakness, bowel or bladder changes, medication use, recent or prior trauma, or prior hamstring injuries. He reported no history of stress fractures. Training load had been appropriate — weekly run mileage under 15 miles, bike mileage under 100 miles, swim under 5000 m — with no sudden increases in volume or intensity over the preceding months. He maintained a training log confirming this. On presentation, he was able to run approximately 30 seconds before pain onset.</p>
+<p>He had not sought prior professional assessment. He was highly motivated to return to full triathlon training and competition.</p>`,
+    clinicalNote: "The diagnostic signal here is the triad of ischial tuberosity pain + pain with trunk flexion (knee extended) + pain with prolonged sitting — this combination is highly specific for proximal hamstring tendinopathy (PHT) and distinguishes it from piriformis syndrome, ischiogluteal bursitis, and lumbar referral. The key clinical nuance is that the sciatic nerve runs immediately adjacent to the proximal hamstring insertion, so sciatica-mimicking symptoms (posterior thigh radiation) can occur in PHT without true nerve root pathology — neural tension tests help distinguish these. The treatment failure with conventional eccentric knee flexion exercises is clinically important: the treadmill eccentric hip extension protocol succeeded where knee-flexion-dominant exercises failed, illustrating that loading must replicate the biomechanical demands of the sport (hip extension during running, not knee flexion)."
+  },
+  examination: {
+    autoROM: `<p><strong>Lumbar ROM:</strong> No pain with lumbar motion in any direction. <strong>Hip ROM:</strong> No pain with hip range of motion performed with the knee flexed. Pain reproduced with end-range active hip extension, knee fully extended (loading the proximal hamstring in its lengthened position). Forward trunk flexion with locked knees reproduced concordant ischial tuberosity pain.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Level</th><th>Movement</th><th>Right</th><th>Left</th></tr></thead>
+<tbody>
+<tr><td>L4</td><td>Knee extension (quad)</td><td>Normal (5/5)</td><td>Normal (5/5)</td></tr>
+<tr><td>L5</td><td>Ankle dorsiflexion / EHL</td><td>Normal (5/5)</td><td>Normal (5/5)</td></tr>
+<tr><td>S1</td><td>Ankle plantarflexion / peroneal</td><td>Normal (5/5)</td><td>Normal (5/5)</td></tr>
+<tr><td>S1–S2</td><td>Hamstring (knee flexion strength)</td><td>Not formally graded — no weakness noted</td><td>Normal</td></tr>
+<tr><td colspan="4"><em>No neurological deficit documented. Deep tendon reflexes symmetric. No asymmetry noted.</em></td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Hamstring-Specific Tests",
+        items: [
+          {
+            id: "palpation_ischial",
+            label: "Palpation — lateral aspect of right ischial tuberosity",
+            result: `<span class="tt pos">Positive</span> — tenderness reproducing concordant pain`,
+            documented: true,
+            rationale: "Direct palpation over the proximal hamstring insertion at the lateral ischial tuberosity is the most reliable clinical test for PHT. Concordant pain reproduction at this specific bony landmark localises the pathology to the hamstring insertion rather than the sciatic nerve, ischiogluteal bursa, or referred lumbar source. The lateral ischial tuberosity is the site of the conjoined semitendinosus and long head of biceps femoris tendon — consistent with ultrasound findings of heterogeneous signal at this location."
+          },
+          {
+            id: "bent_knee_stretch",
+            label: "Bent-Knee Stretch Test (prone hip flexion, knee flexed)",
+            result: `<span class="tt pos">Positive</span> — reproduced ischial tuberosity pain`,
+            documented: true,
+            rationale: "The bent-knee stretch test is performed prone with the hip passively flexed while the knee is flexed, loading the proximal hamstring while reducing neural tension. A positive result (concordant ischial pain) in the absence of neural symptoms differentiates proximal hamstring tendon pathology from true sciatic nerve involvement. This is an important distinguishing test given the sciatic nerve's proximity to the proximal hamstring insertion."
+          },
+          {
+            id: "supine_bridge",
+            label: "Supine Single-Leg Bridge Test",
+            result: `<span class="tt pos">Positive</span> — reproduced right ischial tuberosity pain`,
+            documented: true,
+            rationale: "The single-leg bridge loads the proximal hamstring in hip extension while the knee is extended, replicating the functional demand of the running stride. A positive result (concordant ischial pain) is consistent with PHT and demonstrates that the tendon is load-sensitive — an important finding for designing the rehabilitation program. It also serves as a benchmark for monitoring treatment response over time."
+          },
+          {
+            id: "active_hip_extension",
+            label: "End-Range Active Hip Extension (knee extended)",
+            result: `<span class="tt pos">Positive</span> — reproduced right ischial tuberosity pain`,
+            documented: true,
+            rationale: "Pain with end-range active hip extension, knee fully extended, maximally loads the proximal hamstring insertion. This position replicates the late swing phase of running when the hamstring decelerates hip flexion and initiates hip extension — the precise biomechanical moment at which PHT pain occurs during sport. Positive findings with this test, combined with the provocative testing above, confirmed the diagnosis."
+          },
+          {
+            id: "slump_test",
+            label: "Seated Slump Test",
+            result: `<span class="tt neg">Negative</span> — no neural tension signs`,
+            documented: true,
+            rationale: "The slump test assesses sciatic nerve mechanosensitivity through combined lumbar flexion, cervical flexion, and knee extension. A negative result in this case was critical — it distinguished PHT (a tendon pathology) from lumbar disc herniation with L5/S1 nerve root irritation, which can produce a clinically similar picture of posterior hip and thigh pain worsening with sitting. The sciatic nerve runs adjacent to the proximal hamstring insertion and can be irritated secondarily in PHT, so neural tension testing should always be performed."
+          },
+          {
+            id: "straight_leg_raise",
+            label: "Straight Leg Raise (SLR)",
+            result: `<span class="tt neg">Negative</span> — no neural tension signs`,
+            documented: true,
+            rationale: "Negative SLR further confirmed the absence of lumbar nerve root tension as a contributor. In PHT, the SLR is typically negative because the proximal hamstring is irritated by its insertion-point loading, not by neural tension along the sciatic nerve. A positive SLR would have required lumbar disc pathology to be investigated before proceeding with tendon-directed rehabilitation."
+          },
+          {
+            id: "sij_provocation",
+            label: "Sacroiliac Joint Provocation Tests",
+            result: `<span class="tt neg">Negative</span> — no SIJ contribution identified`,
+            documented: true,
+            rationale: "SIJ dysfunction can refer pain to the buttock and proximal posterior thigh in a pattern that overlaps with PHT. Negative SIJ provocation tests (documented in source) allowed the clinician to confidently attribute all buttock symptoms to the proximal hamstring tendon. Had SIJ testing been positive, the management plan would have required SIJ-directed treatment in addition to tendon loading."
+          },
+          {
+            id: "puranen_orava",
+            label: "Puranen-Orava Test (standing ipsilateral hip flexion, knee extended)",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "The Puranen-Orava test (standing active hip flexion with knee extended while palpating the ischial tuberosity) is a well-described PHT-specific test with reported sensitivity of approximately 76%. It was not documented in this case but would have added further diagnostic confirmation alongside the bent-knee stretch and single-leg bridge tests already performed. Its omission does not alter the diagnosis given the strongly positive findings on other provocation tests."
+          },
+          {
+            id: "single_leg_hop",
+            label: "Single-Leg Hop Test",
+            result: `<span class="tt neg">Negative</span> — no pain or limitation`,
+            documented: true,
+            rationale: "A negative single-leg hop test indicates that the proximal hamstring tendon was not sensitive to the compressive and impact loading associated with hopping — distinguishing this from a more severe tendon injury. This was a positive prognostic indicator, suggesting the tendon retained sufficient load tolerance to respond to a progressive eccentric loading program."
+          }
+        ]
+      },
+      {
+        group: "Imaging",
+        items: [
+          {
+            id: "msk_ultrasound",
+            label: "Musculoskeletal Ultrasound — right proximal hamstring (12 MHz, longitudinal)",
+            result: `<span class="tt pos">Positive</span> — thicker appearance with heterogeneous texture of the right conjoint hamstring tendon at the ischial tuberosity insertion vs left; no tearing or fluid; no bursal involvement`,
+            documented: true,
+            rationale: "MSK ultrasound confirmed the clinical diagnosis of proximal hamstring tendinopathy by demonstrating focal tendon thickening and disorganised tendon architecture (heterogeneous texture) at the ischial tuberosity insertion compared to the asymptomatic left side. The absence of tearing or fluid at the insertion, and no evidence of bursal swelling, indicated a pure tendinopathy without associated bursal pathology or structural disruption — supporting a conservative management approach. Repeat ultrasound at 8 weeks showed decreased tendon diameter, providing objective evidence of treatment response."
+          },
+          {
+            id: "mri_pelvis",
+            label: "MRI Pelvis / Hamstring Tendons",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "MRI was discussed with the patient and declined due to cost. MRI has higher sensitivity than ultrasound for detecting PHT — it can identify bone marrow oedema at the ischial tuberosity, peritendinous T2 signal, and partial tearing that may not be visible on ultrasound. Its omission here was an accepted limitation of the case, noted by the authors. In cases where the diagnosis is unclear or where the patient is not responding as expected, MRI should be obtained before proceeding with or continuing rehabilitation."
+          }
+        ]
+      },
+      {
+        group: "Outcome Measure",
+        items: [
+          {
+            id: "visa_h",
+            label: "VISA-H (Victorian Institute of Sport Assessment — Proximal Hamstring Tendons)",
+            result: `<span class="tt notable">Notable</span> — 23/100 at initial presentation (severe limitation); 83/100 at 12 weeks; 100/100 at 1-year follow-up`,
+            documented: true,
+            rationale: "The VISA-H is the validated patient-reported outcome measure specifically designed for proximal hamstring tendinopathy, covering pain and sport limitation across 8 questions (score 0–100; lower = worse). A score of 23 at baseline reflects severe symptomatic and functional limitation. The minimal detectable change (MDC) is approximately 4 points. The progression from 23 → 83 → 100 over 12 months documents a clinically meaningful and complete recovery trajectory, validating the eccentric treadmill protocol as an effective intervention for this condition."
+          }
+        ]
+      }
+    ],
+    contextText: "Examination was structured around three clinical questions: (1) Is this a proximal hamstring tendon problem or a neural/lumbar source? — Negative SLR, slump, and SIJ tests, combined with positive tendon-specific provocation tests (bent-knee stretch, single-leg bridge, ischial palpation), confirmed the tendon as the sole source. (2) Is there structural disruption? — Ultrasound confirmed tendinopathy without tearing, supporting conservative management. (3) What is the load tolerance of the tendon? — Positive pain response on single-leg bridge and hip extension, but negative on single-leg hop, established the severity threshold for rehabilitation programming. This three-question framework guided both diagnosis and treatment design."
+  },
+  investigations: {
+    options: [
+      {
+        id: "msk_us_hamstring",
+        label: "MSK Ultrasound — right proximal hamstring",
+        consequence: null,
+        ordered: true,
+        result: `<p>12 MHz longitudinal probe scan at the right ischial tuberosity insertion: <strong>thicker, heterogeneous conjoint hamstring tendon</strong> (semitendinosus + long head biceps femoris) on the right compared to the asymptomatic left side. No fluid at the insertion, no bursal swelling, no tearing. The patient noted concordant pain at the probe location during imaging, confirming the scan site corresponded to his clinical pain source.</p>
+<p><strong>8-week follow-up ultrasound:</strong> Decreased tendon diameter at the former site of pain; right tendon diameter 2.0 mm vs left 2.3 mm (bilateral comparison at approximate ischial tuberosity landmark). Reduced tenderness on probe contact.</p>`
+      },
+      {
+        id: "mri_hamstring",
+        label: "MRI — pelvis / hamstring origins",
+        consequence: "MRI was discussed with the patient but declined due to cost. MRI offers higher sensitivity than ultrasound for PHT — it can identify bone marrow oedema at the ischial tuberosity, peritendinous T2 signal with a distal feathery appearance, and subtle partial tears. Had the diagnosis been unclear or if the patient failed to respond to rehabilitation, MRI would have been the appropriate next imaging step. In clinical practice, MRI should be obtained in any PHT case with atypical features, severe restriction, or poor response to a 6–8 week exercise program.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "lumbar_xray",
+        label: "Lumbar spine radiograph",
+        consequence: "Not indicated. The absence of lumbar motion pain, negative neural tension tests (SLR and slump), normal neurological examination, and strongly positive hamstring-specific provocation tests made lumbar imaging unnecessary. Had there been any neurological deficit, positive neural tension tests, or bilateral lower limb symptoms, lumbar imaging would have been the priority to rule out disc herniation at L4/5 or L5/S1.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Proximal Hamstring Tendinopathy (PHT)",
+        correct: true,
+        blurb: "The clinical presentation in this case maps precisely onto the published diagnostic criteria for proximal hamstring tendinopathy: insidious onset ischial pain in a runner, pain with sitting, pain with trunk flexion (knee extended), positive bent-knee stretch, positive single-leg bridge, and ultrasound confirming tendon thickening without tearing. The negative neural tension tests confirm the sciatic nerve is not involved.",
+        supports: [
+          "Deep ischial tuberosity pain — the hallmark symptom of PHT",
+          "Pain with forward trunk flexion, knees locked — loads proximal hamstring in lengthened position",
+          "Pain with prolonged sitting on hard surfaces — direct compression of the proximal hamstring insertion",
+          "Pain onset during running at high intensity — consistent with hamstring loading during late swing phase",
+          "Positive bent-knee stretch test, positive single-leg bridge, positive end-range hip extension",
+          "Tender to palpation directly over the lateral ischial tuberosity",
+          "Ultrasound: heterogeneous, thickened conjoint hamstring tendon at ischial insertion — no tearing",
+          "Negative SLR, slump, and SIJ tests — excludes neural and SIJ sources",
+          "14-year triathlon history — consistent with gradual overuse tendinopathy aetiology",
+          "VISA-H 23/100 — severe limitation consistent with clinically significant tendon pathology"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Ischiogluteal Bursitis",
+        correct: false,
+        blurb: "The ischiogluteal bursa lies between the proximal hamstring insertion and the ischial tuberosity and can become inflamed in runners, producing pain virtually identical in location to PHT. Clinical and ultrasound findings distinguish the two.",
+        supports: [
+          "Ischial tuberosity pain aggravated by sitting on hard surfaces — bursitis is provoked by direct compression",
+          "Runner with repetitive hip flexion/extension loading",
+          "Tenderness on palpation of the ischial tuberosity region"
+        ],
+        arguesAgainst: [
+          "Ultrasound showed no fluid collection or bursal swelling adjacent to the ischial tuberosity",
+          "Pain was reproduced by hamstring-loading tests (bridge, hip extension, trunk flexion), not by direct bony compression alone",
+          "The VISA-H outcome measure is specific to tendinopathy, not bursitis",
+          "Treatment response to eccentric tendon loading (not bursitis management) was definitive"
+        ]
+      },
+      {
+        label: "Lumbar Disc Herniation with L5 or S1 Radiculopathy",
+        correct: false,
+        blurb: "L5/S1 nerve root compression can mimic PHT almost exactly — both produce posterior hip and thigh pain aggravated by sitting and lumbar flexion. Neural tension testing is the key differentiating examination.",
+        supports: [
+          "Pain worsened with prolonged sitting — consistent with lumbar disc loading",
+          "Pain with trunk flexion — could reflect lumbar flexion loading on a sensitised nerve root",
+          "Mild lateral hamstring radiation at pain peak — within the S1 dermatomal distribution",
+          "34-year-old male — within the demographic for lumbar disc herniation"
+        ],
+        arguesAgainst: [
+          "Negative SLR and seated slump test — definitively excludes significant sciatic nerve tension",
+          "No neurological deficit — no weakness, reflex asymmetry, or sensory loss",
+          "No pain with any lumbar motion",
+          "Pain reproduced specifically by proximal hamstring loading tests, not by axial lumbar provocation",
+          "Ultrasound confirmed tendon pathology at the ischial insertion — an anatomically specific finding inconsistent with pure neural referral"
+        ]
+      },
+      {
+        label: "Piriformis Syndrome / Deep Gluteal Syndrome",
+        correct: false,
+        blurb: "Piriformis syndrome produces deep buttock pain that can mimic PHT, particularly in runners. The piriformis muscle lies in close proximity to both the sciatic nerve and the proximal hamstring insertion.",
+        supports: [
+          "Deep buttock pain in an endurance athlete",
+          "Aggravation with prolonged sitting",
+          "Posterior thigh radiation reported at high pain intensity"
+        ],
+        arguesAgainst: [
+          "No pain with hip internal rotation or hip flexion-adduction-internal rotation (the classical piriformis provocation)",
+          "Pain was specifically reproduced by hamstring-loading tests (ischial tuberosity palpation, bridge, trunk flexion with knee extended) — not by piriformis-specific testing",
+          "Case 036 in this simulator already covers piriformis syndrome; the clinical distinction is important: PHT pain is more focal to the ischial tuberosity, piriformis pain is more diffuse in the deep gluteal region",
+          "Ultrasound confirmed tendon pathology at the ischial insertion — not consistent with piriformis muscle pathology"
+        ]
+      },
+      {
+        label: "Hamstring Muscle Strain (proximal myotendinous junction)",
+        correct: false,
+        blurb: "Proximal hamstring muscle strains and PHT exist on a continuum and can coexist. The distinguishing features are onset pattern (acute trauma vs insidious overuse) and the specific pain location (myotendinous junction vs ischial insertion).",
+        supports: [
+          "Posterior thigh and ischial pain in a runner",
+          "Pain with hamstring loading activities"
+        ],
+        arguesAgainst: [
+          "Insidious onset over 4 weeks — no acute traumatic mechanism",
+          "No sudden pain onset during a specific sprint or explosive movement",
+          "Pain localised specifically to the lateral ischial tuberosity — the tendinous insertion, not the myotendinous junction in the posterior thigh",
+          "Ultrasound showed tendon changes at the ischial insertion without myotendinous junction disruption",
+          "No ecchymosis, haematoma, or palpable defect in the posterior thigh"
+        ]
+      },
+      {
+        label: "Stress Fracture of the Ischium or Pubic Ramus",
+        correct: false,
+        blurb: "Stress fractures of the ischium or inferior pubic ramus can produce deep buttock pain in endurance athletes and deserve consideration in any triathlete presenting with insidious onset ischial region pain.",
+        supports: [
+          "Endurance athlete with repetitive cyclic loading (running + cycling)",
+          "Deep ischial pain in a triathlete",
+          "Pain with weight-bearing and prolonged sitting"
+        ],
+        arguesAgainst: [
+          "Pain was specifically reproduced by hamstring tendon loading tests, not by bone percussion or axial loading",
+          "No pain with single-leg hop — stress fractures are typically highly sensitive to impact loading",
+          "Ultrasound identified tendon pathology at the insertion — not cortical disruption or periosteal reaction",
+          "No history of amenorrhoea, energy deficiency, or risk factors for low bone density",
+          "Subacute onset over 4 weeks with a clear relationship to running volume and intensity — consistent with tendinopathy rather than fracture progression"
+        ]
+      },
+      {
+        label: "Sacroiliac Joint Dysfunction",
+        correct: false,
+        blurb: "SIJ dysfunction is a common cause of buttock and posterior hip pain in athletes and was appropriately screened in this case. It was excluded on clinical testing.",
+        supports: [
+          "Buttock pain in a runner",
+          "Unilateral right-sided symptoms",
+          "Aggravation with activity"
+        ],
+        arguesAgainst: [
+          "SIJ provocation tests were negative — documented in the source",
+          "Pain characteristics (ischial tuberosity focal tenderness, pain with trunk flexion, pain with sitting on hard surfaces) are specific to PHT rather than SIJ",
+          "Ultrasound confirmed hamstring tendon pathology at the ischial insertion — an anatomically specific finding inconsistent with SIJ as the pain source"
+        ]
+      },
+      {
+        label: "Avulsion Fracture of the Ischial Tuberosity (chronic / apophyseal)",
+        correct: false,
+        blurb: "Chronic avulsion injuries at the ischial apophysis (most common in adolescents) or ischial tuberosity stress reactions can produce ischial pain in athletes. In adults, this is rare but deserves consideration in high-level endurance athletes with persistent insertion-point pain.",
+        supports: [
+          "Focal ischial tuberosity tenderness in an athlete",
+          "Pain with hamstring loading — consistent with traction at the insertion",
+          "Long-term repetitive hamstring loading through 14 years of triathlon training"
+        ],
+        arguesAgainst: [
+          "34-year-old male — acute apophyseal avulsion is a condition of adolescence; chronic bony avulsion is rare in this demographic without a prior acute event",
+          "No acute traumatic onset",
+          "Ultrasound showed tendon changes without cortical irregularity or bone reaction at the insertion",
+          "MRI was declined but clinical response to eccentric tendon loading (not bony healing protocol) was complete — confirming a tendinous, not bony, diagnosis"
+        ]
+      }
+    ],
+    explanation: `<p>The diagnosis of proximal hamstring tendinopathy was established through a combination of highly specific symptom pattern (ischial tuberosity pain with sitting, trunk flexion, and running), positive hamstring-specific provocation tests, ultrasound confirmation of tendon pathology without tearing, and critically, the systematic exclusion of neural tension and sacroiliac joint contributors. In a posterior hip pain presentation, this three-way screen — hamstring provocation, neural tension, SIJ provocation — is the most efficient diagnostic algorithm.</p>
+<p>The key clinical pivot was the 4-week treatment failure with conventional eccentric knee flexion exercises before the treadmill eccentric hip extension protocol was introduced. This failure provides an important teaching point: the biomechanical demands of running (hip extension load, not knee flexion) must be replicated in the rehabilitation exercise for the tendon to be adequately loaded. The conjoint hamstring tendon inserts on the ischial tuberosity and is primarily a hip extensor in runners; eccentric loading in hip extension — not knee flexion — generates sufficient tendon stress to drive a therapeutic response. The immediate pain provocation during the treadmill exercise (in contrast to no pain during knee-flexion exercises at maximal effort) confirmed this biomechanical rationale clinically.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "eccentric_treadmill",
+        label: "Eccentric hip extension exercise on treadmill (backwards standing, resisting belt)",
+        selected: true,
+        explanation: `<strong>Appropriate — key intervention.</strong> The patient faced backward on a treadmill set at 0.5 mph, holding the rails, with the uninvolved foot off the belt. He resisted the belt pulling his involved foot forward (hip moving into flexion from extension), maintaining knee extension throughout. This loaded the proximal hamstring eccentrically in hip extension — replicating the sport-specific demand — and immediately provoked concordant ischial pain at 4–6/10, confirming adequate tendon load. Improvement began within 2 weeks; running was resumed at 4 weeks; speed training at 12 weeks. The critical difference from the initial failed protocol was sport-specific load direction.`
+      },
+      {
+        id: "lumbopelvic_strengthening",
+        label: "Lumbopelvic strengthening (plank, side plank, progressing to contralateral single-leg/arm plank)",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Lumbopelvic stability provides the proximal foundation for hamstring function. Poor lumbopelvic control is a recognised risk factor for PHT — the hamstring must compensate for pelvic instability during running, increasing the load demand on the tendon. Planks progressed from bilateral 1-minute holds to contralateral single-limb variations over 30–60 seconds. This progression directly reduces hamstring compensatory demand during running by improving pelvis-over-femur control.`
+      },
+      {
+        id: "running_cessation_then_graded",
+        label: "Running cessation followed by graded return-to-run protocol",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Immediate running cessation was prescribed on presentation. Return to running was initiated 4 weeks after beginning the treadmill eccentric protocol (when the exercise could be performed at maximal effort without pain), using a graduated program increasing by 0.5 miles per day per week, starting at 0.5 miles at a pace 2 minutes per mile slower than usual, with no running on consecutive days. This load management approach prevented symptom flare-up during the critical tendon remodelling phase.`
+      },
+      {
+        id: "conventional_eccentric_knee_flexion",
+        label: "Conventional eccentric knee flexion exercises (seated hamstring curls, exercise ball curls)",
+        selected: false,
+        explanation: `<strong>Not sufficient as sole intervention.</strong> These exercises were prescribed for the first 4 weeks of treatment and produced minimal improvement despite good adherence. The fundamental limitation is biomechanical: seated and ball hamstring curls load the hamstring primarily as a knee flexor, not a hip extensor. Running demands hip extension loading of the proximal hamstring during late swing phase — the same position that reproduces pain. Eccentric loading in hip extension (treadmill protocol) was required to generate sufficient tendon load to drive a therapeutic response.`
+      },
+      {
+        id: "corticosteroid_injection",
+        label: "Corticosteroid injection — peritendinous at ischial tuberosity",
+        selected: false,
+        explanation: `<strong>Not appropriate as first-line treatment.</strong> Corticosteroid injection was discussed as an option when the patient failed to respond to the initial 4 weeks of exercise, but the patient preferred to continue with a non-surgical approach. Evidence for peritendinous corticosteroid in PHT is mixed — short-term pain relief may facilitate rehabilitation participation, but injections adjacent to the proximal hamstring insertion carry a risk of tendon weakening and do not address the underlying degenerative tendinopathy mechanism. Progressive eccentric loading should be exhausted before injection is considered.`
+      },
+      {
+        id: "surgical_repair",
+        label: "Surgical repair of proximal hamstring",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> Surgery for PHT is reserved for complete acute tears or for chronic partial tears that have failed all conservative management. Ultrasound in this case confirmed no tearing — the tendon had intact structural continuity. Surgical debridement or repair in the absence of structural disruption is not evidence-supported and carries substantial morbidity including sciatic nerve injury risk.`
+      }
+    ],
+    outcomeText: "Symptom improvement began within 2 weeks of initiating the treadmill eccentric exercise. The patient resumed gradual running 4 weeks after starting the protocol and progressed to speed training at 12 weeks. VISA-H improved from 23 at baseline to 83 at 12 weeks. At 1-year follow-up, the patient reported no recurrence, had returned to triathlon competition 6 months earlier, and achieved a VISA-H score of 100/100. Repeat ultrasound at 8 weeks showed decreased tendon diameter compared to the symptomatic presentation.",
+
+    prognosis: {
+      inferred: false,
+      frequencyDuration: `<p>The documented treatment course was <strong>2 physiotherapy visits in the first 4 weeks</strong> (technique correction for initial exercises) followed by <strong>home-based eccentric treadmill protocol</strong> performed daily. Clinical recovery was achieved at 12 weeks with complete return to sport at 6 months. For a standard PHT presentation in clinical practice, a reasonable framework is: <strong>2–3 visits in weeks 1–4</strong> for diagnosis, exercise instruction, and load management counselling; <strong>1 visit every 2–3 weeks from weeks 4–12</strong> for progressive loading assessment and running program monitoring; then discharge to independent management with return-to-sport milestones established at week 12.</p>`,
+      expectedTrajectory: `<p>PHT in runners typically follows a slow recovery arc — this is not a condition that resolves in 4–6 weeks. Evidence suggests that 12–16 weeks of progressive loading is the minimum for meaningful tendon remodelling; full return to unrestricted high-intensity sport typically requires 4–6 months. The documented 12-week return to speed training and 6-month competition return in this case is consistent with the literature.</p>
+<p>Prognostic factors in this case: <em>Favourable</em> — subacute presentation (4 weeks), no structural tearing on ultrasound, highly motivated patient, excellent training log documentation, appropriate baseline load management. <em>Unfavourable</em> — initial 4-week exercise failure may indicate a pain-sensitised tendon requiring more specific loading to provoke a response. Chronicity is the strongest negative prognostic factor in tendinopathy; the short duration here was advantageous. Sciatic nerve irritation (even if not the primary diagnosis) can slow recovery and should be monitored throughout.</p>`,
+      outcomeBenchmarks: `<p><strong>VISA-H</strong> (0–100; higher = better): Baseline 23/100 (severe); target ≥50 at 6 weeks (moderate improvement), ≥70 at 12 weeks (return to graded running), 100 at full recovery. MDC ≈4 points. A clinically meaningful change is typically ≥20 points. <strong>Pain with treadmill eccentric exercise</strong>: should remain ≤5/10 NRS and not worsen over a 24-hour period — pain that exceeds 5/10 or worsens the following day indicates overloading and requires load reduction. <strong>Single-leg bridge</strong>: pain-free single-leg bridge indicates adequate load tolerance to return to graded running. <strong>Sitting tolerance</strong>: pain-free sitting for 30+ minutes on firm surface is a functional milestone for daily life; 60+ minutes before return to cycling training.</p>`,
+      comanagement: `<p><strong>Sports physician or physiotherapist</strong> should co-manage if needle tenotomy, PRP, or extracorporeal shockwave therapy becomes necessary — the patient in this case declined injection therapy, but these options are appropriate if 12 weeks of progressive loading fails to achieve a VISA-H improvement of ≥20 points. <strong>Orthopaedic surgery</strong> referral is indicated only if complete tearing is identified on MRI (rare in subacute presentations) or after failure of all conservative measures. <strong>GP</strong> for NSAID prescription and general health monitoring. Treatment-emergent red flags warranting escalation: acute severe increase in ischial pain during exercise (possible acute tear of the tendon — cease loading immediately and obtain MRI), development of neurological symptoms (numbness, paraesthesia, or weakness in the posterior thigh or lower leg — assess for sciatic nerve entrapment or adhesion around the proximal hamstring), inability to sit for more than a few minutes suggesting severe tendon reactivity requiring a load-free period before reloading.</p>`
+    },
+
+    adjustmentPlan: {
+      contraindicated: false,
+      contraindicatedReason: null,
+      alternativeApproach: null,
+      inferred: true,
+      levelsRationale: `<p>Chiropractic adjustment is not the primary intervention for PHT, but segmental dysfunction of the lumbar spine and pelvis can contribute to the proximal hamstring loading environment and is worth assessing and treating where identified:</p>
+<p><strong>L4–S1 (lumbar spine):</strong> The proximal hamstring is innervated by the tibial branch of the sciatic nerve (L5–S2). Segmental restriction at L4/5 or L5/S1 can increase neural mechanosensitivity of the sciatic nerve, contributing to the pain sensitisation at the ischial insertion. Restoring segmental mobility at L4–S1 reduces afferent neural sensitisation and may facilitate hamstring muscle relaxation, improving the therapeutic response to eccentric loading. While not documented in this specific case (SIJ and lumbar tests were negative), it is standard chiropractic practice to assess and treat lumbar segmental restrictions co-existing with lower limb tendinopathy.</p>
+<p><strong>Sacroiliac joint:</strong> SIJ provocation tests were negative in this case. However, in PHT presentations where SIJ dysfunction is identified, SIJ manipulation reduces posterior pelvic pain and can restore gluteal activation patterns that are inhibited by SIJ dysfunction — directly relevant to lumbopelvic stability during running. The posterior rami of S1–S3 innervate the SIJ; normalising SIJ mechanics reduces local sensitisation and may facilitate the neural milieu for hamstring rehabilitation.</p>
+<p><strong>Proximal hamstring tendon (soft tissue, not manipulation):</strong> Cross-friction massage or instrument-assisted soft tissue mobilisation (e.g. Graston) at the proximal hamstring insertion can be incorporated as an adjunct to eccentric loading — evidence for this is limited but it is widely used in clinical practice to address local tendon adhesion and stimulate collagen remodelling.</p>`,
+      techniqueDetail: null,
+      precautions: `<p>The sciatic nerve runs immediately adjacent to the proximal hamstring insertion at the ischial tuberosity — any manual technique directed at this region must be performed with awareness of nerve proximity. Aggressive deep transverse friction at the ischial tuberosity is poorly tolerated and can irritate the sciatic nerve. Begin with light sustained pressure and cross-fibre mobilisation; cease if neural symptoms (radiation below the ischial tuberosity, paresthesia) develop. For lumbar and SIJ manipulation, standard precautions apply. No specific osseous contraindications in this case — no osteoporosis risk factors, no prior trauma, active young male. Avoid passive hamstring stretching in the acute/reactive phase of tendinopathy — lengthening the tendon under tension increases compressive load at the insertion and may worsen symptoms. Active stretching through pain-free range is preferred.</p>`
+    },
+
+    rehabProgram: {
+      inferred: false,
+      rationale: `<p>The rehabilitation program targets the proximal hamstring tendon through <strong>progressive eccentric hip extension loading</strong> — the biomechanical stimulus required to drive collagen synthesis and tendon remodelling. The key insight from this case is that loading specificity matters: the conjoint hamstring tendon (semitendinosus + long head biceps femoris) functions primarily as a <strong>hip extensor in runners</strong>, not a knee flexor. Eccentric load must be applied in the hip extension direction — resisting hip flexion from extension — to generate adequate tendon force. The treadmill protocol achieves this by using the belt to pull the hip passively into flexion while the patient eccentrically resists, with the knee extended throughout to maintain proximal hamstring length and insertion-point loading.</p>
+<p>A concurrent <strong>lumbopelvic stability program</strong> addresses the proximal foundation for hamstring function. Poor pelvis-over-femur control during running increases hamstring compensatory demand — the tendon must work harder to decelerate hip flexion in the absence of adequate gluteal and core support. Planks, side planks, and progressing contralateral limb variations specifically target the transversus abdominis, obliques, and gluteus medius — the key stabilisers for maintaining pelvic position during single-leg stance and running. The pain-free single-leg bridge serves as both a rehabilitation exercise and a return-to-run readiness benchmark.</p>
+<p>Evidence base: Eccentric exercise is the most strongly evidenced treatment for tendinopathy across multiple sites and populations (Alfredson protocol for Achilles, Stanish protocol for patellar tendon, and comparable approaches for PHT). The Puranen-Orava eccentric protocol for PHT has been published as a case series. The treadmill protocol described in this case report extended the eccentric principle to sport-specific hip extension loading, producing superior results to conventional knee flexion-focused approaches. Heavy slow resistance training (concentric + eccentric) is an emerging alternative with comparable evidence, particularly for powerlifting and strength sport populations.</p>`,
+      phases: [
+        {
+          phase: "Phase 1",
+          goals: "Reduce tendon reactivity, establish pain-free daily function, begin gentle lumbopelvic activation, avoid compressive tendon loading",
+          exercises: "Isometric hip extension holds (prone, knee extended, low load), submaximal lumbopelvic activation (posterior pelvic tilt, supine double-leg bridge), light hamstring stretching short of pain, swimming (pain-free) permitted, cycling (pain-free) permitted",
+          parameters: "Isometric holds: 5 × 45 seconds at 70% effort, daily (evidence supports isometric loading for tendon pain modulation)<br>Posterior pelvic tilt / double-leg bridge: 3 × 15 reps, daily<br>Stretching: 3 × 30 seconds, daily — strictly pain-free range only",
+          progressionCriteria: "NRS sitting pain ≤3/10 on firm surface for 15 minutes; pain-free double-leg bridge × 15 reps; NRS ≤2/10 with ischial tuberosity palpation",
+          timeframe: "Weeks 1–2"
+        },
+        {
+          phase: "Phase 2",
+          goals: "Progressive eccentric hip extension loading, introduce sport-specific tendon stimulus, begin graded return to running",
+          exercises: "Treadmill eccentric hip extension (backwards stance, 0.5 mph, resisting belt with involved limb, knee extended) — 3 × 12–15 reps, 1–2×/daily; Plank progressing to contralateral arm/leg variation (30s → 60s each side); Side plank (30s → 60s); Single-leg bridge (when double-leg bridge pain-free); Double-leg exercise ball hamstring curls (progressing to single-leg)",
+          parameters: "Treadmill eccentric: 3 sets × 12–15 reps, 1–2×/daily — target 4–6/10 NRS during exercise (pain should not worsen the following day)<br>Plank: 3 × 45–60 seconds<br>Side plank: 3 × 30–60 seconds each side<br>Ball curl: 3 × 12–15",
+          progressionCriteria: "Treadmill exercise pain ≤2/10 at maximal effort; VISA-H ≥50; pain-free single-leg bridge × 10 reps; sitting tolerance ≥30 minutes on firm surface; return to 0.5–1.5 miles running at reduced pace",
+          timeframe: "Weeks 3–8"
+        },
+        {
+          phase: "Phase 3",
+          goals: "Full return to triathlon training including speed work, load tolerance for competition demands, independent long-term maintenance",
+          exercises: "Continued treadmill eccentric at increasing resistance; single-leg dead lift (progressing to loaded barbell); Nordic hamstring curl (advanced); sport-specific return to run protocol (increasing pace and volume by 10% per week); return to open-water swim and bike intervals; VISA-H self-monitoring",
+          parameters: "Single-leg dead lift: 3 × 10, 3×/week, progressing load<br>Nordic curl: 3 × 6–8, 2×/week (advanced stage)<br>Running: increase 0.5 miles/day/week from 0.5 miles; no consecutive days running; pace 2 min/mile slower than race pace initially<br>Treadmill maintenance: 2×/week ongoing",
+          progressionCriteria: "VISA-H ≥80; NRS ≤1/10 with maximal effort eccentric exercise; able to complete 5-mile run at race pace without symptom increase >1 point; return to triathlon competition training without flare-up; pain-free competitive swimming and cycling",
+          timeframe: "Weeks 9–16 (competition return by month 6)"
+        }
+      ]
+    }
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Proximal Hamstring Tendinopathy</strong><br>Subacute overuse tendinopathy at the ischial tuberosity in an experienced triathlete",
+    outcomes: [
+      { label: "Published Source", text: "Jayaseelan et al. J Orthop Sports Phys Ther. 2015;45(7):557–562" },
+      { label: "PMID / PMC", text: "PMID: 25996362 — PMC4615691 (open access)" },
+      { label: "Final Diagnosis", text: "Subacute proximal hamstring tendinopathy — right conjoint hamstring tendon at ischial tuberosity; ultrasound confirmed" },
+      { label: "Intervention", text: "Eccentric hip extension exercise using treadmill (backwards, resisting belt) + lumbopelvic strengthening + graded return-to-run protocol" },
+      { label: "Outcome", text: "VISA-H 23 → 83 at 12 weeks → 100 at 1-year follow-up; return to triathlon competition at 6 months; no recurrence at 1 year" }
+    ],
+    conditionSummary: {
+      overview: "Proximal hamstring tendinopathy (PHT) is a chronic overuse condition characterised by pain and degenerative changes at the conjoint hamstring tendon insertion on the ischial tuberosity. It is common in distance runners, cyclists, and triathletes, typically presenting insidiously with pain at the ischial tuberosity aggravated by sitting, hip flexion with knee extension, and running — particularly at high intensity. Recovery is slow and requires progressive tendon loading calibrated to the specific biomechanical demands of the patient's sport.",
+      presentation: [
+        "Deep, focal pain at the ischial tuberosity — worsened by sitting on hard surfaces and prolonged hip flexion loading",
+        "Pain with trunk forward flexion, knees locked (loading the hamstring at its proximal insertion in a lengthened position)",
+        "Running pain onset during high-intensity efforts — typically in the late swing phase when the hamstring decelerates hip flexion",
+        "Positive bent-knee stretch test, single-leg bridge, and end-range hip extension with knee extended; negative SLR and slump (distinguishing from lumbar radiculopathy)"
+      ],
+      pathology: [
+        "Repetitive compressive and tensile loads at the ischial tuberosity insertion cause progressive collagen disorganisation, angiofibroblastic changes, and increased ground substance — the hallmarks of tendinopathy rather than tendinitis",
+        "The conjoint tendon (semitendinosus + long head of biceps femoris) and the semimembranosus tendon insert adjacent to each other on the ischial tuberosity; the conjoint tendon is most commonly affected",
+        "The sciatic nerve runs in close proximity to the proximal hamstring insertion and can become secondarily sensitised or mechanically restricted around the tendon, contributing to posterior thigh radiation and mimicking radiculopathy",
+        "Lumbopelvic instability is a recognised contributing factor — hamstring compensatory overload occurs when the pelvis is inadequately stabilised during running, increasing the load transmitted to the proximal tendon insertion"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Loading specificity is everything in tendon rehabilitation. Four weeks of eccentric knee flexion exercises — the conventional first-line treatment for hamstring tendinopathy — produced no improvement in this case. The treadmill eccentric hip extension protocol produced improvement within 2 weeks. The difference was biomechanical: the proximal hamstring is a hip extensor in runners, not a knee flexor. Rehabilitation exercises must replicate the sport-specific loading direction to generate sufficient tendon force for a therapeutic response."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "Proximal hamstring tendinopathy and lumbar L5/S1 radiculopathy produce clinically almost identical presentations — both cause deep posterior hip/buttock pain worsening with sitting and lumbar flexion. The slump test and SLR are the decisive differentiating tests. In PHT, they are negative; in L5/S1 radiculopathy, they are positive. Do not proceed to a hamstring-loading program without first ruling out neural tension — loading a sensitised sciatic nerve with eccentric hip extension exercises will worsen, not improve, radicular symptoms."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "The VISA-H (Victorian Institute of Sport Assessment — Proximal Hamstring) is a 100-point validated outcome tool specifically designed for PHT. Using it at every consultation provides objective evidence of treatment response and helps calibrate loading progression. Pain during eccentric exercise should be encouraged (4–6/10 NRS) — the 'pain-allowed' approach is a feature of tendinopathy rehabilitation, not a bug. The rule is: pain should not worsen the following day. If it does, reduce the load."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Proximal hamstring tendinopathy is well within chiropractic scope: diagnosis using hamstring-specific provocation tests, MSK ultrasound interpretation, progressive eccentric loading prescription, and lumbopelvic rehabilitation are all standard chiropractic competencies. Adjunctive soft tissue techniques (cross-friction, IASTM) at the proximal hamstring insertion, and lumbar/SIJ manipulation where segmental dysfunction co-exists, are appropriate additions to the program. Refer to sports physician if needle tenotomy, PRP, or shockwave therapy is required — typically after 12 weeks of failed progressive loading."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "Ultrasound showing tendon thickening and heterogeneous echotexture confirms PHT but cannot reliably detect partial tearing — MRI is required for this. In this case, MRI was declined. Clinically, if the patient fails to respond to 6–8 weeks of appropriate eccentric loading, MRI should be obtained to rule out partial or complete tendon tearing before proceeding further. A tendon with structural disruption requires a different management approach to degenerative tendinopathy without tearing."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Proximal hamstring tendinopathy, Tendinopathy rehabilitation, Eccentric loading, VISA-H outcome measure, Ischial tuberosity, Running injuries, Sports physiotherapy, Lumbopelvic stability",
+    keyPoints: [
+      "Proximal hamstring tendinopathy (PHT) presents with focal ischial tuberosity pain aggravated by sitting on hard surfaces, trunk flexion with knees locked, and high-intensity running — distinguishable from lumbar radiculopathy by negative SLR and slump tests",
+      "The bent-knee stretch test, single-leg bridge, and end-range hip extension (knee extended) are the most clinically useful provocative tests for PHT and should be performed as a battery",
+      "Eccentric loading must replicate sport-specific demands: in runners, the proximal hamstring functions as a hip extensor in late swing phase — eccentric hip extension (not knee flexion) is the required loading direction",
+      "The VISA-H is the validated patient-reported outcome measure for PHT (score 0–100); MDC ≈4 points; use at every consultation to guide progressive loading decisions",
+      "Pain during eccentric tendon loading is acceptable and expected (target 4–6/10 NRS) provided symptoms do not worsen in the 24 hours following exercise — this 'pain-allowed' principle is fundamental to tendinopathy rehabilitation"
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CASE 039 — Chronic migraine with cervical kyphosis treated with CBP
+// Source: Shtulman et al. Cureus. 2024. PMID: 39329038
+// sourceTier: PeerReviewed
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  id: "039",
+  title: "A 29-year-old man presents with chronic, debilitating headaches occurring up to 3 days per week, accompanied by visual disturbances and lower extremity cramping, unresponsive to 19 years of medication and prior chiropractic care",
+  category: "Headache",
+  secondaryCategory: "Cervical",
+  difficulty: "Advanced",
+  estimatedTime: "20–25 minutes",
+  sourceTier: "PeerReviewed",
+  source: {
+    short: "Shtulman et al.\nCureus. 2024;16(9):e69935\nPMID: 39329038\nPMC: PMC11427026\nOpen access ✓",
+    full: "Shtulman I, Fedorchuk C, Oakley PA, Harrison DE. Resolution of chronic migraine headaches and improvement in cervical spine kyphosis following Chiropractic BioPhysics® (CBP®) treatment: a case report with a seven-month follow-up. Cureus. 2024;16(9):e69935. doi:10.7759/cureus.69935. PMID: 39329038. PMC: PMC11427026."
+  },
+  patient: {
+    ageSex: "29-year-old male",
+    chiefComplaint: "Chronic migraine headaches occurring up to 3 days per week, with visual and auditory aura, severe head and face pain, lower extremity cramping/spasms, and neck and back pain",
+    duration: "19 years (onset approximately age 10)",
+    priorProviders: "Multiple physicians (beta blocker prescribed without benefit); repeated over-the-counter medication use; physiotherapy (chin tucks — worsened symptoms); prior chiropractic SMT (short-term ROM increase and slight neck pain reduction only)",
+    priorDiagnoses: "Chronic migraine (established diagnosis); no prior successful long-term treatment"
+  },
+  history: {
+    content: `<p>A 29-year-old male presented with a 19-year history of chronic migraine (CM) with onset at approximately age 10. The migraines were severe and debilitating throughout his life, causing significant interference with school productivity in childhood and work incapacity in adulthood. Each episode was preceded by an aura involving altered auditory and visual sensations — sometimes brief, sometimes lasting several hours — followed by severe head and face pain of sufficient intensity to require bed rest in a darkened room for hours to days.</p>
+<p>Associated features included motor dysfunction in the extensor muscles with severe lower extremity cramping and spasms. In the period immediately before presentation, migraine frequency had increased to as many as 3 days per week, with a recovery day typically required after each attack. The patient reported worsening bilateral occipital muscle pain during migraines, cervical spine pain radiating into the thoracic spine and paraspinal musculature, and lumbar spine symptoms. The cramping had progressed cephalad from the lower extremities into the lumbar paraspinal region.</p>
+<p>He had been unable to work due to pain, dysfunction, and disability. He reported prior physiotherapy involving chin tuck exercises — which exacerbated symptoms. Prior chiropractic care with spinal manipulative therapy had produced only short-term increases in cervical ROM and slight neck pain reduction, with no lasting migraine improvement. A beta blocker was prescribed briefly without benefit. He was taking high doses of over-the-counter medications regularly. No traumatic history, no family history of neurological conditions.</p>`,
+    clinicalNote: "The diagnostic complexity here is the coexistence of chronic migraine — a neurovascular condition — with severe cervical kyphosis and forward head posture. The critical clinical question is whether the structural cervical deformity is a contributing factor to the migraine pathophysiology, or merely coincidental. The loss of cervical lordosis and the kyphotic C2–C3 segment create abnormal mechanical stresses on the cervical spinal cord, meninges, and suboccipital musculature — structures implicated in trigeminocervical convergence, the neurological mechanism linking upper cervical pathology to migraine. The 19-year treatment failure with conventional pharmacological and standard chiropractic approaches makes this an Advanced case: successful management required structural cervical correction, not just symptom management."
+  },
+  examination: {
+    autoROM: `<p><strong>Cervical ROM:</strong> Severe restriction with pain during cervical and lumbar flexion; lumbar extension and lateral bending also restricted and painful. Cervical and lumbar lateral bending elicited pain in the cervical and lumbar spine paraspinal musculature. Specific degree measurements not documented in the source; ROM was assessed visually/qualitatively and was recorded as abnormal in all regions assessed.</p>
+<p><strong>Post-treatment ROM:</strong> At re-evaluation (after 24 sessions), visual subjective ROM assessment found no abnormalities in all regions — all restrictions resolved.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+<thead><tr><th>Level</th><th>Movement</th><th>Finding</th></tr></thead>
+<tbody>
+<tr><td>C5/C6</td><td>Sensory pinwheel</td><td>Hypoesthesia at C5/C6 dermatome on initial evaluation; normalised at re-evaluation</td></tr>
+<tr><td>All other levels</td><td>Full neurological exam</td><td>All orthopaedic and neurological testing negative at re-evaluation; specific baseline grading not documented</td></tr>
+<tr><td colspan="3"><em>Note: Formal myotome grading (motor strength by level) not documented in source. Sensory testing with pinwheel was the primary neurological finding. Full neurological examination was performed and documented as normal at follow-up.</em></td></tr>
+</tbody>
+</table></div>`,
+    checklist: [
+      {
+        group: "Neurological and Cervical Assessment",
+        items: [
+          {
+            id: "pinwheel_sensation",
+            label: "Sensory Pinwheel Testing — C5/C6 dermatome",
+            result: `<span class="tt notable">Notable</span> — hypoesthesia detected at C5/C6 dermatome on initial evaluation; normalised at re-evaluation`,
+            documented: true,
+            rationale: "C5/C6 hypoesthesia in the context of severe cervical kyphosis (particularly the C2–C3 kyphotic segment and overall loss of C2–C7 lordosis) raises the possibility of cervical neural compromise secondary to cord or root traction under abnormal mechanical loads. This finding supported the rationale for structural cervical correction — restoring lordosis reduces abnormal tensile stress on the spinal cord and nerve roots, which may directly reduce sensitisation of the trigeminocervical complex implicated in migraine pathophysiology."
+          },
+          {
+            id: "cervical_compression",
+            label: "Cervical Compression Test",
+            result: `<span class="tt pos">Positive</span> — reproduced neck pain and low back pain`,
+            documented: true,
+            rationale: "A positive cervical compression test confirms segmental pain generation under axial loading — consistent with the existing kyphotic deformity increasing compressive stress on the posterior spinal elements and disc-end plate interfaces. In a migraine patient with cervical kyphosis, positive cervical compression confirms that the cervical spine is a structural pain contributor and supports a treatment approach targeting spinal alignment correction rather than symptom management alone."
+          },
+          {
+            id: "palpation_cervical",
+            label: "Cervical and Paraspinal Palpation",
+            result: `<span class="tt pos">Positive</span> — taut and tender muscular fibres throughout cervical, thoracic, and lumbar regions; significant tenderness in upper cervical and suboccipital regions`,
+            documented: true,
+            rationale: "Suboccipital and upper cervical muscle tenderness is a consistent finding in both cervicogenic headache and migraine with cervical sensitisation. The suboccipital muscles (rectus capitis posterior major/minor, obliquus capitis) attach to the posterior cervical dura via myodural bridges — mechanical irritation of these muscles can directly sensitise the trigeminocervical nucleus, contributing to migraine initiation and maintenance. Thoracic and lumbar muscle tenderness reflects the global postural loading imposed by the cervical kyphosis and forward head posture."
+          },
+          {
+            id: "postural_analysis",
+            label: "Standing Postural Analysis",
+            result: `<span class="tt notable">Notable</span> — left head-to-thorax translation, anterior thoracic translation, right anterior pelvic rotation`,
+            documented: true,
+            rationale: "The postural analysis confirmed a chain of compensatory deformities consistent with the radiographically-identified cervical kyphosis and forward head posture: the head translated anteriorly and to the left relative to the thorax, the thorax translated anteriorly relative to the pelvis, and the pelvis rotated anteriorly on the right. Understanding this postural chain is essential for CBP treatment planning — mirror image corrections must address the entire spinal alignment, not just the cervical kyphosis in isolation."
+          },
+          {
+            id: "headache_disability_index",
+            label: "Headache Disability Index (HDI)",
+            result: `<span class="tt notable">Notable</span> — 38/100 (moderate disability) at baseline; 8/100 at re-evaluation; 12/100 at 7-month follow-up`,
+            documented: true,
+            rationale: "The HDI is a validated 100-point patient-reported outcome measure assessing the emotional and functional impact of headache disability (scores: 2–32 mild, 33–59 moderate, ≥60 severe). A baseline score of 38 (moderate) is notable given the severity of the clinical history — the patient described being bedridden for days and unable to work. Improvement to 8 at re-evaluation and maintenance at 12 at 7 months provides objective evidence of durability of the treatment response over time."
+          },
+          {
+            id: "neck_disability_index",
+            label: "Neck Disability Index (NDI)",
+            result: `<span class="tt notable">Notable</span> — 38% (moderate disability) at baseline; 4% at re-evaluation; maintained at 7-month follow-up`,
+            documented: true,
+            rationale: "The NDI is the most widely-used cervical spine disability measure and assesses functional limitation across 10 activities. An initial 38% (moderate disability) in a patient with cervical kyphosis and migraine-related neck pain reflects the dual burden of structural cervical pathology and headache-associated neck involvement. The drop to 4% at re-evaluation confirms the intervention addressed cervical functional limitation as well as headache frequency — consistent with a structural cervical mechanism contributing to the migraine presentation."
+          },
+          {
+            id: "qvas_cervical",
+            label: "Quadruple Visual Analog Scale (QVAS) — Cervical",
+            result: `<span class="tt notable">Notable</span> — 53/100 at baseline (pain at worst 8/10); 10/100 at re-evaluation; 7/100 at 7-month follow-up`,
+            documented: true,
+            rationale: "The QVAS is a composite pain measure capturing current pain, average pain, pain at best, and pain at worst across a 100-point scale. A baseline of 53/100 with worst pain 8/10 reflects severe episodic cervical pain during migraine attacks. The reduction to 10/100 at re-evaluation (and 7/100 at 7 months) confirms durable cervical pain resolution — not merely temporary symptomatic relief. This outcome was achieved without pharmacological escalation."
+          },
+          {
+            id: "valsalva_headache_test",
+            label: "Valsalva Manoeuvre / Cough Headache Test",
+            result: `Not performed in published case`,
+            documented: false,
+            rationale: "In a patient with severe cervical kyphosis, foramen magnum or upper cervical cord pathology should be considered in the differential diagnosis of chronic headache. A Valsalva or cough headache test would screen for intracranial pressure sensitivity — positive findings would prompt neuroimaging before proceeding with cervical traction or manipulation. Its absence from the workup represents a minor clinical gap, though the 19-year chronic history without neurological deterioration makes serious intracranial pathology less likely."
+          }
+        ]
+      },
+      {
+        group: "Radiographic Assessment",
+        items: [
+          {
+            id: "lateral_cervical_xray",
+            label: "Upright Lateral Cervical Radiograph — C2–C7 lordosis (Harrison Posterior Tangent Method)",
+            result: `<span class="tt notable">Notable</span> — C2–C7 ARA: −1.3° (severely hypolordotic; ideal −34° to −42°); kyphotic deformity at C2–C3 segment: +9.7° (ideal −10°); atlas plane line: −10.9° (flexion abnormality; normal −24° to −29°); forward head translation: 35 mm (upper limit of normal 15 mm); degenerative changes at C6–C7`,
+            documented: true,
+            rationale: "Upright lateral cervical radiograph using the Harrison Posterior Tangent Method (HPTM) is the gold standard for quantifying cervical sagittal alignment. The findings in this case are severe: overall C2–C7 lordosis of −1.3° (vs ideal −34° to −42°) represents near-complete loss of lordosis; the C2–C3 kyphotic segment (+9.7°) creates a focal reversal of the cervical curve; forward head translation of 35 mm (vs 15 mm upper limit of normal) significantly increases the moment arm of the head weight on the cervical spine, amplifying mechanical stress on the suboccipital region and trigeminocervical junction. These findings provided the structural rationale for the CBP cervical correction protocol."
+          },
+          {
+            id: "post_treatment_xray",
+            label: "Post-treatment Lateral Cervical Radiograph (after 24 sessions)",
+            result: `<span class="tt notable">Notable</span> — C2–C7 improved to −17.3° (from −1.3°); C2–C3 kyphotic segment improved to +2.7° (from +9.7°); atlas plane line improved to −24.2° (from −10.9°); forward head translation reduced to 22.3 mm (from 35 mm)`,
+            documented: true,
+            rationale: "Post-treatment radiographs confirmed a 16° improvement in C2–C7 lordosis — a clinically significant structural correction achieved over 24 sessions of CBP mirror image traction, exercise, and SMT. The C2–C3 kyphotic segment improved by 7° and the atlas plane line normalised to within the ideal range. These structural improvements coincided with >90% patient-reported migraine resolution, providing radiographic evidence supporting the structural cervical hypothesis for this patient's migraine pathophysiology."
+          }
+        ]
+      }
+    ],
+    contextText: "Examination in this case served three purposes: (1) to quantify the cervical spinal deformity using standardised radiographic measurements as the structural baseline for treatment planning; (2) to assess neurological function at the levels implicated by the deformity; and (3) to establish validated outcome measure baselines (HDI, NDI, QVAS) for monitoring treatment response. The CBP framework places exceptional emphasis on upright lateral radiographic analysis as the primary objective examination tool — clinical findings are interpreted in the context of radiographic alignment parameters. The finding of C5/C6 hypoesthesia in the context of a +9.7° C2–C3 kyphotic deformity and 35 mm forward head translation provided neurological corroboration of the structural significance of the radiographic abnormalities."
+  },
+  investigations: {
+    options: [
+      {
+        id: "upright_lateral_cervical_xray",
+        label: "Upright lateral cervical radiograph (Harrison Posterior Tangent Method)",
+        consequence: null,
+        ordered: true,
+        result: `<p>C2–C7 absolute rotation angle (ARA): <strong>−1.3°</strong> (severely hypolordotic; ideal range −34° to −42°). Segmental relative rotation angles at C2–C3 (+9.7° — focal kyphosis), C3–C4, and C5–C6 all >100% abnormal. Atlas plane line: −10.9° (flexion abnormality; normal −24° to −29°). Forward head translation: <strong>35 mm</strong> (normal ≤15 mm). Endplate degeneration and osteophytic development at C6–C7. <strong>Coronal radiograph:</strong> left head-to-thorax translation (+T), anterior thoracic translation (+T), right anterior pelvic rotation (+R) noted on standing coronal view.</p>`
+      },
+      {
+        id: "brain_mri",
+        label: "Brain MRI (to exclude intracranial pathology)",
+        consequence: "Not ordered in this case — the diagnosis of chronic migraine was already established prior to presentation, and the 19-year history without neurological deterioration made intracranial pathology unlikely. However, in a new presentation of chronic headache with aura, neurological features (motor dysfunction, extensor cramping), and cervical cord-level hypoesthesia, brain MRI would be strongly recommended to exclude intracranial mass, Chiari malformation, or demyelinating disease before proceeding with cervical traction protocols. The absence of neuroimaging is a notable gap in this case that should be acknowledged in clinical practice.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "cervical_mri",
+        label: "Cervical spine MRI",
+        consequence: "Not ordered. Cervical MRI would have been valuable to assess the cord at the C2–C3 kyphotic segment — a focal kyphosis of +9.7° combined with 35 mm forward head translation creates significant cord traction and potential cord signal change. MRI would confirm whether cord compromise was present and inform the safety of cervical traction protocols. In clinical practice, cervical MRI should be obtained before embarking on sustained cervical extension traction in any patient with neurological findings (hypoesthesia, cramping) or significant structural deformity.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "neurological_consult",
+        label: "Neurology consultation",
+        consequence: "Not documented in this case. The patient had a pre-existing chronic migraine diagnosis and had previously been seen by physicians. A formal neurology consultation to review the diagnosis, assess for secondary headache causes, and co-manage the pharmacological approach would be considered best practice in a patient with 19-year refractory chronic migraine, motor symptoms (lower extremity cramping), and cervical cord-level neurological findings. Co-management would also provide important safety oversight during structural cervical correction.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Chronic Migraine with Cervical Structural Contribution (Cervical Hypolordosis / Kyphosis)",
+        correct: true,
+        blurb: "Chronic migraine was the established diagnosis prior to presentation. The distinguishing feature of this case is the identification of a severe cervical structural deformity — C2–C7 hypolordosis of −1.3° with a focal C2–C3 kyphotic segment of +9.7° — as a likely biomechanical contributor to the 19-year treatment-refractory presentation. Structural cervical correction achieved >90% migraine resolution where all prior pharmacological and standard chiropractic approaches had failed.",
+        supports: [
+          "19-year history of chronic migraine with aura — visual, auditory, and sensory disturbances preceding severe head and face pain",
+          "Increasing frequency to 3 days/week — meeting ICHD-3 criteria for chronic migraine (≥15 headache days/month)",
+          "Associated motor features: lower extremity cramping and spasms — consistent with cortical spreading depression and brainstem sensitisation",
+          "Cervical radiograph: C2–C7 lordosis −1.3° (severely hypolordotic); focal C2–C3 kyphosis +9.7°; forward head translation 35 mm — all consistent with abnormal mechanical stress on the trigeminocervical complex",
+          "C5/C6 hypoesthesia on sensory testing — suggesting cord/root mechanical compromise secondary to kyphotic deformity",
+          "Positive cervical compression test — confirming cervical structural pain contribution",
+          "Worsening with chin tuck exercise (physiotherapy) — chin tucks increase upper cervical flexion load, consistent with aggravating an existing kyphotic deformity",
+          "Failure of standard SMT — possibly because SMT without structural correction did not address the underlying alignment pathology",
+          "Resolution of >90% of migraine symptoms concurrent with 16° improvement in cervical lordosis and reduction of forward head translation"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Cervicogenic Headache (primary cervical origin)",
+        correct: false,
+        blurb: "Cervicogenic headache (CGH) — headache originating from the upper cervical joints, muscles, or nerves — shares features with this presentation, including cervical structural abnormality, suboccipital tenderness, and headache provoked by neck loading. However, the clinical features here are more consistent with migraine than CGH.",
+        supports: [
+          "Severe cervical kyphosis and forward head posture — a recognised structural substrate for cervicogenic headache",
+          "Suboccipital tenderness and bilateral occipital muscle pain during attacks",
+          "Positive cervical compression test",
+          "Headache resolved with cervical structural correction"
+        ],
+        arguesAgainst: [
+          "Bilateral head and face pain — CGH is characteristically unilateral and non-side-shifting",
+          "Visual and auditory aura preceding headaches — aura is a feature of migraine, not cervicogenic headache",
+          "Severe motor features (lower extremity cramping, spasms) — not consistent with CGH, which lacks brainstem/cortical features",
+          "ICHD-3 criteria for chronic migraine (≥15 headache days/month, ≥8 with migraine features) are met — CGH criteria are not applicable to this frequency and feature set",
+          "CGH is already represented in this simulator as Case 021; this case has distinct features placing it within the migraine diagnostic category"
+        ]
+      },
+      {
+        label: "Tension-Type Headache (chronic)",
+        correct: false,
+        blurb: "Chronic tension-type headache (CTTH) is the most common headache disorder and can produce daily or near-daily head pain with associated neck pain and muscle tenderness — features present in this case. However, tension-type headache lacks the neurovascular and aura features that define this presentation.",
+        supports: [
+          "High headache frequency (up to 3 days/week)",
+          "Bilateral head pain described",
+          "Taut and tender cervical and upper trapezius musculature",
+          "Neck pain associated with headaches"
+        ],
+        arguesAgainst: [
+          "Prominent aura with visual disturbances and altered auditory sensation — not a feature of tension-type headache",
+          "Severe, debilitating pain requiring bed rest in a dark room — characteristic of migraine, not CTTH (which produces mild-to-moderate, non-disabling pain)",
+          "Associated motor features (lower extremity cramping/spasms) — not consistent with tension-type headache",
+          "Nausea and photophobia/phonophobia implied by the need for darkened room — additional migraine features absent in CTTH",
+          "19-year history since childhood — migraine onset in childhood is common; CTTH with this severity profile from age 10 is atypical"
+        ]
+      },
+      {
+        label: "Degenerative Cervical Myelopathy (DCM)",
+        correct: false,
+        blurb: "The combination of cervical kyphosis, C5/C6 hypoesthesia, and lower extremity motor symptoms (cramping, spasms) initially raises the possibility of cervical cord compression. DCM is already represented in this simulator as Case 001, and the clinical features here are distinguishable.",
+        supports: [
+          "Cervical kyphosis on radiograph with focal C2–C3 kyphotic deformity",
+          "C5/C6 hypoesthesia on sensory testing",
+          "Lower extremity cramping and spasms — could be interpreted as upper motor neuron signs"
+        ],
+        arguesAgainst: [
+          "No documented hyperreflexia, Hoffman's sign, Babinski, or clonus — the hallmark upper motor neuron signs of DCM",
+          "Lower extremity symptoms described as 'cramping and spasms' occurring during migraine attacks and resolving between attacks — not the progressive, continuous motor dysfunction of DCM",
+          "29-year-old male — DCM in this age group, while possible, would typically require more severe structural cord compromise",
+          "MRI was not obtained — a notable limitation — but the clinical and functional response to conservative cervical correction (without cord decompression) argues against significant structural cord compromise",
+          "Symptoms improved by >90% with conservative care — DCM does not respond to extension traction or postural correction without surgical decompression in the presence of true cord compression"
+        ]
+      },
+      {
+        label: "Chiari Malformation Type I",
+        correct: false,
+        blurb: "Chiari malformation type I (herniation of the cerebellar tonsils through the foramen magnum) can cause chronic headache with aura, neck pain, lower extremity weakness/cramping, and brainstem features — closely mimicking the presentation in this case. It must be excluded before cervical traction is applied.",
+        supports: [
+          "Chronic headache with aura since childhood (age 10)",
+          "Lower extremity motor features (cramping, spasms)",
+          "Suboccipital and cervical pain",
+          "Motor dysfunction in extensor muscles during attacks",
+          "Young male demographic"
+        ],
+        arguesAgainst: [
+          "No neuroimaging was obtained in this case — Chiari cannot be fully excluded on clinical grounds alone",
+          "MRI brain/posterior fossa is required to definitively exclude Chiari malformation in any young patient with chronic headache, aura, and lower limb motor symptoms",
+          "Complete resolution of all symptoms with cervical extension traction and structural correction argues strongly against a fixed structural lesion at the foramen magnum (Chiari would not resolve with conservative cervical care)",
+          "Headache characteristics more consistent with migraine (aura, prostrating quality, photophobia implied by dark room confinement) than Chiari headache (typically Valsalva-triggered, occipital, brief)",
+          "In clinical practice, brain MRI would be mandatory before proceeding with this treatment protocol in this presentation"
+        ]
+      },
+      {
+        label: "Medication Overuse Headache (MOH)",
+        correct: false,
+        blurb: "The patient reported regular, high-dose over-the-counter medication use for 19 years of chronic migraine. MOH — also known as analgesic rebound headache — is one of the most common causes of chronic daily headache transformation and must be considered in any patient with escalating headache frequency and long-term analgesic use.",
+        supports: [
+          "High-dose OTC medication use (likely simple analgesics or triptans) over many years",
+          "Increasing headache frequency (up to 3 days/week — approaching daily)",
+          "Failure of standard preventive pharmacological approaches (beta blocker)"
+        ],
+        arguesAgainst: [
+          "The primary headaches had been present since childhood (age 10) — prior to medication escalation — establishing migraine as the primary condition, not medication-induced transformation",
+          "Complete resolution of headaches following structural cervical correction (without medication withdrawal program) argues against MOH as the dominant pathology",
+          "MOH typically requires medication withdrawal as a primary intervention — this was not performed, yet headaches resolved",
+          "Migraine with aura features (visual and auditory aura) are maintained throughout — MOH produces non-specific daily headache without the characteristic aura of primary migraine"
+        ]
+      },
+      {
+        label: "Occipital Neuralgia",
+        correct: false,
+        blurb: "Occipital neuralgia produces severe, sharp, unilateral or bilateral occipital pain that can radiate to the vertex and behind the eyes. The bilateral occipital tenderness and severe head pain in this case make it worth considering.",
+        supports: [
+          "Bilateral occipital muscle pain and tenderness documented",
+          "Severe head and face pain from the occiput radiating anteriorly",
+          "Upper cervical structural pathology that could theoretically compress the greater occipital nerve"
+        ],
+        arguesAgainst: [
+          "Occipital neuralgia produces lancinating, electric-shock quality pain — not the throbbing, aura-preceded migraine attacks described",
+          "Visual and auditory aura are not features of occipital neuralgia",
+          "Motor features (lower extremity cramping) are not associated with occipital neuralgia",
+          "The episodic pattern (attacks lasting hours to days with full recovery between) is characteristic of migraine, not the continuous or triggered sharp pains of neuralgia"
+        ]
+      },
+      {
+        label: "Functional Neurological Disorder (FND)",
+        correct: false,
+        blurb: "The combination of chronic headache, motor symptoms (lower limb cramping), sensory disturbances, and multi-system involvement in a young patient without clear structural explanation could theoretically raise FND. In this case, specific radiographic structural findings and objective treatment response make FND an unlikely primary diagnosis.",
+        supports: [
+          "Chronic multi-system neurological symptoms since childhood",
+          "Inconsistent prior treatment responses",
+          "Motor and sensory involvement alongside headache"
+        ],
+        arguesAgainst: [
+          "Specific structural radiographic findings (C2–C7 hypolordosis −1.3°, C2–C3 kyphosis +9.7°, 35 mm forward head translation) provide a biomechanical substrate for the neurological features",
+          "C5/C6 hypoesthesia on formal sensory testing correlates with the level of cervical deformity — an objective neurological finding, not a functional symptom",
+          "Objective improvement in outcome measures (NDI, HDI, QVAS) and radiographic parameters concurrent with clinical recovery argues against a purely functional mechanism",
+          "Complete and durable resolution of all symptoms with a biomechanically-targeted structural intervention is not consistent with FND"
+        ]
+      }
+    ],
+    explanation: `<p>Chronic migraine was the pre-existing diagnosis; the clinical challenge in this case was not establishing the diagnosis but identifying <em>why</em> 19 years of treatment had failed and what structural contributor had been overlooked. The answer, established through upright lateral radiography, was severe cervical hypolordosis with a focal C2–C3 kyphotic deformity — a structural finding that prior clinicians had not assessed, and that standard SMT (without corrective traction) was unable to address.</p>
+<p>The theoretical mechanism linking cervical kyphosis to migraine involves the trigeminocervical complex — the convergence of afferent pain fibres from the trigeminal nerve (V1) and the upper cervical dorsal roots (C1–C3) in the trigeminal nucleus caudalis in the upper cervical spinal cord. Abnormal mechanical stress on the cord, meninges, and suboccipital structures under a kyphotic load increases tonic nociceptive input into this convergent nucleus, lowering the threshold for migraine initiation and maintaining central sensitisation over time. Restoring cervical lordosis reduces this mechanical sensitisation — the proposed mechanism for the >90% migraine resolution observed after structural correction.</p>
+<p>The differential diagnosis challenge in this case is the motor and sensory features — lower extremity cramping, C5/C6 hypoesthesia — which could raise DCM, Chiari malformation, or cord pathology. These were not definitively excluded by neuroimaging (a significant clinical gap), but the complete symptomatic resolution with conservative extension-based treatment effectively argues against fixed structural cord pathology. This remains an important learning point: in any patient with cervical kyphosis and neurological features, brain and cervical MRI should be obtained before cervical traction is applied.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "cbp_mirror_image_traction",
+        label: "CBP mirror image cervical extension traction (Denneroll + in-office sustained traction)",
+        selected: true,
+        explanation: `<strong>Appropriate — primary structural intervention.</strong> Mirror image (MI) extension traction targets the viscoelastic ligamentous structures of the cervical spine — tissues that cannot be shortened by exercise alone and require sustained directional force to remodel. In-office traction progressed from 2–3 minutes to 15 minutes per session based on patient tolerance. Home Denneroll cervical orthotic was prescribed at 2–3 minutes, progressing to 15 minutes, 3×/week. The rationale is to apply creep loading to the posterior ligamentous complex at C2–C3 (the kyphotic apex), inducing viscoelastic deformation toward the mirror image (extension) of the existing kyphotic deformity. A 16° improvement in C2–C7 lordosis was achieved over 24 sessions.`
+      },
+      {
+        id: "cbp_mirror_image_exercises",
+        label: "CBP ProLordotic mirror image cervical extension exercises on whole-body vibration platform",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> Mirror image extension strengthening exercises targeted the cervical extensor and deep cervical flexor musculature in the direction opposite to the existing kyphotic deformity — posterior translation and cervical extension. Performed on a whole-body vibration (WBV) Power Plate to enhance neuromuscular recruitment and proprioceptive input. The WBV platform has been shown to enhance motor unit activation and muscle spindle sensitivity, improving the effectiveness of postural re-education exercises. These exercises addressed the muscular contributors to the deformity — weak cervical extensors — while the traction addressed the ligamentous contributors.`
+      },
+      {
+        id: "specific_smt",
+        label: "Specific spinal manipulative therapy (SMT) at radiographically-identified misalignment levels",
+        selected: true,
+        explanation: `<strong>Appropriate — adjunct to structural correction.</strong> SMT was applied based on the radiographic misalignments, in the direction opposite to the misalignments (posterior-to-anterior thrust at the kyphotic C2–C3 segment, targeting extension). The goal was to increase segmental ROM and mobility, reduce pain, and complement the structural correction achieved by traction and exercise. SMT alone had previously failed to produce lasting improvement — its effectiveness was dramatically enhanced when combined with corrective traction that addressed the underlying structural deformity.`
+      },
+      {
+        id: "continued_otc_medications",
+        label: "Continue high-dose OTC analgesic use",
+        selected: false,
+        explanation: `<strong>Not appropriate as ongoing management.</strong> Prolonged high-dose OTC analgesic use (particularly NSAIDs and combination analgesics) carries risks of gastrointestinal, renal, and cardiovascular complications, and is a recognised cause of medication overuse headache (MOH) transformation. With >90% migraine resolution following structural treatment, the patient was able to discontinue all prior medications — a major clinical outcome. The aim should always be to reduce analgesic dependency as structural and pain management improves.`
+      },
+      {
+        id: "chin_tuck_exercises",
+        label: "Chin tuck / deep cervical flexor exercises",
+        selected: false,
+        explanation: `<strong>Contraindicated in this presentation.</strong> Chin tuck exercises were prescribed by a prior physiotherapist and specifically worsened the patient's symptoms. This is consistent with the structural diagnosis: chin tucks increase upper cervical flexion load and further stress the kyphotic C2–C3 segment. In a patient with cervical hypolordosis or kyphosis, chin tucks are biomechanically counterproductive — they reinforce the kyphotic deformity rather than correcting it. Extension-biased exercises are the appropriate directional preference for this structural profile.`
+      },
+      {
+        id: "pharmacological_migraine_prevention",
+        label: "Prophylactic migraine pharmacotherapy (topiramate, amitriptyline, beta-blocker)",
+        selected: false,
+        explanation: `<strong>Not selected — prior failure documented.</strong> Beta blocker prophylaxis was previously trialled without benefit. Standard migraine prophylactics were not re-initiated in this case, and the patient achieved >90% resolution without pharmacological intervention. This does not mean migraine pharmacotherapy is universally inappropriate — in a patient who does not respond to structural correction, pharmacological prophylaxis should be considered via neurology co-management. However, this case illustrates that addressing the structural cervical contributor can be the primary therapeutic lever in appropriately selected patients where the cervical structural pathology is severe and untreated.`
+      }
+    ],
+    outcomeText: "After 24 in-office treatment sessions over 8 weeks (3 sessions/week), the patient reported >90% self-reported improvement in chronic migraine symptoms and complete resolution of all associated motor and sensory disturbances. NDI improved from 38% to 4%, HDI from 38% to 8%, cervical QVAS from 53/100 to 10/100, and lumbar QVAS from 53/100 to 17/100. Cervical lordosis improved from −1.3° to −17.3° (C2–C7); atlas plane line from −10.9° to −24.2°; forward head translation reduced from 35 mm to 22.3 mm. At 7-month follow-up (with maintenance care 2×/month and home Denneroll 3×/week), all improvements were maintained: cervical QVAS 7/100, HDI 12%, NDI maintained at low levels, lordosis −11.7° (some regression from −17.3° but maintained above baseline). The patient was no longer using any medications.",
+
+    prognosis: {
+      inferred: false,
+      frequencyDuration: `<p>The documented treatment course was <strong>24 sessions over 8 weeks at 3×/week</strong> — an intensive initial structural correction phase. This was followed by <strong>maintenance care 2×/month</strong> for the 7-month follow-up period. For comparable presentations in clinical practice, a reasonable protocol would be: <strong>Phase 1 (structural correction): 3×/week for 8–12 weeks</strong> (combined traction, exercise, and SMT); <strong>Phase 2 (consolidation): 1–2×/month ongoing</strong> with daily home traction device use. The maintenance phase is important — the 7-month follow-up showed some lordosis regression (−17.3° → −11.7°) with twice-monthly care, though clinical outcomes were maintained. More frequent maintenance may further stabilise the structural correction.</p>`,
+      expectedTrajectory: `<p>The recovery trajectory in this case was remarkably rapid given the 19-year chronicity — within 24 sessions (8 weeks), >90% migraine resolution was achieved. This likely reflects the specificity of the intervention addressing the primary unresolved structural contributor. Prognosis for maintained improvement is good but dependent on: (1) compliance with home Denneroll traction (3×/week — documented in this case); (2) maintenance care frequency; (3) avoidance of sustained forward head posture (screen time, occupational ergonomics) that would reverse the structural correction.</p>
+<p>Case-specific prognostic factors: <em>Favourable</em> — young patient (29 years), no trauma history, high compliance documented, complete aura and motor symptom resolution, durability confirmed at 7 months. <em>Unfavourable</em> — 19-year chronicity with likely established central sensitisation; C6–C7 degenerative changes on radiograph represent a structural vulnerability; some lordosis regression at 7 months (−17.3° → −11.7°) suggests ongoing maintenance is necessary to prevent full deformity recurrence. The critical prognostic variable is whether the viscoelastic ligamentous changes achieved through traction are durable — this requires long-term follow-up beyond 7 months to confirm.</p>`,
+      outcomeBenchmarks: `<p><strong>HDI</strong> (Headache Disability Index, 0–100): Baseline 38 (moderate); target ≤20 (mild disability) by 12 sessions; ≤10 at completion. <strong>NDI</strong>: Baseline 38% (moderate); target ≤20% (mild) at 12 sessions; ≤10% at completion. <strong>QVAS Cervical</strong> (0–100): Baseline 53; target ≤30 at 12 sessions; ≤15 at completion. <strong>Radiographic benchmarks</strong> (where serial imaging is used): C2–C7 lordosis improvement ≥5° at 12 sessions; ≥10° at completion; forward head translation reduction ≥10 mm at completion. <strong>Migraine frequency</strong>: Reduction from 3 days/week to ≤1 day/week at 12 sessions; ≤2 days/month at completion would constitute a clinically meaningful change. Failure to achieve ≥2-point NRS improvement and ≥4-point HDI improvement at 12 sessions should prompt reassessment, MRI ordering, and neurology co-management review.</p>`,
+      comanagement: `<p><strong>Neurology:</strong> Should have been involved from the outset given 19 years of refractory chronic migraine with motor and sensory features. In clinical practice, neurology co-management is essential before embarking on cervical correction protocols in a patient with C5/C6 hypoesthesia and lower extremity motor symptoms — these findings require neuroimaging (brain and cervical MRI) to exclude Chiari malformation, intracranial pathology, and structural cord compression. <strong>GP:</strong> For medication review, monitoring of analgesic use, and transition off OTC medications as symptoms improve. <strong>Ophthalmology:</strong> Consideration given the visual aura features — ruling out ocular pathology is appropriate in prolonged aura cases. <strong>Treatment-emergent escalation triggers:</strong> Any new or worsening neurological deficit (increased hypoesthesia, new weakness, bladder or bowel dysfunction) requires immediate cessation of cervical traction and urgent MRI; new onset of occipital pain worsened by Valsalva requires investigation to exclude posterior fossa pathology; any sudden severe headache ("thunderclap") requires emergency referral to exclude subarachnoid haemorrhage.</p>`
+    },
+
+    adjustmentPlan: {
+      contraindicated: false,
+      contraindicatedReason: null,
+      alternativeApproach: null,
+      inferred: false,
+      levelsRationale: `<p>SMT was documented as a component of the CBP protocol. Specific levels and rationale based on the published radiographic findings:</p>
+<p><strong>C2–C3 (primary target — kyphotic apex):</strong> The focal kyphotic deformity at C2–C3 (+9.7° vs ideal −10°) is the primary structural abnormality. C2–C3 is the apex of the reversal curve and the segment most responsible for the overall loss of lordosis. A posterior-to-anterior (P→A) thrust in extension at C2–C3, directed to increase local extension (opposite to the kyphotic deformity), was applied as documented in the source. The C2/C3 segment is innervated by the C3 nerve root; dysfunction at this level directly sensitises the trigeminal nucleus caudalis through the trigeminocervical convergence mechanism, supporting C2–C3 as the neurologically most relevant target for migraine management.</p>
+<p><strong>C1 (atlas — upper cervical correction):</strong> The atlas plane line was −10.9° at baseline (significant flexion abnormality; normal −24° to −29°). This indicates upper cervical flexion restriction, likely reflecting a compensatory atlantoaxial mechanism in response to the subaxial kyphosis. Upper cervical SMT targeting C1 in extension/posterior translation directly addresses the atlas plane line abnormality documented on radiograph. C1 is the origin of the suboccipital nerve (posterior ramus C1) which innervates the suboccipital and posterior occipital region — C1 dysfunction is a recognised contributor to cervicogenic and migraine-type headache via trigeminocervical sensitisation.</p>
+<p><strong>C5–C6 (secondary target — hypoesthesia level):</strong> C5/C6 hypoesthesia on sensory testing identifies a neurological finding at this level. Segmental restriction at C5–C6 may be contributing to foraminal narrowing or nerve root mechanosensitivity. SMT directed to restore C5–C6 segmental mobility reduces local mechanical irritation of the C6 root, consistent with the normalisation of sensory findings at re-evaluation.</p>`,
+      techniqueDetail: `<p>The source documents the following specific technique: <strong>Posterior-to-anterior thrust SMT applied below the kyphotic deformity at C2–C3</strong>, with the force directed anterior-to-posterior (i.e., anterior force applied through the kyphotic segment to drive it into extension — the mirror image of the kyphotic deformity). Patient position: seated. This technique was applied based on the radiographic misalignment direction and was used to increase ROM and mobility while decreasing pain, in addition to the traction and exercise protocols.</p>`,
+      precautions: `<p>The most important precaution in this case is the neurological findings: C5/C6 hypoesthesia and lower extremity motor symptoms require heightened care during cervical manipulation and traction. Cervical HVLA at C2–C3 in a patient with known kyphotic deformity and neurological features carries a risk of cord or root injury if the direction or force magnitude is misjudged — the treating practitioner must be competent in CBP radiographic analysis to ensure force direction is precisely mirror-imaged to the deformity. Brain and cervical MRI should ideally be obtained before initiating cervical extension traction in any patient with neurological findings, to exclude Chiari malformation and cord compression — a significant limitation acknowledged here. Forward head posture must be monitored — any aggravation of symptoms during traction requires immediate cessation. Degenerative changes at C6–C7 (documented on radiograph) require that any technique at this level uses lower-velocity, lower-amplitude forces; HVLA at a degenerated segment carries increased risk of facet fracture or herniation.</p>`
+    },
+
+    rehabProgram: {
+      inferred: false,
+      rationale: `<p>The rehabilitation program in this case targets three structural contributors to the cervical kyphosis and migraine pathophysiology: <strong>(1) Cervical extensor and deep neck flexor weakness</strong> — the loss of cervical lordosis in this patient reflects, in part, weakness and inhibition of the cervical extensor musculature (longissimus cervicis, iliocostalis cervicis, semispinalis cervicis, and deep suboccipital extensors). These muscles are responsible for maintaining the normal cervical lordotic curve against gravity; when weakened or inhibited, the cervical spine adopts a flexed, kyphotic posture. Mirror image extension exercises specifically target these muscles, training them in the direction that maintains lordosis. The whole-body vibration platform enhances neuromuscular recruitment by stimulating muscle spindles through high-frequency mechanical perturbation. <strong>(2) Ligamentous viscoelastic deformity at C2–C3</strong> — the focal kyphotic reversal at C2–C3 reflects permanent viscoelastic deformation of the posterior ligamentous complex (interspinous ligament, ligamentum flavum, capsular ligaments) into a shortened position. Unlike muscles, ligaments cannot be shortened by strengthening exercises — they require sustained directional force (traction) over time to remodel. The in-office and home traction protocols (Denneroll) apply sustained extension load at the kyphotic apex to induce creep-based ligamentous remodelling toward the normal lordotic shape. <strong>(3) Forward head posture ergonomics and postural habits</strong> — postural ergonomics education, screen positioning correction, and postural awareness training were prescribed to address the environmental perpetuating factors that would otherwise reverse the structural correction achieved through traction and exercise.</p>
+<p>The evidence base for CBP structural rehabilitation includes multiple case reports and retrospective studies demonstrating lordosis improvements with extension traction protocols, with concurrent improvements in various pain and disability outcome measures. Harrison et al. (the founders of CBP) have published extensively on the Harrison Posterior Tangent Method for measuring cervical alignment and the efficacy of mirror image correction protocols. Specific evidence linking cervical lordosis improvement to migraine reduction is limited to case-level reports — this case contributes to that emerging literature. The overall CBP approach has Level 4 evidence (case reports/series) and is used in chiropractic practices internationally.</p>`,
+      phases: [
+        {
+          phase: "Phase 1",
+          goals: "Reduce cervical pain and muscle tension, introduce home traction, begin postural awareness, establish tolerance to cervical extension loading",
+          exercises: "Denneroll home cervical traction (upper cervical placement) — begin 2–3 minutes, progress to 15 minutes; mirror image (MI) extension head retraction with ProLordotic resistance trainer (seated, posterior head translation + chin elevation); postural ergonomics education (screen height, sitting posture); suboccipital release (self-applied sustained gentle pressure at suboccipital ridge)",
+          parameters: "Denneroll: begin 2–3 min, increase 1 min every 3–5 sessions as tolerated, target 15 min; 3×/week home<br>MI extension exercises: 3 × 10 reps, 15-second holds, daily<br>Postural correction: conscious postural check every 30 minutes during screen work",
+          progressionCriteria: "Able to tolerate Denneroll for 10+ minutes without symptom increase; NRS cervical pain ≤3/10 at rest; no worsening of migraine frequency in response to extension loading",
+          timeframe: "Weeks 1–2 (sessions 1–6)"
+        },
+        {
+          phase: "Phase 2",
+          goals: "Achieve structural cervical correction, reduce migraine frequency, progress traction to full duration, introduce WBV-enhanced exercises",
+          exercises: "In-office CBP extension traction (progressing to 15 minutes, combined anterior and posterior force vectors as per CBP protocol); MI extension exercises on WBV Power Plate (3 × 10 reps, 10-second holds); upper cervical strengthening (posterior head translation against resistance); scapular retraction and thoracic extension exercises; continued Denneroll home (15 minutes, 3×/week)",
+          parameters: "In-office traction: 10–15 minutes per session, 3×/week<br>WBV exercises: 3 × 10 reps, 10-second holds, each session<br>Denneroll home: 15 minutes, 3×/week<br>Scapular retraction: 3 × 15 reps, daily",
+          progressionCriteria: "C2–C7 lordosis improvement ≥8° on repeat radiograph (approximately 12 sessions); migraine frequency reduced to ≤1 episode/week; HDI reduction ≥10 points; NDI ≤20%; sensory findings normalised",
+          timeframe: "Weeks 3–6 (sessions 7–18)"
+        },
+        {
+          phase: "Phase 3",
+          goals: "Consolidate structural correction, achieve migraine resolution, establish independent long-term maintenance program",
+          exercises: "Continued Denneroll home traction (maintenance: 15 minutes, 3×/week — indefinitely); independent MI extension exercises (daily); ergonomic optimisation review; gradual return to work and full daily activities; maintenance chiropractic care (2×/month); monitor for lordosis regression with periodic radiographic review (every 3–6 months)",
+          parameters: "Denneroll: 15 min, 3×/week — ongoing maintenance<br>MI exercises: 3 × 10 reps daily<br>Maintenance SMT: 2×/month<br>Radiographic review: 3-monthly for first year",
+          progressionCriteria: "C2–C7 lordosis ≥−15° (maintained above baseline); HDI ≤15; NDI ≤10%; migraine frequency ≤2 days/month; no analgesic use; return to full work capacity",
+          timeframe: "Weeks 7–8 (sessions 19–24) + ongoing maintenance"
+        }
+      ]
+    }
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Chronic Migraine with Cervical Structural Contribution</strong><br>Severe cervical hypolordosis (C2–C7: −1.3°) with focal C2–C3 kyphosis — 19-year refractory presentation resolved with structural cervical correction",
+    outcomes: [
+      { label: "Published Source", text: "Shtulman et al. Cureus. 2024;16(9):e69935" },
+      { label: "PMID / PMC", text: "PMID: 39329038 — PMC11427026 (open access)" },
+      { label: "Final Diagnosis", text: "Chronic migraine with severe cervical hypolordosis (C2–C7: −1.3°, C2–C3 kyphosis +9.7°, forward head translation 35 mm) as a structural contributing factor" },
+      { label: "Intervention", text: "CBP structural rehabilitation: 24 sessions over 8 weeks — mirror image extension traction (in-office + home Denneroll), WBV-enhanced extension exercises, specific SMT at kyphotic segments" },
+      { label: "Outcome", text: ">90% migraine resolution; NDI 38% → 4%; HDI 38% → 8%; cervical lordosis −1.3° → −17.3°; all maintained at 7-month follow-up; all medications discontinued" }
+    ],
+    conditionSummary: {
+      overview: "Chronic migraine affects approximately 1–2% of the global population and is defined by ≥15 headache days per month, with ≥8 meeting migraine criteria, for >3 months. It is a major contributor to global disability and is associated with significant quality-of-life impairment. While the pathophysiology is primarily neurovascular — involving cortical spreading depression, trigeminal sensitisation, and central sensitisation — cervical structural pathology (particularly loss of lordosis and forward head posture) may contribute to migraine perpetuation via trigeminocervical convergence mechanisms in a subset of patients.",
+      presentation: [
+        "Recurrent, debilitating head and face pain (typically unilateral in classic migraine; may be bilateral in chronic presentations) preceded by aura — visual (scotoma, photopsia), auditory, or sensory disturbances",
+        "Associated features include photophobia, phonophobia, nausea, and prostrating severity requiring withdrawal to a dark quiet environment",
+        "Motor features (weakness, cramping) may occur in hemiplegic migraine subtypes or as brainstem sensitisation phenomena in chronic presentations",
+        "Cervical pain, suboccipital tenderness, and neck stiffness are common comorbid features — and in some patients, cervical structural pathology (kyphosis, forward head posture) may be a perpetuating contributor to chronification"
+      ],
+      pathology: [
+        "Cortical spreading depression (CSD) — a slowly propagating wave of neuronal and glial depolarisation followed by sustained suppression — is the neurophysiological substrate of migraine aura and a trigger for trigeminal nociceptor activation",
+        "Trigeminocervical convergence: the trigeminal nerve (V1) and upper cervical dorsal roots (C1–C3) converge on the trigeminal nucleus caudalis in the upper cervical spinal cord; sensitisation at either input lowers the migraine threshold — explaining how cervical pathology can both trigger and maintain chronic migraine",
+        "Central sensitisation — the allodynia, photophobia, and prolonged post-attack tenderness of chronic migraine — is driven by sustained afferent input from both trigeminovascular and cervical sources; structural cervical pathology may provide a persistent nociceptive input maintaining this sensitised state",
+        "Cervical kyphosis and forward head posture increase mechanical stress on the suboccipital musculature, cervical meninges, and spinal cord — structures with direct anatomical connections to the trigeminocervical nucleus via myodural bridges and meningeal afferents"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "When standard treatment for a condition fails repeatedly over many years, question whether a structural contributor has been overlooked — not just whether the treatment was adequate. This patient's 19-year refractory chronic migraine was transformed by addressing a severe cervical kyphosis that had never been assessed radiographically. Upright lateral cervical radiography with the Harrison Posterior Tangent Method is the tool that revealed the structural diagnosis. Without it, this patient would have continued accumulating failed treatments."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "Cervical kyphosis with neurological features (C5/C6 hypoesthesia, lower extremity cramping) mimics both DCM and Chiari malformation — both of which are contraindications to cervical traction. Brain and cervical MRI were not obtained in this case before traction was initiated. While the outcome was excellent, this represents a significant clinical gap: neuroimaging should be mandatory before cervical extension traction in any patient with structural kyphosis and associated neurological findings."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "Chin tuck exercises worsened this patient's symptoms — a key clinical history finding. In a patient with cervical hypolordosis or kyphosis, chin tucks increase upper cervical flexion loading and reinforce the kyphotic deformity. The directional preference rule applies to structural cervical correction: a patient with a kyphotic cervical spine needs extension-biased rehabilitation, not flexion-biased. The specific direction of structural deformity on radiograph should drive the direction of both traction and exercise."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Structural cervical correction using the CBP protocol — radiographic measurement, mirror image traction, and extension exercises — is within chiropractic scope of practice and is the core clinical competency demonstrated in this case. The critical scope consideration is safety: cervical extension traction in a patient with neurological symptoms requires neuroimaging to exclude Chiari malformation and cord compression before proceeding. Co-management with neurology is strongly recommended for refractory chronic migraine patients to ensure appropriate pharmacological co-management and diagnostic oversight."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "Standard cervical radiographs taken supine or in a non-weight-bearing position significantly underestimate forward head posture and cervical deformity. The Harrison Posterior Tangent Method requires upright lateral radiographs taken in a standardised, neutral standing position. In this case, the −1.3° C2–C7 lordosis was the critical structural finding that explained 19 years of treatment failure — a finding that would have been missed or minimised on a supine MRI. Upright, standardised lateral cervical radiography is essential for accurate sagittal spinal alignment assessment."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Chronic migraine, Cervical hypolordosis, Forward head posture, Trigeminocervical convergence, CBP Chiropractic BioPhysics, Cervical traction, Headache outcome measures, Harrison Posterior Tangent Method",
+    keyPoints: [
+      "The trigeminocervical convergence mechanism — the anatomical convergence of trigeminal nerve (V1) and upper cervical (C1–C3) dorsal root afferents on the trigeminal nucleus caudalis — provides the neuroanatomical basis for cervical structural pathology contributing to migraine perpetuation",
+      "Upright lateral cervical radiography using the Harrison Posterior Tangent Method (HPTM) is required for accurate quantification of cervical sagittal alignment; supine MRI significantly underestimates forward head posture and kyphotic deformity",
+      "CBP mirror image traction targets viscoelastic ligamentous structures that cannot be corrected by exercise alone; sustained directional force (creep loading) in the mirror image of the deformity direction is required for structural correction",
+      "Chin tuck exercises are contraindicated in cervical hypolordosis and kyphosis — they increase upper cervical flexion load and reinforce, rather than correct, the deformity; extension-biased rehabilitation is the appropriate directional approach",
+      "Brain and cervical MRI are strongly recommended before initiating cervical extension traction in any patient with structural cervical kyphosis and associated neurological features (sensory deficit, motor symptoms) to exclude Chiari malformation and cord compression"
+    ]
+  }
+},
 // ─────────────────────────────────────────────
 // PASTE ADDITIONAL CASES ABOVE THIS LINE
 // Add a comma after the closing } of the previous case
