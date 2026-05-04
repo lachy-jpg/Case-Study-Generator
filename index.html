@@ -22441,6 +22441,1334 @@ const CASES = [
   }
 },
 // ─────────────────────────────────────────────
+// CASE 055 — Pectoralis major tendon tear in young weightlifter
+// Source: Billham et al. J Chiropr Med. 2024;23(1-2):59–63. PMID: 39791007
+// sourceTier: PeerReviewed
+// ─────────────────────────────────────────────
+{
+  id: "055",
+  title: "A 30-year-old male weightlifter presents with sudden left arm pain and swelling after bench-pressing the previous evening",
+  category: "Sports/Acute",
+  secondaryCategory: "Shoulder",
+  difficulty: "Beginner",
+  estimatedTime: "15–20 minutes",
+  sourceTier: "PeerReviewed",
+  source: {
+    short: "Billham et al.\nJ Chiropr Med. 2024;23(1-2):59–63\nPMID: 39791007\nPMC: PMC11707370\nOpen access ✓",
+    full: "Billham JF, Welk A, Estrada P, Kettner NW. Diagnostic Imaging for a Pectoralis Major Muscle Tear in a 30-Year-Old Weightlifter: A Case Report. Journal of Chiropractic Medicine. 2024;23(1-2):59–63. doi:10.1016/j.jcm.2024.02.007. PMID: 39791007. PMC: PMC11707370."
+  },
+  patient: {
+    ageSex: "30-year-old male",
+    chiefComplaint: "Left arm pain localised between the biceps brachii and deltoid, following a bench-press the previous evening",
+    duration: "Acute — onset the night prior to presentation",
+    priorProviders: null,
+    priorDiagnoses: null
+  },
+  history: {
+    content: `<p>A 30-year-old male weightlifter presented to a chiropractic clinic the morning after sustaining a left arm injury during a heavy bench-press set. He reported sharp, burning pain localised to the proximal lateral arm in the region between the biceps brachii and deltoid muscles. The pain was rated 5/10 with movement, but 0/10 at rest with local cryotherapy applied overnight.</p>
+<p>He described difficulty dressing that morning and was unable to complete his normal household chores. He denied neck pain, numbness, tingling into the hand or fingers, or any prior shoulder injuries. There was no history of anabolic steroid use. On inspection, mild ecchymosis and swelling were visible in the anterior arm at the axillary region. Crucially, there was no axillary or anterior chest wall asymmetry visible on comparison to the unaffected side — a feature that might otherwise prompt immediate concern for a complete tendon disruption.</p>
+<p>A 4-week trial of chiropractic care was initiated, which successfully reduced pain — but persistent weakness in shoulder adduction was noted at follow-up, prompting advanced imaging.</p>`,
+    clinicalNote: "The absence of axillary asymmetry or obvious chest wall deformity is the central diagnostic trap in this case. Clinically, complete and partial pectoralis major tendon tears are often indistinguishable without imaging. Pain resolution with conservative care can falsely reassure both patient and clinician — the persistence of adduction weakness is the key clinical signal that should have triggered earlier imaging referral."
+  },
+  examination: {
+    autoROM: `<p><strong>Shoulder ROM (Left):</strong> All active planes of shoulder movement were painful on the left. Shoulder adduction was the only motion that was pain-free, though notably weak. Passive ROM was not specifically documented as limited. Cervical spine ROM was not the focus of this examination given the clear peripheral mechanism.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+      <thead><tr><th>Level</th><th>Movement</th><th>Grade (L)</th><th>Grade (R)</th></tr></thead>
+      <tbody>
+        <tr><td>C5</td><td>Shoulder abduction</td><td>Not documented</td><td>Not documented</td></tr>
+        <tr><td>C6</td><td>Elbow flexion / wrist extension</td><td>Not documented</td><td>Not documented</td></tr>
+        <tr><td>C7</td><td>Elbow extension / wrist flexion</td><td>Not documented</td><td>Not documented</td></tr>
+        <tr><td>C8</td><td>Finger flexion</td><td>Not documented</td><td>Not documented</td></tr>
+        <tr><td>T1</td><td>Finger abduction</td><td>Not documented</td><td>Not documented</td></tr>
+        <tr><td colspan="4"><em>Formal myotome testing not documented in source; neurological examination was unremarkable and not the diagnostic focus given clear traumatic mechanism.</em></td></tr>
+      </tbody>
+    </table></div>`,
+    checklist: [
+      {
+        group: "Inspection & Functional Assessment",
+        items: [
+          {
+            id: "pm_inspection",
+            label: "Visual inspection of anterior chest wall and axilla (bilateral comparison)",
+            result: `<span class="tt notable">Notable</span> — Mild ecchymosis and swelling in the anterior left arm/axillary region. No axillary asymmetry on bilateral comparison. No visible anterior chest wall deformity.`,
+            documented: true,
+            rationale: "Critical first step in evaluating suspected pectoralis major injury. Bilateral comparison is essential — axillary fold asymmetry (the affected side appears rounded or absent) is a hallmark of complete PMJ avulsion. Its absence here misled the initial clinical impression toward a partial or muscular injury, delaying imaging. Ecchymosis and swelling confirm significant tissue trauma."
+          },
+          {
+            id: "pm_adduction_strength",
+            label: "Resisted shoulder adduction (pectoralis major strength test)",
+            result: `<span class="tt pos">Positive</span> — Adduction was pain-free but markedly weak on the left. This finding persisted after 4 weeks of conservative care.`,
+            documented: true,
+            rationale: "The pectoralis major is the primary shoulder adductor (along with latissimus dorsi). Isolated adduction weakness — particularly when pain-free — is the single most important clinical indicator of significant tendon compromise. This finding, persistent at 4-week review despite pain resolution, was the definitive red flag that drove imaging referral."
+          },
+          {
+            id: "pm_pain_all_rom",
+            label: "Active shoulder ROM assessment in all planes",
+            result: `<span class="tt pos">Positive</span> — All active shoulder movements were painful except adduction, which was pain-free but weak.`,
+            documented: true,
+            rationale: "The pattern of generalised shoulder ROM pain with a selective exception of adduction is characteristic of pectoralis major pathology. In rotator cuff disorders, specific planes are affected (e.g. abduction arc for supraspinatus). The selective exception of a palliative adduction movement should immediately orient the clinician toward the pectoralis major rather than the rotator cuff."
+          },
+          {
+            id: "pm_palpation",
+            label: "Palpation of pectoralis major tendon insertion at humeral groove",
+            result: `Not specifically documented in source — tenderness was implied by the localised pain region between the biceps brachii and deltoid.`,
+            documented: false,
+            rationale: "Direct palpation of the pectoralis major tendon at its insertion on the bicipital groove of the humerus is a critical examination step. Tenderness, a palpable gap, or tendon retraction at this site strongly suggests significant tendon injury. This is a low-cost, high-yield manoeuvre that would have added important diagnostic weight — its documentation would have been valuable in the published case."
+          },
+          {
+            id: "cross_body_adduction",
+            label: "Cross-body adduction test (pectoralis major integrity)",
+            result: `Not performed in published case.`,
+            documented: false,
+            rationale: "The cross-body adduction test — with the examiner applying resistance as the arm is brought across the chest — specifically loads the pectoralis major and reveals weakness or pain localised to the tendon. It provides more targeted information than general adduction testing and should be considered whenever pectoralis major injury is suspected."
+          }
+        ]
+      },
+      {
+        group: "Orthopaedic & Special Tests",
+        items: [
+          {
+            id: "pm_lift_off",
+            label: "Lift-off test (subscapularis integrity)",
+            result: `Not documented in source — rotator cuff integrity not specifically assessed.`,
+            documented: false,
+            rationale: "The lift-off test assesses subscapularis integrity, which can be affected in acute anterior shoulder trauma. Given that all active ROM was painful, distinguishing rotator cuff pathology from pectoralis major injury was a clinical priority. Including lift-off, belly-press, and external rotation lag tests would have enabled a more systematic exclusion of rotator cuff co-pathology."
+          },
+          {
+            id: "speed_test",
+            label: "Speed's test (biceps tendon pathology)",
+            result: `Not performed in published case.`,
+            documented: false,
+            rationale: "The proximal long head of the biceps tendon runs adjacent to the pectoralis major insertion and can be co-injured in bench-press mechanisms. Speed's test (resisted forward flexion with elbow extended and forearm supinated) would help differentiate or identify concurrent biceps tendon involvement, which can be a source of ongoing pain even after pectoralis major repair."
+          }
+        ]
+      },
+      {
+        group: "Diagnostic Imaging",
+        items: [
+          {
+            id: "us_pectoralis",
+            label: "Diagnostic ultrasound of the left pectoralis major tendon",
+            result: `<span class="tt pos">Positive</span> — Disruption and retraction of the pectoralis major tendon were identified at the humeral insertion.`,
+            documented: true,
+            rationale: "Ultrasound was the first-line imaging ordered after 4 weeks of conservative care failed to resolve adduction weakness. It successfully identified tendon disruption and retraction — confirming the diagnosis and making surgical planning feasible. Dynamic ultrasound can also assess tear completeness in real time, distinguishing complete from partial avulsions, though MRI provides superior soft tissue detail."
+          },
+          {
+            id: "mri_shoulder",
+            label: "MRI left shoulder",
+            result: `<span class="tt pos">Positive</span> — Confirmed a pectoralis major tendon tear. MRI provided definitive characterisation for surgical planning.`,
+            documented: true,
+            rationale: "MRI is the reference standard for pectoralis major injury characterisation, allowing assessment of tear completeness, involvement of the clavicular versus sternal head, degree of retraction, and associated injuries (biceps tendon, subscapularis). It confirmed what ultrasound had suggested and gave the operating surgeon the anatomical detail needed for repair planning."
+          }
+        ]
+      }
+    ],
+    contextText: "This examination is fundamentally about distinguishing a complete from a partial pectoralis major tendon tear — a distinction that is clinically very difficult to make but has significant management implications. The key features driving the examination were: (1) the bench-press mechanism (eccentric overload of a maximally contracted pectoralis major in the terminal range of humeral extension); (2) ecchymosis and swelling localised to the anterior arm/axillary region; (3) pain-free but markedly weak adduction. The latter finding — preserved but weak adduction — is the clinical hallmark of significant tendon compromise and was the sign that ultimately triggered imaging referral after initial conservative care reduced pain but left weakness unresolved."
+  },
+  investigations: {
+    options: [
+      {
+        id: "us_imaging",
+        label: "Diagnostic ultrasound — left pectoralis major tendon",
+        consequence: null,
+        ordered: true,
+        result: `<p><strong>Disruption and retraction of the pectoralis major tendon identified at the humeral insertion.</strong> Dynamic ultrasound assessment confirmed significant tendon compromise consistent with a complete or near-complete tear. Tendon retraction was visible, indicating avulsion from the humeral attachment rather than an intramuscular tear.</p>`
+      },
+      {
+        id: "mri_shoulder",
+        label: "MRI — left shoulder",
+        consequence: null,
+        ordered: true,
+        result: `<p><strong>Confirmed pectoralis major tendon tear.</strong> MRI provided definitive characterisation including the degree of retraction, which head(s) of the pectoralis major were involved, and the condition of the surrounding structures. This imaging was the basis for surgical planning, which proceeded to open repair at the humeral groove. The patient achieved optimal recovery post-operatively.</p>`
+      },
+      {
+        id: "plain_xray",
+        label: "Plain radiographs — left shoulder",
+        consequence: "Shoulder radiographs would be of limited value for soft tissue tendon injury in isolation, but would be an appropriate first step to exclude bony avulsion fracture at the humeral insertion (a rare variant of pectoralis major injury), humeral shaft fracture, or associated glenohumeral pathology. Given the clear soft tissue injury mechanism, imaging should advance promptly to ultrasound or MRI if X-rays are normal.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "nerve_conduction",
+        label: "Nerve conduction study / EMG",
+        consequence: "Not indicated in this case as there were no neurological symptoms (no sensory disturbance, radicular radiation, or upper limb weakness beyond the direct mechanical adduction deficit). If presentation had included hand numbness or finger weakness, brachial plexus injury or cervical radiculopathy would need to be excluded — both can occur in extreme bench-pressing with brachial plexus traction.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Pectoralis Major Tendon Tear (Complete)",
+        correct: true,
+        blurb: "This is the correct diagnosis. The bench-press mechanism, anterior arm ecchymosis and swelling, selective pain-free but weak adduction, and subsequent imaging findings of tendon disruption and retraction all point definitively to a complete pectoralis major tendon avulsion at the humeral insertion.",
+        supports: [
+          "Acute injury during bench-press — the classic mechanism for pectoralis major avulsion (eccentric overload at terminal humeral extension/external rotation)",
+          "Pain localised to the anterior arm between biceps brachii and deltoid — the region of the pectoralis major tendon insertion",
+          "Ecchymosis and swelling at the axillary/anterior arm region — consistent with haematoma from torn tendon",
+          "Pain-free but markedly weak shoulder adduction — the hallmark clinical sign of pectoralis major tendon compromise",
+          "Ultrasound demonstrating tendon disruption and retraction at humeral insertion",
+          "MRI confirming complete pectoralis major tendon tear, consistent with surgical findings"
+        ],
+        arguesAgainst: [
+          "Absence of axillary fold asymmetry on bilateral comparison — classically expected with complete tear, though it can be absent in acute presentations before swelling resolves or if body habitus obscures asymmetry"
+        ]
+      },
+      {
+        label: "Partial Pectoralis Major Muscle/Tendon Tear",
+        correct: false,
+        blurb: "The clinical picture initially suggested a partial injury given the absence of axillary asymmetry and modest ecchymosis. However, the persistence of adduction weakness despite 4 weeks of conservative care, combined with imaging, proved this to be a complete tear.",
+        supports: [
+          "Mild ecchymosis (rather than extensive bruising) could be consistent with a partial tear",
+          "No axillary fold asymmetry — more characteristic of partial than complete disruption",
+          "Initial pain improvement with conservative care — could suggest partial tear responding to rest"
+        ],
+        arguesAgainst: [
+          "Persistent adduction weakness at 4-week review despite pain resolution — partial tears retain some adduction strength",
+          "Ultrasound demonstrated retraction of the tendon, which does not occur in partial tears",
+          "MRI confirmed complete tear — definitively excluding partial injury"
+        ]
+      },
+      {
+        label: "Biceps Long Head Tendon Rupture / Tenosynovitis",
+        correct: false,
+        blurb: "Biceps tendon pathology is a close anatomical neighbour to the pectoralis major insertion and can occur with similar bench-press mechanisms. However, the pattern of findings here does not fit biceps pathology.",
+        supports: [
+          "Pain in the anterior arm is common with proximal biceps pathology",
+          "Bench-press mechanism can involve biceps long head",
+          "Ecchymosis and bruising visible in the anterior arm region"
+        ],
+        arguesAgainst: [
+          "Weakness was isolated to adduction — biceps rupture would cause flexion and supination weakness, not adduction weakness",
+          "In proximal biceps rupture, the 'Popeye deformity' (distal bulging of the biceps) may be visible, which was absent here",
+          "Imaging confirmed pectoralis major tear, not biceps pathology"
+        ]
+      },
+      {
+        label: "Acromioclavicular Joint Sprain / Separation",
+        correct: false,
+        blurb: "AC joint pathology is a common sports injury but its typical mechanism (fall on outstretched hand or direct blow to shoulder tip) and examination findings differ significantly from those seen in this case.",
+        supports: [
+          "Shoulder pain with movement in a young male athlete",
+          "Sports-related mechanism of injury"
+        ],
+        arguesAgainst: [
+          "AC joint injuries cause superior shoulder pain and tenderness at the joint, not anterior arm/axillary pain",
+          "The bench-press mechanism does not typically cause AC joint injury",
+          "No documented tenderness at the AC joint or step deformity on examination",
+          "Adduction weakness is not a feature of AC joint injury"
+        ]
+      },
+      {
+        label: "Rotator Cuff Tear (Subscapularis or Supraspinatus)",
+        correct: false,
+        blurb: "Rotator cuff tears are common in weightlifters and can present with arm pain and weakness. However, the specific pattern of weakness (adduction without abduction deficit) points away from the rotator cuff.",
+        supports: [
+          "Heavy weightlifting is a known risk factor for rotator cuff injury",
+          "All active ROM was painful — consistent with significant shoulder pathology",
+          "Male, young, athletic — though rotator cuff tears are more common in older adults"
+        ],
+        arguesAgainst: [
+          "Subscapularis tear would cause weakness in internal rotation (lift-off test), not isolated adduction weakness",
+          "Supraspinatus tear causes abduction weakness and painful arc, not isolated adduction weakness",
+          "Pain-free adduction is inconsistent with subscapularis or supraspinatus pathology",
+          "Imaging confirmed the diagnosis was specifically the pectoralis major tendon"
+        ]
+      },
+      {
+        label: "Anterior Glenohumeral Dislocation / Subluxation",
+        correct: false,
+        blurb: "Anterior glenohumeral instability can occur with eccentric loading during bench-press, but this presentation lacks the cardinal features of dislocation or recurrent subluxation.",
+        supports: [
+          "Bench-press mechanism involves humeral external rotation and extension — classic apprehension position",
+          "Acute pain and ecchymosis in the shoulder region"
+        ],
+        arguesAgainst: [
+          "No apprehension sign or dislocation was noted on clinical examination",
+          "The pain was localised to the anterior arm/axillary region, not the glenohumeral joint",
+          "There was no visible deformity suggesting anterior fullness or posterior hollow of the humeral head",
+          "Imaging identified tendon pathology, not glenohumeral instability"
+        ]
+      },
+      {
+        label: "Pectoralis Minor Strain",
+        correct: false,
+        blurb: "The pectoralis minor lies deep to the major and can be strained in bench-pressing, but its functional anatomy produces a different clinical picture.",
+        supports: [
+          "Bench-press mechanism loads both pectoralis major and minor",
+          "Anterior chest pain and arm pain can arise from pectoralis minor pathology",
+          "Scapular protraction weakness can cause anterior shoulder/arm pain"
+        ],
+        arguesAgainst: [
+          "Pectoralis minor does not insert on the humerus — it inserts on the coracoid process, so it would not produce adduction weakness",
+          "The ecchymosis was in the axillary/anterior arm region consistent with the pectoralis major insertion, not the pectoralis minor",
+          "Imaging confirmed pectoralis major tendon tear at the humeral insertion"
+        ]
+      },
+      {
+        label: "Contusion / Haematoma — Anterior Arm",
+        correct: false,
+        blurb: "A simple muscle contusion or haematoma could explain the bruising and swelling, but cannot account for the persistent adduction weakness.",
+        supports: [
+          "Ecchymosis and localised swelling are consistent with contusion",
+          "Pain at rest improving with cryotherapy is typical of soft tissue contusion",
+          "Relatively modest clinical signs on initial presentation"
+        ],
+        arguesAgainst: [
+          "A contusion or haematoma does not explain isolated adduction weakness persisting at 4-week review",
+          "The tendon disruption and retraction seen on ultrasound and MRI are diagnostic of a structural tear, not contusion",
+          "Tendon retraction on imaging is pathognomonic of a complete tear, not a bruise"
+        ]
+      }
+    ],
+    explanation: `<p>The diagnosis of complete pectoralis major tendon tear was initially obscured by an absent axillary fold asymmetry — a feature classically associated with complete avulsion injuries. This case demonstrates the well-documented difficulty of clinically distinguishing complete from partial pectoralis major tears, and the critical importance of advanced imaging when adduction weakness persists after a reasonable trial of conservative care.</p>
+<p>The clinical pivot is the isolated pain-free adduction weakness. In rotator cuff pathology, pain and weakness follow the pattern of the affected tendon (abduction for supraspinatus, internal rotation for subscapularis). In pectoralis major injury, adduction is specifically compromised because this is the primary function of the sternal head of the muscle. The fact that adduction was palliative (pain-free) yet markedly weak points directly to mechanical tendon failure rather than pain inhibition.</p>
+<p>Diagnostic ultrasound was an ideal first-line imaging tool, identifying tendon disruption and retraction. MRI provided the definitive characterisation needed for surgical planning. The patient underwent successful surgical repair and achieved optimal recovery — an outcome consistent with evidence that complete pectoralis major tendon tears in young, active males are best managed with early surgical repair to restore full adduction strength and prevent long-term cosmetic deformity.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "image_refer",
+        label: "Order diagnostic imaging (ultrasound and/or MRI) and refer to orthopaedic surgery",
+        selected: true,
+        explanation: `<strong>Appropriate.</strong> In any weightlifter with anterior arm ecchymosis and adduction weakness following bench-press, diagnostic imaging is mandatory. Ultrasound is excellent for dynamic real-time assessment of tendon disruption and retraction. MRI provides definitive characterisation for surgical planning. Early imaging and orthopaedic referral are critical — delayed repair (beyond 6–8 weeks) significantly reduces the quality of surgical outcome due to tendon retraction and muscle atrophy.`
+      },
+      {
+        id: "conservative_only",
+        label: "Continue conservative care (manual therapy, shoulder rehabilitation exercises) as the primary management strategy",
+        selected: false,
+        explanation: `<strong>Not appropriate as a standalone strategy for a complete tear.</strong> While conservative care is appropriate for partial pectoralis major tears (Type 1–2 injuries), a complete tendon tear (Type 3) in a young, active male requires surgical repair to restore full adduction strength and prevent progressive cosmetic deformity. Conservative care alone will allow pain to resolve, but the structural failure of the tendon means adduction strength will not return without repair. In this case, 4 weeks of conservative care appropriately reduced pain but left a persistent functional deficit — the appropriate next step was imaging and referral, not continuation of conservative care.`
+      },
+      {
+        id: "imaging_at_first_visit",
+        label: "Order imaging at the first visit rather than after a trial of care",
+        selected: true,
+        explanation: `<strong>Appropriate — and arguably the preferred approach in hindsight.</strong> The combination of bench-press mechanism, anterior arm ecchymosis, swelling, and adduction weakness on day one is sufficient grounds for immediate diagnostic imaging referral. The clinical literature on pectoralis major tears consistently notes that delayed repair leads to worse functional outcomes. While a 4-week trial of care is not unreasonable given the initially ambiguous presentation, this case reinforces that imaging should be considered early when adduction weakness is present from the outset.`
+      },
+      {
+        id: "reassure_strain",
+        label: "Diagnose as a muscle strain, provide reassurance, and discharge with home exercise",
+        selected: false,
+        explanation: `<strong>Not appropriate.</strong> Diagnosing and managing this presentation as a simple muscle strain would be a serious error. The combination of bench-press mechanism, ecchymosis, and adduction weakness mandates at minimum a thorough clinical evaluation with imaging consideration. Discharging without investigation risks significant delay to surgical repair, with directly worse functional outcomes — particularly in a young, active patient for whom full adduction strength is essential.`
+      }
+    ],
+    outcomeText: "After the 4-week trial of conservative care alleviated the patient's pain, persistent adduction weakness prompted diagnostic imaging. Diagnostic ultrasound identified tendon disruption and retraction. Subsequent MRI confirmed the pectoralis major tendon tear, and the patient underwent surgical repair. According to the published case, the patient achieved optimal recovery following surgery.",
+    prognosis: {
+      inferred: true,
+      frequencyDuration: `<p>For the <strong>pre-surgical and post-surgical conservative phase</strong>: pre-surgical care should be limited to pain management (cryotherapy, gentle range of motion to maintain mobility) while awaiting orthopaedic review — typically 1–2 visits. Post-surgical rehabilitation is typically <strong>2–3 times per week for 12 weeks</strong>, with a graduated return-to-sport protocol extending to 6 months. A dedicated shoulder rehabilitation specialist or physiotherapist should co-manage the post-operative phase. Chiropractic care post-operatively focuses on maintaining cervical and thoracic mobility and monitoring for compensatory patterns.</p>`,
+      expectedTrajectory: `<p>Complete pectoralis major tendon tear with surgical repair in young, active men has an excellent prognosis. Evidence consistently shows that early surgical repair (within 6–8 weeks of injury) results in good-to-excellent outcomes in 85–90% of patients, with near-complete restoration of adduction strength and return to weightlifting at or near pre-injury levels. Delayed repair results in progressively worse outcomes due to tendon retraction and muscle fibre atrophy — this is the primary reason prompt imaging is so important in this presentation.</p>
+<p>Prognostic factors in this case: young age (30 years), no anabolic steroid use (which is associated with worse tendon quality and higher re-rupture risk), and the acute presentation (same-day injury to presentation) are all favourable. The 4-week delay before imaging was not optimal but, given that the injury was still within the acute-to-subacute window, surgical repair was still feasible with a good prognosis.</p>`,
+      outcomeBenchmarks: `<p>Post-surgical outcome benchmarks for pectoralis major repair include: <strong>adduction strength symmetry ≥90%</strong> compared to the contralateral side (measured via handheld dynamometry or isokinetic testing); <strong>pain-free shoulder ROM in all planes</strong>; <strong>Upper Extremity Functional Index (UEFI) ≥80%</strong>; and <strong>return to bench-press loading</strong> as the key functional milestone. Full return to heavy weightlifting is typically achieved at 6 months post-repair. Patients who return to bench-press before 6 months are at significantly elevated re-rupture risk.</p>`,
+      comanagement: `<p><strong>Orthopaedic surgery</strong> is the primary management provider for a complete pectoralis major tendon tear — timely surgical referral is non-negotiable. <strong>Physiotherapy</strong> manages post-operative rehabilitation. Chiropractic can support cervicothoracic mobility and reduce compensatory loading patterns during recovery.</p>
+<p>Referral triggers: any presentation with bench-press mechanism + anterior arm ecchymosis + adduction weakness should prompt same-visit discussion of imaging. If imaging confirms complete tear, orthopaedic referral within 1–2 weeks optimises surgical outcome. If imaging confirms partial tear only, conservative management is appropriate with orthopaedic review if no improvement by 6–8 weeks.</p>`
+    },
+    adjustmentPlan: {
+      contraindicated: false,
+      contraindicatedReason: null,
+      alternativeApproach: null,
+      inferred: true,
+      levelsRationale: `<p>Spinal manipulation is not the primary intervention for an acute pectoralis major tendon tear, but cervicothoracic segmental dysfunction is commonly present as a compensatory pattern and may be addressed once the acute injury is managed. Relevant targets in the rehabilitation context include:</p>
+<p><strong>T3–T5 (mid-thoracic):</strong> Thoracic kyphosis restriction is common in weightlifters with chronically shortened pectoralis major and minor muscles, contributing to forward shoulder posture and altered scapulohumeral rhythm. Restricted T3–T5 mobility perpetuates anterior shoulder loading. Addressing mid-thoracic extension mobility supports scapular retraction and normal shoulder biomechanics during rehabilitation.</p>
+<p><strong>C5–C6 (lower cervical):</strong> The pectoralis major receives innervation primarily from the medial and lateral pectoral nerves (C5, C6, C7, C8, T1). Cervical segmental dysfunction at C5–C6 may contribute to altered neuromuscular activation of the pectoralis in the post-operative rehabilitation period. Maintaining cervical joint mobility supports optimal neural conductivity to the recovering muscle.</p>
+<p><strong>First rib / costoclavicular region:</strong> Pectoralis minor tightness and first rib restriction are common in heavy bench-pressers and can restrict shoulder elevation and contribute to impingement. Mobilisation of the costoclavicular region may improve shoulder mobility during the rehabilitation phase.</p>`,
+      techniqueDetail: null,
+      precautions: `<p>During the acute phase (pre-surgical), avoid any technique involving the anterior shoulder, axilla, or pectoralis major insertion region — manipulation or mobilisation near the injured tendon is contraindicated. Post-operatively, the surgical site requires at minimum 6–8 weeks to achieve initial tendon-to-bone healing before any loading or direct contact at the surgical site. Shoulder manipulation or mobilisation should not be applied until cleared by the operating surgeon. Cervicothoracic manipulation is safe throughout the rehabilitation period provided standard precautions for the cervical spine are applied. Joint hypermobility is not a feature in this patient but should always be assessed before thrust techniques are applied.</p>`
+    },
+    rehabProgram: {
+      inferred: true,
+      rationale: `<p>The pectoralis major (sternal head) is an adductor, internal rotator, and horizontal flexor of the humerus, inserting at the bicipital groove of the humerus. Following complete tendon avulsion and surgical repair, rehabilitation must progress through a strictly graded continuum that respects tendon healing biology. The repaired tendon-to-bone interface is most vulnerable in weeks 0–6, requiring passive and active-assisted ROM only with strict limits. Scapular stabiliser reactivation (serratus anterior, lower trapezius) is the priority early target — these muscles maintain a stable base for the healing tendon and prevent the anteriorly tilted, protracted scapula posture that is biomechanically common in heavy bench-pressers.</p>
+<p>The movement patterns to emphasise are: (1) scapular retraction and depression, restoring the balanced upper-lower trapezius ratio; (2) posterior capsule mobility, which is typically restricted in weightlifters; (3) graduated horizontal adduction loading, progressing from isometric to isotonic to eccentric as healing permits. The trajectory of loading must respect tendon biology — collagen remodelling and cross-link maturation require 12+ weeks before full eccentric loading is appropriate. Premature return to bench-press loading is the primary mechanism of re-rupture and must be explicitly avoided.</p>
+<p>Exercise therapy for pectoralis major tendon repair follows the principles of tendon biologic loading established in the Alfredson and Docking frameworks — progressive tensile loading stimulates collagen alignment and maturation. Evidence supports return to unrestricted weightlifting at 6 months post-repair, with isokinetic testing confirming ≥90% adduction strength symmetry prior to return to heavy bench-press. The programme outlined below assumes the chiropractic/physiotherapy team is supporting the post-surgical rehabilitation in co-management with the orthopaedic surgeon.</p>`,
+      phases: [
+        {
+          phase: "Phase 1 — Protective and Early Mobility",
+          goals: "Protect the surgical repair. Reduce pain and swelling. Restore passive shoulder ROM within safe limits. Activate scapular stabilisers without loading the repair.",
+          exercises: "Shoulder sling rest (0–3 weeks as directed by surgeon). Pendulum exercises (gravity-assisted glenohumeral ROM). Scapular setting (retraction and depression — isometric). Elbow/wrist/hand active ROM to prevent stiffness. Diaphragmatic breathing (restores thoracic mobility). Cervicothoracic mobility exercises (chin tucks, thoracic extension over foam roll).",
+          parameters: "Pendulums: 3 × 1–2 minutes daily<br>Scapular sets: 3 × 10 holds (3 seconds) twice daily<br>All exercises performed within surgeon-defined ROM limits (typically no active shoulder adduction loading in weeks 0–6)",
+          progressionCriteria: "Pain ≤2/10 with permitted exercises. Full passive ROM in all planes within surgical limits. No wound complications or signs of re-rupture. Surgeon clearance at 6-week review before advancing to Phase 2.",
+          timeframe: "Weeks 0–6 (post-surgery)"
+        },
+        {
+          phase: "Phase 2 — Active ROM and Isometric Strengthening",
+          goals: "Restore full active shoulder ROM. Begin graduated isometric loading of the pectoralis major and shoulder girdle. Improve scapulohumeral rhythm. Address posterior capsule restriction.",
+          exercises: "Active-assisted shoulder adduction with theraband (low resistance). Isometric wall press (horizontal adduction, starting at 90° — arm by side, fist pressing gently against wall). Prone Y/T/W exercises (lower trapezius, serratus anterior). Posterior capsule stretching (horizontal adduction stretch across chest). Single-arm cable rows (low weight — mid-back activation). Rhythmic stabilisation drills at 90° abduction.",
+          parameters: "Isometric wall press: 3 × 10 × 5-second holds<br>Prone Y/T/W: 3 × 15 reps (minimal load initially)<br>Stretching: 3 × 30-second holds twice daily<br>4–5 sessions per week",
+          progressionCriteria: "Full pain-free active shoulder ROM in all planes. Isometric adduction strength 70% of contralateral side on handheld dynamometry. No pain or apprehension with isometric loading at 90° position.",
+          timeframe: "Weeks 6–12 (post-surgery)"
+        },
+        {
+          phase: "Phase 3 — Progressive Strengthening and Return to Sport",
+          goals: "Restore full pectoralis major strength symmetry (≥90% of contralateral side). Progress to sport-specific loading. Clearance for return to bench-press and weightlifting.",
+          exercises: "Cable crossovers (horizontal adduction — graduated load progression). Dumbbell bench-press (starting light — progress in 10% increments per week). Push-up progression (wall → incline → floor → weighted). TRX push-up/fly (eccentric control emphasis). Sports-specific weightlifting drills (empty bar bench-press before progressive loading). Isokinetic testing at 6 months for return-to-sport clearance.",
+          parameters: "All progressive loading exercises: 3 × 10–12 reps; increase load when 15 reps achievable with correct form<br>Bench-press: begin at 40–50% of pre-injury working weight and progress conservatively<br>3–4 strength sessions per week",
+          progressionCriteria: "Adduction strength symmetry ≥90% on isokinetic or handheld dynamometry testing. Pain-free bench-press through full range. Surgeon clearance. UEFI ≥80%. No apprehension during horizontal adduction loading. Minimum 6 months post-surgery before return to maximal bench-press loading.",
+          timeframe: "Weeks 12–24 (post-surgery)"
+        }
+      ]
+    }
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Complete Pectoralis Major Tendon Tear</strong><br>Humeral avulsion during bench-press — initially missed due to absent axillary asymmetry",
+    outcomes: [
+      { label: "Published Source", text: "Billham et al. J Chiropr Med. 2024;23(1-2):59–63" },
+      { label: "PMID / PMC", text: "PMID: 39791007 — PMC11707370 (open access)" },
+      { label: "Final Diagnosis", text: "Complete pectoralis major tendon tear at the humeral insertion" },
+      { label: "Intervention", text: "Surgical repair of pectoralis major tendon; optimal recovery achieved post-operatively" }
+    ],
+    conditionSummary: {
+      overview: "Pectoralis major tendon tear is an uncommon but important sports injury occurring predominantly in men aged 20–40 years during heavy resistance training, particularly bench-pressing. Complete (Type 3) tears involve avulsion of the tendon from its humeral insertion and require surgical repair for optimal functional recovery. The injury results from eccentric overloading of a maximally contracted muscle during the terminal range of humeral extension and external rotation.",
+      presentation: [
+        "Acute anterior arm/axillary pain during bench-press (eccentric loading mechanism is most common)",
+        "Ecchymosis and swelling over the anterior arm and axillary region",
+        "Isolated adduction weakness — often pain-free — is the hallmark clinical sign of tendon compromise",
+        "Axillary fold asymmetry on bilateral comparison (absent in early acute presentation or suboptimal body habitus)"
+      ],
+      pathology: [
+        "Complete tears (Type 3) involve avulsion of the sternal head of the pectoralis major at the humeral bicipital groove — the site of highest tensile stress during bench-press",
+        "The injury requires eccentric overloading of a maximally contracted muscle — the last 30° of humeral extension/external rotation during the descent phase of bench-press",
+        "Tendon retraction occurs progressively after complete avulsion, increasing surgical complexity and worsening outcomes the longer repair is delayed",
+        "Anabolic steroid use, Black race, and younger age are recognised risk factors; steroid use directly impairs collagen synthesis and increases tendon fragility"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Absent axillary fold asymmetry does not exclude a complete pectoralis major tendon tear. In the acute setting, swelling, body habitus, and the natural resting position of the shoulder can all mask the expected deformity. Isolated, pain-free adduction weakness is a more reliable clinical sign of complete tendon disruption and should prompt immediate imaging, not a trial of conservative care."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "Pain resolution after a short trial of conservative care is a dangerous endpoint for this injury. Soft tissue swelling, bruising, and muscular pain all improve with rest and cryotherapy regardless of whether the tendon is intact or completely torn. The clinician must re-examine adduction strength at each follow-up visit. If weakness persists despite pain resolution, structural failure of the tendon must be assumed until imaging proves otherwise."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "In any bench-press injury with anterior arm ecchymosis, perform a specific bilateral comparison of shoulder adduction strength at the first visit. Have the patient resist your force as you try to abduct the arm away from the body — weakness that is disproportionate to pain is the fingerprint of pectoralis major tendon failure. A dynamic ultrasound is an ideal same-day adjunct if available in-clinic: it can demonstrate tendon continuity (or lack of it) in real time and is cost-effective compared to MRI."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "A complete pectoralis major tendon tear in a young, active male is a surgical condition — the chiropractor's role is accurate diagnosis, early imaging referral, and facilitation of prompt orthopaedic consultation. Conservative care is not appropriate as the definitive management for a complete avulsion tear. The chiropractor may appropriately support pre-surgical pain management and, post-operatively, contribute to cervicothoracic mobility and compensatory pattern management alongside the primary rehabilitation team."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "Ultrasound is an excellent and cost-effective first-line imaging tool for suspected pectoralis major injury — it can dynamically demonstrate tendon disruption and retraction in real time, a key advantage over static MRI. MRI remains the gold standard for characterising tear completeness, retraction extent, and involvement of the clavicular versus sternal head — all critical factors for surgical planning. If both are available, a normal ultrasound should not terminate the investigation if clinical suspicion remains high."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Sports injury, Shoulder anatomy, Pectoralis major, Tendon tear, Diagnostic imaging, Surgical referral, Bench-press injuries",
+    keyPoints: [
+      "Pectoralis major tendon tears occur predominantly during heavy bench-press via eccentric overloading of the terminal extension-external rotation position; the sternal head at the humeral insertion is the most common site of failure.",
+      "Absent axillary fold asymmetry does not exclude a complete tendon tear — the clinical hallmark of PMJ avulsion is isolated, pain-free adduction weakness, which is more reliable than any visual sign.",
+      "Pain resolution with conservative care is not equivalent to structural healing; adduction strength must be specifically assessed at follow-up and persistent weakness mandates imaging regardless of symptom improvement.",
+      "Ultrasound is an excellent first-line imaging tool (dynamic real-time tendon assessment); MRI provides definitive characterisation for surgical planning — both are often used in sequence.",
+      "Early surgical repair (within 6–8 weeks of injury) is the evidence-based management for complete PMJ tears in young, active males; delayed repair significantly reduces functional outcomes due to tendon retraction and muscle atrophy."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 056 — Notalgia Paresthetica in an older male
+// Source: Ozen et al. J Chiropr Med. 2022;20(4):224–228. PMID: 35496723
+// sourceTier: PeerReviewed
+// ─────────────────────────────────────────────
+{
+  id: "056",
+  title: "A 61-year-old man presents with a 7-year history of intolerable right upper back itch and pain that has progressively worsened despite multiple treatment attempts",
+  category: "Mixed",
+  secondaryCategory: "Thoracic",
+  difficulty: "Intermediate",
+  estimatedTime: "20–25 minutes",
+  sourceTier: "PeerReviewed",
+  source: {
+    short: "Ozen et al.\nJ Chiropr Med. 2022;20(4):224–228\nPMID: 35496723\nPMC: PMC9051159\nOpen access ✓",
+    full: "Ozen S, Saracgil Cosar SN, Sozay S. Exercise, Manipulative Therapy, and Physical Modalities in the Treatment of Notalgia Paresthetica: A Case Report. Journal of Chiropractic Medicine. 2022;20(4):224–228. doi:10.1016/j.jcm.2021.12.010. PMID: 35496723. PMC: PMC9051159."
+  },
+  patient: {
+    ageSex: "61-year-old male",
+    chiefComplaint: "7-year history of upper back pain that has progressively concentrated in the right periscapular region; initially a pricking sensation, now described as an intolerable itch rated 8/10 on NPS",
+    duration: "7 years — gradual onset and progressive worsening",
+    priorProviders: "Physical medicine and rehabilitation outpatient clinic",
+    priorDiagnoses: "Not previously diagnosed — the patient had a past medical history of diabetes mellitus, hypertension, and benign prostatic hypertrophy"
+  },
+  history: {
+    content: `<p>A 61-year-old retired man presented to a physical medicine and rehabilitation outpatient clinic with a 7-year history of progressive upper back pain. The complaint had initially been a diffuse pricking sensation across the upper back, but had over time concentrated and intensified into an intolerable right periscapular itch rated 8/10 on the numeric pain scale. The patient described an overwhelming urge to scratch the right infrascapular and paravertebral region. Notably, there was no pain into the neck or upper limbs, and no weakness of the arms.</p>
+<p>The patient had a past medical history of diabetes mellitus, hypertension, and benign prostatic hypertrophy, with stable medications including oral hypoglycemics, a thiazide diuretic, and an alpha receptor blocker — all taken for a considerable period without adverse effects or recent dose changes. HbA1c was 6.0%, indicating well-controlled diabetes. The generalised back pain was worse in cold weather. There was no specific triggering event for symptom onset.</p>
+<p>The patient declined formal outpatient physical therapy due to the distance from his home to the clinic. He also declined additional medications, having had an extensive drug history from his comorbidities. He agreed to a home exercise program with a home TENS unit.</p>`,
+    clinicalNote: "The diagnostic trap in this case is the duration and character of the primary symptom — an intolerable itch localised to the right infrascapular region. Chiropractors rarely think of the thoracic posterior rami when a patient reports back 'itch' — this complaint may be dismissed as dermatological, psychological, or psychosomatic. The key diagnostic signal is the combination of (1) localised neuropathic dysesthesia (pruritus, paraesthesia, and pain all coexisting in the same infrascapular zone), (2) hyperpigmented skin patch at exactly that location (chronic scratching trauma), and (3) thoracic spondylosis on MRI with segmental nerve root compression. This is spinal pathology presenting as a skin symptom."
+  },
+  examination: {
+    autoROM: `<p><strong>Cervical ROM:</strong> Reduced, non-painful active range of motion in all cervical directions at the end of the normal range. No radicular provocation. The restriction was mild-to-moderate, consistent with age-related cervicothoracic spondylosis rather than acute pain inhibition.</p>
+<p><strong>Thoracic ROM:</strong> Specific thoracic ROM measurements not documented in the source. The posterior rami distribution and spinal MRI findings implicate T5–T7 segmental levels.</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+      <thead><tr><th>Level</th><th>Movement</th><th>Finding</th></tr></thead>
+      <tbody>
+        <tr><td>C5</td><td>Shoulder abduction</td><td>Normal — no upper limb weakness</td></tr>
+        <tr><td>C6</td><td>Elbow flexion / wrist extension</td><td>Normal</td></tr>
+        <tr><td>C7</td><td>Elbow extension / wrist flexion</td><td>Normal</td></tr>
+        <tr><td>C8</td><td>Finger flexion</td><td>Normal</td></tr>
+        <tr><td>T1</td><td>Finger abduction</td><td>Normal</td></tr>
+        <tr><td colspan="3"><em>Neurological examination of the extremities was documented as unremarkable. No upper or lower limb weakness was reported. EMG of all four extremities showed an axonal sensorimotor polyneuropathy of the lower extremities (attributed to longstanding diabetes), but no evidence of upper limb neurological deficit.</em></td></tr>
+      </tbody>
+    </table></div>`,
+    checklist: [
+      {
+        group: "Cutaneous Examination",
+        items: [
+          {
+            id: "skin_inspect",
+            label: "Inspection of the right infrascapular and paravertebral region for skin changes",
+            result: `<span class="tt pos">Positive</span> — Hyperpigmented, irregular skin patch visible in the right dorsal paravertebral and infrascapular region with local paraesthesia on palpation of the area.`,
+            documented: true,
+            rationale: "The hyperpigmented patch is the single most important clinical finding in notalgia paresthetica and results from chronic trauma to the skin secondary to repetitive scratching. It localises precisely to the dermatome(s) of the affected posterior spinal nerves (T2–T6 in this case, with a right T5–T7 distribution). Its presence immediately converts a vague 'back itch' complaint into a neurologically-grounded diagnosis. Without deliberate skin inspection of the back, this finding would be entirely missed."
+          },
+          {
+            id: "skin_sensation",
+            label: "Dermatomal sensory testing in the right infrascapular region",
+            result: `<span class="tt pos">Positive</span> — Local paraesthesia documented in the right infrascapular and dorsal paravertebral region corresponding to the hyperpigmented patch.`,
+            documented: true,
+            rationale: "Dermatomal sensory disturbance (paraesthesia, altered light touch, burning sensation) in the infrascapular region defines the posterior ramus distribution of the affected thoracic segmental nerves. In notalgia paresthetica, this sensory change is localised to the medial border of the inferior scapula, classically between T3 and T6. Mapping the extent of the sensory disturbance can help predict the spinal level(s) involved."
+          }
+        ]
+      },
+      {
+        group: "Neurological Assessment",
+        items: [
+          {
+            id: "emg_upper",
+            label: "Electromyography / Nerve Conduction Study — upper and lower extremities",
+            result: `<span class="tt notable">Notable</span> — EMG of the lower extremities revealed axonal sensorimotor polyneuropathy (attributed to longstanding diabetes mellitus). Upper extremity findings unremarkable.`,
+            documented: true,
+            rationale: "EMG was performed to exclude a peripheral neuropathic contribution to the periscapular symptoms, particularly given the patient's 7-year history of diabetes mellitus. The finding of diabetic peripheral polyneuropathy in the lower extremities confirmed diabetes as a comorbidity affecting neural integrity but did not explain the right-sided infrascapular distribution of symptoms, supporting notalgia paresthetica as the primary diagnosis. Importantly, upper extremity findings were normal, excluding cervical radiculopathy or brachial plexopathy."
+          },
+          {
+            id: "upper_limb_neuro",
+            label: "Upper limb neurological screen (reflexes, sensation, power)",
+            result: `<span class="tt normal">Normal</span> — Neurological examination of the extremities was unremarkable.`,
+            documented: true,
+            rationale: "With a history of longstanding back pain, diabetes, and now a periscapular sensory complaint, excluding upper and lower limb neurological deficit is mandatory. A normal upper limb neurological screen argues against cervical myelopathy, cervical radiculopathy, and brachial plexopathy — conditions that can mimic or coexist with notalgia paresthetica. The absence of upper limb involvement, combined with localisation strictly to the infrascapular dorsal region, supports a posterior rami entrapment rather than an anterior ramus or cord-level pathology."
+          },
+          {
+            id: "thoracic_sensation_full",
+            label: "Full thoracic dermatomal sensory mapping (T1–T12)",
+            result: `Not formally documented in source — sensory examination focused on the affected right infrascapular region.`,
+            documented: false,
+            rationale: "Systematic dermatomal sensory mapping across the full thoracic dermatomes would clarify the extent of posterior rami involvement and help predict the specific spinal levels implicated. This is particularly useful when planning targeted therapeutic interventions. If T5 and T6 posterior rami are primarily involved (consistent with the infrascapular dermatomal location), manipulation or mobilisation at these levels is more precisely guided by this mapping."
+          }
+        ]
+      },
+      {
+        group: "Spinal Assessment",
+        items: [
+          {
+            id: "thoracic_palpation",
+            label: "Thoracic spine segmental motion palpation (T3–T8)",
+            result: `Not explicitly documented in source — segmental dysfunction was inferred from MRI findings of spondylosis and disc protrusion at T5–T6 and T6–T7.`,
+            documented: false,
+            rationale: "Manual palpation of thoracic segmental motion at T3–T8 is a clinically logical step in any case of notalgia paresthetica given the strong evidence linking thoracic posterior rami entrapment at the paraspinal musculature with its symptoms. Segmental hypo-mobility at T5–T6 would specifically support the MRI-demonstrated pathology at that level as the driver of posterior rami irritation. This information would guide targeted manipulative therapy — a treatment option the published literature supports for NP."
+          },
+          {
+            id: "postural_assessment",
+            label: "Postural assessment — thoracic kyphosis and scapular position",
+            result: `Not formally documented in source.`,
+            documented: false,
+            rationale: "Thoracic hyperkyphosis with protracted, anteriorly tilted scapulae is strongly associated with posterior rami entrapment in notalgia paresthetica — the altered spinal curvature increases the angle at which the posterior rami must traverse the paraspinal musculature, increasing susceptibility to entrapment. In the published case, the exercise program included scapular and pectoral stretches consistent with a postural component, though formal postural assessment was not documented. Assessment and addressing postural contributors is a high-yield intervention."
+          }
+        ]
+      },
+      {
+        group: "Imaging",
+        items: [
+          {
+            id: "mri_spine",
+            label: "MRI cervical and thoracic spine",
+            result: `<span class="tt notable">Notable</span> — Cervicothoracic spondylosis with C3–C4 disc protrusion causing local canal narrowing. T5–T6 minimal right paracentral disc protrusion. T6–T7 minimal left paracentral disc protrusion. Vertebral haemangiomas at T9 and T11 (incidental).`,
+            documented: true,
+            rationale: "MRI of the cervical and thoracic spine was ordered to exclude nerve root compression as a cause of the periscapular symptoms. The finding of thoracic disc protrusion at T5–T6 and T6–T7 is clinically significant as these correspond to the posterior rami distribution of the symptomatic infrascapular region. The presence of cervicothoracic spondylosis provides the structural substrate for the posterior rami entrapment mechanism proposed in notalgia paresthetica. Vertebral haemangiomas at T9 and T11 are incidental and typically benign."
+          },
+          {
+            id: "dermatology_consult",
+            label: "Dermatology consultation",
+            result: `<span class="tt normal">Normal</span> — Dermatological pathology was excluded by the consulting dermatologist, supporting notalgia paresthetica as the primary diagnosis.`,
+            documented: true,
+            rationale: "Dermatology review is a mandatory step in notalgia paresthetica to exclude primary skin diseases that can mimic its presentation. Conditions to exclude include contact dermatitis, neurodermatitis, parapsoriasis, tinea versicolor, and morphoea. In this case, a dermatologist confirmed there was no primary skin pathology — converting the skin finding from a standalone dermatological issue to a neurologically-mediated secondary change, and confirming NP as a diagnosis of exclusion."
+          }
+        ]
+      }
+    ],
+    contextText: "This examination is structured around distinguishing a rare neuropathic skin condition (notalgia paresthetica) from far more common causes of upper back pain and from primary dermatological disease. The mandatory steps are: (1) thorough inspection of the back for the pathognomonic hyperpigmented patch; (2) dermatomal sensory testing in the infrascapular region; (3) upper and lower limb neurological screen to exclude myelopathy, radiculopathy, and peripheral neuropathy; (4) spinal imaging to identify the underlying segmental pathology driving posterior rami entrapment; and (5) dermatology referral to exclude primary skin disease. This systematic exclusion approach converts an ambiguous 'itch' complaint into a precisely diagnosed posterior rami neuropathy with a specific treatment target."
+  },
+  investigations: {
+    options: [
+      {
+        id: "mri_spine",
+        label: "MRI cervical and thoracic spine",
+        consequence: null,
+        ordered: true,
+        result: `<p><strong>Cervicothoracic spondylosis identified.</strong> Findings included: C3–C4 disc protrusion with local spinal canal narrowing; T5–T6 minimal right paracentral disc protrusion; T6–T7 minimal left paracentral disc protrusion. Vertebral haemangiomas in T9 and T11 vertebral bodies (incidental findings, typically benign and not contributing to symptoms). No cord signal change. No foraminal stenosis at upper extremity nerve roots.</p>
+<p>The T5–T6 and T6–T7 disc pathology is clinically significant, providing the structural substrate for posterior rami entrapment in the infrascapular dermatome — consistent with the notalgia paresthetica diagnosis.</p>`
+      },
+      {
+        id: "emg_ncs",
+        label: "Electromyography and nerve conduction study (upper and lower extremities)",
+        consequence: null,
+        ordered: true,
+        result: `<p><strong>Axonal sensorimotor polyneuropathy of the lower extremities</strong> was identified, attributed to longstanding diabetes mellitus (HbA1c 6.0% indicating well-controlled disease despite the neural complication). Upper extremity EMG/NCS was unremarkable, excluding cervical radiculopathy, brachial plexopathy, and any neural compression contributing to the arm or hand. The isolated lower extremity finding supported diabetes as a background comorbidity without explaining the right periscapular infrascapular sensory disturbance.</p>`
+      },
+      {
+        id: "bloods",
+        label: "Routine blood tests including HbA1c",
+        consequence: null,
+        ordered: true,
+        result: `<p><strong>Routine blood tests normal.</strong> HbA1c 6.0% — diabetes well-controlled. No inflammatory markers or haematological abnormalities documented. Normal blood tests helped exclude systemic or metabolic causes of neuropathic symptoms such as hypothyroidism, B12 deficiency, and dysproteinaemia.</p>`
+      },
+      {
+        id: "dermatology",
+        label: "Dermatology consultation",
+        consequence: null,
+        ordered: true,
+        result: `<p><strong>Primary dermatological pathology excluded.</strong> The dermatologist confirmed the hyperpigmented patch was consistent with chronic scratch trauma (lichen simplex chronicus pattern) secondary to neuropathic pruritus, rather than representing a primary skin disease. This finding completed the diagnosis of notalgia paresthetica as a neurologically-mediated entity.</p>`
+      },
+      {
+        id: "bone_scan",
+        label: "Bone scintigraphy (to characterise T9/T11 vertebral haemangiomas)",
+        consequence: "Not ordered in this case, which was appropriate. Vertebral haemangiomas identified on MRI at T9 and T11 are common incidental findings (occurring in up to 10% of the population) and are overwhelmingly benign. They are not associated with notalgia paresthetica and do not require further investigation unless they are large (>1/3 of vertebral body), symptomatic, or show aggressive features on MRI (e.g. extraosseous extension, low T1 signal). Ordering additional imaging for these incidental findings would have been unhelpful and unnecessarily alarming for the patient.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "topical_capsaicin",
+        label: "Trial of topical capsaicin 0.025–0.075% (diagnostic-therapeutic)",
+        consequence: "Topical capsaicin is a reasonable therapeutic-diagnostic tool in notalgia paresthetica — response to capsaicin provides additional evidence for C-fibre mediated neuropathic pruritus. It was not ordered in this case, where the patient preferred home exercise and TENS. In cases where the diagnosis remains uncertain, a 4-week trial of topical capsaicin with symptom monitoring is advocated in the treatment algorithm for NP and can serve both a diagnostic and therapeutic role.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Notalgia Paresthetica",
+        correct: true,
+        blurb: "This is the correct diagnosis. The combination of a 7-year progressive right infrascapular neuropathic pruritus, a hyperpigmented skin patch at exactly the symptomatic location, dermatomal paraesthesia, thoracic spondylosis with T5–T6 disc protrusion, and exclusion of both primary dermatological disease and peripheral neuropathy as causative factors collectively satisfy the diagnostic criteria for notalgia paresthetica.",
+        supports: [
+          "7-year history of progressive pruritus/pain localised to the right infrascapular and dorsal paravertebral region — the classic NP distribution",
+          "Hyperpigmented skin patch in the right infrascapular and paravertebral region — the pathognomonic finding of chronic posterior rami dysesthesia",
+          "Local paraesthesia on sensory testing of the affected region",
+          "Thoracic spondylosis with T5–T6 and T6–T7 disc protrusion — consistent with the proposed entrapment mechanism of NP",
+          "Normal upper limb neurological examination excluding radiculopathy as the primary driver",
+          "Primary dermatological disease excluded by dermatology consultation",
+          "Symptoms worse in cold weather — consistent with neuropathic sensitisation",
+          "Positive treatment response to home TENS and exercise (pruritus reduced from 8/10 to 4/10 at 1 month)"
+        ],
+        arguesAgainst: []
+      },
+      {
+        label: "Thoracic Radiculopathy (T5–T7)",
+        correct: false,
+        blurb: "Thoracic disc protrusion was identified on MRI at T5–T6 and T6–T7, raising the question of thoracic radiculopathy as the source of the periscapular symptoms. However, the clinical picture is more consistent with posterior rami entrapment than anterior rami root compression.",
+        supports: [
+          "MRI demonstrated T5–T6 and T6–T7 disc protrusion with potential nerve root proximity",
+          "Progressive periscapular pain and sensory disturbance in a dermatomal distribution",
+          "Older male with established spinal degenerative changes"
+        ],
+        arguesAgainst: [
+          "True thoracic radiculopathy typically produces circumferential dermatomal pain wrapping around the chest wall — this patient's symptoms were strictly posterior and infrascapular",
+          "No documented pain radiation anteriorly or band-like thoracic pain",
+          "EMG upper extremity was normal, reducing the probability of a significant radiculopathic component",
+          "The hyperpigmented skin patch and localised pruritus are specifically characteristic of posterior rami irritation (NP), not anterior rami root compression"
+        ]
+      },
+      {
+        label: "Contact Dermatitis / Inflammatory Skin Disease",
+        correct: false,
+        blurb: "A hyperpigmented back patch is a common presentation to dermatology and primary care, and inflammatory skin disease (contact dermatitis, neurodermatitis/lichen simplex chronicus) was a reasonable initial consideration. However, dermatological consultation excluded this.",
+        supports: [
+          "Hyperpigmented patch visible on the back in the right infrascapular region",
+          "History of chronic scratching and pruritus",
+          "Progressive worsening over 7 years could suggest a chronic inflammatory process"
+        ],
+        arguesAgainst: [
+          "Dermatology consultation specifically excluded primary skin disease",
+          "The pattern of hyperpigmentation as secondary to neurologically-driven pruritus (lichen simplex chronicus secondary to NP) was confirmed",
+          "Inflammatory skin conditions typically respond to topical steroids — the history does not suggest prior effective dermatological treatment",
+          "The patient's symptoms included paraesthesia in addition to pruritus — neurological symptoms are not a feature of isolated dermatological disease"
+        ]
+      },
+      {
+        label: "Diabetic Peripheral Neuropathy (upper back manifestation)",
+        correct: false,
+        blurb: "Given the patient's 7-year history of diabetes mellitus and confirmed axonal sensorimotor polyneuropathy on EMG, diabetic neuropathy as the source of periscapular symptoms is a reasonable consideration. However, the distribution is atypical.",
+        supports: [
+          "Confirmed axonal sensorimotor polyneuropathy on EMG",
+          "7-year history of diabetes with well-controlled HbA1c — longstanding enough for neuropathic complications",
+          "Pruritus and paraesthesia are features of diabetic peripheral neuropathy"
+        ],
+        arguesAgainst: [
+          "Diabetic peripheral neuropathy is characteristically length-dependent, beginning in the distal feet and hands and progressing proximally — it does not typically present as an isolated unilateral infrascapular patch",
+          "The right-sided, strictly posterior, infrascapular localisation of symptoms is not consistent with the global distribution of diabetic neuropathy",
+          "EMG confirmed the diabetic polyneuropathy was confined to the lower extremities — upper extremity NCS was unremarkable",
+          "The hyperpigmented skin patch at the exact symptom location is more specifically attributable to posterior rami entrapment than systemic diabetic neuropathy"
+        ]
+      },
+      {
+        label: "Cervical Spondylotic Radiculopathy (C5–C7)",
+        correct: false,
+        blurb: "Cervical spondylosis was confirmed on MRI (C3–C4 disc protrusion with canal narrowing), and cervical radiculopathy can produce periscapular referred pain. However, the symptom location and character are inconsistent with cervical radiculopathy.",
+        supports: [
+          "MRI confirmed C3–C4 disc protrusion with local spinal canal narrowing",
+          "Reduced cervical ROM noted on physical examination",
+          "Periscapular pain is within the referred pain territory of C5–C7 radiculopathy"
+        ],
+        arguesAgainst: [
+          "Cervical radiculopathy typically produces pain, weakness, and altered reflexes in the upper limb — none of these were present",
+          "The symptom was predominantly pruritus (itch), which is not a feature of cervical radiculopathy — it is a specific posterior rami sensory phenomenon",
+          "Normal upper limb EMG/NCS excluded significant cervical nerve root compression",
+          "The hyperpigmented patch and infrascapular dermatomal localisation are not features of cervical root pathology"
+        ]
+      },
+      {
+        label: "Herpes Zoster (Shingles) — Post-herpetic Neuralgia",
+        correct: false,
+        blurb: "Post-herpetic neuralgia affecting the thoracic dermatomes can produce severe burning, pruritus, and paraesthesia in a dermatomal distribution nearly identical to NP. In an older diabetic male, this is a clinically important differential.",
+        supports: [
+          "Neuropathic pruritus and burning in a thoracic dermatomal distribution",
+          "Older age and diabetes both increase susceptibility to varicella-zoster reactivation and more severe post-herpetic neuralgia",
+          "Progressive worsening over time is consistent with evolving neuropathic pain states"
+        ],
+        arguesAgainst: [
+          "Post-herpetic neuralgia typically follows a clinically recognised zoster outbreak (vesicular rash); no vesicular history was documented",
+          "PHN is typically more severe and accompanied by allodynia and hypersensitivity rather than isolated pruritus",
+          "Post-herpetic changes characteristically produce skin scarring, atrophy, or depigmentation rather than the hyperpigmentation associated with NP",
+          "The 7-year progressive history without acute outbreak is inconsistent with post-herpetic neuralgia, which follows an identifiable acute event"
+        ]
+      },
+      {
+        label: "Myofascial Referred Pain from Thoracic Trigger Points",
+        correct: false,
+        blurb: "Myofascial pain from rhomboid, middle trapezius, or serratus posterior superior trigger points can produce periscapular referred pain. However, the neurological features of this presentation point beyond muscular dysfunction.",
+        supports: [
+          "Right periscapular location is a common trigger point referral zone for thoracic paraspinal and rhomboid musculature",
+          "7-year history could reflect chronic postural loading driving trigger point formation",
+          "Thoracic musculature traversal by the posterior rami may contribute to combined myofascial and neuropathic symptoms"
+        ],
+        arguesAgainst: [
+          "Pruritus (itch) is not a feature of myofascial trigger point pain — it is a specific neuropathic symptom implicating cutaneous nerve involvement",
+          "The hyperpigmented skin patch is not seen with myofascial pain — it is the direct result of posterior rami-mediated neuropathic pruritus causing chronic scratching",
+          "Paraesthesia in the infrascapular region points to sensory nerve involvement beyond myofascial muscle pathology",
+          "Normal upper limb neurological examination argues against a significant neural compression component that would typically accompany severe posterior rami entrapment by muscle"
+        ]
+      },
+      {
+        label: "Spinal Tumour / Metastatic Disease",
+        correct: false,
+        blurb: "In a 61-year-old with 7 years of progressive back symptoms, serious pathology must be excluded. The incidental vertebral haemangiomas at T9/T11 and the clinical course require systematic red flag screening.",
+        supports: [
+          "61-year-old male with progressive 7-year thoracic symptoms — age and duration warrant vigilance",
+          "Incidental vertebral lesions (haemangiomas) identified on MRI at T9 and T11",
+          "Comorbidities including diabetes may complicate the clinical picture"
+        ],
+        arguesAgainst: [
+          "MRI did not identify malignant features — haemangiomas are the most common vertebral body 'lesions' (present in ~10% of adults) and are overwhelmingly benign",
+          "No systemic red flags (unexplained weight loss, night sweats, fevers, known primary malignancy, rest pain)",
+          "The neuropathic character of symptoms (pruritus, paraesthesia), the localisation to the posterior rami territory, and the 7-year stable course are all inconsistent with progressive malignant pathology",
+          "Routine bloods were normal, reducing the probability of systemic inflammatory or malignant disease"
+        ]
+      }
+    ],
+    explanation: `<p>Notalgia paresthetica is a diagnosis of exclusion that requires a systematic approach. The key diagnostic sequence in this case was: (1) identify the hyperpigmented patch — this is the anchor finding that links the skin complaint to posterior rami neuropathy; (2) confirm dermatomal sensory disturbance in the same region; (3) perform neurological examination of the extremities to exclude myelopathy and radiculopathy; (4) order spinal MRI to identify the structural substrate for posterior rami entrapment; (5) refer to dermatology to exclude primary skin disease.</p>
+<p>The diagnostic challenge of NP lies in its symptom — pruritus — which is the primary symptom of skin disease and therefore misdirects the initial clinical thinking toward dermatology rather than neurology or manual medicine. The crucial cognitive reframe is recognising that chronic, localised, unilateral back itch in the infrascapular region is a posterior rami neuropathy until proven otherwise, not a skin disease. The posterior rami of T2–T6 traverse the paraspinal musculature before reaching the overlying dermis; spondylotic disc changes can entrap these small nerves at the level of the erector spinae or rhomboid musculature, producing localised neuropathic dysesthesia.</p>
+<p>In this case, the T5–T6 and T6–T7 disc protrusions on MRI provided the structural explanation for posterior rami entrapment consistent with the clinical findings. The conservative management — home exercise (thoracic paraspinal stretching, shoulder strengthening, scapular exercises) and TENS at 100 Hz for 15 minutes daily — was effective, reducing the pruritus from 8/10 to 4/10 at 1 month. This response supports the therapeutic model: stretching muscles traversed by the posterior rami reduces entrapment, while TENS activates gate control mechanisms to reduce nociceptive and pruritic transmission in the dorsal horn.</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "exercise_tens",
+        label: "Home exercise program (thoracic and shoulder stretching/strengthening) combined with TENS",
+        selected: true,
+        explanation: `<strong>Appropriate — and effective in this case.</strong> The exercise program targeted the structures through which the posterior rami traverse: thoracic paraspinal stretching reduces muscular entrapment of the posterior rami, while shoulder and scapular exercises correct the protracted-elevated scapula posture that biomechanically increases posterior rami tension. TENS at 100 Hz (conventional TENS) activates large-diameter Aβ fibres to inhibit neuropathic pruritus and pain at the dorsal horn via gate control mechanisms. The combination produced a meaningful 50% reduction in pruritus at 1 month.`
+      },
+      {
+        id: "dermatology_refer",
+        label: "Refer to dermatology for evaluation of the hyperpigmented skin patch",
+        selected: true,
+        explanation: `<strong>Appropriate — an essential step in the diagnostic workup.</strong> A hyperpigmented back patch in a 61-year-old with diabetes must be reviewed by a dermatologist to exclude primary skin disease (contact dermatitis, neurodermatitis, parapsoriasis, and, importantly, melanocytic lesions requiring biopsy). In this case, dermatology consultation provided critical negative information that confirmed NP as the diagnosis by exclusion. This referral is not about treating the skin — it is about completing the diagnostic algorithm safely.`
+      },
+      {
+        id: "topical_steroids",
+        label: "Prescribe topical corticosteroids for the hyperpigmented patch",
+        selected: false,
+        explanation: `<strong>Not appropriate as a definitive treatment.</strong> Topical corticosteroids are a first-line treatment for inflammatory dermatoses (contact dermatitis, eczema) but are not effective for neuropathic pruritus in notalgia paresthetica. The hyperpigmentation in NP is a secondary consequence of chronic scratching trauma (lichen simplex chronicus pattern), not a primary inflammatory skin disease. Treating the skin while leaving the underlying posterior rami neuropathy unaddressed will not resolve symptoms. Antihistamines are similarly ineffective, as NP pruritus is not histamine-mediated.`
+      },
+      {
+        id: "gabapentin",
+        label: "Trial of gabapentin or pregabalin (neuropathic pain medication)",
+        selected: false,
+        explanation: `<strong>Not first-line — but a reasonable second-line option.</strong> In the published case, the patient declined additional medications. Gabapentin (300–900 mg/day) is supported by evidence for neuropathic pruritus in NP when conservative physical approaches fail. The NP treatment algorithm (Ansari et al., 2020) positions gabapentin as a second-line option after exercise, manipulative therapy, and TENS. Given this patient's already extensive medication burden (diabetes, hypertension, BPH), adding a potentially sedating medication was reasonably deferred in favour of physical approaches first.`
+      },
+      {
+        id: "manipulation_thoracic",
+        label: "Thoracic spinal manipulation targeting T5–T7 segmental dysfunction",
+        selected: false,
+        explanation: `<strong>Not documented in this published case, but supported by the literature as a valid option.</strong> Osteopathic and chiropractic case reports have documented effective treatment of NP with manipulative therapy targeting the relevant thoracic segments. The proposed mechanism is reduction of posterior rami entrapment through restoration of segmental mobility and reduction of paraspinal muscle tone. In this case, the patient declined outpatient therapy — a home-based approach was used instead. Had the patient attended for clinic-based treatment, thoracic manipulation at T5–T7 would have been a clinically appropriate addition.`
+      }
+    ],
+    outcomeText: "The patient complied with the home exercise program (thoracic paraspinal stretching, shoulder stretching and strengthening) and home TENS at 100 Hz for 15 minutes daily for 10 days. At 1-month review, the pruritus had reduced from 8/10 to 4/10 on the NPS — a clinically meaningful reduction. No side effects of treatment were reported. The patient consented to publication and the same conservative regimen was planned for continuation.",
+    prognosis: {
+      inferred: true,
+      frequencyDuration: `<p>For clinic-based treatment: <strong>1–2 sessions per week for 6–8 weeks</strong> is a reasonable treatment frequency for NP, combining manual therapy (thoracic mobilisation or manipulation), education, and supervised exercise progression. Home programs may substitute for clinic visits where access is limited, as in this case. A home TENS unit applied for 15–20 minutes 5 times per week is well-supported in the literature. Longer-term maintenance exercises should continue indefinitely given the chronic, recurrent nature of NP.</p>`,
+      expectedTrajectory: `<p>Notalgia paresthetica is characteristically chronic and relapsing-remitting, particularly in cases driven by degenerative spinal disease. Complete symptom resolution is uncommon but significant reduction (≥50%) is achievable with conservative management in most patients. The literature on exercise therapy reports satisfactory symptom control in up to 90% of participants in small pilot studies. TENS studies show 60% reduction in pruritus in one-third of patients.</p>
+<p>Prognostic factors for this patient: 7-year chronicity and the presence of diabetic peripheral neuropathy are unfavourable prognostic indicators (chronic neuropathic sensitisation, reduced neural regenerative capacity). Well-controlled HbA1c (6.0%) is favourable. The positive 1-month response to TENS and exercise suggests a mechanosensitive component to his symptoms — indicating a reasonable likelihood of ongoing benefit from physical approaches with continued adherence.</p>`,
+      outcomeBenchmarks: `<p>The primary outcome measure in this case was the Numeric Pain Scale for pruritus. A meaningful clinical improvement is defined as a reduction of ≥2 points on the NPS (minimum clinically important difference for NPS). The patient achieved a 4-point reduction (8 → 4) — exceeding the MCID. Additional outcome measures for NP include: <strong>Patient Global Impression of Change (PGIC)</strong>; <strong>5-D Pruritus Scale</strong> (a validated instrument specifically for chronic pruritus assessing degree, duration, distribution, disability, and affecting factors); and <strong>Dermatology Life Quality Index (DLQI)</strong>. Return to sleeping through the night, ability to wear clothing without triggering scratching, and functional improvement in daily activities are important patient-reported milestones.</p>`,
+      comanagement: `<p><strong>Dermatology</strong> — essential for excluding primary skin disease and monitoring the hyperpigmented patch for any change (particularly melanocytic concern). <strong>Neurologist/Physiatrist</strong> — if symptoms fail to respond to conservative care, consideration of pharmacological agents (gabapentin, topical capsaicin, local anaesthetic injection) or botulinum toxin A injection falls within neurology and pain medicine scope.</p>
+<p>Referral triggers: failure to respond to 6–8 weeks of conservative physical therapy; worsening symptoms; development of new neurological features (motor weakness, upper limb changes, bladder/bowel dysfunction); change in appearance of the hyperpigmented patch (increasing size, colour change, irregular border — requiring urgent dermatology review for melanocytic concern).</p>`
+    },
+    adjustmentPlan: {
+      contraindicated: false,
+      contraindicatedReason: null,
+      alternativeApproach: null,
+      inferred: true,
+      levelsRationale: `<p><strong>T5–T6 (primary target):</strong> MRI demonstrated a minimal right paracentral disc protrusion at T5–T6, consistent with the right infrascapular symptom distribution of notalgia paresthetica (the posterior rami of T5 and T6 traverse the right paraspinal musculature to supply the infrascapular dermis). Segmental manipulation or Grade III–IV mobilisation at T5–T6 on the right addresses the structural basis of posterior rami entrapment. The proposed mechanism is dual: (1) reduction of segmental hypomobility that may tension the posterior ramus at its exit point; and (2) reduction of paraspinal muscle hypertonicity that may directly compress the posterior ramus as it traverses the erector spinae.</p>
+<p><strong>T6–T7 (secondary target):</strong> Minimal left paracentral disc protrusion at T6–T7 was also documented. While this level is more relevant to the left infrascapular region, biomechanical dysfunction at T6–T7 may contribute to the global thoracic mobility restriction that perpetuates posterior rami irritation. Addressing segmental restriction at T6–T7 complements the primary T5–T6 intervention.</p>
+<p><strong>C3–C4 (contextual):</strong> C3–C4 disc protrusion with local canal narrowing was identified on MRI. While this does not directly explain the infrascapular NP symptoms, restricted cervicothoracic junction mobility (C7–T1) is commonly associated with thoracic posterior rami dysfunction. Restoring upper thoracic and cervicothoracic junction mobility may reduce the mechanical burden on mid-thoracic segments and improve overall spinal kinematics.</p>`,
+      techniqueDetail: null,
+      precautions: `<p>Diabetes mellitus does not directly contraindicate thoracic spinal manipulation. However, the coexisting confirmed peripheral neuropathy in the lower extremities warrants a thorough neurological baseline examination before treatment, and vigilance for any post-treatment neurological change. Osteoporosis risk should be assessed (61-year-old male with diabetes has elevated fracture risk compared to age-matched non-diabetic patients) — consider DEXA scan if not recently performed, or use low-force mobilisation techniques as a precautionary first step. Vertebral haemangiomas at T9 and T11 are not a contraindication to manipulation at remote segments (T5–T6) but direct impulsive forces should not be applied at T9 or T11 levels given the presence of these lesions (although typical haemangiomas are benign, unusual vascularity increases theoretical risk). Hypertension: blood pressure should be monitored; sustained supine positioning for extended periods may be uncomfortable.</p>`
+    },
+    rehabProgram: {
+      inferred: false,
+      rationale: `<p>The rehabilitation program for notalgia paresthetica targets the specific anatomical structures implicated in posterior rami entrapment: the thoracic paraspinal muscles (erector spinae group), the rhomboids and serratus anterior (which govern scapular position and affect posterior rami tension), and the pectoral muscles (whose chronic shortening in protracted shoulder posture increases thoracic kyphosis and posterior rami tension). This program is based on the exercise regimen documented in the published case by Ozen et al. (2022), supported by Fleischer et al. (2011) and Zagarella et al. (2016) on exercise for notalgia paresthetica.</p>
+<p>The movement patterns emphasised are: (1) <em>thoracic paraspinal elongation</em> — reducing compressive and tensile forces on the posterior rami as they traverse the erector spinae; (2) <em>scapular retraction and depression</em> — correcting the protracted, anteriorly tilted scapula that biomechanically loads the posterior rami; and (3) <em>pectoral lengthening</em> — the counterbalancing movement that allows scapular correction to be sustained. The evidence for exercise in NP, though limited to case reports and a small pilot RCT, consistently supports the stretching-and-strengthening approach targeting muscles traversed by the affected posterior rami.</p>
+<p>TENS at high frequency (80–100 Hz) is supported by the gate control theory of pain and pruritus: stimulation of large-diameter Aβ fibres at the dorsal horn inhibits C-fibre nociceptive and pruritic transmission. In Savk et al. (2007), 15 patients with NP received TENS for 20 minutes 5 times per week and showed significant reduction in pruritus scores at weekly evaluations. The combination of TENS (reducing neural sensitisation) and exercise (reducing mechanical entrapment) addresses both the neurological and structural dimensions of NP.</p>`,
+      phases: [
+        {
+          phase: "Phase 1 — Neural Desensitisation and Basic Mobility",
+          goals: "Reduce neuropathic pruritus intensity via TENS. Begin thoracic paraspinal elongation. Educate patient on the neurological basis of symptoms and the rationale for movement-based treatment.",
+          exercises: "Thoracic paraspinal cross-arm stretch (arms crossed at mid-forearm level, slowly roll forward until upper back stretch is felt, hold 15 seconds — as documented in the published case). Shoulder-across-body stretch (standing, use one arm to hold the other tightly across the body and rotate in that direction until shoulder/posterior stretch is felt, hold 10 seconds each side). TENS application to the affected infrascapular region at 80–100 Hz for 15–20 minutes (home unit, daily).",
+          parameters: "Cross-arm thoracic stretch: 5 reps × 15-second hold, 2 sets, twice daily<br>Shoulder stretch: 3 reps each side × 10-second hold, twice daily<br>TENS: 80–100 Hz, 15–20 minutes daily for minimum 10 consecutive days, then as needed",
+          progressionCriteria: "Pruritus NPS reduction by ≥2 points at 2-week review. Patient demonstrating correct exercise technique. No adverse skin reaction or symptom worsening with TENS.",
+          timeframe: "Weeks 1–2"
+        },
+        {
+          phase: "Phase 2 — Scapular Stabilisation and Postural Correction",
+          goals: "Activate scapular stabilisers (rhomboids, lower trapezius) to correct protracted scapula posture. Reduce sustained mechanical tension on thoracic posterior rami. Improve thoracic extension mobility.",
+          exercises: "Forward and backward shoulder shrugs (arms by sides, straight and steady — as per published case). Straight arm 360° shoulder circles (forward and backward, arms straight). Scapular retraction against wall (standing with back against wall, arms at sides, retract shoulders and hold). Prone cobra (lying prone, arms by sides, slowly lift chest using thoracic extensors). Thoracic extension over foam roller (positioned between shoulder blades, gentle extension through mid-thoracic). Pectoral doorway stretch (forearms on door frame, lean forward to stretch pectorals).",
+          parameters: "Shoulder shrugs and circles: 10 reps × 2 sets, twice daily<br>Scapular wall retraction: 10 × 5-second holds, 2 sets<br>Prone cobra: 10 reps × 3-second hold<br>Foam roller extension: 3 × 1 minute (passive positioning)<br>All exercises: twice daily",
+          progressionCriteria: "Pruritus NPS ≤4/10 maintained or continuing to improve. Visible improvement in standing scapular position (reduced protraction). Patient can perform scapular retraction against wall without substitution. Thoracic extension ROM improved subjectively.",
+          timeframe: "Weeks 3–6"
+        },
+        {
+          phase: "Phase 3 — Load Tolerance and Long-Term Maintenance",
+          goals: "Consolidate postural correction under sustained daily loads. Build thoracic extensor and scapular stabiliser endurance. Establish a maintenance exercise program for long-term symptom control.",
+          exercises: "Banded scapular retraction rows (light resistance band). Prone Y/T raises (arms in Y position prone, lift toward ceiling — lower trapezius activation). Chin tucks with thoracic extension (cervicothoracic junction mobility). Modified plank (upper thoracic loading with scapular stability). Daily walking program (restores thoracic extension loading and addresses diabetic polyneuropathy comorbidity). Continued pectoral stretching and thoracic paraspinal stretching as maintenance.",
+          parameters: "Resistance exercises: 3 × 12–15 reps, 3 times per week<br>Walking: 20–30 minutes daily (dual benefit for NP and diabetic neuropathy)<br>Maintenance stretches: once daily ongoing indefinitely",
+          progressionCriteria: "Pruritus NPS ≤3/10 consistently, with the patient rating their quality of life as meaningfully improved on a global impression scale. Able to tolerate daily activities, clothing contact, and cold weather exposure without triggering severe pruritus. Scapular posture visibly corrected at standing rest. Plan for indefinite maintenance given the chronic nature of notalgia paresthetica.",
+          timeframe: "Weeks 7 onwards (ongoing maintenance)"
+        }
+      ]
+    }
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Notalgia Paresthetica</strong><br>Posterior rami sensory neuropathy of T5–T6 — presenting as chronic unilateral infrascapular pruritus with hyperpigmented skin patch",
+    outcomes: [
+      { label: "Published Source", text: "Ozen et al. J Chiropr Med. 2022;20(4):224–228" },
+      { label: "PMID / PMC", text: "PMID: 35496723 — PMC9051159 (open access)" },
+      { label: "Final Diagnosis", text: "Notalgia paresthetica — posterior rami T5–T7 sensory neuropathy secondary to thoracic spondylosis" },
+      { label: "Intervention", text: "Home exercise (thoracic paraspinal stretching, shoulder stretching and strengthening) + home TENS 100 Hz 15 min/day. Pruritus reduced 8/10 → 4/10 at 1 month." }
+    ],
+    conditionSummary: {
+      overview: "Notalgia paresthetica (NP) is a chronic sensory neuropathy characterised by pruritus, pain, and paraesthesia localised to the medial inferior scapula region, typically unilateral, and associated with a hyperpigmented skin patch caused by chronic scratching. It results from irritation or entrapment of the posterior rami of thoracic spinal nerves T2–T6 as they traverse the paraspinal musculature and is strongly associated with underlying thoracic spondylosis. It is a frequently underdiagnosed condition with a lifetime incidence exceeding 20%.",
+      presentation: [
+        "Chronic, localised pruritus (itch) or neuropathic pain in the medial infrascapular region — typically right-sided and unilateral",
+        "Hyperpigmented, irregular skin patch at the symptomatic location (lichen simplex chronicus pattern secondary to chronic scratching)",
+        "Dermatomal paraesthesia, burning, numbness, or allodynia in the same infrascapular zone",
+        "Symptoms worsen with cold weather, sustained postures, and emotional stress; absent upper or lower limb neurological deficit"
+      ],
+      pathology: [
+        "Posterior rami of T2–T6 are the affected nerves; they traverse the erector spinae and rhomboid musculature before supplying the overlying infrascapular skin",
+        "Degenerative thoracic spondylosis with disc protrusion, osteophyte formation, or paraspinal muscle hypertrophy can entrap posterior rami at multiple points along their course",
+        "Thoracic hyperkyphosis and protracted scapula posture increase posterior rami tension, as the altered curve changes the angle of nerve exit through the paraspinal musculature",
+        "The hyperpigmented skin patch results from chronic scratching trauma (lichen simplex chronicus) and is a secondary manifestation of neuropathic pruritus — not a primary skin disease"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Notalgia paresthetica is the most common cause of chronic unilateral mid-back pruritus in adults and is almost certainly underdiagnosed. When a patient reports 'back itch' localised to the infrascapular region, always expose and inspect the back — the hyperpigmented patch is nearly pathognomonic. Treating this as a skin problem without examining the spine means the underlying posterior rami neuropathy will remain unaddressed indefinitely."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "The primary symptom of notalgia paresthetica — pruritus — is so strongly associated with dermatological disease that it routinely results in years of ineffective topical treatment before the correct diagnosis is made. The cognitive trap is that 'itch is a skin problem'. In NP, the itch is a neurological problem: the posterior ramus is irritated at the level of the thoracic spine, and the skin change is a downstream consequence of chronic scratching, not the primary pathology. A spinal cause of itch should always be considered when localised back pruritus is unilateral, infrascapular, and unresponsive to dermatological treatment."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "The exercise program for notalgia paresthetica targets the muscles that the posterior rami traverse on their way to the skin. Strengthening the rhomboids and lower trapezius (to retract and depress the scapula) and stretching the pectorals and thoracic paraspinals (to reduce the kyphotic posture that increases posterior rami tension) directly addresses the entrapment mechanism. TENS at high frequency (80–100 Hz) provides gate control-mediated reduction of neuropathic pruritus. This multimodal approach — which falls entirely within chiropractic and physiotherapy scope — is recommended as first-line treatment before pharmacological escalation."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Notalgia paresthetica is an ideal condition for chiropractic and physiotherapy co-management. The etiology is spinal (posterior rami entrapment at the thoracic level), the structural drivers are accessible to manual and exercise-based therapy (thoracic mobilisation, scapular stabiliser rehabilitation, postural correction), and the pharmacological options are limited in their effectiveness and often poorly tolerated. Chiropractors should feel confident recognising and managing NP conservatively, while ensuring dermatology consultation has excluded primary skin disease and that the patient understands the chronic, relapsing nature of the condition."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "MRI of the thoracic spine in notalgia paresthetica often reveals thoracic disc pathology (small protrusions) and spondylosis, but these findings should be interpreted in clinical context — not over-reported as 'serious pathology'. Minor T5–T6 disc protrusion is common in the general population over 50 and does not usually cause radiculopathy; in NP its significance is that it may contribute to posterior rami irritation at that level. Vertebral haemangiomas (incidental in this case at T9/T11) are present in ~10% of adults and are overwhelmingly benign — they should be noted but not allowed to distract clinical focus from the primary posterior rami mechanism of NP."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Neuropathic pain, Posterior rami entrapment, Thoracic spine, Pruritus, Notalgia paresthetica, Exercise therapy, TENS, Differential diagnosis, Skin signs in spinal disease",
+    keyPoints: [
+      "Notalgia paresthetica is caused by entrapment of posterior rami of T2–T6 as they traverse thoracic paraspinal musculature; thoracic spondylosis and hyperkyphotic posture are the primary structural drivers.",
+      "The pathognomonic finding is a hyperpigmented skin patch in the medial infrascapular region — this is secondary to chronic scratching trauma (neurologically-driven pruritus) and should prompt spinal, not dermatological, investigation.",
+      "Notalgia paresthetica is a diagnosis of exclusion requiring: (1) dermatomal sensory testing; (2) upper and lower limb neurological screen; (3) spinal imaging; and (4) dermatology consultation to exclude primary skin disease.",
+      "Exercise targeting the muscles traversed by the affected posterior rami (thoracic paraspinal stretching, scapular retractor strengthening, pectoral lengthening) combined with high-frequency TENS is recommended as first-line conservative management.",
+      "Notalgia paresthetica is chronic and relapsing; significant symptom reduction (≥50%) is achievable with conservative management but complete resolution is uncommon — patients should be counselled about the long-term maintenance nature of treatment."
+    ]
+  }
+},
+
+// ─────────────────────────────────────────────
+// CASE 057 — Posterior tibialis tendon tear with GAHT risk factor
+// Source: Truthan et al. J Chiropr Med. 2024;23(4):197–204. PMID: 39776824
+// sourceTier: PeerReviewed
+// ─────────────────────────────────────────────
+{
+  id: "057",
+  title: "A 31-year-old athlete presents with acute right medial foot pain and swelling that began suddenly during a run",
+  category: "Ankle/Foot",
+  secondaryCategory: "Sports/Acute",
+  difficulty: "Intermediate",
+  estimatedTime: "20–25 minutes",
+  sourceTier: "PeerReviewed",
+  source: {
+    short: "Truthan et al.\nJ Chiropr Med. 2024;23(4):197–204\nPMID: 39776824\nPMC: PMC11701846\nOpen access ✓",
+    full: "Truthan F, Hass N, O'Brien A, Hewitt M, Haun D, Kettner N. Chiropractic Care for a Posterior Tibialis Tendon Tear in a Transgender Male Athlete with Gender-Affirming Hormone Therapy. Journal of Chiropractic Medicine. 2024;23(4):197–204. doi:10.1016/j.jcm.2024.08.009. PMID: 39776824. PMC: PMC11701846."
+  },
+  patient: {
+    ageSex: "31-year-old transgender male (assigned female at birth, 8 years of intramuscular testosterone therapy)",
+    chiefComplaint: "Acute right medial foot and ankle pain and swelling occurring spontaneously during a run",
+    duration: "Acute — same-day onset at presentation",
+    priorProviders: null,
+    priorDiagnoses: "Bilateral congenital pes planus (flat feet)"
+  },
+  history: {
+    content: `<p>A 31-year-old transgender male (AFAB, using he/him pronouns) presented to a chiropractic clinic with spontaneous right medial foot pain that had developed acutely during a run earlier that day. The pain was rated 8/10 and was severely limiting — weight-bearing activities and sleep were both significantly affected. He reported bilateral congenital pes planus and was currently using intramuscular testosterone as gender-affirming hormone therapy (GAHT) for the past 8 years.</p>
+<p>Physical examination revealed swelling and tenderness around the medial and lateral malleoli and along the anterior ankle and medial longitudinal arch. Plantarflexion and dorsiflexion strength measured 4/5 bilaterally (slightly reduced from baseline). The Lower Extremity Functional Scale (LEFS) recorded 81% disability at initial presentation — indicating severe functional limitation.</p>
+<p>Multimodal imaging was initiated. Diagnostic ultrasound revealed a grade 2 tear of the posterior tibialis tendon adjacent to the medial malleolus, along with additional sites of tendinosis. Orthopaedic referral was made for further evaluation; subsequent MRI of the right foot and ankle confirmed the grade 2 posterior tibialis tendon tear.</p>
+<p>Despite an orthopaedic surgical recommendation, the patient elected chiropractic care as his preferred management pathway.</p>`,
+    clinicalNote: "The core diagnostic complexity in this case is the unexpected tendon failure in a 31-year-old athlete — a demographic where posterior tibialis tendon tears are rare. The critical clinical reasoning step is recognising that 8 years of exogenous testosterone therapy is a significant and underappreciated tendon risk factor. While testosterone increases tendon stiffness and collagen content in the short term, its effects in biologically female individuals undertaking long-term GAHT appear to accelerate tendinopathic change equivalent to older male biology. The bilateral congenital pes planus significantly increases mechanical demand on the posterior tibialis tendon (the primary dynamic stabiliser of the medial longitudinal arch), compounding the hormonal risk. This is a case of multifactorial tendon vulnerability presenting as an acute injury."
+  },
+  examination: {
+    autoROM: `<p><strong>Ankle/Foot ROM — Right:</strong> Plantarflexion and dorsiflexion active ROM not specifically quantified in degrees. Weight-bearing was limited by pain. Ankle mortise joint mobility was reduced — ankle mortise joint mobilisations were a specific component of the treatment program, implying documented joint restriction. The medial longitudinal arch was flattened bilaterally (congenital pes planus).</p>`,
+    autoMyotomes: `<div class="tbl-wrap"><table class="ft">
+      <thead><tr><th>Movement</th><th>Grade (R)</th><th>Grade (L)</th></tr></thead>
+      <tbody>
+        <tr><td>Plantarflexion (S1–S2 / tibial nerve)</td><td>4/5</td><td>4/5 (bilateral, documented)</td></tr>
+        <tr><td>Dorsiflexion (L4–L5 / deep peroneal nerve)</td><td>4/5</td><td>4/5 (bilateral, documented)</td></tr>
+        <tr><td>Hallux extension (L5)</td><td>Not documented</td><td>Not documented</td></tr>
+        <tr><td>Tibialis posterior (inversion in plantar flexion — primary posterior tibialis test)</td><td>Weak / not formally graded</td><td>Not documented</td></tr>
+        <tr><td colspan="3"><em>Formal neurological screen not the primary focus. Strength deficits were attributed to pain inhibition and mechanical tendon compromise rather than neurological deficit.</em></td></tr>
+      </tbody>
+    </table></div>`,
+    checklist: [
+      {
+        group: "Palpation and Provocative Tests",
+        items: [
+          {
+            id: "malleolus_palpation",
+            label: "Palpation — medial and lateral malleoli and anterior ankle",
+            result: `<span class="tt pos">Positive</span> — Swelling and tenderness on palpation around both the medial and lateral malleoli and along the anterior ankle. The medial longitudinal arch was also tender on palpation.`,
+            documented: true,
+            rationale: "Tenderness along the medial malleolus and the posterior tibialis tendon course (posteromedial ankle into the medial arch) is the primary physical examination finding for posterior tibialis tendon pathology. The posterior tibialis tendon passes posterior to the medial malleolus and inserts at the navicular tuberosity — tenderness along this entire pathway is characteristic of PTTD. Lateral malleolus tenderness was also present, raising the differential for lateral ligament injury, though the primary pathology was subsequently confirmed as medial."
+          },
+          {
+            id: "single_heel_raise",
+            label: "Single-leg heel raise test (posterior tibialis integrity)",
+            result: `Not documented in source — but this is the most clinically critical test for posterior tibialis tendon dysfunction.`,
+            documented: false,
+            rationale: "The single-leg heel raise test (standing on one foot and rising onto the toes) is the gold standard clinical test for posterior tibialis tendon integrity. A normal tendon allows a smooth, symmetrical heel inversion and rise; dysfunction produces inability to complete the rise, pain, or absence of heel inversion. Its absence from the published examination is a notable limitation — in any acute medial ankle/foot pain in a runner, this test should be performed at the first visit. The grade 2 tear confirmed on imaging would likely have resulted in a weak or painful single-leg heel raise."
+          },
+          {
+            id: "too_many_toes",
+            label: "Too-many-toes sign (standing, viewed from behind)",
+            result: `Not formally documented — bilateral pes planus was documented, implying bilateral midfoot pronation and forefoot abduction. A 'too-many-toes sign' would be expected.`,
+            documented: false,
+            rationale: "The too-many-toes sign (more than 2–3 lateral toes visible from behind when the patient stands normally) indicates hindfoot valgus and forefoot abduction associated with posterior tibial tendon dysfunction. In PTTD, the medial arch collapses progressively as the tendon fails, producing the characteristic 'flatfoot' deformity. Given the documented bilateral congenital pes planus, assessing whether this was a static congenital deformity or an acquired progressive collapse (worse on the right) would have been diagnostically valuable."
+          },
+          {
+            id: "medial_arch_palpation",
+            label: "Palpation along the medial longitudinal arch (navicular tuberosity and spring ligament)",
+            result: `<span class="tt pos">Positive</span> — Tenderness along the medial longitudinal arch was documented.`,
+            documented: true,
+            rationale: "The posterior tibialis tendon inserts primarily at the navicular tuberosity and sends slips to multiple midfoot bones and the spring ligament. Tenderness along the medial arch — particularly at the navicular — is consistent with PTTD and distinguishes the primary site of tendon pathology from the proximal sheath just posterior to the medial malleolus where the grade 2 tear was identified. The spring ligament (plantar calcaneonavicular ligament) is frequently co-strained in PTTD due to its role in arch support."
+          }
+        ]
+      },
+      {
+        group: "Functional and Strength Assessment",
+        items: [
+          {
+            id: "strength_pf_df",
+            label: "Resisted plantarflexion and dorsiflexion strength",
+            result: `<span class="tt notable">Notable</span> — Both plantarflexion and dorsiflexion measured 4/5 bilaterally.`,
+            documented: true,
+            rationale: "The bilateral 4/5 strength finding is a key clinical data point. Posterior tibialis tendon involvement would primarily reduce plantarflexion strength and inversion strength in the plantarflexed position — not dorsiflexion, which is a deep peroneal nerve function. Bilateral symmetric reduction suggests pain inhibition as the primary mechanism (consistent with acute pain) rather than specific nerve root or tendon structural failure at the time of testing. This finding appropriately guided further imaging to characterise the tendon."
+          },
+          {
+            id: "lefs",
+            label: "Lower Extremity Functional Scale (LEFS)",
+            result: `<span class="tt pos">Positive</span> — 81% disability at initial presentation (severely limited function across weight-bearing activities).`,
+            documented: true,
+            rationale: "The LEFS is a 20-item validated patient-reported outcome measure for lower extremity dysfunction. Scores are expressed as percentage disability; lower scores indicate greater disability. An 81% disability score indicates severe functional limitation — approaching the ceiling of disability on this scale — consistent with the acute nature and pain intensity of the presentation. Baseline LEFS is essential for documenting treatment response; the documented improvement to 27% disability at follow-up represents a clinically significant reduction."
+          }
+        ]
+      },
+      {
+        group: "Diagnostic Imaging",
+        items: [
+          {
+            id: "us_posterior_tibialis",
+            label: "Diagnostic ultrasound — right posterior tibialis tendon",
+            result: `<span class="tt pos">Positive</span> — Grade 2 tear of the posterior tibialis tendon adjacent to the medial malleolus with additional sites of tendinosis identified.`,
+            documented: true,
+            rationale: "Ultrasound is an excellent first-line imaging tool for posterior tibialis tendon pathology — it provides real-time dynamic assessment, can identify tendon thickening, internal signal change, and partial tears, and is more cost-effective than MRI. A grade 2 tear indicates a partial thickness disruption with some residual continuity of the tendon. The identification of additional tendinosis beyond the tear site was clinically significant — it indicated widespread tendon degeneration rather than a discrete acute injury at a single point, consistent with underlying tendinopathic change from the GAHT hormonal environment and long-standing pes planus."
+          },
+          {
+            id: "mri_foot_ankle",
+            label: "MRI right foot and ankle",
+            result: `<span class="tt pos">Positive</span> — Confirmed grade 2 tear of the posterior tibialis tendon at the medial malleolus level. MRI provided definitive characterisation supporting the diagnosis and forming the basis for the orthopaedic surgical recommendation.`,
+            documented: true,
+            rationale: "MRI is the gold standard for posterior tibialis tendon characterisation, providing superior soft tissue resolution compared to ultrasound, and allowing assessment of tear extent, tear grade, involvement of adjacent structures (spring ligament, flexor digitorum longus), and degree of tendon degeneration. The MRI confirmation was important both for the surgical recommendation by the orthopaedist and for establishing the treatment baseline when the patient elected conservative chiropractic care instead of surgery."
+          },
+          {
+            id: "xray_foot",
+            label: "Weight-bearing radiographs of the foot and ankle",
+            result: `Not documented in source — but standard in the evaluation of PTTD to assess arch height, hindfoot alignment, and any bony pathology.`,
+            documented: false,
+            rationale: "Weight-bearing radiographs of the foot and ankle are a standard component of the PTTD workup, assessing: (1) medial longitudinal arch height (talar-first metatarsal angle, calcaneal pitch); (2) hindfoot valgus on long-axis hindfoot view; (3) any stress fractures or bony abnormalities. In a patient with bilateral pes planus, quantifying the degree of arch collapse on the symptomatic side compared to the contralateral side helps stage the deformity and guides orthotic prescription. Their absence from the published investigation sequence is a documentation gap."
+          }
+        ]
+      }
+    ],
+    contextText: "This examination is centred on a 31-year-old with an acute medial foot and ankle injury during running, complicated by two significant background risk factors: bilateral congenital pes planus and 8 years of exogenous testosterone therapy. The diagnostic challenge is that posterior tibialis tendon tears are rare in this age group, meaning the initial clinical differential would naturally gravitate toward deltoid ligament sprain, accessory navicular pathology, or flexor hallucis longus tendinopathy. The systematic approach — palpation mapping along the posterior tibialis tendon course, strength testing of posterior tibialis-specific movements, and early diagnostic ultrasound — is what identified the correct diagnosis. The ultrasound finding of additional tendinosis beyond the acute tear site is the key piece of evidence implicating the GAHT hormonal environment as a background risk factor."
+  },
+  investigations: {
+    options: [
+      {
+        id: "us_imaging",
+        label: "Diagnostic ultrasound — right posterior tibialis tendon",
+        consequence: null,
+        ordered: true,
+        result: `<p><strong>Grade 2 tear of the posterior tibialis tendon adjacent to the medial malleolus.</strong> Additional sites of tendinosis were identified in the tendon, indicating widespread degenerative change beyond the focal acute tear. Dynamic ultrasound allowed real-time assessment of tendon integrity and confirmed partial tendon disruption with residual continuity — consistent with a grade 2 (partial thickness) tear rather than a complete avulsion.</p>`
+      },
+      {
+        id: "mri_foot",
+        label: "MRI right foot and ankle",
+        consequence: null,
+        ordered: true,
+        result: `<p><strong>Confirmed grade 2 tear of the posterior tibialis tendon at the level of the medial malleolus.</strong> MRI provided definitive characterisation supporting both the orthopaedic surgical recommendation and the conservative chiropractic management baseline. The tear was partial thickness — a complete tear would have been a stronger surgical indication.</p>`
+      },
+      {
+        id: "xray_weightbearing",
+        label: "Weight-bearing radiographs — right foot and ankle",
+        consequence: "Not documented in the published case but clinically indicated as part of a thorough PTTD workup. Weight-bearing AP and lateral foot radiographs quantify the degree of medial arch collapse (talar-first metatarsal angle, calcaneal pitch), and lateral ankle views help exclude associated bony injuries. In a patient with bilateral congenital pes planus, documenting baseline arch height and any differential in arch collapse between right and left sides is valuable for staging PTTD severity and for orthotic prescription. The absence of X-ray documentation is a gap in this published case.",
+        ordered: false,
+        result: null
+      },
+      {
+        id: "hormonal_workup",
+        label: "Hormonal profile / testosterone levels",
+        consequence: "A hormonal workup was not performed in the published case but would have provided clinically useful context given the hypothesised role of GAHT in tendinopathic risk. Elevated supraphysiological testosterone levels, or hormonal profiles demonstrating oestrogen suppression (a key mediator of tendon collagen quality and resilience), would strengthen the mechanistic link between the GAHT and the unexpected tendon tear. Future research in this patient population will require such data, though the clinical management would not change based on the result.",
+        ordered: false,
+        result: null
+      }
+    ]
+  },
+  differential: {
+    conditions: [
+      {
+        label: "Posterior Tibialis Tendon Tear (Grade 2 — Partial Thickness)",
+        correct: true,
+        blurb: "This is the confirmed diagnosis. Acute medial ankle pain during running in an athlete with bilateral pes planus and 8 years of exogenous testosterone therapy, presenting with medial longitudinal arch tenderness, reduced plantarflexion strength, and imaging confirmation of a grade 2 partial thickness tendon tear with diffuse tendinosis.",
+        supports: [
+          "Acute medial foot/ankle pain developing during a run — consistent with an acute-on-chronic tendon failure under mechanical load",
+          "Tenderness along the posterior tibialis tendon course (posteromedial malleolus to medial arch)",
+          "Reduced plantarflexion and dorsiflexion strength at 4/5 — consistent with pain inhibition and tendon compromise",
+          "Bilateral congenital pes planus — significantly increases mechanical demand on the posterior tibialis tendon as the primary dynamic arch stabiliser",
+          "8 years of exogenous testosterone GAHT — documented risk factor for tendinopathic change in AFAB individuals, particularly affecting collagen quality and tendon repair capacity",
+          "Diagnostic ultrasound: grade 2 tear at medial malleolus with widespread tendinosis",
+          "MRI confirmation of grade 2 tear"
+        ],
+        arguesAgainst: [
+          "Grade 2 posterior tibialis tendon tears are extremely rare in a 31-year-old — the diagnosis is unexpected given patient age, requiring consideration of the hormonal and mechanical risk factors"
+        ]
+      },
+      {
+        label: "Deltoid Ligament Sprain (Medial Ankle Sprain)",
+        correct: false,
+        blurb: "Medial ankle sprains are far less common than lateral sprains but do occur, typically with forceful eversion stress. The distribution of tenderness and the imaging findings in this case distinguish the diagnosis.",
+        supports: [
+          "Medial ankle swelling and tenderness",
+          "Acute onset during physical activity",
+          "Tender medial malleolus — consistent with deltoid ligament origin"
+        ],
+        arguesAgainst: [
+          "Tenderness extended along the medial longitudinal arch to the navicular — beyond the attachment of the deltoid ligament, consistent with the posterior tibialis tendon course",
+          "Ultrasound specifically identified tendon disruption rather than ligamentous injury",
+          "MRI confirmed a posterior tibialis tendon tear, not deltoid ligament injury",
+          "No eversion sprain mechanism was documented — the injury occurred during running without an acute inversion or eversion event"
+        ]
+      },
+      {
+        label: "Flexor Hallucis Longus Tendinopathy / Tear",
+        correct: false,
+        blurb: "Flexor hallucis longus (FHL) tendinopathy is a common running injury, particularly in dancers and endurance athletes, occurring at the medial ankle just posterior to the posterior tibialis tendon.",
+        supports: [
+          "Running athlete with acute medial ankle pain",
+          "FHL runs in proximity to the posterior tibialis tendon posterior to the medial malleolus",
+          "Medial ankle tenderness could indicate either FHL or posterior tibialis pathology"
+        ],
+        arguesAgainst: [
+          "FHL pathology classically produces pain behind the medial malleolus with resisted hallux flexion and typically does not cause tenderness along the medial arch to the navicular",
+          "Imaging confirmed the posterior tibialis tendon as the specific structure involved — FHL was not implicated",
+          "FHL tendinopathy would produce triggering or snapping at the medial ankle, not documented here"
+        ]
+      },
+      {
+        label: "Accessory Navicular Syndrome",
+        correct: false,
+        blurb: "Accessory navicular is a common anatomical variant occurring in up to 10% of the population and can become painful in runners, particularly those with pes planus. Given the bilateral pes planus and the medial arch tenderness in this case, it warrants consideration.",
+        supports: [
+          "Bilateral pes planus — associated with accessory navicular",
+          "Medial longitudinal arch tenderness is characteristic of accessory navicular pain",
+          "Running athlete with acute medial foot pain"
+        ],
+        arguesAgainst: [
+          "Tenderness was centred posteromedial (around the medial malleolus) rather than specifically at the navicular tuberosity bump",
+          "Ultrasound and MRI confirmed posterior tibialis tendon tear — not accessory navicular pathology",
+          "Accessory navicular pain is typically chronic and related to repeated friction at the navicular prominence, not an acute spontaneous injury during running",
+          "An accessory navicular does not produce a grade 2 tendon tear on ultrasound"
+        ]
+      },
+      {
+        label: "Spring Ligament (Plantar Calcaneonavicular) Sprain",
+        correct: false,
+        blurb: "The spring ligament is intimately associated with the posterior tibialis tendon and co-operates in medial arch support. Spring ligament injury often accompanies PTTD but can also occur in isolation.",
+        supports: [
+          "Medial longitudinal arch tenderness is consistent with spring ligament injury",
+          "Bilateral pes planus increases spring ligament mechanical loading",
+          "Running mechanism with sudden arch loading could stress the spring ligament"
+        ],
+        arguesAgainst: [
+          "Imaging confirmed the primary pathology was the posterior tibialis tendon — spring ligament involvement was not specifically documented",
+          "The tendinosis pattern on ultrasound extending beyond the focal tear site strongly implicates the tendon as the primary structure",
+          "Spring ligament injury in isolation would not account for the tendinosis changes seen throughout the posterior tibialis tendon"
+        ]
+      },
+      {
+        label: "Stress Fracture — Navicular or Medial Malleolus",
+        correct: false,
+        blurb: "Navicular stress fractures are a serious running injury, occurring typically in high-mileage athletes, and can present with medial foot and ankle pain. They are important to exclude as early mobilisation without appropriate immobilisation can lead to complete fracture.",
+        supports: [
+          "Running athlete with acute medial foot pain",
+          "Medial foot and arch tenderness — navicular stress fracture classically presents with N-point tenderness at the dorsal navicular",
+          "Bilateral pes planus increases medial column loading predisposing to navicular stress fracture"
+        ],
+        arguesAgainst: [
+          "Ultrasound did not reveal cortical bony abnormality at the navicular — it specifically identified tendon pathology",
+          "MRI of the foot confirmed tendon tear, not bony stress injury",
+          "Lateral malleolus tenderness would not be expected with a navicular stress fracture",
+          "The spontaneous injury during a single run is less typical than the insidious crescendo pattern of navicular stress fracture in high-mileage athletes"
+        ]
+      },
+      {
+        label: "Posterior Tibialis Tendon Tear — iatrogenic (fluoroquinolone antibiotic-related)",
+        correct: false,
+        blurb: "Fluoroquinolone antibiotic therapy is a well-recognised cause of tendinopathy and tendon rupture, particularly of the Achilles but affecting any major tendon. In a young person with an unexpected tendon tear, medication history must be reviewed.",
+        supports: [
+          "Unexpected tendon tear in a 31-year-old",
+          "Any young person with spontaneous tendon rupture or high-grade tear should have medication history reviewed for fluoroquinolone exposure"
+        ],
+        arguesAgainst: [
+          "Fluoroquinolone use was not documented in this patient's history — this diagnosis requires confirmed drug exposure",
+          "The case paper specifically identifies GAHT (testosterone therapy) as the primary risk factor and hypothesises a hormonal tendinopathic mechanism",
+          "Fluoroquinolone tendinopathy predominantly affects the Achilles tendon, whereas this was the posterior tibialis",
+          "Ultrasound revealed additional sites of tendinosis beyond the acute tear — consistent with a chronic tendinopathic process rather than an acute drug-induced event"
+        ]
+      },
+      {
+        label: "Medial Tibial Stress Syndrome (Shin Splints)",
+        correct: false,
+        blurb: "Medial tibial stress syndrome is a common running-related injury causing medial lower leg pain. It is an important differential in the running athlete but is anatomically and symptomatologically distinct from this presentation.",
+        supports: [
+          "Running athlete with medial lower extremity pain",
+          "Pes planus is a recognised risk factor for both MTSS and PTTD"
+        ],
+        arguesAgainst: [
+          "MTSS pain is located along the posteromedial tibial border 1–3 cm proximal to the medial malleolus, not at the ankle or medial arch",
+          "MTSS does not produce swelling around the malleoli or medial arch tenderness",
+          "MTSS is a periosteal and fascial injury — it does not produce tendon disruption on ultrasound",
+          "Imaging confirmed tendon pathology, not periosteal/tibial bone stress"
+        ]
+      }
+    ],
+    explanation: `<p>The diagnosis of posterior tibialis tendon grade 2 tear in a 31-year-old was the key diagnostic pivot — and a genuinely unexpected finding that requires understanding of two interacting risk factors. First, bilateral congenital pes planus places the posterior tibialis tendon in chronic overload: it is the primary dynamic stabiliser of the medial longitudinal arch, and in a flatfooted individual this tendon works significantly harder with every step than in a normal-arched foot. Second, 8 years of exogenous testosterone therapy (GAHT) has been proposed to accelerate tendinopathic change. The mechanistic basis is complex: while testosterone increases collagen synthesis in male biology, its effects in biologically female individuals (AFAB) who transition include oestrogen suppression. Oestrogen is a key modulator of tendon collagen quality and repair capacity — its reduction may reduce the tendon's resilience over time, advancing the tendon's biological 'age' beyond the patient's chronological age.</p>
+<p>The diagnostic imaging sequence (ultrasound first, then MRI confirmation) was appropriate and efficient. Crucially, ultrasound identified not only the acute grade 2 tear but also diffuse tendinosis elsewhere in the tendon — this is the evidence that this was not a simple acute injury but rather an acute event superimposed on pre-existing tendon degeneration. The clinical lesson: in any young person with an unexplained tendon tear, systematically review biological risk factors — hormonal status, medication history (fluoroquinolones, corticosteroids), connective tissue disorders, and chronic mechanical loading history.</p>
+<p>Despite the surgical recommendation from orthopaedics, the patient elected conservative chiropractic care. The published outcome — LEFS improvement from 81% to 27% disability — represents meaningful functional gain, though the partial tear and the underlying tendinopathic pathology mean long-term prognosis is guarded without addressing the structural risk factors (pes planus orthotic management, tendon load management, hormonal optimisation in consultation with the endocrinologist).</p>`
+  },
+  management: {
+    options: [
+      {
+        id: "conservative_chiropractic",
+        label: "Chiropractic conservative care: neuromuscular re-education (whole body vibration), therapeutic exercise, and ankle mortise joint mobilisations",
+        selected: true,
+        explanation: `<strong>Appropriate — as documented in the published case, with the patient's informed consent to decline surgery.</strong> For a grade 2 (partial thickness) posterior tibialis tendon tear, conservative management is a legitimate option, particularly when the patient makes an informed decision to decline surgical repair. Ankle mortise joint mobilisations improve talocrural joint mobility, which is restricted in pes planus and contributes to altered biomechanical loading of the posterior tibialis tendon. Whole body vibration therapy provides neuromuscular re-education to the intrinsic and extrinsic foot stabilisers without high-impact tendon loading. Therapeutic exercise addressing posterior tibialis strength, foot intrinsic activation, and proximal hip abductor loading was the functional core of the program.`
+      },
+      {
+        id: "surgical_repair",
+        label: "Surgical repair — as recommended by the orthopaedic specialist",
+        selected: false,
+        explanation: `<strong>Not the patient's choice — but a clinically valid and important option.</strong> The orthopaedic recommendation for surgery was clinically appropriate: a grade 2 posterior tibialis tendon tear in a young, active runner with diffuse tendinosis and bilateral pes planus is a significant structural failure. Surgical repair with direct tendon repair or augmentation, combined with possible medial displacement calcaneal osteotomy (to address the biomechanical pes planus contribution), offers a better long-term functional outcome than conservative management alone for active patients wishing to return to running. The clinician's role when the patient declines surgery is to ensure the decision is fully informed, to document it, and to optimise conservative management within its limits.`
+      },
+      {
+        id: "custom_orthotics",
+        label: "Custom foot orthotics addressing the bilateral pes planus",
+        selected: false,
+        explanation: `<strong>Not documented in the published case, but highly appropriate and arguably should have been included.</strong> In bilateral congenital pes planus with a posterior tibialis tendon tear, custom foot orthotics addressing the medial arch collapse (medial heel wedge with arch support) are a cornerstone of conservative management. They redistribute mechanical load away from the posterior tibialis tendon during weight-bearing activities, reducing the chronic overload that contributed to the tear. PTTD conservative management guidelines consistently include orthotic management as a primary intervention. Its absence from the documented treatment plan is a notable clinical gap.`
+      },
+      {
+        id: "immobilisation_rest",
+        label: "Immobilisation in a walking boot followed by graduated activity",
+        selected: false,
+        explanation: `<strong>Not documented in the published case — but a standard component of early PTTD management.</strong> A period of partial or full offloading with a CAM walker boot (4–6 weeks for grade 2 tears) is routinely recommended to protect the damaged tendon during early healing and reduce pain with weight-bearing. The absence of documented immobilisation in this case may reflect the chiropractic approach or the patient's functional requirements, but it represents a deviation from conventional PTTD management guidelines. Without offloading, continued weight-bearing stress on the torn tendon risks progression to a complete tear or delay in tendon healing.`
+      }
+    ],
+    outcomeText: "The patient received chiropractic conservative management including neuromuscular re-education via whole body vibration therapy, therapeutic exercise, and ankle mortise joint mobilisations. At follow-up, the Lower Extremity Functional Scale (LEFS) had improved from 81% disability to 27% disability — a clinically significant improvement of 54 percentage points, substantially exceeding the MCID for the LEFS (9 points). The patient reported functional improvement in weight-bearing activities and sleep. The published case concluded that GAHT is a risk factor for tendinosis, particularly in younger individuals, and that chiropractic rehabilitation has a role in managing these presentations.",
+    prognosis: {
+      inferred: false,
+      frequencyDuration: `<p>Based on the published case outcomes: chiropractic treatment sessions occurred over a period of several weeks, with the frequency not explicitly documented. For a grade 2 posterior tibialis tendon tear managed conservatively, evidence-based guidelines recommend <strong>2 sessions per week for 8–12 weeks</strong> as the active rehabilitation phase, followed by a home maintenance program. Initial offloading in a walking boot (4–6 weeks) should precede progressive loading. Full return-to-run assessment requires posterior tibialis tendon load capacity testing before clearance.</p>`,
+      expectedTrajectory: `<p>Conservative management of grade 2 posterior tibialis tendon tears can achieve functional improvement but rarely returns the tendon to full pre-injury integrity in the setting of underlying tendinopathic change. In this case, the 54-point LEFS improvement (81% → 27% disability) represents meaningful functional recovery but residual functional limitation remains. The prognosis for return to full competitive running is guarded in the context of bilateral pes planus (chronic arch-loading stress remains unaddressed without orthotics or corrective surgery) and ongoing GAHT (the hormonal environment that predisposed to the tear persists).</p>
+<p>The progression of posterior tibialis tendon dysfunction follows the Johnson-Strom classification: Stage I (tenosynovitis), Stage II (partial tear with flexible deformity), Stage III (complete tear with rigid deformity). This patient presented at Stage II — conservative management can stabilise or slow progression but cannot reverse the structural tear or the underlying tendinopathic change without surgical intervention.</p>`,
+      outcomeBenchmarks: `<p>Primary outcome measure documented in the case was the <strong>Lower Extremity Functional Scale (LEFS)</strong>: improvement from 81% disability to 27% disability (MCID = 9 points; this case exceeded MCID by a large margin). Additional appropriate benchmarks include: <strong>single-leg heel raise</strong> capacity (target: 25 repetitions with symmetrical heel inversion); <strong>VAS pain</strong> with weight-bearing ≤2/10; <strong>return-to-run assessment</strong> (pain-free walking ≥30 minutes before graduated return to running); and posterior tibialis tendon thickness and integrity on follow-up ultrasound at 3 months. The 5-Times-Sit-to-Stand test provides a quick functional lower limb loading measure applicable in clinical practice.</p>`,
+      comanagement: `<p><strong>Orthopaedic surgery</strong>: surgical option remains available should conservative management fail or if the tendon progresses to complete disruption or rigid flatfoot deformity. The patient should understand this remains a valid option.</p>
+<p><strong>Endocrinology / GAHT prescribing clinician</strong>: the GAHT treating physician should be informed of the tendon complication and the hypothesised risk mechanism. Discussion of hormonal monitoring and any modification to the GAHT regimen (e.g. dosing adjustments) should be explored, though no specific GAHT modification is currently evidence-based for tendon protection.</p>
+<p><strong>Orthotist / Podiatrist</strong>: custom foot orthotics addressing the bilateral pes planus are strongly indicated to reduce mechanical loading of the posterior tibialis tendon and prevent further progression.</p>
+<p>Referral triggers: progression of deformity (increased hindfoot valgus, forefoot abduction, arch collapse); complete tendon rupture on follow-up imaging; failure to reduce LEFS disability below 50% at 12-week review; development of fixed (rigid) flatfoot deformity indicating Stage III progression.</p>`
+    },
+    adjustmentPlan: {
+      contraindicated: false,
+      contraindicatedReason: null,
+      alternativeApproach: null,
+      inferred: true,
+      levelsRationale: `<p><strong>Ankle mortise joint (talocrural) — documented treatment target:</strong> The talocrural joint was specifically targeted in the published case with ankle mortise joint mobilisations. In bilateral pes planus, chronic hindfoot pronation produces a relative posterior displacement of the talus relative to the tibia, restricting talocrural dorsiflexion. Restricted ankle dorsiflexion is a well-established risk factor for PTTD — when dorsiflexion is limited, the subtalar joint compensates by pronating excessively, increasing medial arch loading and posterior tibialis tendon stress. Restoring talocrural joint mobility directly reduces the compensatory subtalar pronation and posterior tibialis mechanical overload. Grade III–IV Maitland mobilisations or low-force manipulation of the ankle mortise directed posteriorly on the talus is the appropriate technique.</p>
+<p><strong>Subtalar joint (talocalcaneal):</strong> Not specifically documented but clinically implicated. Subtalar hyperpronation is the direct biomechanical driver of posterior tibialis overload in pes planus. Assessing and restoring subtalar joint mobility (anterior glide of the calcaneus in subtalar pronation, posterior glide in supination) would complement the talocrural mobilisation and may improve inversion/supination capacity, reducing the tendon's compensatory role in arch maintenance.</p>
+<p><strong>Lumbosacral and sacropelvic (regional interdependence):</strong> Hip abductor weakness is a recognised proximal kinetic chain driver of pes planus and posterior tibialis overload — weak gluteus medius allows ipsilateral pelvic drop during single-leg stance, increasing knee valgus and foot pronation. While not specifically documented in this case, assessment of L5/S1 segmental function (L5 nerve root supplies tibialis anterior and posterior) and SIJ mobility would be appropriate in a comprehensive chiropractic evaluation.</p>`,
+      techniqueDetail: null,
+      precautions: `<p>All techniques in the acute phase must avoid direct loading or compression of the posterior tibialis tendon insertion site and distal medial malleolus — this is the location of the grade 2 tear, and direct manipulation at this site risks tendon rupture or worsening. Mobilisation should be joint-focused (talocrural joint mechanics), not tendon-focused. Avoid any technique that produces a sudden inversion or plantarflexion stress across the torn tendon. As the patient is on long-term testosterone therapy, collagen quality may be reduced — begin with Grade I–II mobilisations and progress to Grade III–IV only as tendon healing permits and is confirmed on follow-up imaging. Bilateral pes planus: avoid loaded exercises without foot orthoses to support the medial arch (prevents continued overload of the healing tendon during exercise).</p>`
+    },
+    rehabProgram: {
+      inferred: true,
+      rationale: `<p>The posterior tibialis muscle arises from the posterior interosseous membrane and fibula, and inserts at the navicular tuberosity with secondary slips to the cuneiforms and metatarsals. It is the primary invertor of the foot, the primary dynamic stabiliser of the medial longitudinal arch, and a plantarflexor. In bilateral pes planus, this muscle is chronically overloaded — working against the constant medially collapsing arch — making it highly susceptible to tendinopathic degeneration under additional biological stressors such as GAHT-related hormonal changes. The rehabilitation must address three dimensions: (1) tendon load management and graduated re-loading; (2) foot intrinsic muscle activation to reduce posterior tibialis demand; and (3) proximal kinetic chain strengthening (hip abductors and rotators) to reduce the medially-collapsing loading pattern at the ankle.</p>
+<p>The key movement patterns to emphasise are: (1) <em>foot inversion with arch support</em> — progressive loading of the posterior tibialis in its primary function; (2) <em>single-leg balance and proprioception work</em> — restoring neuromuscular control of the medial arch; and (3) <em>eccentric calf loading</em> — the posterior tibialis works synergistically with the calf complex in push-off; eccentric loading of the tibialis and calf muscles together improves tendon collagen organisation. The heel-raise exercise is the cornerstone of posterior tibialis rehabilitation when the tendon is healing, progressing from double-leg to single-leg as tolerated.</p>
+<p>The evidence for conservative management of posterior tibialis tendon dysfunction (PTTD) Stage II supports orthotic management combined with progressive strengthening as the primary non-surgical intervention. JOSPT clinical practice guidelines (Bubra et al., 2015) recommend foot orthoses, progressive strengthening of posterior tibialis and peroneals, calf stretching, and proximal hip strengthening. Whole body vibration, used in the published case, provides a low-impact neuromuscular stimulus that can be applied early in the healing phase before conventional progressive loading is appropriate.</p>`,
+      phases: [
+        {
+          phase: "Phase 1 — Offloading, Pain Control, and Neuromuscular Activation",
+          goals: "Reduce acute pain and swelling. Protect the grade 2 tear from further loading. Begin non-impact neuromuscular re-education of foot and ankle stabilisers.",
+          exercises: "Walking boot (CAM walker) for weight-bearing activities — 4–6 weeks. Ice/elevation 3–4 times daily (20 minutes). Ankle alphabet exercises (non-weight-bearing, active ROM). Intrinsic foot exercises in seated position (short foot exercise, toe spreading). Whole body vibration platform (as per published case — low-frequency, 25–30 Hz, short duration 3–5 minutes, standing in boot) for neuromuscular re-education without tendon tensile loading. Proximal: hip abductor isometrics (clam shell, supine).",
+          parameters: "WBV: 3 × 3 minutes, daily<br>Ankle alphabet: 3 × full alphabet, twice daily<br>Intrinsic exercises: 3 × 10 reps, twice daily<br>Hip abductors: 3 × 15 reps, daily",
+          progressionCriteria: "VAS ≤3/10 with full weight-bearing (without boot). LEFS improvement of ≥15 points from baseline. No increase in swelling with graduated weight-bearing. Orthopaedic/imaging review confirming no progression to complete tear.",
+          timeframe: "Weeks 1–6"
+        },
+        {
+          phase: "Phase 2 — Progressive Posterior Tibialis Loading and Arch Stabilisation",
+          goals: "Begin progressive tendon loading of the posterior tibialis in a supported environment. Activate foot intrinsic muscles for dynamic arch support. Transition from walking boot to custom orthotic-supported footwear.",
+          exercises: "Double-leg heel raise (standing — 3 × 25 daily, ensuring heel inversion at top). Seated towel scrunching / marble pick-up (intrinsic foot muscle activation). Ankle inversion with theraband (low resistance, seated — posterior tibialis-specific). Single-leg balance on stable surface (progress to foam surface). Ankle mortise joint Grade III–IV mobilisations (clinical). Calf stretching (both gastroc and soleus). Hip: lateral band walk, single-leg Romanian deadlift (body weight).",
+          parameters: "Double-leg heel raise: 3 × 25 daily<br>Theraband inversion: 3 × 15 reps, twice daily<br>Single-leg balance: 3 × 30 seconds, twice daily<br>Calf stretches: 3 × 30 seconds each position, twice daily<br>Hip exercises: 3 × 15 reps",
+          progressionCriteria: "Able to complete 25 double-leg heel raises pain-free. VAS ≤2/10 with all Phase 2 exercises. Single-leg balance ≥30 seconds on foam surface without excessive pronation. Ready for single-leg progressive loading.",
+          timeframe: "Weeks 6–12"
+        },
+        {
+          phase: "Phase 3 — Functional Loading and Return-to-Run Preparation",
+          goals: "Progress to single-leg posterior tibialis loading. Build tendon load capacity for running. Address proximal kinetic chain deficits. Graduated return to running with orthotic support.",
+          exercises: "Single-leg heel raise progression (target 3 × 15 on symptomatic side). Single-leg squat (posterior tibialis and proximal chain integration). Step-down exercise (eccentric control). Walking lunge with neutral foot control. Return-to-run protocol (begin with walk-run intervals on a treadmill or flat surface — progress weekly: 1 min run / 2 min walk → 2 min / 1 min → continuous running). Ongoing custom orthotic use throughout running. Continue hip abductor and rotator programme. Plyometric progression (low box jumps, lateral bounds) only when 3 × 25 single-leg heel raise is pain-free.",
+          parameters: "Single-leg heel raise: progress 3 × 10 → 3 × 25 over 4–6 weeks<br>Return-to-run: begin at 20 minutes total (walk-run intervals), increase 10% per week<br>Hip/proximal: 3 × 12–15, 3 days/week<br>Plyometrics: only after functional milestones met",
+          progressionCriteria: "3 × 25 single-leg heel raises pain-free on symptomatic side. Single-leg hop test ≥90% symmetry compared to contralateral side. Pain-free walking ≥30 minutes without swelling or post-activity soreness. LEFS ≤30% disability. Podiatry review confirming orthotic effectiveness. Minimum 16–20 weeks before return to high-mileage running.",
+          timeframe: "Weeks 12–24"
+        }
+      ]
+    }
+  },
+  reveal: {
+    diagnosisTitle: "<strong>Posterior Tibialis Tendon Grade 2 Tear</strong><br>Partial thickness tear in a young athlete — bilateral pes planus + 8-year testosterone GAHT as compounding risk factors",
+    outcomes: [
+      { label: "Published Source", text: "Truthan et al. J Chiropr Med. 2024;23(4):197–204" },
+      { label: "PMID / PMC", text: "PMID: 39776824 — PMC11701846 (open access)" },
+      { label: "Final Diagnosis", text: "Grade 2 posterior tibialis tendon tear at the medial malleolus (ultrasound and MRI confirmed)" },
+      { label: "Intervention", text: "Chiropractic conservative care: whole body vibration therapy, therapeutic exercise, ankle mortise joint mobilisations. LEFS disability improved from 81% to 27%." }
+    ],
+    conditionSummary: {
+      overview: "Posterior tibialis tendon dysfunction (PTTD) is a progressive condition characterised by degeneration and eventual tearing of the posterior tibialis tendon — the primary dynamic stabiliser of the medial longitudinal arch. It is classically an overuse condition of middle-aged women (60+ years), but can occur in younger individuals with pes planus, high-impact sports exposure, hormonal risk factors, or metabolic comorbidities. The tendon is most vulnerable at the zone of relative avascularity just posterior to the medial malleolus — the site of the tear in this case.",
+      presentation: [
+        "Medial ankle and hindfoot pain, often insidious in onset but can be acute with sudden loading; worse with prolonged standing, walking, and running",
+        "Swelling and tenderness along the posterior tibialis tendon course, from posteromedial malleolus to the navicular tuberosity",
+        "Flatfoot deformity: hindfoot valgus, forefoot abduction (too-many-toes sign), medial arch collapse — may be pre-existing (pes planus) or acquired (PTTD-driven arch failure)",
+        "Inability to perform single-leg heel rise (with or without normal heel inversion) — the most sensitive clinical test for significant PTTD"
+      ],
+      pathology: [
+        "The posterior tibialis tendon passes through a zone of relative avascularity 1–2 cm posterior to the medial malleolus — the most common site of degenerative tear and complete rupture",
+        "Chronic tendinopathic change (tendinosis) reflects failed healing response with disorganised collagen fibres, tenocyte apoptosis, neovascularisation, and reduced load tolerance — this differs from acute tendon tear and is the substrate for progressive degeneration",
+        "Biological risk factors for posterior tibialis tendon degeneration include: female sex (oestrogen dependency of tendon collagen), longstanding pes planus (chronic mechanical overload), testosterone GAHT (proposed oestrogen suppression reducing collagen quality), diabetes, inflammatory arthropathy, and fluoroquinolone use",
+        "Progression follows the Johnson-Strom classification: Stage I (tenosynovitis, intact function), Stage II (partial tear, flexible flatfoot deformity), Stage III (complete tear, rigid deformity), Stage IV (ankle arthritis) — each stage has specific management implications"
+      ]
+    },
+    reflections: [
+      {
+        type: "key",
+        tag: "Key Lesson",
+        text: "Posterior tibialis tendon tears in patients under 40 should prompt a systematic review of biological risk factors beyond mechanical loading. Gender-affirming hormone therapy (testosterone) in AFAB individuals is an emerging and underappreciated tendon risk factor — the proposed mechanism involves long-term oestrogen suppression reducing collagen quality and tendon repair capacity. As GAHT becomes more prevalent, clinicians will encounter more presentations of unexpected tendinopathic disease in young transgender patients. Awareness of this risk enables earlier protective intervention — custom orthotics, targeted tendon loading programmes, and GAHT provider communication."
+      },
+      {
+        type: "pitfall",
+        tag: "Diagnostic Pitfall",
+        text: "Medial ankle pain during running is most commonly attributed to deltoid ligament sprain, medial tibial stress syndrome, or flexor hallucis longus pathology. Posterior tibialis tendon dysfunction is rarely the first thought in a 31-year-old runner — yet bilateral pes planus combined with any additional risk factor (hormonal, metabolic, pharmacological) should make it an early differential. Ultrasound is the key diagnostic discriminator — it can visualise tendon continuity in real time and identify diffuse tendinosis beyond the focal tear, which would not be expected in deltoid ligament injury or MTSS."
+      },
+      {
+        type: "pearl",
+        tag: "Clinical Pearl",
+        text: "The single-leg heel raise test is the most important clinical screen for posterior tibialis tendon integrity. An athlete who cannot complete a smooth, symmetrical single-leg heel rise (ideally 25 repetitions without pain) almost certainly has significant PTTD. The key refinement is observing whether the heel inverts into varus at the top of the rise — this requires an intact posterior tibialis tendon pulling the calcaneus into inversion. Failure of heel inversion with an otherwise competent rise points specifically to posterior tibialis tendon compromise rather than a global calf weakness."
+      },
+      {
+        type: "key",
+        tag: "Scope of Practice",
+        text: "Posterior tibialis tendon tears — particularly grade 2 partial tears — can be managed conservatively by chiropractic and physiotherapy practitioners with good functional outcomes, as this case demonstrates. However, the management of PTTD in an athlete who declines surgery requires co-ordinated care: the GAHT prescribing endocrinologist should be informed, a podiatrist should provide custom orthotics addressing the pes planus, and the orthopaedic specialist should remain accessible for surgical escalation if conservative management fails or if the tendon progresses to complete rupture or rigid deformity. The chiropractor's role is ankle and foot joint mobilisation, progressive tendon loading rehabilitation, and proximal kinetic chain optimisation."
+      },
+      {
+        type: "pitfall",
+        tag: "Imaging Lesson",
+        text: "When ultrasound identifies a focal tear in a posterior tibialis tendon, always systematically examine the remainder of the tendon for diffuse tendinosis. The presence of tendinosis beyond the focal tear site is diagnostically and prognostically important — it indicates a widespread degenerative process rather than an isolated acute injury, and should prompt investigation of underlying risk factors. In this case, the additional tendinosis sites were the clinical 'fingerprint' of the GAHT-related tendinopathic environment, directing attention to the hormonal risk factor that would otherwise have been overlooked."
+      }
+    ]
+  },
+  cpd: {
+    topics: "Posterior tibialis tendon dysfunction, Pes planus, Gender-affirming hormone therapy, Tendinopathy, Ankle anatomy, Diagnostic imaging, Sports rehabilitation, Regional interdependence",
+    keyPoints: [
+      "Posterior tibialis tendon tears are rare in adults under 40 years of age; their occurrence in a young patient should prompt systematic investigation of biological risk factors including pes planus, hormonal status, medications (fluoroquinolones, corticosteroids), and metabolic disease.",
+      "Gender-affirming testosterone therapy (GAHT) in AFAB individuals is an emerging risk factor for tendinopathic disease, proposed to operate via long-term oestrogen suppression reducing collagen quality and tendon repair capacity; clinicians should be aware of this as GAHT prevalence increases.",
+      "The single-leg heel raise test (25 repetitions, observing heel inversion) is the most clinically sensitive test for posterior tibialis tendon integrity; inability to perform it reliably indicates significant PTTD.",
+      "Ultrasound is the recommended first-line imaging tool for suspected PTTD — it identifies tendon disruption, tear grade, and diffuse tendinosis in real time; diffuse tendinosis beyond the focal tear site indicates a chronic degenerative process rather than isolated acute injury.",
+      "Conservative management of Stage II PTTD (partial tear, flexible flatfoot) requires a multimodal approach: foot orthoses addressing pes planus, progressive posterior tibialis loading, proximal kinetic chain strengthening, and ankle mortise joint mobilisation — with orthopaedic surgical escalation available if conservative management fails."
+    ]
+  }
+},
+// ─────────────────────────────────────────────
 // PASTE ADDITIONAL CASES ABOVE THIS LINE
 // Add a comma after the closing } of the previous case
 // then paste the new case data block here
